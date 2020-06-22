@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "name": "livepeer-website",
+  "version": "0.4.0-rc.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "(eslint . && prettier --check '**/*.{js,ts,tsx}' --loglevel warn) || yarn lint:warn",
+    "lint:warn": "echo '\\nError: Not all files are pretty, run yarn lint:fix\\n'",
+    "lint:fix": "eslint . --fix --rule 'react-hooks/exhaustive-deps: off' && prettier --write '**/*.{js,ts,tsx}'",
+    "lint:staged": "lint-staged --quiet"
+  },
+  "dependencies": {
+    "@livepeer/ui": "^0.5.0",
+    "@mdx-js/loader": "^1.6.6",
+    "@next/mdx": "^9.4.4",
+    "next": "^9.4.4",
+    "next-compose-plugins": "^2.2.0",
+    "next-svgr": "^0.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.3.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "pre-commit": "lint:staged",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

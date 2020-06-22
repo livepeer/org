@@ -1,0 +1,10 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.833vw 2.778vw;
+  height: 3.194vw;
+  background: var(--green);
+  border-radius: var(--radius-s);
+  font-weight: 600;
+}

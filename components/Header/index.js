@@ -1,0 +1,28 @@
+import Link from "next/link"
+import LivepeerLogo from "icons/livepeer.svg"
+
+import styles from "./header.module.css"
+
+const Header = () => {
+  return (
+    <header className={styles.header}>
+      <LivepeerLogo className={styles.logo} />
+      <nav>
+        <Link href="/participants">
+          <a>Participants</a>
+        </Link>
+        <Link href="/developers">
+          <a>Developers</a>
+        </Link>
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
+        <Link href="/enterprise">
+          <a>Enterprise</a>
+        </Link>
+      </nav>
+    </header>
+  )
+}
+
+export default Header
