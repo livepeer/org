@@ -5,24 +5,25 @@ import Layout from "components/Layout"
 import Spacer from "components/Spacer"
 
 import styles from "./home.module.css"
+import { Button, Text } from "@livepeer/ui"
 
 const Home = () => {
   return (
     <Layout>
       <Spacer padding />
       <section className={styles.inner}>
-        <h1>
+        <Text variant="h1" as="h1">
           The <span className="gradient">World's Open</span> Video
           Infrastructure
-        </h1>
+        </Text>
         <Spacer padding y={0.25} />
-        <h5>
-          Livepeer supports live streaming, video on demand, and transcoding{" "}
+        <Text variant="h5" as="h5">
+          Livepeer supports live streaming, video on demand, and transcoding
           <br />
           across video formats and protocols.
-        </h5>
+        </Text>
         <Spacer padding y={0.5} />
-        <button>Get Started</button>
+        <Button variant="primary">Get Started</Button>
       </section>
       <Spacer padding />
       <section className={styles.illustration}>

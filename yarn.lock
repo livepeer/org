@@ -1294,12 +1294,12 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@livepeer/ui@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@livepeer/ui/-/ui-0.5.0.tgz#8314e91735a23b49b5d7333bccf609da9dcfed71"
-  integrity sha512-F84KQNcQL1C1ER4DMWK7NfWDzxdAHpmecs8qiUKowBUJiSD95YiULVliwXARAiDzx2rIDRPfpFCmyPprimXHkA==
+"@livepeer/ui@0.6":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@livepeer/ui/-/ui-0.6.0.tgz#c8f815e759f1ee8f6627fa52f34999ff0860365e"
+  integrity sha512-JDvWT29Qm5jsPsi7Fqm/yFewtD24zWBJWxI0dEF7jmDc/AnAJiTIjywv0OCxzWAvRVZsUHyQZduPsCBWh4QsMA==
   dependencies:
-    "@modulz/primitives" "0.0.1-39"
+    "@modulz/primitives" "0.0.1-42"
     styled-components "^5.0.1"
 
 "@mdx-js/loader@^1.6.6":
@@ -1346,12 +1346,12 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.6.tgz#9c70eb7e7e4abc1083c8edf7151d35a19e442c00"
   integrity sha512-PKTHVgMHnK5p+kcMWWNnZuoR7O19VmHiOujmVcyN50hya7qIdDb5vvsYC+dwLxApEXiABhLozq0dlIwFeS3yjg==
 
-"@modulz/primitives@0.0.1-39":
-  version "0.0.1-39"
-  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-39.tgz#ede664332b89de2bbe66d025e071a0a95c6fa442"
-  integrity sha512-3NI3HN41titTuj0NjkNab1o9tybzgGtm73f1FIKhnQ06zAZNMqLGGVyBfob6dYuMytbUexotq4dpPcJFgDYQug==
+"@modulz/primitives@0.0.1-42":
+  version "0.0.1-42"
+  resolved "https://registry.yarnpkg.com/@modulz/primitives/-/primitives-0.0.1-42.tgz#f2310ee8169ffd0523ea10597c55fc60a8ffe7ad"
+  integrity sha512-w78RHtBQlfFWBapgiyohyL8i+N1Xxmv9LvVX322d3l1Q3bWP1wyVsA3LD8iL4IofX9axYBpvh0DyMQqiOVZePA==
   dependencies:
-    "@modulz/radix-icons" "2.1.0"
+    "@modulz/radix-icons" "2.4.0"
     "@modulz/radix-system" "0.0.1-alpha.11"
     aria-hidden "^1.1.1"
     body-scroll-lock "^2.6.4"
@@ -1364,10 +1364,10 @@
     resize-observer-polyfill "^1.5.1"
     tabbable "^4.0.0"
 
-"@modulz/radix-icons@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-2.1.0.tgz#214142d956a1bf88326ade7b7ae628fedf5d6dad"
-  integrity sha512-eTSt5odB+n52LG8GFRNbJLSjKIf9Q/gUa61Nch/TQQKjU27Txxjo4eEilhvL/R1/FYyHjslyMJaKQ2IHLnrUBg==
+"@modulz/radix-icons@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-2.4.0.tgz#62bb73265d39aa990a3adfb089f00cecbaf791c5"
+  integrity sha512-19pLQSJtzVtlOon86QC3gigjoigumIvAch79wXl3/yyaWsip6n2CgPHKu/5hKhjK2qYCr84b0VmZkmj1krAl/w==
 
 "@modulz/radix-system@0.0.1-alpha.11":
   version "0.0.1-alpha.11"
@@ -5447,6 +5447,14 @@ next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
+
+next-transpile-modules@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-3.3.0.tgz#90f197d1ceda2a2ce7a4f423b262320354456abf"
+  integrity sha512-QIaBunwtC9oNaluQvfJw5hv1uXSAlTzDCc7/FUxZw5Rnm0yo1HJjW6YodFvA+7Xm9k/2fZV2itF99vMBwTOUjQ==
+  dependencies:
+    micromatch "^4.0.2"
+    slash "^3.0.0"
 
 next@^9.4.4:
   version "9.4.4"

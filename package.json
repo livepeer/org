@@ -14,12 +14,13 @@
     "lint:staged": "lint-staged --quiet"
   },
   "dependencies": {
-    "@livepeer/ui": "^0.5.0",
+    "@livepeer/ui": "0.6",
     "@mdx-js/loader": "^1.6.6",
     "@next/mdx": "^9.4.4",
     "next": "^9.4.4",
     "next-compose-plugins": "^2.2.0",
     "next-svgr": "^0.0.2",
+    "next-transpile-modules": "^3.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "theme-ui": "^0.3.1"
