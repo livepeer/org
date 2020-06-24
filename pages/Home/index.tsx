@@ -3,7 +3,6 @@
 
 import Layout from "components/Layout"
 import Spacer from "components/Spacer"
-import Button from "components/Button"
 
 import styles from "./home.module.css"
 
@@ -23,7 +22,7 @@ const Home = () => {
           across video formats and protocols.
         </h5>
         <Spacer padding y={0.5} />
-        <Button>Get Started</Button>
+        <button>Get Started</button>
       </section>
       <Spacer padding />
       <section className={styles.illustration}>

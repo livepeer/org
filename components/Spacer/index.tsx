@@ -4,10 +4,10 @@ import styles from "./spacer.module.css"
 export const Spacer = ({
   x = 1,
   y = 1,
-  expand,
-  className,
-  inline,
-  padding
+  expand = false,
+  className = "",
+  inline = false,
+  padding = false
 }) => {
   return (
     <span
