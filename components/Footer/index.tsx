@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import styles from "./footer.module.css"
-import LivepeerLogo from "icons/livepeer-logo"
+import LivepeerLogo from "components/icons/livepeer-logo"
 
 const Footer = () => {
   return (
