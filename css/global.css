@@ -23,7 +23,6 @@
   --header-min-height-tight: 100px;
 
   /* Misc */
-  --spacing-base: 4px;
   --max-width: 80.556vw;
   --spacer: 5.556vw;
   --spacer-lg: 11.111vw;
@@ -35,10 +34,4 @@
   font-variant-ligatures: common-ligatures;
 
   font-family: var(--font-primary);
-}
-
-.gradient-text {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
