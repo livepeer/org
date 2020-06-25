@@ -1,6 +1,4 @@
-import { Theme } from "theme-ui"
-
-const theme: Theme = {
+const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
   sizes: {
     "1": "0.25rem",
@@ -160,11 +158,8 @@ const theme: Theme = {
       }
     },
     gradient: {
-      // @ts-ignore
       background: `linear-gradient(90deg, #00A55F 0%, #4CF1AC 100%)`,
-      // @ts-ignore
       WebkitBackgroundClip: "text",
-      // @ts-ignore
       WebkitTextFillColor: "transparent"
     }
   },
@@ -179,6 +174,7 @@ const theme: Theme = {
     },
     secondary: {}
   },
+  links: {},
   // STYLES
   styles: {
     root: {
@@ -187,12 +183,7 @@ const theme: Theme = {
       bg: "background"
     },
     a: {
-      color: "primary",
-      textDecoration: "none",
-      ":hover": {
-        color: "secondary",
-        textDecoration: "underline"
-      }
+      color: "text"
     }
   }
 }
