@@ -5,7 +5,7 @@ const HeroHome = () => (
   <Container
     sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
   >
-    <Box sx={{ maxWidth: "824px" }}>
+    <Box sx={{ maxWidth: "4xl", mt: 5, mb: "40px" }}>
       <Heading variant="heading.1">
         The
         <Text as="span" variant="gradient">
@@ -20,8 +20,8 @@ const HeroHome = () => (
         across video formats and protocols.
       </Heading>
     </Box>
-    <Divider isTransparent isVertical />
     <Button>Get started</Button>
+    <Box sx={{ bg: "muted", height: "500px", width: "100%", my: 4 }} />
   </Container>
 )
 

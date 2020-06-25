@@ -1,7 +1,14 @@
-const LivepeerLogo = ({ className = "" }) => (
+/** @jsx jsx */
+import { jsx, SxStyleProp } from "theme-ui"
+
+type Props = {
+  pushSx?: SxStyleProp
+}
+
+const LivepeerLogo = ({ pushSx }: Props) => (
   <svg
     viewBox="0 0 123 34"
-    className={className}
+    sx={{ width: "123px", height: "34px", ...pushSx }}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >

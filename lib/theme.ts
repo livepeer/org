@@ -66,6 +66,24 @@ const theme: Theme = {
     xl: "0.75rem",
     full: "50%"
   },
+  shadows: {
+    sm: "0px 1px 2px rgba(0, 0, 0, 0.1)",
+    md: "0px 2px 5px rgba(0, 0, 0, 0.1)",
+    lg:
+      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    xl:
+      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+    float: "30px 20px 60px rgba(0, 0, 0, 0.1)",
+    inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+    long: "10px 0px 30px rgba(0, 0, 0, 0.1)",
+    magical:
+      "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)"
+  },
+  zIndices: {
+    header: 80,
+    behind: -1
+  },
   // VARIANTS
   layout: {
     container: {
@@ -136,6 +154,7 @@ const theme: Theme = {
         fontSize: 5,
         fontWeight: 500,
         letterSpacing: "heading",
+        lineHeight: "body",
         textAlign: "center",
         color: "gray"
       }
