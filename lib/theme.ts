@@ -80,6 +80,7 @@ const theme = {
       "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)"
   },
   zIndices: {
+    dropdown: 90,
     header: 80,
     general: 10,
     behind: -1
@@ -209,6 +210,12 @@ const theme = {
       height: 12,
       variant: "text.default",
       fontWeight: 500
+    },
+    icon: {
+      p: 2,
+      borderRadius: "md",
+      height: "auto",
+      width: "auto"
     }
   },
   cards: {
