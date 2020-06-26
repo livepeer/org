@@ -44,6 +44,7 @@ const ByTheNumbersSection = () => (
       </>
     }
     titleLabel="Subtitle"
+    pushSx={{ pb: "160px" }}
   >
     <Grid
       columns={[6, null, null, "repeat(3, fit-content(260px))"]}
@@ -55,8 +56,7 @@ const ByTheNumbersSection = () => (
         left: [-3, null, null, 0],
         px: [4, null, null, 0],
         position: "relative",
-        justifyContent: ["flex-start", null, null, "center"],
-        mt: [5, null, null, null, 6]
+        justifyContent: ["flex-start", null, null, "center"]
       }}
     >
       {stats.map((stat) => (

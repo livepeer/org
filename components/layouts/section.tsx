@@ -1,10 +1,12 @@
-import { Box, Container, Text, Heading } from "theme-ui"
+import { Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
+import { Divider } from "components/primitives/divider"
 
 type Props = {
-  title?: React.ReactNode
+  title: React.ReactNode
   subtitle?: React.ReactNode
   titleLabel?: React.ReactNode
   background?: "muted" | "dark"
+  pushSx?: SxStyleProp
 }
 
 const SectionLayout: React.FC<Props> = ({
@@ -12,7 +14,8 @@ const SectionLayout: React.FC<Props> = ({
   title,
   subtitle,
   titleLabel,
-  background
+  background,
+  pushSx
 }) => {
   let bg = "background"
   let titleColor = "text"
@@ -32,7 +35,7 @@ const SectionLayout: React.FC<Props> = ({
 
   return (
     <Box sx={{ bg, color: titleColor }}>
-      <Container variant="section">
+      <Container variant="section" sx={pushSx}>
         {titleLabel && (
           <Text variant="section.titleLabel" sx={{ color: titleColor }}>
             {titleLabel}
@@ -48,6 +51,7 @@ const SectionLayout: React.FC<Props> = ({
             {subtitle}
           </Heading>
         )}
+        <Divider isVertical isTransparent size={["56px", "72px"]} />
         {children}
       </Container>
     </Box>

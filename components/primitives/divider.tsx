@@ -2,7 +2,7 @@
 import { jsx, Box, SxStyleProp } from "theme-ui"
 
 type Props = {
-  size?: string
+  size?: string | string[]
   isVertical?: boolean
   isTransparent?: boolean
   pushSx?: SxStyleProp

@@ -45,7 +45,6 @@ const CardsSection = () => (
           null,
           ({ sizes: { sm } }) => `repeat(3, ${sm})`
         ],
-        mt: 5,
         mx: "auto",
         justifyContent: "center",
         position: "relative"

@@ -6,6 +6,7 @@ import Footer from "components/sections/footer"
 import ByTheNumbersSection from "components/sections/by-the-numbers"
 import CarsSection from "components/sections/cards"
 import PrimerBanner from "components/sections/primer-banner"
+import CommunitySection from "components/sections/community"
 
 const HomePage = () => (
   <>
@@ -16,6 +17,7 @@ const HomePage = () => (
       <CarsSection />
       <PrimerBanner />
       <ByTheNumbersSection />
+      <CommunitySection />
     </Box>
     <Footer />
   </>
