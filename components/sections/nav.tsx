@@ -136,7 +136,8 @@ const Nav = () => {
         </Container>
         <Container
           sx={{
-            py: 4,
+            pb: 4,
+            pt: "10vh",
             "a:not(:last-of-type)": { mb: 2 },
             display: "flex",
             flexDirection: "column",
@@ -150,7 +151,7 @@ const Nav = () => {
                 <A
                   sx={{
                     textAlign: "center",
-                    fontSize: "40px",
+                    fontSize: 6,
                     fontWeight: 600
                   }}
                 >

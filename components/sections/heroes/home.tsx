@@ -1,4 +1,5 @@
-import { Container, Heading, Text, Button, Box } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Container, Heading, Text, Button, Box } from "theme-ui"
 import { Divider } from "components/primitives/divider"
 
 const HeroHome = () => (
@@ -12,16 +13,19 @@ const HeroHome = () => (
         pt: 5
       }}
     >
-      <Box sx={{ maxWidth: "4xl", mb: "40px" }}>
-        <Heading variant="heading.1">
-          The
+      <Box sx={{ maxWidth: "4xl", mb: ["32px", "40px"] }}>
+        <Heading
+          variant="heading.1"
+          sx={{ fontSize: ["40px", "56px", "88px"] }}
+        >
+          The&nbsp;
           <Text as="span" variant="gradient">
-            World's Open
+            World's Open&nbsp;
           </Text>
-          <br />
+          <br sx={{ display: ["none", "block"] }} />
           Video Infrascructure
         </Heading>
-        <Divider isTransparent isVertical />
+        <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
         <Heading variant="section.subtitle">
           Livepeer supports live streaming, video on demand, and transcoding
           across video formats and protocols.
