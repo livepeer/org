@@ -4,6 +4,7 @@ import Nav from "components/nav"
 import HeroHome from "components/heroes/home"
 import Footer from "components/footer"
 import ByTheNumbersSection from "components/sections/by-the-numbers"
+import CarsSection from "components/sections/cards"
 
 const HomePage = () => (
   <>
@@ -11,6 +12,7 @@ const HomePage = () => (
     <Nav />
     <Box sx={{ position: "relative", overflow: "hidden" }}>
       <HeroHome />
+      <CarsSection />
       <ByTheNumbersSection />
     </Box>
     <Footer />

@@ -107,10 +107,11 @@ const theme = {
     }
   },
   text: {
-    default: {
+    normal: {
       fontFamily: "body",
       fontSize: [2, 3],
-      fontWeight: 400
+      fontWeight: 400,
+      lineHeight: "body"
     },
     large: {
       fontFamily: "body",
@@ -170,15 +171,21 @@ const theme = {
       titleLabel: {
         variant: "text.large",
         textAlign: "center",
-        mb: 3
+        mb: 3,
+        maxWidth: "960px",
+        mx: "auto"
       },
       title: {
         variant: "text.heading.2",
         fontFamily: "body",
-        mb: 4
+        mb: 4,
+        maxWidth: "960px",
+        mx: "auto"
       },
       subtitle: {
-        variant: "text.heading.5"
+        variant: "text.heading.5",
+        maxWidth: "960px",
+        mx: "auto"
       }
     }
   },
@@ -192,6 +199,16 @@ const theme = {
       fontWeight: 500
     },
     secondary: {}
+  },
+  cards: {
+    primary: {
+      p: 4,
+      maxWidth: "sm",
+      borderRadius: "md",
+      bg: "background",
+      border: "1px solid",
+      borderColor: "ultraLightGray"
+    }
   },
   links: {},
   // STYLES

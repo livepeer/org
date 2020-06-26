@@ -25,7 +25,7 @@ const Nav = () => {
         position: "sticky",
         top: 0,
         zIndex: "header",
-        bg: "background",
+        bg: "muted",
         transition: "box-shadow .3s",
         boxShadow: hasScrolled ? "magical" : "none"
       }}
