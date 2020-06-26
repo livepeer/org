@@ -133,7 +133,7 @@ const theme = {
       },
       2: {
         fontFamily: "special",
-        fontSize: [7, "72px"],
+        fontSize: ["48px", "72px"],
         fontWeight: 800,
         letterSpacing: "heading",
         textAlign: "center"
@@ -154,7 +154,7 @@ const theme = {
       },
       5: {
         fontFamily: "body",
-        fontSize: ["22px", 5],
+        fontSize: ["20px", 5],
         fontWeight: 500,
         letterSpacing: "heading",
         lineHeight: "body",
@@ -170,15 +170,17 @@ const theme = {
     section: {
       titleLabel: {
         variant: "text.large",
+        fontSize: [3, "22px"],
         textAlign: "center",
-        mb: 3,
+        mb: [2, 3],
         maxWidth: "960px",
         mx: "auto"
       },
       title: {
         variant: "text.heading.2",
+        fontSize: ["48px", "72px"],
         fontFamily: "body",
-        mb: 4,
+        mb: [3, 4],
         maxWidth: "960px",
         mx: "auto"
       },
