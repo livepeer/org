@@ -1,5 +1,5 @@
 import { Box, Container, NavLink, Flex } from "theme-ui"
-import LivepeerLogo from "./icons/livepeer-logo"
+import LivepeerLogo from "components/icons/livepeer-logo"
 import { useEffect, useCallback, useState } from "react"
 
 const Nav = () => {

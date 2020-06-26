@@ -5,9 +5,14 @@ const HeroHome = () => (
   <Box sx={{ bg: "muted" }}>
     <Container
       variant="section"
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        pt: 5
+      }}
     >
-      <Box sx={{ maxWidth: "4xl", mt: 5, mb: "40px" }}>
+      <Box sx={{ maxWidth: "4xl", mb: "40px" }}>
         <Heading variant="heading.1">
           The
           <Text as="span" variant="gradient">

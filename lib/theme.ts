@@ -94,7 +94,7 @@ const theme = {
       variant: "layout.container",
       position: "relative",
       px: 3,
-      py: 5
+      py: "80px"
     },
     flexCenter: {
       display: "flex",

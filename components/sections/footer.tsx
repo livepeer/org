@@ -1,7 +1,7 @@
 import { Box, Container, Heading, Link as A, Grid, Flex, Text } from "theme-ui"
 import Link from "next/link"
-import { Divider } from "./primitives/divider"
-import LivepeerLogo from "./icons/livepeer-logo"
+import { Divider } from "components/primitives/divider"
+import LivepeerLogo from "components/icons/livepeer-logo"
 
 type ListProps = {
   title: string

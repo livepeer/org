@@ -56,7 +56,7 @@ const ByTheNumbersSection = () => (
         px: [4, null, null, 0],
         position: "relative",
         justifyContent: ["flex-start", null, null, "center"],
-        my: [5, null, null, null, 6]
+        mt: [5, null, null, null, 6]
       }}
     >
       {stats.map((stat) => (
