@@ -81,6 +81,7 @@ const theme = {
   },
   zIndices: {
     header: 80,
+    general: 10,
     behind: -1
   },
   // VARIANTS
@@ -200,7 +201,15 @@ const theme = {
       variant: "text.default",
       fontWeight: 500
     },
-    secondary: {}
+    secondary: {
+      color: "background",
+      bg: "text",
+      py: 2,
+      px: 4,
+      height: 12,
+      variant: "text.default",
+      fontWeight: 500
+    }
   },
   cards: {
     primary: {
@@ -213,6 +222,18 @@ const theme = {
     }
   },
   links: {},
+  forms: {
+    input: {
+      bg: "background",
+      variant: "text.small",
+      border: "none",
+      px: 3,
+      height: 12,
+      "&::placeholder": {
+        color: "gray"
+      }
+    }
+  },
   // STYLES
   styles: {
     root: {

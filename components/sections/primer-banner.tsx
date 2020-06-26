@@ -8,7 +8,7 @@ const PrimerBanner = () => (
       sx={{
         bg: "text",
         color: "background",
-        pt: 5,
+        pt: [4, 5],
         px: [4, null, null, "96px"],
         pb: [7, null, null, 5],
         position: "relative",
