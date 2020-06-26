@@ -16,7 +16,7 @@ export const Divider: React.FC<Props> = ({
 }) => (
   <Box
     sx={{
-      bg: isTransparent ? "transparent" : "muted",
+      bg: isTransparent ? "transparent" : "lightGray",
       width: isVertical ? "1px" : size,
       height: isVertical ? size : "1px",
       ...pushSx

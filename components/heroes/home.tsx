@@ -3,6 +3,7 @@ import { Divider } from "components/primitives/divider"
 
 const HeroHome = () => (
   <Container
+    variant="section"
     sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
   >
     <Box sx={{ maxWidth: "4xl", mt: 5, mb: "40px" }}>
@@ -15,13 +16,13 @@ const HeroHome = () => (
         Video Infrascructure
       </Heading>
       <Divider isTransparent isVertical />
-      <Heading variant="heading.5">
+      <Heading variant="section.subtitle">
         Livepeer supports live streaming, video on demand, and transcoding
         across video formats and protocols.
       </Heading>
     </Box>
     <Button>Get started</Button>
-    <Box sx={{ bg: "muted", height: "500px", width: "100%", my: 4 }} />
+    <Box sx={{ bg: "ultraLightGray", height: "500px", width: "100%", my: 4 }} />
   </Container>
 )
 

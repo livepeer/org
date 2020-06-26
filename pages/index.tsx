@@ -3,6 +3,7 @@ import Head from "components/primitives/head"
 import Nav from "components/nav"
 import HeroHome from "components/heroes/home"
 import Footer from "components/footer"
+import ByTheNumbersSection from "components/sections/by-the-numbers"
 
 const HomePage = () => (
   <>
@@ -10,6 +11,7 @@ const HomePage = () => (
     <Nav />
     <Box sx={{ position: "relative", overflow: "hidden" }}>
       <HeroHome />
+      <ByTheNumbersSection />
     </Box>
     <Footer />
   </>

@@ -32,11 +32,12 @@ const theme = {
   colors: {
     text: "#131418",
     background: "#fff",
-    muted: "#E5E5E5",
+    muted: "#fafafa",
     primary: "#00EB88",
     secondary: "#3F3FE2",
     gray: "#666666",
     lightGray: "#A5A5A5",
+    ultraLightGray: "#E5E5E5",
     gradient: { from: "#00A55F", to: "#4CF1AC" }
   },
   fonts: {
@@ -85,14 +86,13 @@ const theme = {
   // VARIANTS
   layout: {
     container: {
-      maxWidth: 1160,
+      maxWidth: 1200,
       mx: "auto",
       p: 3
     },
-    sectionContainer: {
+    section: {
+      variant: "layout.container",
       position: "relative",
-      maxWidth: 1200,
-      mx: "auto",
       px: 3,
       py: 5
     },
@@ -100,6 +100,10 @@ const theme = {
       display: "flex",
       alignItems: "center",
       justifyContent: "center"
+    },
+    centerAbsolute: {
+      left: "50%",
+      transform: "translateX(-50%)"
     }
   },
   text: {
@@ -149,7 +153,7 @@ const theme = {
       },
       5: {
         fontFamily: "body",
-        fontSize: 5,
+        fontSize: ["22px", 5],
         fontWeight: 500,
         letterSpacing: "heading",
         lineHeight: "body",
@@ -161,6 +165,21 @@ const theme = {
       background: `linear-gradient(90deg, #00A55F 0%, #4CF1AC 100%)`,
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent"
+    },
+    section: {
+      titleLabel: {
+        variant: "text.large",
+        textAlign: "center",
+        mb: 3
+      },
+      title: {
+        variant: "text.heading.2",
+        fontFamily: "body",
+        mb: 4
+      },
+      subtitle: {
+        variant: "text.heading.5"
+      }
     }
   },
   buttons: {
