@@ -2,7 +2,7 @@
 import { jsx, Container, Heading, Text, Button, Box } from "theme-ui"
 import { Divider } from "components/primitives/divider"
 
-const HeroHome = () => (
+const HomeHero = () => (
   <Box sx={{ bg: "muted" }}>
     <Container
       variant="section"
@@ -39,4 +39,4 @@ const HeroHome = () => (
   </Box>
 )
 
-export default HeroHome
+export default HomeHero
