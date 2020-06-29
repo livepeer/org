@@ -36,7 +36,7 @@ const CodeHero = () => (
           Livepeer <span sx={{ color: "primary" }}>❤</span> open source
         </Heading>
         <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
-        <Heading variant="section.subtitle">
+        <Heading variant="section.subtitle" sx={{ color: "lightGray" }}>
           We believe in open components for an open video infrastructure and an
           open web.
         </Heading>
