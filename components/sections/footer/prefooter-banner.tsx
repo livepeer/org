@@ -2,7 +2,7 @@ import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/icons/prefooter"
 
 const PrefooterBanner = () => (
-  <Box sx={{ px: 3, py: "80px", mb: "80px" }}>
+  <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: ["-122px", "80px"] }}>
     <Container
       sx={{
         bg: "primary",
