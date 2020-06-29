@@ -2,7 +2,7 @@ import { Box } from "theme-ui"
 import Head from "components/primitives/head"
 import Nav from "components/sections/nav"
 import Footer from "components/sections/footer"
-import HeroCode from "components/sections/heroes/code"
+import CodeHero from "components/sections/code/hero"
 import OpenSourceSection from "components/sections/open-source"
 
 const CodePage = () => (
@@ -10,7 +10,7 @@ const CodePage = () => (
     <Head />
     <Nav isDark />
     <Box sx={{ position: "relative", overflow: "hidden", bg: "text" }}>
-      <HeroCode />
+      <CodeHero />
       <OpenSourceSection />
     </Box>
     <Footer isDark />

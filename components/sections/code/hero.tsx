@@ -2,7 +2,7 @@
 import { jsx, Container, Heading, Box } from "theme-ui"
 import { Divider } from "components/primitives/divider"
 
-const HeroCode = () => (
+const CodeHero = () => (
   <Box sx={{ color: "background", bg: "text", position: "relative" }}>
     <img
       sx={{
@@ -44,4 +44,4 @@ const HeroCode = () => (
   </Box>
 )
 
-export default HeroCode
+export default CodeHero
