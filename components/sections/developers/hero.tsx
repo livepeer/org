@@ -44,7 +44,9 @@ const DevelopersHero = () => (
             across video formats and protocols.
           </Heading>
         </Box>
-        <Box sx={{ maxWidth: "482px", height: "282px", bg: "lightGray" }} />
+        <Box
+          sx={{ maxWidth: "482px", height: "282px", bg: "ultraLightGray" }}
+        />
       </Grid>
     </Container>
   </Box>

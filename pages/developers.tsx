@@ -4,6 +4,7 @@ import Nav from "components/sections/nav"
 import Footer from "components/sections/footer"
 import DevelopersHero from "components/sections/developers/hero"
 import PublicNetworkBanner from "components/sections/developers/public-network-banner"
+import HostedApiSection from "components/sections/developers/hosted-api"
 
 const CodePage = () => (
   <>
@@ -12,6 +13,7 @@ const CodePage = () => (
     <Box sx={{ position: "relative", overflow: "hidden", bg: "text" }}>
       <DevelopersHero />
       <PublicNetworkBanner />
+      <HostedApiSection />
     </Box>
     <Footer />
   </>

@@ -52,8 +52,9 @@ const OpenSourceSection = () => (
       alignItems: "center",
       py: "160px"
     }}
+    headingContainerPushSx={{ mb: 4 }}
   >
-    <Button sx={{ mt: -4 }}>View all</Button>
+    <Button>View all</Button>
     <Divider isVertical isTransparent size={["56px", "72px"]} />
     <Grid
       gap={4}
