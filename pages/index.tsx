@@ -7,7 +7,6 @@ import ByTheNumbersSection from "components/sections/by-the-numbers"
 import CarsSection from "components/sections/cards"
 import PrimerBanner from "components/sections/primer-banner"
 import CommunitySection from "components/sections/community"
-import PrefooterBanner from "components/sections/prefooter-banner"
 
 const HomePage = () => (
   <>
@@ -19,7 +18,6 @@ const HomePage = () => (
       <PrimerBanner />
       <ByTheNumbersSection />
       <CommunitySection />
-      <PrefooterBanner />
     </Box>
     <Footer />
   </>
