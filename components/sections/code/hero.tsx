@@ -8,7 +8,8 @@ const CodeHero = () => (
       sx={{
         position: "absolute",
         top: 4,
-        width: "1440px",
+        minWidth: "1440px",
+        maxWidth: "1440px",
         left: "50%",
         transform: "translateX(-50%)",
         bg: "text",
@@ -22,8 +23,7 @@ const CodeHero = () => (
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        pt: 6,
-        pb: "160px"
+        py: "120px"
       }}
     >
       <Box
