@@ -64,7 +64,7 @@ const Nav = ({ isDark = false }) => {
         position: "sticky",
         top: 0,
         zIndex: "header",
-        bg: isDark ? "text" : "muted",
+        bg: isDark ? "black" : "muted",
         color: isDark ? "background" : "text",
         transition: "box-shadow .3s",
         boxShadow: hasScrolled ? "magical" : "none"
@@ -109,7 +109,7 @@ const Nav = ({ isDark = false }) => {
           height: mobileMenuIsOpen ? "100vh" : 0,
           transition: "height .2s",
           overflow: "hidden",
-          bg: isDark ? "text" : "background",
+          bg: isDark ? "black" : "background",
           color: isDark ? "background" : "text",
           width: "100%",
           zIndex: "dropdown"

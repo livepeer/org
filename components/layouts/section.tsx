@@ -5,7 +5,7 @@ type Props = {
   title: React.ReactNode
   subtitle?: React.ReactNode
   titleLabel?: React.ReactNode
-  background?: "muted" | "dark"
+  background?: "muted" | "dark" | "black"
   pushSx?: SxStyleProp
 }
 
@@ -25,13 +25,16 @@ const SectionLayout: React.FC<Props> = ({
       bg = "muted"
       break
     case "dark":
-      bg = "text"
+    case "black":
       titleColor = "background"
       subTitleColor = "lightGray"
+      bg = background === "black" ? "black" : "text"
       break
     default:
       break
   }
+
+  console.log(titleColor)
 
   return (
     <Box sx={{ bg, color: titleColor }}>

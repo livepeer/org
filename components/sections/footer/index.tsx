@@ -43,8 +43,8 @@ const lists: FooterListProps[] = [
   }
 ]
 
-const Footer = ({ withPrefooter = true }) => (
-  <>
+const Footer = ({ withPrefooter = true, isDark = false }) => (
+  <Box as="footer" bg={isDark ? "text" : "background"}>
     {withPrefooter && <PrefooterBanner />}
     <Box sx={{ bg: "text", color: "background" }}>
       <Container sx={{ pt: [withPrefooter ? 6 : 5, 5], pb: 4 }}>
@@ -112,7 +112,7 @@ const Footer = ({ withPrefooter = true }) => (
         </Flex>
       </Container>
     </Box>
-  </>
+  </Box>
 )
 
 export default Footer
