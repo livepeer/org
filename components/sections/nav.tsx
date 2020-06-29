@@ -27,7 +27,7 @@ const links: LinkType[] = [
   },
   {
     label: "Developers",
-    href: "/"
+    href: "/developers"
   },
   {
     label: "Blog",
@@ -86,9 +86,11 @@ const Nav = ({ isDark = false }) => {
           }}
         >
           {links.map((link) => (
-            <NavLink key={`desktop-nav-link-${link.label}`}>
-              {link.label}
-            </NavLink>
+            <Link href={link.href} as={link.asPath} passHref>
+              <NavLink key={`desktop-nav-link-${link.label}`}>
+                {link.label}
+              </NavLink>
+            </Link>
           ))}
         </Box>
         <IconButton
