@@ -85,7 +85,7 @@ const GetInvolvedSection = () => (
         </Heading>
         <Heading
           variant="section.subtitle"
-          sx={{ textAlign: ["center", null, "left"] }}
+          sx={{ textAlign: ["center", null, "left"], color: "lightGray" }}
         >
           There are many opportunities to collaborate with others in the
           Livepeer ecosystem on code both on the video side, and on the
