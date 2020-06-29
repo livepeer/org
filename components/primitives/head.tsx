@@ -1,5 +1,4 @@
 import NextHead from "next/head"
-import { useState, useEffect, useCallback } from "react"
 
 export type MetaType = {
   title?: string
@@ -28,37 +27,9 @@ const Head = ({ meta = {} }: Props) => {
     meta.title = `${meta.title} - Livepeer`
   }
 
-  const [prefersDark, setPrefersDark] = useState(false)
-
-  const handlePreferenceChange = useCallback((e) => {
-    setPrefersDark(e.matches)
-  }, [])
-
-  useEffect(() => {
-    const darkMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-    setPrefersDark(darkMediaQuery.matches)
-    if (darkMediaQuery.addEventListener) {
-      darkMediaQuery.addEventListener("change", handlePreferenceChange)
-    } else if (darkMediaQuery.addListener) {
-      darkMediaQuery.addListener(handlePreferenceChange)
-    }
-
-    return () => {
-      if (darkMediaQuery.removeEventListener) {
-        darkMediaQuery.removeEventListener("change", handlePreferenceChange)
-      } else if (darkMediaQuery.removeListener) {
-        darkMediaQuery.removeListener(handlePreferenceChange)
-      }
-    }
-  }, [])
-
   return (
     <NextHead>
-      <link
-        rel="icon"
-        type="image/png"
-        href={prefersDark ? "/favicon-white.png" : "/favicon.png"}
-      />
+      <link rel="icon" type="image/png" href="/favicon.png" />
       <title key="title">{meta.title}</title>
       <meta name="description" content={meta.description} />
 
