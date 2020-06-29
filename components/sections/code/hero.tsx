@@ -32,7 +32,7 @@ const CodeHero = () => (
           mb: ["32px", "40px"]
         }}
       >
-        <Heading variant="heading.1">
+        <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
           Livepeer <span sx={{ color: "primary" }}>❤</span> open source
         </Heading>
         <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
