@@ -1,5 +1,5 @@
 import { Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
-import { Divider } from "components/primitives/divider"
+import Divider from "components/primitives/divider"
 
 type Props = {
   title: React.ReactNode
@@ -33,8 +33,6 @@ const SectionLayout: React.FC<Props> = ({
     default:
       break
   }
-
-  console.log(titleColor)
 
   return (
     <Box sx={{ bg, color: titleColor }}>

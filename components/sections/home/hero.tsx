@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Text, Button, Box } from "theme-ui"
-import { Divider } from "components/primitives/divider"
+import Divider from "components/primitives/divider"
 
 const HomeHero = () => (
   <Box sx={{ bg: "muted" }}>
