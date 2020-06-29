@@ -35,8 +35,7 @@ const CardsSection = () => (
     background="muted"
   >
     <Grid
-      className="features-grid"
-      gap={[4, null, null, 4]}
+      gap={4}
       sx={{
         gridTemplateColumns: [
           "sm",
