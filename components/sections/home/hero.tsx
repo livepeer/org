@@ -14,10 +14,7 @@ const HomeHero = () => (
       }}
     >
       <Box sx={{ maxWidth: "4xl", mb: ["32px", "40px"] }}>
-        <Heading
-          variant="heading.1"
-          sx={{ fontSize: ["40px", "56px", "88px"] }}
-        >
+        <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
           The&nbsp;
           <Text as="span" variant="gradient">
             World's Open&nbsp;
