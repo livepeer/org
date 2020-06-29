@@ -40,13 +40,13 @@ const Head = ({ meta = {} }: Props) => {
       <meta property="og:description" content={meta.description} />
       <meta property="og:url" content={meta.url} />
       <meta property="og:site_name" content={meta.siteName} />
-      <meta property="og:image" content={meta.image} />
+      <meta property="og:image" content={`${meta.url}${meta.image}`} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:description" content={meta.description} />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:site" content={meta.twitterUsername} />
-      <meta name="twitter:image" content={meta.image} />
+      <meta name="twitter:image" content={`${meta.url}${meta.image}`} />
     </NextHead>
   )
 }
