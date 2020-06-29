@@ -41,7 +41,7 @@ const Head = ({ meta = {} }: Props) => {
       <meta property="og:site_name" content={meta.siteName} />
       <meta property="og:image" content={meta.image} />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:description" content={meta.description} />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:site" content={meta.twitterUsername} />
