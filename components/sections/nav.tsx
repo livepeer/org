@@ -147,7 +147,11 @@ const Nav = () => {
         >
           <Flex sx={{ flexDirection: "column" }}>
             {links.map((link) => (
-              <Link href={link.href} passHref>
+              <Link
+                key={`link-${link.label}-${link.href}`}
+                href={link.href}
+                passHref
+              >
                 <A
                   sx={{
                     textAlign: "center",
