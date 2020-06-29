@@ -1,0 +1,44 @@
+import { Flex, Box, Heading, Text } from "theme-ui"
+
+export type StatProps = {
+  title: string
+  label: string
+  color?: "text" | "gradient"
+}
+
+const Stat = ({ title, label, color = "text" }: StatProps) => (
+  <Box sx={{ width: "280px", height: "240px" }}>
+    <Flex
+      sx={{
+        mx: "auto",
+        bg: "background",
+        width: "140px",
+        height: "140px",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        boxShadow: "magical",
+        borderRadius: "md",
+        mb: 3
+      }}
+    >
+      <Heading
+        variant="heading.3"
+        sx={{
+          fontWeight: "bold",
+          position: "absolute",
+          variant: color === "gradient" ? "text.gradient" : "text",
+          whiteSpace: "nowrap",
+          fontSize: "64px"
+        }}
+      >
+        {title}
+      </Heading>
+    </Flex>
+    <Text variant="heading.5" sx={{ color: "text" }}>
+      {label}
+    </Text>
+  </Box>
+)
+
+export default Stat

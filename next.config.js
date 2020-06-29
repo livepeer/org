@@ -4,5 +4,5 @@ const withSvgr = require("next-svgr")
 
 module.exports = withPlugins([
   withSvgr,
-  [withMDX, { pageExtensions: ["js", "mdx"] }]
+  [withMDX, { pageExtensions: ["mdx", "tsx"] }]
 ])
