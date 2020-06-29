@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Box } from "theme-ui"
-import { Divider } from "components/primitives/divider"
+import Divider from "components/primitives/divider"
 
 const CodeHero = () => (
   <Box sx={{ color: "background", bg: "text", position: "relative" }}>
@@ -22,7 +22,8 @@ const CodeHero = () => (
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        pt: 6
+        pt: 6,
+        pb: "160px"
       }}
     >
       <Box

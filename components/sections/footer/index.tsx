@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Flex, Text } from "theme-ui"
-import { Divider } from "components/primitives/divider"
+import Divider from "components/primitives/divider"
 import FooterList, { FooterListProps } from "./list"
 import LogoAndEmail from "./logo-and-email"
 import PrefooterBanner from "./prefooter-banner"
