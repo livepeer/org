@@ -12,9 +12,10 @@ export type MetaType = {
 const defaultMeta: MetaType = {
   title: "Livepeer",
   description: "Lorem ipsum dolor sit amet.",
-  url: "https://livepeer.org",
+  url: "https://livepeer.basement.studio",
   siteName: "Livepeer",
-  image: "/OG.png"
+  image: "/OG.png",
+  twitterUsername: "@LivepeerOrg"
 }
 
 type Props = {
