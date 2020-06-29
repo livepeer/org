@@ -86,10 +86,13 @@ const Nav = ({ isDark = false }) => {
           }}
         >
           {links.map((link) => (
-            <Link href={link.href} as={link.asPath} passHref>
-              <NavLink key={`desktop-nav-link-${link.label}`}>
-                {link.label}
-              </NavLink>
+            <Link
+              key={`desktop-nav-link-${link.label}`}
+              href={link.href}
+              as={link.asPath}
+              passHref
+            >
+              <NavLink>{link.label}</NavLink>
             </Link>
           ))}
         </Box>
