@@ -11,6 +11,10 @@ const HomeHero = () => {
   const section = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if(!section.current) {
+      return
+    }
+
     const tl = gsap.timeline()
 
     tl.set(section.current, {
