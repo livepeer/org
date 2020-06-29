@@ -53,7 +53,7 @@ const OpenSourceSection = () => (
       py: "160px"
     }}
   >
-    <Button>View all</Button>
+    <Button sx={{ mt: -4 }}>View all</Button>
     <Divider isVertical isTransparent size={["56px", "72px"]} />
     <Grid
       gap={4}
