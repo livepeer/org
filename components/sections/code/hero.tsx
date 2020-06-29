@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Box } from "theme-ui"
 import Divider from "components/primitives/divider"
+import HeartSvg from "components/icons/heart"
 
 const CodeHero = () => (
   <Box sx={{ color: "background", bg: "text", position: "relative" }}>
@@ -33,7 +34,9 @@ const CodeHero = () => (
         }}
       >
         <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
-          Livepeer <span sx={{ color: "primary" }}>❤</span> open source
+          Livepeer <HeartSvg pushSx={{ width: ["35px", "62px"] }} />
+          <br />
+          open source
         </Heading>
         <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
         <Heading variant="section.subtitle" sx={{ color: "lightGray" }}>
