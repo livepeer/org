@@ -1,7 +1,5 @@
-import { Grid } from "theme-ui"
-import Stat, { StatProps } from "components/primitives/stat"
+import { StatProps } from "components/primitives/stat"
 import SectionLayout from "components/layouts/section"
-import Slider from "components/primitives/slider"
 import StatsGrid from "components/layouts/stats-grid"
 
 const stats: StatProps[] = [
@@ -46,7 +44,7 @@ const ByTheNumbersSection = () => (
       </>
     }
     titleLabel="Subtitle"
-    pushSx={{ pb: "160px" }}
+    pushSx={{ pb: ["80px", null, null, "160px"] }}
   >
     <StatsGrid stats={stats} />
   </SectionLayout>
