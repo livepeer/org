@@ -71,6 +71,7 @@ const ByTheNumbersSection = () => {
     tl.elementsEntrance([cards])
   }, [])
   return (
+    //@ts-ignore
     <SectionLayout
       background="muted"
       title="Livepeer by the numbers"

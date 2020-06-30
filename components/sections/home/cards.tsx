@@ -67,6 +67,7 @@ const CardsSection = () => {
     tl.elementsEntrance([cards])
   }, [])
   return (
+    //@ts-ignore
     <SectionLayout
       titleLabel="Subtitle"
       title="Let Livepeer do your video's work"

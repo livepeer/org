@@ -4,6 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 import SectionLayout from "components/layouts/section"
 import { Grid, Flex } from "theme-ui"
+
+gsap.registerPlugin(ScrollTrigger, SplitText)
+
 import IconLinkCard, {
   IconLinkProps
 } from "components/primitives/cards/icon-link"
@@ -109,6 +112,7 @@ const CommunitySection = () => {
     tl.elementsEntrance([cards])
   }, [])
   return (
+    //@ts-ignore
     <SectionLayout
       title="Community"
       titleLabel="Subtitle"
