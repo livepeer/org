@@ -11,7 +11,7 @@ type Props = {
   titleLabel?: ReactNode
 }
 
-export type Ref = HTMLDivElement
+type Ref = HTMLDivElement
 
 const SectionLayout = forwardRef<Ref, Props>(
   (
