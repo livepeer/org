@@ -1,13 +1,14 @@
-import { Flex, Box, Heading, Text } from "theme-ui"
+import { Flex, Box, Heading, Text, SxStyleProp } from "theme-ui"
 
 export type StatProps = {
   title: string
   label: string
   color?: "text" | "gradient"
+  pushSx?: SxStyleProp
 }
 
-const Stat = ({ title, label, color = "text" }: StatProps) => (
-  <Box sx={{ width: "280px", height: "240px" }}>
+const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
+  <Box sx={{ width: "280px", height: "240px", ...pushSx }}>
     <Flex
       sx={{
         mx: "auto",

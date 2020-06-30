@@ -5,6 +5,7 @@ import Footer from "components/sections/footer"
 import DevelopersHero from "components/sections/developers/hero"
 import PublicNetworkBanner from "components/sections/developers/public-network-banner"
 import HostedApiSection from "components/sections/developers/hosted-api"
+import IsOpenSourceSection from "components/sections/developers/is-open-source"
 
 const CodePage = () => (
   <>
@@ -14,6 +15,7 @@ const CodePage = () => (
       <DevelopersHero />
       <PublicNetworkBanner />
       <HostedApiSection />
+      <IsOpenSourceSection />
     </Box>
     <Footer />
   </>
