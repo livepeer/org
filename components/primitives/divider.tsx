@@ -8,7 +8,7 @@ type Props = {
   pushSx?: SxStyleProp
 }
 
-export const Divider: React.FC<Props> = ({
+const Divider: React.FC<Props> = ({
   size = "8",
   isVertical = false,
   isTransparent = false,
@@ -23,3 +23,5 @@ export const Divider: React.FC<Props> = ({
     }}
   />
 )
+
+export default Divider

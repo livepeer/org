@@ -11,7 +11,7 @@ import {
   FaTelegram,
   FaMedium
 } from "react-icons/fa"
-import { Divider } from "components/primitives/divider"
+import Divider from "components/primitives/divider"
 
 const links: IconLinkProps[] = [
   {
