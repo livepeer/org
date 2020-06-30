@@ -1,6 +1,24 @@
 /** @jsx jsx */
 import { jsx, Box, Container, Heading, Button } from "theme-ui"
 import Divider from "components/primitives/divider"
+import StatsGrid from "components/layouts/stats-grid"
+import { StatProps } from "components/primitives/stat"
+
+const stats: StatProps[] = [
+  {
+    title: "4.20.17",
+    label: "Date founded"
+  },
+  {
+    title: "42,201",
+    label: "Total GPUs on the network",
+    color: "gradient"
+  },
+  {
+    title: "600k",
+    label: "Current # of streams being transcoded"
+  }
+]
 
 const CoverImage = () => (
   <figure
@@ -40,7 +58,8 @@ const IsOpenSourceSection = () => (
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        py: "120px"
+        pt: "160px",
+        pb: [0, null, null, 5]
       }}
     >
       <Box
@@ -62,6 +81,7 @@ const IsOpenSourceSection = () => (
         </Heading>
         <Divider isTransparent isVertical size={["32px", "40px"]} />
         <Button>Explore the code</Button>
+        <StatsGrid pushSx={{ mt: 5 }} stats={stats} />
       </Box>
     </Container>
   </Box>
