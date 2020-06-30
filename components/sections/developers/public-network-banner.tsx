@@ -34,7 +34,8 @@ const PublicNetworkBanner = () => (
         position: "relative",
         overflow: "hidden",
         borderRadius: [0, null, null, "lg"],
-        boxShadow: "magical"
+        boxShadow: "magical",
+        zIndex: "general"
       }}
     >
       <Grid columns={[1, null, 2]} gap={4} sx={{ zIndex: "general" }}>

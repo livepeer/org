@@ -43,7 +43,7 @@ const CoverImage = () => (
         left: "50%",
         transform: "translateX(-50%)",
         background:
-          "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)"
+          "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)"
       }}
     />
   </figure>

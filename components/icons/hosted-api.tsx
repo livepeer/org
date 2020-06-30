@@ -146,7 +146,7 @@ const MobileHostedApiSvg = ({ pushSx }: Props) => (
     sx={pushSx}
   >
     <mask
-      id="mobile-hosted-api-svg-paint0_radial"
+      id="mobile-hosted-api-svg-mask0"
       mask-type="alpha"
       maskUnits="userSpaceOnUse"
       x="0"
@@ -160,7 +160,7 @@ const MobileHostedApiSvg = ({ pushSx }: Props) => (
         fill="url(#mobile-hosted-api-svg-paint0_radial)"
       />
     </mask>
-    <g mask="url(#mobile-hosted-api-svg-paint0_radial)">
+    <g mask="url(#mobile-hosted-api-svg-mask0)">
       <path
         d="M58.953 316.34L316.34 58.9531M316.34 58.9531L573.727 316.34M316.34 58.9531L58.953 -198.434"
         stroke="#E5E5E5"

@@ -31,7 +31,8 @@ const HostedApiSection = () => (
     pushSx={{ pt: [6, null, "80px"] }}
     headingContainerPushSx={{
       mb: 4,
-      "& > *": { textAlign: ["left", null, "center"] }
+      "& > div": { textAlign: ["left", null, "center"] },
+      "& > h2": { textAlign: ["left", null, "center"] }
     }}
   >
     <Box
