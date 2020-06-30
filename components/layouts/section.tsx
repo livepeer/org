@@ -1,5 +1,4 @@
 import { Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
-import Divider from "components/primitives/divider"
 
 type Props = {
   title: React.ReactNode
@@ -7,6 +6,7 @@ type Props = {
   titleLabel?: React.ReactNode
   background?: "muted" | "dark" | "black"
   pushSx?: SxStyleProp
+  headingContainerPushSx?: SxStyleProp
 }
 
 const SectionLayout: React.FC<Props> = ({
@@ -15,7 +15,8 @@ const SectionLayout: React.FC<Props> = ({
   subtitle,
   titleLabel,
   background,
-  pushSx
+  pushSx,
+  headingContainerPushSx
 }) => {
   let bg = "background"
   let titleColor = "text"
@@ -37,22 +38,30 @@ const SectionLayout: React.FC<Props> = ({
   return (
     <Box sx={{ bg, color: titleColor }}>
       <Container variant="section" sx={pushSx}>
-        {titleLabel && (
-          <Text variant="section.titleLabel" sx={{ color: titleColor }}>
-            {titleLabel}
-          </Text>
-        )}
-        {title && (
-          <Heading variant="section.title" sx={{ color: titleColor }}>
-            {title}
-          </Heading>
-        )}
-        {subtitle && (
-          <Heading variant="section.subtitle" sx={{ color: subTitleColor }}>
-            {subtitle}
-          </Heading>
-        )}
-        <Divider isVertical isTransparent size={["56px", "72px"]} />
+        <Box
+          sx={{
+            zIndex: "general",
+            position: "relative",
+            mb: ["56px", "72px"],
+            ...headingContainerPushSx
+          }}
+        >
+          {titleLabel && (
+            <Text variant="section.titleLabel" sx={{ color: titleColor }}>
+              {titleLabel}
+            </Text>
+          )}
+          {title && (
+            <Heading variant="section.title" sx={{ color: titleColor }}>
+              {title}
+            </Heading>
+          )}
+          {subtitle && (
+            <Heading variant="section.subtitle" sx={{ color: subTitleColor }}>
+              {subtitle}
+            </Heading>
+          )}
+        </Box>
         {children}
       </Container>
     </Box>

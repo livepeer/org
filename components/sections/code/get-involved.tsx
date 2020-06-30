@@ -7,16 +7,17 @@ import {
   FiMessageCircle,
   FiPlay
 } from "react-icons/fi"
+import ListItem, { ListItemProps } from "components/primitives/list-item"
 
 const linkSx: SxStyleProp = {
   color: "primary",
   fontWeight: 600
 }
 
-const links = [
+const listItems: ListItemProps[] = [
   {
     icon: <FiCode />,
-    label: (
+    children: (
       <>
         Read the <A sx={linkSx}>Livepeer.js</A> contributor guidelines.
       </>
@@ -24,7 +25,7 @@ const links = [
   },
   {
     icon: <FiGithub />,
-    label: (
+    children: (
       <>
         Look for “good first issues” in <A sx={linkSx}>Livepeer.js</A>{" "}
         (Javascript), <A sx={linkSx}>LPMS</A> (video development in C or Go), or{" "}
@@ -34,7 +35,7 @@ const links = [
   },
   {
     icon: <FiBook />,
-    label: (
+    children: (
       <>
         View the <A sx={linkSx}>Grant Proposals</A> to see application concepts
         with some funding attached.
@@ -43,7 +44,7 @@ const links = [
   },
   {
     icon: <FiMessageCircle />,
-    label: (
+    children: (
       <>
         Chat with the development team in <A sx={linkSx}>Discord</A> - we’re a
         welcoming bunch, so don’t be shy. Ask how you can get involved.
@@ -52,7 +53,7 @@ const links = [
   },
   {
     icon: <FiPlay />,
-    label: (
+    children: (
       <>
         Looking to build a video application using Livepeer? Check out our{" "}
         <A sx={linkSx}>open developer docs</A> or{" "}
@@ -94,31 +95,17 @@ const GetInvolvedSection = () => (
       </Box>
       <Box
         sx={{
-          ".link:not(:last-of-type)": {
+          ".list-item:not(:last-of-type)": {
             mb: "40px"
           }
         }}
       >
-        {links.map((link, i) => (
-          <Box
-            className="link"
+        {listItems.map((item, i) => (
+          <ListItem
             key={`get-involved-link-${i}`}
-            sx={{ display: "flex" }}
-          >
-            <i
-              sx={{
-                color: "primary",
-                fontSize: 5,
-                width: "24px",
-                height: "24px",
-                mr: 4,
-                variant: "layout.flexCenter"
-              }}
-            >
-              {link.icon}
-            </i>
-            <Text variant="normal">{link.label}</Text>
-          </Box>
+            className="list-item"
+            {...item}
+          />
         ))}
       </Box>
     </Grid>
