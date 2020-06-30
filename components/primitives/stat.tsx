@@ -7,7 +7,7 @@ export type StatProps = {
 }
 
 const Stat = ({ title, label, color = "text" }: StatProps) => (
-  <Box sx={{ width: "280px", height: "240px" }}>
+  <Box sx={{ width: "280px", height: "240px" }} className="c-animate">
     <Flex
       sx={{
         mx: "auto",
