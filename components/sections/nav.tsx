@@ -41,7 +41,7 @@ const links: LinkType[] = [
 
 const navHeight = "72px"
 
-const Nav = () => {
+const Nav = ({ isDark = false }) => {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
 
@@ -64,7 +64,8 @@ const Nav = () => {
         position: "sticky",
         top: 0,
         zIndex: "header",
-        bg: "muted",
+        bg: isDark ? "black" : "muted",
+        color: isDark ? "background" : "text",
         transition: "box-shadow .3s",
         boxShadow: hasScrolled ? "magical" : "none"
       }}
@@ -77,7 +78,7 @@ const Nav = () => {
           height: navHeight
         }}
       >
-        <LivepeerLogo />
+        <LivepeerLogo isDark={isDark} />
         <Box
           sx={{
             "a:not(:last-of-type)": { mr: 5 },
@@ -94,7 +95,7 @@ const Nav = () => {
           sx={{
             display: ["block", "none"],
             fontSize: 6,
-            color: "text"
+            color: isDark ? "background" : "text"
           }}
           onClick={() => setMobileMenuIsOpen(true)}
         >
@@ -108,8 +109,8 @@ const Nav = () => {
           height: mobileMenuIsOpen ? "100vh" : 0,
           transition: "height .2s",
           overflow: "hidden",
-          bg: "background",
-          color: "text",
+          bg: isDark ? "black" : "background",
+          color: isDark ? "background" : "text",
           width: "100%",
           zIndex: "dropdown"
         }}
@@ -122,12 +123,12 @@ const Nav = () => {
             height: navHeight
           }}
         >
-          <LivepeerLogo />
+          <LivepeerLogo isDark={isDark} />
           <IconButton
             sx={{
               display: ["block", "none"],
               fontSize: 6,
-              color: "text"
+              color: isDark ? "background" : "text"
             }}
             onClick={() => setMobileMenuIsOpen(false)}
           >
@@ -155,8 +156,9 @@ const Nav = () => {
                 <A
                   sx={{
                     textAlign: "center",
-                    fontSize: 6,
-                    fontWeight: 600
+                    fontSize: 7,
+                    fontWeight: 600,
+                    color: isDark ? "background" : "text"
                   }}
                 >
                   {link.label}
