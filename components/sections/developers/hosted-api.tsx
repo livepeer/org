@@ -1,6 +1,6 @@
 import { Button, Box, Flex, Grid } from "theme-ui"
 import SectionLayout from "components/layouts/section"
-import HostedApiSvg from "components/icons/hosted-api"
+import HostedApiSvg, { MobileHostedApiSvg } from "components/icons/hosted-api"
 import ListItem, { ListItemProps } from "components/primitives/list-item"
 import { FiCheckCircle } from "react-icons/fi"
 
@@ -28,12 +28,36 @@ const HostedApiSection = () => (
     title="A Hosted API"
     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     background="muted"
-    headingContainerPushSx={{ mb: 4 }}
+    pushSx={{ pt: [6, null, "80px"] }}
+    headingContainerPushSx={{
+      mb: 4,
+      "& > *": { textAlign: ["left", null, "center"] }
+    }}
   >
+    <Box
+      sx={{
+        position: "absolute",
+        height: "376px",
+        width: "376px",
+        overflow: "visible",
+        display: ["block", null, "none"],
+        top: "-140px",
+        left: "-140px"
+      }}
+    >
+      <MobileHostedApiSvg
+        pushSx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)"
+        }}
+      />
+    </Box>
     <Flex
       sx={{
         flexDirection: ["column-reverse", null, "column"],
-        alignItems: "center"
+        alignItems: ["flex-start", null, "center"]
       }}
     >
       <Button sx={{ width: "fit-content", zIndex: "general" }}>

@@ -136,4 +136,69 @@ const HostedApiSvg = ({ pushSx }: Props) => (
   </svg>
 )
 
+const MobileHostedApiSvg = ({ pushSx }: Props) => (
+  <svg
+    width="376"
+    height="376"
+    viewBox="0 0 376 376"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    sx={pushSx}
+  >
+    <mask
+      id="mobile-hosted-api-svg-paint0_radial"
+      mask-type="alpha"
+      maskUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="376"
+      height="376"
+    >
+      <rect
+        width="376"
+        height="376"
+        fill="url(#mobile-hosted-api-svg-paint0_radial)"
+      />
+    </mask>
+    <g mask="url(#mobile-hosted-api-svg-paint0_radial)">
+      <path
+        d="M58.953 316.34L316.34 58.9531M316.34 58.9531L573.727 316.34M316.34 58.9531L58.953 -198.434"
+        stroke="#E5E5E5"
+      />
+      <path
+        d="M316.387 58.7736L573.774 -198.613M573.774 -198.613L831.161 58.7736M573.774 -198.613L316.387 -456"
+        stroke="#E5E5E5"
+      />
+      <path
+        d="M316.34 316.34L58.9531 58.9528M58.9531 58.9528L316.34 -198.434M58.9531 58.9528L-198.434 316.34"
+        stroke="#E5E5E5"
+      />
+      <path d="M187.5 -70V402.5" stroke="#E5E5E5" />
+      <path d="M316 -70V402.5" stroke="#E5E5E5" />
+    </g>
+    <rect x="156" y="156" width="64" height="64" rx="32" fill="#00EB88" />
+    <path
+      d="M196 185.333H194.32C193.821 183.401 192.79 181.648 191.345 180.272C189.899 178.897 188.097 177.954 186.143 177.552C184.188 177.15 182.16 177.304 180.289 177.996C178.418 178.689 176.778 179.893 175.557 181.471C174.335 183.049 173.581 184.938 173.38 186.923C173.178 188.908 173.538 190.91 174.417 192.701C175.297 194.492 176.661 196.001 178.355 197.055C180.049 198.11 182.005 198.668 184 198.666H196C197.768 198.666 199.464 197.964 200.714 196.714C201.964 195.463 202.667 193.768 202.667 192C202.667 190.232 201.964 188.536 200.714 187.286C199.464 186.035 197.768 185.333 196 185.333Z"
+      stroke="#131418"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <radialGradient
+        id="mobile-hosted-api-svg-paint0_radial"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(188 188) rotate(90) scale(188)"
+      >
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+)
+
 export default HostedApiSvg
+export { MobileHostedApiSvg }
