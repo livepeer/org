@@ -1,6 +1,8 @@
 import { Grid } from "theme-ui"
 import Stat, { StatProps } from "components/primitives/stat"
 import SectionLayout from "components/layouts/section"
+import Slider from "components/primitives/slider"
+import StatsGrid from "components/layouts/stats-grid"
 
 const stats: StatProps[] = [
   {
@@ -46,23 +48,7 @@ const ByTheNumbersSection = () => (
     titleLabel="Subtitle"
     pushSx={{ pb: "160px" }}
   >
-    <Grid
-      columns={[6, null, null, "repeat(3, fit-content(260px))"]}
-      gap={["100px", null, null, "80px", "120px"]}
-      sx={{
-        overflowX: "auto",
-        mx: "auto",
-        width: ["100vw", null, null, "100%"],
-        left: [-3, null, null, 0],
-        px: [4, null, null, 0],
-        position: "relative",
-        justifyContent: ["flex-start", null, null, "center"]
-      }}
-    >
-      {stats.map((stat) => (
-        <Stat key={`stat-${stat.title}-${stat.label}`} {...stat} />
-      ))}
-    </Grid>
+    <StatsGrid stats={stats} />
   </SectionLayout>
 )
 
