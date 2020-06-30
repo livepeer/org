@@ -19,6 +19,7 @@ const IconCard = ({
   link
 }: IconCardProps) => (
   <Card
+    className="c-animate"
     sx={{
       height: "526px",
       display: "flex",

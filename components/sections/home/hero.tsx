@@ -11,7 +11,7 @@ const HomeHero = () => {
   const section = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if(!section.current) {
+    if (!section.current) {
       return
     }
 
@@ -22,7 +22,7 @@ const HomeHero = () => {
     })
 
     //@ts-ignore
-    tl.sectionFadeIn(section.current, { duration: DURATION })
+    tl.sectionEntrance(section.current, { duration: DURATION })
   }, [])
   return (
     <Box sx={{ bg: "muted" }}>

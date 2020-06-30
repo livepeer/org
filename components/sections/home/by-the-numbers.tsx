@@ -1,6 +1,12 @@
+import React, { useRef, useEffect } from "react"
 import { Grid } from "theme-ui"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { SplitText } from "gsap/SplitText"
 import Stat, { StatProps } from "components/primitives/stat"
 import SectionLayout from "components/layouts/section"
+
+gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const stats: StatProps[] = [
   {
@@ -32,38 +38,74 @@ const stats: StatProps[] = [
   }
 ]
 
-const ByTheNumbersSection = () => (
-  <SectionLayout
-    background="muted"
-    title="Livepeer by the numbers"
-    subtitle={
-      <>
-        We’re proud of the numbers and worked hard to get here.
-        <br />
-        Celebrate with us.
-      </>
+const ByTheNumbersSection = () => {
+  const section = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!section.current) {
+      return
     }
-    titleLabel="Subtitle"
-    pushSx={{ pb: "160px" }}
-  >
-    <Grid
-      columns={[6, null, null, "repeat(3, fit-content(260px))"]}
-      gap={["100px", null, null, "80px", "120px"]}
-      sx={{
-        overflowX: "auto",
-        mx: "auto",
-        width: ["100vw", null, null, "100%"],
-        left: [-3, null, null, 0],
-        px: [4, null, null, 0],
-        position: "relative",
-        justifyContent: ["flex-start", null, null, "center"]
-      }}
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section.current
+      }
+    })
+
+    const items = section.current.querySelectorAll(".h-animate")
+    const cards = section.current.querySelectorAll(".c-animate")
+
+    const split = new SplitText(items, {
+      type: "lines"
+    })
+
+    // Set overflow text
+    tl.set([items], { overflow: "hidden" })
+    tl.add(gsap.effects.sectionHide(section.current))
+    tl.add(gsap.effects.textHide([split.lines]))
+    //@ts-ignore
+    tl.sectionEntrance(section.current)
+    //@ts-ignore
+    tl.textEntrance([split.lines])
+    //@ts-ignore
+    tl.elementsEntrance([cards])
+  }, [])
+  return (
+    <SectionLayout
+      background="muted"
+      title="Livepeer by the numbers"
+      subtitle={
+        <>
+          We’re proud of the numbers and worked hard to get here.
+          <br />
+          Celebrate with us.
+        </>
+      }
+      titleLabel="Subtitle"
+      pushSx={{ pb: "160px" }}
+      className="hide__section"
+      ref={section}
     >
-      {stats.map((stat) => (
-        <Stat key={`stat-${stat.title}-${stat.label}`} {...stat} />
-      ))}
-    </Grid>
-  </SectionLayout>
-)
+      <Grid
+        columns={[6, null, null, "repeat(3, fit-content(260px))"]}
+        gap={["100px", null, null, "80px", "120px"]}
+        sx={{
+          justifyContent: ["flex-start", null, null, "center"],
+          left: [-3, null, null, 0],
+          mx: "auto",
+          overflowX: "auto",
+          overflowY: "hidden",
+          position: "relative",
+          px: [4, null, null, 0],
+          width: ["100vw", null, null, "100%"]
+        }}
+      >
+        {stats.map((stat) => (
+          <Stat key={`stat-${stat.title}-${stat.label}`} {...stat} />
+        ))}
+      </Grid>
+    </SectionLayout>
+  )
+}
 
 export default ByTheNumbersSection

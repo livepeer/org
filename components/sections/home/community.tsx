@@ -1,3 +1,7 @@
+import React, { useRef, useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { SplitText } from "gsap/SplitText"
 import SectionLayout from "components/layouts/section"
 import { Grid, Flex } from "theme-ui"
 import IconLinkCard, {
@@ -72,56 +76,97 @@ const links: IconLinkProps[] = [
   }
 ]
 
-const CommunitySection = () => (
-  <SectionLayout
-    title="Community"
-    titleLabel="Subtitle"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    pushSx={{ pt: "160px" }}
-  >
-    <Grid
-      columns={"repeat(3, 372px)"}
-      gap={[3, null, null, null, 0]}
-      sx={{
-        mx: "auto",
-        justifyContent: "center",
-        gridTemplateColumns: [
-          "372px",
-          null,
-          null,
-          null,
-          ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`
-        ]
-      }}
+const CommunitySection = () => {
+  const section = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!section.current) {
+      return
+    }
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section.current
+      }
+    })
+
+    const items = section.current.querySelectorAll(".h-animate")
+    const cards = section.current.querySelectorAll(".c-animate")
+
+    const split = new SplitText(items, {
+      type: "lines"
+    })
+
+    // Set overflow text
+    tl.set([items], { overflow: "hidden" })
+    tl.add(gsap.effects.sectionHide(section.current))
+    tl.add(gsap.effects.textHide([split.lines]))
+    //@ts-ignore
+    tl.sectionEntrance(section.current)
+    //@ts-ignore
+    tl.textEntrance([split.lines])
+    //@ts-ignore
+    tl.elementsEntrance([cards])
+  }, [])
+  return (
+    <SectionLayout
+      title="Community"
+      titleLabel="Subtitle"
+      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      pushSx={{ pt: "160px" }}
+      className="hide__section"
+      ref={section}
     >
-      {links.map((link, i) => {
-        if (i === 1 || i === 4) {
+      <Grid
+        columns={"repeat(3, 372px)"}
+        gap={[3, null, null, null, 0]}
+        sx={{
+          mx: "auto",
+          justifyContent: "center",
+          gridTemplateColumns: [
+            "372px",
+            null,
+            null,
+            null,
+            ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`
+          ]
+        }}
+      >
+        {links.map((link, i) => {
+          if (i === 1 || i === 4) {
+            return (
+              <Flex key={`icon-link-${link.href}`}>
+                <Divider
+                  isVertical
+                  size="72px"
+                  pushSx={{
+                    mx: 3,
+                    display: ["none", null, null, null, "block"]
+                  }}
+                />
+                <IconLinkCard pushSx={{ width: "372px" }} {...link} />
+                <Divider
+                  isVertical
+                  size="72px"
+                  pushSx={{
+                    mx: 3,
+                    display: ["none", null, null, null, "block"]
+                  }}
+                />
+              </Flex>
+            )
+          }
           return (
-            <Flex key={`icon-link-${link.href}`}>
-              <Divider
-                isVertical
-                size="72px"
-                pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
-              />
-              <IconLinkCard pushSx={{ width: "372px" }} {...link} />
-              <Divider
-                isVertical
-                size="72px"
-                pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
-              />
-            </Flex>
+            <IconLinkCard
+              key={`icon-link-${link.href}`}
+              pushSx={{ width: "372px" }}
+              {...link}
+            />
           )
-        }
-        return (
-          <IconLinkCard
-            key={`icon-link-${link.href}`}
-            pushSx={{ width: "372px" }}
-            {...link}
-          />
-        )
-      })}
-    </Grid>
-  </SectionLayout>
-)
+        })}
+      </Grid>
+    </SectionLayout>
+  )
+}
 
 export default CommunitySection
