@@ -16,6 +16,7 @@ export type StatusLinkCardProps = {
   }
   isDark?: boolean
   pushSx?: SxStyleProp
+  className?: string
 }
 
 const linkSx = {
@@ -32,7 +33,8 @@ const StatusLinkCard = ({
   description,
   link,
   isDark = false,
-  pushSx
+  pushSx,
+  className
 }: StatusLinkCardProps) => {
   const linkChildren = useMemo(
     () => (
@@ -82,6 +84,7 @@ const StatusLinkCard = ({
         justifyContent: "space-between",
         ...pushSx
       }}
+      className={className}
     >
       <Box>
         <Heading
