@@ -45,7 +45,7 @@ const SliderCard = ({
     if (isActive) {
       timer.current = setInterval(() => {
         const newProgress = progress + 0.01
-        if (newProgress >= 1) {
+        if (newProgress > 1.05) {
           if (!isTransitioning) {
             nextSlide()
             setIsTransitioning(true)
