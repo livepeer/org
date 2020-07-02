@@ -23,7 +23,7 @@ type LinkType = {
 const links: LinkType[] = [
   {
     label: "Participants",
-    href: "/"
+    href: "/participants"
   },
   {
     label: "Developers",
