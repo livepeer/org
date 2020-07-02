@@ -253,6 +253,9 @@ const theme = {
     },
     a: {
       color: "text"
+    },
+    progress: {
+      height: "1px"
     }
   }
 }
