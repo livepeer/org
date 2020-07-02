@@ -4,6 +4,7 @@ import StatusLinkCard, {
   StatusLinkCardProps
 } from "components/primitives/cards/status-link"
 import Divider from "components/primitives/divider"
+import KeenSliderGrid from "components/layouts/keen-slider-grid"
 
 const cards: StatusLinkCardProps[] = [
   {
@@ -55,6 +56,18 @@ const OpenSourceSection = () => (
     headingContainerPushSx={{ mb: 4 }}
   >
     <Button>View all</Button>
+    <Divider isVertical isTransparent size={["56px", "72px"]} />
+    <KeenSliderGrid>
+      {cards.map((card) => (
+        <StatusLinkCard
+          key={`card-${card.title}`}
+          pushSx={{ height: ["300px", "342px"] }}
+          className="keen-slider__slide"
+          isDark
+          {...card}
+        />
+      ))}
+    </KeenSliderGrid>
     <Divider isVertical isTransparent size={["56px", "72px"]} />
     <Grid
       gap={4}
