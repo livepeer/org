@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import { Box, Card, Heading, Text, Progress } from "theme-ui"
+import { Box, Card, Heading, Text, Progress, SxStyleProp } from "theme-ui"
 import CardLink, { CardLinkProps } from "components/primitives/links"
 
 export type SliderCardProps = {
@@ -11,6 +11,8 @@ export type SliderCardProps = {
   moveToMySlide?: () => void
   progress?: number
   setProgress?: (n: number) => void
+  className?: string
+  pushSx?: SxStyleProp
 }
 
 const SliderCard = ({
@@ -21,7 +23,9 @@ const SliderCard = ({
   nextSlide,
   progress,
   setProgress,
-  moveToMySlide
+  moveToMySlide,
+  className,
+  pushSx
 }: SliderCardProps) => {
   const timer = useRef<NodeJS.Timeout>()
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -53,12 +57,14 @@ const SliderCard = ({
         bg: "transparent",
         color: "text",
         p: 0,
-        border: "none"
+        border: "none",
+        ...pushSx
       }}
+      className={className}
     >
       <Progress
         value={!isActive ? 0 : progress}
-        sx={{ mb: 4, transition: "width .01s ease" }}
+        sx={{ mb: [3, null, null, 4], transition: "width .01s ease" }}
       />
       <Box
         sx={{
