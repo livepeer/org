@@ -64,7 +64,7 @@ const SliderCard = ({
     >
       <Progress
         value={!isActive ? 0 : progress}
-        sx={{ mb: [3, null, null, 4], transition: "width .01s ease" }}
+        sx={{ mb: [3, "40px"], transition: "width .01s ease" }}
       />
       <Box
         sx={{
@@ -80,7 +80,7 @@ const SliderCard = ({
             variant="heading.5"
             sx={{
               textAlign: "left",
-              my: 3,
+              mb: 3,
               color: isActive ? "background" : "lightGray",
               transition: "color .2s"
             }}
