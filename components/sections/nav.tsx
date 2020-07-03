@@ -23,7 +23,7 @@ type LinkType = {
 const links: LinkType[] = [
   {
     label: "Participants",
-    href: "/"
+    href: "/participants"
   },
   {
     label: "Developers",
@@ -92,7 +92,7 @@ const Nav = ({ isDark = false }) => {
               as={link.asPath}
               passHref
             >
-              <NavLink>{link.label}</NavLink>
+              <NavLink data-dark={isDark}>{link.label}</NavLink>
             </Link>
           ))}
         </Box>

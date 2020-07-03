@@ -203,7 +203,15 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500
+      fontWeight: 500,
+      transition: "background .15s",
+      "&:hover": {
+        bg: "gradient.to"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(0, 235, 136, .5)",
+        outline: "none"
+      }
     },
     secondary: {
       color: "background",
@@ -212,7 +220,15 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500
+      fontWeight: 500,
+      transition: "opacity .15s",
+      "&:hover": {
+        opacity: 0.82
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
+        outline: "none"
+      }
     },
     icon: {
       p: 2,
@@ -228,10 +244,37 @@ const theme = {
       borderRadius: "md",
       bg: "background",
       border: "1px solid",
-      borderColor: "ultraLightGray"
+      borderColor: "ultraLightGray",
+      overflow: "hidden"
     }
   },
-  links: {},
+  links: {
+    nav: {
+      transition: "color .1s",
+      color: "text",
+      ":hover": {
+        color: "secondary"
+      },
+      ":focus": {
+        color: "text",
+        ":hover": {
+          color: "secondary"
+        }
+      },
+      '&[data-dark="true"]': {
+        color: "background",
+        ":hover": {
+          color: "primary"
+        },
+        ":focus": {
+          color: "background",
+          ":hover": {
+            color: "primary"
+          }
+        }
+      }
+    }
+  },
   forms: {
     input: {
       bg: "background",
@@ -241,6 +284,10 @@ const theme = {
       height: 12,
       "&::placeholder": {
         color: "gray"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
+        outline: "none"
       }
     }
   },
@@ -252,7 +299,19 @@ const theme = {
       bg: "background"
     },
     a: {
-      color: "text"
+      color: "text",
+      ":hover": {
+        color: "secondary"
+      },
+      "&[data-dark]": {
+        color: "background",
+        ":hover": {
+          color: "primary"
+        }
+      }
+    },
+    progress: {
+      height: "1px"
     }
   }
 }
