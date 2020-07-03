@@ -14,7 +14,7 @@ const DevelopersHero = () => (
         pt: 0
       }}
     >
-      <Grid variant="layout.section" gap={5} columns={[1, null, 2]} sx={{}}>
+      <Grid variant="layout.section" gap={5} columns={[1, null, 2]}>
         <Box>
           <i
             sx={{
