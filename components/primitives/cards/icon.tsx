@@ -8,6 +8,7 @@ export type IconCardProps = {
   description: string
   linkProps: CardLinkProps
   titleLabel?: string
+  className?: string
 }
 
 const IconCard = ({
@@ -15,9 +16,11 @@ const IconCard = ({
   title,
   description,
   titleLabel = "For",
-  linkProps
+  linkProps,
+  className
 }: IconCardProps) => (
   <Card
+    className={className}
     sx={{
       height: "526px",
       display: "flex",

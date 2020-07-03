@@ -228,7 +228,8 @@ const theme = {
       borderRadius: "md",
       bg: "background",
       border: "1px solid",
-      borderColor: "ultraLightGray"
+      borderColor: "ultraLightGray",
+      overflow: "hidden"
     }
   },
   links: {},

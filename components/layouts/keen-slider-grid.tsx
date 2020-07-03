@@ -87,13 +87,15 @@ const KeenSliderGrid: React.FC<Props> = ({
       }}
     >
       {Children.map(children, (child) => {
-        // Add the keen-slider__slide className to childs
+        // Add the keen-slider__slide className to children
         if (isValidElement(child)) {
           return {
             ...child,
             props: {
               ...child.props,
-              className: `${child.props.className} keen-slider__slide`
+              className: `${
+                child.props.className ? `${child.props.className} ` : ""
+              }keen-slider__slide`
             }
           }
         }
