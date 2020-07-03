@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import { jsx, Card, Box, Heading, Text, Link as A } from "theme-ui"
-import Link from "next/link"
-import { FiArrowRight } from "react-icons/fi"
+import { jsx, Card, Box, Heading, Text } from "theme-ui"
+import CardLink, { CardLinkProps } from "../links"
 
 export type IconCardProps = {
   icon: React.ReactNode
   title: React.ReactNode
   description: string
-  link: { label: string; href: string; asPath?: string }
+  linkProps: CardLinkProps
   titleLabel?: string
+  className?: string
 }
 
 const IconCard = ({
@@ -16,9 +16,11 @@ const IconCard = ({
   title,
   description,
   titleLabel = "For",
-  link
+  linkProps,
+  className
 }: IconCardProps) => (
   <Card
+    className={className}
     sx={{
       height: "526px",
       display: "flex",
@@ -50,20 +52,7 @@ const IconCard = ({
       </Heading>
       <Text variant="normal">{description}</Text>
     </div>
-    <Link href={link.href} as={link.asPath} passHref>
-      <A
-        sx={{
-          variant: "text.small",
-          fontWeight: 600,
-          color: "secondary",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center"
-        }}
-      >
-        {link.label} <FiArrowRight size="22px" />
-      </A>
-    </Link>
+    <CardLink {...linkProps} />
   </Card>
 )
 
