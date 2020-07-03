@@ -1,5 +1,34 @@
 import SectionLayout from "components/layouts/section"
 import { Link as A } from "theme-ui"
+import ImageCard, { ImageCardProps } from "components/primitives/cards/image"
+import KeenSliderGrid from "components/layouts/keen-slider-grid"
+
+const cards: ImageCardProps[] = [
+  {
+    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
+    footnote: "Mar 12,2020",
+    linkProps: {
+      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
+    },
+    image: { src: "/images/misc/coworking.png" }
+  },
+  {
+    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
+    footnote: "Mar 12,2020",
+    linkProps: {
+      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
+    },
+    image: { src: "/images/misc/coworking.png" }
+  },
+  {
+    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
+    footnote: "Mar 12,2020",
+    linkProps: {
+      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
+    },
+    image: { src: "/images/misc/coworking.png" }
+  }
+]
 
 const HaveACallSection = () => (
   <SectionLayout
@@ -18,7 +47,11 @@ const HaveACallSection = () => (
       </>
     }
   >
-    Content
+    <KeenSliderGrid>
+      {cards.map((c) => (
+        <ImageCard key={`have-a-call-image-card-${c.title}`} {...c} />
+      ))}
+    </KeenSliderGrid>
   </SectionLayout>
 )
 
