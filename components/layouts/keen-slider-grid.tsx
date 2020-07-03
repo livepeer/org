@@ -23,7 +23,9 @@ type Props = {
 const keenSliderGridDefaultBreakpoints: Breakpoint[] = [
   { value: "320px", slidesPerView: 1 },
   { value: "664px", slidesPerView: 2 },
-  { value: "1152px", slidesPerView: 3 }
+  { value: "1152px", slidesPerView: 3 },
+  { value: "1552px", slidesPerView: 4 },
+  { value: "1852px", slidesPerView: 5 }
 ]
 
 const getMedia = (value: string) => `(min-width: ${value})`
@@ -48,8 +50,22 @@ const KeenSliderGrid: React.FC<Props> = ({
       ({ value }) => window.matchMedia(getMedia(value)).matches
     )
     const last = matches[matches.length - 1]
-    if (last) setSlidesPerView(last.slidesPerView)
-  }, [breakpoints])
+    if (last) {
+      setSlidesPerView(last.slidesPerView)
+      if (sliderRef.current) {
+        if (last.slidesPerView > 3) {
+          const addedWidth = (last.slidesPerView - 3) * 25
+          const newWidth = `${100 + addedWidth}%`
+          const newLeft = `-${addedWidth / 2}%`
+          sliderRef.current.style.width = newWidth
+          sliderRef.current.style.left = newLeft
+        } else {
+          sliderRef.current.style.width = "100%"
+          sliderRef.current.style.left = "0"
+        }
+      }
+    }
+  }, [breakpoints, sliderRef])
 
   useEffect(() => {
     handleScreenSizeChange()
