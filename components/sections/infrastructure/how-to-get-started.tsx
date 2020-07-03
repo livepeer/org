@@ -10,7 +10,7 @@ import {
 import ListItem, { ListItemProps } from "components/primitives/list-item"
 
 const linkSx: SxStyleProp = {
-  color: "primary",
+  color: "secondary",
   fontWeight: 600
 }
 
@@ -63,8 +63,8 @@ const listItems: ListItemProps[] = [
   }
 ]
 
-const GetInvolvedSection = () => (
-  <Box sx={{ bg: "text", color: "background" }}>
+const HowToGetStartedSection = () => (
+  <Box>
     <Grid
       variant="layout.section"
       gap={5}
@@ -72,25 +72,17 @@ const GetInvolvedSection = () => (
       sx={{ pt: ["80px", null, null, "160px"] }}
     >
       <Box>
-        <Text
-          variant="section.titleLabel"
-          sx={{ textAlign: ["center", null, "left"] }}
-        >
-          Collaborate
-        </Text>
         <Heading
           variant="section.title"
           sx={{ textAlign: ["center", null, "left"] }}
         >
-          Get involved
+          How to get started
         </Heading>
         <Heading
           variant="section.subtitle"
-          sx={{ textAlign: ["center", null, "left"], color: "lightGray" }}
+          sx={{ textAlign: ["center", null, "left"] }}
         >
-          There are many opportunities to collaborate with others in the
-          Livepeer ecosystem on code both on the video side, and on the
-          blockchain side.
+          Become an infrastructure operator in four steps.
         </Heading>
       </Box>
       <Box
@@ -112,4 +104,4 @@ const GetInvolvedSection = () => (
   </Box>
 )
 
-export default GetInvolvedSection
+export default HowToGetStartedSection

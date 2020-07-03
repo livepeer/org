@@ -4,7 +4,7 @@ import BlockchainSvg from "components/icons/blockchain"
 
 const HowVideoMiningWorksSection = () => (
   <Box sx={{ bg: "text", position: "relative", zIndex: "general" }}>
-    <Container variant="section" sx={{ py: "160px" }}>
+    <Container variant="section" sx={{ py: ["80px", null, null, "160px"] }}>
       <Grid columns={[1, null, 2]} gap={4} sx={{ alignItems: "center" }}>
         <Box>
           <Heading
