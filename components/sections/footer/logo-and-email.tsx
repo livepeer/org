@@ -17,7 +17,14 @@ const LogoAndEmail = ({ pushSx, pushLogoSx, pushEmailSx }: Props) => (
     }}
   >
     <LivepeerLogo isDark pushSx={{ mr: 4, ...pushLogoSx }} />
-    <A href="mailto:contact@livepeer.org" sx={pushEmailSx} color="primary">
+    <A
+      href="mailto:contact@livepeer.org"
+      sx={{
+        color: "primary",
+        "&:hover": { color: "gradient.to" },
+        ...pushEmailSx
+      }}
+    >
       contact@livepeer.org
     </A>
   </Box>

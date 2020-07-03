@@ -35,10 +35,10 @@ const FooterList = ({ title, items }: FooterListProps) => (
         >
           <A
             sx={{
-              color: "background",
               width: "fit-content",
               textAlign: ["center", null, null, "left"]
             }}
+            data-dark
           >
             {item.label}
           </A>

@@ -207,6 +207,10 @@ const theme = {
       transition: "background .15s",
       "&:hover": {
         bg: "gradient.to"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(0, 235, 136, .5)",
+        outline: "none"
       }
     },
     secondary: {
@@ -220,6 +224,10 @@ const theme = {
       transition: "opacity .15s",
       "&:hover": {
         opacity: 0.82
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
+        outline: "none"
       }
     },
     icon: {
@@ -242,13 +250,28 @@ const theme = {
   },
   links: {
     nav: {
-      color: "text",
       transition: "color .1s",
+      color: "text",
       ":hover": {
         color: "secondary"
       },
       ":focus": {
-        color: "inherit"
+        color: "text",
+        ":hover": {
+          color: "secondary"
+        }
+      },
+      '&[data-dark="true"]': {
+        color: "background",
+        ":hover": {
+          color: "primary"
+        },
+        ":focus": {
+          color: "background",
+          ":hover": {
+            color: "primary"
+          }
+        }
       }
     }
   },
@@ -261,6 +284,10 @@ const theme = {
       height: 12,
       "&::placeholder": {
         color: "gray"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
+        outline: "none"
       }
     }
   },
@@ -275,6 +302,12 @@ const theme = {
       color: "text",
       ":hover": {
         color: "secondary"
+      },
+      "&[data-dark]": {
+        color: "background",
+        ":hover": {
+          color: "primary"
+        }
       }
     },
     progress: {

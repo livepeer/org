@@ -16,7 +16,8 @@ const sx: SxStyleProp = {
   py: 3,
   width: "fit-content",
   transition: "box-shadow .2s",
-  "&:hover": { boxShadow: "magical" }
+  color: "text",
+  "&:hover": { boxShadow: "magical", color: "text" }
 }
 
 const IconLink = ({
