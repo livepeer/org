@@ -1,8 +1,9 @@
-import { Box, Grid } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Box } from "theme-ui"
 import { useKeenSlider } from "keen-slider/react"
 import { useState, useCallback } from "react"
 import SliderCard, { SliderCardProps } from "./card"
-import SliderImage, { SliderImageProps } from "./image"
+import { SliderImageProps } from "./image"
 
 const images: SliderImageProps[] = [
   {
@@ -19,7 +20,7 @@ const images: SliderImageProps[] = [
   }
 ]
 
-const JumpInSlider = () => {
+const MobileJumpInSlider = () => {
   const [sliderRef, slider] = useKeenSlider({
     loop: true,
     duration: 1000,
@@ -100,28 +101,28 @@ const JumpInSlider = () => {
         className="keen-slider"
         ref={sliderRef as React.RefObject<HTMLDivElement>}
       >
-        {images.map((img) => (
-          <SliderImage
-            key={`jump-in-slider-image-${img.src}`}
+        {cards.map((card, i) => (
+          <Box
+            key={`jump-in-slider-card-${card.title}`}
             className="keen-slider__slide"
-            {...img}
-          />
+            sx={{
+              maxWidth: "24rem"
+            }}
+          >
+            <img {...images[i]} sx={{ mb: 3, borderRadius: "lg" }} />
+            <SliderCard
+              {...card}
+              nextSlide={nextSlide}
+              progress={progress}
+              setProgress={setProgress}
+              moveToMySlide={() => slider.moveToSlide(i)}
+              pushSx={{ maxWidth: "unset" }}
+            />
+          </Box>
         ))}
       </Box>
-      <Grid columns={3} sx={{ mt: "42px" }}>
-        {cards.map((card, i) => (
-          <SliderCard
-            {...card}
-            key={`jump-in-slider-card-${card.title}`}
-            nextSlide={nextSlide}
-            progress={progress}
-            setProgress={setProgress}
-            moveToMySlide={() => slider.moveToSlide(i)}
-          />
-        ))}
-      </Grid>
     </Box>
   )
 }
 
-export default JumpInSlider
+export default MobileJumpInSlider
