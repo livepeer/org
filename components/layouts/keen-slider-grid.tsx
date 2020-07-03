@@ -1,7 +1,13 @@
 import { SxStyleProp, Box } from "theme-ui"
 import { useKeenSlider } from "keen-slider/react"
 import { TOptionsEvents } from "keen-slider"
-import { useEffect, useState, useCallback, Children } from "react"
+import {
+  useEffect,
+  useState,
+  useCallback,
+  Children,
+  isValidElement
+} from "react"
 
 type Breakpoint = {
   value: string
@@ -33,7 +39,7 @@ const KeenSliderGrid: React.FC<Props> = ({
   const [sliderRef] = useKeenSlider({
     slidesPerView,
     duration: 1000,
-    spacing: 15,
+    spacing: 20,
     ...config
   })
 
@@ -81,12 +87,9 @@ const KeenSliderGrid: React.FC<Props> = ({
       }}
     >
       {Children.map(children, (child) => {
-        // TODO solve this ts-ignores
-        // We are looping through children to add the keen-slider__slide className
-        // @ts-ignore
-        if (child.props) {
+        // Add the keen-slider__slide className to childs
+        if (isValidElement(child)) {
           return {
-            // @ts-ignore
             ...child,
             props: {
               ...child.props,

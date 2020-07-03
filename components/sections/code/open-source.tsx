@@ -62,37 +62,11 @@ const OpenSourceSection = () => (
         <StatusLinkCard
           key={`card-${card.title}`}
           pushSx={{ height: ["300px", "342px"] }}
-          className="keen-slider__slide"
           isDark
           {...card}
         />
       ))}
     </KeenSliderGrid>
-    <Divider isVertical isTransparent size={["56px", "72px"]} />
-    <Grid
-      gap={4}
-      sx={{
-        gridTemplateColumns: [
-          "sm",
-          null,
-          null,
-          null,
-          ({ sizes: { sm } }) => `repeat(3, ${sm})`
-        ],
-        mx: "auto",
-        justifyContent: "center",
-        position: "relative"
-      }}
-    >
-      {cards.map((card) => (
-        <StatusLinkCard
-          key={`card-${card.title}`}
-          pushSx={{ height: ["300px", "342px"] }}
-          isDark
-          {...card}
-        />
-      ))}
-    </Grid>
   </SectionLayout>
 )
 
