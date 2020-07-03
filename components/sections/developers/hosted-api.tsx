@@ -1,6 +1,6 @@
 import { Button, Box, Flex, Grid } from "theme-ui"
 import SectionLayout from "components/layouts/section"
-import HostedApiSvg, { MobileHostedApiSvg } from "components/icons/hosted-api"
+import HostedApiSvg, { MobileHostedApiSvg } from "components/svgs/hosted-api"
 import ListItem, { ListItemProps } from "components/primitives/list-item"
 import { FiCheckCircle } from "react-icons/fi"
 

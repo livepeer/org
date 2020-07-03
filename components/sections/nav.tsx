@@ -8,7 +8,7 @@ import {
   Button,
   Text
 } from "theme-ui"
-import LivepeerLogo from "components/icons/livepeer-logo"
+import LivepeerLogo from "components/svgs/livepeer-logo"
 import { useEffect, useCallback, useState } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
 import Link from "next/link"
