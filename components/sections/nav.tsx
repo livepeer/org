@@ -92,7 +92,16 @@ const Nav = ({ isDark = false }) => {
               as={link.asPath}
               passHref
             >
-              <NavLink>{link.label}</NavLink>
+              <NavLink
+                sx={{
+                  color: isDark ? "background" : "text",
+                  "&:hover": {
+                    color: isDark ? "primary" : "secondary"
+                  }
+                }}
+              >
+                {link.label}
+              </NavLink>
             </Link>
           ))}
         </Box>

@@ -203,7 +203,11 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500
+      fontWeight: 500,
+      transition: "background .15s",
+      "&:hover": {
+        bg: "gradient.to"
+      }
     },
     secondary: {
       color: "background",
@@ -212,7 +216,11 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500
+      fontWeight: 500,
+      transition: "opacity .15s",
+      "&:hover": {
+        opacity: 0.82
+      }
     },
     icon: {
       p: 2,
@@ -232,7 +240,18 @@ const theme = {
       overflow: "hidden"
     }
   },
-  links: {},
+  links: {
+    nav: {
+      color: "text",
+      transition: "color .1s",
+      ":hover": {
+        color: "secondary"
+      },
+      ":focus": {
+        color: "inherit"
+      }
+    }
+  },
   forms: {
     input: {
       bg: "background",
@@ -253,7 +272,10 @@ const theme = {
       bg: "background"
     },
     a: {
-      color: "text"
+      color: "text",
+      ":hover": {
+        color: "secondary"
+      }
     },
     progress: {
       height: "1px"
