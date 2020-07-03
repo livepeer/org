@@ -20,7 +20,7 @@ type Props = {
   breakpoints?: Breakpoint[]
 }
 
-const defaultBreakpoints: Breakpoint[] = [
+const keenSliderGridDefaultBreakpoints: Breakpoint[] = [
   { value: "320px", slidesPerView: 1 },
   { value: "664px", slidesPerView: 2 },
   { value: "1152px", slidesPerView: 3 }
@@ -32,7 +32,7 @@ const KeenSliderGrid: React.FC<Props> = ({
   children,
   config,
   pushSx,
-  breakpoints = defaultBreakpoints
+  breakpoints = keenSliderGridDefaultBreakpoints
 }) => {
   const [slidesPerView, setSlidesPerView] = useState(3)
 
@@ -106,3 +106,4 @@ const KeenSliderGrid: React.FC<Props> = ({
 }
 
 export default KeenSliderGrid
+export { keenSliderGridDefaultBreakpoints }
