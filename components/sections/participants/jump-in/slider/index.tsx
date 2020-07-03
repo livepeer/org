@@ -53,9 +53,12 @@ const JumpInSlider = () => {
       title: "Tokenholders",
       description:
         "Help improve and secure the Livepeer network by acquiring and staking LPT. Earn ETH and LPT rewards in exchange.",
-      link: {
-        label: "/tokenholders",
-        href: "/tokenholders"
+      linkProps: {
+        link: {
+          label: "/tokenholders",
+          href: "/tokenholders"
+        },
+        isDark: true
       },
       isActive: true
     },
@@ -63,9 +66,12 @@ const JumpInSlider = () => {
       title: "Infrastructure operators",
       description:
         "Transcode video on your infrastructure as an infrastructure operator in exchange for ETH and LPT rewards.",
-      link: {
-        label: "/operators",
-        href: "/operators"
+      linkProps: {
+        link: {
+          label: "/operators",
+          href: "/operators"
+        },
+        isDark: true
       },
       isActive: false
     },
@@ -73,9 +79,12 @@ const JumpInSlider = () => {
       title: "OSS Contributors",
       description:
         "Help build Livepeer as a developer or contributor to open source technology projects.",
-      link: {
-        label: "/contributors",
-        href: "/contributors"
+      linkProps: {
+        link: {
+          label: "/contributors",
+          href: "/contributors"
+        },
+        isDark: true
       },
       isActive: false
     }

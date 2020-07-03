@@ -1,13 +1,10 @@
 /** @jsx jsx */
 import { jsx, Link as A, SxStyleProp } from "theme-ui"
 import Link from "next/link"
+import { LinkProps } from "lib/types/link-props"
 
-export type IconLinkProps = {
+export type IconLinkProps = LinkProps & {
   icon: React.ReactNode
-  label: React.ReactNode
-  href: string
-  asPath?: string
-  isExternal?: boolean
   pushSx?: SxStyleProp
 }
 
@@ -22,7 +19,7 @@ const sx: SxStyleProp = {
   "&:hover": { boxShadow: "magical" }
 }
 
-const IconLinkCard = ({
+const IconLink = ({
   icon,
   label,
   href,
@@ -49,4 +46,4 @@ const IconLinkCard = ({
     </Link>
   )
 
-export default IconLinkCard
+export default IconLink

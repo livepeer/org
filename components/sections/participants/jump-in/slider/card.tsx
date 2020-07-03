@@ -1,17 +1,11 @@
-import { useMemo, useState, useEffect, useRef } from "react"
-import { Box, Card, Heading, Text, Link as A, Progress } from "theme-ui"
-import { FiArrowRight } from "react-icons/fi"
-import Link from "next/link"
+import { useState, useEffect, useRef } from "react"
+import { Box, Card, Heading, Text, Progress } from "theme-ui"
+import CardLink, { CardLinkProps } from "components/primitives/links"
 
 export type SliderCardProps = {
   title: React.ReactNode
   description: string
-  link: {
-    label: string
-    href: string
-    asPath?: string
-    isExternal?: boolean
-  }
+  linkProps: CardLinkProps
   isActive: boolean
   nextSlide?: () => void
   moveToMySlide?: () => void
@@ -19,19 +13,10 @@ export type SliderCardProps = {
   setProgress?: (n: number) => void
 }
 
-const linkSx = {
-  variant: "text.small",
-  fontWeight: 600,
-  color: "primary",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center"
-}
-
 const SliderCard = ({
   title,
   description,
-  link,
+  linkProps,
   isActive,
   nextSlide,
   progress,
@@ -61,25 +46,6 @@ const SliderCard = ({
       clearInterval(timer.current)
     }
   }, [isActive, nextSlide, progress, isTransitioning])
-
-  const linkChildren = useMemo(
-    () => (
-      <>
-        <Text
-          sx={{
-            color: "primary",
-            variant: "layout.flexCenter"
-          }}
-        >
-          {link.label}
-        </Text>
-        <Text sx={{ variant: "layout.flexCenter", color: "primary" }}>
-          <FiArrowRight size="22px" />
-        </Text>
-      </>
-    ),
-    [link]
-  )
 
   return (
     <Card
@@ -125,15 +91,7 @@ const SliderCard = ({
             {description}
           </Text>
         </Box>
-        {link.isExternal ? (
-          <A href={link.href} target="_blank" sx={linkSx}>
-            {linkChildren}
-          </A>
-        ) : (
-          <Link href={link.href} as={link.asPath} passHref>
-            <A sx={linkSx}>{linkChildren}</A>
-          </Link>
-        )}
+        <CardLink {...linkProps} />
       </Box>
     </Card>
   )
