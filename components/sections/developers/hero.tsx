@@ -2,6 +2,7 @@
 import { jsx, Container, Heading, Box, Grid } from "theme-ui"
 import Divider from "components/primitives/divider"
 import { FiPlay } from "react-icons/fi"
+import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
 
 const DevelopersHero = () => (
   <Box sx={{ bg: "background" }}>
@@ -44,9 +45,17 @@ const DevelopersHero = () => (
             across video formats and protocols.
           </Heading>
         </Box>
-        <Box
-          sx={{ maxWidth: "482px", height: "282px", bg: "ultraLightGray" }}
-        />
+        <IllustratedBackgroundBox
+          pushSx={{ height: "282px", mt: "70px" }}
+          pushContentSx={{
+            p: 3,
+            height: "320px",
+            boxShadow: "magical",
+            mt: "-70px"
+          }}
+        >
+          Code story
+        </IllustratedBackgroundBox>
       </Grid>
     </Container>
   </Box>
