@@ -92,6 +92,12 @@ const theme = {
       mx: "auto",
       p: 3
     },
+    hero: {
+      maxWidth: 1200,
+      mx: "auto",
+      p: 3,
+      pt: "80px"
+    },
     section: {
       variant: "layout.container",
       position: "relative",
