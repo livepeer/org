@@ -1,8 +1,6 @@
 import SectionLayout from "components/layouts/section"
 import { Grid, Flex } from "theme-ui"
-import IconLinkCard, {
-  IconLinkProps
-} from "components/primitives/cards/icon-link"
+import IconLink, { IconLinkProps } from "components/primitives/links/icon"
 import {
   FaDiscourse,
   FaDiscord,
@@ -21,7 +19,8 @@ const links: IconLinkProps[] = [
         Join Livepeer on&nbsp;<b>Discourse</b>
       </>
     ),
-    href: "/"
+    href: "https://forum.livepeer.org/",
+    isExternal: true
   },
   {
     icon: <FaDiscord />,
@@ -30,7 +29,8 @@ const links: IconLinkProps[] = [
         Join our&nbsp;<b>Discord Server</b>
       </>
     ),
-    href: "/"
+    href: "https://discord.com/invite/RR4kFAh",
+    isExternal: true
   },
   {
     icon: <FaTwitter />,
@@ -49,7 +49,8 @@ const links: IconLinkProps[] = [
         Read our subreddits on&nbsp;<b>Reddit</b>
       </>
     ),
-    href: ""
+    href: "https://www.reddit.com/r/livepeer/",
+    isExternal: true
   },
   {
     icon: <FaTelegram />,
@@ -58,7 +59,8 @@ const links: IconLinkProps[] = [
         Contact us on&nbsp;<b>Telegram</b>
       </>
     ),
-    href: ""
+    href: "https://t.me/livepeer",
+    isExternal: true
   },
   {
     icon: <FaMedium />,
@@ -103,7 +105,7 @@ const CommunitySection = ({ title = "Community" }) => (
                 size="72px"
                 pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
               />
-              <IconLinkCard pushSx={{ width: "372px" }} {...link} />
+              <IconLink pushSx={{ width: "372px" }} {...link} />
               <Divider
                 isVertical
                 size="72px"
@@ -113,7 +115,7 @@ const CommunitySection = ({ title = "Community" }) => (
           )
         }
         return (
-          <IconLinkCard
+          <IconLink
             key={`icon-link-${link.href}`}
             pushSx={{ width: "372px" }}
             {...link}
