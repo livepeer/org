@@ -13,20 +13,28 @@ const cards: ImageCardProps[] = [
     image: { src: "/images/misc/coworking.png" }
   },
   {
-    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
+    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments 2.",
     footnote: "Mar 12,2020",
     linkProps: {
       link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
     },
-    image: { src: "/images/misc/coworking.png" }
+    image: { src: "/images/misc/ide.png" }
   },
   {
-    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
+    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments 3.",
     footnote: "Mar 12,2020",
     linkProps: {
       link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
     },
-    image: { src: "/images/misc/coworking.png" }
+    image: { src: "/images/misc/stocks.png" }
+  },
+  {
+    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments 4.",
+    footnote: "Mar 12,2020",
+    linkProps: {
+      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
+    },
+    image: { src: "/images/misc/city.png" }
   }
 ]
 
