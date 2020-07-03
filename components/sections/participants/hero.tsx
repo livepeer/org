@@ -2,7 +2,7 @@
 import { jsx, Box, Container, Heading, Grid } from "theme-ui"
 import { FiUserCheck } from "react-icons/fi"
 import Divider from "components/primitives/divider"
-import ParticipantsSvg from "components/icons/participants"
+import ParticipantsSvg from "components/svgs/participants"
 
 const ParticipantsHero = () => (
   <Box sx={{ bg: "background" }}>

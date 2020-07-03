@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Heading } from "theme-ui"
-import NodesSvg from "components/icons/nodes"
-import BlockchainSvg from "components/icons/blockchain"
+import NodesSvg from "components/svgs/nodes"
+import BlockchainSvg from "components/svgs/blockchain"
 
 const HowVideoMiningWorksSection = () => (
   <Box sx={{ bg: "text", position: "relative", zIndex: "general" }}>

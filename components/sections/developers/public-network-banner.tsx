@@ -1,7 +1,7 @@
 import { Container, Box, Text, Heading, Button, Grid } from "theme-ui"
 import ListItem, { ListItemProps } from "components/primitives/list-item"
 import { FiCheckCircle } from "react-icons/fi"
-import NetworkSvg from "components/icons/network"
+import NetworkSvg from "components/svgs/network"
 
 const listItems: ListItemProps[] = [
   {

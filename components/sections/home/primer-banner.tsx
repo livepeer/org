@@ -1,5 +1,5 @@
 import { Container, Box, Text, Heading, Button } from "theme-ui"
-import PrimerSvg from "components/icons/primer"
+import PrimerSvg from "components/svgs/primer"
 
 const PrimerBanner = () => (
   <Box sx={{ bg: "muted", px: 3, py: "80px" }}>

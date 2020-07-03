@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Box } from "theme-ui"
 import Divider from "components/primitives/divider"
-import HeartSvg from "components/icons/heart"
+import HeartSvg from "components/svgs/heart"
 
 const CodeHero = () => (
   <Box sx={{ color: "background", bg: "text", position: "relative" }}>

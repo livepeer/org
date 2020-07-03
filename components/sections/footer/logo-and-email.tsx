@@ -1,5 +1,5 @@
 import { Link as A, SxStyleProp, Box } from "theme-ui"
-import LivepeerLogo from "components/icons/livepeer-logo"
+import LivepeerLogo from "components/svgs/livepeer-logo"
 
 type Props = {
   pushSx?: SxStyleProp
