@@ -1,5 +1,5 @@
 import { Box, Link as A, Grid, Heading, Text, SxStyleProp } from "theme-ui"
-import LivepeerSvg from "components/svgs/livepeer"
+import LivepeerIconSvg from "components/svgs/icons/livepeer"
 
 const linkSx: SxStyleProp = {
   color: "primary",
@@ -24,7 +24,7 @@ const MissionSection = () => (
         position: "relative"
       }}
     >
-      <LivepeerSvg
+      <LivepeerIconSvg
         pushSx={{
           position: "absolute",
           width: "unset",

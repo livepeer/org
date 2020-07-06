@@ -6,7 +6,7 @@ type Props = {
   isDark?: boolean
 }
 
-const LivepeerSvg = ({ pushSx, isDark }: Props) => (
+const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
   <svg
     viewBox="0 0 236 250"
     fill="none"
@@ -159,4 +159,4 @@ const LivepeerSvg = ({ pushSx, isDark }: Props) => (
   </svg>
 )
 
-export default LivepeerSvg
+export default LivepeerIconSvg
