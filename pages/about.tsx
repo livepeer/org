@@ -2,6 +2,8 @@ import PageLayout from "components/layouts/page"
 import IconHero from "components/layouts/icon-hero"
 import LivepeerSvg from "components/svgs/livepeer"
 import MissionSection from "components/sections/about/mission"
+import WhoIsBuildingSection from "components/sections/about/who-is-building"
+import WhoIsMaintainingSection from "components/sections/about/who-is-mantaining"
 
 const AboutPage = () => (
   <PageLayout>
@@ -12,6 +14,8 @@ const AboutPage = () => (
       illustration={<LivepeerSvg />}
     />
     <MissionSection />
+    <WhoIsBuildingSection />
+    <WhoIsMaintainingSection />
   </PageLayout>
 )
 
