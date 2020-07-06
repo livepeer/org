@@ -19,7 +19,11 @@ const listItems: ListItemProps[] = [
     icon: <FiCode />,
     children: (
       <>
-        Read the <A sx={linkSx}>Livepeer.js</A> contributor guidelines.
+        Read the{" "}
+        <A variant="coloured" data-dark>
+          Livepeer.js
+        </A>{" "}
+        contributor guidelines.
       </>
     )
   },
@@ -27,9 +31,19 @@ const listItems: ListItemProps[] = [
     icon: <FiGithub />,
     children: (
       <>
-        Look for “good first issues” in <A sx={linkSx}>Livepeer.js</A>{" "}
-        (Javascript), <A sx={linkSx}>LPMS</A> (video development in C or Go), or{" "}
-        <A sx={linkSx}>Go-Livepeer</A> (go).
+        Look for “good first issues” in{" "}
+        <A variant="coloured" data-dark>
+          Livepeer.js
+        </A>{" "}
+        (Javascript),{" "}
+        <A variant="coloured" data-dark>
+          LPMS
+        </A>{" "}
+        (video development in C or Go), or{" "}
+        <A variant="coloured" data-dark>
+          Go-Livepeer
+        </A>{" "}
+        (go).
       </>
     )
   },
@@ -37,8 +51,11 @@ const listItems: ListItemProps[] = [
     icon: <FiBook />,
     children: (
       <>
-        View the <A sx={linkSx}>Grant Proposals</A> to see application concepts
-        with some funding attached.
+        View the{" "}
+        <A variant="coloured" data-dark>
+          Grant Proposals
+        </A>{" "}
+        to see application concepts with some funding attached.
       </>
     )
   },
@@ -46,8 +63,12 @@ const listItems: ListItemProps[] = [
     icon: <FiMessageCircle />,
     children: (
       <>
-        Chat with the development team in <A sx={linkSx}>Discord</A> - we’re a
-        welcoming bunch, so don’t be shy. Ask how you can get involved.
+        Chat with the development team in{" "}
+        <A variant="coloured" data-dark>
+          Discord
+        </A>{" "}
+        - we’re a welcoming bunch, so don’t be shy. Ask how you can get
+        involved.
       </>
     )
   },
@@ -56,8 +77,14 @@ const listItems: ListItemProps[] = [
     children: (
       <>
         Looking to build a video application using Livepeer? Check out our{" "}
-        <A sx={linkSx}>open developer docs</A> or{" "}
-        <A sx={linkSx}>enterprise hosted services</A>.
+        <A variant="coloured" data-dark>
+          open developer docs
+        </A>{" "}
+        or{" "}
+        <A variant="coloured" data-dark>
+          enterprise hosted services
+        </A>
+        .
       </>
     )
   }
