@@ -17,7 +17,7 @@ const IllustratedBackgroundBox: React.FC<Props> = ({
     {...props}
     sx={{
       p: 3,
-      background: "url(/backgrounds/illustrated.svg)",
+      backgroundImage: "url(/backgrounds/illustrated.svg)",
       backgroundSize: "cover",
       borderRadius: "lg",
       ...pushSx
