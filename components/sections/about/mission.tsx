@@ -1,11 +1,6 @@
 import { Box, Link as A, Grid, Heading, Text, SxStyleProp } from "theme-ui"
 import LivepeerIconSvg from "components/svgs/icons/livepeer"
 
-const linkSx: SxStyleProp = {
-  color: "primary",
-  fontWeight: 600
-}
-
 const MissionSection = () => (
   <Box
     sx={{
@@ -63,13 +58,18 @@ const MissionSection = () => (
       </Box>
       <Box sx={{ zIndex: "general", position: "relative" }}>
         <Text variant="normal" sx={{ mb: 4 }}>
-          Through the power of <A sx={linkSx}>open source software</A>, combined
-          with the harnessing of underutilized resources like compute and
-          bandwidth, combined with the use of crypto economic incentives for
+          Through the power of{" "}
+          <A variant="coloured" data-dark>
+            open source software
+          </A>
+          , combined with the harnessing of underutilized resources like compute
+          and bandwidth, combined with the use of crypto economic incentives for
           bootstrapping and participation, there is an opportunity to deliver an
           infrastructure that can{" "}
-          <A sx={linkSx}>power video streaming applications</A> at a highly
-          efficient price, and infinite scale.
+          <A variant="coloured" data-dark>
+            power video streaming applications
+          </A>{" "}
+          at a highly efficient price, and infinite scale.
         </Text>
         <Text variant="normal">
           Along with the proliferation of high quality cameras and ubiquitous

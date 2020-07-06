@@ -28,10 +28,10 @@ const WhoIsBuildingSection = () => (
     background="muted"
     subtitle={
       <>
-        In 2017, the founders of the Livepeer project formed a company called
-        Livepeer Inc to help facilitate its early development, bootstrap the
-        network’s supply and demand sides, and guide the project’s path to
-        decentralization.
+        In 2017, the founders of the Livepeer project formed a company called{" "}
+        <A variant="coloured">Livepeer Inc</A> to help facilitate its early
+        development, bootstrap the network’s supply and demand sides, and guide
+        the project’s <A variant="coloured">path to decentralization</A>.
       </>
     }
     pushSx={{
@@ -47,7 +47,7 @@ const WhoIsBuildingSection = () => (
         <FiArrowUpRight />
       </i>
     </Button>
-    <Slider pushSx={{ my: 5 }}>
+    <Slider pushSx={{ my: 5 }} numberOfCopies={4} duration={20}>
       {images.map((img) => (
         <div key={`slider-image-${img.src}`} sx={{ mx: 4, ...img.sx }}>
           <img
@@ -63,7 +63,13 @@ const WhoIsBuildingSection = () => (
       ))}
     </Slider>
     <Heading variant="heading.5">
-      Interested in Joining Livepeer Inc.? View its <A>open positions</A>
+      Interested in Joining Livepeer Inc.? View its{" "}
+      <A
+        variant="coloured"
+        sx={{ variant: "layout.flexCenter", display: "inline-flex" }}
+      >
+        open positions <FiArrowUpRight />
+      </A>
     </Heading>
   </SectionLayout>
 )
