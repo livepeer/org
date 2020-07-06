@@ -91,7 +91,7 @@ const WhoIsMaintainingSection = () => (
       request. When submitting a pull request, please take required time to
       discuss your changes and adapt your work.
     </Heading>
-    <Text variant="normal" sx={{ color: "lightGray", textAlign: "center" }}>
+    <Text variant="normal" sx={{ color: "gray", textAlign: "center" }}>
       Note: Livepeer.org is not an “official” website. Just like nobody owns the
       email technology, nobody owns the Livepeer network. As such, nobody can
       speak with authority in the name of Livepeer.
