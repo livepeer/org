@@ -26,7 +26,11 @@ const CardLink = ({ link, isDark }: CardLinkProps) => {
       color: isDark ? "primary" : "secondary",
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center"
+      alignItems: "center",
+      "&:hover": {
+        opacity: 0.8,
+        color: isDark ? "primary" : "secondary"
+      }
     }),
     [isDark]
   )

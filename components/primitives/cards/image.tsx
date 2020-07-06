@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, Box, Card, Heading, Text } from "theme-ui"
+import { jsx, Box, Card, Heading, Text, SxStyleProp } from "theme-ui"
 import CardLink, { CardLinkProps } from "../links"
 
 export type ImageCardProps = {
-  title: React.ReactNode
+  title?: React.ReactNode
   description?: string
   footnote?: string
   linkProps: CardLinkProps
@@ -12,6 +12,8 @@ export type ImageCardProps = {
     alt?: string
   }
   className?: string
+  pushSx?: SxStyleProp
+  pushContentSx?: SxStyleProp
 }
 
 const ImageCard = ({
@@ -20,9 +22,11 @@ const ImageCard = ({
   footnote,
   linkProps,
   image,
-  className
+  className,
+  pushSx,
+  pushContentSx
 }: ImageCardProps) => (
-  <Card className={className} sx={{ p: 0 }}>
+  <Card className={className} sx={{ p: 0, pushSx, boxShadow: "magical" }}>
     <img
       {...image}
       sx={{ width: "100%", height: "182px", objectFit: "cover" }}
@@ -33,14 +37,29 @@ const ImageCard = ({
         height: "196px",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        ...pushContentSx
       }}
     >
       <Box>
-        <Heading variant="normal">{title}</Heading>
-        {description && <Text variant="normal">{description}</Text>}
+        {title && (
+          <Heading
+            variant="heading.5"
+            sx={{ color: "text", textAlign: "left", mb: 2 }}
+          >
+            {title}
+          </Heading>
+        )}
+        {description && (
+          <Text variant="normal" sx={{ color: title ? "gray" : "text" }}>
+            {description}
+          </Text>
+        )}
         {footnote && (
-          <Text variant="small" sx={{ mt: 3 }}>
+          <Text
+            variant="small"
+            sx={{ mt: 3, color: title ? "lightGray" : "gray" }}
+          >
             {footnote}
           </Text>
         )}

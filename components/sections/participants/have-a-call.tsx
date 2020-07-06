@@ -5,7 +5,7 @@ import KeenSliderGrid from "components/layouts/keen-slider-grid"
 
 const cards: ImageCardProps[] = [
   {
-    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
+    description: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
     footnote: "Mar 12,2020",
     linkProps: {
       link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
@@ -13,7 +13,8 @@ const cards: ImageCardProps[] = [
     image: { src: "/images/misc/coworking.png" }
   },
   {
-    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments 2.",
+    description:
+      "Streamflow, GPU Transcoding, & Probabilistic Micropayments 2.",
     footnote: "Mar 12,2020",
     linkProps: {
       link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
@@ -21,7 +22,8 @@ const cards: ImageCardProps[] = [
     image: { src: "/images/misc/ide.png" }
   },
   {
-    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments 3.",
+    description:
+      "Streamflow, GPU Transcoding, & Probabilistic Micropayments 3.",
     footnote: "Mar 12,2020",
     linkProps: {
       link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
@@ -29,7 +31,8 @@ const cards: ImageCardProps[] = [
     image: { src: "/images/misc/stocks.png" }
   },
   {
-    title: "Streamflow, GPU Transcoding, & Probabilistic Micropayments 4.",
+    description:
+      "Streamflow, GPU Transcoding, & Probabilistic Micropayments 4.",
     footnote: "Mar 12,2020",
     linkProps: {
       link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
@@ -49,7 +52,7 @@ const HaveACallSection = () => (
         EST.
         <br />
         Catch them live on{" "}
-        <A target="_blank" href="https://livepeer.com/tv">
+        <A variant="coloured" target="_blank" href="https://livepeer.com/tv">
           livepeer.com/tv
         </A>
       </>
