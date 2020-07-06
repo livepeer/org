@@ -107,7 +107,10 @@ const AccordionItem = ({
           {isToggled ? <FiChevronDown /> : <FiChevronUp />}
         </IconButton>
       </Flex>
-      <Box sx={{ pt: 4 }} ref={childrenRef}>
+      <Box
+        sx={{ pt: 4, visibility: isToggled ? "visible" : "hidden" }}
+        ref={childrenRef}
+      >
         {children}
       </Box>
     </IllustratedBackgroundBox>
