@@ -85,13 +85,16 @@ const WhoIsMaintainingSection = () => (
       }}
       withIllustratedBackground
     />
-    <Heading variant="heading.5" sx={{ mb: 4 }}>
+    <Heading variant="heading.5" sx={{ mb: 4, maxWidth: "4xl", mx: "auto" }}>
       Anyone is welcome and encouraged to help improve the site on{" "}
       <A sx={{ color: "secondary" }}>GitHub</A> by opening an issue or pull
       request. When submitting a pull request, please take required time to
       discuss your changes and adapt your work.
     </Heading>
-    <Text variant="normal" sx={{ color: "gray", textAlign: "center" }}>
+    <Text
+      variant="normal"
+      sx={{ color: "gray", textAlign: "center", maxWidth: "4xl", mx: "auto" }}
+    >
       Note: Livepeer.org is not an “official” website. Just like nobody owns the
       email technology, nobody owns the Livepeer network. As such, nobody can
       speak with authority in the name of Livepeer.

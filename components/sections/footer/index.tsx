@@ -9,7 +9,7 @@ const lists: FooterListProps[] = [
     title: "Participants",
     items: [
       { label: "Tokenholders", href: "/" },
-      { label: "Infrastructure Operators", href: "/" },
+      { label: "Infrastructure Operators", href: "/infrastructure" },
       { label: "Protocol Explorer", href: "/" },
       { label: "The Grant Program", href: "/" }
     ]
@@ -29,7 +29,7 @@ const lists: FooterListProps[] = [
       { label: "The Whitepaper", href: "/" },
       { label: "FAQ", href: "/" },
       { label: "Privacy Policy", href: "/" },
-      { label: "About", href: "/" }
+      { label: "About", href: "/about" }
     ]
   },
   {
