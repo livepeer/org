@@ -20,7 +20,16 @@ const cards: (ImageCardProps & { tag: Tag })[] = [
     tag: { label: "Education", value: "education" }
   },
   {
-    title: "The Livepeer Whitepaper2",
+    title: "The Livepeer Whitepaper 2",
+    description:
+      "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network.",
+    footnote: "By Doug Petkanics & Eric Tang",
+    image: { src: "" },
+    linkProps: { link: { href: "/education", label: "Education" } },
+    tag: { label: "Products & Tools", value: "products-and-tools" }
+  },
+  {
+    title: "The Livepeer Whitepaper 3",
     description:
       "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network.",
     footnote: "By Doug Petkanics & Eric Tang",
@@ -80,8 +89,8 @@ const ResourcesDirectory = () => {
 
   return (
     <Container variant="section">
-      <Tabs items={tabs} />
-      <Grid columns={3}>
+      <Tabs items={tabs} pushSx={{ justifyContent: "center" }} />
+      <Grid columns={3} sx={{ my: 5, justifyContent: "center" }}>
         {filteredCards.map((c) => (
           <ImageCard
             key={`resource-card-${c.title}`}
