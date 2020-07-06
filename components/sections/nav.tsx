@@ -41,7 +41,11 @@ const links: LinkType[] = [
 
 const navHeight = "72px"
 
-const Nav = ({ isDark = false }) => {
+export type NavProps = {
+  background?: "muted" | "dark" | "white" | "black"
+}
+
+const Nav = ({ background }: NavProps) => {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
 
@@ -58,14 +62,37 @@ const Nav = ({ isDark = false }) => {
     }
   }, [])
 
+  const isDark = background === "black" || background === "dark"
+  let bg: string
+  let color: string
+  switch (background) {
+    default:
+    case "white":
+      bg = "background"
+      color = "text"
+      break
+    case "muted":
+      bg = "muted"
+      color = "text"
+      break
+    case "dark":
+      bg = "text"
+      color = "background"
+      break
+    case "black":
+      bg = "black"
+      color = "background"
+      break
+  }
+
   return (
     <Box
       sx={{
+        bg,
+        color,
         position: "sticky",
         top: 0,
         zIndex: "header",
-        bg: isDark ? "black" : "muted",
-        color: isDark ? "background" : "text",
         transition: "box-shadow .3s",
         boxShadow: hasScrolled ? "magical" : "none"
       }}
@@ -98,9 +125,9 @@ const Nav = ({ isDark = false }) => {
         </Box>
         <IconButton
           sx={{
+            color,
             display: ["block", "none"],
-            fontSize: 6,
-            color: isDark ? "background" : "text"
+            fontSize: 6
           }}
           onClick={() => setMobileMenuIsOpen(true)}
         >
@@ -109,13 +136,13 @@ const Nav = ({ isDark = false }) => {
       </Container>
       <Box
         sx={{
+          bg,
+          color,
           position: "fixed",
           top: 0,
           height: mobileMenuIsOpen ? "100vh" : 0,
           transition: "height .2s",
           overflow: "hidden",
-          bg: isDark ? "black" : "background",
-          color: isDark ? "background" : "text",
           width: "100%",
           zIndex: "dropdown"
         }}
@@ -131,9 +158,9 @@ const Nav = ({ isDark = false }) => {
           <LivepeerLogo isDark={isDark} />
           <IconButton
             sx={{
+              color,
               display: ["block", "none"],
-              fontSize: 6,
-              color: isDark ? "background" : "text"
+              fontSize: 6
             }}
             onClick={() => setMobileMenuIsOpen(false)}
           >
@@ -160,10 +187,10 @@ const Nav = ({ isDark = false }) => {
               >
                 <A
                   sx={{
+                    color,
                     textAlign: "center",
                     fontSize: 7,
-                    fontWeight: 600,
-                    color: isDark ? "background" : "text"
+                    fontWeight: 600
                   }}
                 >
                   {link.label}
