@@ -3,6 +3,16 @@ import { jsx, Flex, Box, Text, IconButton } from "theme-ui"
 import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { useMemo, useCallback, useState, useEffect, useRef } from "react"
+import { keyframes } from "@emotion/core"
+
+const toggleInKeyframe = keyframes({
+  from: {
+    backgroundColor: "rgba(255,255,255,1)"
+  },
+  to: {
+    backgroundColor: "rgba(255,255,255,0)"
+  }
+})
 
 export type AccordionItemProps = {
   heading: { icon?: { bg?: string; children: React.ReactNode }; title: string }
@@ -48,11 +58,16 @@ const AccordionItem = ({
   return (
     <IllustratedBackgroundBox
       pushSx={{
-        transition: "background-color .15s",
         backgroundBlendMode: "color",
         ...(isToggled && withIllustratedBackground
-          ? { backgroundColor: "rgba(255,255,255,0)" }
-          : { backgroundColor: "rgba(255,255,255,1)" })
+          ? {
+              backgroundColor: "rgba(255,255,255,1)",
+              animation: `.15s ${toggleInKeyframe} forwards`
+            }
+          : {
+              backgroundColor: "transparent",
+              backgroundImage: "none"
+            })
       }}
       pushContentSx={{
         boxShadow: "magical",

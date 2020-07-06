@@ -66,7 +66,7 @@ const accordionItems: AccordionItemProps[] = [
 
 const WhoIsMaintainingSection = () => (
   <SectionLayout
-    title="Who Mantains Livepeer.org"
+    title="Who maintains Livepeer.org"
     subtitle="The Livepeer.org website is maintained by members of the following organizations:"
     pushSx={{ pt: ["80px", "160px"] }}
   >
