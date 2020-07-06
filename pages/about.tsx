@@ -1,7 +1,7 @@
-import JumpInSection from "components/sections/participants/jump-in"
 import PageLayout from "components/layouts/page"
 import IconHero from "components/layouts/icon-hero"
 import LivepeerSvg from "components/svgs/livepeer"
+import MissionSection from "components/sections/about/mission"
 
 const AboutPage = () => (
   <PageLayout>
@@ -11,7 +11,7 @@ const AboutPage = () => (
       subtitle="We believe in open components for an open video infrastructure and an open web."
       illustration={<LivepeerSvg />}
     />
-    <JumpInSection />
+    <MissionSection />
   </PageLayout>
 )
 
