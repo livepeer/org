@@ -1,5 +1,5 @@
 import { LinkProps } from "lib/types/link-props"
-import { Link as A, Text, Flex } from "theme-ui"
+import { Link as A, Text, Flex, SxStyleProp } from "theme-ui"
 import { useMemo } from "react"
 import Link from "next/link"
 
@@ -51,21 +51,21 @@ const Tab = (props: TabProps) => {
 
 type TabsProps = {
   items: TabProps[]
+  pushSx?: SxStyleProp
 }
 
-const Tabs = ({ items }: TabsProps) => {
-  return (
-    <Flex
-      sx={{
-        overflow: "auto",
-        ".tab:not(:last-of-type)": { mr: 3 }
-      }}
-    >
-      {items.map((tab) => (
-        <Tab key={`tab-item-${tab.label}`} {...tab} />
-      ))}
-    </Flex>
-  )
-}
+const Tabs = ({ items, pushSx }: TabsProps) => (
+  <Flex
+    sx={{
+      overflow: "auto",
+      ".tab:not(:last-of-type)": { mr: 3 },
+      ...pushSx
+    }}
+  >
+    {items.map((tab) => (
+      <Tab key={`tab-item-${tab.label}`} {...tab} />
+    ))}
+  </Flex>
+)
 
 export default Tabs
