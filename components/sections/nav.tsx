@@ -144,7 +144,8 @@ const Nav = ({ background }: NavProps) => {
           transition: "height .2s",
           overflow: "hidden",
           width: "100%",
-          zIndex: "dropdown"
+          zIndex: "dropdown",
+          visibility: mobileMenuIsOpen ? "visible" : "hidden"
         }}
       >
         <Container
