@@ -119,6 +119,7 @@ const ParticipantsSvg = ({ pushSx }: Props) => (
   <Box
     sx={{
       position: "relative",
+      width: "100%",
       ...pushSx
     }}
   >
