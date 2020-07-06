@@ -279,6 +279,19 @@ const theme = {
           }
         }
       }
+    },
+    coloured: {
+      color: "secondary",
+      fontWeight: 600,
+      ":hover": {
+        color: "secondary"
+      },
+      "&[data-dark]": {
+        color: "primary",
+        ":hover": {
+          color: "primary"
+        }
+      }
     }
   },
   forms: {
