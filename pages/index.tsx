@@ -6,7 +6,7 @@ import CommunitySection from "components/sections/home/community"
 import PageLayout from "components/layouts/page"
 
 const HomePage = () => (
-  <PageLayout>
+  <PageLayout navProps={{ background: "muted" }}>
     <HomeHero />
     <CarsSection />
     <PrimerBanner />
