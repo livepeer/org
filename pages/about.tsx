@@ -3,7 +3,7 @@ import IconHero from "components/layouts/icon-hero"
 import LivepeerIconSvg from "components/svgs/icons/livepeer"
 import MissionSection from "components/sections/about/mission"
 import WhoIsBuildingSection from "components/sections/about/who-is-building"
-import WhoIsMaintainingSection from "components/sections/about/who-is-mantaining"
+import WhoIsMaintainingSection from "components/sections/about/who-is-maintaining"
 
 const AboutPage = () => (
   <PageLayout>
