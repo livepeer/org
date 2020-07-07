@@ -12,8 +12,8 @@ const cards: GetTokenCardProps[] = [
     title: "Livepeer Token",
     listItems: [
       "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes.",
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes.",
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiisasd.",
+      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis."
     ],
     cta: { label: "Visit uniswap.exchange", onClick: () => {} },
     accent: "primary",
@@ -23,9 +23,9 @@ const cards: GetTokenCardProps[] = [
     titleLabel: "Stake",
     title: "Livepeer Token",
     listItems: [
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes.",
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes.",
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praeas.",
+      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praesw.",
+      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praesas."
     ],
     cta: { label: "Open Livepeer explorer", onClick: () => {} },
     accent: "secondary",
