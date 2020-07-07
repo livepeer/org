@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Card, Heading, Text, SxStyleProp, Flex } from "theme-ui"
-import CardLink, { CardLinkProps } from "../links"
+import CardLink, { CardLinkProps } from "../links/card"
 import { useMemo } from "react"
 import Link from "next/link"
 

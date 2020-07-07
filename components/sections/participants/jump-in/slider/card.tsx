@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { Box, Card, Heading, Text, Progress, SxStyleProp } from "theme-ui"
-import CardLink, { CardLinkProps } from "components/primitives/links"
+import CardLink, { CardLinkProps } from "components/primitives/links/card"
 
 export type SliderCardProps = {
   title: React.ReactNode
