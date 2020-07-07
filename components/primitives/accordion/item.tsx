@@ -71,14 +71,17 @@ const AccordionItem = ({
       }}
       pushContentSx={{
         boxShadow: "magical",
-        p: 4,
+        p: [3, 4],
         overflow: "hidden",
-        height: `calc(${isToggled ? fullHeight : baseHeight} + 64px)`,
+        height: [
+          `calc(${isToggled ? fullHeight : baseHeight} + 32px)`,
+          `calc(${isToggled ? fullHeight : baseHeight} + 64px)`
+        ],
         transition: "height .15s"
       }}
     >
       <Flex
-        sx={{ alignItems: "center", justifyContent: "space-between" }}
+        sx={{ alignItems: "flex-start", justifyContent: "space-between" }}
         ref={headingRef}
       >
         <Flex sx={{ alignItems: "center" }}>
@@ -103,9 +106,7 @@ const AccordionItem = ({
             variant="heading.5"
             sx={{
               color: isToggled ? "secondary" : "text",
-              textOverflow: "ellipsis",
-              overflow: "hidden",
-              whiteSpace: "nowrap"
+              textAlign: "left"
             }}
           >
             {heading.title}
@@ -114,6 +115,7 @@ const AccordionItem = ({
         <IconButton
           sx={{
             fontSize: 5,
+            ml: 2,
             color: isToggled ? "secondary" : "text",
             minWidth: "fit-content"
           }}
@@ -123,7 +125,7 @@ const AccordionItem = ({
         </IconButton>
       </Flex>
       <Box
-        sx={{ pt: 4, visibility: isToggled ? "visible" : "hidden" }}
+        sx={{ pt: [2, 4], visibility: isToggled ? "visible" : "hidden" }}
         ref={childrenRef}
       >
         {children}
