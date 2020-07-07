@@ -3,6 +3,7 @@ import Tabs, { TabProps } from "components/primitives/tabs"
 import { useMemo } from "react"
 import Accordion from "components/primitives/accordion"
 import { AccordionItemProps } from "components/primitives/accordion/item"
+import { useRouter } from "next/router"
 
 const items: AccordionItemProps[] = [
   {
@@ -67,11 +68,25 @@ const items: AccordionItemProps[] = [
 ]
 
 const FaqsSection = () => {
+  const router = useRouter()
+  const { filter } = router.query
+
+  const filteredItems: AccordionItemProps[] = useMemo(() => {
+    return items
+  }, [items, filter])
+
+  const handleClick = (value?: string) => {
+    if (!value) return router.push("/faq")
+    return router.push(`/faq?filter=${value}`)
+  }
+
   const tabs: TabProps[] = useMemo(
     () => [
       {
         label: "All",
-        onClick: () => {},
+        onClick: () => {
+          handleClick()
+        },
         isSelected: true
       }
     ],
@@ -84,7 +99,7 @@ const FaqsSection = () => {
         items={tabs}
         pushSx={{ justifyContent: ["flex-start", "center"] }}
       />
-      <Accordion pushSx={{ mt: 4 }} items={items} />
+      <Accordion pushSx={{ mt: 4 }} items={filteredItems} />
     </Container>
   )
 }
