@@ -1,5 +1,5 @@
 import { Link as A } from "theme-ui"
-import { useMemo } from "react"
+import { useMemo, ElementType } from "react"
 import { LinkProps } from "lib/types/link-props"
 import { FiArrowRight } from "react-icons/fi"
 import Link from "next/link"
@@ -7,9 +7,10 @@ import Link from "next/link"
 export type CardLinkProps = {
   link: LinkProps
   isDark?: boolean
+  as?: ElementType<any>
 }
 
-const CardLink = ({ link, isDark }: CardLinkProps) => {
+const CardLink = ({ as = "a", link, isDark }: CardLinkProps) => {
   const linkChildren = useMemo(
     () => (
       <>
@@ -37,14 +38,16 @@ const CardLink = ({ link, isDark }: CardLinkProps) => {
 
   if (link.isExternal) {
     return (
-      <A href={link.href} target="_blank" sx={linkSx}>
+      <A as={as} href={link.href} target="_blank" sx={linkSx}>
         {linkChildren}
       </A>
     )
   }
   return (
     <Link href={link.href} as={link.asPath} passHref>
-      <A sx={linkSx}>{linkChildren}</A>
+      <A as={as} sx={linkSx}>
+        {linkChildren}
+      </A>
     </Link>
   )
 }
