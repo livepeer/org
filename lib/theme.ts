@@ -220,6 +220,23 @@ const theme = {
       }
     },
     secondary: {
+      bg: "secondary",
+      color: "background",
+      py: 2,
+      px: 4,
+      height: 12,
+      variant: "text.default",
+      fontWeight: 500,
+      transition: "background .15s",
+      "&:hover": {
+        bg: "#6565FC"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(0, 0, 235, 0.5)",
+        outline: "none"
+      }
+    },
+    neutral: {
       color: "background",
       bg: "text",
       py: 2,
