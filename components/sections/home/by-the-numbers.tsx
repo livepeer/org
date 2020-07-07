@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 import React, { useRef, useEffect } from "react"
 import { Grid } from "theme-ui"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 import Stat, { StatProps } from "components/primitives/stat"
+=======
+import { StatProps } from "components/primitives/stat"
+>>>>>>> master
 import SectionLayout from "components/layouts/section"
+import StatsGrid from "components/layouts/stats-grid"
+// TODO replace this file
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -45,6 +51,7 @@ const ByTheNumbersSection = () => {
     if (!section.current) {
       return
     }
+<<<<<<< HEAD
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -108,5 +115,13 @@ const ByTheNumbersSection = () => {
     </SectionLayout>
   )
 }
+=======
+    titleLabel="Subtitle"
+    pushSx={{ pb: ["80px", null, null, "160px"] }}
+  >
+    <StatsGrid stats={stats} />
+  </SectionLayout>
+)
+>>>>>>> master
 
 export default ByTheNumbersSection

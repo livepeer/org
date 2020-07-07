@@ -16,7 +16,9 @@
   "dependencies": {
     "@mdx-js/loader": "^1.6.6",
     "@next/mdx": "^9.4.4",
+    "classnames": "^2.2.6",
     "gsap": "./lib/gsap-bonus.tgz",
+    "keen-slider": "^5.0.5",
     "next": "^9.4.4",
     "next-compose-plugins": "^2.2.0",
     "next-svgr": "^0.0.2",

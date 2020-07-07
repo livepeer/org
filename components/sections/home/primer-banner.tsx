@@ -1,34 +1,33 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Box, Text, Heading, Button } from "theme-ui"
+import PrimerSvg from "components/svgs/primer"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
-import PrimerSvg from "components/icons/primer"
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const PrimerBanner = () => {
-  const section = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!section.current) {
-      return
-    }
+    if (!sectionRef.current) return
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: section.current
+        trigger: sectionRef.current
       }
     })
 
-    tl.add(gsap.effects.sectionHide(section.current))
+    tl.add(gsap.effects.sectionHide(sectionRef.current))
     //@ts-ignore
-    tl.sectionEntrance(section.current)
-  }, [])
+    tl.sectionEntrance(sectionRef.current)
+  }, [sectionRef])
+
   return (
     <Box
       className="hide__section"
-      ref={section}
+      ref={sectionRef}
       sx={{ bg: "muted", px: 3, py: "80px" }}
     >
       <Container

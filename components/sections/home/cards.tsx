@@ -7,6 +7,7 @@ import { SplitText } from "gsap/SplitText"
 
 import IconCard, { IconCardProps } from "components/primitives/cards/icon"
 import { FiUserCheck, FiCode, FiBriefcase } from "react-icons/fi"
+// TODO replace this file
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -16,24 +17,25 @@ const cards: IconCardProps[] = [
     title: "Participants",
     description:
       "The core of this open infrastructure is an open, blockchain based network, with 1000's of participants running video infrastructure to enable video streaming at scale.",
-    link: { label: "/participants", href: "/participants" }
+    linkProps: { link: { label: "/participants", href: "/participants" } }
   },
   {
     icon: <FiCode />,
     title: "Developers",
     description:
       "This open network is built on the open source Livepeer Media Server, which you can build upon in your own video applications whether you want to use the scalable Livepeer network.",
-    link: { label: "/developers", href: "/developers" }
+    linkProps: { link: { label: "/developers", href: "/developers" } }
   },
   {
     icon: <FiBriefcase />,
     title: "Enterprise",
     description:
       "Video platforms and applications can use this network to transcode live and on demand video at less than 10% of the cost of other solutions.",
-    link: { label: "/enterprise", href: "/enterprise" }
+    linkProps: { link: { label: "/enterprise", href: "/enterprise" } }
   }
 ]
 
+<<<<<<< HEAD
 const CardsSection = () => {
   const section = useRef<HTMLDivElement>(null)
 
@@ -75,6 +77,29 @@ const CardsSection = () => {
       background="muted"
       className="hide__section"
       ref={section}
+=======
+const CardsSection = () => (
+  <SectionLayout
+    titleLabel="Subtitle"
+    title="Let Livepeer do your video's work"
+    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    background="muted"
+  >
+    <Grid
+      gap={4}
+      sx={{
+        gridTemplateColumns: [
+          "sm",
+          null,
+          null,
+          null,
+          ({ sizes: { sm } }) => `repeat(3, ${sm})`
+        ],
+        mx: "auto",
+        justifyContent: "center",
+        position: "relative"
+      }}
+>>>>>>> master
     >
       <Grid
         className="features-grid"

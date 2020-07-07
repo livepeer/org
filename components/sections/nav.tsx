@@ -8,7 +8,7 @@ import {
   Button,
   Text
 } from "theme-ui"
-import LivepeerLogo from "components/icons/livepeer-logo"
+import LivepeerLogo from "components/svgs/livepeer-logo"
 import { useEffect, useCallback, useState } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
 import Link from "next/link"
@@ -23,11 +23,11 @@ type LinkType = {
 const links: LinkType[] = [
   {
     label: "Participants",
-    href: "/"
+    href: "/participants"
   },
   {
     label: "Developers",
-    href: "/"
+    href: "/developers"
   },
   {
     label: "Blog",
@@ -41,7 +41,11 @@ const links: LinkType[] = [
 
 const navHeight = "72px"
 
-const Nav = () => {
+export type NavProps = {
+  background?: "muted" | "dark" | "white" | "black"
+}
+
+const Nav = ({ background }: NavProps) => {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
 
@@ -58,13 +62,37 @@ const Nav = () => {
     }
   }, [])
 
+  const isDark = background === "black" || background === "dark"
+  let bg: string
+  let color: string
+  switch (background) {
+    default:
+    case "white":
+      bg = "background"
+      color = "text"
+      break
+    case "muted":
+      bg = "muted"
+      color = "text"
+      break
+    case "dark":
+      bg = "text"
+      color = "background"
+      break
+    case "black":
+      bg = "black"
+      color = "background"
+      break
+  }
+
   return (
     <Box
       sx={{
+        bg,
+        color,
         position: "sticky",
         top: 0,
         zIndex: "header",
-        bg: "muted",
         transition: "box-shadow .3s",
         boxShadow: hasScrolled ? "magical" : "none"
       }}
@@ -77,7 +105,7 @@ const Nav = () => {
           height: navHeight
         }}
       >
-        <LivepeerLogo />
+        <LivepeerLogo isDark={isDark} />
         <Box
           sx={{
             "a:not(:last-of-type)": { mr: 5 },
@@ -85,16 +113,21 @@ const Nav = () => {
           }}
         >
           {links.map((link) => (
-            <NavLink key={`desktop-nav-link-${link.label}`}>
-              {link.label}
-            </NavLink>
+            <Link
+              key={`desktop-nav-link-${link.label}`}
+              href={link.href}
+              as={link.asPath}
+              passHref
+            >
+              <NavLink data-dark={isDark}>{link.label}</NavLink>
+            </Link>
           ))}
         </Box>
         <IconButton
           sx={{
+            color,
             display: ["block", "none"],
-            fontSize: 6,
-            color: "text"
+            fontSize: 6
           }}
           onClick={() => setMobileMenuIsOpen(true)}
         >
@@ -103,15 +136,16 @@ const Nav = () => {
       </Container>
       <Box
         sx={{
+          bg,
+          color,
           position: "fixed",
           top: 0,
           height: mobileMenuIsOpen ? "100vh" : 0,
           transition: "height .2s",
           overflow: "hidden",
-          bg: "background",
-          color: "text",
           width: "100%",
-          zIndex: "dropdown"
+          zIndex: "dropdown",
+          visibility: mobileMenuIsOpen ? "visible" : "hidden"
         }}
       >
         <Container
@@ -122,12 +156,12 @@ const Nav = () => {
             height: navHeight
           }}
         >
-          <LivepeerLogo />
+          <LivepeerLogo isDark={isDark} />
           <IconButton
             sx={{
+              color,
               display: ["block", "none"],
-              fontSize: 6,
-              color: "text"
+              fontSize: 6
             }}
             onClick={() => setMobileMenuIsOpen(false)}
           >
@@ -154,8 +188,9 @@ const Nav = () => {
               >
                 <A
                   sx={{
+                    color,
                     textAlign: "center",
-                    fontSize: 6,
+                    fontSize: 7,
                     fontWeight: 600
                   }}
                 >

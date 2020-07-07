@@ -4,12 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 import SectionLayout from "components/layouts/section"
 import { Grid, Flex } from "theme-ui"
-
 gsap.registerPlugin(ScrollTrigger, SplitText)
-
-import IconLinkCard, {
-  IconLinkProps
-} from "components/primitives/cards/icon-link"
+import IconLink, { IconLinkProps } from "components/primitives/links/icon"
 import {
   FaDiscourse,
   FaDiscord,
@@ -18,7 +14,7 @@ import {
   FaTelegram,
   FaMedium
 } from "react-icons/fa"
-import { Divider } from "components/primitives/divider"
+import Divider from "components/primitives/divider"
 
 const links: IconLinkProps[] = [
   {
@@ -28,7 +24,8 @@ const links: IconLinkProps[] = [
         Join Livepeer on&nbsp;<b>Discourse</b>
       </>
     ),
-    href: "/"
+    href: "https://forum.livepeer.org/",
+    isExternal: true
   },
   {
     icon: <FaDiscord />,
@@ -37,7 +34,8 @@ const links: IconLinkProps[] = [
         Join our&nbsp;<b>Discord Server</b>
       </>
     ),
-    href: "/"
+    href: "https://discord.com/invite/RR4kFAh",
+    isExternal: true
   },
   {
     icon: <FaTwitter />,
@@ -56,7 +54,8 @@ const links: IconLinkProps[] = [
         Read our subreddits on&nbsp;<b>Reddit</b>
       </>
     ),
-    href: ""
+    href: "https://www.reddit.com/r/livepeer/",
+    isExternal: true
   },
   {
     icon: <FaTelegram />,
@@ -65,7 +64,8 @@ const links: IconLinkProps[] = [
         Contact us on&nbsp;<b>Telegram</b>
       </>
     ),
-    href: ""
+    href: "https://t.me/livepeer",
+    isExternal: true
   },
   {
     icon: <FaMedium />,
@@ -79,22 +79,20 @@ const links: IconLinkProps[] = [
   }
 ]
 
-const CommunitySection = () => {
-  const section = useRef<HTMLDivElement>(null)
+const CommunitySection = ({ title = "Community" }) => {
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!section.current) {
-      return
-    }
+    if (!sectionRef.current) return
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: section.current
+        trigger: sectionRef.current
       }
     })
 
-    const items = section.current.querySelectorAll(".h-animate")
-    const cards = section.current.querySelectorAll(".c-animate")
+    const items = sectionRef.current.querySelectorAll(".h-animate")
+    const cards = sectionRef.current.querySelectorAll(".c-animate")
 
     const split = new SplitText(items, {
       type: "lines"
@@ -102,75 +100,67 @@ const CommunitySection = () => {
 
     // Set overflow text
     tl.set([items], { overflow: "hidden" })
-    tl.add(gsap.effects.sectionHide(section.current))
+    tl.add(gsap.effects.sectionHide(sectionRef.current))
     tl.add(gsap.effects.textHide([split.lines]))
     //@ts-ignore
-    tl.sectionEntrance(section.current)
+    tl.sectionEntrance(sectionRef.current)
     //@ts-ignore
     tl.textEntrance([split.lines])
     //@ts-ignore
     tl.elementsEntrance([cards])
   }, [])
+  
   return (
-    //@ts-ignore
-    <SectionLayout
-      title="Community"
-      titleLabel="Subtitle"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      pushSx={{ pt: "160px" }}
-      className="hide__section"
-      ref={section}
+  <SectionLayout
+    title={title}
+    titleLabel="Subtitle"
+    subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skill sets. Join us."
+    pushSx={{ pt: "160px" }}
+    className="hide__section"
+  >
+    <Grid
+      columns={"repeat(3, 372px)"}
+      gap={[3, null, null, null, 0]}
+      sx={{
+        mx: "auto",
+        justifyContent: "center",
+        gridTemplateColumns: [
+          "372px",
+          null,
+          null,
+          null,
+          ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`
+        ]
+      }}
     >
-      <Grid
-        columns={"repeat(3, 372px)"}
-        gap={[3, null, null, null, 0]}
-        sx={{
-          mx: "auto",
-          justifyContent: "center",
-          gridTemplateColumns: [
-            "372px",
-            null,
-            null,
-            null,
-            ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`
-          ]
-        }}
-      >
         {links.map((link, i) => {
           if (i === 1 || i === 4) {
-            return (
-              <Flex key={`icon-link-${link.href}`}>
-                <Divider
-                  isVertical
-                  size="72px"
-                  pushSx={{
-                    mx: 3,
-                    display: ["none", null, null, null, "block"]
-                  }}
-                />
-                <IconLinkCard pushSx={{ width: "372px" }} {...link} />
-                <Divider
-                  isVertical
-                  size="72px"
-                  pushSx={{
-                    mx: 3,
-                    display: ["none", null, null, null, "block"]
-                  }}
-                />
-              </Flex>
-            )
-          }
           return (
-            <IconLinkCard
-              key={`icon-link-${link.href}`}
-              pushSx={{ width: "372px" }}
-              {...link}
-            />
+            <Flex key={`icon-link-${link.href}`}>
+              <Divider
+                isVertical
+                size="72px"
+                pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
+              />
+              <IconLink pushSx={{ width: "372px" }} {...link} />
+              <Divider
+                isVertical
+                size="72px"
+                pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
+              />
+            </Flex>
           )
-        })}
-      </Grid>
-    </SectionLayout>
-  )
-}
+        }
+        return (
+          <IconLink
+            key={`icon-link-${link.href}`}
+            pushSx={{ width: "372px" }}
+            {...link}
+          />
+        )
+      })}
+    </Grid>
+  </SectionLayout>
+)}
 
 export default CommunitySection
