@@ -21,7 +21,6 @@ const IconCard = ({
   className
 }: IconCardProps) => (
   <Card
-    // TODO check this is alright
     className={cn("c-animate", className)}
     sx={{
       height: "526px",
