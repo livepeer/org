@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Card, Heading, Text, SxStyleProp } from "theme-ui"
+import { jsx, Box, Card, Heading, Text, SxStyleProp, Flex } from "theme-ui"
 import CardLink, { CardLinkProps } from "../links"
 import { useMemo } from "react"
 import Link from "next/link"
@@ -33,15 +33,15 @@ const ImageCard = ({
   const markup = useMemo(
     () => (
       <Card
-        className={className}
+        className={isLink ? undefined : className}
         sx={{
           p: 0,
-          pushSx,
           boxShadow: "magical",
           transition: "box-shadow .2s",
           "&:hover": {
             boxShadow: isLink ? "long" : "magical"
-          }
+          },
+          ...pushSx
         }}
       >
         <img
@@ -72,16 +72,18 @@ const ImageCard = ({
                 {description}
               </Text>
             )}
+          </Box>
+          <Box>
             {footnote && (
               <Text
                 variant="small"
-                sx={{ mt: 3, color: title ? "lightGray" : "gray" }}
+                sx={{ mb: 3, color: title ? "lightGray" : "gray" }}
               >
                 {footnote}
               </Text>
             )}
+            <CardLink {...linkProps} />
           </Box>
-          <CardLink {...linkProps} />
         </Box>
       </Card>
     ),
@@ -101,14 +103,14 @@ const ImageCard = ({
   if (!isLink) return markup
   if (linkProps.link.isExternal) {
     return (
-      <a href={linkProps.link.href} target="_blank">
+      <a href={linkProps.link.href} className={className} target="_blank">
         {markup}
       </a>
     )
   }
   return (
     <Link href={linkProps.link.href} as={linkProps.link.asPath}>
-      <a>{markup}</a>
+      <a className={className}>{markup}</a>
     </Link>
   )
 }

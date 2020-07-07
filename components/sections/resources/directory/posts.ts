@@ -1,3 +1,5 @@
+import { SxStyleProp } from "theme-ui"
+
 type Category = { label: string; value: string }
 
 export type Post = {
@@ -7,6 +9,7 @@ export type Post = {
   link: { href: string; asPath?: string; isExternal: boolean }
   category: Category
   image: { src: string; alt?: string }
+  pushContentSx?: SxStyleProp
 }
 
 const categories: Category[] = [
@@ -75,7 +78,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Streamflow Paper",
     description:
-      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
+      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and more.",
     subtitle: "By Doug Petkanics & Yondon Fu",
     link: {
       href: "https://github.com/livepeer/wiki/blob/master/STREAMFLOW.md",
@@ -90,7 +93,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Streamflow Paper (Portuguese Translation)",
     description:
-      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
+      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and more.",
     subtitle: "Translation by Felipe Gaúcho",
     link: {
       href: "https://github.com/felipegaucho/wiki-1/blob/master/STREAMFLOW.md",
@@ -100,7 +103,8 @@ const posts: Post[] = [
     image: {
       src: "/images/posts/post-cover-5.png",
       alt: "Resource cover image"
-    }
+    },
+    pushContentSx: { pr: 2 }
   },
   {
     title: "The Livepeer Primer",
@@ -129,7 +133,7 @@ const posts: Post[] = [
   {
     title: "Scout Analytics",
     description:
-      "A data analytics tool that shows you the current economics of the protocol, such as the amount of token in supply, inflation rate, and more.",
+      "A data analytics tool that shows you the current economics of the protocol.",
     subtitle: "By Scout",
     link: { href: "https://scout.cool/livepeer/mainnet", isExternal: true },
     category: categories[1],

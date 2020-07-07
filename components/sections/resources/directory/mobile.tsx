@@ -6,7 +6,7 @@ import { useMemo } from "react"
 import posts, { categories } from "./posts"
 import KeenSliderGrid from "components/layouts/keen-slider-grid"
 
-const ResourcesDirectory = () => {
+const MobileResourcesDirectory = () => {
   const router = useRouter()
   const { filter } = router.query
 
@@ -52,34 +52,11 @@ const ResourcesDirectory = () => {
   return (
     <Container variant="section">
       <Tabs items={tabs} pushSx={{ justifyContent: "center" }} />
-      <Grid
-        columns={"repeat(3, 366px)"}
-        gap={4}
-        sx={{
-          my: 5,
-          justifyContent: "center",
-          display: ["none", null, null, null, "grid"]
-        }}
-      >
+      <KeenSliderGrid>
         {filteredCards.map((c) => (
           <ImageCard
             {...c}
             key={`resource-card-${c.title}`}
-            isLink
-            pushContentSx={{ height: "296px", ...c.pushContentSx }}
-          />
-        ))}
-      </Grid>
-      <KeenSliderGrid
-        pushSx={{
-          my: 5,
-          display: ["flex", null, null, null, "none"]
-        }}
-      >
-        {filteredCards.map((c) => (
-          <ImageCard
-            {...c}
-            key={`resource-card-keen-slider-${c.title}`}
             isLink
             pushContentSx={{ height: "296px", ...c.pushContentSx }}
           />
@@ -89,4 +66,4 @@ const ResourcesDirectory = () => {
   )
 }
 
-export default ResourcesDirectory
+export default MobileResourcesDirectory
