@@ -1,7 +1,7 @@
 import { Link as A } from "theme-ui"
 import { useMemo, ElementType } from "react"
 import { LinkProps } from "lib/types/link-props"
-import { FiArrowRight } from "react-icons/fi"
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi"
 import Link from "next/link"
 
 export type CardLinkProps = {
@@ -14,7 +14,12 @@ const CardLink = ({ as = "a", link, isDark }: CardLinkProps) => {
   const linkChildren = useMemo(
     () => (
       <>
-        {link.label} <FiArrowRight size="22px" />
+        {link.label}{" "}
+        {link.isExternal ? (
+          <FiArrowUpRight size="22px" />
+        ) : (
+          <FiArrowRight size="22px" />
+        )}
       </>
     ),
     [link]
