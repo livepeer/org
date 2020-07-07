@@ -18,11 +18,11 @@ const defaultMeta: MetaType = {
   twitterUsername: "@LivepeerOrg"
 }
 
-type Props = {
+export type HeadProps = {
   meta?: MetaType
 }
 
-const Head = ({ meta = {} }: Props) => {
+const Head = ({ meta = {} }: HeadProps) => {
   meta = { ...defaultMeta, ...meta }
   if (meta.title !== defaultMeta.title) {
     meta.title = `${meta.title} - Livepeer`

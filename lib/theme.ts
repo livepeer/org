@@ -75,7 +75,7 @@ const theme = {
     "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
     float: "30px 20px 60px rgba(0, 0, 0, 0.1)",
     inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-    long: "10px 0px 30px rgba(0, 0, 0, 0.1)",
+    long: "0px 8px 32px rgba(0, 0, 0, 0.12)",
     magical:
       "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)"
   },
@@ -91,6 +91,12 @@ const theme = {
       maxWidth: 1200,
       mx: "auto",
       p: 3
+    },
+    hero: {
+      maxWidth: 1200,
+      mx: "auto",
+      p: 3,
+      pt: "80px"
     },
     section: {
       variant: "layout.container",
@@ -131,6 +137,7 @@ const theme = {
         fontSize: ["56px", "88px"],
         fontWeight: 700,
         letterSpacing: "heading",
+        lineHeight: [1, "heading"],
         textAlign: "center"
       },
       2: {
@@ -138,6 +145,7 @@ const theme = {
         fontSize: ["48px", "72px"],
         fontWeight: 800,
         letterSpacing: "heading",
+        lineHeight: [1, "heading"],
         textAlign: "center"
       },
       3: {
@@ -145,6 +153,7 @@ const theme = {
         fontSize: ["40px", 8],
         fontWeight: 800,
         letterSpacing: "heading",
+        lineHeight: [1, "heading"],
         textAlign: "center"
       },
       4: {
@@ -200,7 +209,15 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500
+      fontWeight: 500,
+      transition: "background .15s",
+      "&:hover": {
+        bg: "gradient.to"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(0, 235, 136, .5)",
+        outline: "none"
+      }
     },
     secondary: {
       color: "background",
@@ -209,7 +226,15 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500
+      fontWeight: 500,
+      transition: "opacity .15s",
+      "&:hover": {
+        opacity: 0.82
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
+        outline: "none"
+      }
     },
     icon: {
       p: 2,
@@ -225,10 +250,52 @@ const theme = {
       borderRadius: "md",
       bg: "background",
       border: "1px solid",
-      borderColor: "ultraLightGray"
+      borderColor: "ultraLightGray",
+      overflow: "hidden"
     }
   },
-  links: {},
+  links: {
+    nav: {
+      transition: "color .1s",
+      color: "text",
+      ":hover": {
+        color: "secondary"
+      },
+      ":focus": {
+        color: "text",
+        ":hover": {
+          color: "secondary"
+        }
+      },
+      '&[data-dark="true"]': {
+        color: "background",
+        ":hover": {
+          color: "primary"
+        },
+        ":focus": {
+          color: "background",
+          ":hover": {
+            color: "primary"
+          }
+        }
+      }
+    },
+    coloured: {
+      color: "secondary",
+      fontWeight: 600,
+      ":hover": {
+        opacity: 0.8,
+        color: "secondary"
+      },
+      "&[data-dark]": {
+        color: "primary",
+        ":hover": {
+          opacity: 0.8,
+          color: "primary"
+        }
+      }
+    }
+  },
   forms: {
     input: {
       bg: "background",
@@ -238,6 +305,10 @@ const theme = {
       height: 12,
       "&::placeholder": {
         color: "gray"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
+        outline: "none"
       }
     }
   },
@@ -249,7 +320,19 @@ const theme = {
       bg: "background"
     },
     a: {
-      color: "text"
+      color: "text",
+      ":hover": {
+        color: "secondary"
+      },
+      "&[data-dark]": {
+        color: "background",
+        ":hover": {
+          color: "primary"
+        }
+      }
+    },
+    progress: {
+      height: "1px"
     }
   }
 }

@@ -1,35 +1,29 @@
 /** @jsx jsx */
 import { useRef, useEffect } from "react"
 import { jsx, Container, Heading, Text, Button, Box } from "theme-ui"
-
+import Divider from "components/primitives/divider"
 import { gsap } from "gsap"
 import { DURATION } from "lib/animations"
 
-import { Divider } from "components/primitives/divider"
-
 const HomeHero = () => {
-  const section = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!section.current) {
-      return
-    }
-
+    if (!sectionRef.current) return
     const tl = gsap.timeline()
-
-    tl.set(section.current, {
+    tl.set(sectionRef.current, {
       autoAlpha: 0
     })
 
-    //@ts-ignore
-    tl.sectionEntrance(section.current, { duration: DURATION })
+    // @ts-ignore
+    tl.sectionEntrance(sectionRef.current, { duration: DURATION })
   }, [])
+
   return (
     <Box sx={{ bg: "muted" }}>
       <Container
         variant="section"
-        ref={section}
-        className="hide__section"
+        ref={sectionRef}
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -38,10 +32,7 @@ const HomeHero = () => {
         }}
       >
         <Box sx={{ maxWidth: "4xl", mb: ["32px", "40px"] }}>
-          <Heading
-            variant="heading.1"
-            sx={{ fontSize: ["40px", "56px", "88px"] }}
-          >
+          <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
             The&nbsp;
             <Text as="span" variant="gradient">
               World's Open&nbsp;
