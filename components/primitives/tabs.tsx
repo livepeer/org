@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Link as A, Text, Flex, SxStyleProp } from "theme-ui"
 import { LinkProps } from "lib/types/link-props"
-import { useMemo } from "react"
+import { useMemo, useEffect, useState, useRef } from "react"
 import Link from "next/link"
 
 type ButtonProps = { label: string; onClick: () => void }
@@ -65,20 +65,37 @@ const Tab = (props: TabProps) => {
 type TabsProps = {
   items: TabProps[]
   pushSx?: SxStyleProp
+  isFullWidthOnMobile?: boolean
 }
 
-const Tabs = ({ items, pushSx }: TabsProps) => (
-  <Flex
-    sx={{
-      overflow: "auto",
-      ".tab:not(:last-of-type)": { mr: 3 },
-      ...pushSx
-    }}
-  >
-    {items.map((tab) => (
-      <Tab key={`tab-item-${tab.label}`} {...tab} />
-    ))}
-  </Flex>
-)
+const Tabs = ({ items, pushSx, isFullWidthOnMobile = true }: TabsProps) => {
+  const [offsetLeft, setOffsetLeft] = useState<number>(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (containerRef.current && isFullWidthOnMobile) {
+      setOffsetLeft(containerRef.current.offsetLeft)
+    }
+  }, [containerRef, isFullWidthOnMobile])
+
+  return (
+    <Flex
+      ref={containerRef}
+      sx={{
+        overflow: "auto",
+        width: [isFullWidthOnMobile ? "100vw" : "100%", "100%"],
+        position: "relative",
+        left: [`-${offsetLeft}px`, 0],
+        pl: [`${offsetLeft}px`, 0],
+        ".tab:not(:last-of-type)": { mr: 3 },
+        ...pushSx
+      }}
+    >
+      {items.map((tab) => (
+        <Tab key={`tab-item-${tab.label}`} {...tab} />
+      ))}
+    </Flex>
+  )
+}
 
 export default Tabs
