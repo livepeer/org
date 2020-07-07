@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Link as A, Text, Flex, SxStyleProp } from "theme-ui"
+import { jsx, Link as A, Text, Flex, SxStyleProp, Box } from "theme-ui"
 import { LinkProps } from "lib/types/link-props"
 import { useMemo, useEffect, useState, useRef } from "react"
 import Link from "next/link"
@@ -94,6 +94,9 @@ const Tabs = ({ items, pushSx, isFullWidthOnMobile = true }: TabsProps) => {
       {items.map((tab) => (
         <Tab key={`tab-item-${tab.label}`} {...tab} />
       ))}
+      {isFullWidthOnMobile && (
+        <Box sx={{ pointerEvents: "none", minWidth: [`${offsetLeft}px`, 0] }} />
+      )}
     </Flex>
   )
 }
