@@ -7,6 +7,7 @@ type Props = {
   background?: "muted" | "dark" | "black"
   pushSx?: SxStyleProp
   headingContainerPushSx?: SxStyleProp
+  className?: string
 }
 
 const SectionLayout: React.FC<Props> = ({
@@ -16,7 +17,8 @@ const SectionLayout: React.FC<Props> = ({
   titleLabel,
   background,
   pushSx,
-  headingContainerPushSx
+  headingContainerPushSx,
+  className
 }) => {
   let bg = "background"
   let titleColor = "text"
@@ -37,7 +39,7 @@ const SectionLayout: React.FC<Props> = ({
 
   return (
     <Box sx={{ bg, color: titleColor }}>
-      <Container variant="section" sx={pushSx}>
+      <Container variant="section" className={className} sx={pushSx}>
         <Box
           sx={{
             zIndex: "general",
