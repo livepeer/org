@@ -1,15 +1,7 @@
-import React, { useRef, useEffect } from "react"
 import SectionLayout from "components/layouts/section"
 import { Grid } from "theme-ui"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { SplitText } from "gsap/SplitText"
-
 import IconCard, { IconCardProps } from "components/primitives/cards/icon"
 import { FiUserCheck, FiCode, FiBriefcase } from "react-icons/fi"
-// TODO replace this file
-
-gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const cards: IconCardProps[] = [
   {
@@ -35,49 +27,6 @@ const cards: IconCardProps[] = [
   }
 ]
 
-<<<<<<< HEAD
-const CardsSection = () => {
-  const section = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!section.current) {
-      return
-    }
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section.current
-      }
-    })
-
-    const items = section.current.querySelectorAll(".h-animate")
-    const cards = section.current.querySelectorAll(".c-animate")
-
-    const split = new SplitText(items, {
-      type: "lines"
-    })
-
-    // Set overflow text
-    tl.set([items], { overflow: "hidden" })
-    tl.add(gsap.effects.sectionHide(section.current))
-    tl.add(gsap.effects.textHide([split.lines]))
-    //@ts-ignore
-    tl.sectionEntrance(section.current)
-    //@ts-ignore
-    tl.textEntrance([split.lines])
-    //@ts-ignore
-    tl.elementsEntrance([cards])
-  }, [])
-  return (
-    //@ts-ignore
-    <SectionLayout
-      titleLabel="Subtitle"
-      title="Let Livepeer do your video's work"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      background="muted"
-      className="hide__section"
-      ref={section}
-=======
 const CardsSection = () => (
   <SectionLayout
     titleLabel="Subtitle"
@@ -99,30 +48,12 @@ const CardsSection = () => (
         justifyContent: "center",
         position: "relative"
       }}
->>>>>>> master
     >
-      <Grid
-        className="features-grid"
-        gap={[4, null, null, 4]}
-        sx={{
-          gridTemplateColumns: [
-            "sm",
-            null,
-            null,
-            null,
-            ({ sizes: { sm } }) => `repeat(3, ${sm})`
-          ],
-          mx: "auto",
-          justifyContent: "center",
-          position: "relative"
-        }}
-      >
-        {cards.map((card) => (
-          <IconCard key={`card-${card.title}`} {...card} />
-        ))}
-      </Grid>
-    </SectionLayout>
-  )
-}
+      {cards.map((card) => (
+        <IconCard key={`card-${card.title}`} {...card} />
+      ))}
+    </Grid>
+  </SectionLayout>
+)
 
 export default CardsSection
