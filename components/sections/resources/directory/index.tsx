@@ -4,7 +4,6 @@ import { useRouter } from "next/router"
 import ImageCard, { ImageCardProps } from "components/primitives/cards/image"
 import { useMemo } from "react"
 import posts, { categories } from "./posts"
-import KeenSliderGrid from "components/layouts/keen-slider-grid"
 
 const ResourcesDirectory = () => {
   const router = useRouter()
@@ -51,14 +50,22 @@ const ResourcesDirectory = () => {
 
   return (
     <Container variant="section">
-      <Tabs items={tabs} pushSx={{ justifyContent: "center" }} />
+      <Tabs
+        items={tabs}
+        pushSx={{ justifyContent: ["flex-start", "center"] }}
+      />
       <Grid
-        columns={"repeat(3, 366px)"}
+        columns={[
+          "minmax(auto, 366px)",
+          null,
+          "repeat(2, minmax(auto, 366px))",
+          null,
+          "repeat(3, 366px)"
+        ]}
         gap={4}
         sx={{
           my: 5,
-          justifyContent: "center",
-          display: ["none", null, null, null, "grid"]
+          justifyContent: "center"
         }}
       >
         {filteredCards.map((c) => (
@@ -70,21 +77,6 @@ const ResourcesDirectory = () => {
           />
         ))}
       </Grid>
-      <KeenSliderGrid
-        pushSx={{
-          my: 5,
-          display: ["flex", null, null, null, "none"]
-        }}
-      >
-        {filteredCards.map((c) => (
-          <ImageCard
-            {...c}
-            key={`resource-card-keen-slider-${c.title}`}
-            isLink
-            pushContentSx={{ height: "296px", ...c.pushContentSx }}
-          />
-        ))}
-      </KeenSliderGrid>
     </Container>
   )
 }

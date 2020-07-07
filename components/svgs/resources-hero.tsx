@@ -1,10 +1,12 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+
 const ResourcesHeroSvg = () => (
   <svg
-    width="508"
-    height="380"
     viewBox="0 0 508 380"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    sx={{ width: "508px" }}
   >
     <g clipPath="url(#resources-hero-svg-clip0)">
       <g filter="url(#resources-hero-svg-filter0_d)">
