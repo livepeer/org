@@ -20,7 +20,8 @@ const PrefooterFaqBanner = () => (
           flexDirection: "column",
           alignItems: ["center", null, null, "flex-start"],
           mx: ["auto", null, null, 0],
-          zIndex: "general"
+          zIndex: "general",
+          position: "relative"
         }}
       >
         <Heading
