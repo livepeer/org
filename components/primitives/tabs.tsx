@@ -87,7 +87,7 @@ const Tabs = ({ items, pushSx, isFullWidthOnMobile = true }: TabsProps) => {
         position: "relative",
         left: [`-${offsetLeft}px`, 0],
         pl: [`${offsetLeft}px`, 0],
-        ".tab:not(:last-of-type)": { mr: 3 },
+        ".tab:not(:last-of-type)": { mr: 4 },
         ...pushSx
       }}
     >
