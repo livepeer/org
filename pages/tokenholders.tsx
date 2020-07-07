@@ -6,7 +6,7 @@ import GetTokenSection from "components/sections/tokenholders/get-token"
 import TokenholderStatsSection from "components/sections/tokenholders/tokenholder-stats"
 
 const TokenholdersPage = () => (
-  <PageLayout>
+  <PageLayout footerProps={{ prefooter: "faqs" }}>
     <CroppedIllustrationHero
       title="Tokenholders"
       subtitle="Everyday thousands of tokenholders participate in Livepeer, the world’s first open source, peer-to-peer video transcoding platform."

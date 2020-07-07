@@ -1,12 +1,13 @@
 import Head, { HeadProps } from "components/primitives/head"
 import Nav, { NavProps } from "components/sections/nav"
 import { Box, SxStyleProp } from "theme-ui"
-import Footer from "components/sections/footer"
+import Footer, { FooterProps } from "components/sections/footer"
 
 type Props = {
   headProps?: HeadProps
   isDark?: boolean
   navProps?: NavProps
+  footerProps?: FooterProps
   pushContentSx?: SxStyleProp
 }
 
@@ -15,7 +16,8 @@ const PageLayout: React.FC<Props> = ({
   headProps,
   isDark,
   navProps,
-  pushContentSx
+  pushContentSx,
+  footerProps
 }) => (
   <>
     <Head {...headProps} />
@@ -28,7 +30,7 @@ const PageLayout: React.FC<Props> = ({
     >
       {children}
     </Box>
-    <Footer isDark={isDark} />
+    <Footer {...footerProps} isDark={isDark} />
   </>
 )
 
