@@ -3,6 +3,7 @@ import Divider from "components/primitives/divider"
 import FooterList, { FooterListProps } from "./list"
 import LogoAndEmail from "./logo-and-email"
 import PrefooterBanner from "./prefooter-banner"
+import PrefooterFaqBanner from "./prefooter-faq-banner"
 
 const lists: FooterListProps[] = [
   {
@@ -43,11 +44,17 @@ const lists: FooterListProps[] = [
   }
 ]
 
-const Footer = ({ withPrefooter = true, isDark = false }) => (
+export type FooterProps = {
+  isDark?: boolean
+  prefooter?: "subscribe" | "faqs"
+}
+
+const Footer = ({ isDark = false, prefooter = "subscribe" }: FooterProps) => (
   <Box as="footer" bg={isDark ? "text" : "background"}>
-    {withPrefooter && <PrefooterBanner />}
+    {prefooter === "subscribe" && <PrefooterBanner />}
+    {prefooter === "faqs" && <PrefooterFaqBanner />}
     <Box sx={{ bg: "text", color: "background" }}>
-      <Container sx={{ pt: [withPrefooter ? 6 : 5, 5], pb: 4 }}>
+      <Container sx={{ pt: [prefooter ? 6 : 5, 5], pb: 4 }}>
         <LogoAndEmail
           pushSx={{
             display: ["flex", null, null, "none"],

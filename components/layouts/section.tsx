@@ -36,7 +36,9 @@ const SectionLayout: React.FC<Props> = ({
   }
 
   return (
-    <Box sx={{ bg, color: titleColor }}>
+    <Box
+      sx={{ bg, color: titleColor, position: "relative", zIndex: "general" }}
+    >
       <Container variant="section" sx={pushSx}>
         <Box
           sx={{

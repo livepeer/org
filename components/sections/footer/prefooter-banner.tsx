@@ -55,7 +55,7 @@ const PrefooterBanner = () => (
             sx={{ mx: 1, flex: "1 1 60%", mb: 2 }}
           />
           <Button
-            variant="secondary"
+            variant="neutral"
             sx={{ minWidth: "fit-content", flex: "1 1", mx: 1 }}
           >
             Check it out
