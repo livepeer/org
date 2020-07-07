@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Card, Box, Heading, Text } from "theme-ui"
-import CardLink, { CardLinkProps } from "../links"
+import CardLink, { CardLinkProps } from "../links/card"
 
 export type IconCardProps = {
   icon: React.ReactNode
