@@ -50,9 +50,6 @@ const StatusLink = ({ link, status, isDark }: StatusLinkProps) => {
 
   const linkSx = useMemo(
     () => ({
-      variant: "text.small",
-      fontWeight: 600,
-      color: isDark ? "primary" : "secondary",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center"
@@ -62,14 +59,22 @@ const StatusLink = ({ link, status, isDark }: StatusLinkProps) => {
 
   if (link.isExternal) {
     return (
-      <A href={link.href} target="_blank" sx={linkSx}>
+      <A
+        variant="coloured"
+        data-dark={isDark}
+        href={link.href}
+        target="_blank"
+        sx={linkSx}
+      >
         {linkChildren}
       </A>
     )
   }
   return (
     <Link href={link.href} as={link.asPath} passHref>
-      <A sx={linkSx}>{linkChildren}</A>
+      <A variant="coloured" data-dark={isDark} sx={linkSx}>
+        {linkChildren}
+      </A>
     </Link>
   )
 }
