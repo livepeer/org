@@ -3,7 +3,12 @@ import Link from "next/link"
 
 export type FooterListProps = {
   title: string
-  items: { label: string; href: string; asPath?: string }[]
+  items: {
+    label: string
+    href: string
+    asPath?: string
+    isExternal?: boolean
+  }[]
 }
 
 const FooterList = ({ title, items }: FooterListProps) => (
@@ -26,24 +31,39 @@ const FooterList = ({ title, items }: FooterListProps) => (
         }
       }}
     >
-      {items.map((item) => (
-        <Link
-          key={`footer-list-link-${title}-${item.label}`}
-          href={item.href}
-          as={item.asPath}
-          passHref
-        >
+      {items.map((item) =>
+        item.isExternal ? (
           <A
+            key={`footer-list-link-${title}-${item.label}`}
+            href={item.href}
             sx={{
               width: "fit-content",
               textAlign: ["center", null, null, "left"]
             }}
+            target="_blank"
             data-dark
           >
             {item.label}
           </A>
-        </Link>
-      ))}
+        ) : (
+          <Link
+            key={`footer-list-link-${title}-${item.label}`}
+            href={item.href}
+            as={item.asPath}
+            passHref
+          >
+            <A
+              sx={{
+                width: "fit-content",
+                textAlign: ["center", null, null, "left"]
+              }}
+              data-dark
+            >
+              {item.label}
+            </A>
+          </Link>
+        )
+      )}
     </Flex>
   </Box>
 )
