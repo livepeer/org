@@ -40,7 +40,10 @@ const GetTokenSection = () => (
     background="muted"
     pushSx={{ py: ["80px", "160px"] }}
   >
-    <Grid columns={[1, null, 2]}>
+    <Grid
+      columns={["minmax(auto, 632px)", null, "repeat(2, minmax(auto, 632px))"]}
+      sx={{ justifyContent: "center" }}
+    >
       {cards.map((c) => (
         <GetTokenCard
           key={`get-token-card-${c.titleLabel}=${c.title}`}
