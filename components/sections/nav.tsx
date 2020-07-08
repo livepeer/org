@@ -33,11 +33,12 @@ const links: LinkType[] = [
   },
   {
     label: "Blog",
-    href: "/"
+    href: "https://medium.com/livepeer-blog",
+    isExternal: true
   },
   {
     label: "Enterprise",
-    href: "/"
+    href: "/enterprise"
   }
 ]
 
@@ -188,16 +189,27 @@ const Nav = ({
               display: ["none", "flex"]
             }}
           >
-            {links.map((link) => (
-              <Link
-                key={`desktop-nav-link-${link.label}`}
-                href={link.href}
-                as={link.asPath}
-                passHref
-              >
-                <NavLink data-dark={isDark}>{link.label}</NavLink>
-              </Link>
-            ))}
+            {links.map((link) =>
+              link.isExternal ? (
+                <NavLink
+                  key={`desktop-nav-link-${link.label}`}
+                  href={link.href}
+                  data-dark={isDark}
+                  target="_blank"
+                >
+                  {link.label}
+                </NavLink>
+              ) : (
+                <Link
+                  key={`desktop-nav-link-${link.label}`}
+                  href={link.href}
+                  as={link.asPath}
+                  passHref
+                >
+                  <NavLink data-dark={isDark}>{link.label}</NavLink>
+                </Link>
+              )
+            )}
           </Box>
           <IconButton
             sx={{
@@ -256,13 +268,12 @@ const Nav = ({
             }}
           >
             <Flex sx={{ flexDirection: "column" }}>
-              {links.map((link) => (
-                <Link
-                  key={`link-${link.label}-${link.href}`}
-                  href={link.href}
-                  passHref
-                >
+              {links.map((link) =>
+                link.isExternal ? (
                   <A
+                    key={`link-${link.label}-${link.href}`}
+                    href={link.href}
+                    target="_blank"
                     sx={{
                       color,
                       textAlign: "center",
@@ -272,8 +283,25 @@ const Nav = ({
                   >
                     {link.label}
                   </A>
-                </Link>
-              ))}
+                ) : (
+                  <Link
+                    key={`link-${link.label}-${link.href}`}
+                    href={link.href}
+                    passHref
+                  >
+                    <A
+                      sx={{
+                        color,
+                        textAlign: "center",
+                        fontSize: 7,
+                        fontWeight: 600
+                      }}
+                    >
+                      {link.label}
+                    </A>
+                  </Link>
+                )
+              )}
             </Flex>
 
             <Flex sx={{ flexDirection: "column" }}>

@@ -204,6 +204,11 @@ const theme = {
   },
   buttons: {
     primary: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
+      bg: "primary",
       color: "text",
       py: 2,
       px: 4,
@@ -220,6 +225,10 @@ const theme = {
       }
     },
     secondary: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
       bg: "secondary",
       color: "background",
       py: 2,
@@ -237,6 +246,10 @@ const theme = {
       }
     },
     neutral: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
       color: "background",
       bg: "text",
       py: 2,

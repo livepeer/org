@@ -1,4 +1,4 @@
-import { Button, Box, Flex, Grid } from "theme-ui"
+import { Box, Flex, Grid, Link as A } from "theme-ui"
 import SectionLayout from "components/layouts/section"
 import HostedApiSvg, { MobileHostedApiSvg } from "components/svgs/hosted-api"
 import ListItem, { ListItemProps } from "components/primitives/list-item"
@@ -61,9 +61,14 @@ const HostedApiSection = () => (
         alignItems: ["flex-start", null, "center"]
       }}
     >
-      <Button sx={{ width: "fit-content", zIndex: "general" }}>
+      <A
+        variant="buttons.primary"
+        href="https://livepeer.com/"
+        target="_blank"
+        sx={{ zIndex: "general" }}
+      >
         Visit livepeer.com
-      </Button>
+      </A>
       <Box
         sx={{
           position: "relative",

@@ -60,7 +60,7 @@ const HaveACallSection = () => (
   >
     <KeenSliderGrid>
       {cards.map((c) => (
-        <ImageCard key={`have-a-call-image-card-${c.title}`} {...c} />
+        <ImageCard key={`have-a-call-image-card-${c.description}`} {...c} />
       ))}
     </KeenSliderGrid>
   </SectionLayout>
