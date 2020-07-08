@@ -24,7 +24,10 @@ const GetTokenCard = ({
       maxWidth: "632px",
       p: [4, 5, null, "90px"],
       pt: ["180px", "200px", "200px", "220px"],
-      position: "relative"
+      position: "relative",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between"
     }}
   >
     <Box
@@ -37,31 +40,33 @@ const GetTokenCard = ({
     >
       {headerIllustration}
     </Box>
-    <Text variant="large" sx={{ textAlign: "left" }}>
-      {titleLabel}
-    </Text>
-    <Heading variant="heading.3" sx={{ textAlign: "left" }}>
-      {title}
-    </Heading>
-    <Box sx={{ mt: "48px", mb: "40px" }}>
-      {listItems.map((item) => (
-        <Flex
-          key={`list-item-${item}`}
-          sx={{ "&:not(:last-of-type)": { mb: 4 } }}
-        >
-          <i sx={{ color: accent, fontSize: 5, mr: 3 }}>
-            <FiCheckCircle />
-          </i>
-          <Text variant="normal">{item}</Text>
-        </Flex>
-      ))}
-    </Box>
+    <div>
+      <Text variant="large" sx={{ textAlign: "left" }}>
+        {titleLabel}
+      </Text>
+      <Heading variant="heading.3" sx={{ textAlign: "left" }}>
+        {title}
+      </Heading>
+      <Box sx={{ mt: "48px", mb: "40px" }}>
+        {listItems.map((item) => (
+          <Flex
+            key={`list-item-${item}`}
+            sx={{ "&:not(:last-of-type)": { mb: 4 } }}
+          >
+            <i sx={{ color: accent, fontSize: 5, mr: 3 }}>
+              <FiCheckCircle />
+            </i>
+            <Text variant="normal">{item}</Text>
+          </Flex>
+        ))}
+      </Box>
+    </div>
     <Button
       variant={accent}
       onClick={cta.onClick}
       sx={{
         bg: accent,
-        width: "unset",
+        width: "fit-content",
         position: "relative",
         left: 0,
         "@media screen and (max-width: 360px)": {
