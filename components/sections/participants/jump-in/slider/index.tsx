@@ -68,8 +68,8 @@ const JumpInSlider = () => {
         "Transcode video on your infrastructure as an infrastructure operator in exchange for ETH and LPT rewards.",
       linkProps: {
         link: {
-          label: "/operators",
-          href: "/operators"
+          label: "/infrastructure",
+          href: "/infrastructure"
         },
         isDark: true
       },

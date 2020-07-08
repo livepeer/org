@@ -1,4 +1,4 @@
-import { Container, Box, Text, Heading, Button, Grid } from "theme-ui"
+import { Container, Box, Text, Heading, Grid, Link as A } from "theme-ui"
 import ListItem, { ListItemProps } from "components/primitives/list-item"
 import { FiCheckCircle } from "react-icons/fi"
 import NetworkSvg from "components/svgs/network"
@@ -53,7 +53,7 @@ const PublicNetworkBanner = () => (
             The Public Network
           </Heading>
         </Box>
-        <Box sx={{}}>
+        <Box>
           <Box>
             {listItems.map((item, i) => (
               <ListItem
@@ -65,7 +65,13 @@ const PublicNetworkBanner = () => (
               />
             ))}
           </Box>
-          <Button sx={{ width: "fit-content" }}>Read the docs</Button>
+          <A
+            variant="buttons.primary"
+            href="https://livepeer.readthedocs.io/"
+            target="_blank"
+          >
+            Read the docs
+          </A>
         </Box>
       </Grid>
       <NetworkSvg
