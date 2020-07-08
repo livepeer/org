@@ -2,7 +2,7 @@
 import { jsx, Heading, Text, Container, Link as A } from "theme-ui"
 import PageLayout from "components/layouts/page"
 
-const HomePage = () => (
+const PrivacyPolicyPage = () => (
   <PageLayout footerProps={{ prefooter: null }}>
     <Container sx={{ py: 5, maxWidth: "800px", p: { mb: 4, lineHeight: 1.7 } }}>
       <Heading variant="heading.3" sx={{ textAlign: "left", mb: 4 }}>
@@ -383,4 +383,4 @@ const HomePage = () => (
   </PageLayout>
 )
 
-export default HomePage
+export default PrivacyPolicyPage
