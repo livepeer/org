@@ -61,6 +61,7 @@ const AccordionItem = ({
     <IllustratedBackgroundBox
       pushSx={{
         backgroundBlendMode: "color",
+        willChange: "background-color, background-image",
         ...(isToggled && withIllustratedBackground
           ? {
               backgroundColor: "rgba(255,255,255,1)",
@@ -75,6 +76,7 @@ const AccordionItem = ({
         boxShadow: "magical",
         p: [3, 4],
         overflow: "hidden",
+        willChange: "height",
         height: [
           `calc(${isToggled ? fullHeight : baseHeight} + 32px)`,
           `calc(${isToggled ? fullHeight : baseHeight} + 64px)`
