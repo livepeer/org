@@ -1,11 +1,29 @@
 import { Box } from "theme-ui"
-import Line from "./line"
+import Line, { AnimatedLineProps } from "./line"
+import { useCallback } from "react"
 
-const CodeStoryAnimation = () => {
+type Props = {
+  lines: AnimatedLineProps[]
+  stagger?: number
+}
+
+const CodeStoryAnimation = ({ lines }: Props) => {
+  const handleDone = useCallback(() => {}, [])
+
   return (
-    <Box sx={{ fontFamily: "mono" }}>
-      <Line>Testing this thing</Line>
-      <Line delay={3000}>Yay!</Line>
+    <Box
+      sx={{
+        fontFamily: "mono",
+        '.line:not(:last-of-type)[data-done="true"] .caret': { display: "none" }
+      }}
+    >
+      {lines.map((line, i) => (
+        <Line
+          key={`code-story-animation-line-${i}`}
+          {...line}
+          onDone={handleDone}
+        />
+      ))}
     </Box>
   )
 }
