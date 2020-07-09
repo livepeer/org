@@ -1,10 +1,5 @@
-import React, { useRef, useEffect } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { SplitText } from "gsap/SplitText"
 import SectionLayout from "components/layouts/section"
 import { Grid, Flex } from "theme-ui"
-gsap.registerPlugin(ScrollTrigger, SplitText)
 import IconLink, { IconLinkProps } from "components/primitives/links/icon"
 import {
   FaDiscourse,
@@ -79,44 +74,12 @@ const links: IconLinkProps[] = [
   }
 ]
 
-const CommunitySection = ({ title = "Community" }) => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      }
-    })
-
-    const items = sectionRef.current.querySelectorAll(".h-animate")
-    const cards = sectionRef.current.querySelectorAll(".c-animate")
-
-    const split = new SplitText(items, {
-      type: "lines"
-    })
-
-    // Set overflow text
-    tl.set([items], { overflow: "hidden" })
-    tl.add(gsap.effects.sectionHide(sectionRef.current))
-    tl.add(gsap.effects.textHide([split.lines]))
-    //@ts-ignore
-    tl.sectionEntrance(sectionRef.current)
-    //@ts-ignore
-    tl.textEntrance([split.lines])
-    //@ts-ignore
-    tl.elementsEntrance([cards])
-  }, [])
-  
-  return (
+const CommunitySection = ({ title = "Community" }) => (
   <SectionLayout
     title={title}
     titleLabel="Subtitle"
     subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skill sets. Join us."
     pushSx={{ pt: "160px" }}
-    className="hide__section"
   >
     <Grid
       columns={"repeat(3, 372px)"}
@@ -133,8 +96,8 @@ const CommunitySection = ({ title = "Community" }) => {
         ]
       }}
     >
-        {links.map((link, i) => {
-          if (i === 1 || i === 4) {
+      {links.map((link, i) => {
+        if (i === 1 || i === 4) {
           return (
             <Flex key={`icon-link-${link.href}`}>
               <Divider
@@ -161,6 +124,6 @@ const CommunitySection = ({ title = "Community" }) => {
       })}
     </Grid>
   </SectionLayout>
-)}
+)
 
 export default CommunitySection

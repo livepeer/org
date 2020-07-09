@@ -3,6 +3,7 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 
+//@ts-ignore
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText)
 
 const GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2
