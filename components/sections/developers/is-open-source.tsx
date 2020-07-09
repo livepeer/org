@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Button } from "theme-ui"
+import { jsx, Box, Container, Heading, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
 import StatsGrid from "components/layouts/stats-grid"
 import { StatProps } from "components/primitives/stat"
@@ -80,7 +80,13 @@ const IsOpenSourceSection = () => (
           omnis iste natus error sit voluptats accusantium.
         </Heading>
         <Divider isTransparent isVertical size={["32px", "40px"]} />
-        <Button>Explore the code</Button>
+        <A
+          variant="buttons.primary"
+          href="https://github.com/livepeer/"
+          target="_blank"
+        >
+          Explore the code
+        </A>
         <StatsGrid pushSx={{ mt: 5 }} stats={stats} />
       </Box>
     </Container>
