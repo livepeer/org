@@ -9,11 +9,10 @@ type Props = {
   pushSx?: SxStyleProp
   headingContainerPushSx?: SxStyleProp
   className?: string
+  children: ReactNode
 }
 
-type Ref = HTMLDivElement
-
-const SectionLayout = forwardRef<Ref, Props>(
+const SectionLayout = forwardRef(
   (
     {
       background,
@@ -24,8 +23,8 @@ const SectionLayout = forwardRef<Ref, Props>(
       subtitle,
       title,
       titleLabel
-    },
-    ref
+    }: Props,
+    ref: React.RefObject<HTMLDivElement>
   ) => {
     let bg = "background"
     let titleColor = "text"
@@ -61,17 +60,29 @@ const SectionLayout = forwardRef<Ref, Props>(
             }}
           >
             {titleLabel && (
-              <Text variant="section.titleLabel" sx={{ color: titleColor }}>
+              <Text
+                className="h-animate"
+                variant="section.titleLabel"
+                sx={{ color: titleColor }}
+              >
                 {titleLabel}
               </Text>
             )}
             {title && (
-              <Heading variant="section.title" sx={{ color: titleColor }}>
+              <Heading
+                className="h-animate"
+                variant="section.title"
+                sx={{ color: titleColor }}
+              >
                 {title}
               </Heading>
             )}
             {subtitle && (
-              <Heading variant="section.subtitle" sx={{ color: subTitleColor }}>
+              <Heading
+                className="h-animate"
+                variant="section.subtitle"
+                sx={{ color: subTitleColor }}
+              >
                 {subtitle}
               </Heading>
             )}

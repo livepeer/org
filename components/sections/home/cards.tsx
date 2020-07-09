@@ -7,7 +7,6 @@ import { Grid } from "theme-ui"
 import IconCard, { IconCardProps } from "components/primitives/cards/icon"
 import { FiUserCheck, FiCode, FiBriefcase } from "react-icons/fi"
 
-//@ts-ignore
 gsap.registerPlugin(SplitText)
 gsap.registerPlugin(ScrollTrigger)
 
@@ -54,7 +53,7 @@ const CardsSection = () => {
     // Set overflow text
     tl.set([items], { overflow: "hidden" })
     tl.add(gsap.effects.sectionHide(sectionRef.current))
-    //@ts-ignore
+
     tl.add(gsap.effects.textHide([split.lines]))
     //@ts-ignore
     tl.sectionEntrance(sectionRef.current)
