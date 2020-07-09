@@ -1,7 +1,21 @@
-import { Box } from "theme-ui"
+import { Box, SxStyleProp } from "theme-ui"
 
-const Caret = () => (
-  <Box sx={{ display: "inline-block", height: 4, width: 2, bg: "primary" }} />
+type Props = {
+  pushSx?: SxStyleProp
+}
+
+const Caret = ({ pushSx }: Props) => (
+  <Box
+    className="caret"
+    sx={{
+      display: "inline-block",
+      userSelect: "none",
+      height: 4,
+      width: 2,
+      bg: "primary",
+      ...pushSx
+    }}
+  />
 )
 
 export default Caret
