@@ -13,28 +13,37 @@ const IllustratedBackgroundBox: React.FC<Props> = ({
   contentProps,
   ...props
 }) => (
-  <Box
-    {...props}
-    sx={{
-      p: 3,
-      backgroundImage: "url(/backgrounds/illustrated.svg)",
-      backgroundSize: "cover",
-      borderRadius: "lg",
-      ...pushSx
-    }}
-  >
+  <>
     <Box
-      {...contentProps}
+      {...props}
       sx={{
-        bg: "background",
+        p: 3,
+        backgroundImage: "url(/backgrounds/illustrated.svg)",
+        backgroundSize: "cover",
         borderRadius: "lg",
-        height: "100%",
-        ...pushContentSx
+        ...pushSx
       }}
     >
-      {children}
+      <Box
+        {...contentProps}
+        sx={{
+          bg: "background",
+          borderRadius: "lg",
+          height: "100%",
+          ...pushContentSx
+        }}
+      >
+        {children}
+      </Box>
     </Box>
-  </Box>
+    {/* A hidden placeholder to preload the svg */}
+    <Box
+      sx={{
+        backgroundImage: "url(/backgrounds/illustrated.svg)",
+        display: "none"
+      }}
+    />
+  </>
 )
 
 export default IllustratedBackgroundBox
