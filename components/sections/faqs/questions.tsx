@@ -1,5 +1,7 @@
 /** @jsx jsx */
 import { jsx, Link as A, Text } from "theme-ui"
+import Link from "next/link"
+import { LinkProps } from "lib/types/link-props"
 
 type Category = { label: string; value: string }
 
@@ -32,15 +34,30 @@ const categories: Category[] = [
   }
 ]
 
+const AnswerLink: React.FC<LinkProps> = ({ label, href, asPath, isExternal }) =>
+  isExternal ? (
+    <A variant="coloured" sx={{ fontWeight: 400 }} href={href} target="_blank">
+      {label}
+    </A>
+  ) : (
+    <Link href={href} as={asPath}>
+      <A variant="coloured" sx={{ fontWeight: 400 }}>
+        {label}
+      </A>
+    </Link>
+  )
+
 const questions: Question[] = [
   {
     question: "I am new to Livepeer. Where is the best place to start?",
     answer: (
       <>
         The{" "}
-        <A href="https://primer.livepeer.org/" target="_blank">
-          Livepeer 10-minute Primer
-        </A>{" "}
+        <AnswerLink
+          href="https://primer.livepeer.org/"
+          label="Livepeer 10-minute Primer"
+          isExternal
+        />{" "}
         serves as a great starting point.
       </>
     ),
@@ -48,31 +65,71 @@ const questions: Question[] = [
   },
   {
     question: "Who is Livepeer Inc.?",
-    answer:
-      // TODO
-      "Livepeer Inc. is the legal entity and core team shepherding the protocol and moving it along its path towards decentralization.",
+    answer: (
+      <>
+        Livepeer Inc. is the legal entity and core team shepherding the protocol
+        and moving it along its{" "}
+        <AnswerLink
+          href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532"
+          label="path towards decentralization."
+          isExternal
+        />
+      </>
+    ),
     category: categories[0]
   },
-  // TODO
   {
     question: "Does Livepeer have a roadmap?",
-    answer:
-      "Albeit slightly out of date, you can read about the philosophical phases of the Livepeer roadmap here.",
+    answer: (
+      <>
+        Albeit slightly out of date, you can read about the philosophical phases
+        of the Livepeer roadmap{" "}
+        <AnswerLink
+          label="here"
+          href="https://medium.com/livepeer-blog/livepeer-network-phases-b196ab42264b"
+          isExternal
+        />
+        .
+      </>
+    ),
     category: categories[0]
   },
-  // TODO
   {
     question: "What is the current implementation Livepeer team is working on?",
-    answer: "It is called “Streamflow” and you can read about it here.",
+    answer: (
+      <>
+        It is called “Streamflow” and you can read about it{" "}
+        <AnswerLink
+          label="here"
+          href="https://github.com/livepeer/wiki/blob/streamflow/STREAMFLOW.md"
+          isExternal
+        />
+        .
+      </>
+    ),
     category: categories[0]
   },
-  // TODO
   {
     question: "Where can I find Livepeer whitepaper?",
-    answer: "You can find whitepaper here and the Streamflow paper here.",
+    answer: (
+      <>
+        You can find whitepaper{" "}
+        <AnswerLink
+          label="here"
+          href="https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md"
+          isExternal
+        />{" "}
+        and the Streamflow paper{" "}
+        <AnswerLink
+          label="here"
+          href="https://github.com/livepeer/wiki/blob/master/STREAMFLOW.md"
+          isExternal
+        />
+        .
+      </>
+    ),
     category: categories[0]
   },
-  // TODO
   {
     question:
       "I’m a developer and want to contribute to Livepeer. Where can I find some tools/resources?",
@@ -85,31 +142,25 @@ const questions: Question[] = [
         </Text>
         <ul>
           <li>
-            <A
-              variant="coloured"
+            <AnswerLink
+              label="https://livepeer.readthedocs.io/en/latest/developers.html"
               href="https://livepeer.readthedocs.io/en/latest/developers.html"
-              sx={{ fontWeight: 400 }}
-            >
-              https://livepeer.readthedocs.io/en/latest/developers.html
-            </A>
+              isExternal
+            />
           </li>
           <li>
-            <A
-              variant="coloured"
+            <AnswerLink
               href="https://github.com/Livepeer-Community-Node/Grant-Program"
-              sx={{ fontWeight: 400 }}
-            >
-              https://github.com/Livepeer-Community-Node/Grant-Program
-            </A>
+              label="https://github.com/Livepeer-Community-Node/Grant-Program"
+              isExternal
+            />
           </li>
           <li>
-            <A
-              variant="coloured"
+            <AnswerLink
               href="https://github.com/livepeer"
-              sx={{ fontWeight: 400 }}
-            >
-              https://github.com/livepeer
-            </A>
+              label="https://github.com/livepeer"
+              isExternal
+            />
           </li>
         </ul>
       </>
@@ -125,13 +176,31 @@ const questions: Question[] = [
   {
     question: "How was Livepeer token distributed? Was there an ICO?",
     answer: (
-      <>No ICO. Details regarding the token distribution can be found here.</>
+      <>
+        No ICO. Details regarding the token distribution can be found{" "}
+        <AnswerLink
+          label="here"
+          href="https://medium.com/livepeer-blog/the-end-of-the-initial-livepeer-token-distribution-6fa9894f0f16"
+          isExternal
+        />
+        .
+      </>
     ),
     category: categories[2]
   },
   {
     question: "How do I stake my LPT?",
-    answer: <>Follow the staking guide in the Livepeer Protocol Explorer.</>,
+    answer: (
+      <>
+        Follow the staking guide in the{" "}
+        <AnswerLink
+          label="Livepeer Protocol Explorer"
+          href="https://explorer.livepeer.org/"
+          isExternal
+        />
+        .
+      </>
+    ),
     category: categories[2]
   },
   {
@@ -160,17 +229,41 @@ const questions: Question[] = [
   },
   {
     question: "I want to become an orchestrator. How do I do that?",
-    answer: "Follow this guide.",
+    answer: (
+      <>
+        Follow{" "}
+        <AnswerLink
+          label="this"
+          href="https://livepeer.readthedocs.io/en/latest/transcoding.html"
+          isExternal
+        />{" "}
+        guide.
+      </>
+    ),
     category: categories[3]
   },
   {
     question: "Why am I not receiving any fees?",
     answer: (
       <>
-        Don’t set your price per pixel setting too high Don’t set your price per
-        pixel setting too low Make sure you’re transcoding in “sub real-time”.
-        Check the docs to test your own transcoding setup. Turn on logging to a
-        more verbose level to debug this (-v 10).
+        <ol sx={{ listStyle: "decimal inside", li: { mb: 2 }, ul: { mt: 2 } }}>
+          <li>Don’t set your price per pixel setting too high</li>
+          <li>Don’t set your price per pixel setting too low</li>
+          <li>
+            Make sure you’re transcoding in “sub real-time”
+            <ul sx={{ listStyle: "inside", paddingInlineStart: "24px" }}>
+              <li>
+                <AnswerLink
+                  href="https://livepeer.readthedocs.io/en/latest/transcoding.html#testing-your-transcoding-setup"
+                  label="Check the docs"
+                  isExternal
+                />{" "}
+                to test your own transcoding setup. Turn on logging to a more
+                verbose level to debug this (-v 10).
+              </li>
+            </ul>
+          </li>
+        </ol>
       </>
     ),
     category: categories[3]
@@ -192,8 +285,13 @@ const questions: Question[] = [
     question: "How can I optimize my ROI?",
     answer: (
       <>
-        Check out this financial model open sourced by Chris Remus and Gleb
-        Dudka.
+        Check out{" "}
+        <AnswerLink
+          label="this financial model"
+          href="https://drive.google.com/file/d/1jvbs8jiodbSiA4OvbPXk88P-1BZmPDcp/view"
+          isExternal
+        />{" "}
+        open sourced by Chris Remus and Gleb Dudka.
       </>
     ),
     category: categories[3]
@@ -215,7 +313,13 @@ const questions: Question[] = [
     answer: (
       <>
         A high level overview of the orchestrator selection algorithm can be
-        found on YouTube here.
+        found on YouTube{" "}
+        <AnswerLink
+          label="here"
+          href="https://youtu.be/Zz-WTzoM1IM?t=2450"
+          isExternal
+        />
+        .
       </>
     ),
     category: categories[3]
@@ -227,9 +331,14 @@ const questions: Question[] = [
         The act of “locking” your Livepeer token within the Livepeer protocol
         smart contracts on the Ethereum blockchain in exchange for the right to
         perform work on the network and earn inflationary token and broadcaster
-        fees in return. Similar to a performance bond, tokens at stake provide
-        security for developers using the network that work will be performed
-        honestly, correctly and competitively.
+        fees in return. Similar to a{" "}
+        <AnswerLink
+          label="performance bond"
+          href="https://en.wikipedia.org/wiki/Performance_bond"
+          isExternal
+        />
+        , tokens at stake provide security for developers using the network that
+        work will be performed honestly, correctly and competitively.
       </>
     ),
     category: categories[4]
