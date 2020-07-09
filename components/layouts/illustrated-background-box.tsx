@@ -1,5 +1,4 @@
 import { Box, SxStyleProp, BoxProps } from "theme-ui"
-import { useEffect, useState } from "react"
 
 type Props = {
   pushSx?: SxStyleProp
@@ -13,13 +12,8 @@ const IllustratedBackgroundBox: React.FC<Props> = ({
   pushContentSx,
   contentProps,
   ...props
-}) => {
-  useEffect(() => {
-    const img = new Image()
-    img.src = "/backgrounds/illustrated.svg"
-  }, [])
-
-  return (
+}) => (
+  <>
     <Box
       {...props}
       sx={{
@@ -42,7 +36,14 @@ const IllustratedBackgroundBox: React.FC<Props> = ({
         {children}
       </Box>
     </Box>
-  )
-}
+    {/* A hidden placeholder to preload the svg */}
+    <Box
+      sx={{
+        backgroundImage: "url(/backgrounds/illustrated.svg)",
+        display: "none"
+      }}
+    />
+  </>
+)
 
 export default IllustratedBackgroundBox
