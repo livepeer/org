@@ -34,7 +34,9 @@ const AccordionItem = ({
   const headingRef = useRef<HTMLDivElement>(null)
   const childrenRef = useRef<HTMLDivElement>(null)
 
-  const [baseHeight, setBaseHeight] = useState<string>("48px")
+  const [baseHeight, setBaseHeight] = useState<string>(
+    heading.icon ? "48px" : "40px"
+  )
   const [fullHeight, setFullHeight] = useState<string>()
 
   useEffect(() => {
