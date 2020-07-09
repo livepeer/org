@@ -11,3 +11,5 @@
     url("/fonts/TTFirsNeue-ExtraBold.woff") format("woff");
   font-weight: bolder;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap");

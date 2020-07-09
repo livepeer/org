@@ -1,4 +1,5 @@
 import { Box, SxStyleProp, BoxProps } from "theme-ui"
+import { forwardRef } from "react"
 
 type Props = {
   pushSx?: SxStyleProp
@@ -6,44 +7,44 @@ type Props = {
   contentProps?: BoxProps
 } & BoxProps
 
-const IllustratedBackgroundBox: React.FC<Props> = ({
-  children,
-  pushSx,
-  pushContentSx,
-  contentProps,
-  ...props
-}) => (
-  <>
-    <Box
-      {...props}
-      sx={{
-        p: 3,
-        backgroundImage: "url(/backgrounds/illustrated.svg)",
-        backgroundSize: "cover",
-        borderRadius: "lg",
-        ...pushSx
-      }}
-    >
+const IllustratedBackgroundBox = forwardRef(
+  (
+    { children, pushSx, pushContentSx, contentProps, ...props }: Props,
+    ref: React.RefObject<HTMLDivElement>
+  ) => (
+    <>
       <Box
-        {...contentProps}
+        {...props}
+        ref={ref}
         sx={{
-          bg: "background",
+          p: 3,
+          backgroundImage: "url(/backgrounds/illustrated.svg)",
+          backgroundSize: "cover",
           borderRadius: "lg",
-          height: "100%",
-          ...pushContentSx
+          ...pushSx
         }}
       >
-        {children}
+        <Box
+          {...contentProps}
+          sx={{
+            bg: "background",
+            borderRadius: "lg",
+            height: "100%",
+            ...pushContentSx
+          }}
+        >
+          {children}
+        </Box>
       </Box>
-    </Box>
-    {/* A hidden placeholder to preload the svg */}
-    <Box
-      sx={{
-        backgroundImage: "url(/backgrounds/illustrated.svg)",
-        display: "none"
-      }}
-    />
-  </>
+      {/* A hidden placeholder to preload the svg */}
+      <Box
+        sx={{
+          backgroundImage: "url(/backgrounds/illustrated.svg)",
+          display: "none"
+        }}
+      />
+    </>
+  )
 )
 
 export default IllustratedBackgroundBox
