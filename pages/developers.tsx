@@ -5,6 +5,8 @@ import PageLayout from "components/layouts/page"
 import IconHero from "components/layouts/icon-hero"
 import { FiPlay } from "react-icons/fi"
 import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
+import WindowBox from "components/layouts/window-box"
+import CodeStoryAnimation from "components/primitives/code-story-animation"
 
 const CodePage = () => (
   <PageLayout pushContentSx={{ bg: "text" }}>
@@ -17,13 +19,15 @@ const CodePage = () => (
         <IllustratedBackgroundBox
           pushSx={{ height: "282px", mt: "70px", width: "100%" }}
           pushContentSx={{
-            p: 3,
+            p: 0,
             height: "320px",
             boxShadow: "magical",
             mt: "-70px"
           }}
         >
-          Code story
+          <WindowBox sx={{ height: "100%" }}>
+            <CodeStoryAnimation />
+          </WindowBox>
         </IllustratedBackgroundBox>
       }
     />
