@@ -24,6 +24,7 @@ const HomeHero = () => {
       <Container
         variant="section"
         ref={sectionRef}
+        className="hide__section"
         sx={{
           display: "flex",
           flexDirection: "column",
