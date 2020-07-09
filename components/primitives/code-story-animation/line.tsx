@@ -2,84 +2,81 @@
 import { jsx, Box } from "theme-ui"
 import Caret from "./caret"
 import { keyframes } from "@emotion/core"
-import { Children } from "react"
+import { useEffect, useRef, useCallback } from "react"
+
+const baseDelay = 500
+const letterStagger = 60
 
 const appear = keyframes({
   from: { opacity: 0 },
   to: { opacity: 1 }
 })
 
-const caretDisappear = keyframes({
-  from: { opacity: 1 },
-  to: { opacity: 0, position: "absolute" }
-})
-
-type Props = {
-  delay?: number
-  prefix?: React.ReactNode
+type Frame = {
+  text: string
+  isBold?: boolean
 }
 
-const baseDelay = 500
-const letterStagger = 60
+export type AnimatedLineProps = {
+  frames: Frame[]
+  withoutCaret?: boolean
+  withoutTextAnimation?: boolean
+  prefix?: React.ReactNode
+  delay?: number
+  onDone?: () => void
+}
 
-const Line: React.FC<Props> = ({ children, prefix = "~", delay = 0 }) => {
+const Line = ({
+  frames,
+  prefix = "~",
+  delay = 0,
+  withoutCaret,
+  withoutTextAnimation,
+  onDone
+}: AnimatedLineProps) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  const play = useCallback(() => {
+    if (!containerRef.current || !contentRef.current) return
+    frames.forEach(({ text, isBold }) => {
+      text.split("").map((letter, i, { length }) => {
+        const html = isBold ? `<b>${letter}</b>` : letter
+        const time = withoutTextAnimation
+          ? 0
+          : delay + baseDelay + i * letterStagger
+        setTimeout(() => {
+          contentRef.current.innerHTML += html
+          if (i + 1 === length) {
+            setTimeout(() => {
+              containerRef.current.dataset.done = "true"
+              onDone?.()
+            }, 100)
+          }
+        }, time)
+      })
+    })
+  }, [containerRef, contentRef, frames, delay, withoutTextAnimation, onDone])
+
+  useEffect(play, [play])
+
   return (
     <Box
+      ref={containerRef}
+      className="line"
       sx={{
         display: "flex",
         alignItems: "center",
         opacity: 0,
-        animation: `${appear} 0s ${delay}ms forwards`
+        animation: `${appear} 0s ${delay}ms forwards`,
+        color: "gray"
       }}
     >
-      <span sx={{ mr: 2, color: "gray" }}>{prefix}</span>
-      {Children.map(children, (child) => {
-        if (typeof child === "string") {
-          return child.split("").map((letter, i, { length }) => (
-            <span
-              className="letter"
-              sx={{
-                variant: "layout.flexCenter",
-                opacity: 0,
-                animation: `${appear} 0s ${
-                  delay + baseDelay + i * letterStagger
-                }ms forwards`
-              }}
-            >
-              {letter === " " ? <>&nbsp;</> : letter}
-              <Caret
-                pushSx={{
-                  ml: 1,
-                  animation:
-                    i + 1 < length
-                      ? `${caretDisappear} 0s ${
-                          delay + baseDelay + i * letterStagger + letterStagger
-                        }ms forwards`
-                      : "none"
-                }}
-              />
-            </span>
-          ))
-        }
-        return (
-          <span
-            className="letter"
-            sx={{
-              opacity: 0,
-              animation: `${appear} 0s ${1000}ms forwards`
-            }}
-          >
-            {child}
-            <Caret
-              pushSx={{
-                animation: `${caretDisappear} 0s ${
-                  delay + baseDelay + letterStagger
-                }ms forwards`
-              }}
-            />
-          </span>
-        )
-      })}
+      <div>
+        {prefix && <span sx={{ mr: 2 }}>{prefix}</span>}
+        <span ref={contentRef} sx={{ mr: 2 }} />
+        {!withoutCaret && <Caret />}
+      </div>
     </Box>
   )
 }
