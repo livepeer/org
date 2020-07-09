@@ -204,6 +204,11 @@ const theme = {
   },
   buttons: {
     primary: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
+      bg: "primary",
       color: "text",
       py: 2,
       px: 4,
@@ -220,6 +225,31 @@ const theme = {
       }
     },
     secondary: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
+      bg: "secondary",
+      color: "background",
+      py: 2,
+      px: 4,
+      height: 12,
+      variant: "text.default",
+      fontWeight: 500,
+      transition: "background .15s",
+      "&:hover": {
+        bg: "#6565FC"
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(0, 0, 235, 0.5)",
+        outline: "none"
+      }
+    },
+    neutral: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
       color: "background",
       bg: "text",
       py: 2,

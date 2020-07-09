@@ -3,51 +3,90 @@ import Divider from "components/primitives/divider"
 import FooterList, { FooterListProps } from "./list"
 import LogoAndEmail from "./logo-and-email"
 import PrefooterBanner from "./prefooter-banner"
+import PrefooterFaqBanner from "./prefooter-faq-banner"
 
 const lists: FooterListProps[] = [
   {
     title: "Participants",
     items: [
-      { label: "Tokenholders", href: "/" },
+      { label: "Tokenholders", href: "/tokenholders" },
       { label: "Infrastructure Operators", href: "/infrastructure" },
-      { label: "Protocol Explorer", href: "/" },
-      { label: "The Grant Program", href: "/" }
+      {
+        label: "Protocol Explorer",
+        href: "https://explorer.livepeer.org/",
+        isExternal: true
+      },
+      {
+        label: "The Grant Program",
+        href: "https://github.com/livepeer/Grant-Program",
+        isExternal: true
+      }
     ]
   },
   {
     title: "Developers",
     items: [
-      { label: "Documentation", href: "/" },
-      { label: "Hosted API", href: "/" },
-      { label: "OSS", href: "/" }
+      {
+        label: "Documentation",
+        href: "https://livepeer.readthedocs.io/",
+        isExternal: true
+      },
+      { label: "Hosted API", href: "/developers" },
+      { label: "OSS", href: "/code" }
     ]
   },
   {
     title: "Resources",
     items: [
-      { label: "10-minute Primer", href: "/" },
-      { label: "The Whitepaper", href: "/" },
-      { label: "FAQ", href: "/" },
-      { label: "Privacy Policy", href: "/" },
+      {
+        label: "10-minute Primer",
+        href: "https://primer.livepeer.org/",
+        isExternal: true
+      },
+      {
+        label: "The Whitepaper",
+        href: "https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md",
+        isExternal: true
+      },
+      { label: "FAQ", href: "/faq" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "About", href: "/about" }
     ]
   },
   {
     title: "Community",
     items: [
-      { label: "Twitter", href: "/" },
-      { label: "Discord Chat", href: "/" },
-      { label: "Forum", href: "/" },
-      { label: "Reddit", href: "/" }
+      {
+        label: "Twitter",
+        href: "https://twitter.com/livepeer",
+        isExternal: true
+      },
+      {
+        label: "Discord Chat",
+        href: "https://discord.com/invite/RR4kFAh",
+        isExternal: true
+      },
+      { label: "Forum", href: "https://forum.livepeer.org/", isExternal: true },
+      {
+        label: "Reddit",
+        href: "https://www.reddit.com/r/livepeer/",
+        isExternal: true
+      }
     ]
   }
 ]
 
-const Footer = ({ withPrefooter = true, isDark = false }) => (
+export type FooterProps = {
+  isDark?: boolean
+  prefooter?: "subscribe" | "faqs"
+}
+
+const Footer = ({ isDark = false, prefooter = "subscribe" }: FooterProps) => (
   <Box as="footer" bg={isDark ? "text" : "background"}>
-    {withPrefooter && <PrefooterBanner />}
+    {prefooter === "subscribe" && <PrefooterBanner />}
+    {prefooter === "faqs" && <PrefooterFaqBanner />}
     <Box sx={{ bg: "text", color: "background" }}>
-      <Container sx={{ pt: [withPrefooter ? 6 : 5, 5], pb: 4 }}>
+      <Container sx={{ pt: [prefooter ? 6 : 5, 5], pb: 4 }}>
         <LogoAndEmail
           pushSx={{
             display: ["flex", null, null, "none"],

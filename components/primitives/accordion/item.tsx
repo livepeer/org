@@ -34,7 +34,9 @@ const AccordionItem = ({
   const headingRef = useRef<HTMLDivElement>(null)
   const childrenRef = useRef<HTMLDivElement>(null)
 
-  const [baseHeight, setBaseHeight] = useState<string>("48px")
+  const [baseHeight, setBaseHeight] = useState<string>(
+    heading.icon ? "48px" : "40px"
+  )
   const [fullHeight, setFullHeight] = useState<string>()
 
   useEffect(() => {
@@ -59,6 +61,7 @@ const AccordionItem = ({
     <IllustratedBackgroundBox
       pushSx={{
         backgroundBlendMode: "color",
+        willChange: "background-color, background-image",
         ...(isToggled && withIllustratedBackground
           ? {
               backgroundColor: "rgba(255,255,255,1)",
@@ -71,14 +74,18 @@ const AccordionItem = ({
       }}
       pushContentSx={{
         boxShadow: "magical",
-        p: 4,
+        p: [3, 4],
         overflow: "hidden",
-        height: `calc(${isToggled ? fullHeight : baseHeight} + 64px)`,
+        willChange: "height",
+        height: [
+          `calc(${isToggled ? fullHeight : baseHeight} + 32px)`,
+          `calc(${isToggled ? fullHeight : baseHeight} + 64px)`
+        ],
         transition: "height .15s"
       }}
     >
       <Flex
-        sx={{ alignItems: "center", justifyContent: "space-between" }}
+        sx={{ alignItems: "flex-start", justifyContent: "space-between" }}
         ref={headingRef}
       >
         <Flex sx={{ alignItems: "center" }}>
@@ -103,9 +110,7 @@ const AccordionItem = ({
             variant="heading.5"
             sx={{
               color: isToggled ? "secondary" : "text",
-              textOverflow: "ellipsis",
-              overflow: "hidden",
-              whiteSpace: "nowrap"
+              textAlign: "left"
             }}
           >
             {heading.title}
@@ -114,6 +119,7 @@ const AccordionItem = ({
         <IconButton
           sx={{
             fontSize: 5,
+            ml: 2,
             color: isToggled ? "secondary" : "text",
             minWidth: "fit-content"
           }}
@@ -123,7 +129,7 @@ const AccordionItem = ({
         </IconButton>
       </Flex>
       <Box
-        sx={{ pt: 4, visibility: isToggled ? "visible" : "hidden" }}
+        sx={{ pt: [2, 4], visibility: isToggled ? "visible" : "hidden" }}
         ref={childrenRef}
       >
         {children}

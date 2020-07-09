@@ -44,7 +44,9 @@ const SectionLayout = forwardRef(
     }
 
     return (
-      <Box sx={{ bg, color: titleColor }}>
+      <Box
+        sx={{ bg, color: titleColor, position: "relative", zIndex: "general" }}
+      >
         <Container
           variant="section"
           className={className}

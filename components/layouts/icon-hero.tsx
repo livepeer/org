@@ -58,7 +58,9 @@ const IconHero = ({
                 color: "text",
                 fontSize: 6,
                 mb: 4,
-                variant: "layout.flexCenter"
+                variant: "layout.flexCenter",
+                zIndex: "general",
+                position: "relative"
               }}
             >
               {icon}
@@ -67,7 +69,9 @@ const IconHero = ({
               sx={{
                 variant: ["text.heading.2", "text.heading.1"],
                 textAlign: ["left", "left"],
-                color: titleColor
+                color: titleColor,
+                zIndex: "general",
+                position: "relative"
               }}
             >
               {title}
@@ -75,7 +79,12 @@ const IconHero = ({
             <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
             <Heading
               variant="section.subtitle"
-              sx={{ textAlign: "left", color: subTitleColor }}
+              sx={{
+                textAlign: "left",
+                color: subTitleColor,
+                zIndex: "general",
+                position: "relative"
+              }}
             >
               {subtitle}
             </Heading>
