@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Heading, Text, Container, Link as A } from "theme-ui"
 import PageLayout from "components/layouts/page"
+import { useRef, useEffect } from "react"
 
 const PrivacyPolicyPage = () => (
   <PageLayout footerProps={{ prefooter: null }}>
@@ -106,7 +107,17 @@ const PrivacyPolicyPage = () => (
         <b>12.</b> Our Services use the following types of Cookies for the
         purposes set out below:
       </Text>
-      <table sx={{ borderCollapse: "initial", borderSpacing: "24px" }}>
+      <table
+        sx={{
+          borderCollapse: "initial",
+          borderSpacing: "24px",
+          display: "block",
+          overflow: "auto",
+          width: "100vw",
+          maxWidth: "1000px",
+          position: "relative"
+        }}
+      >
         <thead>
           <tr>
             <th sx={{ minWidth: "132px", textAlign: "left" }}>
