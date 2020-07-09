@@ -1,5 +1,13 @@
 /** @jsx jsx */
-import { jsx, Link as A, Text, Flex, SxStyleProp, Box } from "theme-ui"
+import {
+  jsx,
+  Link as A,
+  Text,
+  Flex,
+  SxStyleProp,
+  Box,
+  useThemeUI
+} from "theme-ui"
 import { LinkProps } from "lib/types/link-props"
 import { useMemo, useEffect, useState, useRef } from "react"
 import Link from "next/link"
@@ -66,11 +74,18 @@ type TabsProps = {
   items: TabProps[]
   pushSx?: SxStyleProp
   isFullWidthOnMobile?: boolean
+  fullWidthBreakpointIndex?: number
 }
 
-const Tabs = ({ items, pushSx, isFullWidthOnMobile = true }: TabsProps) => {
+const Tabs = ({
+  items,
+  pushSx,
+  isFullWidthOnMobile = true,
+  fullWidthBreakpointIndex = 0
+}: TabsProps) => {
   const [offsetLeft, setOffsetLeft] = useState<number>(0)
   const containerRef = useRef<HTMLDivElement>(null)
+  const { theme } = useThemeUI()
 
   useEffect(() => {
     if (containerRef.current && isFullWidthOnMobile) {
@@ -83,11 +98,22 @@ const Tabs = ({ items, pushSx, isFullWidthOnMobile = true }: TabsProps) => {
       ref={containerRef}
       sx={{
         overflow: "auto",
-        width: [isFullWidthOnMobile ? "100vw" : "100%", "100%"],
+        width: "100%",
         position: "relative",
-        left: [`-${offsetLeft}px`, 0],
-        pl: [`${offsetLeft}px`, 0],
         ".tab:not(:last-of-type)": { mr: 4 },
+        left: 0,
+        pl: 0,
+        ...(theme.breakpoints[fullWidthBreakpointIndex]
+          ? {
+              [`@media screen and (max-width: ${
+                theme.breakpoints[fullWidthBreakpointIndex] as string
+              })`]: {
+                width: "100vw",
+                left: `-${offsetLeft}px`,
+                pl: `${offsetLeft}px`
+              }
+            }
+          : {}),
         ...pushSx
       }}
     >
@@ -95,7 +121,21 @@ const Tabs = ({ items, pushSx, isFullWidthOnMobile = true }: TabsProps) => {
         <Tab key={`tab-item-${tab.label}`} {...tab} />
       ))}
       {isFullWidthOnMobile && (
-        <Box sx={{ pointerEvents: "none", minWidth: [`${offsetLeft}px`, 0] }} />
+        <Box
+          sx={{
+            pointerEvents: "none",
+            minWidth: 0,
+            ...(theme.breakpoints[fullWidthBreakpointIndex]
+              ? {
+                  [`@media screen and (max-width: ${
+                    theme.breakpoints[fullWidthBreakpointIndex] as string
+                  })`]: {
+                    minWidth: `${offsetLeft}px`
+                  }
+                }
+              : {})
+          }}
+        />
       )}
     </Flex>
   )
