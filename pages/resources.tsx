@@ -2,7 +2,7 @@ import PageLayout from "components/layouts/page"
 import IconHero from "components/layouts/icon-hero"
 import { FiBook } from "react-icons/fi"
 import ResourcesHeroSvg from "components/svgs/resources-hero"
-import ResourcesDirectory from "components/sections/resources/directory"
+import ResourcesDirectory from "components/sections/resources"
 
 const ResourcesPage = () => (
   <PageLayout navProps={{ background: "muted" }}>
