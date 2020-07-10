@@ -1,4 +1,3 @@
-import React, { useRef, useEffect } from "react"
 import SectionLayout from "components/layouts/section"
 import { Grid, Flex } from "theme-ui"
 import IconLink, { IconLinkProps } from "components/primitives/links/icon"
@@ -11,7 +10,6 @@ import {
   FaMedium
 } from "react-icons/fa"
 import Divider from "components/primitives/divider"
-import sectionEffect from "lib/animations/section-effect"
 
 const links: IconLinkProps[] = [
   {
@@ -77,20 +75,13 @@ const links: IconLinkProps[] = [
 ]
 
 const CommunitySection = ({ title = "Community" }) => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    sectionEffect(sectionRef.current)
-  }, [])
   return (
     <SectionLayout
-      className="hide__section"
-      ref={sectionRef}
       title={title}
       titleLabel="Subtitle"
       subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skill sets. Join us."
       pushSx={{ pt: "160px" }}
+      withAnimation
     >
       <Grid
         columns={"repeat(3, 372px)"}
