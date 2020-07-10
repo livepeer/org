@@ -76,13 +76,13 @@ const Line = ({
   return (
     <Box
       ref={containerRef}
-      className="line"
       sx={{
         display: "flex",
         alignItems: "center",
         opacity: 0,
         animation: `${appear} 0s ${delay}ms forwards`,
-        color: "gray"
+        color: "gray",
+        height: "24px"
       }}
     >
       <div>

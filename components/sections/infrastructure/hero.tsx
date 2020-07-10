@@ -4,6 +4,8 @@ import IllustratedBackgroundBox from "components/layouts/illustrated-background-
 import TerminalBox from "components/layouts/terminal-box"
 import CodeStoryAnimation from "components/primitives/code-story-animation"
 import { AnimatedLineProps } from "components/primitives/code-story-animation/line"
+import CroppedIllustrationHero from "components/layouts/cropped-illustration-hero"
+import CodeEditorBox from "components/layouts/code-editor-box"
 
 const lines: AnimatedLineProps[] = [
   {
@@ -58,28 +60,31 @@ const lines: AnimatedLineProps[] = [
   }
 ]
 
-const DevelopersHero = () => (
-  <IconHero
-    icon={<FiPlay />}
-    title="Developers"
-    subtitle="Livepeer supports live streaming, video on demand, and transcoding
-          across video formats and protocols."
+const InfrastructureHero = () => (
+  <CroppedIllustrationHero
+    title="Infrastructure Operators"
+    subtitle="Earn more by transcoding video on GPUs while mining"
     illustration={
       <IllustratedBackgroundBox
-        pushSx={{ height: ["350px", "282px"], mt: "70px", width: "100%" }}
+        pushSx={{ height: ["500px", "500px"], width: "100%" }}
         pushContentSx={{
           p: 0,
-          height: ["388px", "320px"],
-          boxShadow: "magical",
-          mt: "-70px"
+          height: ["468px", "468px"],
+          boxShadow: "magical"
         }}
       >
-        <TerminalBox sx={{ height: "100%" }}>
+        <CodeEditorBox
+          sx={{ height: "100%" }}
+          tabs={[
+            { label: "livepeer.md", isSelected: true },
+            { label: "another.md" }
+          ]}
+        >
           <CodeStoryAnimation lines={lines} />
-        </TerminalBox>
+        </CodeEditorBox>
       </IllustratedBackgroundBox>
     }
   />
 )
 
-export default DevelopersHero
+export default InfrastructureHero

@@ -30,6 +30,7 @@ const IllustratedBackgroundBox = forwardRef(
             bg: "background",
             borderRadius: "lg",
             height: "100%",
+            overflow: "hidden",
             ...pushContentSx
           }}
         >
