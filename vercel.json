@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/primer", "destination": "https://primer.livepeer.org" }
+  ]
+}
