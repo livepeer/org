@@ -56,10 +56,10 @@ const DevelopersHero = () => (
           across video formats and protocols."
     illustration={
       <IllustratedBackgroundBox
-        pushSx={{ height: "282px", mt: "70px", width: "100%" }}
+        pushSx={{ height: ["334px", "282px"], mt: "70px", width: "100%" }}
         pushContentSx={{
           p: 0,
-          height: "320px",
+          height: ["372px", "320px"],
           boxShadow: "magical",
           mt: "-70px"
         }}
