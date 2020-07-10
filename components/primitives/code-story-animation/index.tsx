@@ -19,12 +19,13 @@ const CodeStoryAnimation = ({ lines }: Props) => {
       const nextUpIndex = prev.findIndex(
         (_l, i) => prev[i - 1]?.status === "active"
       )
-      return prev.map((line, i) => {
+      return prev.map((line, i, { length }) => {
         switch (line.status) {
           case "queued":
             if (i === nextUpIndex) return { ...line, status: "active" }
             break
           case "active":
+            if (i + 1 === length) return { ...line, status: "done" }
             return { ...line, status: "done", withoutCaret: true }
         }
         return line

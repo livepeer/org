@@ -17,7 +17,8 @@ const lines: AnimatedLineProps[] = [
     ],
     delay: 200,
     prefix: null,
-    withoutTextAnimation: true
+    withoutTextAnimation: true,
+    withoutCaret: true
   },
   {
     frames: [
@@ -27,7 +28,8 @@ const lines: AnimatedLineProps[] = [
     ],
     delay: 400,
     prefix: null,
-    withoutTextAnimation: true
+    withoutTextAnimation: true,
+    withoutCaret: true
   },
   {
     frames: [
@@ -37,11 +39,12 @@ const lines: AnimatedLineProps[] = [
     ],
     delay: 200,
     prefix: null,
-    withoutTextAnimation: true
+    withoutTextAnimation: true,
+    withoutCaret: true
   },
   {
-    frames: [],
-    delay: 1000
+    frames: null,
+    delay: 800
   }
 ]
 

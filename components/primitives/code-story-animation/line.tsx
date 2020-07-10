@@ -5,7 +5,7 @@ import { keyframes } from "@emotion/core"
 import { useEffect, useRef } from "react"
 
 const baseDelay = 500
-const letterStagger = 60
+const letterStagger = 30
 
 const appear = keyframes({
   from: { opacity: 0 },
@@ -18,7 +18,7 @@ type Frame = {
 }
 
 export type AnimatedLineProps = {
-  frames: Frame[]
+  frames: Frame[] | null
   withoutTextAnimation?: boolean
   prefix?: React.ReactNode
   delay?: number
@@ -43,13 +43,14 @@ const Line = ({
     if (status !== "active") return
     // Animation
     if (!containerRef.current || !contentRef.current) return
+    if (!frames) {
+      onDone?.()
+      return
+    }
     frames.forEach(({ text, isBold }) => {
       if (withoutTextAnimation) {
         contentRef.current.innerHTML += text
-        setTimeout(() => {
-          containerRef.current.dataset.done = "true"
-          onDone?.()
-        }, delay)
+        setTimeout(() => onDone?.(), delay)
         return
       }
       text.split("").map((letter, i, { length }) => {
@@ -57,10 +58,7 @@ const Line = ({
         const time = delay + baseDelay + i * letterStagger
         setTimeout(() => {
           contentRef.current.innerHTML += html
-          if (i + 1 === length) {
-            containerRef.current.dataset.done = "true"
-            onDone?.()
-          }
+          if (i + 1 === length) onDone?.()
         }, time)
       })
     })
@@ -90,7 +88,7 @@ const Line = ({
       <div>
         {prefix && <span sx={{ mr: 2 }}>{prefix}</span>}
         <span ref={contentRef} sx={{ mr: 2 }} />
-        {!withoutCaret && <Caret />}
+        {!withoutCaret && <Caret blink={status === "done"} />}
       </div>
     </Box>
   )
