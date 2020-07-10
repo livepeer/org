@@ -146,7 +146,7 @@ const theme = {
         fontSize: ["48px", "72px"],
         fontWeight: 800,
         letterSpacing: "heading",
-        lineHeight: [1, "heading"],
+        lineHeight: [1.2, "heading"],
         textAlign: "center"
       },
       3: {

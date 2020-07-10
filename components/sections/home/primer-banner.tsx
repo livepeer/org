@@ -12,17 +12,36 @@ const PrimerBanner = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current
+      },
+      onComplete: () => {
+        split.revert()
       }
     })
+    tl.set(sectionRef.current, {
+      autoAlpha: 0
+    })
 
+    const items = sectionRef.current.querySelectorAll(".h-animate")
+    const elements = sectionRef.current.querySelectorAll(".c-animate")
+
+    //@ts-ignore
+    const split = new SplitText(items, { type: "lines" })
+
+    // Set overflow text
+    tl.set([items], { overflow: "hidden" })
     tl.add(gsap.effects.sectionHide(sectionRef.current))
+
+    tl.add(gsap.effects.textHide([split.lines]))
     //@ts-ignore
     tl.sectionEntrance(sectionRef.current)
-  }, [sectionRef])
+    //@ts-ignore
+    tl.textEntrance([split.lines])
+    //@ts-ignore
+    tl.elementsEntrance([elements])
+  }, [])
 
   return (
     <Box
@@ -54,6 +73,7 @@ const PrimerBanner = () => {
           }}
         >
           <Text
+            className="h-animate"
             variant="large"
             sx={{
               mb: 2,
@@ -63,6 +83,7 @@ const PrimerBanner = () => {
             Primer
           </Text>
           <Heading
+            className="h-animate"
             variant="heading.3"
             sx={{
               textAlign: ["center", null, null, "left"],
@@ -72,6 +93,7 @@ const PrimerBanner = () => {
             Curious about how it works?
           </Heading>
           <Text
+            className="h-animate"
             variant="normal"
             sx={{
               color: "lightGray",
@@ -84,9 +106,12 @@ const PrimerBanner = () => {
             explains, at a high level, the problem Livepeer solves and how it
             works.
           </Text>
-          <Button sx={{ width: "fit-content" }}>Check it out</Button>
+          <Button className="c-animate" sx={{ width: "fit-content" }}>
+            Check it out
+          </Button>
         </Box>
         <Box
+          className="c-animate"
           sx={{
             position: "absolute",
             bottom: [-7, null, null, -5],
