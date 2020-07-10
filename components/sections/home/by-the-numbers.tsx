@@ -1,8 +1,6 @@
-import React, { useRef, useEffect } from "react"
 import { StatProps } from "components/primitives/stat"
 import SectionLayout from "components/layouts/section"
 import StatsGrid from "components/layouts/stats-grid"
-import sectionEffect from "lib/animations/section-effect"
 
 const stats: StatProps[] = [
   {
@@ -35,18 +33,9 @@ const stats: StatProps[] = [
 ]
 
 const ByTheNumbersSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    sectionEffect(sectionRef.current)
-  }, [])
-
   return (
     <SectionLayout
       background="muted"
-      className="hide__section"
-      ref={sectionRef}
       title="Livepeer by the numbers"
       subtitle={
         <>
@@ -57,6 +46,7 @@ const ByTheNumbersSection = () => {
       }
       titleLabel="Subtitle"
       pushSx={{ pb: ["80px", null, null, "160px"] }}
+      withAnimation
     >
       <StatsGrid stats={stats} />
     </SectionLayout>

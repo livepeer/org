@@ -57,6 +57,7 @@ const HaveACallSection = () => (
         </A>
       </>
     }
+    withAnimation
   >
     <KeenSliderGrid>
       {cards.map((c) => (
