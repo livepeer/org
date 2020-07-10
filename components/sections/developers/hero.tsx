@@ -34,10 +34,20 @@ const lines: AnimatedLineProps[] = [
   {
     frames: [
       {
-        text: "No Ethereum account found. Creating a new account."
+        text: "No Ethereum account found."
       }
     ],
     delay: 200,
+    prefix: null,
+    withoutTextAnimation: true,
+    withoutCaret: true
+  },
+  {
+    frames: [
+      {
+        text: "Creating new account."
+      }
+    ],
     prefix: null,
     withoutTextAnimation: true,
     withoutCaret: true
@@ -56,10 +66,10 @@ const DevelopersHero = () => (
           across video formats and protocols."
     illustration={
       <IllustratedBackgroundBox
-        pushSx={{ height: ["334px", "282px"], mt: "70px", width: "100%" }}
+        pushSx={{ height: ["350px", "282px"], mt: "70px", width: "100%" }}
         pushContentSx={{
           p: 0,
-          height: ["372px", "320px"],
+          height: ["388px", "320px"],
           boxShadow: "magical",
           mt: "-70px"
         }}
