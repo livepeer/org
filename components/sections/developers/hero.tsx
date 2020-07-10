@@ -15,9 +15,8 @@ const lines: AnimatedLineProps[] = [
         text: "Livepeer is running on the mainnet network"
       }
     ],
-    delay: 3500,
+    delay: 200,
     prefix: null,
-    withoutCaret: true,
     withoutTextAnimation: true
   },
   {
@@ -26,9 +25,8 @@ const lines: AnimatedLineProps[] = [
         text: "Creating data dir:~/.lpData/mainnet"
       }
     ],
-    delay: 3500,
+    delay: 400,
     prefix: null,
-    withoutCaret: true,
     withoutTextAnimation: true
   },
   {
@@ -37,13 +35,13 @@ const lines: AnimatedLineProps[] = [
         text: "No Ethereum account found. Creating a new account."
       }
     ],
-    delay: 3500,
+    delay: 200,
     prefix: null,
     withoutTextAnimation: true
   },
   {
     frames: [],
-    delay: 3800
+    delay: 1000
   }
 ]
 
