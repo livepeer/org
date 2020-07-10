@@ -1,13 +1,10 @@
 import React, { useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { SplitText } from "gsap/SplitText"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import SectionLayout from "components/layouts/section"
 import { Grid } from "theme-ui"
 import IconCard, { IconCardProps } from "components/primitives/cards/icon"
 import { FiUserCheck, FiCode, FiBriefcase } from "react-icons/fi"
-
-gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const cards: IconCardProps[] = [
   {
