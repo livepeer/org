@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from "react"
-import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
-import PrefooterSvg from "components/svgs/prefooter"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
+import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
+import PrefooterSvg from "components/svgs/prefooter"
+import initGsap from "lib/animations/index"
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -11,6 +12,7 @@ const PrefooterBanner = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    initGsap()
     if (!sectionRef.current) return
     const tl = gsap.timeline({
       scrollTrigger: {
