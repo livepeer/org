@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
-import initGsap from "lib/animations"
 import sectionEffect from "lib/animations/section-effect"
-initGsap()
 
 const PrefooterBanner = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
