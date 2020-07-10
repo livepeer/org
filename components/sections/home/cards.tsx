@@ -31,41 +31,13 @@ const cards: IconCardProps[] = [
 ]
 
 const CardsSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      }
-    })
-    const items = sectionRef.current.querySelectorAll(".h-animate")
-    const cards = sectionRef.current.querySelectorAll(".c-animate")
-
-    //@ts-ignore
-    const split = new SplitText(items, { type: "lines" })
-
-    // Set overflow text
-    tl.set([items], { overflow: "hidden" })
-    tl.add(gsap.effects.sectionHide(sectionRef.current))
-    tl.add(gsap.effects.textHide([split.lines]))
-    //@ts-ignore
-    tl.sectionEntrance(sectionRef.current)
-    //@ts-ignore
-    tl.textEntrance([split.lines])
-    //@ts-ignore
-    tl.elementsEntrance([cards])
-  }, [])
-
   return (
     <SectionLayout
       titleLabel="Subtitle"
       title="Let Livepeer do your video's work"
       subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       background="muted"
-      ref={sectionRef}
-      className="hide__section"
+      withAnimation
     >
       <Grid
         gap={4}
