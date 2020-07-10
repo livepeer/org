@@ -14,6 +14,7 @@ import LivepeerLogo from "components/svgs/livepeer-logo"
 import { useEffect, useCallback, useState } from "react"
 import { FiMenu, FiX, FiArrowRight } from "react-icons/fi"
 import Link from "next/link"
+import TopNotification, { TopNotificationProps } from "./top-notification"
 
 type LinkType = {
   label: string
@@ -44,18 +45,7 @@ const links: LinkType[] = [
 
 const navHeight = "72px"
 
-type TopNotification = {
-  title: string
-  description?: string
-  link: {
-    label: string
-    href: string
-    asPath?: string
-    isExternal?: boolean
-  }
-}
-
-const defaultTopNotification: TopNotification = {
+const defaultTopNotification: TopNotificationProps = {
   title: "Livepeer Redesign",
   description: "Read about our latest improvements.",
   link: {
@@ -66,7 +56,7 @@ const defaultTopNotification: TopNotification = {
 
 export type NavProps = {
   background?: "muted" | "dark" | "white" | "black"
-  topNotification?: TopNotification
+  topNotification?: TopNotificationProps
 }
 
 const Nav = ({
@@ -114,55 +104,7 @@ const Nav = ({
 
   return (
     <>
-      {topNotification && (
-        <Box
-          sx={{
-            bg: "black",
-            color: "background",
-            textAlign: "center",
-            p: 2,
-            variant: "text.small"
-          }}
-        >
-          <Text sx={{ fontWeight: 600, display: "inline" }}>
-            {topNotification.title}:{" "}
-          </Text>
-          {topNotification.description && (
-            <Text sx={{ display: ["none", "inline"] }}>
-              {topNotification.description}
-            </Text>
-          )}
-          {topNotification.link.isExternal ? (
-            <A
-              variant="coloured"
-              sx={{ display: "inline-flex", alignItems: "center", ml: 2 }}
-              href={topNotification.link.href}
-              data-dark
-            >
-              {topNotification.link.label}
-              <i sx={{ ml: 1 }}>
-                <FiArrowRight strokeWidth={3} />
-              </i>
-            </A>
-          ) : (
-            <Link
-              href={topNotification.link.href}
-              as={topNotification.link.asPath}
-            >
-              <A
-                variant="coloured"
-                sx={{ display: "inline-flex", alignItems: "center", ml: 2 }}
-                data-dark
-              >
-                {topNotification.link.label}
-                <i sx={{ ml: 1 }}>
-                  <FiArrowRight strokeWidth={3} />
-                </i>
-              </A>
-            </Link>
-          )}
-        </Box>
-      )}
+      {topNotification && <TopNotification {...topNotification} />}
       <Box
         sx={{
           bg,
