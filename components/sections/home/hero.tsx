@@ -22,7 +22,7 @@ const HomeHero = () => (
               pr: ["2px", "4px"], // Fix text being clipped
               background: ({ colors }) =>
                 `linear-gradient(90deg, #00A55F 0%, ${colors.gradient.mid} 100%)`,
-              variant: "text.gradient"
+              variant: "text.gradientBase"
             }}
           >
             World's
@@ -32,7 +32,7 @@ const HomeHero = () => (
             sx={{
               background: ({ colors }) =>
                 `linear-gradient(90deg, ${colors.gradient.mid} 0%, #4CF1AC 100%)`,
-              variant: "text.gradient"
+              variant: "text.gradientBase"
             }}
           >
             open&nbsp;
