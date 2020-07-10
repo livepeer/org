@@ -28,7 +28,7 @@ const Tab = ({ label, isSelected }: TabProps) => (
       height: "100%",
       variant: "layout.flexCenter",
       bg: isSelected ? "muted" : "transparent",
-      px: 3
+      px: 4
     }}
   >
     {label}
@@ -37,19 +37,20 @@ const Tab = ({ label, isSelected }: TabProps) => (
 
 type Props = BoxProps & {
   tabs: TabProps[]
+  withLineNumbers?: boolean
 }
 
 const CodeEditorBox = forwardRef(
   (
-    { children, tabs, ...props }: Props,
+    { children, tabs, withLineNumbers, ...props }: Props,
     ref: React.RefObject<HTMLDivElement>
   ) => (
-    <Box {...props} ref={ref} sx={{ ...props.sx }}>
+    <Box {...props} ref={ref} sx={{ overflow: "hidden", ...props.sx }}>
       <Flex
         sx={{
           position: "relative",
           textAlign: "center",
-          height: 12,
+          height: 10,
           alignItems: "center",
           justifyContent: "flex-start",
           color: "gray",
@@ -63,8 +64,16 @@ const CodeEditorBox = forwardRef(
           <Tab key={`window-box-tab-${t.label}`} {...t} />
         ))}
       </Flex>
-      <Box sx={{ p: 3, pl: 5, position: "relative" }}>
-        <LineNumbers />
+      <Box
+        sx={{
+          p: 3,
+          pl: withLineNumbers ? 5 : 3,
+          position: "relative",
+          boxShadow: "0px 16px 40px rgba(0, 0, 0, 0.06)",
+          height: "100%"
+        }}
+      >
+        {withLineNumbers && <LineNumbers />}
         {children}
       </Box>
     </Box>
