@@ -16,7 +16,6 @@ type Props = {
 const Caret = forwardRef(
   ({ blink, pushSx }: Props, ref: React.RefObject<HTMLDivElement>) => (
     <Box
-      className="caret"
       ref={ref}
       sx={{
         display: "inline-block",
