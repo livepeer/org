@@ -38,13 +38,14 @@ const theme = {
     gray: "#666666",
     lightGray: "#A5A5A5",
     ultraLightGray: "#E5E5E5",
-    gradient: { from: "#00A55F", to: "#4CF1AC" }
+    gradient: { from: "#00A55F", mid: "#28CD88", to: "#4CF1AC" }
   },
   fonts: {
     body:
       'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
-    special: "TT Firs Neue"
+    special: "TT Firs Neue",
+    mono: "'Roboto Mono', monospace"
   },
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 96],
   letterSpacings: {
@@ -174,7 +175,6 @@ const theme = {
       }
     },
     gradient: {
-      background: `linear-gradient(90deg, #00A55F 0%, #4CF1AC 100%)`,
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent"
     },

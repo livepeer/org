@@ -18,13 +18,12 @@ const HomeHero = () => {
     // @ts-ignore
     tl.sectionEntrance(sectionRef.current, { duration: DURATION })
   }, [])
-
   return (
     <Box sx={{ bg: "muted" }}>
       <Container
-        variant="section"
         ref={sectionRef}
         className="hide__section"
+        variant="section"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -35,10 +34,28 @@ const HomeHero = () => {
         <Box sx={{ maxWidth: "4xl", mb: ["32px", "40px"] }}>
           <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
             The&nbsp;
-            <Text as="span" variant="gradient">
-              World's Open&nbsp;
+            <Text
+              as="span"
+              sx={{
+                pr: ["2px", "4px"], // Fix text being clipped
+                background: ({ colors }) =>
+                  `linear-gradient(90deg, #00A55F 0%, ${colors.gradient.mid} 100%)`,
+                variant: "text.gradient"
+              }}
+            >
+              World's
+            </Text>{" "}
+            <Text
+              as="span"
+              sx={{
+                background: ({ colors }) =>
+                  `linear-gradient(90deg, ${colors.gradient.mid} 0%, #4CF1AC 100%)`,
+                variant: "text.gradient"
+              }}
+            >
+              open&nbsp;
             </Text>
-            <br sx={{ display: ["none", "block"] }} />
+            <br sx={{ display: ["none", null, "block"] }} />
             Video Infrascructure
           </Heading>
           <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
