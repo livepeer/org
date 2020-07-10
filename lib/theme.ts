@@ -174,9 +174,13 @@ const theme = {
         color: "gray"
       }
     },
-    gradient: {
+    gradientBase: {
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent"
+    },
+    gradient: {
+      background: `linear-gradient(90deg, #00A55F 0%, #4CF1AC 100%)`,
+      variant: "text.gradientBase"
     },
     section: {
       titleLabel: {
