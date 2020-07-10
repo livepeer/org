@@ -1,5 +1,7 @@
-import React, { forwardRef, ReactNode } from "react"
+import React, { forwardRef, ReactNode, useRef, useEffect } from "react"
 import { Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
+import sectionEffect from "lib/animations/section-effect"
+import cn from "classnames"
 
 type Props = {
   title: ReactNode
@@ -10,6 +12,7 @@ type Props = {
   headingContainerPushSx?: SxStyleProp
   className?: string
   children: ReactNode
+  withAnimation?: boolean
 }
 
 const SectionLayout = forwardRef(
@@ -22,10 +25,18 @@ const SectionLayout = forwardRef(
       pushSx,
       subtitle,
       title,
-      titleLabel
+      titleLabel,
+      withAnimation
     }: Props,
     ref: React.RefObject<HTMLDivElement>
   ) => {
+    const sectionRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+      if (!sectionRef.current || !withAnimation) return
+      sectionEffect(sectionRef.current)
+    }, [sectionRef, withAnimation])
+
     let bg = "background"
     let titleColor = "text"
     let subTitleColor = "gray"
@@ -39,8 +50,6 @@ const SectionLayout = forwardRef(
         subTitleColor = "lightGray"
         bg = background === "black" ? "black" : "text"
         break
-      default:
-        break
     }
 
     return (
@@ -49,8 +58,8 @@ const SectionLayout = forwardRef(
       >
         <Container
           variant="section"
-          className={className}
-          ref={ref}
+          className={cn(className, { hide__section: withAnimation })}
+          ref={ref ? ref : sectionRef}
           sx={pushSx}
         >
           <Box
@@ -63,7 +72,7 @@ const SectionLayout = forwardRef(
           >
             {titleLabel && (
               <Text
-                className="h-animate"
+                className={cn({ "h-animate": withAnimation }, "title-label")}
                 variant="section.titleLabel"
                 sx={{ color: titleColor }}
               >
@@ -72,7 +81,7 @@ const SectionLayout = forwardRef(
             )}
             {title && (
               <Heading
-                className="h-animate"
+                className={cn({ "h-animate": withAnimation }, "title")}
                 variant="section.title"
                 sx={{ color: titleColor }}
               >
@@ -81,7 +90,7 @@ const SectionLayout = forwardRef(
             )}
             {subtitle && (
               <Heading
-                className="h-animate"
+                className={cn({ "h-animate": withAnimation }, "subtitle")}
                 variant="section.subtitle"
                 sx={{ color: subTitleColor }}
               >
