@@ -1,9 +1,9 @@
 import IconHero from "components/layouts/icon-hero"
 import { FiPlay } from "react-icons/fi"
 import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
-import TerminalBox from "components/layouts/terminal-box"
 import CodeStoryAnimation from "components/primitives/code-story-animation"
 import { AnimatedLineProps } from "components/primitives/code-story-animation/line"
+import CodeEditorBox from "components/layouts/code-editor-box"
 
 const lines: AnimatedLineProps[] = [
   {
@@ -66,17 +66,20 @@ const DevelopersHero = () => (
           across video formats and protocols."
     illustration={
       <IllustratedBackgroundBox
-        pushSx={{ height: ["350px", "282px"], mt: "70px", width: "100%" }}
+        pushSx={{ height: ["360px", "282px"], mt: "48px", width: "100%" }}
         pushContentSx={{
           p: 0,
-          height: ["388px", "320px"],
+          height: ["376px", "298px"],
           boxShadow: "magical",
-          mt: "-70px"
+          mt: "-48px"
         }}
       >
-        <TerminalBox sx={{ height: "100%" }}>
+        <CodeEditorBox
+          tabs={[{ label: "bash", isSelected: true }]}
+          sx={{ height: "100%" }}
+        >
           <CodeStoryAnimation lines={lines} />
-        </TerminalBox>
+        </CodeEditorBox>
       </IllustratedBackgroundBox>
     }
   />

@@ -1,7 +1,4 @@
-import IconHero from "components/layouts/icon-hero"
-import { FiPlay } from "react-icons/fi"
 import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
-import TerminalBox from "components/layouts/terminal-box"
 import CodeStoryAnimation from "components/primitives/code-story-animation"
 import { AnimatedLineProps } from "components/primitives/code-story-animation/line"
 import CroppedIllustrationHero from "components/layouts/cropped-illustration-hero"
@@ -66,10 +63,10 @@ const InfrastructureHero = () => (
     subtitle="Earn more by transcoding video on GPUs while mining"
     illustration={
       <IllustratedBackgroundBox
-        pushSx={{ height: ["500px", "500px"], width: "100%" }}
+        pushSx={{ height: ["520px", "500px"], width: "100%" }}
         pushContentSx={{
           p: 0,
-          height: ["468px", "468px"],
+          height: ["488px", "468px"],
           boxShadow: "magical"
         }}
       >
@@ -79,6 +76,7 @@ const InfrastructureHero = () => (
             { label: "livepeer.md", isSelected: true },
             { label: "another.md" }
           ]}
+          withLineNumbers
         >
           <CodeStoryAnimation lines={lines} />
         </CodeEditorBox>
