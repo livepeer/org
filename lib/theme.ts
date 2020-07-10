@@ -38,7 +38,7 @@ const theme = {
     gray: "#666666",
     lightGray: "#A5A5A5",
     ultraLightGray: "#E5E5E5",
-    gradient: { from: "#00A55F", to: "#4CF1AC" }
+    gradient: { from: "#00A55F", mid: "#28CD88", to: "#4CF1AC" }
   },
   fonts: {
     body:
@@ -175,7 +175,6 @@ const theme = {
       }
     },
     gradient: {
-      background: `linear-gradient(90deg, #00A55F 0%, #4CF1AC 100%)`,
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent"
     },
