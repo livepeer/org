@@ -7,8 +7,7 @@ import { Grid } from "theme-ui"
 import IconCard, { IconCardProps } from "components/primitives/cards/icon"
 import { FiUserCheck, FiCode, FiBriefcase } from "react-icons/fi"
 
-gsap.registerPlugin(SplitText)
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const cards: IconCardProps[] = [
   {
