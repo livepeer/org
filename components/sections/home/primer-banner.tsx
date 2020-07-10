@@ -1,46 +1,14 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Box, Text, Heading, Button } from "theme-ui"
 import PrimerSvg from "components/svgs/primer"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { SplitText } from "gsap/SplitText"
-
-gsap.registerPlugin(ScrollTrigger, SplitText)
+import sectionEffect from "lib/animations/section-effect"
 
 const PrimerBanner = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!sectionRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      },
-      onComplete: () => {
-        split.revert()
-      }
-    })
-    tl.set(sectionRef.current, {
-      autoAlpha: 0
-    })
-
-    const items = sectionRef.current.querySelectorAll(".h-animate")
-    const elements = sectionRef.current.querySelectorAll(".c-animate")
-
-    //@ts-ignore
-    const split = new SplitText(items, { type: "lines" })
-
-    // Set overflow text
-    tl.set([items], { overflow: "hidden" })
-    tl.add(gsap.effects.sectionHide(sectionRef.current))
-
-    tl.add(gsap.effects.textHide([split.lines]))
-    //@ts-ignore
-    tl.sectionEntrance(sectionRef.current)
-    //@ts-ignore
-    tl.textEntrance([split.lines])
-    //@ts-ignore
-    tl.elementsEntrance([elements])
+    sectionEffect(sectionRef.current)
   }, [])
 
   return (
