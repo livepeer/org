@@ -40,6 +40,8 @@ const Line = ({
   const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const timeouts: NodeJS.Timeout[] = []
+
     if (status !== "active") return
     // Animation
     if (!containerRef.current || !contentRef.current) return
@@ -50,18 +52,24 @@ const Line = ({
     frames.forEach(({ text, isBold }) => {
       if (withoutTextAnimation) {
         contentRef.current.innerHTML += text
-        setTimeout(() => onDone?.(), delay)
+        timeouts.push(setTimeout(() => onDone?.(), delay))
         return
       }
       text.split("").map((letter, i, { length }) => {
         const html = isBold ? `<b>${letter}</b>` : letter
         const time = delay + baseDelay + i * letterStagger
-        setTimeout(() => {
-          contentRef.current.innerHTML += html
-          if (i + 1 === length) onDone?.()
-        }, time)
+        timeouts.push(
+          setTimeout(() => {
+            contentRef.current.innerHTML += html
+            if (i + 1 === length) onDone?.()
+          }, time)
+        )
       })
     })
+
+    return () => {
+      timeouts.forEach((t) => clearTimeout(t))
+    }
   }, [
     containerRef,
     contentRef,
