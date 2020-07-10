@@ -43,7 +43,7 @@ const lines: AnimatedLineProps[] = [
   },
   {
     frames: [],
-    delay: 4300
+    delay: 3800
   }
 ]
 

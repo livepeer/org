@@ -14,6 +14,7 @@ const Caret = forwardRef(
         display: "inline-block",
         userSelect: "none",
         height: 4,
+        mb: "-2px",
         width: 2,
         bg: "primary",
         ...pushSx

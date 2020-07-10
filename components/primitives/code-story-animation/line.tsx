@@ -40,18 +40,22 @@ const Line = ({
   const play = useCallback(() => {
     if (!containerRef.current || !contentRef.current) return
     frames.forEach(({ text, isBold }) => {
+      if (withoutTextAnimation) {
+        contentRef.current.innerHTML += text
+        setTimeout(() => {
+          containerRef.current.dataset.done = "true"
+          onDone?.()
+        }, delay)
+        return
+      }
       text.split("").map((letter, i, { length }) => {
         const html = isBold ? `<b>${letter}</b>` : letter
-        const time = withoutTextAnimation
-          ? 0
-          : delay + baseDelay + i * letterStagger
+        const time = delay + baseDelay + i * letterStagger
         setTimeout(() => {
           contentRef.current.innerHTML += html
           if (i + 1 === length) {
-            setTimeout(() => {
-              containerRef.current.dataset.done = "true"
-              onDone?.()
-            }, 100)
+            containerRef.current.dataset.done = "true"
+            onDone?.()
           }
         }, time)
       })
