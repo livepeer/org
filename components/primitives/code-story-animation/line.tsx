@@ -1,16 +1,10 @@
 /** @jsx jsx */
 import { jsx, Box } from "theme-ui"
 import Caret from "./caret"
-import { keyframes } from "@emotion/core"
 import { useEffect, useRef } from "react"
 
 const baseDelay = 500
 const letterStagger = 30
-
-const appear = keyframes({
-  from: { opacity: 0 },
-  to: { opacity: 1 }
-})
 
 type Frame = {
   text: string
@@ -56,7 +50,11 @@ const Line = ({
         return
       }
       text.split("").map((letter, i, { length }) => {
-        const html = isBold ? `<b>${letter}</b>` : letter
+        const html = isBold
+          ? letter === " " // To fix weird safari bug with spaces in between <b> tags
+            ? letter
+            : `<b>${letter}</b>`
+          : letter
         const time = delay + baseDelay + i * letterStagger
         timeouts.push(
           setTimeout(() => {
@@ -87,8 +85,6 @@ const Line = ({
       sx={{
         display: "flex",
         alignItems: "center",
-        opacity: 0,
-        animation: `${appear} 0s ${delay}ms forwards`,
         color: "gray"
       }}
     >
