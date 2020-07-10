@@ -2,7 +2,7 @@
 import { jsx, Box } from "theme-ui"
 import Caret from "./caret"
 import { keyframes } from "@emotion/core"
-import { useEffect, useRef, useCallback } from "react"
+import { useEffect, useRef } from "react"
 
 const baseDelay = 500
 const letterStagger = 60
@@ -19,11 +19,12 @@ type Frame = {
 
 export type AnimatedLineProps = {
   frames: Frame[]
-  withoutCaret?: boolean
   withoutTextAnimation?: boolean
   prefix?: React.ReactNode
   delay?: number
   onDone?: () => void
+  status?: "queued" | "active" | "done"
+  withoutCaret?: boolean
 }
 
 const Line = ({
@@ -32,12 +33,15 @@ const Line = ({
   delay = 0,
   withoutCaret,
   withoutTextAnimation,
-  onDone
+  onDone,
+  status
 }: AnimatedLineProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  const play = useCallback(() => {
+  useEffect(() => {
+    if (status !== "active") return
+    // Animation
     if (!containerRef.current || !contentRef.current) return
     frames.forEach(({ text, isBold }) => {
       if (withoutTextAnimation) {
@@ -60,10 +64,17 @@ const Line = ({
         }, time)
       })
     })
-  }, [containerRef, contentRef, frames, delay, withoutTextAnimation, onDone])
+  }, [
+    containerRef,
+    contentRef,
+    status,
+    frames,
+    delay,
+    withoutTextAnimation,
+    onDone
+  ])
 
-  useEffect(play, [play])
-
+  if (status === "queued") return null
   return (
     <Box
       ref={containerRef}
