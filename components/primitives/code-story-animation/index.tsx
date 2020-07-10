@@ -4,7 +4,6 @@ import { useCallback } from "react"
 
 type Props = {
   lines: AnimatedLineProps[]
-  stagger?: number
 }
 
 const CodeStoryAnimation = ({ lines }: Props) => {
