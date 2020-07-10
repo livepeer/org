@@ -89,8 +89,7 @@ const Line = ({
         alignItems: "center",
         opacity: 0,
         animation: `${appear} 0s ${delay}ms forwards`,
-        color: "gray",
-        height: "24px"
+        color: "gray"
       }}
     >
       <div>
