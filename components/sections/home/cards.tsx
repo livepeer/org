@@ -52,7 +52,6 @@ const CardsSection = () => {
     // Set overflow text
     tl.set([items], { overflow: "hidden" })
     tl.add(gsap.effects.sectionHide(sectionRef.current))
-
     tl.add(gsap.effects.textHide([split.lines]))
     //@ts-ignore
     tl.sectionEntrance(sectionRef.current)
@@ -61,6 +60,7 @@ const CardsSection = () => {
     //@ts-ignore
     tl.elementsEntrance([cards])
   }, [])
+
   return (
     <SectionLayout
       titleLabel="Subtitle"

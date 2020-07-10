@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from "react"
-import { gsap } from "gsap"
-import { SplitText } from "gsap/SplitText"
 import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
 import initGsap from "lib/animations"
+import sectionEffect from "lib/animations/section-effect"
 initGsap()
 
 const PrefooterBanner = () => {
@@ -11,36 +10,9 @@ const PrefooterBanner = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      },
-      onComplete: () => {
-        split.revert()
-      }
-    })
-    tl.set(sectionRef.current, {
-      autoAlpha: 0
-    })
-
-    const items = sectionRef.current.querySelectorAll(".h-animate")
-    const elements = sectionRef.current.querySelectorAll(".c-animate")
-
-    //@ts-ignore
-    const split = new SplitText(items, { type: "lines" })
-
-    // Set overflow text
-    tl.set([items], { overflow: "hidden" })
-    tl.add(gsap.effects.sectionHide(sectionRef.current))
-
-    tl.add(gsap.effects.textHide([split.lines]))
-    //@ts-ignore
-    tl.sectionEntrance(sectionRef.current)
-    //@ts-ignore
-    tl.textEntrance([split.lines])
-    //@ts-ignore
-    tl.elementsEntrance([elements])
+    sectionEffect(sectionRef.current)
   }, [])
+
   return (
     <Box
       className="hide__section"
