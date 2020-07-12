@@ -4,7 +4,6 @@ const elementEffect = (elem: HTMLElement) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: elem,
-      markers: true,
       start: "top 80%"
     }
   })

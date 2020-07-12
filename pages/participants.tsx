@@ -14,6 +14,7 @@ const ParticipantsPage = () => (
       subtitle="Join thousands of participants enabling video streaming at scale on
             the open, blockchain based network."
       illustration={<ParticipantsSvg />}
+      withAnimation
     />
     <JumpInSection />
     <CommunitySection title="Join the Livepeer Community" />
