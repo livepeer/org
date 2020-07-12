@@ -1,12 +1,11 @@
 import { gsap } from "gsap"
-import { SplitText } from "gsap/SplitText"
 
 const elementEffect = (elem: HTMLElement) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: elem,
       markers: true,
-      start: "top 80%",
+      start: "top 80%"
     }
   })
 

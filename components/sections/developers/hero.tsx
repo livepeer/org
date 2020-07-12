@@ -60,6 +60,7 @@ const lines: AnimatedLineProps[] = [
 
 const DevelopersHero = () => (
   <IconHero
+    withAnimation
     icon={<FiPlay />}
     title="Developers"
     subtitle="Livepeer supports live streaming, video on demand, and transcoding
