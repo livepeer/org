@@ -46,7 +46,6 @@ const ByTheNumbersSection = () => {
       }
       titleLabel="Subtitle"
       pushSx={{ pb: ["80px", null, null, "160px"] }}
-      withAnimation
     >
       <StatsGrid stats={stats} />
     </SectionLayout>

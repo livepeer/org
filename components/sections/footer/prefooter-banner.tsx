@@ -1,19 +1,18 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
-import sectionEffect from "lib/animations/section-effect"
+import elementEffect from "lib/animations/section-effect"
 
 const PrefooterBanner = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!sectionRef.current) return
-    sectionEffect(sectionRef.current)
+    elementEffect(sectionRef.current)
   }, [])
 
   return (
     <Box
-      className="hide__section"
       ref={sectionRef}
       sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: ["-122px", "80px"] }}
     >
@@ -39,14 +38,12 @@ const PrefooterBanner = () => {
           }}
         >
           <Heading
-            className="h-animate"
             variant="heading.3"
             sx={{ textAlign: ["center", null, null, "left"] }}
           >
             Ready to get started?
           </Heading>
           <Text
-            className="h-animate"
             variant="normal"
             sx={{
               mt: "18px",
@@ -59,7 +56,6 @@ const PrefooterBanner = () => {
             works.
           </Text>
           <Flex
-            className="c-animate"
             sx={{
               width: "100%",
               flexWrap: "wrap",
@@ -80,7 +76,6 @@ const PrefooterBanner = () => {
           </Flex>
         </Box>
         <Box
-          className="c-animate"
           sx={{
             position: "absolute",
             right: "-336px",

@@ -4,6 +4,7 @@ const withSvgr = require("next-svgr")
 const withTM = require("next-transpile-modules")([
   "gsap",
   "gsap/DrawSVGPlugin",
+  "gsap/MotionPathPlugin",
   "gsap/ScrollTrigger",
   "gsap/SplitText"
 ])
@@ -17,6 +18,7 @@ module.exports = withPlugins([
       transpileModules: [
         "gsap",
         "gsap/DrawSVGPlugin",
+        "gsap/MotionPathPlugin",
         "gsap/ScrollTrigger",
         "gsap/SplitText"
       ]

@@ -1,34 +1,23 @@
 import { gsap } from "gsap"
 import { SplitText } from "gsap/SplitText"
 
-const sectionEffect = (elem: HTMLElement) => {
+const elementEffect = (elem: HTMLElement) => {
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: elem
-    },
-    onComplete: () => {
-      split.revert()
+      trigger: elem,
+      markers: true,
+      start: "top 80%",
     }
   })
-  tl.set(elem, {
+
+  const elements = elem.querySelectorAll(".c-animate")
+
+  tl.set(elements, {
     autoAlpha: 0
   })
 
-  const items = elem.querySelectorAll(".h-animate")
-  const elements = elem.querySelectorAll(".c-animate")
-
-  const split = new SplitText(items, { type: "lines" })
-
-  // Set overflow text
-  tl.set([items], { overflow: "hidden" })
-  tl.add(gsap.effects.sectionHide(elem))
-  tl.add(gsap.effects.textHide([split.lines]))
-  //@ts-ignore
-  tl.sectionEntrance(elem)
-  //@ts-ignore
-  tl.textEntrance([split.lines])
   //@ts-ignore
   tl.elementsEntrance([elements])
 }
 
-export default sectionEffect
+export default elementEffect

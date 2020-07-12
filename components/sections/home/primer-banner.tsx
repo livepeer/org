@@ -1,19 +1,18 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Box, Text, Heading, Button } from "theme-ui"
 import PrimerSvg from "components/svgs/primer"
-import sectionEffect from "lib/animations/section-effect"
+import elementEffect from "lib/animations/section-effect"
 
 const PrimerBanner = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!sectionRef.current) return
-    sectionEffect(sectionRef.current)
+    elementEffect(sectionRef.current)
   }, [])
 
   return (
     <Box
-      className="hide__section"
       ref={sectionRef}
       sx={{ bg: "muted", px: 3, py: "80px" }}
     >
@@ -41,7 +40,6 @@ const PrimerBanner = () => {
           }}
         >
           <Text
-            className="h-animate"
             variant="large"
             sx={{
               mb: 2,
@@ -51,7 +49,6 @@ const PrimerBanner = () => {
             Primer
           </Text>
           <Heading
-            className="h-animate"
             variant="heading.3"
             sx={{
               textAlign: ["center", null, null, "left"],
@@ -61,7 +58,6 @@ const PrimerBanner = () => {
             Curious about how it works?
           </Heading>
           <Text
-            className="h-animate"
             variant="normal"
             sx={{
               color: "lightGray",
@@ -74,12 +70,10 @@ const PrimerBanner = () => {
             explains, at a high level, the problem Livepeer solves and how it
             works.
           </Text>
-          <Button className="c-animate" sx={{ width: "fit-content" }}>
-            Check it out
-          </Button>
+          <Button sx={{ width: "fit-content" }}>Check it out</Button>
         </Box>
         <Box
-          className="c-animate"
+          className="c--hide c-animate"
           sx={{
             position: "absolute",
             bottom: [-7, null, null, -5],

@@ -81,7 +81,6 @@ const CommunitySection = ({ title = "Community" }) => {
       titleLabel="Subtitle"
       subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skill sets. Join us."
       pushSx={{ pt: "160px" }}
-      withAnimation
     >
       <Grid
         columns={"repeat(3, 372px)"}

@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactNode, useRef, useEffect } from "react"
 import { Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
-import sectionEffect from "lib/animations/section-effect"
+import elementEffect from "lib/animations/section-effect"
 import cn from "classnames"
 
 type Props = {
@@ -34,7 +34,7 @@ const SectionLayout = forwardRef(
 
     useEffect(() => {
       if (!sectionRef.current || !withAnimation) return
-      sectionEffect(sectionRef.current)
+      elementEffect(sectionRef.current)
     }, [sectionRef, withAnimation])
 
     let bg = "background"
