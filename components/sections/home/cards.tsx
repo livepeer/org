@@ -37,7 +37,6 @@ const CardsSection = () => {
       title="Let Livepeer do your video's work"
       subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       background="muted"
-      withAnimation
     >
       <Grid
         gap={4}
