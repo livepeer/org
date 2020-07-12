@@ -56,6 +56,7 @@ const CodePage = () => (
       subtitle="We believe in open components for an open video infrastructure and an open web."
       illustration={<CoverImage />}
       background="dark"
+      withAnimation
     />
     <OpenSourceSection />
     <GetInvolvedSection />

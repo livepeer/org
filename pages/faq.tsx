@@ -12,6 +12,7 @@ const ParticipantsPage = () => (
       subtitle="Below is a list of topics with the most frequently asked questions about the Livepeer network."
       illustration={<FaqHeroSvg />}
       background="dark"
+      withAnimation
     />
     <FaqsSection />
   </PageLayout>
