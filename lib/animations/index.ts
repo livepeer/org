@@ -19,7 +19,7 @@ const initGsap = () => {
         ease: "sine.out",
         y: 0,
         stagger: {
-          each: 0.1,
+          each: 0.15,
           from: "start"
         }
       })
