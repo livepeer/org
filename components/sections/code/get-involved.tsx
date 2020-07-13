@@ -20,7 +20,13 @@ const listItems: ListItemProps[] = [
     children: (
       <>
         Read the{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://github.com/livepeer/livepeerjs/blob/master/CONTRIBUTING.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           Livepeer.js
         </A>{" "}
         contributor guidelines.
@@ -32,15 +38,33 @@ const listItems: ListItemProps[] = [
     children: (
       <>
         Look for “good first issues” in{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://github.com/livepeer/livepeerjs/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%98%8B+good+first+issue%22"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           Livepeer.js
         </A>{" "}
         (Javascript),{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://github.com/livepeer/lpms/labels/good%20first%20issue"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           LPMS
         </A>{" "}
         (video development in C or Go), or{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://github.com/livepeer/go-livepeer/labels/good%20first%20issue"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           Go-Livepeer
         </A>{" "}
         (go).
@@ -52,7 +76,13 @@ const listItems: ListItemProps[] = [
     children: (
       <>
         View the{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://github.com/livepeer/Grant-Program"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           Grant Proposals
         </A>{" "}
         to see application concepts with some funding attached.
@@ -64,7 +94,13 @@ const listItems: ListItemProps[] = [
     children: (
       <>
         Chat with the development team in{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://discord.com/invite/RR4kFAh"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           Discord
         </A>{" "}
         - we’re a welcoming bunch, so don’t be shy. Ask how you can get
@@ -77,11 +113,23 @@ const listItems: ListItemProps[] = [
     children: (
       <>
         Looking to build a video application using Livepeer? Check out our{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://livepeer.readthedocs.io/en/latest/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           open developer docs
         </A>{" "}
         or{" "}
-        <A variant="coloured" data-dark>
+        <A
+          href="https://livepeer.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+          data-dark
+        >
           enterprise hosted services
         </A>
         .

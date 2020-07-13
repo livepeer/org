@@ -12,7 +12,7 @@ const lines: AnimatedLineProps[] = [
   {
     frames: [
       {
-        text: "Livepeer is running on the mainnet network"
+        text: "***Livepeer is running on the mainnet network***"
       }
     ],
     delay: 200,
@@ -23,7 +23,8 @@ const lines: AnimatedLineProps[] = [
   {
     frames: [
       {
-        text: "Creating data dir:~/.lpData/mainnet"
+        text:
+          "Using Ethereum account: 0x4a5E4f02539326cCdA69757a7f04EA2960985fa8"
       }
     ],
     delay: 400,
@@ -34,7 +35,7 @@ const lines: AnimatedLineProps[] = [
   {
     frames: [
       {
-        text: "No Ethereum account found."
+        text: "***Livepeer Running in Broadcaster Mode***"
       }
     ],
     delay: 200,
@@ -45,7 +46,7 @@ const lines: AnimatedLineProps[] = [
   {
     frames: [
       {
-        text: "Creating new account."
+        text: "Video Ingest Endpoint - rtmp://127.0.0.1:1935"
       }
     ],
     prefix: null,
@@ -62,8 +63,7 @@ const DevelopersHero = () => (
   <IconHero
     icon={<FiPlay />}
     title="Developers"
-    subtitle="Livepeer supports live streaming, video on demand, and transcoding
-          across video formats and protocols."
+    subtitle="Everything you need to build better video applications with Livepeer."
     illustration={
       <IllustratedBackgroundBox
         pushSx={{ height: ["360px", "282px"], mt: "48px", width: "100%" }}

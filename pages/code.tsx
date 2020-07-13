@@ -53,7 +53,7 @@ const CodePage = () => (
     <IconHero
       icon={<FiHeart />}
       title="Livepeer open source"
-      subtitle="We believe in open components for an open video infrastructure and an open web."
+      subtitle="Open video infrastructure for an open web."
       illustration={<CoverImage />}
       background="dark"
     />

@@ -26,8 +26,8 @@ const stats: StatProps[] = [
     label: "Infrastructure operator average earnings"
   },
   {
-    title: "19.5 M",
-    label: "Total LPT in circulation",
+    title: "14.5 M",
+    label: "Total LPT staked",
     color: "gradient"
   }
 ]
@@ -43,7 +43,7 @@ const ByTheNumbersSection = () => (
         Celebrate with us.
       </>
     }
-    titleLabel="Subtitle"
+    titleLabel="Project Statistics"
     pushSx={{ pb: ["80px", null, null, "160px"] }}
   >
     <StatsGrid stats={stats} />

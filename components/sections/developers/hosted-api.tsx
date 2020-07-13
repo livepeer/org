@@ -25,7 +25,7 @@ const listItems: ListItemProps[] = [
 const HostedApiSection = () => (
   <SectionLayout
     titleLabel="Build with"
-    title="A Hosted API"
+    title="Livepeer.com"
     subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     background="muted"
     pushSx={{ pt: [6, null, "80px"] }}

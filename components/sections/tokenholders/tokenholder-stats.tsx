@@ -4,16 +4,16 @@ import StatsGrid from "components/layouts/stats-grid"
 
 const stats: StatProps[] = [
   {
-    title: "45",
+    title: "14.5 M",
     label: "Total LPT Staked"
   },
   {
-    title: "$0.30",
+    title: "12 ETH",
     label: "Total Fees Paid Out",
     color: "gradient"
   },
   {
-    title: "Free",
+    title: "2640",
     label: "Total Delegators"
   }
 ]
