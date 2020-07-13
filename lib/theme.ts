@@ -321,7 +321,7 @@ const theme = {
         opacity: 0.8,
         color: "secondary"
       },
-      "&[data-dark]": {
+      '&[data-dark="true"]': {
         color: "primary",
         ":hover": {
           opacity: 0.8,

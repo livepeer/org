@@ -16,7 +16,8 @@ const cards: StatusCardProps[] = [
         isExternal: true
       },
       status: "Go"
-    }
+    },
+    isClickable: true
   },
   {
     title: "Livepeer.js",
@@ -29,7 +30,8 @@ const cards: StatusCardProps[] = [
         isExternal: true
       },
       status: "JavaScript"
-    }
+    },
+    isClickable: true
   },
   {
     title: "Stream-tester",
@@ -42,7 +44,8 @@ const cards: StatusCardProps[] = [
         isExternal: true
       },
       status: "Go"
-    }
+    },
+    isClickable: true
   }
 ]
 
@@ -61,7 +64,13 @@ const OpenSourceSection = () => (
   >
     <Button>View all</Button>
     <Divider isVertical isTransparent size={["56px", "72px"]} />
-    <KeenSliderGrid>
+    <KeenSliderGrid
+      breakpoints={[
+        { value: "320px", slidesPerView: 1 },
+        { value: "664px", slidesPerView: 2 },
+        { value: "1152px", slidesPerView: 3 }
+      ]}
+    >
       {cards.map((card) => (
         <StatusCard
           key={`card-${card.title}`}
