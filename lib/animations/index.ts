@@ -77,6 +77,26 @@ const initGsap = () => {
     defaults: { duration: DURATION },
     extendTimeline: true
   })
+
+  gsap.registerEffect({
+    name: "svgHide",
+    effect: (targets: gsap.TweenTarget) => {
+      return gsap.set(targets, { drawSVG: false })
+    },
+    extendTimeline: false
+  })
+
+  gsap.registerEffect({
+    name: "svgDraw",
+    effect: (targets: gsap.TweenTarget, config: { duration: number }) => {
+      return gsap.to(targets, {
+        drawSVG: true,
+        duration: config.duration
+      })
+    },
+    defaults: { duration: DURATION },
+    extendTimeline: true
+  })
 }
 
 export default initGsap

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { forwardRef, ReactNode, useRef, useEffect } from "react"
+import React, { forwardRef, useRef, useEffect } from "react"
 import { jsx, Box, Container, Heading, Grid, SxStyleProp } from "theme-ui"
 import Divider from "components/primitives/divider"
 import heroEffect from "lib/animations/hero-effect"

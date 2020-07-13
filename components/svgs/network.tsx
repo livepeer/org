@@ -3,6 +3,7 @@ import { jsx, SxStyleProp } from "theme-ui"
 import { useEffect } from "react"
 import { gsap } from "gsap"
 import { MotionPathPlugin } from "gsap/MotionPathPlugin"
+import { DURATION } from "lib/animations"
 
 gsap.registerPlugin(MotionPathPlugin)
 
@@ -12,12 +13,32 @@ type Props = {
 
 const NetworkSvg = ({ pushSx }: Props) => {
   useEffect(() => {
+    const tl = gsap.timeline()
     const pathInner = document.querySelector(".path--inner")
     const pathOuter = document.querySelector(".path--outer")
+    const circles = document.querySelector(".path--circle")
     const dotInner = document.querySelector(".dot--inner")
     const dotOuter = document.querySelector(".dot--outer")
 
-    gsap.to(dotInner, {
+    tl.set([dotInner, dotOuter], { autoAlpha: 0 })
+    tl.set([pathInner, pathOuter, circles], { drawSVG: false })
+
+    tl.to([pathInner, pathOuter, circles], {
+      delay: DURATION,
+      drawSVG: true,
+      duration: DURATION,
+      ease: "sine.out",
+      stagger: {
+        each: 0.3,
+        from: "start"
+      }
+    })
+    tl.to([dotInner, dotOuter], {
+      autoAlpha: 1,
+      duration: DURATION,
+      ease: "sine.out"
+    })
+    tl.to(dotInner, {
       duration: 4,
       ease: "none",
       motionPath: {
@@ -29,18 +50,22 @@ const NetworkSvg = ({ pushSx }: Props) => {
         repeat: -1
       }
     })
-    gsap.to(dotOuter, {
-      duration: 3,
-      ease: "none",
-      motionPath: {
-        path: `.${pathOuter.classList[0]}`,
-        align: `.${pathOuter.classList[0]}`,
-        alignOrigin: [0.5, 0.5]
+    tl.to(
+      dotOuter,
+      {
+        duration: 3,
+        ease: "none",
+        motionPath: {
+          path: `.${pathOuter.classList[0]}`,
+          align: `.${pathOuter.classList[0]}`,
+          alignOrigin: [0.5, 0.5]
+        },
+        stagger: {
+          repeat: -1
+        }
       },
-      stagger: {
-        repeat: -1
-      }
-    })
+      "<"
+    )
   }, [])
   return (
     <svg
@@ -66,14 +91,14 @@ const NetworkSvg = ({ pushSx }: Props) => {
         d="M120 232C120 170.144 170.144 120 232 120"
         sx={{ stroke: "primary" }}
       />
-      <circle
+      <path
+        className="path--circle"
         opacity="0.6"
-        cx="232"
-        cy="232"
-        r="151.5"
+        d="M80.5,232a151.5,151.5 0 1,0 303,0a151.5,151.5 0 1,0 -303,0"
         sx={{ stroke: "gray" }}
       />
       <circle
+        className="path--circle"
         opacity="0.4"
         cx="232"
         cy="232"
@@ -81,6 +106,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         sx={{ stroke: "gray" }}
       />
       <circle
+        className="path--circle"
         opacity="0.2"
         cx="232"
         cy="232"
