@@ -13,6 +13,24 @@ export type IconCardProps = {
   isClickable?: boolean
 }
 
+const hoverSx = {
+  transition: "all .2s",
+  ".icon-card-link": {
+    transition: "color .2s"
+  },
+  "&:hover": {
+    boxShadow: "0px 80px 96px rgba(0, 0, 0, 0.32)",
+    bg: "text",
+    color: "background",
+    ".title_label": {
+      color: "lightGray"
+    },
+    ".icon-card-link": {
+      color: "primary"
+    }
+  }
+}
+
 const IconCard = ({
   icon,
   title,
@@ -30,21 +48,7 @@ const IconCard = ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        transition: "all .2s",
-        ".icon-card-link": {
-          transition: "color .2s"
-        },
-        "&:hover": {
-          boxShadow: "0px 80px 96px rgba(0, 0, 0, 0.32)",
-          bg: "text",
-          color: "background",
-          ".title_label": {
-            color: "lightGray"
-          },
-          ".icon-card-link": {
-            color: "primary"
-          }
-        }
+        ...(isClickable ? hoverSx : {})
       }}
     >
       <div>
