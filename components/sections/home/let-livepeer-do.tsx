@@ -36,7 +36,7 @@ const cards: IconCardProps[] = [
   }
 ]
 
-const CardsSection = () => (
+const LetLivepeerDoSection = () => (
   <SectionLayout
     titleLabel="Subtitle"
     title="Let Livepeer do your video's work"
@@ -65,4 +65,4 @@ const CardsSection = () => (
   </SectionLayout>
 )
 
-export default CardsSection
+export default LetLivepeerDoSection
