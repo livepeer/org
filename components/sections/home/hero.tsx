@@ -38,12 +38,13 @@ const HomeHero = () => (
             open&nbsp;
           </Text>
           <br sx={{ display: ["none", null, "block"] }} />
-          Video Infrascructure
+          Video Infrastructure
         </Heading>
         <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
         <Heading variant="section.subtitle">
-          Livepeer supports live streaming, video on demand, and transcoding
-          across video formats and protocols.
+          Livepeer is a decentralized, blockchain-based video protocol powering
+          live and on-demand streaming at unbeatable cost, with unparalleled
+          reliability, and unlimited scalability.
         </Heading>
       </Box>
       <Button>Get started</Button>

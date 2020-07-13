@@ -33,7 +33,7 @@ const PrimerBanner = () => (
             textAlign: ["center", null, null, "left"]
           }}
         >
-          Primer
+          A 10-minute Primer
         </Text>
         <Heading
           variant="heading.3"

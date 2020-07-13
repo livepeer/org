@@ -24,14 +24,30 @@ const images = [
 
 const WhoIsBuildingSection = () => (
   <SectionLayout
-    title="Who's building Livepeer"
+    title="Who's behind Livepeer.org?"
     background="muted"
     subtitle={
       <>
         In 2017, the founders of the Livepeer project formed a company called{" "}
-        <A variant="coloured">Livepeer Inc</A> to help facilitate its early
-        development, bootstrap the network’s supply and demand sides, and guide
-        the project’s <A variant="coloured">path to decentralization</A>.
+        <A
+          href="https://livepeer.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+        >
+          Livepeer Inc
+        </A>{" "}
+        to help facilitate its early development, bootstrap the network’s supply
+        and demand sides, and guide the project’s{" "}
+        <A
+          href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="coloured"
+        >
+          path to decentralization
+        </A>
+        .
       </>
     }
     pushSx={{
@@ -41,12 +57,18 @@ const WhoIsBuildingSection = () => (
       py: ["80px", "160px"]
     }}
   >
-    <Button sx={{ variant: "layout.flexCenter" }}>
+    <A
+      href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532"
+      target="_blank"
+      rel="noopener noreferrer"
+      variant="buttons.primary"
+      sx={{ display: "flex" }}
+    >
       Meet the Team Behind Livepeer Inc.{" "}
       <i sx={{ ml: 2, fontSize: 4 }}>
         <FiArrowUpRight />
       </i>
-    </Button>
+    </A>
     <Slider pushSx={{ my: 5 }} numberOfCopies={4} duration={20}>
       {images.map((img) => (
         <div key={`slider-image-${img.src}`} sx={{ mx: 4, ...img.sx }}>
@@ -63,8 +85,11 @@ const WhoIsBuildingSection = () => (
       ))}
     </Slider>
     <Heading variant="heading.5">
-      Interested in Joining Livepeer Inc.? View its{" "}
+      Interested in Joining Livepeer Inc? View its{" "}
       <A
+        href="https://angel.co/company/livepeer/jobs"
+        target="_blank"
+        rel="noopener noreferrer"
         variant="coloured"
         sx={{ variant: "layout.flexCenter", display: "inline-flex" }}
       >

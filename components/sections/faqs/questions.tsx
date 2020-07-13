@@ -110,7 +110,7 @@ const questions: Question[] = [
     category: categories[0]
   },
   {
-    question: "Where can I find Livepeer whitepaper?",
+    question: "Where can I find the Livepeer whitepaper?",
     answer: (
       <>
         You can find whitepaper{" "}
@@ -328,10 +328,10 @@ const questions: Question[] = [
     question: "Staking (Bonding)",
     answer: (
       <>
-        The act of “locking” your Livepeer token within the Livepeer protocol
-        smart contracts on the Ethereum blockchain in exchange for the right to
-        perform work on the network and earn inflationary token and broadcaster
-        fees in return. Similar to a{" "}
+        Staking is the act of “locking” your Livepeer token within the Livepeer
+        protocol smart contracts on the Ethereum blockchain in exchange for the
+        right to perform work on the network and earn inflationary token and
+        broadcaster fees in return. Similar to a{" "}
         <AnswerLink
           label="performance bond"
           href="https://en.wikipedia.org/wiki/Performance_bond"
@@ -429,12 +429,12 @@ const questions: Question[] = [
     category: categories[4]
   },
   {
-    question: "Node",
+    question: "Livepeer Node",
     answer: (
       <>
-        Livepeer client software. Currently there exists a single client
-        implementation written in Go called go-livepeer which can be run in
-        broadcaster mode, transcoder mode, or orchestrator mode.
+        A server running Livepeer client software. Currently there exists a
+        single client implementation written in Go called go-livepeer which can
+        be run in broadcaster mode, transcoder mode, or orchestrator mode.
       </>
     ),
     category: categories[4]

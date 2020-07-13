@@ -39,7 +39,8 @@ const links: LinkType[] = [
   },
   {
     label: "Enterprise",
-    href: "/enterprise"
+    href: "https://livepeer.com",
+    isExternal: true
   }
 ]
 

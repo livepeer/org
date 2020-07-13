@@ -9,8 +9,8 @@ const AboutPage = () => (
   <PageLayout>
     <IconHero
       icon={<LivepeerIconSvg pushSx={{ width: "24px" }} isDark />}
-      title="About Livepeer"
-      subtitle="We believe in open components for an open video infrastructure and an open web."
+      title="About Livepeer.org"
+      subtitle="Livepeer.org is a primary online resource for participants and users of the Livepeer network."
       illustration={<LivepeerIconSvg />}
     />
     <MissionSection />

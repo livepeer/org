@@ -8,7 +8,7 @@ const cards: IconCardProps[] = [
     icon: <FiUserCheck />,
     title: "Participants",
     description:
-      "The core of this open infrastructure is an open, blockchain based network, with 1000's of participants running video infrastructure to enable video streaming at scale.",
+      "Join thousands of participants enabling affordable video streaming at scale in exchange for fees by running infrastructure, contributing code, or delegating work as a tokenholder.",
     linkProps: { link: { label: "/participants", href: "/participants" } },
     isClickable: true
   },
@@ -16,7 +16,7 @@ const cards: IconCardProps[] = [
     icon: <FiCode />,
     title: "Developers",
     description:
-      "This open network is built on the open source Livepeer Media Server, which you can build upon in your own video applications whether you want to use the scalable Livepeer network.",
+      "Discover APIs, guides, resources, and tools for adding live or on-demand video to your project using the Livepeer public network.",
     linkProps: { link: { label: "/developers", href: "/developers" } },
     isClickable: true
   },
@@ -24,7 +24,7 @@ const cards: IconCardProps[] = [
     icon: <FiBriefcase />,
     title: "Enterprise",
     description:
-      "Video platforms and applications can use this network to transcode live and on demand video at less than 10% of the cost of other solutions.",
+      "Get access to a hosted, enterprise-grade API suite offering instant, scaled and reliable access to the Livepeer public network.",
     linkProps: {
       link: {
         label: "livepeer.com",
@@ -38,9 +38,9 @@ const cards: IconCardProps[] = [
 
 const LetLivepeerDoSection = () => (
   <SectionLayout
-    titleLabel="Subtitle"
-    title="Let Livepeer do your video's work"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    titleLabel="Get Started"
+    title="Ready to jump in?"
+    subtitle="Get started by choosing the option that best describes your interest."
     background="muted"
   >
     <Grid
