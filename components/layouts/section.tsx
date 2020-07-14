@@ -1,4 +1,5 @@
-import { Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
 
 type Props = {
   title: React.ReactNode
@@ -7,6 +8,7 @@ type Props = {
   background?: "muted" | "dark" | "black"
   pushSx?: SxStyleProp
   headingContainerPushSx?: SxStyleProp
+  id?: string
 }
 
 const SectionLayout: React.FC<Props> = ({
@@ -16,7 +18,8 @@ const SectionLayout: React.FC<Props> = ({
   titleLabel,
   background,
   pushSx,
-  headingContainerPushSx
+  headingContainerPushSx,
+  id
 }) => {
   let bg = "background"
   let titleColor = "text"
@@ -54,7 +57,11 @@ const SectionLayout: React.FC<Props> = ({
             </Text>
           )}
           {title && (
-            <Heading variant="section.title" sx={{ color: titleColor }}>
+            <Heading
+              variant="section.title"
+              sx={{ color: titleColor, position: "relative" }}
+            >
+              <span sx={{ position: "absolute", top: "-180px" }} id={id} />
               {title}
             </Heading>
           )}

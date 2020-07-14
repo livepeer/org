@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Heading, Text, Button, Box } from "theme-ui"
+import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
 
 const HomeHero = () => (
@@ -47,7 +47,9 @@ const HomeHero = () => (
           reliability, and unlimited scalability.
         </Heading>
       </Box>
-      <Button>Get started</Button>
+      <A variant="buttons.primary" href="/#get-started">
+        Get started
+      </A>
       <Box
         sx={{ bg: "ultraLightGray", height: "500px", width: "100%", my: 4 }}
       />
