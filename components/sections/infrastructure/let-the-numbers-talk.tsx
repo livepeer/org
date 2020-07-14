@@ -8,7 +8,7 @@ const stats: StatProps[] = [
     title: "45",
     label: (
       <Text variant="heading.5" sx={{ color: "text" }}>
-        Total active infrastructure operators
+        Total active <br /> infrastructure operators
       </Text>
     )
   },
@@ -16,7 +16,7 @@ const stats: StatProps[] = [
     title: "11.4",
     label: (
       <Text variant="heading.5" sx={{ color: "text" }}>
-        Total fees <br /> earned
+        Total <br /> fees earned
       </Text>
     ),
     color: "gradient"

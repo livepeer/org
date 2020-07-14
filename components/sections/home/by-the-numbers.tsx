@@ -1,33 +1,59 @@
 import { StatProps } from "components/primitives/stat"
 import SectionLayout from "components/layouts/section"
 import StatsGrid from "components/layouts/stats-grid"
+import { Text } from "theme-ui"
 
 const stats: StatProps[] = [
   {
     title: "4.20.17",
-    label: "Date founded"
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Date founded
+      </Text>
+    )
   },
   {
     title: "42,201",
-    label: "Total GPUs on the network",
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Total GPUs <br /> on the network
+      </Text>
+    ),
     color: "gradient"
   },
   {
     title: "600k",
-    label: "Current # of streams being transcoded"
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Current # of <br /> streams being transcoded
+      </Text>
+    )
   },
   {
     title: "0.01ms",
-    label: "Avg. latency of transcoded renditions",
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Avg. latency of <br />
+        transcoded renditions
+      </Text>
+    ),
     color: "gradient"
   },
   {
     title: "11.5 ETH",
-    label: "Total Fees Earned"
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Total <br /> Fees Earned
+      </Text>
+    )
   },
   {
     title: "14.7 M",
-    label: "Total LPT staked",
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Total <br /> LPT staked
+      </Text>
+    ),
     color: "gradient"
   }
 ]
