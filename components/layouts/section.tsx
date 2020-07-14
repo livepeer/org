@@ -61,7 +61,7 @@ const SectionLayout: React.FC<Props> = ({
               variant="section.title"
               sx={{ color: titleColor, position: "relative" }}
             >
-              <span sx={{ position: "absolute", top: "-180px" }} id={id} />
+              <span sx={{ position: "absolute", top: "-164px" }} id={id} />
               {title}
             </Heading>
           )}
