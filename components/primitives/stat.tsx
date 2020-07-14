@@ -2,7 +2,7 @@ import { Flex, Box, Heading, Text, SxStyleProp } from "theme-ui"
 
 export type StatProps = {
   title: string
-  label: string
+  label: React.ReactNode
   color?: "text" | "gradient"
   pushSx?: SxStyleProp
 }
@@ -36,9 +36,7 @@ const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
         {title}
       </Heading>
     </Flex>
-    <Text variant="heading.5" sx={{ color: "text" }}>
-      {label}
-    </Text>
+    {label}
   </Box>
 )
 

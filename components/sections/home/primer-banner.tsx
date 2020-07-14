@@ -39,7 +39,7 @@ const PrimerBanner = () => (
           variant="heading.3"
           sx={{ textAlign: ["center", null, null, "left"], fontFamily: "body" }}
         >
-          Curious about how it works?
+          Curious about how Livepeer works?
         </Heading>
         <Text
           variant="normal"

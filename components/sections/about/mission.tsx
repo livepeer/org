@@ -60,7 +60,7 @@ const MissionSection = () => (
         <Text variant="normal" sx={{ mb: 4 }}>
           Through the power of open source software, combined with the
           harnessing of underutilized resources like compute and bandwidth,
-          combined with the use of crypto economic incentives for bootstrapping
+          combined with the use of cryptoeconomic incentives for bootstrapping
           and participation, there is an opportunity to deliver an
           infrastructure that can power video streaming applications at a highly
           efficient price, and infinite scale.
@@ -95,7 +95,7 @@ const MissionSection = () => (
           >
             founder’s statement
           </A>{" "}
-          — to build the world’s open video infrastructure.
+          —to <b>build the world’s open video infrastructure</b>.
         </Text>
       </Box>
     </Grid>

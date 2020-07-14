@@ -16,7 +16,7 @@ const ParticipantsPage = () => (
       illustration={<ParticipantsSvg />}
     />
     <JumpInSection />
-    <CommunitySection title="Join a Livepeer Community" />
+    <CommunitySection title="Join the Livepeer Community" />
     <HaveACallSection />
   </PageLayout>
 )

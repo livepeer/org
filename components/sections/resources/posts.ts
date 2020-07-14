@@ -78,7 +78,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Streamflow Paper",
     description:
-      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and more.",
+      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
     subtitle: "By Doug Petkanics & Yondon Fu",
     link: {
       href: "https://github.com/livepeer/wiki/blob/master/STREAMFLOW.md",
@@ -93,7 +93,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Streamflow Paper (Portuguese Translation)",
     description:
-      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and more.",
+      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
     subtitle: "Translation by Felipe Gaúcho",
     link: {
       href: "https://github.com/felipegaucho/wiki-1/blob/master/STREAMFLOW.md",
@@ -133,7 +133,7 @@ const posts: Post[] = [
   {
     title: "Scout Analytics",
     description:
-      "A data analytics tool that shows you the current economics of the protocol.",
+      "A data analytics tool that shows you the current economics of the protocol, such as the amount of token in supply, inflation rate, and more.",
     subtitle: "By Scout",
     link: { href: "https://scout.cool/livepeer/mainnet", isExternal: true },
     category: categories[1],
@@ -201,7 +201,11 @@ const posts: Post[] = [
   {
     title: "Uniswap",
     subtitle: "Non-custodial exchange",
-    link: { href: "https://uniswap.exchange", isExternal: true },
+    link: {
+      href:
+        "https://uniswap.exchange/swap/0x58b6a8a3302369daec383334672404ee733ab239",
+      isExternal: true
+    },
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-13.png",
