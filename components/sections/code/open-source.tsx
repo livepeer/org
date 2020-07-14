@@ -1,8 +1,10 @@
+/** @jsx jsx */
 import SectionLayout from "components/layouts/section"
-import { Button } from "theme-ui"
+import { jsx, Button, Link as A } from "theme-ui"
 import StatusCard, { StatusCardProps } from "components/primitives/cards/status"
 import Divider from "components/primitives/divider"
 import KeenSliderGrid from "components/layouts/keen-slider-grid"
+import { FiArrowUpRight } from "react-icons/fi"
 
 const cards: StatusCardProps[] = [
   {
@@ -12,11 +14,12 @@ const cards: StatusCardProps[] = [
     linkProps: {
       link: {
         label: "/lms",
-        href: "https://github.com/livepeer",
+        href: "https://github.com/livepeer/lpms",
         isExternal: true
       },
       status: "Go"
-    }
+    },
+    isClickable: true
   },
   {
     title: "Livepeer.js",
@@ -25,11 +28,12 @@ const cards: StatusCardProps[] = [
     linkProps: {
       link: {
         label: "/livepeerjs",
-        href: "https://github.com/livepeer",
+        href: "https://github.com/livepeer/livepeerjs",
         isExternal: true
       },
       status: "JavaScript"
-    }
+    },
+    isClickable: true
   },
   {
     title: "Stream-tester",
@@ -38,19 +42,20 @@ const cards: StatusCardProps[] = [
     linkProps: {
       link: {
         label: "/stream-tester",
-        href: "https://github.com/livepeer",
+        href: "https://github.com/stream-tester",
         isExternal: true
       },
       status: "Go"
-    }
+    },
+    isClickable: true
   }
 ]
 
 const OpenSourceSection = () => (
   <SectionLayout
     background="black"
-    title="Open source projects by us"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    title="Explore the projects"
+    subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skillsets. Hundreds of people have contributed ideas, code, designs, and time to Livepeer."
     pushSx={{
       display: "flex",
       flexDirection: "column",
@@ -59,9 +64,26 @@ const OpenSourceSection = () => (
     }}
     headingContainerPushSx={{ mb: 4 }}
   >
-    <Button>View all</Button>
+    <A
+      href="https://github.com/livepeer/"
+      target="_blank"
+      rel="noopener noreferrer"
+      variant="buttons.primary"
+      sx={{ display: "flex" }}
+    >
+      View All Projects{" "}
+      <i sx={{ ml: 2, fontSize: 4 }}>
+        <FiArrowUpRight />
+      </i>
+    </A>
     <Divider isVertical isTransparent size={["56px", "72px"]} />
-    <KeenSliderGrid>
+    <KeenSliderGrid
+      breakpoints={[
+        { value: "320px", slidesPerView: 1 },
+        { value: "664px", slidesPerView: 2 },
+        { value: "1152px", slidesPerView: 3 }
+      ]}
+    >
       {cards.map((card) => (
         <StatusCard
           key={`card-${card.title}`}

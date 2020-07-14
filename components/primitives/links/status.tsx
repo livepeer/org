@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Text, Link as A } from "theme-ui"
-import { useMemo } from "react"
+import { useMemo, ElementType } from "react"
 import { LinkProps } from "lib/types/link-props"
 import { FiArrowUpRight } from "react-icons/fi"
 import Link from "next/link"
@@ -9,18 +9,27 @@ export type StatusLinkProps = {
   link: LinkProps
   status: string
   isDark?: boolean
+  as?: ElementType<any>
+  className?: string
 }
 
-const StatusLink = ({ link, status, isDark }: StatusLinkProps) => {
+const StatusLink = ({
+  as = "a",
+  link,
+  status,
+  isDark,
+  className
+}: StatusLinkProps) => {
   const linkChildren = useMemo(
     () => (
       <>
         <Text
           sx={{
-            color: "background",
             variant: "layout.flexCenter",
-            fontWeight: 400
+            fontWeight: 400,
+            color: isDark ? "background" : "text"
           }}
+          className="status_container"
         >
           <svg
             width="12"
@@ -65,6 +74,8 @@ const StatusLink = ({ link, status, isDark }: StatusLinkProps) => {
         href={link.href}
         target="_blank"
         sx={linkSx}
+        as={as}
+        className={className}
       >
         {linkChildren}
       </A>
@@ -72,7 +83,13 @@ const StatusLink = ({ link, status, isDark }: StatusLinkProps) => {
   }
   return (
     <Link href={link.href} as={link.asPath} passHref>
-      <A variant="coloured" data-dark={isDark} sx={linkSx}>
+      <A
+        variant="coloured"
+        data-dark={isDark}
+        sx={linkSx}
+        as={as}
+        className={className}
+      >
         {linkChildren}
       </A>
     </Link>

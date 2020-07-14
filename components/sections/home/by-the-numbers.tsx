@@ -26,30 +26,28 @@ const stats: StatProps[] = [
     label: "Infrastructure operator average earnings"
   },
   {
-    title: "19.5 M",
-    label: "Total LPT in circulation",
+    title: "14.5 M",
+    label: "Total LPT staked",
     color: "gradient"
   }
 ]
 
-const ByTheNumbersSection = () => {
-  return (
-    <SectionLayout
-      background="muted"
-      title="Livepeer by the numbers"
-      subtitle={
-        <>
-          We’re proud of the numbers and worked hard to get here.
-          <br />
-          Celebrate with us.
-        </>
-      }
-      titleLabel="Subtitle"
-      pushSx={{ pb: ["80px", null, null, "160px"] }}
-    >
-      <StatsGrid stats={stats} />
-    </SectionLayout>
-  )
-}
+const ByTheNumbersSection = () => (
+  <SectionLayout
+    background="muted"
+    title="Livepeer by the numbers"
+    subtitle={
+      <>
+        We’re proud of the numbers and worked hard to get here.
+        <br />
+        Celebrate with us.
+      </>
+    }
+    titleLabel="Project Statistics"
+    pushSx={{ pb: ["80px", null, null, "160px"] }}
+  >
+    <StatsGrid stats={stats} />
+  </SectionLayout>
+)
 
 export default ByTheNumbersSection

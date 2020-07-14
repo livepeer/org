@@ -1,5 +1,7 @@
-import { Box, Text, Flex, Link as A } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Box, Text, Flex, Link as A } from "theme-ui"
 import Link from "next/link"
+import { FiArrowUpRight } from "react-icons/fi"
 
 export type FooterListProps = {
   title: string
@@ -38,12 +40,17 @@ const FooterList = ({ title, items }: FooterListProps) => (
             href={item.href}
             sx={{
               width: "fit-content",
-              textAlign: ["center", null, null, "left"]
+              textAlign: ["center", null, null, "left"],
+              display: "inline-flex",
+              alignItems: "center"
             }}
             target="_blank"
             data-dark
           >
             {item.label}
+            <i sx={{ variant: "layout.flexCenter", ml: 1 }}>
+              <FiArrowUpRight />
+            </i>
           </A>
         ) : (
           <Link

@@ -8,9 +8,10 @@ export type CardLinkProps = {
   link: LinkProps
   isDark?: boolean
   as?: ElementType<any>
+  className?: string
 }
 
-const CardLink = ({ as = "a", link, isDark }: CardLinkProps) => {
+const CardLink = ({ as = "a", link, isDark, className }: CardLinkProps) => {
   const linkChildren = useMemo(
     () => (
       <>
@@ -43,14 +44,20 @@ const CardLink = ({ as = "a", link, isDark }: CardLinkProps) => {
 
   if (link.isExternal) {
     return (
-      <A as={as} href={link.href} target="_blank" sx={linkSx}>
+      <A
+        as={as}
+        href={link.href}
+        className={className}
+        target="_blank"
+        sx={linkSx}
+      >
         {linkChildren}
       </A>
     )
   }
   return (
     <Link href={link.href} as={link.asPath} passHref>
-      <A as={as} sx={linkSx}>
+      <A as={as} sx={linkSx} className={className}>
         {linkChildren}
       </A>
     </Link>

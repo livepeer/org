@@ -17,7 +17,7 @@ const ParticipantsPage = () => (
       withAnimation
     />
     <JumpInSection />
-    <CommunitySection title="Join the Livepeer Community" />
+    <CommunitySection title="Join a Livepeer Community" />
     <HaveACallSection />
   </PageLayout>
 )

@@ -3,6 +3,7 @@ import { jsx, Box, Container, Heading, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
 import StatsGrid from "components/layouts/stats-grid"
 import { StatProps } from "components/primitives/stat"
+import Link from "next/link"
 
 const stats: StatProps[] = [
   {
@@ -80,13 +81,11 @@ const IsOpenSourceSection = () => (
           omnis iste natus error sit voluptats accusantium.
         </Heading>
         <Divider isTransparent isVertical size={["32px", "40px"]} />
-        <A
-          variant="buttons.primary"
-          href="https://github.com/livepeer/"
-          target="_blank"
-        >
-          Explore the code
-        </A>
+        <Link href="/code" passHref>
+          <A variant="buttons.primary" href="/code">
+            Explore the code
+          </A>
+        </Link>
         <StatsGrid pushSx={{ mt: 5 }} stats={stats} />
       </Box>
     </Container>

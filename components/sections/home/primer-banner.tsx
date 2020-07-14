@@ -10,12 +10,8 @@ const PrimerBanner = () => {
     if (!sectionRef.current) return
     elementEffect(sectionRef.current)
   }, [])
-
   return (
-    <Box
-      ref={sectionRef}
-      sx={{ bg: "muted", px: 3, py: "80px" }}
-    >
+    <Box ref={sectionRef} sx={{ bg: "muted", px: 3, py: "80px" }}>
       <Container
         variant="section"
         sx={{
@@ -46,7 +42,7 @@ const PrimerBanner = () => {
               textAlign: ["center", null, null, "left"]
             }}
           >
-            Primer
+            A 10-minute Primer
           </Text>
           <Heading
             variant="heading.3"
@@ -73,7 +69,6 @@ const PrimerBanner = () => {
           <Button sx={{ width: "fit-content" }}>Check it out</Button>
         </Box>
         <Box
-          className="c--hide c-animate"
           sx={{
             position: "absolute",
             bottom: [-7, null, null, -5],

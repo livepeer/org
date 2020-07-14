@@ -1,6 +1,6 @@
 import HomeHero from "components/sections/home/hero"
 import ByTheNumbersSection from "components/sections/home/by-the-numbers"
-import CarsSection from "components/sections/home/cards"
+import LetLivepeerDoSection from "components/sections/home/let-livepeer-do"
 import PrimerBanner from "components/sections/home/primer-banner"
 import CommunitySection from "components/sections/home/community"
 import PageLayout from "components/layouts/page"
@@ -8,7 +8,7 @@ import PageLayout from "components/layouts/page"
 const HomePage = () => (
   <PageLayout navProps={{ background: "muted" }}>
     <HomeHero />
-    <CarsSection />
+    <LetLivepeerDoSection />
     <PrimerBanner />
     <ByTheNumbersSection />
     <CommunitySection />

@@ -74,64 +74,56 @@ const links: IconLinkProps[] = [
   }
 ]
 
-const CommunitySection = ({ title = "Community" }) => {
-  return (
-    <SectionLayout
-      title={title}
-      titleLabel="Subtitle"
-      subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skill sets. Join us."
-      pushSx={{ pt: "160px" }}
+const CommunitySection = ({ title = "Join a Livepeer Community" }) => (
+  <SectionLayout
+    title={title}
+    titleLabel="Communities"
+    subtitle="Discover interesting people, groups and communities related to Livepeer."
+    pushSx={{ pt: "160px" }}
+  >
+    <Grid
+      columns={"repeat(3, 372px)"}
+      gap={[3, null, null, null, 0]}
+      sx={{
+        mx: "auto",
+        justifyContent: "center",
+        gridTemplateColumns: [
+          "372px",
+          null,
+          null,
+          null,
+          ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`
+        ]
+      }}
     >
-      <Grid
-        columns={"repeat(3, 372px)"}
-        gap={[3, null, null, null, 0]}
-        sx={{
-          mx: "auto",
-          justifyContent: "center",
-          gridTemplateColumns: [
-            "372px",
-            null,
-            null,
-            null,
-            ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`
-          ]
-        }}
-      >
-        {links.map((link, i) => {
-          if (i === 1 || i === 4) {
-            return (
-              <Flex key={`icon-link-${link.href}`}>
-                <Divider
-                  isVertical
-                  size="72px"
-                  pushSx={{
-                    mx: 3,
-                    display: ["none", null, null, null, "block"]
-                  }}
-                />
-                <IconLink pushSx={{ width: "372px" }} {...link} />
-                <Divider
-                  isVertical
-                  size="72px"
-                  pushSx={{
-                    mx: 3,
-                    display: ["none", null, null, null, "block"]
-                  }}
-                />
-              </Flex>
-            )
-          }
+      {links.map((link, i) => {
+        if (i === 1 || i === 4) {
           return (
-            <IconLink
-              key={`icon-link-${link.href}`}
-              pushSx={{ width: "372px" }}
-              {...link}
-            />
+            <Flex key={`icon-link-${link.href}`}>
+              <Divider
+                isVertical
+                size="72px"
+                pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
+              />
+              <IconLink pushSx={{ width: "372px" }} {...link} />
+              <Divider
+                isVertical
+                size="72px"
+                pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
+              />
+            </Flex>
           )
-        })}
-      </Grid>
-    </SectionLayout>
-  )
-}
+        }
+        return (
+          <IconLink
+            key={`icon-link-${link.href}`}
+            pushSx={{ width: "372px" }}
+            {...link}
+          />
+        )
+      })}
+    </Grid>
+  </SectionLayout>
+)
 
 export default CommunitySection

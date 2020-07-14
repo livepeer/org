@@ -31,8 +31,8 @@ const lists: FooterListProps[] = [
         href: "https://livepeer.readthedocs.io/",
         isExternal: true
       },
-      { label: "Hosted API", href: "/developers" },
-      { label: "OSS", href: "/code" }
+      { label: "OSS", href: "/code" },
+      { label: "Livepeer.com", href: "https://livepeer.com", isExternal: true }
     ]
   },
   {
@@ -50,7 +50,7 @@ const lists: FooterListProps[] = [
       },
       { label: "FAQ", href: "/faq" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "About", href: "/about" }
+      { label: "About Livepeer.org", href: "/about" }
     ]
   },
   {

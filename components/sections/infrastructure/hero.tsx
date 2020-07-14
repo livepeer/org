@@ -6,12 +6,18 @@ import CodeEditorBox from "components/layouts/code-editor-box"
 
 const lines: AnimatedLineProps[] = [
   {
-    frames: [{ text: "livepeer -broadcaster -network mainnet", isBold: true }]
+    frames: [
+      {
+        text:
+          "livepeer -orchestrator -transcoder -network mainnet -pricePerUnit 10000",
+        isBold: true
+      }
+    ]
   },
   {
     frames: [
       {
-        text: "Livepeer is running on the mainnet network"
+        text: "***Livepeer is running on the mainnet network***"
       }
     ],
     delay: 200,
@@ -22,7 +28,7 @@ const lines: AnimatedLineProps[] = [
   {
     frames: [
       {
-        text: "Creating data dir:~/.lpData/mainnet"
+        text: "Price: 10000 wei for 1 pixel"
       }
     ],
     delay: 400,
@@ -33,20 +39,10 @@ const lines: AnimatedLineProps[] = [
   {
     frames: [
       {
-        text: "No Ethereum account found."
+        text: "***Livepeer is in Orchestrator Mode***"
       }
     ],
     delay: 200,
-    prefix: null,
-    withoutTextAnimation: true,
-    withoutCaret: true
-  },
-  {
-    frames: [
-      {
-        text: "Creating new account."
-      }
-    ],
     prefix: null,
     withoutTextAnimation: true,
     withoutCaret: true

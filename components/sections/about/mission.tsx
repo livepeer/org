@@ -40,7 +40,7 @@ const MissionSection = () => (
             mb: 1
           }}
         >
-          The Livepeer
+          The Livepeer.org
         </Heading>
         <Heading
           variant="heading.2"
@@ -52,31 +52,50 @@ const MissionSection = () => (
           variant="heading.5"
           sx={{ textAlign: ["center", null, "left"], color: "lightGray" }}
         >
-          The Livepeer Project’s mission is to build the world’s open video
-          infrastructure.
+          The purpose of Livepeer.org is to be the best portal to Livepeer for
+          its participants and users.
         </Heading>
       </Box>
       <Box sx={{ zIndex: "general", position: "relative" }}>
         <Text variant="normal" sx={{ mb: 4 }}>
-          Through the power of{" "}
-          <A variant="coloured" data-dark>
-            open source software
-          </A>
-          , combined with the harnessing of underutilized resources like compute
-          and bandwidth, combined with the use of crypto economic incentives for
-          bootstrapping and participation, there is an opportunity to deliver an
-          infrastructure that can{" "}
-          <A variant="coloured" data-dark>
-            power video streaming applications
-          </A>{" "}
-          at a highly efficient price, and infinite scale.
+          Through the power of open source software, combined with the
+          harnessing of underutilized resources like compute and bandwidth,
+          combined with the use of crypto economic incentives for bootstrapping
+          and participation, there is an opportunity to deliver an
+          infrastructure that can power video streaming applications at a highly
+          efficient price, and infinite scale.
         </Text>
-        <Text variant="normal">
+        <Text variant="normal" sx={{ mb: 4 }}>
           Along with the proliferation of high quality cameras and ubiquitous
           bandwidth, the belief is that this will enable video applications to
           be created that were never before possible under traditional,
           centralized cost structures, which unlock communications, economic
           opportunity, and entertainment for society going forward.
+        </Text>
+        <Text variant="normal">
+          By providing the best possible portal to Livepeer, we hope to help
+          capture this opportunity and fulfill the project’s mission as laid out
+          in the original{" "}
+          <A
+            href="https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="coloured"
+            data-dark
+          >
+            whitepaper
+          </A>{" "}
+          and{" "}
+          <A
+            href="https://github.com/livepeer/wiki/blob/master/GOVERNANCE-FOUNDERS-STATEMENT.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="coloured"
+            data-dark
+          >
+            founder’s statement
+          </A>{" "}
+          — to build the world’s open video infrastructure.
         </Text>
       </Box>
     </Grid>
