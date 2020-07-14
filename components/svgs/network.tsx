@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, SxStyleProp } from "theme-ui"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { MotionPathPlugin } from "gsap/MotionPathPlugin"
 import { DURATION } from "lib/animations"
@@ -12,8 +12,15 @@ type Props = {
 }
 
 const NetworkSvg = ({ pushSx }: Props) => {
+  const svgRef = useRef(null)
   useEffect(() => {
-    const tl = gsap.timeline()
+    if (!svgRef.current) return
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: svgRef.current,
+        start: "top 80%"
+      }
+    })
     const pathInner = document.querySelector(".path--inner")
     const pathOuter = document.querySelector(".path--outer")
     const pathGreen = document.querySelector(".path--green")
@@ -25,21 +32,21 @@ const NetworkSvg = ({ pushSx }: Props) => {
     tl.set([pathInner, pathOuter, circles], { autoAlpha: 0 })
     tl.set([pathGreen], { drawSVG: false })
 
-    tl.to([pathInner, pathOuter, circles], {
-      delay: DURATION,
-      autoAlpha: 1,
-      duration: DURATION,
-      ease: "sine.out",
-      stagger: {
-        each: 0.1,
-        from: "start"
-      }
-    })
-    tl.to([pathGreen], {
-      drawSVG: true,
-      duration: DURATION,
-      ease: "sine.out"
-    })
+    tl.to(svgRef.current, { autoAlpha: 1, duration: DURATION * 0.5 })
+    tl.to(
+      [pathInner, pathOuter, circles],
+      {
+        delay: DURATION,
+        autoAlpha: 1,
+        duration: DURATION,
+        ease: "sine.out",
+        stagger: {
+          each: 0.1,
+          from: "start"
+        }
+      },
+      "<"
+    )
     tl.to(dotInner, {
       duration: DURATION * 18,
       ease: "none",
@@ -68,21 +75,27 @@ const NetworkSvg = ({ pushSx }: Props) => {
       },
       "<"
     )
-    tl.to([dotInner, dotOuter], {
-      delay: DURATION * 0.5,
-      autoAlpha: 1,
-      duration: DURATION,
-      ease: "sine.out"
-    }, '<')
+    tl.to(
+      [dotInner, dotOuter],
+      {
+        delay: DURATION * 0.5,
+        autoAlpha: 1,
+        duration: DURATION,
+        ease: "sine.out"
+      },
+      "<"
+    )
   }, [])
   return (
     <svg
+      ref={svgRef}
       width="464"
       height="464"
       viewBox="0 0 464 464"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       sx={pushSx}
+      className="c--hide"
     >
       <path
         className="path--inner"
