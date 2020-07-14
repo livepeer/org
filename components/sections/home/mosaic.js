@@ -8,7 +8,6 @@ export default function Mosaic() {
   const ref = useRef(null)
 
   useEffect(() => {
-    console.log("mounted")
     const { canvas, scene, camera } = useWebGL()
     const RAF = useRAF()
 
