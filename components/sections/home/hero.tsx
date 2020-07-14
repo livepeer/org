@@ -1,13 +1,12 @@
 /** @jsx jsx */
 import { useRef, useEffect } from "react"
-import { jsx, Container, Heading, Text, Button, Box } from "theme-ui"
+import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
 import { gsap } from "gsap"
 import { DURATION } from "lib/animations"
 
 const HomeHero = () => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
+  const sectionRef = useRef(null)
   useEffect(() => {
     if (!sectionRef.current) return
     const tl = gsap.timeline()
@@ -63,7 +62,9 @@ const HomeHero = () => {
             unparalleled reliability, and unlimited scalability.
           </Heading>
         </Box>
-        <Button>Get started</Button>
+        <A variant="buttons.primary" href="/#get-started">
+          Get started
+        </A>
         <Box
           sx={{ bg: "ultraLightGray", height: "500px", width: "100%", my: 4 }}
         />
@@ -71,4 +72,5 @@ const HomeHero = () => {
     </Box>
   )
 }
+
 export default HomeHero
