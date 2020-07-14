@@ -42,6 +42,7 @@ const LetLivepeerDoSection = () => (
     title="Ready to jump in?"
     subtitle="Get started by choosing the option that best describes your interest."
     background="muted"
+    id="get-started"
   >
     <Grid
       gap={4}

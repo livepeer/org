@@ -82,7 +82,7 @@ const ImageCard = ({
                 {footnote}
               </Text>
             )}
-            <CardLink {...linkProps} />
+            <CardLink {...linkProps} as={isLink ? "div" : "a"} />
           </Box>
         </Box>
       </Card>
@@ -103,14 +103,21 @@ const ImageCard = ({
   if (!isLink) return markup
   if (linkProps.link.isExternal) {
     return (
-      <a href={linkProps.link.href} className={className} target="_blank">
+      <a
+        href={linkProps.link.href}
+        className={className}
+        target="_blank"
+        sx={{ overflow: "visible" }}
+      >
         {markup}
       </a>
     )
   }
   return (
-    <Link href={linkProps.link.href} as={linkProps.link.asPath}>
-      <a className={className}>{markup}</a>
+    <Link href={linkProps.link.href} as={linkProps.link.asPath} passHref>
+      <a className={className} sx={{ overflow: "visible" }}>
+        {markup}
+      </a>
     </Link>
   )
 }
