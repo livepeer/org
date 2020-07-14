@@ -16,7 +16,8 @@ export default class MosaicEffect extends THREE.Object3D {
     this.time = 0
 
     const mouse = useMouse()
-    mouse.events.on("move", this.onMouseMove.bind(this))
+    this.onMouseMoveHandler = this.onMouseMove.bind(this)
+    mouse.events.on("move", this.onMouseMoveHandler)
   }
 
   update({ deltaTime }) {
@@ -73,5 +74,10 @@ export default class MosaicEffect extends THREE.Object3D {
       x: e.normalizedPosition.x * 0.25,
       y: e.normalizedPosition.y * 0.25
     })
+  }
+
+  destroy() {
+    const mouse = useMouse()
+    mouse.events.off("move", this.onMouseMoveHandler)
   }
 }
