@@ -2,12 +2,31 @@ import { Container, Grid } from "theme-ui"
 import Tabs, { TabProps } from "components/primitives/tabs"
 import { useRouter } from "next/router"
 import ImageCard, { ImageCardProps } from "components/primitives/cards/image"
-import { useMemo } from "react"
+import { useMemo, useRef, useEffect } from "react"
+import gsap from "gsap"
 import posts, { categories } from "./posts"
+import { DURATION } from "lib/animations"
 
 const ResourcesDirectory = () => {
   const router = useRouter()
   const { filter } = router.query
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current
+      }
+    })
+    tl.set(sectionRef.current, {
+      autoAlpha: 0
+    })
+    // @ts-ignore
+    tl.sectionEntrance(sectionRef.current, {
+      delay: DURATION * 2
+    })
+  }, [sectionRef])
 
   const filteredCards: ImageCardProps[] = useMemo(() => {
     const filteredPosts = posts.filter((c) =>
@@ -49,7 +68,7 @@ const ResourcesDirectory = () => {
   )
 
   return (
-    <Container variant="section">
+    <Container variant="section" className="hide__section" ref={sectionRef}>
       <Tabs
         items={tabs}
         pushSx={{ justifyContent: ["flex-start", "center"] }}
