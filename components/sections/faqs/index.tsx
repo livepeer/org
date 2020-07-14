@@ -1,14 +1,33 @@
 import { Container } from "theme-ui"
 import Tabs, { TabProps } from "components/primitives/tabs"
-import { useMemo } from "react"
 import Accordion from "components/primitives/accordion"
 import { AccordionItemProps } from "components/primitives/accordion/item"
 import { useRouter } from "next/router"
+import { useMemo, useRef, useEffect } from "react"
+import gsap from "gsap"
 import questions, { categories } from "./questions"
+import { DURATION } from "lib/animations"
 
 const FaqsSection = () => {
   const router = useRouter()
   const { filter } = router.query
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current
+      }
+    })
+    tl.set(sectionRef.current, {
+      autoAlpha: 0
+    })
+    // @ts-ignore
+    tl.sectionEntrance(sectionRef.current, {
+      delay: DURATION * 2
+    })
+  }, [sectionRef])
 
   const filteredItems: AccordionItemProps[] = useMemo(() => {
     const filteredQuestions = questions.filter((q) =>
@@ -39,7 +58,7 @@ const FaqsSection = () => {
   )
 
   return (
-    <Container variant="section">
+    <Container variant="section" className="hide__section" ref={sectionRef}>
       <Tabs
         items={tabs}
         pushSx={{ justifyContent: ["flex-start", null, null, "center"] }}

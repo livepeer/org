@@ -38,13 +38,17 @@ const initGsap = () => {
 
   gsap.registerEffect({
     name: "sectionEntrance",
-    effect: (targets: gsap.TweenTarget, config: { duration: number }) => {
+    effect: (
+      targets: gsap.TweenTarget,
+      config: { duration: number; delay: number }
+    ) => {
       return gsap.to(targets, {
         autoAlpha: 1,
-        duration: config.duration
+        duration: config.duration,
+        delay: config.delay
       })
     },
-    defaults: { duration: DURATION },
+    defaults: { duration: DURATION, delay: 0 },
     extendTimeline: true
   })
 

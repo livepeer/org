@@ -2,6 +2,7 @@
 import { jsx, Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
 import React, { forwardRef, ReactNode, useRef, useEffect } from "react"
 import gsap from "gsap"
+import { DURATION } from "lib/animations"
 import cn from "classnames"
 
 type Props = {
@@ -37,13 +38,16 @@ const SectionLayout = forwardRef(
 
     useEffect(() => {
       if (!sectionRef.current || !withAnimation) return
-      const tl = gsap.timeline()
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current
+        }
+      })
       tl.set(sectionRef.current, {
         autoAlpha: 0
       })
-
       // @ts-ignore
-      tl.sectionEntrance(sectionRef.current)
+      tl.sectionEntrance(sectionRef.current, { delay: DURATION * 2 })
     }, [sectionRef])
     let bg = "background"
     let titleColor = "text"
