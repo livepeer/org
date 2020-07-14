@@ -43,7 +43,7 @@ const cards: ImageCardProps[] = [
 
 const HaveACallSection = () => (
   <SectionLayout
-    title="Let's have a call"
+    title="Let's Have a Call"
     subtitle={
       <>
         Every month, our community catches up with each other virtually. We hear

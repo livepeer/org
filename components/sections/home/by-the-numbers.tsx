@@ -22,11 +22,11 @@ const stats: StatProps[] = [
     color: "gradient"
   },
   {
-    title: "15.5 ETH",
-    label: "Infrastructure operator average earnings"
+    title: "11.5 ETH",
+    label: "Total Fees Earned"
   },
   {
-    title: "14.5 M",
+    title: "14.7 M",
     label: "Total LPT staked",
     color: "gradient"
   }
@@ -38,12 +38,12 @@ const ByTheNumbersSection = () => (
     title="Livepeer by the numbers"
     subtitle={
       <>
-        We’re proud of the numbers and worked hard to get here.
+        We’re proud our history and growth and worked hard to get here.
         <br />
         Celebrate with us.
       </>
     }
-    titleLabel="Project Statistics"
+    titleLabel="Network Statistics"
     pushSx={{ pb: ["80px", null, null, "160px"] }}
   >
     <StatsGrid stats={stats} />
