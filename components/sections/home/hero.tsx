@@ -15,11 +15,13 @@ const HomeHero = () => {
     })
 
     // @ts-ignore
-    tl.sectionEntrance(sectionRef.current, { duration: DURATION })
+    tl.sectionEntrance(sectionRef.current)
   }, [sectionRef])
   return (
     <Box sx={{ bg: "muted" }}>
       <Container
+        className="hide__section"
+        ref={sectionRef}
         variant="section"
         sx={{
           display: "flex",
