@@ -6,10 +6,11 @@ import MobileJumpInSlider from "./slider/mobile"
 
 const JumpInSection = () => (
   <SectionLayout
-    title="Jump in"
-    subtitle="Get started by choosing the option that best describes your role in the network"
     background="dark"
     pushSx={{ py: "160px" }}
+    subtitle="Get started by choosing the option that best describes your role in the network"
+    title="Jump in"
+    withAnimation
   >
     <div sx={{ display: ["none", null, null, "block"] }}>
       <JumpInSlider />

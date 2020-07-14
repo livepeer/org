@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Box, Container, Text, Heading, SxStyleProp } from "theme-ui"
 import React, { forwardRef, ReactNode, useRef, useEffect } from "react"
+import gsap from "gsap"
 import cn from "classnames"
-import elementEffect from "lib/animations/section-effect"
 
 type Props = {
   background?: "muted" | "dark" | "black"
@@ -37,8 +37,14 @@ const SectionLayout = forwardRef(
 
     useEffect(() => {
       if (!sectionRef.current || !withAnimation) return
-      elementEffect(sectionRef.current)
-    }, [sectionRef, withAnimation])
+      const tl = gsap.timeline()
+      tl.set(sectionRef.current, {
+        autoAlpha: 0
+      })
+
+      // @ts-ignore
+      tl.sectionEntrance(sectionRef.current)
+    }, [sectionRef])
     let bg = "background"
     let titleColor = "text"
     let subTitleColor = "gray"
@@ -75,17 +81,12 @@ const SectionLayout = forwardRef(
             }}
           >
             {titleLabel && (
-              <Text
-                className={cn({ "h-animate": withAnimation })}
-                variant="section.titleLabel"
-                sx={{ color: titleColor }}
-              >
+              <Text variant="section.titleLabel" sx={{ color: titleColor }}>
                 {titleLabel}
               </Text>
             )}
             {title && (
               <Heading
-                className={cn({ "h-animate": withAnimation })}
                 variant="section.title"
                 sx={{ color: titleColor, position: "relative" }}
               >
@@ -94,11 +95,7 @@ const SectionLayout = forwardRef(
               </Heading>
             )}
             {subtitle && (
-              <Heading
-                className={cn({ "h-animate": withAnimation })}
-                variant="section.subtitle"
-                sx={{ color: subTitleColor }}
-              >
+              <Heading variant="section.subtitle" sx={{ color: subTitleColor }}>
                 {subtitle}
               </Heading>
             )}
