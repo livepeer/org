@@ -24,7 +24,9 @@ const TopNotification = ({
       color: "background",
       textAlign: "center",
       p: 2,
-      variant: "text.small"
+      variant: "text.small",
+      position: "relative",
+      zIndex: "1"
     }}
   >
     <Text sx={{ fontWeight: 600, display: "inline" }}>{title}: </Text>

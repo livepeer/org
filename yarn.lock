@@ -4092,6 +4092,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.2.2
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
+gsap@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.4.0.tgz#b1cec510b0dd30cbb115fb2bece37a3b86c9327d"
+  integrity sha512-b/GJjLIl9X5bPrlQ6ek7KV6ZPKP2HsKXr7HcuTEQe4725SkCTialLHnrhglxZISIg+zCRrQXawexRUeKZz5CjQ==
+
 has-ansi@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/has-ansi/-/has-ansi-2.0.0.tgz#34f5049ce1ecdf2b0649af3ef24e45ed35416d91"
@@ -7484,6 +7489,11 @@ theme-ui@^0.3.1:
     "@theme-ui/css" "^0.3.1"
     "@theme-ui/mdx" "^0.3.0"
     "@theme-ui/theme-provider" "^0.3.1"
+
+three@^0.118.3:
+  version "0.118.3"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.118.3.tgz#c0bf8c10a68155478f12f4ccac2ff979526a4a0a"
+  integrity sha512-ijECXrNzDkHieoeh2H69kgawTGH8DiamhR4uBN8jEM7VHSKvfTdEvOoHsA8Aq7dh7PHAxhlqBsN5arBI3KixSw==
 
 through2@^2.0.0:
   version "2.0.5"
