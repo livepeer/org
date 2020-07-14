@@ -66,7 +66,7 @@ const accordionItems: AccordionItemProps[] = [
 
 const WhoIsMaintainingSection = () => (
   <SectionLayout
-    title="Who maintains Livepeer.org"
+    title="Livepeer.org Maintainers"
     subtitle="The Livepeer.org website is maintained by members of the following organizations:"
     pushSx={{ pt: ["80px", "160px"] }}
   >
@@ -95,9 +95,10 @@ const WhoIsMaintainingSection = () => (
       variant="normal"
       sx={{ color: "gray", textAlign: "center", maxWidth: "4xl", mx: "auto" }}
     >
-      Note: Livepeer.org is not an “official” website. Just like nobody owns the
-      email technology, nobody owns the Livepeer network. As such, nobody can
-      speak with authority in the name of Livepeer.
+      Note: Livepeer.org is not an “official” website. Just like nobody owns or
+      controls the technology behind email or bitcoin, nobody owns or controls
+      the technology behind Livepeer. As such, nobody can speak with authority
+      in the name of Livepeer.
     </Text>
   </SectionLayout>
 )

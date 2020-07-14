@@ -12,7 +12,7 @@ const FaqsSection = () => {
 
   const filteredItems: AccordionItemProps[] = useMemo(() => {
     const filteredQuestions = questions.filter((q) =>
-      filter ? q.category.value === filter : true
+      filter ? q.category.value === filter : q.category.value === "general"
     )
     return filteredQuestions.map((q) => ({
       heading: { title: q.question },
@@ -21,25 +21,18 @@ const FaqsSection = () => {
   }, [questions, filter])
 
   const handleClick = (value?: string) => {
-    if (!value) return router.push("/faq")
+    if (!value || value === "general") return router.push("/faq")
     return router.push(`/faq?filter=${value}`)
   }
 
   const tabs: TabProps[] = useMemo(
     () => [
-      {
-        label: "All",
-        onClick: () => {
-          handleClick()
-        },
-        isSelected: !filter
-      },
       ...categories.map((c) => ({
         label: c.label,
         onClick: () => {
           handleClick(c.value)
         },
-        isSelected: filter === c.value
+        isSelected: filter === c.value || (!filter && c.value === "general")
       }))
     ],
     [filter, categories]

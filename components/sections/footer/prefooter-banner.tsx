@@ -10,7 +10,6 @@ const PrefooterBanner = () => {
     if (!sectionRef.current) return
     elementEffect(sectionRef.current)
   }, [])
-
   return (
     <Box
       ref={sectionRef}
@@ -41,7 +40,7 @@ const PrefooterBanner = () => {
             variant="heading.3"
             sx={{ textAlign: ["center", null, null, "left"] }}
           >
-            Ready to get started?
+            Stay Informed
           </Heading>
           <Text
             variant="normal"
@@ -51,9 +50,8 @@ const PrefooterBanner = () => {
               textAlign: ["center", null, null, "left"]
             }}
           >
-            Through storytelling, illustration, and data, the Livepeer Primer
-            explains, at a high level, the problem Livepeer solves and how it
-            works.
+            Subscribe to our newsletter and get updates from the Livepeer
+            ecosystem straight to your Inbox.
           </Text>
           <Flex
             sx={{
@@ -64,14 +62,14 @@ const PrefooterBanner = () => {
             }}
           >
             <Input
-              placeholder="Enter your work email address"
+              placeholder="Enter your email address"
               sx={{ mx: 1, flex: "1 1 60%", mb: 2 }}
             />
             <Button
               variant="neutral"
               sx={{ minWidth: "fit-content", flex: "1 1", mx: 1 }}
             >
-              Check it out
+              Subscribe
             </Button>
           </Flex>
         </Box>

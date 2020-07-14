@@ -33,13 +33,18 @@ const links: LinkType[] = [
     href: "/developers"
   },
   {
+    label: "Resources",
+    href: "/resources"
+  },
+  {
     label: "Blog",
     href: "https://medium.com/livepeer-blog",
     isExternal: true
   },
   {
     label: "Enterprise",
-    href: "/enterprise"
+    href: "https://livepeer.com",
+    isExternal: true
   }
 ]
 
@@ -128,7 +133,7 @@ const Nav = ({
           <Box
             sx={{
               "a:not(:last-of-type)": { mr: 5 },
-              display: ["none", "flex"]
+              display: ["none", null, "flex"]
             }}
           >
             {links.map((link) =>
@@ -156,7 +161,7 @@ const Nav = ({
           <IconButton
             sx={{
               color,
-              display: ["block", "none"],
+              display: ["block", null, "none"],
               fontSize: 6
             }}
             onClick={() => setMobileMenuIsOpen(true)}
@@ -188,11 +193,7 @@ const Nav = ({
           >
             <LivepeerLogo isDark={isDark} />
             <IconButton
-              sx={{
-                color,
-                display: ["block", "none"],
-                fontSize: 6
-              }}
+              sx={{ color, fontSize: 6 }}
               onClick={() => setMobileMenuIsOpen(false)}
             >
               <FiX size="24px" />

@@ -21,7 +21,7 @@ const stats: StatProps[] = [
 const LetTheNumbersTalkSection = () => (
   <SectionLayout
     title="Let the numbers talk"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    subtitle="The capacity on Livepeer's network represents access to 70,000+ GPUs, or enough to encode all the realtime video streaming through Twitch, Facebook, and Youtube combined."
     pushSx={{ py: ["80px", null, null, "160px"] }}
   >
     <StatsGrid stats={stats} />
