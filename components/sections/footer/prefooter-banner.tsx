@@ -1,20 +1,10 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
-import elementEffect from "lib/animations/section-effect"
 
 const PrefooterBanner = () => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    elementEffect(sectionRef.current)
-  }, [])
   return (
-    <Box
-      ref={sectionRef}
-      sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: ["-122px", "80px"] }}
-    >
+    <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: ["-122px", "80px"] }}>
       <Container
         sx={{
           bg: "primary",
