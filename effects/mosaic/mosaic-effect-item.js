@@ -33,9 +33,8 @@ export default class MosaicEffectItem extends THREE.Mesh {
     this.video.muted = true
     this.video.addEventListener("loadedmetadata", this.onVideoLoaded.bind(this))
     this.video.play()
+
     this.texture = new THREE.VideoTexture(this.video)
-    // this.texture.minFilter = THREE.LinearFilter;
-    // this.texture.magFilter = THREE.LinearFilter;
     this.texture.format = THREE.RGBFormat
 
     this.material.map = this.texture

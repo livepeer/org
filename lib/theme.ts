@@ -32,6 +32,7 @@ const theme = {
   colors: {
     text: "#131418",
     background: "#fff",
+    transparent: "transparent",
     muted: "#fafafa",
     primary: "#00EB88",
     secondary: "#3F3FE2",

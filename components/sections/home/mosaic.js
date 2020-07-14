@@ -8,7 +8,7 @@ export default function Mosaic() {
   const ref = useRef(null)
 
   useEffect(() => {
-    const { canvas, scene, camera } = useWebGL()
+    const { canvas, scene } = useWebGL()
     const RAF = useRAF()
 
     ref.current.appendChild(canvas)
@@ -33,18 +33,15 @@ export default function Mosaic() {
   }, [])
 
   return (
-    <div ref={ref} className="heroMosaic">
-      <style jsx>
-        {`
-          .heroMosaic {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-          }
-        `}
-      </style>
-    </div>
+    <div
+      ref={ref}
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        top: "0px",
+        left: "0px"
+      }}
+    />
   )
 }

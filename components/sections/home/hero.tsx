@@ -4,7 +4,7 @@ import Divider from "components/primitives/divider"
 import Mosaic from "components/sections/home/mosaic"
 
 const HomeHero = () => (
-  <Box sx={{ bg: "muted" }} className="hero" style={{ position: "relative" }}>
+  <Box sx={{ bg: "muted", position: "relative" }}>
     <Mosaic />
     <Container
       variant="section"
@@ -12,10 +12,20 @@ const HomeHero = () => (
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        overflow: "visible",
         pt: 5
       }}
     >
-      <Box sx={{ maxWidth: "4xl", mb: ["32px", "40px"] }}>
+      <Box
+        sx={{
+          maxWidth: "5xl",
+          mb: ["32px", "40px"],
+          filter: "invert(1)",
+          mixBlendMode: "difference"
+        }}
+      >
         <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
           The&nbsp;
           <Text
@@ -52,9 +62,6 @@ const HomeHero = () => (
       <A variant="buttons.primary" href="/#get-started">
         Get started
       </A>
-      <Box
-        sx={{ bg: "ultraLightGray", height: "500px", width: "100%", my: 4 }}
-      />
     </Container>
   </Box>
 )

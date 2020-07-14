@@ -17,8 +17,6 @@ class WebGL {
 
     // scene
     this.scene = new THREE.Scene()
-    // this.DOMScene = new THREE.Group();
-    // this.scene.add(this.DOMScene);
 
     // camera
     this.camera = new THREE.PerspectiveCamera(
@@ -49,24 +47,6 @@ class WebGL {
     this.renderer.setSize(viewport.width, viewport.height)
     this.renderer.setPixelRatio(window.devicePixelRatio || 1)
 
-    // composer
-    // const Composer = require("@/webgl/composer").default;
-    // this.composer = new Composer({
-    //   camera: this.camera,
-    //   renderer: this.renderer,
-    //   scene: this.scene
-    // });
-
-    // stats
-    // this.stats = new Stats()
-    // document.body.appendChild(this.stats.dom)
-    // RAF.add("stats-begin", this.stats.begin, -1000)
-    // RAF.add("stats-end", this.stats.end, 1000)
-
-    // raycaster
-    // const Raycaster = require("@/webgl/raycaster").default;
-    // this.raycaster = new Raycaster(this.camera);
-
     // events
     window.addEventListener("resize", this.onWindowResize.bind(this))
 
@@ -75,18 +55,8 @@ class WebGL {
   }
 
   loop(clock) {
-    // this.composer.render(clock);
     this.renderer.renderLists.dispose()
     this.renderer.render(this.scene, this.camera)
-
-    const info = this.renderer.info
-
-    // console.log(
-    //   "calls: " + info.render.calls,
-    //   "triangle: " + info.render.triangles,
-    //   "geometries:" + info.memory.geometries,
-    //   "textures:" + info.memory.textures
-    // )
   }
 
   get viewsize() {
@@ -123,12 +93,7 @@ class WebGL {
     this.camera.updateProjectionMatrix()
   }
 
-  destroy() {
-    const RAF = useRAF()
-    // RAF.remove("stats-begin")
-    // RAF.remove("stats-end")
-    // RAF.remove("use-webgl")
-  }
+  destroy() {}
 }
 
 const useWebGL = () => {

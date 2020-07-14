@@ -87,6 +87,7 @@ const Nav = ({
   const isDark = background === "black" || background === "dark"
   let bg: string
   let color: string
+
   switch (background) {
     default:
     case "white":
@@ -94,7 +95,7 @@ const Nav = ({
       color = "text"
       break
     case "muted":
-      bg = "muted"
+      bg = hasScrolled ? "muted" : "transparent"
       color = "text"
       break
     case "dark":
@@ -114,10 +115,13 @@ const Nav = ({
         sx={{
           bg,
           color,
-          position: "sticky",
-          top: 0,
+          position: "fixed",
+          top: hasScrolled ? 0 : "40px",
+          mixBlendMode: hasScrolled ? "unset" : "difference",
+          filter: hasScrolled ? "none" : "invert(1)",
+          width: "100%",
           zIndex: "header",
-          transition: "box-shadow .3s",
+          transition: "box-shadow .3s, top .3s",
           boxShadow: hasScrolled ? "magical" : "none"
         }}
       >
