@@ -24,6 +24,12 @@ export default function Mosaic() {
     }
 
     RAF.add("webgl", loop)
+
+    return () => {
+      mosaicEffect.destroy()
+      scene.remove(mosaicEffect)
+      RAF.remove("webgl")
+    }
   }, [])
 
   return (
