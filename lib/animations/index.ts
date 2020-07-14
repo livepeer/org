@@ -79,6 +79,23 @@ const initGsap = () => {
   })
 
   gsap.registerEffect({
+    name: "elementsFadeIn",
+    effect: (targets: gsap.TweenTarget, config: { duration: number }) => {
+      return gsap.fromTo(
+        [targets],
+        { autoAlpha: 0 },
+        {
+          autoAlpha: 1,
+          duration: config.duration,
+          ease: "sine.out"
+        }
+      )
+    },
+    defaults: { duration: DURATION },
+    extendTimeline: true
+  })
+
+  gsap.registerEffect({
     name: "svgHide",
     effect: (targets: gsap.TweenTarget) => {
       return gsap.set(targets, { drawSVG: false })

@@ -70,7 +70,7 @@ const IconHero = forwardRef(
           <Grid variant="layout.section" gap={5} columns={[1, null, null, 2]}>
             <Box>
               <i
-                className={cn({ "i-animate": withAnimation })}
+                className={cn({ "h-animate": withAnimation })}
                 sx={{
                   width: 16,
                   height: 16,

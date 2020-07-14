@@ -13,12 +13,17 @@ const heroEffect = (elem: HTMLElement) => {
     autoAlpha: 0
   })
 
+  const items = elem.querySelectorAll(".h-animate")
   const elements = elem.querySelectorAll(".c-animate")
+
+  tl.set([items], { autoAlpha: 0 })
   tl.add(gsap.effects.sectionHide(elem))
   //@ts-ignore
   tl.sectionEntrance(elem)
   //@ts-ignore
-  tl.elementsEntrance([elements])
+  tl.elementsFadeIn([items])
+  //@ts-ignore
+  tl.elementsEntrance([elements], "<")
 }
 
 export default heroEffect
