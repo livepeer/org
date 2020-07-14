@@ -9,7 +9,12 @@ export type SliderImageProps = {
 const SliderImage = ({ src, alt, className }: SliderImageProps) => (
   <Image
     className={className}
-    sx={{ position: "relative", overflow: "hidden", borderRadius: "md" }}
+    sx={{
+      position: "relative",
+      overflow: "hidden",
+      borderRadius: "md",
+      height: "100%"
+    }}
     src={src}
     alt={alt}
   />
