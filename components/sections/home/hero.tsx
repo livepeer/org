@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
+import Mosaic from "components/sections/home/mosaic"
 
 const HomeHero = () => (
-  <Box sx={{ bg: "muted" }}>
+  <Box sx={{ bg: "muted" }} className="hero" style={{ position: "relative" }}>
+    <Mosaic />
     <Container
       variant="section"
       sx={{
