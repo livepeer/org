@@ -16,30 +16,32 @@ const NetworkSvg = ({ pushSx }: Props) => {
     const tl = gsap.timeline()
     const pathInner = document.querySelector(".path--inner")
     const pathOuter = document.querySelector(".path--outer")
-    const circles = document.querySelector(".path--circle")
+    const pathGreen = document.querySelector(".path--green")
+    const circles = document.querySelectorAll(".path--circle")
     const dotInner = document.querySelector(".dot--inner")
     const dotOuter = document.querySelector(".dot--outer")
 
     tl.set([dotInner, dotOuter], { autoAlpha: 0 })
-    tl.set([pathInner, pathOuter, circles], { drawSVG: false })
+    tl.set([pathInner, pathOuter, circles], { autoAlpha: 0 })
+    tl.set([pathGreen], { drawSVG: false })
 
     tl.to([pathInner, pathOuter, circles], {
       delay: DURATION,
-      drawSVG: true,
+      autoAlpha: 1,
       duration: DURATION,
       ease: "sine.out",
       stagger: {
-        each: 0.3,
+        each: 0.1,
         from: "start"
       }
     })
-    tl.to([dotInner, dotOuter], {
-      autoAlpha: 1,
+    tl.to([pathGreen], {
+      drawSVG: true,
       duration: DURATION,
       ease: "sine.out"
     })
     tl.to(dotInner, {
-      duration: 4,
+      duration: DURATION * 18,
       ease: "none",
       motionPath: {
         path: `.${pathInner.classList[0]}`,
@@ -53,7 +55,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
     tl.to(
       dotOuter,
       {
-        duration: 3,
+        duration: DURATION * 20,
         ease: "none",
         motionPath: {
           path: `.${pathOuter.classList[0]}`,
@@ -66,6 +68,12 @@ const NetworkSvg = ({ pushSx }: Props) => {
       },
       "<"
     )
+    tl.to([dotInner, dotOuter], {
+      delay: DURATION * 0.5,
+      autoAlpha: 1,
+      duration: DURATION,
+      ease: "sine.out"
+    }, '<')
   }, [])
   return (
     <svg
@@ -88,6 +96,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         sx={{ stroke: "gray" }}
       />
       <path
+        className="path--green"
         d="M120 232C120 170.144 170.144 120 232 120"
         sx={{ stroke: "primary" }}
       />
