@@ -1,17 +1,10 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Box, Text, Heading, Button } from "theme-ui"
 import PrimerSvg from "components/svgs/primer"
-import elementEffect from "lib/animations/section-effect"
 
 const PrimerBanner = () => {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    elementEffect(sectionRef.current)
-  }, [])
   return (
-    <Box ref={sectionRef} sx={{ bg: "muted", px: 3, py: "80px" }}>
+    <Box sx={{ bg: "muted", px: 3, py: "80px" }}>
       <Container
         variant="section"
         sx={{
