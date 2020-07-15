@@ -34,13 +34,14 @@ const IconLink = ({
       target="_blank"
       rel="noopener noreferrer"
       sx={{ ...sx, ...pushSx }}
+      className="c-animate"
     >
       <i sx={{ fontSize: 6, mr: 2 }}>{icon}</i>
       {label}
     </A>
   ) : (
     <Link href={href} as={asPath} passHref>
-      <A sx={{ ...sx, ...pushSx }}>
+      <A sx={{ ...sx, ...pushSx }} className="c-animate">
         <i sx={{ fontSize: 6, mr: 2 }}>{icon}</i>
         {label}
       </A>

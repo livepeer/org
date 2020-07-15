@@ -5,9 +5,10 @@ type Props = {
   pushSx?: SxStyleProp
   pushLogoSx?: SxStyleProp
   pushEmailSx?: SxStyleProp
+  id?: string
 }
 
-const LogoAndEmail = ({ pushSx, pushLogoSx, pushEmailSx }: Props) => (
+const LogoAndEmail = ({ pushSx, pushLogoSx, pushEmailSx, id }: Props) => (
   <Box
     sx={{
       display: "flex",
@@ -16,7 +17,7 @@ const LogoAndEmail = ({ pushSx, pushLogoSx, pushEmailSx }: Props) => (
       ...pushSx
     }}
   >
-    <LivepeerLogo isDark pushSx={{ mr: 4, ...pushLogoSx }} />
+    <LivepeerLogo isDark pushSx={{ mr: 4, ...pushLogoSx }} id={id} />
     <A
       href="mailto:contact@livepeer.org"
       sx={{
