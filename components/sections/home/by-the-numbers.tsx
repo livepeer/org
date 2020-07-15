@@ -9,25 +9,46 @@ const stats: StatProps[] = [
   },
   {
     title: "42,201",
-    label: "Total GPUs on the network",
+    label: (
+      <>
+        Total GPUs <br /> on the network
+      </>
+    ),
     color: "gradient"
   },
   {
     title: "600k",
-    label: "Current # of streams being transcoded"
+    label: (
+      <>
+        Current # of <br /> streams being transcoded
+      </>
+    )
   },
   {
     title: "0.01ms",
-    label: "Avg. latency of transcoded renditions",
+    label: (
+      <>
+        Avg.latency of <br />
+        transcoded renditions
+      </>
+    ),
     color: "gradient"
   },
   {
-    title: "15.5 ETH",
-    label: "Infrastructure operator average earnings"
+    title: "11.5 ETH",
+    label: (
+      <>
+        Total <br /> Fees Earned
+      </>
+    )
   },
   {
-    title: "14.5 M",
-    label: "Total LPT staked",
+    title: "14.7 M",
+    label: (
+      <>
+        Total <br /> LPT staked
+      </>
+    ),
     color: "gradient"
   }
 ]
@@ -38,12 +59,12 @@ const ByTheNumbersSection = () => (
     title="Livepeer by the numbers"
     subtitle={
       <>
-        We’re proud of the numbers and worked hard to get here.
+        We’re proud our history and growth and worked hard to get here.
         <br />
         Celebrate with us.
       </>
     }
-    titleLabel="Project Statistics"
+    titleLabel="Network Statistics"
     pushSx={{ pb: ["80px", null, null, "160px"] }}
   >
     <StatsGrid stats={stats} />

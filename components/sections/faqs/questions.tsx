@@ -136,9 +136,14 @@ const questions: Question[] = [
     answer: (
       <>
         <Text mb={3}>
-          The best way to get started is to join the discussion in the Discord
-          Developer Chat. Other helpful links for discovering development
-          opportunities:
+          The best way to get started is to join the discussion in{" "}
+          <AnswerLink
+            label="the Discord Developer Chat. "
+            href="https://discord.gg/EjTrNcu"
+            isExternal
+          />
+          These links could be useful to you in terms of discovering development
+          opportunities.
         </Text>
         <ul>
           <li>
@@ -150,8 +155,8 @@ const questions: Question[] = [
           </li>
           <li>
             <AnswerLink
-              href="https://github.com/Livepeer-Community-Node/Grant-Program"
-              label="https://github.com/Livepeer-Community-Node/Grant-Program"
+              href="https://github.com/livepeer/Grant-Program"
+              label="https://github.com/livepeer/Grant-Program"
               isExternal
             />
           </li>
@@ -170,7 +175,7 @@ const questions: Question[] = [
   {
     question:
       "I’d like to use Livepeer for my video application. Should I use the Livepeer public network or Livepeer.com’s hosted gateway API?",
-    answer: "to-do",
+    answer: "TODO",
     category: categories[1]
   },
   {
@@ -247,8 +252,12 @@ const questions: Question[] = [
     answer: (
       <>
         <ol sx={{ listStyle: "decimal inside", li: { mb: 2 }, ul: { mt: 2 } }}>
-          <li>Don’t set your price per pixel setting too high</li>
-          <li>Don’t set your price per pixel setting too low</li>
+          <li>
+            Don’t set your price per pixel setting too <b>high</b>
+          </li>
+          <li>
+            Don’t set your price per pixel setting too <b>low</b>
+          </li>
           <li>
             Make sure you’re transcoding in “sub real-time”
             <ul sx={{ listStyle: "inside", paddingInlineStart: "24px" }}>
@@ -328,10 +337,10 @@ const questions: Question[] = [
     question: "Staking (Bonding)",
     answer: (
       <>
-        Staking is the act of “locking” your Livepeer token within the Livepeer
-        protocol smart contracts on the Ethereum blockchain in exchange for the
-        right to perform work on the network and earn inflationary token and
-        broadcaster fees in return. Similar to a{" "}
+        The act of “locking” your Livepeer token within the Livepeer protocol
+        smart contracts on the Ethereum blockchain in exchange for the right to
+        perform work on the network and earn inflationary token and broadcaster
+        fees in return. Similar to a{" "}
         <AnswerLink
           label="performance bond"
           href="https://en.wikipedia.org/wiki/Performance_bond"
@@ -429,12 +438,12 @@ const questions: Question[] = [
     category: categories[4]
   },
   {
-    question: "Livepeer Node",
+    question: "Node",
     answer: (
       <>
-        A server running Livepeer client software. Currently there exists a
-        single client implementation written in Go called go-livepeer which can
-        be run in broadcaster mode, transcoder mode, or orchestrator mode.
+        Livepeer client software. Currently there exists a single client
+        implementation written in Go called go-livepeer which can be run in
+        broadcaster mode, transcoder mode, or orchestrator mode.
       </>
     ),
     category: categories[4]

@@ -1,22 +1,22 @@
 /** @jsx jsx */
-import { jsx, Box, Card, Heading, Text, SxStyleProp, Flex } from "theme-ui"
+import { jsx, Box, Card, Heading, Text, SxStyleProp } from "theme-ui"
 import CardLink, { CardLinkProps } from "../links/card"
-import { useMemo } from "react"
+import React, { useMemo } from "react"
 import Link from "next/link"
 
 export type ImageCardProps = {
-  title?: React.ReactNode
-  description?: string
-  footnote?: string
-  linkProps: CardLinkProps
+  title?: React.ReactNode,
+  description?: string,
+  footnote?: string,
+  linkProps: CardLinkProps,
   image: {
-    src: string
+    src: string,
     alt?: string
-  }
-  isLink?: boolean
-  className?: string
-  pushSx?: SxStyleProp
-  pushContentSx?: SxStyleProp
+  },
+  isLink?: boolean,
+  className?: string,
+  pushSx?: SxStyleProp,
+  pushContentSx?: SxStyleProp,
 }
 
 const ImageCard = ({
@@ -35,6 +35,7 @@ const ImageCard = ({
       <Card
         className={isLink ? undefined : className}
         sx={{
+          height: "100%",
           p: 0,
           boxShadow: "magical",
           transition: "box-shadow .2s",
@@ -50,30 +51,41 @@ const ImageCard = ({
         />
         <Box
           sx={{
-            p: "24px",
-            height: "196px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            p: "24px",
+            height: "196px",
             ...pushContentSx
           }}
         >
-          <Box>
-            {title && (
-              <Heading
-                variant="heading.5"
-                sx={{ color: "text", textAlign: "left", mb: 2 }}
-              >
-                {title}
-              </Heading>
-            )}
-            {description && (
-              <Text variant="normal" sx={{ color: title ? "gray" : "text" }}>
-                {description}
-              </Text>
-            )}
-          </Box>
-          <Box>
+          {title && (
+            <Heading
+              variant="heading.5"
+              sx={{ color: "text", textAlign: "left", mb: 2 }}
+            >
+              {title}
+            </Heading>
+          )}
+          {description && (
+            <Text
+              variant="clamp.3"
+              sx={{
+                color: title ? "gray" : "text",
+                display: "-webkit-box",
+                maxWidth: "100%",
+                margin: "0 auto",
+                overflow: "hidden"
+              }}
+            >
+              {description}
+            </Text>
+          )}
+          <Box
+            sx={{
+              marginTop: "auto"
+            }}
+          >
             {footnote && (
               <Text
                 variant="small"
@@ -82,6 +94,7 @@ const ImageCard = ({
                 {footnote}
               </Text>
             )}
+
             <CardLink {...linkProps} as={isLink ? "div" : "a"} />
           </Box>
         </Box>

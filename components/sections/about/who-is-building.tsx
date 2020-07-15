@@ -85,7 +85,7 @@ const WhoIsBuildingSection = () => (
       ))}
     </Slider>
     <Heading variant="heading.5">
-      Interested in Joining Livepeer Inc? View its{" "}
+      Interested in Joining Livepeer Inc?{" "}
       <A
         href="https://angel.co/company/livepeer/jobs"
         target="_blank"
@@ -93,7 +93,7 @@ const WhoIsBuildingSection = () => (
         variant="coloured"
         sx={{ variant: "layout.flexCenter", display: "inline-flex" }}
       >
-        open positions <FiArrowUpRight />
+        View its open positions <FiArrowUpRight />
       </A>
     </Heading>
   </SectionLayout>
