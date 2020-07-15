@@ -34,8 +34,6 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
   useEffect(() => {
     if (!svgRef.current) return
 
-    console.log("isDark", isDark)
-
     const words = svgRef.current.querySelectorAll(".w-animate")
     const color1 = svgRef.current.querySelector(".w-color-1")
     const color2 = svgRef.current.querySelector(".w-color-2")
