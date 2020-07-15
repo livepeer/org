@@ -54,8 +54,8 @@ const cards: StatusCardProps[] = [
 const OpenSourceSection = () => (
   <SectionLayout
     background="black"
-    title="Explore the projects"
-    subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skillsets. Hundreds of people have contributed ideas, code, designs, and time to Livepeer."
+    title="Featured Open Source projects"
+    subtitle="Technologies used in Livepeer’s open source software include Golang, Solidity, Typescript, open source video tools like ffmpeg, and smart contract platforms like Ethereum."
     pushSx={{
       display: "flex",
       flexDirection: "column",

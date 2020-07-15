@@ -5,22 +5,36 @@ import StatsGrid from "components/layouts/stats-grid"
 const stats: StatProps[] = [
   {
     title: "45",
-    label: "Total active infrastructure operators"
+    label: (
+      <>
+        Total active <br /> infrastructure operators
+      </>
+    )
   },
   {
-    title: "$0.30",
-    label: "Avg. price/hour/stream being charged",
+    title: "11.4",
+    label: (
+      <>
+        Total <br /> fees earned
+      </>
+    ),
     color: "gradient"
   },
+
   {
     title: "Free",
-    label: "Cost to activate your node"
+    label: (
+      <>
+        Cost to activate <br />
+        your node
+      </>
+    )
   }
 ]
 
 const LetTheNumbersTalkSection = () => (
   <SectionLayout
-    title="Let the numbers talk"
+    title="The Numbers"
     subtitle="The capacity on Livepeer's network represents access to 70,000+ GPUs, or enough to encode all the realtime video streaming through Twitch, Facebook, and Youtube combined."
     pushSx={{ py: ["80px", null, null, "160px"] }}
   >

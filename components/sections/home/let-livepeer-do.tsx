@@ -8,7 +8,7 @@ const cards: IconCardProps[] = [
     icon: <FiUserCheck />,
     title: "Participants",
     description:
-      "Join thousands of participants enabling affordable video streaming at scale in exchange for fees by running infrastructure, contributing code, or delegating work as a tokenholder.",
+      "Join thousands of participants and LPT tokenholders enabling affordable video streaming at scale in exchange for fees. Provide GPU hardware infrastructure, contribute code, or delegate work with LPT.",
     linkProps: { link: { label: "/participants", href: "/participants" } },
     isClickable: true
   },
@@ -24,7 +24,7 @@ const cards: IconCardProps[] = [
     icon: <FiBriefcase />,
     title: "Enterprise",
     description:
-      "Get access to a hosted, enterprise-grade API suite offering instant, scaled and reliable access to the Livepeer public network.",
+      "Get access to a hosted, enterprise-grade live and VOD video product offering instant, scaled and reliable access to the Livepeer network.",
     linkProps: {
       link: {
         label: "livepeer.com",
@@ -39,8 +39,8 @@ const cards: IconCardProps[] = [
 const LetLivepeerDoSection = () => (
   <SectionLayout
     titleLabel="Get Started"
-    title="Ready to jump in?"
-    subtitle="Get started by choosing the option that best describes your interest."
+    title="What role will you play in the Livepeer network?"
+    subtitle="Jump in by choosing the option that best describes your interest:"
     background="muted"
     id="get-started"
   >
