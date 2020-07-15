@@ -52,36 +52,37 @@ const ImageCard = ({
           sx={{
             p: "24px",
             height: "196px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
+
             ...pushContentSx
           }}
         >
-          <Box>
-            {title && (
-              <Heading
-                variant="heading.5"
-                sx={{ color: "text", textAlign: "left", mb: 2 }}
-              >
-                {title}
-              </Heading>
-            )}
-            {description && (
-              <Text variant="normal" sx={{ color: title ? "gray" : "text" }}>
-                {description}
-              </Text>
-            )}
-          </Box>
-          <Box>
-            {footnote && (
-              <Text
-                variant="small"
-                sx={{ mb: 3, color: title ? "lightGray" : "gray" }}
-              >
-                {footnote}
-              </Text>
-            )}
+          {title && (
+            <Heading
+              variant="heading.5"
+              sx={{ color: "text", textAlign: "left", mb: 2 }}
+            >
+              {title}
+            </Heading>
+          )}
+          {description && (
+            <Text variant="normal" sx={{ color: title ? "gray" : "text" }}>
+              {description}
+            </Text>
+          )}
+
+          {footnote && (
+            <Text
+              variant="small"
+              sx={{ mb: 3, color: title ? "lightGray" : "gray" }}
+            >
+              {footnote}
+            </Text>
+          )}
+          <Box
+            sx={{
+              marginTop: "auto"
+            }}
+          >
             <CardLink {...linkProps} />
           </Box>
         </Box>

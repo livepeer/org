@@ -90,6 +90,7 @@ const WhoIsMaintainingSection = () => (
       <A
         href="http://github.com/livepeer/livepeer.org"
         sx={{ color: "secondary" }}
+        target="_blank"
       >
         GitHub
       </A>{" "}

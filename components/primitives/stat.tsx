@@ -36,7 +36,9 @@ const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
         {title}
       </Heading>
     </Flex>
-    {label}
+    <Text variant="heading.5" sx={{ color: "text" }}>
+      {label}
+    </Text>
   </Box>
 )
 
