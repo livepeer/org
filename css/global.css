@@ -35,3 +35,8 @@
 
   font-family: var(--font-primary);
 }
+
+.hide__section,
+.c--hide {
+  opacity: 0;
+}

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Card, Box, Heading, Text } from "theme-ui"
 import CardLink, { CardLinkProps } from "../links/card"
+import cn from "classnames"
 import Link from "next/link"
 
 export type IconCardProps = {
@@ -42,7 +43,7 @@ const IconCard = ({
 }: IconCardProps) => {
   const markup = (
     <Card
-      className={className}
+      className={cn("c-animate", className)}
       sx={{
         height: "526px",
         display: "flex",

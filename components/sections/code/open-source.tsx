@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import SectionLayout from "components/layouts/section"
-import { jsx, Button, Link as A } from "theme-ui"
+import { jsx, Link as A } from "theme-ui"
 import StatusCard, { StatusCardProps } from "components/primitives/cards/status"
 import Divider from "components/primitives/divider"
 import KeenSliderGrid from "components/layouts/keen-slider-grid"
@@ -63,6 +63,7 @@ const OpenSourceSection = () => (
       py: "160px"
     }}
     headingContainerPushSx={{ mb: 4 }}
+    withAnimation
   >
     <A
       href="https://github.com/livepeer/"
