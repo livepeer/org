@@ -8,7 +8,10 @@ export type StatProps = {
 }
 
 const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
-  <Box sx={{ width: "280px", height: "240px", ...pushSx }}>
+  <Box
+    sx={{ width: "280px", height: "240px", ...pushSx }}
+    className="c-animate"
+  >
     <Flex
       sx={{
         mx: "auto",

@@ -57,6 +57,7 @@ const InfrastructureHero = () => (
   <CroppedIllustrationHero
     title="Infrastructure Operators"
     subtitle="Earn more by transcoding video on GPUs while mining"
+    withAnimation
     illustration={
       <IllustratedBackgroundBox
         pushSx={{ height: ["520px", "500px"], width: "100%" }}
