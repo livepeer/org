@@ -52,7 +52,12 @@ const HaveACallSection = () => (
         EST.
         <br />
         Catch them live on{" "}
-        <A variant="coloured" target="_blank" href="https://livepeer.com/tv">
+        <A
+          variant="coloured"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://livepeer.com/tv"
+        >
           livepeer.com/tv
         </A>
       </>
