@@ -44,7 +44,7 @@ const posts: Post[] = [
     }
   },
   {
-    title: "The Livepeer Whitepaper (French Translation)",
+    title: "The Livepeer Whitepaper (FRA Translation)",
     description:
       "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network",
     subtitle: "Translation by Gareth Mensah",
@@ -60,7 +60,7 @@ const posts: Post[] = [
     }
   },
   {
-    title: "The Livepeer Whitepaper (Russian Translation)",
+    title: "The Livepeer Whitepaper (RUS Translation)",
     description:
       "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network",
     subtitle: "Translation by Fedorello",
@@ -91,7 +91,7 @@ const posts: Post[] = [
     }
   },
   {
-    title: "The Livepeer Streamflow Paper (Portuguese Translation)",
+    title: "The Livepeer Streamflow Paper (POR Translation)",
     description:
       "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
     subtitle: "Translation by Felipe Gaúcho",
@@ -103,8 +103,7 @@ const posts: Post[] = [
     image: {
       src: "/images/posts/post-cover-5.png",
       alt: "Resource cover image"
-    },
-    pushContentSx: { pr: 2 }
+    }
   },
   {
     title: "The Livepeer Primer",
