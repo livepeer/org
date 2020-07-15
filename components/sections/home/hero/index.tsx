@@ -23,8 +23,6 @@ const HomeHero = () => {
     <Box sx={{ bg: "muted", position: "relative" }}>
       <Mosaic />
       <Container
-        className="hide__section"
-        ref={sectionRef}
         variant="section"
         sx={{
           display: "flex",
@@ -36,7 +34,14 @@ const HomeHero = () => {
           pt: 5
         }}
       >
-        <Box sx={{ maxWidth: "4xl", mb: ["32px", "40px"] }}>
+        <Box
+          sx={{
+            maxWidth: "5xl",
+            mb: ["32px", "40px"],
+            filter: "invert(1)",
+            mixBlendMode: "difference"
+          }}
+        >
           <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
             The&nbsp;
             <Text
@@ -73,9 +78,6 @@ const HomeHero = () => {
         <A variant="buttons.primary" href="/#get-started">
           Get started
         </A>
-        <Box
-          sx={{ bg: "ultraLightGray", height: "500px", width: "100%", my: 4 }}
-        />
       </Container>
     </Box>
   )
