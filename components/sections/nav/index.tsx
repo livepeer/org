@@ -82,6 +82,7 @@ const Nav = ({
   }, [])
 
   useEffect(() => {
+    handleScroll()
     document.addEventListener("scroll", handleScroll)
     if (topNotificationRef.current) {
       setTopNotificationHeight(topNotificationRef.current.offsetHeight)
