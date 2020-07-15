@@ -4,7 +4,7 @@ import CardLink, { CardLinkProps } from "../links/card"
 import React, { useMemo } from "react"
 import Link from "next/link"
 
-interface ImageCardProps {
+export type ImageCardProps = {
   title?: React.ReactNode,
   description?: string,
   footnote?: string,
