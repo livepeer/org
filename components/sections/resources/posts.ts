@@ -109,7 +109,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Primer",
     description:
-      "Through storytelling, illustration, and data, the Livepeer Primer explains, at a high level, the problem Livepeer solves, and how it works.",
+      "Through storytelling, illustration, and data, the Livepeer Primer explains, at a high level, the problem Livepeer solves, and how it works. ",
     subtitle: "By Adam Soffer & Kellie Pcolar",
     link: { href: "https://livepeer.org/primer/", isExternal: true },
     category: categories[0],

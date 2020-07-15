@@ -138,7 +138,7 @@ const questions: Question[] = [
         <Text mb={3}>
           The best way to get started is to join the discussion in{" "}
           <AnswerLink
-            label="he Discord Developer Chat."
+            label="the Discord Developer Chat. "
             href="https://discord.gg/EjTrNcu"
             isExternal
           />
@@ -224,7 +224,7 @@ const questions: Question[] = [
   {
     question: "How long do I need to wait for unstaking/withdrawing my tokens?",
     answer:
-      "Once you click on Unstake, it takes seven days for your LPT to unstake at which point  your tokens will be ready for you to withdraw into your own wallet.",
+      "Once you click on Unstake, it takes seven days for your LPT to unstake at which point your tokens will be ready for you to withdraw into your own wallet.",
     category: categories[2]
   },
   {

@@ -4,32 +4,27 @@ import Divider from "components/primitives/divider"
 import StatsGrid from "components/layouts/stats-grid"
 import { StatProps } from "components/primitives/stat"
 import Link from "next/link"
-import { Text } from "theme-ui"
 
 const stats: StatProps[] = [
   {
     title: "4.20.17",
-    label: (
-      <Text variant="heading.5" sx={{ color: "text" }}>
-        Date founded
-      </Text>
-    )
+    label: "Date founded"
   },
   {
     title: "42,201",
     label: (
-      <Text variant="heading.5" sx={{ color: "text" }}>
-        Total GPUs on the network
-      </Text>
+      <>
+        Total GPUs <br /> on the network
+      </>
     ),
     color: "gradient"
   },
   {
     title: "600k",
     label: (
-      <Text variant="heading.5" sx={{ color: "text" }}>
-        Current # of streams being transcoded
-      </Text>
+      <>
+        Current # of <br /> streams being transcoded
+      </>
     )
   }
 ]

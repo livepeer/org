@@ -73,7 +73,10 @@ const ResourcesDirectory = () => {
             {...c}
             key={`resource-card-${c.title}`}
             isLink
-            pushContentSx={{ height: "296px", ...c.pushContentSx }}
+            pushContentSx={{
+              overflow: "hidden",
+              ...c.pushContentSx
+            }}
           />
         ))}
       </Grid>

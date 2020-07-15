@@ -8,13 +8,13 @@ const cards: IconCardProps[] = [
     icon: <FiUserCheck />,
     title: "Participants",
     description:
-      "Join thousands of participants and LPT tokenholders enabling affordable video streaming at scale in exchange for fees.  Provide GPU hardware infrastructure, contribute code, or delegate work with LPT.",
+      "Join thousands of participants and LPT tokenholders enabling affordable video streaming at scale in exchange for fees. Provide GPU hardware infrastructure, contribute code, or delegate work with LPT.",
     linkProps: { link: { label: "/participants", href: "/participants" } },
     isClickable: true
   },
   {
     icon: <FiCode />,
-    title: "Video Devs",
+    title: "Developers",
     description:
       "Discover APIs, guides, resources, and tools for adding live or on-demand video to your project using the Livepeer public network.",
     linkProps: { link: { label: "/developers", href: "/developers" } },
