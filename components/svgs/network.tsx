@@ -10,20 +10,33 @@ type Props = {
 
 const NetworkSvg = ({ pushSx }: Props) => {
   const svgRef = useRef(null)
+
   useEffect(() => {
-    if (!svgRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: svgRef.current,
-        start: "top 80%"
-      }
-    })
     const pathInner = document.querySelector(".path--inner")
     const pathOuter = document.querySelector(".path--outer")
     const pathGreen = document.querySelector(".path--green")
     const circles = document.querySelectorAll(".path--circle")
     const dotInner = document.querySelector(".dot--inner")
     const dotOuter = document.querySelector(".dot--outer")
+
+    if (
+      !svgRef.current ||
+      !pathInner ||
+      !pathOuter ||
+      !pathGreen ||
+      !circles ||
+      !dotInner ||
+      !dotOuter
+    ) {
+      return
+    }
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: svgRef.current,
+        start: "top 80%"
+      }
+    })
 
     tl.set([dotInner, dotOuter], { autoAlpha: 0 })
     tl.set([pathInner, pathOuter, circles], { autoAlpha: 0 })
@@ -82,7 +95,8 @@ const NetworkSvg = ({ pushSx }: Props) => {
       },
       "<"
     )
-  }, [])
+  }, [svgRef])
+
   return (
     <svg
       ref={svgRef}
