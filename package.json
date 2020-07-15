@@ -26,7 +26,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "three": "^0.118.3"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
