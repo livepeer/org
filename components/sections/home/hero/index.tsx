@@ -55,9 +55,8 @@ const HomeHero = () => {
           </Heading>
           <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
           <Heading variant="section.subtitle">
-            Livepeer is a decentralized, blockchain-based video protocol
-            powering live and on-demand streaming at unbeatable cost, with
-            unparalleled reliability, and unlimited scalability.
+            Livepeer supports live streaming, VOD, and video transcoding via a
+            decentralized network and the Ethereum blockchain.
           </Heading>
         </Box>
         <A variant="buttons.primary" href="/#get-started">
