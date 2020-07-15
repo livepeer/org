@@ -33,7 +33,7 @@ const basementMaintainers: MaintainerProps[] = [
 const accordionItems: AccordionItemProps[] = [
   {
     heading: {
-      title: "Livepeer",
+      title: "Livepeer Inc",
       icon: {
         children: <LivepeerIconSvg pushSx={{ width: "20px" }} isDark />
       }
@@ -67,7 +67,7 @@ const accordionItems: AccordionItemProps[] = [
 const WhoIsMaintainingSection = () => (
   <SectionLayout
     title="Livepeer.org Maintainers"
-    subtitle="The Livepeer.org website is maintained by members of the following organizations:"
+    subtitle="The Livepeer.org site is maintained by members of the following organizations:"
     pushSx={{ pt: ["80px", "160px"] }}
   >
     <Accordion
@@ -87,9 +87,15 @@ const WhoIsMaintainingSection = () => (
     />
     <Heading variant="heading.5" sx={{ mb: 4, maxWidth: "4xl", mx: "auto" }}>
       Anyone is welcome and encouraged to help improve the site on{" "}
-      <A sx={{ color: "secondary" }}>GitHub</A> by opening an issue or pull
-      request. When submitting a pull request, please take required time to
-      discuss your changes and adapt your work.
+      <A
+        href="http://github.com/livepeer/livepeer.org"
+        sx={{ color: "secondary" }}
+        target="_blank"
+      >
+        GitHub
+      </A>{" "}
+      by opening an issue or pull request. When submitting a pull request,
+      please take required time to discuss your changes and adapt your work.
     </Heading>
     <Text
       variant="normal"

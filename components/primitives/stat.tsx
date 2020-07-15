@@ -2,7 +2,7 @@ import { Flex, Box, Heading, Text, SxStyleProp } from "theme-ui"
 
 export type StatProps = {
   title: string
-  label: string
+  label: React.ReactNode
   color?: "text" | "gradient"
   pushSx?: SxStyleProp
 }

@@ -12,12 +12,20 @@ const stats: StatProps[] = [
   },
   {
     title: "42,201",
-    label: "Total GPUs on the network",
+    label: (
+      <>
+        Total GPUs <br /> on the network
+      </>
+    ),
     color: "gradient"
   },
   {
     title: "600k",
-    label: "Current # of streams being transcoded"
+    label: (
+      <>
+        Current # of <br /> streams being transcoded
+      </>
+    )
   }
 ]
 

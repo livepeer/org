@@ -1,20 +1,33 @@
 import { StatProps } from "components/primitives/stat"
 import SectionLayout from "components/layouts/section"
 import StatsGrid from "components/layouts/stats-grid"
+import { Text } from "theme-ui"
 
 const stats: StatProps[] = [
   {
     title: "14.5 M",
-    label: "Total LPT Staked"
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Total LPT Staked
+      </Text>
+    )
   },
   {
     title: "12 ETH",
-    label: "Total Fees Paid Out",
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Total Fees Paid Out"
+      </Text>
+    ),
     color: "gradient"
   },
   {
     title: "2640",
-    label: "Total Delegators"
+    label: (
+      <Text variant="heading.5" sx={{ color: "text" }}>
+        Total Delegators
+      </Text>
+    )
   }
 ]
 
