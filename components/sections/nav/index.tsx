@@ -12,7 +12,7 @@ import {
 } from "theme-ui"
 import LivepeerLogo from "components/svgs/livepeer-logo"
 import { useEffect, useCallback, useState } from "react"
-import { FiMenu, FiX, FiArrowRight } from "react-icons/fi"
+import { FiMenu, FiX } from "react-icons/fi"
 import Link from "next/link"
 import TopNotification, { TopNotificationProps } from "./top-notification"
 
@@ -60,12 +60,14 @@ const defaultTopNotification: TopNotificationProps = {
 }
 
 export type NavProps = {
+  isFixed?: boolean
   background?: "muted" | "dark" | "white" | "black"
   topNotification?: TopNotificationProps
 }
 
 const Nav = ({
   background,
+  isFixed,
   topNotification = defaultTopNotification
 }: NavProps) => {
   const [hasScrolled, setHasScrolled] = useState(false)
@@ -115,8 +117,8 @@ const Nav = ({
         sx={{
           bg,
           color,
-          position: "fixed",
-          top: hasScrolled ? 0 : "40px",
+          position: isFixed ? "fixed" : "sticky",
+          top: isFixed ? (hasScrolled ? 0 : "40px") : 0,
           mixBlendMode: hasScrolled ? "unset" : "difference",
           filter: hasScrolled ? "none" : "invert(1)",
           width: "100%",
