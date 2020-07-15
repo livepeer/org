@@ -11,7 +11,7 @@ import {
   Text
 } from "theme-ui"
 import LivepeerLogo from "components/svgs/livepeer-logo"
-import { useEffect, useCallback, useState } from "react"
+import { useEffect, useCallback, useState, useRef } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
 import Link from "next/link"
 import TopNotification, { TopNotificationProps } from "./top-notification"
@@ -60,18 +60,20 @@ const defaultTopNotification: TopNotificationProps = {
 }
 
 export type NavProps = {
-  isFixed?: boolean
+  isInmersive?: boolean
   background?: "muted" | "dark" | "white" | "black"
   topNotification?: TopNotificationProps
 }
 
 const Nav = ({
   background,
-  isFixed,
+  isInmersive,
   topNotification = defaultTopNotification
 }: NavProps) => {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
+  const [topNotificationHeight, setTopNotificationHeight] = useState(40)
+  const topNotificationRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = useCallback(() => {
     const { scrollTop } = document.documentElement
@@ -81,46 +83,69 @@ const Nav = ({
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll)
+    if (topNotificationRef.current) {
+      setTopNotificationHeight(topNotificationRef.current.offsetHeight)
+    }
+
     return () => {
       document.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [topNotificationRef])
 
   const isDark = background === "black" || background === "dark"
   let bg: string
   let color: string
-
   switch (background) {
     default:
     case "white":
-      bg = "background"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "background"
       color = "text"
       break
     case "muted":
-      bg = hasScrolled ? "muted" : "transparent"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "muted"
       color = "text"
       break
     case "dark":
-      bg = "text"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "text"
       color = "background"
       break
     case "black":
-      bg = "black"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "black"
       color = "background"
       break
   }
 
   return (
     <>
-      {topNotification && <TopNotification {...topNotification} />}
+      {topNotification && (
+        <TopNotification {...topNotification} ref={topNotificationRef} />
+      )}
       <Box
         sx={{
           bg,
           color,
-          position: isFixed ? "fixed" : "sticky",
-          top: isFixed ? (hasScrolled ? 0 : "40px") : 0,
-          mixBlendMode: hasScrolled ? "unset" : "difference",
-          filter: hasScrolled ? "none" : "invert(1)",
+          position: isInmersive ? "fixed" : "sticky",
+          top: isInmersive && !hasScrolled ? `${topNotificationHeight}px` : 0,
+          mixBlendMode:
+            isInmersive && !hasScrolled && !mobileMenuIsOpen
+              ? "difference"
+              : "unset",
+          filter:
+            isInmersive && !hasScrolled && !mobileMenuIsOpen
+              ? "invert(1)"
+              : "none",
           width: "100%",
           zIndex: "header",
           transition: "box-shadow .3s, top .3s",
