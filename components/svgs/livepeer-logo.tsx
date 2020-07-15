@@ -34,15 +34,20 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
   useEffect(() => {
     if (!svgRef.current) return
 
+    console.log("isDark", isDark)
+
     const words = svgRef.current.querySelectorAll(".w-animate")
     const color1 = svgRef.current.querySelector(".w-color-1")
     const color2 = svgRef.current.querySelector(".w-color-2")
+    const hexDark = isDark ? "#fff" : "#131418"
+    const hexHover1 = isDark ? "#fefefe" : "#1f2027"
+    const hexHover2 = isDark ? "#ffffff" : "#131418"
 
     gsap.to(color1, {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? "#1f2027" : "#00A55F"
+        "stop-color": hover ? hexHover1 : '#00A55F'
       }
     })
 
@@ -50,13 +55,13 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? "#131418" : "#4CF1AC"
+        "stop-color": hover ? hexHover2 : '#4CF1AC'
       }
     })
 
     gsap.to(words, {
       duration: DURATION,
-      fill: hover ? "#00EB88" : "#131418",
+      fill: hover ? "#00EB88" : hexDark,
       stagger: {
         each: 0.03,
         from: "end",
