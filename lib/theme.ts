@@ -45,7 +45,8 @@ const theme = {
     body:
       'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
-    special: "TT Firs Neue",
+    special:
+      '"TT Firs Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     mono: "'Roboto Mono', monospace"
   },
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 96],
