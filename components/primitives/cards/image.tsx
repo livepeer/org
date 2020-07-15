@@ -35,6 +35,7 @@ const ImageCard = ({
       <Card
         className={isLink ? undefined : className}
         sx={{
+          height: "100%",
           p: 0,
           boxShadow: "magical",
           transition: "box-shadow .2s",
@@ -50,9 +51,11 @@ const ImageCard = ({
         />
         <Box
           sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
             p: "24px",
             height: "196px",
-
             ...pushContentSx
           }}
         >
@@ -65,17 +68,21 @@ const ImageCard = ({
             </Heading>
           )}
           {description && (
-            <Text variant="normal" sx={{ color: title ? "gray" : "text" }}>
-              {description}
-            </Text>
-          )}
-
-          {footnote && (
             <Text
-              variant="small"
-              sx={{ mb: 3, color: title ? "lightGray" : "gray" }}
+              variant="normal"
+              sx={{
+                color: title ? "gray" : "text",
+                display: "block",
+                display: "-webkit-box",
+                maxWidth: "100%",
+                margin: "0 auto",
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                textOverflow: "ellipsis"
+              }}
             >
-              {footnote}
+              {description}
             </Text>
           )}
           <Box
@@ -83,6 +90,15 @@ const ImageCard = ({
               marginTop: "auto"
             }}
           >
+            {footnote && (
+              <Text
+                variant="small"
+                sx={{ mb: 3, color: title ? "lightGray" : "gray" }}
+              >
+                {footnote}
+              </Text>
+            )}
+
             <CardLink {...linkProps} as={isLink ? "div" : "a"} />
           </Box>
         </Box>
