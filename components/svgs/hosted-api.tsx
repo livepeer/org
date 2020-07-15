@@ -1,140 +1,334 @@
 /** @jsx jsx */
 import { jsx, SxStyleProp } from "theme-ui"
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { DURATION } from "lib/animations"
 
 type Props = {
   pushSx?: SxStyleProp
 }
 
-const HostedApiSvg = ({ pushSx }: Props) => (
-  <svg
-    width="968"
-    height="968"
-    viewBox="0 0 968 968"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    sx={pushSx}
-  >
-    <mask
-      id="hosted-api-svg-mask0"
-      mask-type="alpha"
-      maskUnits="userSpaceOnUse"
-      x="0"
-      y="0"
+const HostedApiSvg = ({ pushSx }: Props) => {
+  const svgRef = useRef(null)
+  useEffect(() => {
+    if (!svgRef.current) return
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: svgRef.current,
+        start: "top 70%"
+      }
+    })
+
+    const circles = document.querySelectorAll(".dots")
+    const mainLine = document.querySelectorAll(".main--line")
+
+    tl.set([mainLine, circles], { autoAlpha: 0 })
+    tl.to(svgRef.current, { autoAlpha: 1, duration: DURATION * 0.5 })
+    tl.to(mainLine, {
+      autoAlpha: 1,
+      duration: DURATION,
+      ease: "sine.out",
+      stagger: {
+        each: 0.1,
+        from: "start"
+      }
+    })
+    tl.to(circles, {
+      autoAlpha: 1,
+      duration: DURATION,
+      ease: "sine.out",
+      stagger: {
+        each: 0.1,
+        from: "start"
+      }
+    })
+  }, [])
+  return (
+    <svg
+      className="c--hide"
+      ref={svgRef}
       width="968"
       height="968"
+      viewBox="0 0 968 968"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      sx={pushSx}
     >
-      <circle
-        cx="484"
-        cy="484"
-        r="484"
-        fill="url(#hosted-api-svg-paint0_radial)"
-      />
-    </mask>
-    <g mask="url(#hosted-api-svg-mask0)">
-      <line
-        x1="19.3536"
-        y1="18.1464"
-        x2="949.354"
-        y2="948.146"
-        stroke="#E5E5E5"
-      />
-      <line
-        x1="388.354"
-        y1="18.1464"
-        x2="1318.35"
-        y2="948.146"
-        stroke="#E5E5E5"
-      />
-      <line
-        x1="-348.646"
-        y1="18.1464"
-        x2="581.354"
-        y2="948.146"
-        stroke="#E5E5E5"
-      />
-      <line
-        x1="949.354"
-        y1="18.8536"
-        x2="19.3536"
-        y2="948.854"
-        stroke="#E5E5E5"
-      />
-      <line
-        x1="581.354"
-        y1="18.8536"
-        x2="-348.646"
-        y2="948.854"
-        stroke="#E5E5E5"
-      />
-      <line
-        x1="1318.35"
-        y1="18.8536"
-        x2="388.354"
-        y2="948.854"
-        stroke="#E5E5E5"
-      />
-      <line
-        x1="212.354"
-        y1="18.8536"
-        x2="-717.646"
-        y2="948.854"
-        stroke="#E5E5E5"
-      />
-      <line x1="484.5" y1="-72" x2="484.5" y2="1039" stroke="#E5E5E5" />
-      <line x1="300.5" y1="-72" x2="300.5" y2="1039" stroke="#E5E5E5" />
-      <line x1="116.5" y1="-72" x2="116.5" y2="1039" stroke="#E5E5E5" />
-      <line x1="668.5" y1="-72" x2="668.5" y2="1039" stroke="#E5E5E5" />
-      <line x1="852.5" y1="-72" x2="852.5" y2="1039" stroke="#E5E5E5" />
-      <circle opacity="0.2" cx="669" cy="667" r="5" fill="#131418" />
-      <circle opacity="0.2" cx="301" cy="667" r="5" fill="#131418" />
-      <circle opacity="0.2" cx="669" cy="301" r="5" fill="#131418" />
-      <circle opacity="0.2" cx="301" cy="301" r="5" fill="#131418" />
-      <circle opacity="0.2" cx="485" cy="484" r="5" fill="#131418" />
-      <circle opacity="0.2" cx="853" cy="484" r="5" fill="#131418" />
-      <circle opacity="0.2" cx="117" cy="484" r="5" fill="#131418" />
-      <g opacity="0.2">
-        <circle opacity="0.2" cx="485" cy="851" r="5" fill="#131418" />
-        <circle opacity="0.2" cx="853" cy="851" r="5" fill="#131418" />
-        <circle opacity="0.2" cx="117" cy="851" r="5" fill="#131418" />
-      </g>
-      <g opacity="0.2">
-        <circle opacity="0.2" cx="485" cy="114" r="5" fill="#131418" />
-        <circle opacity="0.2" cx="853" cy="114" r="5" fill="#131418" />
-        <circle opacity="0.2" cx="117" cy="114" r="5" fill="#131418" />
-      </g>
-    </g>
-    <rect x="452" y="452" width="64" height="64" rx="32" fill="#00EB88" />
-    <path
-      d="M492 481.333H490.32C489.821 479.401 488.79 477.648 487.345 476.273C485.899 474.897 484.097 473.955 482.143 473.553C480.188 473.15 478.16 473.304 476.289 473.997C474.418 474.69 472.778 475.893 471.557 477.471C470.335 479.049 469.581 480.938 469.38 482.923C469.178 484.908 469.538 486.91 470.417 488.701C471.297 490.493 472.661 492.001 474.355 493.056C476.049 494.11 478.005 494.668 480 494.667H492C493.768 494.667 495.464 493.964 496.714 492.714C497.964 491.464 498.667 489.768 498.667 488C498.667 486.232 497.964 484.536 496.714 483.286C495.464 482.036 493.768 481.333 492 481.333Z"
-      stroke="#131418"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <line
-      x1="667.354"
-      y1="300.854"
-      x2="505.354"
-      y2="462.854"
-      stroke="#00EB88"
-    />
-    <line x1="668.5" y1="299" x2="668.5" y2="548" stroke="#00EB88" />
-    <circle cx="669" cy="300" r="6" fill="#00EB88" />
-    <defs>
-      <radialGradient
-        id="hosted-api-svg-paint0_radial"
-        cx="0"
-        cy="0"
-        r="1"
-        gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(484 484) rotate(90) scale(484)"
+      <mask
+        id="hosted-api-svg-mask0"
+        mask-type="alpha"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="968"
+        height="968"
       >
-        <stop stopColor="white" />
-        <stop offset="1" stopColor="white" stopOpacity="0" />
-      </radialGradient>
-    </defs>
-  </svg>
-)
+        <circle
+          className="main--line"
+          cx="484"
+          cy="484"
+          r="484"
+          fill="url(#hosted-api-svg-paint0_radial)"
+        />
+      </mask>
+      <g mask="url(#hosted-api-svg-mask0)">
+        <line
+          className="main--line"
+          x1="19.3536"
+          y1="18.1464"
+          x2="949.354"
+          y2="948.146"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="388.354"
+          y1="18.1464"
+          x2="1318.35"
+          y2="948.146"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="-348.646"
+          y1="18.1464"
+          x2="581.354"
+          y2="948.146"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="949.354"
+          y1="18.8536"
+          x2="19.3536"
+          y2="948.854"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="581.354"
+          y1="18.8536"
+          x2="-348.646"
+          y2="948.854"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="1318.35"
+          y1="18.8536"
+          x2="388.354"
+          y2="948.854"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="212.354"
+          y1="18.8536"
+          x2="-717.646"
+          y2="948.854"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="484.5"
+          y1="-72"
+          x2="484.5"
+          y2="1039"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="300.5"
+          y1="-72"
+          x2="300.5"
+          y2="1039"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="116.5"
+          y1="-72"
+          x2="116.5"
+          y2="1039"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="668.5"
+          y1="-72"
+          x2="668.5"
+          y2="1039"
+          stroke="#E5E5E5"
+        />
+        <line
+          className="main--line"
+          x1="852.5"
+          y1="-72"
+          x2="852.5"
+          y2="1039"
+          stroke="#E5E5E5"
+        />
+        <g opacity="0.2">
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="669"
+            cy="667"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="301"
+            cy="667"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="669"
+            cy="301"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="301"
+            cy="301"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="485"
+            cy="484"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="853"
+            cy="484"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="117"
+            cy="484"
+            r="5"
+            fill="#131418"
+          />
+        </g>
+        <g opacity="0.2">
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="485"
+            cy="851"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="853"
+            cy="851"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="117"
+            cy="851"
+            r="5"
+            fill="#131418"
+          />
+        </g>
+        <g opacity="0.2">
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="485"
+            cy="114"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="853"
+            cy="114"
+            r="5"
+            fill="#131418"
+          />
+          <circle
+            className="dots"
+            opacity="0.2"
+            cx="117"
+            cy="114"
+            r="5"
+            fill="#131418"
+          />
+        </g>
+      </g>
+      <rect
+        className="main--line"
+        x="452"
+        y="452"
+        width="64"
+        height="64"
+        rx="32"
+        fill="#00EB88"
+      />
+      <path
+        className="main--line"
+        d="M492 481.333H490.32C489.821 479.401 488.79 477.648 487.345 476.273C485.899 474.897 484.097 473.955 482.143 473.553C480.188 473.15 478.16 473.304 476.289 473.997C474.418 474.69 472.778 475.893 471.557 477.471C470.335 479.049 469.581 480.938 469.38 482.923C469.178 484.908 469.538 486.91 470.417 488.701C471.297 490.493 472.661 492.001 474.355 493.056C476.049 494.11 478.005 494.668 480 494.667H492C493.768 494.667 495.464 493.964 496.714 492.714C497.964 491.464 498.667 489.768 498.667 488C498.667 486.232 497.964 484.536 496.714 483.286C495.464 482.036 493.768 481.333 492 481.333Z"
+        stroke="#131418"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <line
+        className="main--line"
+        x1="667.354"
+        y1="300.854"
+        x2="505.354"
+        y2="462.854"
+        stroke="#00EB88"
+      />
+      <line
+        className="main--line"
+        x1="668.5"
+        y1="299"
+        x2="668.5"
+        y2="548"
+        stroke="#00EB88"
+      />
+      <circle className="dots" cx="669" cy="300" r="6" fill="#00EB88" />
+      <defs>
+        <radialGradient
+          id="hosted-api-svg-paint0_radial"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(484 484) rotate(90) scale(484)"
+        >
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+    </svg>
+  )
+}
 
 const MobileHostedApiSvg = ({ pushSx }: Props) => (
   <svg

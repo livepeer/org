@@ -37,7 +37,10 @@ const PrimerBanner = () => (
         </Text>
         <Heading
           variant="heading.3"
-          sx={{ textAlign: ["center", null, null, "left"], fontFamily: "body" }}
+          sx={{
+            textAlign: ["center", null, null, "left"],
+            fontFamily: "body"
+          }}
         >
           Curious about how Livepeer works?
         </Heading>

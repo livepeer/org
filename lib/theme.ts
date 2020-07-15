@@ -32,6 +32,7 @@ const theme = {
   colors: {
     text: "#131418",
     background: "#fff",
+    transparent: "transparent",
     muted: "#fafafa",
     primary: "#00EB88",
     secondary: "#3F3FE2",
@@ -146,7 +147,7 @@ const theme = {
         fontSize: ["48px", "72px"],
         fontWeight: 800,
         letterSpacing: "heading",
-        lineHeight: [1, "heading"],
+        lineHeight: [1.2, "heading"],
         textAlign: "center"
       },
       3: {

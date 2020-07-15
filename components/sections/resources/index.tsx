@@ -2,12 +2,19 @@ import { Container, Grid } from "theme-ui"
 import Tabs, { TabProps } from "components/primitives/tabs"
 import { useRouter } from "next/router"
 import ImageCard, { ImageCardProps } from "components/primitives/cards/image"
-import { useMemo } from "react"
+import { useMemo, useRef, useEffect } from "react"
 import posts, { categories } from "./posts"
+import sectionEffect from "lib/animations/section-effect"
 
 const ResourcesDirectory = () => {
   const router = useRouter()
   const { filter } = router.query
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+    sectionEffect(sectionRef.current)
+  }, [sectionRef])
 
   const filteredCards: ImageCardProps[] = useMemo(() => {
     const filteredPosts = posts.filter((c) =>
@@ -49,7 +56,7 @@ const ResourcesDirectory = () => {
   )
 
   return (
-    <Container variant="section">
+    <Container variant="section" className="hide__section" ref={sectionRef}>
       <Tabs
         items={tabs}
         pushSx={{ justifyContent: ["flex-start", "center"] }}
