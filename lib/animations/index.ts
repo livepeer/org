@@ -6,7 +6,7 @@ import { SplitText } from "gsap/SplitText"
 
 const GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2
 const RECIPROCAL_GR = 1 / GOLDEN_RATIO
-const DURATION = RECIPROCAL_GR * 0.5
+export const DURATION = RECIPROCAL_GR * 0.5
 
 const initGsap = () => {
   gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText, MotionPathPlugin)
@@ -122,4 +122,3 @@ const initGsap = () => {
 }
 
 export default initGsap
-export { DURATION }
