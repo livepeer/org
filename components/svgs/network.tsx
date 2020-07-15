@@ -2,10 +2,7 @@
 import { jsx, SxStyleProp } from "theme-ui"
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
-import { MotionPathPlugin } from "gsap/MotionPathPlugin"
 import { DURATION } from "lib/animations"
-
-gsap.registerPlugin(MotionPathPlugin)
 
 type Props = {
   pushSx?: SxStyleProp
