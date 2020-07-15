@@ -44,7 +44,7 @@ const posts: Post[] = [
     }
   },
   {
-    title: "The Livepeer Whitepaper (French Translation)",
+    title: "The Livepeer Whitepaper (FRA Translation)",
     description:
       "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network",
     subtitle: "Translation by Gareth Mensah",
@@ -60,7 +60,7 @@ const posts: Post[] = [
     }
   },
   {
-    title: "The Livepeer Whitepaper (Russian Translation)",
+    title: "The Livepeer Whitepaper (RUS Translation)",
     description:
       "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network",
     subtitle: "Translation by Fedorello",
@@ -78,7 +78,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Streamflow Paper",
     description:
-      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and more.",
+      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
     subtitle: "By Doug Petkanics & Yondon Fu",
     link: {
       href: "https://github.com/livepeer/wiki/blob/master/STREAMFLOW.md",
@@ -91,9 +91,9 @@ const posts: Post[] = [
     }
   },
   {
-    title: "The Livepeer Streamflow Paper (Portuguese Translation)",
+    title: "The Livepeer Streamflow Paper (POR Translation)",
     description:
-      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and more.",
+      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
     subtitle: "Translation by Felipe Gaúcho",
     link: {
       href: "https://github.com/felipegaucho/wiki-1/blob/master/STREAMFLOW.md",
@@ -103,13 +103,12 @@ const posts: Post[] = [
     image: {
       src: "/images/posts/post-cover-5.png",
       alt: "Resource cover image"
-    },
-    pushContentSx: { pr: 2 }
+    }
   },
   {
     title: "The Livepeer Primer",
     description:
-      "Through storytelling, illustration, and data, the Livepeer Primer explains, at a high level, the problem Livepeer solves, and how it works.",
+      "Through storytelling, illustration, and data, the Livepeer Primer explains, at a high level, the problem Livepeer solves, and how it works. ",
     subtitle: "By Adam Soffer & Kellie Pcolar",
     link: { href: "https://livepeer.org/primer/", isExternal: true },
     category: categories[0],
@@ -133,7 +132,7 @@ const posts: Post[] = [
   {
     title: "Scout Analytics",
     description:
-      "A data analytics tool that shows you the current economics of the protocol.",
+      "A data analytics tool that shows you the current economics of the protocol, such as the amount of token in supply, inflation rate, and more.",
     subtitle: "By Scout",
     link: { href: "https://scout.cool/livepeer/mainnet", isExternal: true },
     category: categories[1],
@@ -201,7 +200,11 @@ const posts: Post[] = [
   {
     title: "Uniswap",
     subtitle: "Non-custodial exchange",
-    link: { href: "https://uniswap.exchange", isExternal: true },
+    link: {
+      href:
+        "https://uniswap.exchange/swap/0x58b6a8a3302369daec383334672404ee733ab239",
+      isExternal: true
+    },
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-13.png",

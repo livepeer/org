@@ -39,7 +39,7 @@ const listItems: ListItemProps[] = [
       <>
         Look for “good first issues” in{" "}
         <A
-          href="https://github.com/livepeer/livepeerjs/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%98%8B+good+first+issue%22"
+          href="https://github.com/livepeer/livepeerjs"
           target="_blank"
           rel="noopener noreferrer"
           variant="coloured"
@@ -49,7 +49,7 @@ const listItems: ListItemProps[] = [
         </A>{" "}
         (Javascript),{" "}
         <A
-          href="https://github.com/livepeer/lpms/labels/good%20first%20issue"
+          href="https://github.com/livepeer/lpms"
           target="_blank"
           rel="noopener noreferrer"
           variant="coloured"
@@ -59,7 +59,7 @@ const listItems: ListItemProps[] = [
         </A>{" "}
         (video development in C or Go), or{" "}
         <A
-          href="https://github.com/livepeer/go-livepeer/labels/good%20first%20issue"
+          href="https://github.com/livepeer/go-livepeer"
           target="_blank"
           rel="noopener noreferrer"
           variant="coloured"
@@ -112,7 +112,7 @@ const listItems: ListItemProps[] = [
     icon: <FiPlay />,
     children: (
       <>
-        Looking to build a video application using Livepeer? Check out our{" "}
+        Looking to build a video application using Livepeer? Check out our open{" "}
         <A
           href="https://livepeer.readthedocs.io/en/latest/"
           target="_blank"
@@ -120,9 +120,9 @@ const listItems: ListItemProps[] = [
           variant="coloured"
           data-dark
         >
-          open developer docs
+          developer docs
         </A>{" "}
-        or{" "}
+        or enterprise hosted services at{" "}
         <A
           href="https://livepeer.com"
           target="_blank"
@@ -130,7 +130,7 @@ const listItems: ListItemProps[] = [
           variant="coloured"
           data-dark
         >
-          enterprise hosted services
+          livepeer.com
         </A>
         .
       </>

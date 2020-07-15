@@ -133,6 +133,17 @@ const theme = {
       fontSize: [1, 2],
       fontWeight: 400
     },
+    clamp: {
+      3: {
+        fontFamily: "body",
+        fontSize: [2, 3],
+        fontWeight: 400,
+        lineHeight: "body",
+        textOverflow: "ellipsis",
+        WebkitLineClamp: "3",
+        WebkitBoxOrient: "vertical"
+      }
+    },
     heading: {
       1: {
         fontFamily: "special",
