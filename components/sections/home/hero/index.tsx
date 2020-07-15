@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
-import Mosaic from "components/sections/home/mosaic"
+import Mosaic from "components/sections/home/hero/mosaic"
 
 const HomeHero = () => (
   <Box sx={{ bg: "muted", position: "relative" }}>
