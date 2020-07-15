@@ -1,22 +1,22 @@
 /** @jsx jsx */
-import { jsx, Box, Card, Heading, Text, SxStyleProp, Flex } from "theme-ui"
+import { jsx, Box, Card, Heading, Text, SxStyleProp } from "theme-ui"
 import CardLink, { CardLinkProps } from "../links/card"
-import { useMemo } from "react"
+import React, { useMemo } from "react"
 import Link from "next/link"
 
-export type ImageCardProps = {
-  title?: React.ReactNode
-  description?: string
-  footnote?: string
-  linkProps: CardLinkProps
+interface ImageCardProps {
+  title?: React.ReactNode,
+  description?: string,
+  footnote?: string,
+  linkProps: CardLinkProps,
   image: {
-    src: string
+    src: string,
     alt?: string
-  }
-  isLink?: boolean
-  className?: string
-  pushSx?: SxStyleProp
-  pushContentSx?: SxStyleProp
+  },
+  isLink?: boolean,
+  className?: string,
+  pushSx?: SxStyleProp,
+  pushContentSx?: SxStyleProp,
 }
 
 const ImageCard = ({
@@ -69,17 +69,13 @@ const ImageCard = ({
           )}
           {description && (
             <Text
-              variant="normal"
+              variant="clamp.3"
               sx={{
                 color: title ? "gray" : "text",
-                display: "block",
                 display: "-webkit-box",
                 maxWidth: "100%",
                 margin: "0 auto",
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis"
+                overflow: "hidden"
               }}
             >
               {description}
