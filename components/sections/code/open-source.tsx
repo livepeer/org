@@ -1,13 +1,10 @@
 /** @jsx jsx */
-import React, { useRef, useEffect } from "react"
 import SectionLayout from "components/layouts/section"
-import { jsx, Button, Link as A } from "theme-ui"
-import gsap from "gsap"
+import { jsx, Link as A } from "theme-ui"
 import StatusCard, { StatusCardProps } from "components/primitives/cards/status"
 import Divider from "components/primitives/divider"
 import KeenSliderGrid from "components/layouts/keen-slider-grid"
 import { FiArrowUpRight } from "react-icons/fi"
-import { DURATION } from "lib/animations"
 
 const cards: StatusCardProps[] = [
   {

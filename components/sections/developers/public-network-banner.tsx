@@ -1,10 +1,9 @@
 import React, { useRef, useEffect } from "react"
 import { Container, Box, Text, Heading, Grid, Link as A } from "theme-ui"
-import gsap from "gsap"
 import ListItem, { ListItemProps } from "components/primitives/list-item"
 import { FiCheckCircle } from "react-icons/fi"
 import NetworkSvg from "components/svgs/network"
-import { DURATION } from "lib/animations"
+import sectionEffect from "lib/animations/section-effect"
 
 const listItems: ListItemProps[] = [
   {
@@ -29,19 +28,9 @@ const PublicNetworkBanner = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      }
-    })
-    tl.set(sectionRef.current, {
-      autoAlpha: 0
-    })
-    // @ts-ignore
-    tl.sectionEntrance(sectionRef.current, {
-      delay: DURATION * 2
-    })
+    sectionEffect(sectionRef.current)
   }, [sectionRef])
+
   return (
     <Box sx={{ bg: "muted", px: [0, null, null, 3], pt: "160px", pb: "80px" }}>
       <Container

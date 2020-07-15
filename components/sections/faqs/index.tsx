@@ -4,9 +4,8 @@ import Accordion from "components/primitives/accordion"
 import { AccordionItemProps } from "components/primitives/accordion/item"
 import { useRouter } from "next/router"
 import { useMemo, useRef, useEffect } from "react"
-import gsap from "gsap"
 import questions, { categories } from "./questions"
-import { DURATION } from "lib/animations"
+import sectionEffect from "lib/animations/section-effect"
 
 const FaqsSection = () => {
   const router = useRouter()
@@ -15,18 +14,7 @@ const FaqsSection = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      }
-    })
-    tl.set(sectionRef.current, {
-      autoAlpha: 0
-    })
-    // @ts-ignore
-    tl.sectionEntrance(sectionRef.current, {
-      delay: DURATION * 2
-    })
+    sectionEffect(sectionRef.current)
   }, [sectionRef])
 
   const filteredItems: AccordionItemProps[] = useMemo(() => {

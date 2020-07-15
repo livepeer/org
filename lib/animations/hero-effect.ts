@@ -1,7 +1,4 @@
 import { gsap } from "gsap"
-import { SplitText } from "gsap/SplitText"
-
-gsap.registerPlugin(SplitText)
 
 const heroEffect = (elem: HTMLElement) => {
   const tl = gsap.timeline({

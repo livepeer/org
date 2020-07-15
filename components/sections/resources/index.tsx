@@ -3,9 +3,8 @@ import Tabs, { TabProps } from "components/primitives/tabs"
 import { useRouter } from "next/router"
 import ImageCard, { ImageCardProps } from "components/primitives/cards/image"
 import { useMemo, useRef, useEffect } from "react"
-import gsap from "gsap"
 import posts, { categories } from "./posts"
-import { DURATION } from "lib/animations"
+import sectionEffect from "lib/animations/section-effect"
 
 const ResourcesDirectory = () => {
   const router = useRouter()
@@ -14,18 +13,7 @@ const ResourcesDirectory = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      }
-    })
-    tl.set(sectionRef.current, {
-      autoAlpha: 0
-    })
-    // @ts-ignore
-    tl.sectionEntrance(sectionRef.current, {
-      delay: DURATION * 2
-    })
+    sectionEffect(sectionRef.current)
   }, [sectionRef])
 
   const filteredCards: ImageCardProps[] = useMemo(() => {

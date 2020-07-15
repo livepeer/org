@@ -49,6 +49,7 @@ const SectionLayout = forwardRef(
       // @ts-ignore
       tl.sectionEntrance(sectionRef.current, { delay: DURATION * 2 })
     }, [sectionRef])
+
     let bg = "background"
     let titleColor = "text"
     let subTitleColor = "gray"
