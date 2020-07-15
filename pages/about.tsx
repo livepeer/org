@@ -12,6 +12,7 @@ const AboutPage = () => (
       title="About Livepeer.org"
       subtitle="Livepeer.org is a primary online resource for participants and users of the Livepeer network."
       illustration={<LivepeerIconSvg />}
+      withAnimation
     />
     <MissionSection />
     <WhoIsBuildingSection />

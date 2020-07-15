@@ -12,6 +12,7 @@ const ResourcesPage = () => (
       subtitle="A directory of essential resources across the Livepeer ecosystem."
       illustration={<ResourcesHeroSvg />}
       background="muted"
+      withAnimation
     />
     <ResourcesDirectory />
   </PageLayout>

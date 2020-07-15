@@ -11,8 +11,8 @@ import {
   Text
 } from "theme-ui"
 import LivepeerLogo from "components/svgs/livepeer-logo"
-import { useEffect, useCallback, useState } from "react"
-import { FiMenu, FiX, FiArrowRight } from "react-icons/fi"
+import { useEffect, useCallback, useState, useRef } from "react"
+import { FiMenu, FiX } from "react-icons/fi"
 import Link from "next/link"
 import TopNotification, { TopNotificationProps } from "./top-notification"
 
@@ -31,6 +31,10 @@ const links: LinkType[] = [
   {
     label: "Developers",
     href: "/developers"
+  },
+  {
+    label: "Resources",
+    href: "/resources"
   },
   {
     label: "Blog",
@@ -56,16 +60,20 @@ const defaultTopNotification: TopNotificationProps = {
 }
 
 export type NavProps = {
+  isInmersive?: boolean
   background?: "muted" | "dark" | "white" | "black"
   topNotification?: TopNotificationProps
 }
 
 const Nav = ({
   background,
+  isInmersive,
   topNotification = defaultTopNotification
 }: NavProps) => {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
+  const [topNotificationHeight, setTopNotificationHeight] = useState(40)
+  const topNotificationRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = useCallback(() => {
     const { scrollTop } = document.documentElement
@@ -75,10 +83,14 @@ const Nav = ({
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll)
+    if (topNotificationRef.current) {
+      setTopNotificationHeight(topNotificationRef.current.offsetHeight)
+    }
+
     return () => {
       document.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [topNotificationRef])
 
   const isDark = background === "black" || background === "dark"
   let bg: string
@@ -86,34 +98,57 @@ const Nav = ({
   switch (background) {
     default:
     case "white":
-      bg = "background"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "background"
       color = "text"
       break
     case "muted":
-      bg = "muted"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "muted"
       color = "text"
       break
     case "dark":
-      bg = "text"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "text"
       color = "background"
       break
     case "black":
-      bg = "black"
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "black"
       color = "background"
       break
   }
 
   return (
     <>
-      {topNotification && <TopNotification {...topNotification} />}
+      {topNotification && (
+        <TopNotification {...topNotification} ref={topNotificationRef} />
+      )}
       <Box
         sx={{
           bg,
           color,
-          position: "sticky",
-          top: 0,
+          position: isInmersive ? "fixed" : "sticky",
+          top: isInmersive && !hasScrolled ? `${topNotificationHeight}px` : 0,
+          mixBlendMode:
+            isInmersive && !hasScrolled && !mobileMenuIsOpen
+              ? "difference"
+              : "unset",
+          filter:
+            isInmersive && !hasScrolled && !mobileMenuIsOpen
+              ? "invert(1)"
+              : "none",
+          width: "100%",
           zIndex: "header",
-          transition: "box-shadow .3s",
+          transition: "box-shadow .3s, top .3s",
           boxShadow: hasScrolled ? "magical" : "none"
         }}
       >
@@ -129,7 +164,7 @@ const Nav = ({
           <Box
             sx={{
               "a:not(:last-of-type)": { mr: 5 },
-              display: ["none", "flex"]
+              display: ["none", null, "flex"]
             }}
           >
             {links.map((link) =>
@@ -157,7 +192,7 @@ const Nav = ({
           <IconButton
             sx={{
               color,
-              display: ["block", "none"],
+              display: ["block", null, "none"],
               fontSize: 6
             }}
             onClick={() => setMobileMenuIsOpen(true)}
@@ -189,11 +224,7 @@ const Nav = ({
           >
             <LivepeerLogo isDark={isDark} />
             <IconButton
-              sx={{
-                color,
-                display: ["block", "none"],
-                fontSize: 6
-              }}
+              sx={{ color, fontSize: 6 }}
               onClick={() => setMobileMenuIsOpen(false)}
             >
               <FiX size="24px" />

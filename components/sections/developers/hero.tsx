@@ -61,12 +61,18 @@ const lines: AnimatedLineProps[] = [
 
 const DevelopersHero = () => (
   <IconHero
+    withAnimation
     icon={<FiPlay />}
     title="Developers"
     subtitle="Everything you need to build better video applications with Livepeer."
     illustration={
       <IllustratedBackgroundBox
-        pushSx={{ height: ["360px", "282px"], mt: "48px", width: "100%" }}
+        pushSx={{
+          height: ["360px", "282px"],
+          mt: "48px",
+          width: "100%",
+          maxWidth: "700px"
+        }}
         pushContentSx={{
           p: 0,
           height: ["376px", "298px"],
