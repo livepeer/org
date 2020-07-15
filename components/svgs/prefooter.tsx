@@ -1,8 +1,7 @@
 /** @jsx jsx */
+import { gsap } from "gsap"
 import { jsx } from "theme-ui"
 import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { DURATION } from "lib/animations"
 
 const PrefooterSvg = ({ fill = "white" }) => {
   const svgRef = useRef(null)
@@ -15,7 +14,6 @@ const PrefooterSvg = ({ fill = "white" }) => {
     }
 
     const tl = gsap.timeline({
-      delay: DURATION,
       scrollTrigger: {
         trigger: svgRef.current,
         start: "top 80%"
