@@ -3,10 +3,10 @@ import { useRef, useEffect } from "react"
 import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
 import { gsap } from "gsap"
-import { DURATION } from "lib/animations"
 
 const HomeHero = () => {
   const sectionRef = useRef(null)
+
   useEffect(() => {
     if (!sectionRef.current) return
     const tl = gsap.timeline()
@@ -17,6 +17,7 @@ const HomeHero = () => {
     // @ts-ignore
     tl.sectionEntrance(sectionRef.current)
   }, [sectionRef])
+
   return (
     <Box sx={{ bg: "muted" }}>
       <Container

@@ -9,9 +9,10 @@ type Props = {
   pushSx?: SxStyleProp
   isDark?: boolean
   isLink?: boolean
+  id?: string
 }
 
-const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
+const LivepeerLogo = ({ pushSx, isDark, isLink = true, id = "" }: Props) => {
   const [hover, setHover] = useState(false)
   const svgRef = useRef(null)
 
@@ -131,11 +132,11 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
           fillRule="evenodd"
           clipRule="evenodd"
           d="M16.8261 7.44915H13.1516V11.0782H16.8261V7.44915ZM25.3333 7.44915H21.6588V11.0782H25.3333V7.44915ZM25.3332 23.1123H21.6587V26.7414H25.3332V23.1123ZM29.9775 7.44915H33.652V11.0782H29.9775V7.44915ZM25.917 15.2807H29.5915V18.9098H25.917V15.2807ZM21.0796 15.2807H17.405V18.9098H21.0796V15.2807Z"
-          fill="url(#paint0_linear)"
+          fill={`url(#${id}-logo-svg-paint0_linear)`}
         />
         <defs>
           <linearGradient
-            id="paint0_linear"
+            id={`${id}-logo-svg-paint0_linear`}
             x1="13.1519"
             y1="17.0847"
             x2="33.6519"

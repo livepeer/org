@@ -1,27 +1,16 @@
 import { useRef, useEffect } from "react"
-import gsap from "gsap"
-import { Box, Link as A, Grid, Heading, Text, SxStyleProp } from "theme-ui"
+import { Box, Link as A, Grid, Heading, Text } from "theme-ui"
 import LivepeerIconSvg from "components/svgs/icons/livepeer"
-import { DURATION } from "lib/animations"
+import sectionEffect from "lib/animations/section-effect"
 
 const MissionSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!sectionRef.current) return
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current
-      }
-    })
-    tl.set(sectionRef.current, {
-      autoAlpha: 0
-    })
-    // @ts-ignore
-    tl.sectionEntrance(sectionRef.current, {
-      delay: DURATION * 2
-    })
+    sectionEffect(sectionRef.current)
   }, [sectionRef])
+
   return (
     <Box
       sx={{

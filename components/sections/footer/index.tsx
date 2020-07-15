@@ -94,6 +94,7 @@ const Footer = ({ isDark = false, prefooter = "subscribe" }: FooterProps) => (
             mb: 5
           }}
           pushLogoSx={{ mr: 0, mb: 3 }}
+          id="footer-logo-mobile"
         />
         <Grid
           columns={[
@@ -123,7 +124,10 @@ const Footer = ({ isDark = false, prefooter = "subscribe" }: FooterProps) => (
             alignItems: "center"
           }}
         >
-          <LogoAndEmail pushSx={{ display: ["none", null, null, "flex"] }} />
+          <LogoAndEmail
+            pushSx={{ display: ["none", null, null, "flex"] }}
+            id="footer-logo-desktop"
+          />
           <Text
             variant="small"
             sx={{ textAlign: ["center", null, null, "left"] }}
