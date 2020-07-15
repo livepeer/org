@@ -32,6 +32,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
     }
 
     const tl = gsap.timeline({
+      delay: DURATION,
       scrollTrigger: {
         trigger: svgRef.current,
         start: "top 80%"
@@ -61,8 +62,8 @@ const NetworkSvg = ({ pushSx }: Props) => {
       duration: DURATION * 18,
       ease: "none",
       motionPath: {
-        path: `.${pathInner.classList[0]}`,
-        align: `.${pathInner.classList[0]}`,
+        path: "#pathInner",
+        align: "#pathInner",
         alignOrigin: [0.5, 0.5]
       },
       stagger: {
@@ -75,8 +76,8 @@ const NetworkSvg = ({ pushSx }: Props) => {
         duration: DURATION * 20,
         ease: "none",
         motionPath: {
-          path: `.${pathOuter.classList[0]}`,
-          align: `.${pathOuter.classList[0]}`,
+          path: "#pathOuter",
+          align: "#pathOuter",
           alignOrigin: [0.5, 0.5]
         },
         stagger: {
@@ -109,11 +110,13 @@ const NetworkSvg = ({ pushSx }: Props) => {
       className="c--hide"
     >
       <path
+        id="pathInner"
         className="path--inner"
         d="M304 232c0 39.765-32.235 72-72 72s-72-32.235-72-72 32.235-72 72-72 72 32.235 72 72z"
         sx={{ stroke: "primary" }}
       />
       <path
+        id="pathOuter"
         className="path--outer"
         opacity="0.8"
         d="M120,232a112,112 0 1,0 224,0a112,112 0 1,0 -224,0"
