@@ -1,24 +1,9 @@
 /** @jsx jsx */
-import { useRef, useEffect } from "react"
 import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui"
 import Divider from "components/primitives/divider"
 import Mosaic from "components/sections/home/hero/mosaic"
-import { gsap } from "gsap"
 
 const HomeHero = () => {
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    const tl = gsap.timeline()
-    tl.set(sectionRef.current, {
-      autoAlpha: 0
-    })
-
-    // @ts-ignore
-    tl.sectionEntrance(sectionRef.current)
-  }, [sectionRef])
-
   return (
     <Box sx={{ bg: "muted", position: "relative" }}>
       <Mosaic />
