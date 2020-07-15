@@ -62,8 +62,8 @@ const NetworkSvg = ({ pushSx }: Props) => {
       duration: DURATION * 18,
       ease: "none",
       motionPath: {
-        path: "#pathInner",
-        align: "#pathInner",
+        path: ".path--inner",
+        align: ".path--inner",
         alignOrigin: [0.5, 0.5]
       },
       stagger: {
@@ -76,8 +76,8 @@ const NetworkSvg = ({ pushSx }: Props) => {
         duration: DURATION * 20,
         ease: "none",
         motionPath: {
-          path: "#pathOuter",
-          align: "#pathOuter",
+          path: ".path--outer",
+          align: ".path--outer",
           alignOrigin: [0.5, 0.5]
         },
         stagger: {
@@ -110,13 +110,11 @@ const NetworkSvg = ({ pushSx }: Props) => {
       className="c--hide"
     >
       <path
-        id="pathInner"
         className="path--inner"
         d="M304 232c0 39.765-32.235 72-72 72s-72-32.235-72-72 32.235-72 72-72 72 32.235 72 72z"
         sx={{ stroke: "primary" }}
       />
       <path
-        id="pathOuter"
         className="path--outer"
         opacity="0.8"
         d="M120,232a112,112 0 1,0 224,0a112,112 0 1,0 -224,0"
