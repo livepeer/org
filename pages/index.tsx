@@ -6,7 +6,7 @@ import CommunitySection from "components/sections/home/community"
 import PageLayout from "components/layouts/page"
 
 const HomePage = () => (
-  <PageLayout navProps={{ background: "muted" }}>
+  <PageLayout navProps={{ background: "muted", isInmersive: true }}>
     <HomeHero />
     <LetLivepeerDoSection />
     <PrimerBanner />
