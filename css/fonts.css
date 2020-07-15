@@ -3,6 +3,7 @@
   src: url("/fonts/TTFirsNeue-Bold.woff2") format("woff2"),
     url("/fonts/TTFirsNeue-Bold.woff") format("woff");
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url("/fonts/TTFirsNeue-ExtraBold.woff2") format("woff2"),
     url("/fonts/TTFirsNeue-ExtraBold.woff") format("woff");
   font-weight: bolder;
+  font-display: swap;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap");
