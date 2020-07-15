@@ -48,7 +48,7 @@ const HomeHero = () => {
                 variant: "text.gradientBase"
               }}
             >
-              open&nbsp;
+              Open&nbsp;
             </Text>
             <br sx={{ display: ["none", null, "block"] }} />
             Video Infrastructure
