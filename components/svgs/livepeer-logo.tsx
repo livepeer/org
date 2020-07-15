@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, SxStyleProp } from "theme-ui"
 import Link from "next/link"
-import { useMemo, useRef, useEffect, useState } from "react"
+import { useMemo, useRef, useEffect, useState, useCallback } from "react"
 import gsap from "gsap"
 import { DURATION } from "lib/animations"
 
@@ -15,8 +15,8 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
   const [hover, setHover] = useState(false)
   const svgRef = useRef(null)
 
-  const handleMouseOver = () => setHover(true)
-  const handleMouseOut = () => setHover(false)
+  const handleMouseOver = useCallback(() => setHover(true), [])
+  const handleMouseOut = useCallback(() => setHover(false), [])
 
   useEffect(() => {
     const node = svgRef.current
@@ -29,7 +29,7 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
         node.removeEventListener("mouseout", handleMouseOut)
       }
     }
-  }, [svgRef.current])
+  }, [svgRef])
 
   useEffect(() => {
     if (!svgRef.current) return
@@ -45,7 +45,7 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover1 : '#00A55F'
+        "stop-color": hover ? hexHover1 : "#00A55F"
       }
     })
 
@@ -53,7 +53,7 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover2 : '#4CF1AC'
+        "stop-color": hover ? hexHover2 : "#4CF1AC"
       }
     })
 
@@ -66,7 +66,7 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true }: Props) => {
         ease: "sine.inOut"
       }
     })
-  }, [hover, svgRef.current])
+  }, [hover, svgRef])
 
   const markup = useMemo(
     () => (
