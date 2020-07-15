@@ -1,5 +1,6 @@
 import { gsap } from "gsap"
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin"
+import { MotionPathPlugin } from "gsap/MotionPathPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 
@@ -8,7 +9,7 @@ const RECIPROCAL_GR = 1 / GOLDEN_RATIO
 export const DURATION = RECIPROCAL_GR * 0.5
 
 const initGsap = () => {
-  gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText)
+  gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText, MotionPathPlugin)
 
   gsap.registerEffect({
     name: "textEntrance",
