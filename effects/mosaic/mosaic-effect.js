@@ -15,13 +15,13 @@ export default class MosaicEffect extends THREE.Object3D {
 
     this.time = 0
 
-    const mouse = useMouse()
+    const mouse = useMouse() // eslint-disable-line
     this.onMouseMoveHandler = this.onMouseMove.bind(this)
     mouse.events.on("move", this.onMouseMoveHandler)
   }
 
   update({ deltaTime }) {
-    const { viewsize } = useWebGL()
+    const { viewsize } = useWebGL() // eslint-disable-line
 
     this.items.children.forEach((item) => {
       item.position.z += 0.015
@@ -77,7 +77,7 @@ export default class MosaicEffect extends THREE.Object3D {
   }
 
   destroy() {
-    const mouse = useMouse()
+    const mouse = useMouse() // eslint-disable-line
     mouse.events.off("move", this.onMouseMoveHandler)
   }
 }

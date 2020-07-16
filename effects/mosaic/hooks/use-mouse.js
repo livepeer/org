@@ -16,7 +16,7 @@ class Mouse {
   }
 
   get normalizedPosition() {
-    const viewport = useViewport()
+    const viewport = useViewport() // eslint-disable-line
     return new THREE.Vector2(
       (this.position.x / viewport.width) * 2 - 1,
       -(this.position.y / viewport.height) * 2 + 1
