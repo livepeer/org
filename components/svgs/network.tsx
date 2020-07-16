@@ -100,6 +100,10 @@ const NetworkSvg = ({ pushSx }: Props) => {
       },
       "<"
     )
+
+    return () => {
+      tl.kill()
+    }
   }, [svgRef])
 
   return (
