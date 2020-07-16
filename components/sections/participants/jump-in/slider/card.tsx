@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
-import { Box, Card, Heading, Text, Progress, SxStyleProp } from "theme-ui"
+import { Box, Card, Heading, Text, SxStyleProp } from "theme-ui"
 import CardLink, { CardLinkProps } from "components/primitives/links/card"
+import Progress from "components/primitives/progress"
 
 export type SliderCardProps = {
   title: React.ReactNode
@@ -10,10 +11,12 @@ export type SliderCardProps = {
   nextSlide?: () => void
   moveToMySlide?: () => void
   progress?: number
-  setProgress?: (n: number) => void
+  setProgress?: React.Dispatch<React.SetStateAction<number>>
   className?: string
   pushSx?: SxStyleProp
 }
+
+const intervalTime = 500
 
 const SliderCard = ({
   title,
@@ -33,23 +36,24 @@ const SliderCard = ({
   useEffect(() => {
     if (isActive) {
       timer.current = setInterval(() => {
-        const newProgress = progress + 0.01
-        if (newProgress > 1.05) {
+        let newProgress: number
+        setProgress((prev) => {
+          newProgress = prev + 20
+          return newProgress
+        })
+        if (newProgress > 100) {
           if (!isTransitioning) {
             nextSlide()
             setIsTransitioning(true)
           }
-        } else {
-          setProgress(newProgress)
-          setIsTransitioning(false)
-        }
-      }, 30)
+        } else setIsTransitioning(false)
+      }, intervalTime)
     }
 
     return () => {
       clearInterval(timer.current)
     }
-  }, [isActive, nextSlide, progress, isTransitioning])
+  }, [isActive, nextSlide, isTransitioning])
 
   return (
     <Card
@@ -64,7 +68,10 @@ const SliderCard = ({
     >
       <Progress
         value={!isActive ? 0 : progress}
-        sx={{ mb: [3, "40px"], transition: "width .01s ease" }}
+        max={100}
+        transitionDuration={!isActive ? "0" : `${intervalTime}ms`}
+        pushSx={{ mb: [3, "40px"] }}
+        pushLineSx={{ willChange: "width" }}
       />
       <Box
         sx={{
