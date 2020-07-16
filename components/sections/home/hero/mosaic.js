@@ -39,7 +39,8 @@ export default function Mosaic() {
         height: "100%",
         position: "absolute",
         top: "0px",
-        left: "0px"
+        left: "0px",
+        zIndex: 0
       }}
     />
   )
