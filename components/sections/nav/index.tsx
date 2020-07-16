@@ -11,7 +11,7 @@ import {
   Text
 } from "theme-ui"
 import LivepeerLogo from "components/svgs/livepeer-logo"
-import { useEffect, useCallback, useState, useRef } from "react"
+import { useEffect, useCallback, useState } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
 import Link from "next/link"
 import TopNotification, { TopNotificationProps } from "./top-notification"
@@ -72,8 +72,6 @@ const Nav = ({
 }: NavProps) => {
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
-  const [topNotificationHeight, setTopNotificationHeight] = useState(40)
-  const topNotificationRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = useCallback(() => {
     const { scrollTop } = document.documentElement
@@ -84,14 +82,11 @@ const Nav = ({
   useEffect(() => {
     handleScroll()
     document.addEventListener("scroll", handleScroll)
-    if (topNotificationRef.current) {
-      setTopNotificationHeight(topNotificationRef.current.offsetHeight)
-    }
 
     return () => {
       document.removeEventListener("scroll", handleScroll)
     }
-  }, [topNotificationRef])
+  }, [])
 
   const isDark = background === "black" || background === "dark"
   let bg: string
@@ -130,15 +125,13 @@ const Nav = ({
 
   return (
     <>
-      {topNotification && (
-        <TopNotification {...topNotification} ref={topNotificationRef} />
-      )}
+      {topNotification && <TopNotification {...topNotification} />}
       <Box
         sx={{
           bg,
           color,
-          position: isInmersive ? "fixed" : "sticky",
-          top: isInmersive && !hasScrolled ? `${topNotificationHeight}px` : 0,
+          position: "sticky",
+          top: 0,
           mixBlendMode:
             isInmersive && !hasScrolled && !mobileMenuIsOpen
               ? "difference"
