@@ -78,7 +78,7 @@ const CommunitySection = ({ title = "Join the Livepeer Community" }) => (
   <SectionLayout
     title={title}
     titleLabel="Livepeer Communities"
-    subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skill sets. Join us."
+    subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skillsets. Join us."
     pushSx={{ pt: "160px" }}
   >
     <Grid
