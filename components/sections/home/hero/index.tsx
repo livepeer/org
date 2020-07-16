@@ -5,7 +5,6 @@ import Mosaic from "components/sections/home/hero/mosaic"
 
 const HomeHero = () => (
   <Box sx={{ bg: "muted", position: "relative" }}>
-    <Mosaic />
     <Container
       variant="section"
       sx={{
@@ -15,7 +14,8 @@ const HomeHero = () => (
         justifyContent: "center",
         height: "100vh",
         overflow: "visible",
-        pt: 5
+        pt: 5,
+        bg: "muted"
       }}
     >
       <Box
@@ -23,7 +23,9 @@ const HomeHero = () => (
           maxWidth: "5xl",
           mb: ["32px", "40px"],
           filter: "invert(1)",
-          mixBlendMode: "difference"
+          mixBlendMode: "difference",
+          zIndex: "general",
+          position: "relative"
         }}
       >
         <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
@@ -58,10 +60,18 @@ const HomeHero = () => (
           decentralized network and the Ethereum blockchain.
         </Heading>
       </Box>
-      <A variant="buttons.primary" href="/#get-started">
+      <A
+        variant="buttons.primary"
+        href="/#get-started"
+        sx={{
+          zIndex: "general",
+          position: "relative"
+        }}
+      >
         Get started
       </A>
     </Container>
+    <Mosaic />
   </Box>
 )
 
