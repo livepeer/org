@@ -57,7 +57,8 @@ const HomeHero = () => (
         <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
         <Heading variant="section.subtitle">
           Livepeer supports live streaming, VOD, and video transcoding via a
-          decentralized network and the Ethereum blockchain.
+          decentralized network and marketplace secured by the Ethereum
+          blockchain.
         </Heading>
       </Box>
       <A

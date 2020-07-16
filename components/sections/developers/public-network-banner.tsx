@@ -8,18 +8,65 @@ import sectionEffect from "lib/animations/section-effect"
 const listItems: ListItemProps[] = [
   {
     icon: <FiCheckCircle />,
-    children:
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+    children: (
+      <Box>
+        <Text
+          sx={{
+            color: "white",
+            textAlign: "left",
+            lineHeight: 1,
+            mb: 2
+          }}
+          variant="large"
+        >
+          Decentralized
+        </Text>
+        No single company or individual controls the Livepeer network. Build
+        video apps that connect directly with your audience in a first-hand
+        manner, free from alterations, after-the-fact interpretation, and spin.
+      </Box>
+    )
   },
   {
     icon: <FiCheckCircle />,
-    children:
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+    children: (
+      <Box>
+        <Text
+          sx={{
+            color: "white",
+            textAlign: "left",
+            lineHeight: 1,
+            mb: 2
+          }}
+          variant="large"
+        >
+          Low Cost
+        </Text>
+        Crypto-economic incentive mechanisms create a network that's able to
+        provide transcoding at an order of magnitude cheaper compared to cloud
+        providers.
+      </Box>
+    )
   },
   {
     icon: <FiCheckCircle />,
-    children:
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+    children: (
+      <Box>
+        <Text
+          sx={{
+            color: "white",
+            textAlign: "left",
+            lineHeight: 1,
+            mb: 2
+          }}
+          variant="large"
+        >
+          Highly Scalable
+        </Text>
+        Scale to any size without a single point of failure, optimizing quality
+        of encoding and performance of delivery.
+      </Box>
+    )
   }
 ]
 

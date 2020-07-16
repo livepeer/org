@@ -56,7 +56,7 @@ const lines: AnimatedLineProps[] = [
 const InfrastructureHero = () => (
   <CroppedIllustrationHero
     title="Infrastructure Operators"
-    subtitle="Earn more by transcoding video on GPUs while mining"
+    subtitle="Increase profits by transcoding video on GPUs while mining"
     withAnimation
     illustration={
       <IllustratedBackgroundBox

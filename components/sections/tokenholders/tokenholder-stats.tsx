@@ -8,12 +8,12 @@ const stats: StatProps[] = [
     label: <>Total LPT Staked</>
   },
   {
-    title: "12 ETH",
+    title: "11.77 ETH",
     label: <>Total Fees Paid Out</>,
     color: "gradient"
   },
   {
-    title: "2640",
+    title: "2636",
     label: <>Total Delegators</>
   }
 ]
@@ -21,7 +21,6 @@ const stats: StatProps[] = [
 const TokenholderStatsSection = () => (
   <SectionLayout
     title="Tokenholder Stats"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     pushSx={{ pt: ["80px", null, null, "160px"] }}
   >
     <StatsGrid stats={stats} />
