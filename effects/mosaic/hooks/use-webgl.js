@@ -1,7 +1,5 @@
 import * as THREE from "three"
 
-// import Stats from "stats.js"
-
 import useViewport from "../hooks/use-viewport"
 import useRAF from "../hooks/use-raf.js"
 
@@ -9,8 +7,8 @@ let webgl
 
 class WebGL {
   constructor() {
-    const RAF = useRAF()
-    const viewport = useViewport()
+    const RAF = useRAF() // eslint-disable-line
+    const viewport = useViewport() // eslint-disable-line
 
     // clock
     this.clock = new THREE.Clock()
@@ -45,7 +43,7 @@ class WebGL {
       scene: this.scene
     })
     this.renderer.setSize(viewport.width, viewport.height)
-    this.renderer.setPixelRatio(window.devicePixelRatio || 1)
+    this.renderer.setPixelRatio(1)
 
     // events
     window.addEventListener("resize", this.onWindowResize.bind(this))
@@ -60,7 +58,7 @@ class WebGL {
   }
 
   get viewsize() {
-    const viewport = useViewport()
+    const viewport = useViewport() // eslint-disable-line
 
     let width, height
     if (this.camera.type === "PerspectiveCamera") {
@@ -77,7 +75,7 @@ class WebGL {
   }
 
   onWindowResize() {
-    const viewport = useViewport()
+    const viewport = useViewport() // eslint-disable-line
 
     this.renderer.setSize(viewport.width, viewport.height)
 
