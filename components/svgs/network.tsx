@@ -60,6 +60,8 @@ const NetworkSvg = ({ pushSx }: Props) => {
     )
     tl.to(dotInner, {
       duration: DURATION * 18,
+      immediateRender: true,
+      overwrite: true,
       ease: "none",
       motionPath: {
         path: ".path--inner",
@@ -74,6 +76,8 @@ const NetworkSvg = ({ pushSx }: Props) => {
       dotOuter,
       {
         duration: DURATION * 20,
+        immediateRender: true,
+        overwrite: true,
         ease: "none",
         motionPath: {
           path: ".path--outer",
@@ -96,6 +100,10 @@ const NetworkSvg = ({ pushSx }: Props) => {
       },
       "<"
     )
+
+    return () => {
+      tl.kill()
+    }
   }, [svgRef])
 
   return (

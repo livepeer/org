@@ -1,16 +1,16 @@
 import { gsap } from "gsap"
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin"
 import { MotionPathPlugin } from "gsap/MotionPathPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin"
 import { SplitText } from "gsap/SplitText"
+
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, DrawSVGPlugin, SplitText)
 
 const GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2
 const RECIPROCAL_GR = 1 / GOLDEN_RATIO
 const DURATION = RECIPROCAL_GR * 0.5
 
 const initGsap = () => {
-  gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText, MotionPathPlugin)
-
   gsap.registerEffect({
     name: "textEntrance",
     effect: (targets: gsap.TweenTarget, config: { duration: number }) => {
