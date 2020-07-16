@@ -28,7 +28,7 @@ const stats: StatProps[] = [
     title: "0.01ms",
     label: (
       <>
-        Avg.latency of <br />
+        Avg. latency of <br />
         transcoded renditions
       </>
     ),
