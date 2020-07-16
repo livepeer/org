@@ -60,7 +60,7 @@ const CroppedIllustrationHero = forwardRef(
         <Heading
           className={cn({ "h-animate": withAnimation })}
           variant="heading.1"
-          sx={{ mb: 4, color: titleColor }}
+          sx={{ fontSize: ["54px", "88px"], mb: 4, color: titleColor }}
         >
           {title}
         </Heading>
