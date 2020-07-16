@@ -4175,10 +4175,9 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.2.2
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-gsap@^3.4.0:
+gsap@./lib/animations/gsap-bonus.tgz:
   version "3.4.0"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.4.0.tgz#b1cec510b0dd30cbb115fb2bece37a3b86c9327d"
-  integrity sha512-b/GJjLIl9X5bPrlQ6ek7KV6ZPKP2HsKXr7HcuTEQe4725SkCTialLHnrhglxZISIg+zCRrQXawexRUeKZz5CjQ==
+  resolved "./lib/animations/gsap-bonus.tgz#383f71d6d6f759715edb5c2695f630e09db4abb2"
 
 has-ansi@^2.0.0:
   version "2.0.0"
