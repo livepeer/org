@@ -48,10 +48,10 @@ const SliderCard = ({
           }
         } else setIsTransitioning(false)
       }, intervalTime)
+    }
 
-      return () => {
-        clearInterval(timer.current)
-      }
+    return () => {
+      clearInterval(timer.current)
     }
   }, [isActive, nextSlide, isTransitioning])
 
@@ -71,6 +71,7 @@ const SliderCard = ({
         max={100}
         transitionDuration={!isActive ? "0" : `${intervalTime}ms`}
         pushSx={{ mb: [3, "40px"] }}
+        pushLineSx={{ willChange: "width" }}
       />
       <Box
         sx={{
