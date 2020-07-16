@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Card, Text, Heading, Flex, Button, Box } from "theme-ui"
-import { FiCheckCircle } from "react-icons/fi"
+import { FiArrowUpRight, FiCheckCircle } from "react-icons/fi"
 
 export type GetTokenCardProps = {
   title: string
@@ -61,6 +61,7 @@ const GetTokenCard = ({
         ))}
       </Box>
     </div>
+
     <Button
       variant={accent}
       onClick={cta.onClick}
@@ -76,6 +77,9 @@ const GetTokenCard = ({
       }}
     >
       {cta.label}
+      <i sx={{ ml: 2, fontSize: 4 }}>
+        <FiArrowUpRight />
+      </i>
     </Button>
   </Card>
 )

@@ -1,5 +1,6 @@
-import { Container, Heading, Text, Box, Button } from "theme-ui"
+import { Container, Heading, Text, Box, Link as A } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
+import Link from "next/link"
 
 const PrefooterFaqBanner = () => (
   <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: [0, "80px"] }}>
@@ -46,9 +47,12 @@ const PrefooterFaqBanner = () => (
             maxWidth: "md"
           }}
         >
-          Subscribe to our newsletter for updates in the Livepeer ecosystem
+          Discover the most frequently asked questions about participating in
+          the Livepeer network as a tokenholder.
         </Text>
-        <Button>Tokenholder FAQ</Button>
+        <Link href="/faq?filter=tokenholders" passHref>
+          <A variant="buttons.primary">Tokenholder FAQ</A>
+        </Link>
       </Box>
       <Box
         sx={{

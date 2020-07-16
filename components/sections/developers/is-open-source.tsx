@@ -7,25 +7,17 @@ import Link from "next/link"
 
 const stats: StatProps[] = [
   {
-    title: "4.20.17",
-    label: "Date founded"
+    title: "100+",
+    label: "Github Contributors"
   },
   {
-    title: "42,201",
-    label: (
-      <>
-        Total GPUs <br /> on the network
-      </>
-    ),
+    title: "1k+",
+    label: <>Stargazers</>,
     color: "gradient"
   },
   {
-    title: "600k",
-    label: (
-      <>
-        Current # of <br /> streams being transcoded
-      </>
-    )
+    title: "10",
+    label: <>Languages</>
   }
 ]
 
@@ -85,8 +77,8 @@ const IsOpenSourceSection = () => (
         </Heading>
         <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
         <Heading variant="section.subtitle" sx={{ color: "lightGray" }}>
-          Explore the code behind the Livepeer project. Sed ut perspiciatis unde
-          omnis iste natus error sit voluptats accusantium.
+          There are many opportunities for designers, software engineers and
+          enthusiasts to contribute to the Livepeer ecosystem.
         </Heading>
         <Divider isTransparent isVertical size={["32px", "40px"]} />
         <Link href="/code" passHref>

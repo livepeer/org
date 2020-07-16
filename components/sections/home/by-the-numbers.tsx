@@ -59,12 +59,12 @@ const ByTheNumbersSection = () => (
     title="Livepeer by the numbers"
     subtitle={
       <>
-        We’re proud our history and growth and worked hard to get here.
+        We’re proud of our history and growth and worked hard to get here.
         <br />
         Celebrate with us.
       </>
     }
-    titleLabel="Network Statistics"
+    titleLabel="Project Statistics"
     pushSx={{ pb: ["80px", null, null, "160px"] }}
   >
     <StatsGrid stats={stats} />

@@ -1,5 +1,7 @@
-import { Container, Box, Text, Heading, Button } from "theme-ui"
+/** @jsx jsx */
+import { jsx, Container, Box, Text, Heading, Button } from "theme-ui"
 import PrimerSvg from "components/svgs/primer"
+import { FiArrowUpRight } from "react-icons/fi"
 
 const PrimerBanner = () => (
   <Box sx={{ bg: "muted", px: 3, py: "80px" }}>
@@ -57,7 +59,12 @@ const PrimerBanner = () => (
           explains, at a high level, the problem Livepeer solves and how it
           works.
         </Text>
-        <Button sx={{ width: "fit-content" }}>Check it out</Button>
+        <Button sx={{ width: "fit-content" }}>
+          Check it out{" "}
+          <i sx={{ ml: 2, fontSize: 4 }}>
+            <FiArrowUpRight />
+          </i>
+        </Button>
       </Box>
       <Box
         sx={{

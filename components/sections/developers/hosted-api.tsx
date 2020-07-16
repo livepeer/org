@@ -8,17 +8,15 @@ const listItems: ListItemProps[] = [
   {
     icon: <FiCheckCircle />,
     children:
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+      "Affordable, scalable, high quality transcoding payable via Stripe"
   },
   {
     icon: <FiCheckCircle />,
-    children:
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+    children: "Easy to use APIs and simple docs so you can launch quickly"
   },
   {
     icon: <FiCheckCircle />,
-    children:
-      "At vero eos et accusamus et iusto odio digniss imos ducimus qui blanditiis praes."
+    children: "Recording, storage and CDN playback available out of the box"
   }
 ]
 
@@ -26,7 +24,7 @@ const HostedApiSection = () => (
   <SectionLayout
     titleLabel="Build with"
     title="Livepeer.com"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    subtitle="Full-stack live transcoding and VOD products enable companies and non-profits to launch video products quickly."
     background="muted"
     pushSx={{ pt: [6, null, "80px"] }}
     headingContainerPushSx={{
