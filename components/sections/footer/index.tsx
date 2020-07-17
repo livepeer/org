@@ -76,15 +76,24 @@ const lists: FooterListProps[] = [
   }
 ]
 
+type Prefooter =
+  | {
+      type: "subscribe"
+    }
+  | { type: "faqs"; cta?: { label: string; href: string; asPath?: string } }
+
 export type FooterProps = {
   isDark?: boolean
-  prefooter?: "subscribe" | "faqs"
+  prefooter?: Prefooter
 }
 
-const Footer = ({ isDark = false, prefooter = "subscribe" }: FooterProps) => (
+const Footer = ({
+  isDark = false,
+  prefooter = { type: "subscribe" }
+}: FooterProps) => (
   <Box as="footer" bg={isDark ? "text" : "background"}>
-    {prefooter === "subscribe" && <PrefooterBanner />}
-    {prefooter === "faqs" && <PrefooterFaqBanner />}
+    {prefooter?.type === "subscribe" && <PrefooterBanner />}
+    {prefooter?.type === "faqs" && <PrefooterFaqBanner cta={prefooter.cta} />}
     <Box sx={{ bg: "text", color: "background" }}>
       <Container sx={{ pt: [prefooter ? 6 : 5, 5], pb: 4 }}>
         <LogoAndEmail

@@ -6,7 +6,14 @@ import GetTokenSection from "components/sections/tokenholders/get-token"
 import TokenholderStatsSection from "components/sections/tokenholders/tokenholder-stats"
 
 const TokenholdersPage = () => (
-  <PageLayout footerProps={{ prefooter: "faqs" }}>
+  <PageLayout
+    footerProps={{
+      prefooter: {
+        type: "faqs",
+        cta: { label: "Tokenholder FAQ", href: "/faq?filter=tokenholders" }
+      }
+    }}
+  >
     <CroppedIllustrationHero
       withAnimation
       title="Tokenholders"

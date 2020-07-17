@@ -231,7 +231,7 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500,
+      fontWeight: 600,
       transition: "background .15s",
       "&:hover": {
         bg: "gradient.to"
@@ -252,7 +252,7 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500,
+      fontWeight: 600,
       transition: "background .15s",
       "&:hover": {
         bg: "#6565FC"
@@ -273,7 +273,7 @@ const theme = {
       px: 4,
       height: 12,
       variant: "text.default",
-      fontWeight: 500,
+      fontWeight: 600,
       transition: "opacity .15s",
       "&:hover": {
         opacity: 0.82
