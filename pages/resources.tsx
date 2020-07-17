@@ -5,7 +5,10 @@ import ResourcesHeroSvg from "components/svgs/resources-hero"
 import ResourcesDirectory from "components/sections/resources"
 
 const ResourcesPage = () => (
-  <PageLayout navProps={{ background: "muted" }}>
+  <PageLayout
+    navProps={{ background: "muted" }}
+    footerProps={{ prefooter: { type: "faqs" } }}
+  >
     <IconHero
       icon={<FiBook />}
       title="Resources"

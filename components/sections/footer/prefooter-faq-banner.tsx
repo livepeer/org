@@ -2,7 +2,11 @@ import { Container, Heading, Text, Box, Link as A } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
 import Link from "next/link"
 
-const PrefooterFaqBanner = () => (
+const PrefooterFaqBanner = ({
+  cta = { label: "FAQ", href: "/faq" }
+}: {
+  cta?: { label: string; href: string; asPath?: string }
+}) => (
   <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: [0, "80px"] }}>
     <Container
       sx={{
@@ -50,8 +54,8 @@ const PrefooterFaqBanner = () => (
           Discover the most frequently asked questions about participating in
           the Livepeer network as a tokenholder.
         </Text>
-        <Link href="/faq?filter=tokenholders" passHref>
-          <A variant="buttons.primary">Tokenholder FAQ</A>
+        <Link href={cta.href} as={cta.asPath} passHref>
+          <A variant="buttons.primary">{cta.label}</A>
         </Link>
       </Box>
       <Box
