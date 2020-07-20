@@ -3,9 +3,6 @@ import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
 import { useMailchimp } from "react-use-mailchimp"
 
-const url =
-  "https://livepeer.us16.list-manage.com/subscribe/post-json?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5"
-
 const PrefooterBanner = () => {
   const [mailchimp, subscribe] = useMailchimp({
     url:
