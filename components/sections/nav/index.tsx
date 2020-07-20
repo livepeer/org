@@ -25,6 +25,10 @@ type LinkType = {
 
 const links: LinkType[] = [
   {
+    label: "About",
+    href: "/about"
+  },
+  {
     label: "Participants",
     href: "/participants"
   },
@@ -39,11 +43,6 @@ const links: LinkType[] = [
   {
     label: "Blog",
     href: "https://medium.com/livepeer-blog",
-    isExternal: true
-  },
-  {
-    label: "Enterprise",
-    href: "https://livepeer.com",
     isExternal: true
   }
 ]

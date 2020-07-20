@@ -8,13 +8,12 @@ import { FiArrowUpRight } from "react-icons/fi"
 
 const cards: StatusCardProps[] = [
   {
-    title: "Livepeer Media Server",
-    description:
-      "A golang developer library to enable video ingest, transcoding, streaming, and many other video related features.",
+    title: "Go Livepeer",
+    description: "Official Go implementation of the Livepeer protocol",
     linkProps: {
       link: {
-        label: "/lms",
-        href: "https://github.com/livepeer/lpms",
+        label: "/go-livepeer",
+        href: "https://github.com/livepeer/go-livepeer",
         isExternal: true
       },
       status: "Go"
@@ -22,27 +21,26 @@ const cards: StatusCardProps[] = [
     isClickable: true
   },
   {
-    title: "Livepeer.js",
-    description:
-      "A suite of tools for Javascript developers to build video enabled applications, including SDKs for the Livepeer protocol, UI components, and more.",
+    title: "Protocol",
+    description: "Ethereum smart contracts used for the Livepeer protocol.",
     linkProps: {
       link: {
-        label: "/livepeerjs",
-        href: "https://github.com/livepeer/livepeerjs",
+        label: "/protocol",
+        href: "https://github.com/livepeer/protocol",
         isExternal: true
       },
-      status: "JavaScript"
+      status: "Solidity"
     },
     isClickable: true
   },
   {
-    title: "Stream-tester",
+    title: "Livepeer Media Server",
     description:
-      "Stream tester is a tool to measure performance and stability of Livepeer transcoding network",
+      "A golang developer library to enable video ingest, transcoding, streaming, and many other video related features.",
     linkProps: {
       link: {
-        label: "/stream-tester",
-        href: "https://github.com/stream-tester",
+        label: "/lpms",
+        href: "https://github.com/livepeer/lpms",
         isExternal: true
       },
       status: "Go"

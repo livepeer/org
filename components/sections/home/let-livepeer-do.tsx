@@ -8,7 +8,7 @@ const cards: IconCardProps[] = [
     icon: <FiUserCheck />,
     title: "Participants",
     description:
-      "Join thousands of participants and LPT tokenholders enabling affordable video streaming at scale in exchange for fees. Provide GPU hardware infrastructure, contribute code, or delegate work with LPT.",
+      "Join thousands of participants and LPT tokenholders enabling affordable video streaming at scale. Earn fees by providing GPU hardware infrastructure or delegating work with LPT.",
     linkProps: { link: { label: "/participants", href: "/participants" } },
     isClickable: true
   },
@@ -16,7 +16,7 @@ const cards: IconCardProps[] = [
     icon: <FiCode />,
     title: "Developers",
     description:
-      "Discover APIs, guides, resources, and tools for adding live or on-demand video to your project using the Livepeer public network.",
+      "Discover APIs, guides, resources, and tools for adding live video to your project using the Livepeer public network or a hosted API.",
     linkProps: { link: { label: "/developers", href: "/developers" } },
     isClickable: true
   },
@@ -24,7 +24,7 @@ const cards: IconCardProps[] = [
     icon: <FiBriefcase />,
     title: "Enterprise",
     description:
-      "Get access to a hosted, enterprise-grade live and VOD video product offering instant, scaled and reliable access to the Livepeer network.",
+      "Get access to a hosted, enterprise-grade live video product for instant, scaled and reliable access to the Livepeer network.",
     linkProps: {
       link: {
         label: "livepeer.com",

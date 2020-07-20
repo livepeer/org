@@ -65,7 +65,7 @@ const JumpInSlider = () => {
     {
       title: "Infrastructure operators",
       description:
-        "Transcode video on your infrastructure as an infrastructure operator in exchange for ETH and LPT rewards.",
+        "Run a livepeer node to transcode video on your GPUs in exchange for ETH and LPT rewards.",
       linkProps: {
         link: {
           label: "/infrastructure",
@@ -81,8 +81,8 @@ const JumpInSlider = () => {
         "Help contribute to Livepeer’s open source technology projects as a developer or contributor.",
       linkProps: {
         link: {
-          label: "/code",
-          href: "/code"
+          label: "/oss",
+          href: "/oss"
         },
         isDark: true
       },

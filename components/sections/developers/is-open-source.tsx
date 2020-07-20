@@ -81,8 +81,8 @@ const IsOpenSourceSection = () => (
           enthusiasts to contribute to the Livepeer ecosystem.
         </Heading>
         <Divider isTransparent isVertical size={["32px", "40px"]} />
-        <Link href="/code" passHref>
-          <A variant="buttons.primary" href="/code">
+        <Link href="/oss" passHref>
+          <A variant="buttons.primary" href="/oss">
             Explore the code
           </A>
         </Link>

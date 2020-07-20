@@ -5,14 +5,13 @@ import {
   GetTokenSvg,
   StakeTokenSvg
 } from "components/svgs/tokenholder-card-headers"
-import Router from "next/router"
 
 const cards: GetTokenCardProps[] = [
   {
     titleLabel: "Get",
     title: "Livepeer Token",
     listItems: [
-      "ERC-20-compatible token available on a number of non-custodial and custodial exchanges",
+      "ERC-20 token available on a number of non-custodial and custodial exchanges",
       "Originally distributed via a “Merkle Mine”, an algorithm for decentralized distribution of token during the genesis state",
       "Inflationary  according to algorithmically programmed issuance over time"
     ],
