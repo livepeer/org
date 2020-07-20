@@ -69,7 +69,7 @@ const StatusLink = ({
   if (link.isExternal) {
     return (
       <A
-        variant="coloured"
+        variant="accent"
         data-dark={isDark}
         href={link.href}
         target="_blank"
@@ -84,7 +84,7 @@ const StatusLink = ({
   return (
     <Link href={link.href} as={link.asPath} passHref>
       <A
-        variant="coloured"
+        variant="accent"
         data-dark={isDark}
         sx={linkSx}
         as={as}

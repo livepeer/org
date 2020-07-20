@@ -28,7 +28,9 @@ const ListItem: React.FC<ListItemProps> = ({
     >
       {icon}
     </i>
-    <Text variant="normal">{children}</Text>
+    <Text variant="normal" sx={{ maxWidth: "35ch" }}>
+      {children}
+    </Text>
   </Box>
 )
 

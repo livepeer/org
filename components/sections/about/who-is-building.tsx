@@ -35,7 +35,7 @@ const WhoIsBuildingSection = () => (
           href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
         >
           path to decentralization
         </A>
@@ -82,7 +82,7 @@ const WhoIsBuildingSection = () => (
         href="https://angel.co/company/livepeer/jobs"
         target="_blank"
         rel="noopener noreferrer"
-        variant="coloured"
+        variant="accent"
         sx={{ variant: "layout.flexCenter", display: "inline-flex" }}
       >
         View its open positions <FiArrowUpRight />

@@ -48,7 +48,7 @@ const PrefooterFaqBanner = ({
             mb: "40px",
             textAlign: ["center", null, null, "left"],
             color: "lightGray",
-            maxWidth: "md"
+            maxWidth: "30ch"
           }}
         >
           Discover the most frequently asked questions about Livepeer.

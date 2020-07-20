@@ -35,8 +35,13 @@ const TopNotification = forwardRef(
       {description && <Text sx={{ display: "inline" }}>{description}</Text>}
       {link.isExternal ? (
         <A
-          variant="coloured"
-          sx={{ display: "inline-flex", alignItems: "center", ml: 2 }}
+          variant="accent"
+          sx={{
+            display: "inline-flex",
+            cursor: "pointer",
+            alignItems: "center",
+            ml: 2
+          }}
           href={link.href}
           data-dark
         >
@@ -48,8 +53,13 @@ const TopNotification = forwardRef(
       ) : (
         <Link href={link.href} as={link.asPath}>
           <A
-            variant="coloured"
-            sx={{ display: "inline-flex", alignItems: "center", ml: 2 }}
+            variant="accent"
+            sx={{
+              display: "inline-flex",
+              cursor: "pointer",
+              alignItems: "center",
+              ml: 2
+            }}
             data-dark
           >
             {link.label}

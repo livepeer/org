@@ -327,7 +327,7 @@ const theme = {
         }
       }
     },
-    coloured: {
+    accent: {
       color: "secondary",
       fontWeight: 600,
       ":hover": {

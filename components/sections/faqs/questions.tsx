@@ -36,12 +36,12 @@ const categories: Category[] = [
 
 const AnswerLink: React.FC<LinkProps> = ({ label, href, asPath, isExternal }) =>
   isExternal ? (
-    <A variant="coloured" sx={{ fontWeight: 400 }} href={href} target="_blank">
+    <A variant="accent" sx={{ fontWeight: 400 }} href={href} target="_blank">
       {label}
     </A>
   ) : (
     <Link href={href} as={asPath}>
-      <A variant="coloured" sx={{ fontWeight: 400 }}>
+      <A variant="accent" sx={{ fontWeight: 400 }}>
         {label}
       </A>
     </Link>

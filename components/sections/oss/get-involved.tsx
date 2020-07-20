@@ -24,7 +24,7 @@ const listItems: ListItemProps[] = [
           href="https://github.com/livepeer/livepeerjs/blob/master/CONTRIBUTING.md"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           Livepeer.js
@@ -42,7 +42,7 @@ const listItems: ListItemProps[] = [
           href="https://github.com/livepeer/livepeerjs"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           Livepeer.js
@@ -52,7 +52,7 @@ const listItems: ListItemProps[] = [
           href="https://github.com/livepeer/lpms"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           LPMS
@@ -62,7 +62,7 @@ const listItems: ListItemProps[] = [
           href="https://github.com/livepeer/go-livepeer"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           Go-Livepeer
@@ -80,7 +80,7 @@ const listItems: ListItemProps[] = [
           href="https://github.com/livepeer/Grant-Program"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           Grant Proposals
@@ -98,7 +98,7 @@ const listItems: ListItemProps[] = [
           href="https://discord.com/invite/RR4kFAh"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           Discord
@@ -117,17 +117,17 @@ const listItems: ListItemProps[] = [
           href="https://livepeer.readthedocs.io/en/latest/"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           developer docs
         </A>{" "}
-        or enterprise hosted services at{" "}
+        or enterprise hosted services <br /> at{" "}
         <A
           href="https://livepeer.com"
           target="_blank"
           rel="noopener noreferrer"
-          variant="coloured"
+          variant="accent"
           data-dark
         >
           livepeer.com

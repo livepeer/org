@@ -11,15 +11,15 @@ const steps: HowToGetStartedStepProps[] = [
   {
     children: (
       <>
-        Read <A variant="coloured">this tutorial</A>
+        Read <A variant="accent">this tutorial</A>
       </>
     )
   },
   {
     children: (
       <>
-        View the <A variant="coloured">node operation docs</A> and the{" "}
-        <A variant="coloured">GPU scaling docs</A>.
+        View the <A variant="accent">node operation docs</A> and the{" "}
+        <A variant="accent">GPU scaling docs</A>.
       </>
     )
   },
@@ -27,16 +27,15 @@ const steps: HowToGetStartedStepProps[] = [
     children: (
       <>
         Reach out to the Livepeer team and community in the{" "}
-        <A variant="coloured">Discord chat room</A>, #transcoding channel.
-        Initial testing and setup can require some DevOps, so we are happy to
-        help.
+        <A variant="accent">Discord chat room</A>, #transcoding channel. Initial
+        testing and setup can require some DevOps, so we are happy to help.
       </>
     )
   },
   {
     children: (
       <>
-        Review the <A variant="coloured">node operation FAQ</A>.
+        Review the <A variant="accent">node operation FAQ</A>.
       </>
     )
   }
