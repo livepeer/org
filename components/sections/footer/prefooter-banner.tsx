@@ -1,8 +1,30 @@
-import React, { useRef, useEffect } from "react"
+import { useForm } from "react-hook-form"
+import axios from "axios"
 import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
 
 const PrefooterBanner = () => {
+  const { register, handleSubmit, reset } = useForm()
+  const onSubmit = (data) => {
+    const { BOT, EMAIL } = data
+    if (BOT) {
+      alert("Please don't do it")
+    } else {
+      axios
+        .post(
+          "https://livepeer.us16.list-manage.com/subscribe/post?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5",
+          EMAIL
+        )
+        .then((res) => {
+          if (res.status === 200) {
+            reset()
+          } else {
+            console.log("There's an error on the API, BRB")
+          }
+        })
+    }
+  }
+
   return (
     <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: ["-122px", "80px"] }}>
       <Container
@@ -16,53 +38,66 @@ const PrefooterBanner = () => {
           boxShadow: "magical"
         }}
       >
-        <Box
-          sx={{
-            maxWidth: "lg",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: ["center", null, null, "flex-start"],
-            mx: ["auto", null, null, 0],
-            zIndex: "general"
-          }}
-        >
-          <Heading
-            variant="heading.3"
-            sx={{ textAlign: ["center", null, null, "left"] }}
-          >
-            Stay Informed
-          </Heading>
-          <Text
-            variant="normal"
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="checkbox"
+            name="BOT"
+            ref={register}
+            style={{ opacity: 0, position: "absolute", left: "-9999px" }}
+          />
+          <Box
             sx={{
-              mt: "18px",
-              mb: "40px",
-              textAlign: ["center", null, null, "left"]
-            }}
-          >
-            Subscribe to our newsletter and get updates from the Livepeer
-            ecosystem straight to your Inbox.
-          </Text>
-          <Flex
-            sx={{
-              width: "100%",
-              flexWrap: "wrap",
-              mx: [-1, 0],
+              maxWidth: "lg",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: ["center", null, null, "flex-start"],
+              mx: ["auto", null, null, 0],
               zIndex: "general"
             }}
           >
-            <Input
-              placeholder="Enter your email address"
-              sx={{ mx: 1, flex: "1 1 60%", mb: 2 }}
-            />
-            <Button
-              variant="neutral"
-              sx={{ minWidth: "fit-content", flex: "1 1", mx: 1 }}
+            <Heading
+              variant="heading.3"
+              sx={{ textAlign: ["center", null, null, "left"] }}
             >
-              Subscribe
-            </Button>
-          </Flex>
-        </Box>
+              Stay Informed
+            </Heading>
+
+            <Text
+              variant="normal"
+              sx={{
+                mt: "18px",
+                mb: "40px",
+                textAlign: ["center", null, null, "left"]
+              }}
+            >
+              Subscribe to our newsletter and get updates from the Livepeer
+              ecosystem straight to your Inbox.
+            </Text>
+            <Flex
+              sx={{
+                width: "100%",
+                flexWrap: "wrap",
+                mx: [-1, 0],
+                zIndex: "general"
+              }}
+            >
+              <Input
+                ref={register}
+                name="EMAIL"
+                type="email"
+                placeholder="Enter your email address"
+                sx={{ mx: 1, flex: "1 1 60%", mb: 2 }}
+              />
+              <Button
+                variant="neutral"
+                type="submit"
+                sx={{ minWidth: "fit-content", flex: "1 1", mx: 1 }}
+              >
+                Subscribe
+              </Button>
+            </Flex>
+          </Box>
+        </form>
         <Box
           sx={{
             position: "absolute",
