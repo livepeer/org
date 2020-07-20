@@ -28,17 +28,9 @@ const WhoIsBuildingSection = () => (
     background="muted"
     subtitle={
       <>
-        In 2017, the founders of the Livepeer project formed a company called{" "}
-        <A
-          href="https://livepeer.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="coloured"
-        >
-          Livepeer Inc
-        </A>{" "}
-        to help facilitate its early development, bootstrap the network’s supply
-        and demand sides, and guide the project’s{" "}
+        In 2017, the founders of the Livepeer project formed a company called
+        Livepeer Inc to help facilitate its early development, bootstrap the
+        network’s supply and demand sides, and guide the project’s{" "}
         <A
           href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532"
           target="_blank"
@@ -58,7 +50,7 @@ const WhoIsBuildingSection = () => (
     }}
   >
     <A
-      href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532"
+      href="https://livepeer.com/team"
       target="_blank"
       rel="noopener noreferrer"
       variant="buttons.primary"

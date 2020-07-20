@@ -24,7 +24,7 @@ const HostedApiSection = () => (
   <SectionLayout
     titleLabel="Build with"
     title="Livepeer.com"
-    subtitle="Full-stack live transcoding and VOD products enable companies and non-profits to launch video products quickly."
+    subtitle="Hosted streaming products to enable companies and non-profits to launch video platforms quickly, without the complexities of crypto or blockchain."
     background="muted"
     pushSx={{ pt: [6, null, "80px"] }}
     headingContainerPushSx={{

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box } from "theme-ui"
-import OpenSourceSection from "components/sections/code/open-source"
-import GetInvolvedSection from "components/sections/code/get-involved"
+import OpenSourceSection from "components/sections/oss/open-source"
+import GetInvolvedSection from "components/sections/oss/get-involved"
 import PageLayout from "components/layouts/page"
 import IconHero from "components/layouts/icon-hero"
 import { FiHeart } from "react-icons/fi"

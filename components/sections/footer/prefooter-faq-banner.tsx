@@ -3,7 +3,7 @@ import PrefooterSvg from "components/svgs/prefooter"
 import Link from "next/link"
 
 const PrefooterFaqBanner = ({
-  cta = { label: "FAQ", href: "/faq" }
+  cta = { label: "View FAQ", href: "/faq" }
 }: {
   cta?: { label: string; href: string; asPath?: string }
 }) => (
@@ -51,8 +51,7 @@ const PrefooterFaqBanner = ({
             maxWidth: "md"
           }}
         >
-          Discover the most frequently asked questions about participating in
-          the Livepeer network as a tokenholder.
+          Discover the most frequently asked questions about Livepeer.
         </Text>
         <Link href={cta.href} as={cta.asPath} passHref>
           <A variant="buttons.primary">{cta.label}</A>

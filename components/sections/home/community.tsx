@@ -13,16 +13,6 @@ import Divider from "components/primitives/divider"
 
 const links: IconLinkProps[] = [
   {
-    icon: <FaDiscourse />,
-    label: (
-      <>
-        Join Livepeer on&nbsp;<b>Discourse</b>
-      </>
-    ),
-    href: "https://forum.livepeer.org/",
-    isExternal: true
-  },
-  {
     icon: <FaDiscord />,
     label: (
       <>
@@ -30,6 +20,16 @@ const links: IconLinkProps[] = [
       </>
     ),
     href: "https://discord.com/invite/RR4kFAh",
+    isExternal: true
+  },
+  {
+    icon: <FaReddit />,
+    label: (
+      <>
+        reddit.com/r/<b>livepeer</b>
+      </>
+    ),
+    href: "https://www.reddit.com/r/livepeer/",
     isExternal: true
   },
   {
@@ -43,15 +43,16 @@ const links: IconLinkProps[] = [
     isExternal: true
   },
   {
-    icon: <FaReddit />,
+    icon: <FaDiscourse />,
     label: (
       <>
-        Read our subreddits on&nbsp;<b>Reddit</b>
+        Join our forum on&nbsp;<b>Discourse</b>
       </>
     ),
-    href: "https://www.reddit.com/r/livepeer/",
+    href: "https://forum.livepeer.org/",
     isExternal: true
   },
+
   {
     icon: <FaTelegram />,
     label: (
@@ -66,10 +67,10 @@ const links: IconLinkProps[] = [
     icon: <FaMedium />,
     label: (
       <>
-        medium.com/<b>livepeer</b>
+        medium.com/<b>livepeer-blog</b>
       </>
     ),
-    href: "https://medium.com/livepeer",
+    href: "https://medium.com/livepeer-blog",
     isExternal: true
   }
 ]
