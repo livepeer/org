@@ -6,7 +6,8 @@ const withTM = require("next-transpile-modules")([
   "gsap/DrawSVGPlugin",
   "gsap/MotionPathPlugin",
   "gsap/ScrollTrigger",
-  "gsap/SplitText"
+  "gsap/SplitText",
+  "react-use-mailchimp"
 ])
 
 module.exports = withPlugins([

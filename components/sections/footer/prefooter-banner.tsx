@@ -1,11 +1,19 @@
 import { useForm } from "react-hook-form"
 import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
+import { useMailchimp } from "react-use-mailchimp"
 
 const url =
   "https://livepeer.us16.list-manage.com/subscribe/post-json?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5"
 
 const PrefooterBanner = () => {
+  const [mailchimp, subscribe] = useMailchimp({
+    url:
+      "https://livepeer.us16.list-manage.com/subscribe/post?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5"
+  })
+
+  const { loading, error, data } = mailchimp
+
   const { register, handleSubmit, reset } = useForm()
 
   const onSubmit = (data) => {
@@ -13,16 +21,7 @@ const PrefooterBanner = () => {
     if (BOT) {
       alert("Please don't do it")
     } else {
-      fetch(url, {
-        method: "POST",
-        body: EMAIL
-      })
-        .then((res) => {
-          if (res.status === 200) {
-            reset()
-          }
-        })
-        .catch((error) => console.error(error))
+      subscribe({ EMAIL })
     }
   }
 
