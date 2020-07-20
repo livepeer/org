@@ -12,7 +12,7 @@ const PrefooterBanner = () => {
     } else {
       axios
         .post(
-          "https://livepeer.us16.list-manage.com/subscribe/post?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5",
+          "https://livepeer.us16.list-manage.com/subscribe/post-json?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5",
           EMAIL
         )
         .then((res) => {
