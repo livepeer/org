@@ -1,27 +1,28 @@
 import { useForm } from "react-hook-form"
-import axios from "axios"
 import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
 import PrefooterSvg from "components/svgs/prefooter"
 
+const url =
+  "https://livepeer.us16.list-manage.com/subscribe/post-json?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5"
+
 const PrefooterBanner = () => {
   const { register, handleSubmit, reset } = useForm()
+
   const onSubmit = (data) => {
     const { BOT, EMAIL } = data
     if (BOT) {
       alert("Please don't do it")
     } else {
-      axios
-        .post(
-          "https://livepeer.us16.list-manage.com/subscribe/post-json?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5",
-          EMAIL
-        )
+      fetch(url, {
+        method: "POST",
+        body: EMAIL
+      })
         .then((res) => {
           if (res.status === 200) {
             reset()
-          } else {
-            console.log("There's an error on the API, BRB")
           }
         })
+        .catch((error) => console.error(error))
     }
   }
 
