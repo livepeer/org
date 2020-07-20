@@ -92,7 +92,7 @@ const MissionSection = () => {
               href="https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md"
               target="_blank"
               rel="noopener noreferrer"
-              variant="coloured"
+              variant="accent"
               data-dark
             >
               whitepaper
@@ -102,7 +102,7 @@ const MissionSection = () => {
               href="https://github.com/livepeer/wiki/blob/master/GOVERNANCE-FOUNDERS-STATEMENT.md"
               target="_blank"
               rel="noopener noreferrer"
-              variant="coloured"
+              variant="accent"
               data-dark
             >
               founder’s statement

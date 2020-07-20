@@ -170,7 +170,7 @@ const PrivacyPolicyPage = () => (
               works. You can find out more information about Google Analytics
               Cookies here:{" "}
               <A
-                variant="coloured"
+                variant="accent"
                 href="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies"
               >
                 https://developers.google.com/analytics/resources/concepts/gaConceptsCookies
@@ -181,7 +181,7 @@ const PrivacyPolicyPage = () => (
               downloading and installing the browser plugin available via this
               link:{" "}
               <A
-                variant="coloured"
+                variant="accent"
                 href="http://tools.google.com/dlpage/gaoptout?hl=en-GB"
               >
                 http://tools.google.com/dlpage/gaoptout?hl=en-GB

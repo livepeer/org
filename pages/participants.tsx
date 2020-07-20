@@ -11,8 +11,13 @@ const ParticipantsPage = () => (
     <IconHero
       icon={<FiUserCheck />}
       title="Participants"
-      subtitle="Join thousands of participants enabling video streaming at scale on
-            the open, blockchain based network."
+      subtitle={
+        <>
+          Join thousands of participants enabling video streaming at scale on
+          the open, <br />
+          blockchain based network.
+        </>
+      }
       illustration={<ParticipantsSvg />}
       withAnimation
     />
