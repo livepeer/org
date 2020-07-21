@@ -110,7 +110,11 @@ const AccordionItem = ({
             variant="heading.5"
             sx={{
               color: isToggled ? "secondary" : "text",
-              textAlign: "left"
+              textAlign: "left",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              fontWeight: 600
             }}
           >
             {heading.title}
@@ -129,7 +133,7 @@ const AccordionItem = ({
         </IconButton>
       </Flex>
       <Box
-        sx={{ pt: [2, 4], visibility: isToggled ? "visible" : "hidden" }}
+        sx={{ pt: 4, visibility: isToggled ? "visible" : "hidden" }}
         ref={childrenRef}
       >
         {children}
