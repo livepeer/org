@@ -28,7 +28,7 @@ const Maintainer = ({
         }}
       />
       <Box>
-        <Text variant="normal" sx={{ color: "text" }}>
+        <Text variant="normal" sx={{ color: "text", fontWeight: 500 }}>
           {name}
         </Text>
         <Text variant="normal" sx={{ color: "lightGray" }}>
