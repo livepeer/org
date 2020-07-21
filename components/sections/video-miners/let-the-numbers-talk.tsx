@@ -7,7 +7,7 @@ const stats: StatProps[] = [
     title: "45",
     label: (
       <>
-        Total active <br /> infrastructure operators
+        Total active <br /> nodes
       </>
     )
   },

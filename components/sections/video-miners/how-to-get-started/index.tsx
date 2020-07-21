@@ -60,7 +60,7 @@ const HowToGetStartedSection = () => (
           variant="section.subtitle"
           sx={{ textAlign: ["center", null, "left"] }}
         >
-          Become an infrastructure operator in four steps.
+          Become a video miner in four steps.
         </Heading>
       </Box>
       <Box

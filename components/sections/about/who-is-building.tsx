@@ -56,7 +56,7 @@ const WhoIsBuildingSection = () => (
       variant="buttons.primary"
       sx={{ display: "flex" }}
     >
-      Meet the Team Behind Livepeer Inc.{" "}
+      Meet Livepeer Inc.{" "}
       <i sx={{ ml: 2, fontSize: 4 }}>
         <FiArrowUpRight />
       </i>

@@ -29,21 +29,20 @@ const links: LinkType[] = [
     href: "/about"
   },
   {
-    label: "Participants",
-    href: "/participants"
-  },
-  {
     label: "Developers",
     href: "/developers"
   },
   {
-    label: "Resources",
-    href: "/resources"
+    label: "Tokenholders",
+    href: "/tokenholders"
   },
   {
-    label: "Blog",
-    href: "https://medium.com/livepeer-blog",
-    isExternal: true
+    label: "Video Miners",
+    href: "/video-miners"
+  },
+  {
+    label: "Resources",
+    href: "/resources"
   }
 ]
 

@@ -64,13 +64,13 @@ const MobileJumpInSlider = () => {
       isActive: true
     },
     {
-      title: "Infrastructure operators",
+      title: "Video Miners",
       description:
-        "Transcode video on your infrastructure as an infrastructure operator in exchange for ETH and LPT rewards.",
+        "Transcode video on your infrastructure as a video miner in exchange for ETH and LPT rewards.",
       linkProps: {
         link: {
-          label: "/infrastructure",
-          href: "/infrastructure"
+          label: "/video-miners",
+          href: "/video-miners"
         },
         isDark: true
       },
