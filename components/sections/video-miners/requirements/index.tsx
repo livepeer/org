@@ -32,7 +32,7 @@ const RequirementsSection = () => (
   <SectionLayout
     title="Requirements"
     background="dark"
-    subtitle="To become an infrastructure operator, you must have the following:"
+    subtitle="To become a video miner you must have the following:"
     pushSx={{ py: ["80px", null, null, "160px"] }}
   >
     <Grid

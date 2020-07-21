@@ -10,7 +10,7 @@ const lists: FooterListProps[] = [
     title: "Participants",
     items: [
       { label: "Tokenholders", href: "/tokenholders" },
-      { label: "Infrastructure Operators", href: "/infrastructure" },
+      { label: "Video Miners", href: "/video-miners" },
       {
         label: "Protocol Explorer",
         href: "https://explorer.livepeer.org/",
@@ -31,8 +31,8 @@ const lists: FooterListProps[] = [
         href: "https://livepeer.readthedocs.io/",
         isExternal: true
       },
-      { label: "OSS", href: "/oss" },
-      { label: "Livepeer.com", href: "https://livepeer.com", isExternal: true }
+      { label: "Livepeer.com", href: "https://livepeer.com", isExternal: true },
+      { label: "Open Source Software", href: "/oss" }
     ]
   },
   {

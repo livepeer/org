@@ -25,8 +25,8 @@ const categories: Category[] = [
     value: "tokenholders"
   },
   {
-    label: "Infrastructure Operators",
-    value: "infrastructure"
+    label: "Video Miners",
+    value: "video-miners"
   },
   {
     label: "Lexicon",

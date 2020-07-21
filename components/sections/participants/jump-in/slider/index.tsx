@@ -63,13 +63,13 @@ const JumpInSlider = () => {
       isActive: true
     },
     {
-      title: "Infrastructure operators",
+      title: "Video Miners",
       description:
         "Run a livepeer node to transcode video on your GPUs in exchange for ETH and LPT rewards.",
       linkProps: {
         link: {
-          label: "/infrastructure",
-          href: "/infrastructure"
+          label: "/video-miners",
+          href: "/video-miners"
         },
         isDark: true
       },
