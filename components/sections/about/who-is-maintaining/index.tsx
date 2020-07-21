@@ -89,8 +89,8 @@ const WhoIsMaintainingSection = () => (
       Anyone is welcome and encouraged to help improve the site on{" "}
       <A
         href="http://github.com/livepeer/livepeer.org"
-        sx={{ color: "secondary" }}
         target="_blank"
+        variant="accent"
       >
         GitHub
       </A>{" "}
