@@ -3,4 +3,5 @@ node_modules
 .next
 .now
 .vercel
+yarn-error.log
 .env.local
