@@ -43,7 +43,7 @@ const cards: ImageCardProps[] = [
 
 const HaveACallSection = ({ youtubeVideos }) => (
   <SectionLayout
-    title="Let's Have a Call"
+    title="Join our call"
     subtitle={
       <>
         Every month, our community catches up with each other virtually. We hear
