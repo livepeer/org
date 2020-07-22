@@ -44,38 +44,6 @@ const posts: Post[] = [
     }
   },
   {
-    title: "The Livepeer Whitepaper (FRA Translation)",
-    description:
-      "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network",
-    subtitle: "Translation by Gareth Mensah",
-    link: {
-      href:
-        "https://github.com/GreyEcologist/wiki/blob/feature/french_translation/WHITEPAPER_FRENCH.md",
-      isExternal: true
-    },
-    category: categories[0],
-    image: {
-      src: "/images/posts/post-cover-2.png",
-      alt: "Resource cover image"
-    }
-  },
-  {
-    title: "The Livepeer Whitepaper (RUS Translation)",
-    description:
-      "Protocol and Economic Incentives For a Decentralized Live Video Streaming Network",
-    subtitle: "Translation by Fedorello",
-    link: {
-      href:
-        "https://github.com/fedorello/wiki/blob/fedorello-patch-1/WHITEPAPER.md",
-      isExternal: true
-    },
-    category: categories[0],
-    image: {
-      src: "/images/posts/post-cover-3.png",
-      alt: "Resource cover image"
-    }
-  },
-  {
     title: "The Livepeer Streamflow Paper",
     description:
       "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
@@ -87,21 +55,6 @@ const posts: Post[] = [
     category: categories[0],
     image: {
       src: "/images/posts/post-cover-4.png",
-      alt: "Resource cover image"
-    }
-  },
-  {
-    title: "The Livepeer Streamflow Paper (POR Translation)",
-    description:
-      "Livepeer Scalability on Ethereum through Orchestration, Probabilistic Micropayments, and Offchain Job Negotiation",
-    subtitle: "Translation by Felipe Gaúcho",
-    link: {
-      href: "https://github.com/felipegaucho/wiki-1/blob/master/STREAMFLOW.md",
-      isExternal: true
-    },
-    category: categories[0],
-    image: {
-      src: "/images/posts/post-cover-5.png",
       alt: "Resource cover image"
     }
   },
