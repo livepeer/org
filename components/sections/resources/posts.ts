@@ -167,7 +167,11 @@ const posts: Post[] = [
   {
     title: "Balancer",
     subtitle: "Non-custodial exchange",
-    link: { href: "https://balancer.exchange", isExternal: true },
+    link: {
+      href:
+        "https://balancer.exchange/#/swap/0x58b6a8a3302369daec383334672404ee733ab239",
+      isExternal: true
+    },
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-14.png",
