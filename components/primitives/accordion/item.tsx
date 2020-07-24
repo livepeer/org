@@ -116,7 +116,7 @@ const AccordionItem = ({
             outline: "none"
           },
           "&:hover .copy": {
-            opacity: 0.7
+            opacity: 0.5
           },
           ...heading.pushSx
         }}
