@@ -36,6 +36,13 @@ const accordionItems: AccordionItemProps[] = [
       title: "Livepeer Inc",
       icon: {
         children: <LivepeerIconSvg pushSx={{ width: "20px" }} isDark />
+      },
+      pushSx: {
+        h5: {
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
+          overflow: "hidden"
+        }
       }
     },
     children: (
@@ -52,6 +59,13 @@ const accordionItems: AccordionItemProps[] = [
       icon: {
         bg: "#000",
         children: <BasementIconSvg />
+      },
+      pushSx: {
+        h5: {
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
+          overflow: "hidden"
+        }
       }
     },
     children: (

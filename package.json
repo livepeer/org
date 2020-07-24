@@ -16,6 +16,7 @@
   "dependencies": {
     "@mdx-js/loader": "^1.6.8",
     "@next/mdx": "^9.4.4",
+    "@sindresorhus/slugify": "^1.1.0",
     "classnames": "^2.2.6",
     "gsap": "./lib/animations/gsap-bonus.tgz",
     "keen-slider": "^5.2.0",

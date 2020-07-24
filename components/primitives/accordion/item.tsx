@@ -1,9 +1,11 @@
 /** @jsx jsx */
-import { jsx, Flex, Box, Text, IconButton } from "theme-ui"
+import { jsx, Flex, Box, Text, SxStyleProp } from "theme-ui"
 import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { useMemo, useCallback, useState, useEffect, useRef } from "react"
 import { keyframes } from "@emotion/core"
+import slugify from "@sindresorhus/slugify"
+import { useRouter } from "next/router"
 
 const toggleInKeyframe = keyframes({
   from: {
@@ -15,12 +17,16 @@ const toggleInKeyframe = keyframes({
 })
 
 export type AccordionItemProps = {
-  heading: { icon?: { bg?: string; children: React.ReactNode }; title: string }
+  heading: {
+    icon?: { bg?: string; children: React.ReactNode }
+    title: string
+    pushSx?: SxStyleProp
+  }
   children: React.ReactNode
   withIllustratedBackground?: boolean
-  currentlyToggled?: number
-  index?: number
-  setCurrentlyToggled?: React.Dispatch<React.SetStateAction<number>>
+  currentlyToggled?: string
+  setCurrentlyToggled?: React.Dispatch<React.SetStateAction<string>>
+  withAnchorLink?: boolean
 }
 
 const AccordionItem = ({
@@ -29,8 +35,9 @@ const AccordionItem = ({
   withIllustratedBackground,
   currentlyToggled,
   setCurrentlyToggled,
-  index
+  withAnchorLink = true
 }: AccordionItemProps) => {
+  const router = useRouter()
   const headingRef = useRef<HTMLDivElement>(null)
   const childrenRef = useRef<HTMLDivElement>(null)
 
@@ -47,15 +54,23 @@ const AccordionItem = ({
     setFullHeight(fullHeight + "px")
   }, [headingRef, childrenRef])
 
-  const isToggled = useMemo(() => currentlyToggled === index, [
-    index,
+  const id = useMemo(() => slugify(heading.title), [heading.title])
+
+  const isToggled = useMemo(() => currentlyToggled === id, [
+    id,
     currentlyToggled
   ])
 
   const handleClick = useCallback(() => {
     if (isToggled) setCurrentlyToggled(undefined)
-    else setCurrentlyToggled(index)
-  }, [setCurrentlyToggled, isToggled, index])
+    else setCurrentlyToggled(id)
+  }, [setCurrentlyToggled, isToggled, id])
+
+  useEffect(() => {
+    const selectedId = router.asPath.split("#")[1]
+    if (!selectedId || !id) return
+    if (selectedId === id) handleClick()
+  }, [id, router.asPath])
 
   return (
     <IllustratedBackgroundBox
@@ -74,20 +89,37 @@ const AccordionItem = ({
       }}
       pushContentSx={{
         boxShadow: "magical",
-        p: [3, 4],
         overflow: "hidden",
         willChange: "height",
         height: [
-          `calc(${isToggled ? fullHeight : baseHeight} + 32px)`,
-          `calc(${isToggled ? fullHeight : baseHeight} + 64px)`
+          isToggled ? fullHeight : baseHeight,
+          isToggled ? fullHeight : baseHeight
         ],
         transition: "height .15s"
       }}
     >
       <Flex
-        sx={{ alignItems: "flex-start", justifyContent: "space-between" }}
+        sx={{
+          p: [3, 4],
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "100%",
+          overflow: "hidden",
+          position: "relative",
+          "&:focus": {
+            opacity: isToggled ? 1 : 0.75,
+            outline: "none"
+          },
+          "&:hover .copy": {
+            opacity: 0.5
+          },
+          ...heading.pushSx
+        }}
         ref={headingRef}
+        onClick={handleClick}
+        as="button"
       >
+        <span sx={{ position: "absolute", top: "-124px" }} id={id} />
         <Flex sx={{ alignItems: "center" }}>
           {heading.icon && (
             <i
@@ -108,32 +140,51 @@ const AccordionItem = ({
           )}
           <Text
             variant="heading.5"
+            as="h5"
             sx={{
               color: isToggled ? "secondary" : "text",
               textAlign: "left",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
               fontWeight: 600
             }}
           >
             {heading.title}
+            {withAnchorLink && (
+              <>
+                {" "}
+                <a
+                  href={`#${id}`}
+                  onClick={(e) => isToggled && e.stopPropagation()}
+                  className="copy"
+                  sx={{
+                    opacity: 0,
+                    transition: "opacity .15s",
+                    "&:hover": { textDecoration: "underline" }
+                  }}
+                >
+                  #
+                </a>
+              </>
+            )}
           </Text>
         </Flex>
-        <IconButton
+        <Box
           sx={{
             fontSize: 5,
             ml: 2,
             color: isToggled ? "secondary" : "text",
-            minWidth: "fit-content"
+            minWidth: "fit-content",
+            variant: "buttons.icon"
           }}
-          onClick={handleClick}
         >
           {isToggled ? <FiChevronDown /> : <FiChevronUp />}
-        </IconButton>
+        </Box>
       </Flex>
       <Box
-        sx={{ pt: 4, visibility: isToggled ? "visible" : "hidden" }}
+        sx={{
+          visibility: isToggled ? "visible" : "hidden",
+          px: [3, 4],
+          pb: [3, 4]
+        }}
         ref={childrenRef}
       >
         {children}
