@@ -10,7 +10,7 @@ const cards: IconCardProps[] = [
     icon: <FiCode />,
     title: "Developers",
     description:
-      "Discover APIs, guides, resources, and tools for adding live video to your project using the Livepeer public network or a hosted API.",
+      "Discover APIs, guides, resources, and tools for adding live video to your project using the Livepeer public network or a hosted service.",
     linkProps: { link: { label: "/developers", href: "/developers" } },
     isClickable: true
   },

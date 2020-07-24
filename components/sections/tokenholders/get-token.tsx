@@ -1,12 +1,12 @@
 import SectionLayout from "components/layouts/section"
 import { Grid } from "theme-ui"
-import GetTokenCard, { GetTokenCardProps } from "./card"
+import HugeCard, { HugeCardProps } from "components/primitives/cards/huge"
 import {
   GetTokenSvg,
   StakeTokenSvg
 } from "components/svgs/tokenholder-card-headers"
 
-const cards: GetTokenCardProps[] = [
+const cards: HugeCardProps[] = [
   {
     titleLabel: "Get",
     title: "Livepeer Token",
@@ -17,11 +17,10 @@ const cards: GetTokenCardProps[] = [
     ],
     cta: {
       label: "Exchange on Uniswap",
-      onClick: () => {
-        window.open(
-          "https://app.uniswap.org/#/swap?outputCurrency=0x58b6a8a3302369daec383334672404ee733ab239"
-        )
-      }
+      isLink: true,
+      isExternal: true,
+      href:
+        "https://app.uniswap.org/#/swap?outputCurrency=0x58b6a8a3302369daec383334672404ee733ab239"
     },
     accent: "primary",
     headerIllustration: <StakeTokenSvg />
@@ -36,9 +35,9 @@ const cards: GetTokenCardProps[] = [
     ],
     cta: {
       label: "Open Livepeer explorer",
-      onClick: () => {
-        window.open("https://explorer.livepeer.org")
-      }
+      isLink: true,
+      isExternal: true,
+      href: "https://explorer.livepeer.org"
     },
     accent: "secondary",
     headerIllustration: <GetTokenSvg />
@@ -56,10 +55,7 @@ const GetTokenSection = () => (
       sx={{ justifyContent: "center" }}
     >
       {cards.map((c) => (
-        <GetTokenCard
-          key={`get-token-card-${c.titleLabel}=${c.title}`}
-          {...c}
-        />
+        <HugeCard key={`get-token-card-${c.titleLabel}=${c.title}`} {...c} />
       ))}
     </Grid>
   </SectionLayout>

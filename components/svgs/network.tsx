@@ -109,12 +109,10 @@ const NetworkSvg = ({ pushSx }: Props) => {
   return (
     <svg
       ref={svgRef}
-      width="464"
-      height="464"
       viewBox="0 0 464 464"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      sx={pushSx}
+      sx={{ width: "464px", ...pushSx }}
       className="c--hide"
     >
       <path
@@ -126,7 +124,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         className="path--outer"
         opacity="0.8"
         d="M120,232a112,112 0 1,0 224,0a112,112 0 1,0 -224,0"
-        sx={{ stroke: "gray" }}
+        sx={{ stroke: "#E7E7E7" }}
       />
       <path
         className="path--green"
@@ -137,7 +135,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         className="path--circle"
         opacity="0.6"
         d="M80.5,232a151.5,151.5 0 1,0 303,0a151.5,151.5 0 1,0 -303,0"
-        sx={{ stroke: "gray" }}
+        sx={{ stroke: "#E7E7E7" }}
       />
       <circle
         className="path--circle"
@@ -145,7 +143,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         cx="232"
         cy="232"
         r="191.5"
-        sx={{ stroke: "gray" }}
+        sx={{ stroke: "#E7E7E7" }}
       />
       <circle
         className="path--circle"
@@ -153,7 +151,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         cx="232"
         cy="232"
         r="231.5"
-        sx={{ stroke: "gray" }}
+        sx={{ stroke: "#E7E7E7" }}
       />
       <path
         className="dot--inner"
