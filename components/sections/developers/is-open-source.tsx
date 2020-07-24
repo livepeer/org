@@ -16,7 +16,7 @@ const stats: StatProps[] = [
     color: "gradient"
   },
   {
-    title: "+100",
+    title: "100+",
     label: <>Repos</>
   }
 ]
