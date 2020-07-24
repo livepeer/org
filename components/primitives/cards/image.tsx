@@ -5,18 +5,19 @@ import React, { useMemo } from "react"
 import Link from "next/link"
 
 export type ImageCardProps = {
-  title?: React.ReactNode,
-  description?: string,
-  footnote?: string,
-  linkProps: CardLinkProps,
+  title?: React.ReactNode
+  description?: string
+  footnote?: string
+  linkProps: CardLinkProps
   image: {
-    src: string,
+    src: string
     alt?: string
-  },
-  isLink?: boolean,
-  className?: string,
-  pushSx?: SxStyleProp,
-  pushContentSx?: SxStyleProp,
+  }
+  isLink?: boolean
+  className?: string
+  pushSx?: SxStyleProp
+  pushContentSx?: SxStyleProp
+  gradientEffect?: boolean
 }
 
 const ImageCard = ({
@@ -28,7 +29,8 @@ const ImageCard = ({
   className,
   pushSx,
   pushContentSx,
-  isLink
+  isLink,
+  gradientEffect
 }: ImageCardProps) => {
   const markup = useMemo(
     () => (
@@ -40,14 +42,43 @@ const ImageCard = ({
           boxShadow: "magical",
           transition: "box-shadow .2s",
           "&:hover": {
-            boxShadow: isLink ? "long" : "magical"
+            boxShadow: isLink ? "long" : "magical",
+            "> .cardHeaderGradient": {
+              opacity: 0.5,
+              transition: "opacity .3s"
+            }
           },
           ...pushSx
         }}
       >
+        {gradientEffect && (
+          <Box
+            className="cardHeaderGradient"
+            sx={{
+              position: "absolute",
+              top: "1px",
+              left: "1px",
+              width: "calc(100% - 2px)",
+              height: "182px",
+              background:
+                "linear-gradient(62.91deg,#3F3FE2 33.91%,#4CF1AC 94.95%)",
+              mixBlendMode: "normal",
+              zIndex: 1,
+              borderTopLeftRadius: "4px",
+              borderTopRightRadius: "4px",
+              opacity: 0,
+              transition: "opacity .3s"
+            }}
+          />
+        )}
         <img
           {...image}
-          sx={{ width: "100%", height: "182px", objectFit: "cover" }}
+          sx={{
+            width: "100%",
+            height: "182px",
+            objectFit: "cover",
+            filter: gradientEffect ? "grayscale(100%)" : "none"
+          }}
         />
         <Box
           sx={{
