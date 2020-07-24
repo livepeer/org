@@ -66,15 +66,11 @@ const AccordionItem = ({
     else setCurrentlyToggled(id)
   }, [setCurrentlyToggled, isToggled, id])
 
-  const isAnchorLinked = useMemo(() => {
-    const selectedId = router.asPath.split("#")[1]
-    if (!selectedId || !id) return false
-    return selectedId === id
-  }, [id, router.asPath])
-
   useEffect(() => {
-    if (isAnchorLinked) handleClick()
-  }, [isAnchorLinked])
+    const selectedId = router.asPath.split("#")[1]
+    if (!selectedId || !id) return
+    if (selectedId === id) handleClick()
+  }, [id, router.asPath])
 
   return (
     <IllustratedBackgroundBox
@@ -104,7 +100,7 @@ const AccordionItem = ({
         position: "relative"
       }}
     >
-      <span sx={{ position: "absolute", top: "-88px" }} id={id} />
+      <span sx={{ position: "absolute", top: "-124px" }} id={id} />
       <Flex
         sx={{
           alignItems: "center",
