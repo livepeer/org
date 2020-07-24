@@ -13,7 +13,9 @@ const SliderImage = ({ src, alt, className }: SliderImageProps) => (
       position: "relative",
       overflow: "hidden",
       borderRadius: "md",
-      height: "100%"
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "top"
     }}
     src={src}
     alt={alt}

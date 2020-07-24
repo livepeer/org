@@ -12,10 +12,6 @@ const images: SliderImageProps[] = [
   {
     src: "/images/slider/infrastructure.png",
     alt: ""
-  },
-  {
-    src: "/images/slider/contributors.png",
-    alt: ""
   }
 ]
 
@@ -74,19 +70,6 @@ const JumpInSlider = () => {
         isDark: true
       },
       isActive: false
-    },
-    {
-      title: "OSS Contributors",
-      description:
-        "Help contribute to Livepeer’s open source technology projects as a developer or contributor.",
-      linkProps: {
-        link: {
-          label: "/oss",
-          href: "/oss"
-        },
-        isDark: true
-      },
-      isActive: false
     }
   ])
 
@@ -99,6 +82,7 @@ const JumpInSlider = () => {
       <Box
         className="keen-slider"
         ref={sliderRef as React.RefObject<HTMLDivElement>}
+        sx={{ height: "401px" }}
       >
         {images.map((img) => (
           <SliderImage
@@ -108,7 +92,7 @@ const JumpInSlider = () => {
           />
         ))}
       </Box>
-      <Grid columns={3} sx={{ mt: "42px" }}>
+      <Grid columns={2} sx={{ mt: "42px" }}>
         {cards.map((card, i) => (
           <SliderCard
             {...card}
@@ -117,6 +101,7 @@ const JumpInSlider = () => {
             progress={progress}
             setProgress={setProgress}
             moveToMySlide={() => slider.moveToSlide(i)}
+            pushSx={{ maxWidth: "unset" }}
           />
         ))}
       </Grid>

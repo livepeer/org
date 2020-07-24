@@ -13,7 +13,7 @@ type Props = {
   id?: string
   pushSx?: SxStyleProp
   subtitle?: React.ReactNode
-  title: React.ReactNode
+  title?: React.ReactNode
   titleLabel?: React.ReactNode
   withAnimation?: boolean
 }

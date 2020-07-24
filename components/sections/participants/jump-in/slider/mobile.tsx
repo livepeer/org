@@ -13,10 +13,6 @@ const images: SliderImageProps[] = [
   {
     src: "/images/slider/infrastructure.png",
     alt: ""
-  },
-  {
-    src: "/images/slider/contributors.png",
-    alt: ""
   }
 ]
 
@@ -71,19 +67,6 @@ const MobileJumpInSlider = () => {
         link: {
           label: "/video-miners",
           href: "/video-miners"
-        },
-        isDark: true
-      },
-      isActive: false
-    },
-    {
-      title: "OSS Contributors",
-      description:
-        "Help build Livepeer as a developer or contributor to open source technology projects.",
-      linkProps: {
-        link: {
-          label: "/contributors",
-          href: "/contributors"
         },
         isDark: true
       },

@@ -47,12 +47,10 @@ const HostedApiSvg = ({ pushSx }: Props) => {
     <svg
       className="c--hide"
       ref={svgRef}
-      width="968"
-      height="968"
       viewBox="0 0 968 968"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      sx={pushSx}
+      sx={{ width: "968px", ...pushSx }}
     >
       <mask
         id="hosted-api-svg-mask0"
