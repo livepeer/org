@@ -9,17 +9,16 @@ type Props = {
 }
 
 const Accordion = ({ items, withIllustratedBackground, pushSx }: Props) => {
-  const [currentlyToggled, setCurrentlyToggled] = useState<number>()
+  const [currentlyToggled, setCurrentlyToggled] = useState<string>()
 
   return (
     <Box sx={pushSx}>
-      {items.map((item, i) => (
+      {items.map((item) => (
         <AccordionItem
           key={`accordion-item-${item.heading.title}`}
           withIllustratedBackground={withIllustratedBackground}
           currentlyToggled={currentlyToggled}
           setCurrentlyToggled={setCurrentlyToggled}
-          index={i}
           {...item}
         />
       ))}
