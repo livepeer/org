@@ -4,6 +4,7 @@ import IllustratedBackgroundBox from "components/layouts/illustrated-background-
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { useMemo, useCallback, useState, useEffect, useRef } from "react"
 import { keyframes } from "@emotion/core"
+import slugify from "@sindresorhus/slugify"
 
 const toggleInKeyframe = keyframes({
   from: {
@@ -57,6 +58,8 @@ const AccordionItem = ({
     else setCurrentlyToggled(index)
   }, [setCurrentlyToggled, isToggled, index])
 
+  const id = useMemo(() => slugify(heading.title), [heading.title])
+
   return (
     <IllustratedBackgroundBox
       pushSx={{
@@ -83,10 +86,22 @@ const AccordionItem = ({
         ],
         transition: "height .15s"
       }}
+      id={id}
     >
       <Flex
-        sx={{ alignItems: "flex-start", justifyContent: "space-between" }}
+        sx={{
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "100%",
+          overflow: "hidden",
+          "&:focus": {
+            opacity: isToggled ? 1 : 0.75,
+            outline: "none"
+          }
+        }}
         ref={headingRef}
+        onClick={handleClick}
+        as="button"
       >
         <Flex sx={{ alignItems: "center" }}>
           {heading.icon && (
@@ -111,26 +126,23 @@ const AccordionItem = ({
             sx={{
               color: isToggled ? "secondary" : "text",
               textAlign: "left",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
               fontWeight: 600
             }}
           >
             {heading.title}
           </Text>
         </Flex>
-        <IconButton
+        <Box
           sx={{
             fontSize: 5,
             ml: 2,
             color: isToggled ? "secondary" : "text",
-            minWidth: "fit-content"
+            minWidth: "fit-content",
+            variant: "buttons.icon"
           }}
-          onClick={handleClick}
         >
           {isToggled ? <FiChevronDown /> : <FiChevronUp />}
-        </IconButton>
+        </Box>
       </Flex>
       <Box
         sx={{ pt: 4, visibility: isToggled ? "visible" : "hidden" }}
