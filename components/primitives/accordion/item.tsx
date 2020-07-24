@@ -20,9 +20,9 @@ export type AccordionItemProps = {
   heading: { icon?: { bg?: string; children: React.ReactNode }; title: string }
   children: React.ReactNode
   withIllustratedBackground?: boolean
-  currentlyToggled?: number
-  index?: number
-  setCurrentlyToggled?: React.Dispatch<React.SetStateAction<number>>
+  currentlyToggled?: string
+  setCurrentlyToggled?: React.Dispatch<React.SetStateAction<string>>
+  withAnchorLinkCopy?: boolean
 }
 
 const AccordionItem = ({
@@ -31,7 +31,7 @@ const AccordionItem = ({
   withIllustratedBackground,
   currentlyToggled,
   setCurrentlyToggled,
-  index
+  withAnchorLinkCopy = true
 }: AccordionItemProps) => {
   const router = useRouter()
   const headingRef = useRef<HTMLDivElement>(null)
@@ -50,17 +50,17 @@ const AccordionItem = ({
     setFullHeight(fullHeight + "px")
   }, [headingRef, childrenRef])
 
-  const isToggled = useMemo(() => currentlyToggled === index, [
-    index,
+  const id = useMemo(() => slugify(heading.title), [heading.title])
+
+  const isToggled = useMemo(() => currentlyToggled === id, [
+    id,
     currentlyToggled
   ])
 
   const handleClick = useCallback(() => {
     if (isToggled) setCurrentlyToggled(undefined)
-    else setCurrentlyToggled(index)
-  }, [setCurrentlyToggled, isToggled, index])
-
-  const id = useMemo(() => slugify(heading.title), [heading.title])
+    else setCurrentlyToggled(id)
+  }, [setCurrentlyToggled, isToggled, id])
 
   const isAnchorLinked = useMemo(() => {
     const selectedId = router.asPath.split("#")[1]
@@ -110,6 +110,9 @@ const AccordionItem = ({
           "&:focus": {
             opacity: isToggled ? 1 : 0.75,
             outline: "none"
+          },
+          "&:hover .copy": {
+            opacity: 0.7
           }
         }}
         ref={headingRef}
@@ -143,6 +146,23 @@ const AccordionItem = ({
             }}
           >
             {heading.title}
+            {withAnchorLinkCopy && (
+              <>
+                {" "}
+                <a
+                  href={`#${id}`}
+                  onClick={(e) => isToggled && e.stopPropagation()}
+                  className="copy"
+                  sx={{
+                    opacity: 0,
+                    transition: "opacity .15s",
+                    "&:hover": { textDecoration: "underline" }
+                  }}
+                >
+                  #
+                </a>
+              </>
+            )}
           </Text>
         </Flex>
         <Box
