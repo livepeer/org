@@ -5,6 +5,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { useMemo, useCallback, useState, useEffect, useRef } from "react"
 import { keyframes } from "@emotion/core"
 import slugify from "@sindresorhus/slugify"
+import { useRouter } from "next/router"
 
 const toggleInKeyframe = keyframes({
   from: {
@@ -32,6 +33,7 @@ const AccordionItem = ({
   setCurrentlyToggled,
   index
 }: AccordionItemProps) => {
+  const router = useRouter()
   const headingRef = useRef<HTMLDivElement>(null)
   const childrenRef = useRef<HTMLDivElement>(null)
 
@@ -60,6 +62,16 @@ const AccordionItem = ({
 
   const id = useMemo(() => slugify(heading.title), [heading.title])
 
+  const isAnchorLinked = useMemo(() => {
+    const selectedId = router.asPath.split("#")[1]
+    if (!selectedId || !id) return false
+    return selectedId === id
+  }, [id, router.asPath])
+
+  useEffect(() => {
+    if (isAnchorLinked) handleClick()
+  }, [isAnchorLinked])
+
   return (
     <IllustratedBackgroundBox
       pushSx={{
@@ -84,10 +96,11 @@ const AccordionItem = ({
           `calc(${isToggled ? fullHeight : baseHeight} + 32px)`,
           `calc(${isToggled ? fullHeight : baseHeight} + 64px)`
         ],
-        transition: "height .15s"
+        transition: "height .15s",
+        position: "relative"
       }}
-      id={id}
     >
+      <span sx={{ position: "absolute", top: "-88px" }} id={id} />
       <Flex
         sx={{
           alignItems: "center",
