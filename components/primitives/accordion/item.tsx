@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Box, Text, IconButton } from "theme-ui"
+import { jsx, Flex, Box, Text, SxStyleProp } from "theme-ui"
 import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { useMemo, useCallback, useState, useEffect, useRef } from "react"
@@ -17,12 +17,16 @@ const toggleInKeyframe = keyframes({
 })
 
 export type AccordionItemProps = {
-  heading: { icon?: { bg?: string; children: React.ReactNode }; title: string }
+  heading: {
+    icon?: { bg?: string; children: React.ReactNode }
+    title: string
+    pushSx?: SxStyleProp
+  }
   children: React.ReactNode
   withIllustratedBackground?: boolean
   currentlyToggled?: string
   setCurrentlyToggled?: React.Dispatch<React.SetStateAction<string>>
-  withAnchorLinkCopy?: boolean
+  withAnchorLink?: boolean
 }
 
 const AccordionItem = ({
@@ -31,7 +35,7 @@ const AccordionItem = ({
   withIllustratedBackground,
   currentlyToggled,
   setCurrentlyToggled,
-  withAnchorLinkCopy = true
+  withAnchorLink = true
 }: AccordionItemProps) => {
   const router = useRouter()
   const headingRef = useRef<HTMLDivElement>(null)
@@ -113,7 +117,8 @@ const AccordionItem = ({
           },
           "&:hover .copy": {
             opacity: 0.7
-          }
+          },
+          ...heading.pushSx
         }}
         ref={headingRef}
         onClick={handleClick}
@@ -139,6 +144,7 @@ const AccordionItem = ({
           )}
           <Text
             variant="heading.5"
+            as="h5"
             sx={{
               color: isToggled ? "secondary" : "text",
               textAlign: "left",
@@ -146,7 +152,7 @@ const AccordionItem = ({
             }}
           >
             {heading.title}
-            {withAnchorLinkCopy && (
+            {withAnchorLink && (
               <>
                 {" "}
                 <a
