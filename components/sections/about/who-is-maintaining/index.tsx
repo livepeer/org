@@ -8,16 +8,13 @@ import Maintainer, { MaintainerProps } from "./maintainer"
 
 const livepeerMaintainers: MaintainerProps[] = [
   {
-    name: "Jane Cooper",
-    position: "Product Designer",
-    avatar: { src: "https://i.pravatar.cc/200" },
-    githubHref: ""
-  },
-  {
-    name: "Jane Deo",
-    position: "Product Designer",
-    avatar: { src: "https://i.pravatar.cc/200" },
-    githubHref: ""
+    name: "Adam Soffer",
+    position: "Developer",
+    avatar: {
+      src:
+        "https://avatars3.githubusercontent.com/u/555740?s=460&u=af1ec022281bf42faadde807895f47230583c0d8&v=4"
+    },
+    githubHref: "https://github.com/adamsoffer"
   }
 ]
 
@@ -25,8 +22,20 @@ const basementMaintainers: MaintainerProps[] = [
   {
     name: "Jose Rago",
     position: "Product Designer",
-    avatar: { src: "https://i.pravatar.cc/200" },
-    githubHref: ""
+    avatar: {
+      src:
+        "https://avatars1.githubusercontent.com/u/13522179?s=460&u=357b008de640d8d353a203a08bbaad37151ef9cb&v=4"
+    },
+    githubHref: "https://github.com/ragojose"
+  },
+  {
+    name: "Franco Arza",
+    position: "Developer",
+    avatar: {
+      src:
+        "https://avatars3.githubusercontent.com/u/466367?s=460&u=f01535059f726cc441b47e044ec92c6b9b0f4024&v=4"
+    },
+    githubHref: "https://github.com/arzafran"
   }
 ]
 
