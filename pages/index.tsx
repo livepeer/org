@@ -34,12 +34,14 @@ export async function getStaticProps() {
   const response = await fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?maxResults=100&part=snippet&playlistId=PLkw6hm1fcjtEo9HydrGKP2R_NHhSu1Mpl&key=${process.env.YOUTUBE_API_KEY}`
   )
+
   const youtubeData = await response.json()
+
   return {
     props: {
       youtubeVideos: youtubeData.items
     },
-    unstable_revalidate: 1
+    revalidate: 1
   }
 }
 
