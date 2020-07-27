@@ -13,16 +13,5 @@ const withTM = require("next-transpile-modules")([
 module.exports = withPlugins([
   withSvgr,
   [withMDX, { pageExtensions: ["mdx", "tsx"] }],
-  [
-    withTM,
-    {
-      transpileModules: [
-        "gsap",
-        "gsap/DrawSVGPlugin",
-        "gsap/MotionPathPlugin",
-        "gsap/ScrollTrigger",
-        "gsap/SplitText"
-      ]
-    }
-  ]
+  withTM
 ])
