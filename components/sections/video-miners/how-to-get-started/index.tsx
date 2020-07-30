@@ -1,25 +1,34 @@
 /** @jsx jsx */
-import { jsx, Box, Heading, Link as A, SxStyleProp, Grid } from "theme-ui"
+import { jsx, Box, Heading, Link as A, Grid } from "theme-ui"
 import HowToGetStartedStep, { HowToGetStartedStepProps } from "./step"
-
-const linkSx: SxStyleProp = {
-  color: "secondary",
-  fontWeight: 600
-}
 
 const steps: HowToGetStartedStepProps[] = [
   {
     children: (
       <>
-        Read <A variant="accent">this tutorial</A>
+        <A
+          variant="accent"
+          href="https://livepeer.readthedocs.io/en/latest/transcoding.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read the docs
+        </A>{" "}
+        for transcoding on the livepeer network
       </>
     )
   },
   {
     children: (
       <>
-        View the <A variant="accent">node operation docs</A> and the{" "}
-        <A variant="accent">GPU scaling docs</A>.
+        <A
+          variant="accent"
+          href="https://livepeer.basement.studio/faq?filter=video-miners"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check out the video miner FAQ
+        </A>
       </>
     )
   },
@@ -27,15 +36,16 @@ const steps: HowToGetStartedStepProps[] = [
     children: (
       <>
         Reach out to the Livepeer team and community in the{" "}
-        <A variant="accent">Discord chat room</A>, #transcoding channel. Initial
-        testing and setup can require some DevOps, so we are happy to help.
-      </>
-    )
-  },
-  {
-    children: (
-      <>
-        Review the <A variant="accent">node operation FAQ</A>.
+        <A
+          variant="accent"
+          href="https://discord.com/invite/RR4kFAh"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Discord chat room
+        </A>
+        , #transcoding channel. Initial testing and setup can require some
+        DevOps, so we are happy to help.
       </>
     )
   }
