@@ -10,16 +10,12 @@ type Props = {
 const ByTheNumbersSection = ({ totalActiveStake }: Props) => {
   const stats: StatProps[] = [
     {
-      title: "4.20.17",
+      title: "20.4.17",
       label: "Date founded"
     },
     {
       title: "70k+",
-      label: (
-        <>
-          Total GPUs <br /> on the network
-        </>
-      ),
+      label: <>GPUs accessible to the network</>,
       color: "gradient"
     },
     {
