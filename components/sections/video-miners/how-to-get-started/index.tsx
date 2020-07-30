@@ -21,13 +21,14 @@ const steps: HowToGetStartedStepProps[] = [
   {
     children: (
       <>
+        Check out the{" "}
         <A
           variant="accent"
           href="https://livepeer.basement.studio/faq?filter=video-miners"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Check out the video miner FAQ
+          video miner FAQ{" "}
         </A>
       </>
     )
@@ -70,7 +71,7 @@ const HowToGetStartedSection = () => (
           variant="section.subtitle"
           sx={{ textAlign: ["center", null, "left"] }}
         >
-          Become a video miner in four steps.
+          Become a video miner in three steps.
         </Heading>
       </Box>
       <Box
