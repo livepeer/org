@@ -175,7 +175,27 @@ const questions: Question[] = [
   {
     question:
       "I’d like to use Livepeer for my video application. Should I use the Livepeer public network or Livepeer.com’s hosted gateway API?",
-    answer: "TODO",
+    answer: (
+      <>
+        <p sx={{ mb: 3 }}>
+          Setting up your own broadcaster connected directly to the Livepeer
+          public network and using the Livepeer.com hosted service both allow
+          you to transcode on the same scalable, reliable, affordable Livepeer
+          public network. Initial setup for a Broadcaster node can involve some
+          DevOps and requires that you pay in a cryptocurrency (ETH). But, there
+          is large, global Livepeer community ready to help. The Livepeer
+          Discord server is very active.
+        </p>
+        <p>
+          Livepeer.com is great getting started quickly and growing a video
+          platform fast with the complexities of blockchain and cryptocurrencies
+          abstracted away for you. It offers a scalable end-to-end video
+          infrastructure solution, from ingest to CDN playback for live and
+          recorded streams. Don’t hesitate to reach out on the Discord server or
+          via a contact form on livepeer.com to learn more about either option.
+        </p>
+      </>
+    ),
     category: categories[1]
   },
   {
