@@ -4,8 +4,17 @@ import IllustratedBackgroundBox from "components/layouts/illustrated-background-
 import TokenholdersDashboardSvg from "components/svgs/tokenholders-dashboard"
 import GetTokenSection from "components/sections/tokenholders/get-token"
 import TokenholderStatsSection from "components/sections/tokenholders/tokenholder-stats"
+import {
+  getTotalActiveStake,
+  getTotalDelegators,
+  getTotalGeneratedFees
+} from "lib/document-helpers"
 
-const TokenholdersPage = () => (
+const TokenholdersPage = ({
+  totalActiveStake,
+  totalDelegators,
+  totalGeneratedFees
+}) => (
   <PageLayout
     footerProps={{
       prefooter: {
@@ -26,8 +35,27 @@ const TokenholdersPage = () => (
       pushSx={{ mb: "-148px", maxWidth: "900px" }}
     />
     <GetTokenSection />
-    <TokenholderStatsSection />
+    <TokenholderStatsSection
+      totalActiveStake={totalActiveStake}
+      totalDelegators={totalDelegators}
+      totalGeneratedFees={totalGeneratedFees}
+    />
   </PageLayout>
 )
+
+export async function getStaticProps() {
+  const totalActiveStake = await getTotalActiveStake()
+  const totalDelegators = await getTotalDelegators()
+  const totalGeneratedFees = await getTotalGeneratedFees()
+
+  return {
+    props: {
+      totalActiveStake: totalActiveStake / 10e17,
+      totalDelegators,
+      totalGeneratedFees: totalGeneratedFees / 10e17
+    },
+    revalidate: 1
+  }
+}
 
 export default TokenholdersPage

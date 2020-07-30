@@ -12,7 +12,7 @@ export type MetaType = {
 const defaultMeta: MetaType = {
   title: "Livepeer",
   description:
-    "Decentralized live video streaming, built on the Ethereum blockchain. Livepeer is live on Ethereum mainnet. Generate tokens and participate in the livepeer alpha.",
+    "Decentralized live video streaming, built on the Ethereum blockchain. Livepeer is live on Ethereum mainnet.",
   url: "https://livepeer.org",
   siteName: "Livepeer",
   image: "/OG.png",

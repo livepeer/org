@@ -1,30 +1,43 @@
 import { StatProps } from "components/primitives/stat"
 import SectionLayout from "components/layouts/section"
 import StatsGrid from "components/layouts/stats-grid"
+import { nFormatter } from "lib/document-helpers"
 
-const stats: StatProps[] = [
-  {
-    title: "14.5 M",
-    label: <>Total LPT Staked</>
-  },
-  {
-    title: "11.77 ETH",
-    label: <>Total Fees Paid Out</>,
-    color: "gradient"
-  },
-  {
-    title: "2636",
-    label: <>Total Delegators</>
-  }
-]
+type Props = {
+  totalActiveStake: number
+  totalDelegators: number
+  totalGeneratedFees: number
+}
 
-const TokenholderStatsSection = () => (
-  <SectionLayout
-    title="Tokenholder Stats"
-    pushSx={{ pt: ["80px", null, null, "160px"] }}
-  >
-    <StatsGrid stats={stats} />
-  </SectionLayout>
-)
+const TokenholderStatsSection = ({
+  totalActiveStake,
+  totalDelegators,
+  totalGeneratedFees
+}: Props) => {
+  const stats: StatProps[] = [
+    {
+      title: `${nFormatter(totalActiveStake, 1)}`,
+      label: <>Total LPT Staked</>
+    },
+    {
+      title: `${nFormatter(totalGeneratedFees, 1)} ETH`,
+      label: <>Total Paid Out Fees</>,
+      color: "gradient"
+    },
+    {
+      title: totalDelegators.toString(),
+      label: <>Total Delegators</>
+    }
+  ]
+
+  return (
+    <SectionLayout
+      title="Tokenholder Stats"
+      pushSx={{ pt: ["80px", null, null, "160px"] }}
+    >
+      <StatsGrid stats={stats} />
+    </SectionLayout>
+  )
+}
 
 export default TokenholderStatsSection
