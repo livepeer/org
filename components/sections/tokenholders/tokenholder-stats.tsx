@@ -21,7 +21,7 @@ const TokenholderStatsSection = ({
     },
     {
       title: `${nFormatter(totalGeneratedFees, 1)} ETH`,
-      label: <>Total Paid Out Fees</>,
+      label: <>Total Fees Paid Out</>,
       color: "gradient"
     },
     {

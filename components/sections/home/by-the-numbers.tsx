@@ -14,7 +14,7 @@ const ByTheNumbersSection = ({ totalActiveStake }: Props) => {
       label: "Date founded"
     },
     {
-      title: "50k+",
+      title: "70k+",
       label: (
         <>
           Total GPUs <br /> on the network
