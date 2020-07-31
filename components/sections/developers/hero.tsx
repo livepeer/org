@@ -64,7 +64,7 @@ const DevelopersHero = () => (
     withAnimation
     icon={<FiPlay />}
     title="Developers"
-    subtitle="Everything you need to build better video applications with Livepeer."
+    subtitle="Everything you need to build powerful video applications with Livepeer."
     illustration={
       <IllustratedBackgroundBox
         pushSx={{

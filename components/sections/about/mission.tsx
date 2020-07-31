@@ -70,9 +70,9 @@ const MissionSection = () => {
         </Box>
         <Box sx={{ zIndex: "general", position: "relative" }}>
           <Text variant="normal" sx={{ mb: 4 }}>
-            Through the power of open source software, combined with the
+            Through the power of open source software, the
             harnessing of underutilized resources like compute and bandwidth,
-            combined with the use of cryptoeconomic incentives for bootstrapping
+            and the use of cryptoeconomic incentives for bootstrapping
             and participation, there is an opportunity to deliver an
             infrastructure that can power video streaming applications at a
             highly efficient price, and infinite scale.

@@ -10,7 +10,7 @@ type Props = {
 const ByTheNumbersSection = ({ totalActiveStake }: Props) => {
   const stats: StatProps[] = [
     {
-      title: "20.4.17",
+      title: "1.2.2017",
       label: "Date founded"
     },
     {
