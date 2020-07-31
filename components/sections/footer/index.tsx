@@ -58,7 +58,7 @@ const lists: FooterListProps[] = [
     items: [
       {
         label: "Twitter",
-        href: "https://twitter.com/livepeer",
+        href: "https://twitter.com/LivepeerOrg",
         isExternal: true
       },
       {

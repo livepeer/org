@@ -35,7 +35,7 @@ const cards: HugeCardProps[] = [
         >
           Low Cost
         </Text>
-        Crypto payments for transcoding at the lowest possible cost
+        Crypto payments for transcoding at the lowest possible cost.
       </Box>,
       <Box>
         <Text
@@ -48,7 +48,7 @@ const cards: HugeCardProps[] = [
         >
           Flexible
         </Text>
-        Flexibility and control of using an OSS stack
+        Flexibility and control of using an OSS stack.
       </Box>
     ],
     cta: {
@@ -93,8 +93,8 @@ const cards: HugeCardProps[] = [
         >
           Powered by the Public Network
         </Text>
-        Cheap transcoding powered by the public network allows you to operate a
-        UGC platform with millions of content creators
+        Affordable transcoding powered by the public network allows you to operate a
+        UGC platform with millions of content creators.
       </Box>,
       <Box>
         <Text
@@ -107,8 +107,8 @@ const cards: HugeCardProps[] = [
         >
           Smart Video
         </Text>
-        Content moderation necessary in running UGC platforms such as flagging
-        adult content
+        Content moderation APIs necessary in running UGC platforms, such as automatically flagging
+        adult content.
       </Box>
     ],
     cta: {
