@@ -1,45 +1,7 @@
 import SectionLayout from "components/layouts/section"
 import { Link as A, Box } from "theme-ui"
-import ImageCard, { ImageCardProps } from "components/primitives/cards/image"
+import ImageCard from "components/primitives/cards/image"
 import KeenSliderGrid from "components/layouts/keen-slider-grid"
-
-const cards: ImageCardProps[] = [
-  {
-    description: "Streamflow, GPU Transcoding, & Probabilistic Micropayments.",
-    footnote: "Mar 12,2020",
-    linkProps: {
-      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
-    },
-    image: { src: "/images/misc/coworking.png" }
-  },
-  {
-    description:
-      "Streamflow, GPU Transcoding, & Probabilistic Micropayments 2.",
-    footnote: "Mar 12,2020",
-    linkProps: {
-      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
-    },
-    image: { src: "/images/misc/ide.png" }
-  },
-  {
-    description:
-      "Streamflow, GPU Transcoding, & Probabilistic Micropayments 3.",
-    footnote: "Mar 12,2020",
-    linkProps: {
-      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
-    },
-    image: { src: "/images/misc/stocks.png" }
-  },
-  {
-    description:
-      "Streamflow, GPU Transcoding, & Probabilistic Micropayments 4.",
-    footnote: "Mar 12,2020",
-    linkProps: {
-      link: { href: "/streamflow-gpu", label: "/streamflow-gpu" }
-    },
-    image: { src: "/images/misc/city.png" }
-  }
-]
 
 const HaveACallSection = ({ youtubeVideos }) => (
   <SectionLayout
@@ -63,8 +25,8 @@ const HaveACallSection = ({ youtubeVideos }) => (
       </>
     }
   >
-    <KeenSliderGrid>
-      {youtubeVideos.map((v) => (
+    <KeenSliderGrid withArrowControls>
+      {youtubeVideos.map((v: any) => (
         <ImageCard
           key={`have-a-call-image-card-${v.snippet.resourceId.videoId}`}
           title={
@@ -92,6 +54,7 @@ const HaveACallSection = ({ youtubeVideos }) => (
               isExternal: true
             }
           }}
+          pushSx={{ maxWidth: "unset" }}
           isLink
         />
       ))}

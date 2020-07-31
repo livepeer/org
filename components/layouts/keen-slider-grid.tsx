@@ -1,4 +1,4 @@
-import { SxStyleProp, Box } from "theme-ui"
+import { SxStyleProp, Box, IconButton } from "theme-ui"
 import { useKeenSlider } from "keen-slider/react"
 import { TOptionsEvents } from "keen-slider"
 import {
@@ -8,6 +8,7 @@ import {
   Children,
   isValidElement
 } from "react"
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 
 type Breakpoint = {
   value: string
@@ -18,6 +19,7 @@ type Props = {
   config?: TOptionsEvents
   pushSx?: SxStyleProp
   breakpoints?: Breakpoint[]
+  withArrowControls?: boolean
 }
 
 const keenSliderGridDefaultBreakpoints: Breakpoint[] = [
@@ -34,11 +36,12 @@ const KeenSliderGrid: React.FC<Props> = ({
   children,
   config,
   pushSx,
-  breakpoints = keenSliderGridDefaultBreakpoints
+  breakpoints = keenSliderGridDefaultBreakpoints,
+  withArrowControls = false
 }) => {
   const [slidesPerView, setSlidesPerView] = useState(3)
 
-  const [sliderRef] = useKeenSlider({
+  const [sliderRef, slider] = useKeenSlider({
     slidesPerView,
     duration: 1000,
     spacing: 20,
@@ -92,32 +95,67 @@ const KeenSliderGrid: React.FC<Props> = ({
   }, [breakpoints])
 
   return (
-    <Box
-      className="keen-slider"
-      ref={sliderRef as React.RefObject<HTMLDivElement>}
-      sx={{
-        position: "relative",
-        overflow: "visible",
-        width: "100%",
-        ...pushSx
-      }}
-    >
-      {Children.map(children, (child) => {
-        // Add the keen-slider__slide className to children
-        if (isValidElement(child)) {
-          return {
-            ...child,
-            props: {
-              ...child.props,
-              className: `${
-                child.props.className ? `${child.props.className} ` : ""
-              }keen-slider__slide`
+    <>
+      <Box
+        className="keen-slider"
+        ref={sliderRef as React.RefObject<HTMLDivElement>}
+        sx={{
+          position: "relative",
+          overflow: "visible",
+          width: "100%",
+          ...pushSx
+        }}
+      >
+        {Children.map(children, (child) => {
+          // Add the keen-slider__slide className to children
+          if (isValidElement(child)) {
+            return {
+              ...child,
+              props: {
+                ...child.props,
+                className: `${
+                  child.props.className ? `${child.props.className} ` : ""
+                }keen-slider__slide`
+              }
             }
           }
-        }
-        return child
-      })}
-    </Box>
+          return child
+        })}
+      </Box>
+      {withArrowControls && (
+        <Box sx={{ variant: "layout.flexCenter", mt: 4 }}>
+          <IconButton
+            sx={{
+              borderRadius: "full",
+              border: "1px solid",
+              borderColor: "ultraLightGray",
+              fontSize: 4,
+              mr: 2,
+              color: "gray",
+              transition: "color .1s",
+              "&:hover": { color: "text" }
+            }}
+            onClick={slider?.prev}
+          >
+            <FiChevronLeft />
+          </IconButton>
+          <IconButton
+            sx={{
+              borderRadius: "full",
+              border: "1px solid",
+              borderColor: "ultraLightGray",
+              fontSize: 4,
+              color: "gray",
+              transition: "color .1s",
+              "&:hover": { color: "text" }
+            }}
+            onClick={slider?.next}
+          >
+            <FiChevronRight />
+          </IconButton>
+        </Box>
+      )}
+    </>
   )
 }
 
