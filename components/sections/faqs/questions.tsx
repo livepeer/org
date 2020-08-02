@@ -52,12 +52,7 @@ const questions: Question[] = [
     question: "I am new to Livepeer. Where is the best place to start?",
     answer: (
       <>
-        The{" "}
-        <AnswerLink
-          href="https://primer.livepeer.org/"
-          label="Livepeer 10-minute Primer"
-          isExternal
-        />{" "}
+        The <AnswerLink href="/primer" label="Livepeer 10-minute Primer" />{" "}
         serves as a great starting point.
       </>
     ),

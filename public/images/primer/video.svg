@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="69px" height="69px" viewBox="0 0 69 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>video icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-570.000000, -16912.000000)">
+            <g id="Bottom-CTAs" transform="translate(199.000000, 16912.000000)">
+                <g id="video-engineer" transform="translate(371.000000, 0.000000)">
+                    <g id="video-icon">
+                        <circle id="Oval" fill="#FFD184" cx="34.5" cy="34.5" r="34.5"></circle>
+                        <g id="video-player-icon" transform="translate(6.000000, 11.000000)" fill="#000000" fill-rule="nonzero">
+                            <path d="M36.537,22.156 L25.537,15.156 C25.229,14.961 24.839,14.948 24.518,15.123 C24.199,15.299 24,15.635 24,16 L24,30 C24,30.365 24.199,30.701 24.519,30.877 C24.669,30.959 24.834,31 25,31 C25.187,31 25.374,30.947 25.537,30.844 L36.537,23.844 C36.825,23.66 37,23.342 37,23 C37,22.658 36.825,22.34 36.537,22.156 Z M26,28.179 L26,17.821 L34.137,23 L26,28.179 Z" id="Shape"></path>
+                            <path d="M57,0 L47,0 L11,0 L1,0 C0.448,0 0,0.447 0,1 L0,12 L0,23 L0,34 L0,45 C0,45.553 0.448,46 1,46 L11,46 L47,46 L57,46 C57.552,46 58,45.553 58,45 L58,34 L58,23 L58,12 L58,1 C58,0.447 57.552,0 57,0 Z M10,22 L2,22 L2,13 L10,13 L10,22 Z M2,24 L10,24 L10,33 L2,33 L2,24 Z M12,34 L12,23 L12,12 L12,2 L46,2 L46,12 L46,23 L46,34 L46,44 L12,44 L12,34 Z M56,22 L48,22 L48,13 L56,13 L56,22 Z M48,24 L56,24 L56,33 L48,33 L48,24 Z M56,2 L56,11 L48,11 L48,2 L56,2 Z M2,2 L10,2 L10,11 L2,11 L2,2 Z M2,44 L2,35 L10,35 L10,44 L2,44 Z M56,44 L48,44 L48,35 L56,35 L56,44 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
