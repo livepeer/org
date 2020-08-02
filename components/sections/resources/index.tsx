@@ -56,7 +56,12 @@ const ResourcesDirectory = () => {
   )
 
   return (
-    <Container variant="section" className="hide__section" ref={sectionRef}>
+    <Container
+      id="tabs"
+      variant="section"
+      className="hide__section"
+      ref={sectionRef}
+    >
       <Tabs
         items={tabs}
         pushSx={{ justifyContent: ["flex-start", "center"] }}

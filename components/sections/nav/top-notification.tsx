@@ -4,7 +4,7 @@ import Link from "next/link"
 import { forwardRef } from "react"
 
 export type TopNotificationProps = {
-  title: string
+  title?: string
   description?: string
   link: {
     label: string
@@ -31,7 +31,9 @@ const TopNotification = forwardRef(
         zIndex: "1"
       }}
     >
-      <Text sx={{ fontWeight: 600, display: "inline" }}>{title}: </Text>
+      {title && (
+        <Text sx={{ fontWeight: 600, display: "inline" }}>{title}: </Text>
+      )}
       {description && <Text sx={{ display: "inline" }}>{description}</Text>}
       {link.isExternal ? (
         <A

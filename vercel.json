@@ -1,6 +1,5 @@
 {
   "redirects": [
-    { "source": "/primer", "destination": "https://primer.livepeer.org" },
     { "source": "/jobs", "destination": "https://livepeer.com/jobs" },
     {
       "source": "/jobs/marketing-lead",

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Button, Heading, Link as A } from "theme-ui"
+import { jsx, Heading, Link as A } from "theme-ui"
 import SectionLayout from "components/layouts/section"
 import { FiArrowUpRight } from "react-icons/fi"
 import Slider from "components/primitives/slider"

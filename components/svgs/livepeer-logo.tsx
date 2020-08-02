@@ -9,10 +9,17 @@ type Props = {
   pushSx?: SxStyleProp
   isDark?: boolean
   isLink?: boolean
+  disableHover?: boolean
   id?: string
 }
 
-const LivepeerLogo = ({ pushSx, isDark, isLink = true, id = "" }: Props) => {
+const LivepeerLogo = ({
+  pushSx,
+  isDark,
+  isLink = true,
+  disableHover = false,
+  id = ""
+}: Props) => {
   const [hover, setHover] = useState(false)
   const svgRef = useRef(null)
 
@@ -46,7 +53,7 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true, id = "" }: Props) => {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover1 : "#00A55F"
+        "stop-color": hover ? hexHover1 : disableHover ? "#131418" : "#00A55F"
       }
     })
 
@@ -54,13 +61,13 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true, id = "" }: Props) => {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover2 : "#4CF1AC"
+        "stop-color": hover ? hexHover2 : disableHover ? "#131418" : "#4CF1AC"
       }
     })
 
     gsap.to(words, {
       duration: DURATION,
-      fill: hover ? "#00EB88" : hexDark,
+      fill: hover ? (disableHover ? "#131418" : "#00EB88") : hexDark,
       stagger: {
         each: 0.03,
         from: "end",
@@ -143,8 +150,15 @@ const LivepeerLogo = ({ pushSx, isDark, isLink = true, id = "" }: Props) => {
             y2="17.0848"
             gradientUnits="userSpaceOnUse"
           >
-            <stop className="w-color-1" stopColor="#00A55F" />
-            <stop className="w-color-2" offset="1" stopColor="#4CF1AC" />
+            <stop
+              className="w-color-1"
+              stopColor={disableHover ? "#131418" : "#00A55F"}
+            />
+            <stop
+              className="w-color-2"
+              offset="1"
+              stopColor={disableHover ? "#131418" : "#4CF1AC"}
+            />
           </linearGradient>
         </defs>
       </svg>

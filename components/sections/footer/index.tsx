@@ -40,8 +40,7 @@ const lists: FooterListProps[] = [
     items: [
       {
         label: "10-minute Primer",
-        href: "https://primer.livepeer.org/",
-        isExternal: true
+        href: "/primer"
       },
       {
         label: "The Whitepaper",
@@ -77,6 +76,9 @@ const lists: FooterListProps[] = [
 ]
 
 type Prefooter =
+  | {
+      type: "none"
+    }
   | {
       type: "subscribe"
     }
