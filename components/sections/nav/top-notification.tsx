@@ -1,5 +1,5 @@
 import { Box, Text, Link as A } from "theme-ui"
-import { FiArrowRight } from "react-icons/fi"
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi"
 import Link from "next/link"
 import { forwardRef } from "react"
 
@@ -44,12 +44,14 @@ const TopNotification = forwardRef(
             alignItems: "center",
             ml: 2
           }}
+          target="_blank"
+          rel="noopener noreferrer"
           href={link.href}
           data-dark
         >
           {link.label}
           <i sx={{ ml: 1 }}>
-            <FiArrowRight strokeWidth={3} />
+            <FiArrowUpRight strokeWidth={3} />
           </i>
         </A>
       ) : (

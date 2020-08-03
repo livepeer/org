@@ -50,10 +50,13 @@ const links: LinkType[] = [
 const navHeight = "72px"
 
 const defaultTopNotification: TopNotificationProps = {
-  description: "Livepeer.org got a redesign!",
+  title: "Introducing",
+  description: "A brand new Livepeer.org",
   link: {
     label: "Read post",
-    href: "/blog"
+    href:
+      "https://medium.com/livepeer-blog/introducing-a-brand-new-livepeer-org-3e433519b5d0",
+    isExternal: true
   }
 }
 
