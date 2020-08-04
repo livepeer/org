@@ -60,7 +60,7 @@ const links: IconLinkProps[] = [
         Contact us on&nbsp;<b>Telegram</b>
       </>
     ),
-    href: "https://t.me/livepeer",
+    href: "https://t.me/livepeerorg",
     isExternal: true
   },
   {
