@@ -26,7 +26,7 @@ export type HeadProps = {
 const Head = ({ meta = {} }: HeadProps) => {
   meta = { ...defaultMeta, ...meta }
   if (meta.title !== defaultMeta.title) {
-    meta.title = `${meta.title} - Livepeer`
+    meta.title = `Livepeer - ${meta.title}`
   }
 
   return (

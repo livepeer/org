@@ -6,7 +6,7 @@ import { HeadProps } from "components/primitives/head"
 
 const headProps: HeadProps = {
   meta: {
-    title: "Livepeer - Privacy Policy",
+    title: "Privacy Policy",
     description:
       "Livepeer.org is a primary online resource for participants and users of the Livepeer network.",
     url: "https://livepeer.org/privacy-policy",
