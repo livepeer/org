@@ -1,10 +1,23 @@
 /** @jsx jsx */
 import { jsx, Heading, Text, Container, Link as A } from "theme-ui"
 import PageLayout from "components/layouts/page"
-import { useRef, useEffect } from "react"
+
+import { HeadProps } from "components/primitives/head"
+
+const headProps: HeadProps = {
+  meta: {
+    title: "Livepeer - Privacy Policy",
+    description:
+      "Livepeer.org is a primary online resource for participants and users of the Livepeer network.",
+    url: "https://livepeer.org/privacy-policy",
+    siteName: "Livepeer.org",
+    image: "https://livepeer.org/OG.png",
+    twitterUsername: "@LivepeerOrg"
+  }
+}
 
 const PrivacyPolicyPage = () => (
-  <PageLayout footerProps={{ prefooter: null }}>
+  <PageLayout headProps={headProps} footerProps={{ prefooter: null }}>
     <Container sx={{ py: 5, maxWidth: "800px", p: { mb: 4, lineHeight: 1.7 } }}>
       <Heading variant="heading.3" sx={{ textAlign: "left", mb: 4 }}>
         Privacy Policy

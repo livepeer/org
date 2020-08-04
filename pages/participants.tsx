@@ -5,10 +5,23 @@ import PageLayout from "components/layouts/page"
 import IconHero from "components/layouts/icon-hero"
 import { FiUserCheck } from "react-icons/fi"
 import ParticipantsSvg from "components/svgs/participants"
+import { HeadProps } from "components/primitives/head"
+
+const headProps: HeadProps = {
+  meta: {
+    title: "Livepeer - Participants",
+    description:
+      "Livepeer.org is a primary online resource for participants and users of the Livepeer network.",
+    url: "https://livepeer.org/participants",
+    siteName: "Livepeer.org",
+    image: "https://livepeer.org/OG.png",
+    twitterUsername: "@LivepeerOrg"
+  }
+}
 
 const ParticipantsPage = ({ youtubeVideos }) => {
   return (
-    <PageLayout>
+    <PageLayout headProps={headProps}>
       <IconHero
         icon={<FiUserCheck />}
         title="Participants"

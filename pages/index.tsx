@@ -7,6 +7,19 @@ import PageLayout from "components/layouts/page"
 import { useEffect } from "react"
 import HaveACallSection from "components/sections/participants/have-a-call"
 import { getTotalActiveStake } from "lib/document-helpers"
+import { HeadProps } from "components/primitives/head"
+
+const headProps: HeadProps = {
+  meta: {
+    title: "Livepeer",
+    description:
+      "Livepeer.org is a primary online resource for participants and users of the Livepeer network.",
+    url: "https://livepeer.org",
+    siteName: "Livepeer.org",
+    image: "https://livepeer.org/OG.png",
+    twitterUsername: "@LivepeerOrg"
+  }
+}
 
 const HomePage = ({ youtubeVideos, totalActiveStake }) => {
   useEffect(() => {
@@ -18,6 +31,7 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
 
   return (
     <PageLayout
+      headProps={headProps}
       navProps={{ isInmersive: true }}
       pushContentSx={{ marginTop: "-72px" }}
     >

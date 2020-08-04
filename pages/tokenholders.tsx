@@ -9,6 +9,19 @@ import {
   getTotalDelegators,
   getTotalGeneratedFees
 } from "lib/document-helpers"
+import { HeadProps } from "components/primitives/head"
+
+const headProps: HeadProps = {
+  meta: {
+    title: "Livepeer - Tokenholders",
+    description:
+      "Livepeer.org is a primary online resource for participants and users of the Livepeer network.",
+    url: "https://livepeer.org/tokenholders",
+    siteName: "Livepeer.org",
+    image: "https://livepeer.org/OG.png",
+    twitterUsername: "@LivepeerOrg"
+  }
+}
 
 const TokenholdersPage = ({
   totalActiveStake,
@@ -16,6 +29,7 @@ const TokenholdersPage = ({
   totalGeneratedFees
 }) => (
   <PageLayout
+    headProps={headProps}
     footerProps={{
       prefooter: {
         type: "faqs",
