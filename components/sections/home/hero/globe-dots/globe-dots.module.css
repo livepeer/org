@@ -1,0 +1,15 @@
+.pulse {
+  border-radius: 50%;
+  background-image: radial-gradient(
+    circle closest-side,
+    rgba(0, 235, 136, 0.5),
+    transparent
+  );
+  border: solid 2px rgba(0, 235, 136, 1);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}

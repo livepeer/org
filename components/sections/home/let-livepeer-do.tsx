@@ -1,7 +1,7 @@
 import SectionLayout from "components/layouts/section"
 import { Grid } from "theme-ui"
 import IconCard, { IconCardProps } from "components/primitives/cards/icon"
-import { FiUserCheck, FiCode, FiBriefcase } from "react-icons/fi"
+import { FiCode } from "react-icons/fi"
 import TokenSvg from "components/svgs/token"
 import GpuSvg from "components/svgs/gpu"
 
@@ -37,8 +37,8 @@ const LetLivepeerDoSection = () => (
     titleLabel="Get Started"
     title="What role will you play in the Livepeer network?"
     subtitle="Jump in by choosing the option that best describes your interest:"
-    background="muted"
     id="get-started"
+    background="muted"
   >
     <Grid
       gap={4}
