@@ -32,7 +32,7 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
   return (
     <PageLayout
       headProps={headProps}
-      navProps={{ background: "muted", isInmersive: true }}
+      navProps={{ isInmersive: true }}
       pushContentSx={{ marginTop: "-72px" }}
     >
       <HomeHero />

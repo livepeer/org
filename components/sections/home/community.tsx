@@ -77,6 +77,7 @@ const links: IconLinkProps[] = [
 
 const CommunitySection = ({ title = "Join the Livepeer Community" }) => (
   <SectionLayout
+    background="muted"
     title={title}
     titleLabel="Livepeer Communities"
     subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skillsets. Join us."

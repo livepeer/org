@@ -6,7 +6,6 @@ import { nFormatter } from "lib/document-helpers"
 type Props = {
   totalActiveStake: number
 }
-
 const ByTheNumbersSection = ({ totalActiveStake }: Props) => {
   const stats: StatProps[] = [
     {

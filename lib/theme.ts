@@ -83,8 +83,8 @@ const theme = {
       "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)"
   },
   zIndices: {
+    header: 1000,
     dropdown: 90,
-    header: 80,
     general: 10,
     behind: -1
   },

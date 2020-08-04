@@ -144,14 +144,6 @@ const Nav = ({
           color,
           position: "sticky",
           top: 0,
-          mixBlendMode:
-            isInmersive && !isPrimer && !hasScrolled && !mobileMenuIsOpen
-              ? "difference"
-              : "unset",
-          filter:
-            isInmersive && !isPrimer && !hasScrolled && !mobileMenuIsOpen
-              ? "invert(1)"
-              : "none",
           width: "100%",
           zIndex: "header",
           transition: "box-shadow .3s, top .3s",

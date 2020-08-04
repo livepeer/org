@@ -1,6 +1,6 @@
 import Events from "events"
 import * as THREE from "three"
-import useViewport from "../hooks/use-viewport"
+import useViewport from "./use-viewport"
 
 let mouse
 
