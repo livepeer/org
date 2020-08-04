@@ -157,7 +157,8 @@ const HomeHero = () => {
           sx={{
             position: "relative",
             width: "100vw",
-            height: "100%"
+            height: "100%",
+            overflow: "hidden"
           }}
         >
           <Globe />
@@ -218,7 +219,7 @@ const HomeHero = () => {
             sx={{
               position: "absolute",
               left: "50%",
-              bottom: ["-10%", "2%"],
+              bottom: "-2%",
               transform: "translateX(-50%)",
               zIndex: "100",
               borderRadius: "6px",

@@ -3,9 +3,9 @@ import { jsx } from "theme-ui"
 import * as THREE from "three"
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
-import useWebGL from "effects/globe/hooks/use-webgl"
-import OrbitControls from "effects/globe/js/OrbitControls"
-import coordinates from "effects/globe/points.json"
+import useWebGL from "lib/effects/globe/hooks/use-webgl"
+import OrbitControls from "lib/effects/globe/js/OrbitControls"
+import coordinates from "lib/effects/globe/points.json"
 
 const globeRadius = 200
 const globeWidth = 4098 / 2
