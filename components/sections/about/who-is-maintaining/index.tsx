@@ -28,6 +28,16 @@ const basementMaintainers: MaintainerProps[] = [
     },
     githubHref: "https://github.com/ragojose"
   },
+
+  {
+    name: "Julian Benegas",
+    position: "Developer",
+    avatar: {
+      src:
+        "https://avatars1.githubusercontent.com/u/40034115?s=400&u=3bf788afbbf0fe34bda786a12fe7dd0480830531&v=4"
+    },
+    githubHref: "https://github.com/julianbenegas"
+  },
   {
     name: "Franco Arza",
     position: "Developer",
