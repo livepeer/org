@@ -21,7 +21,7 @@ import Footer from "components/sections/primer/Footer"
 
 const headProps: HeadProps = {
   meta: {
-    title: "Livepeer - A 10-Minute Primer",
+    title: "A 10-Minute Primer",
     description:
       "Through storytelling, illustration, and data, the Livepeer Primer explains, at a high level, the problem Livepeer solves, and how it works.",
     url: "https://livepeer.org/primer",
