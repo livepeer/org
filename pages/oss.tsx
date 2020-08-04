@@ -5,6 +5,19 @@ import GetInvolvedSection from "components/sections/oss/get-involved"
 import PageLayout from "components/layouts/page"
 import IconHero from "components/layouts/icon-hero"
 import { FiHeart } from "react-icons/fi"
+import { HeadProps } from "components/primitives/head"
+
+const headProps: HeadProps = {
+  meta: {
+    title: "Livepeer - Open Source Software",
+    description:
+      "Livepeer.org is a primary online resource for participants and users of the Livepeer network.",
+    url: "https://livepeer.org/oss",
+    siteName: "Livepeer.org",
+    image: "https://livepeer.org/OG.png",
+    twitterUsername: "@LivepeerOrg"
+  }
+}
 
 const CoverImage = () => (
   <figure
@@ -49,7 +62,7 @@ const CoverImage = () => (
 )
 
 const CodePage = () => (
-  <PageLayout pushContentSx={{ bg: "text" }} isDark>
+  <PageLayout headProps={headProps} pushContentSx={{ bg: "text" }} isDark>
     <IconHero
       icon={<FiHeart />}
       title="Livepeer open source"
