@@ -111,7 +111,7 @@ const WhoIsMaintainingSection = () => (
     <Heading variant="heading.5" sx={{ mb: 4, maxWidth: "4xl", mx: "auto" }}>
       Anyone is welcome and encouraged to help improve the site on{" "}
       <A
-        href="http://github.com/livepeer/livepeer.org"
+        href="https://github.com/livepeer/livepeer-org"
         target="_blank"
         variant="accent"
       >
