@@ -16,6 +16,7 @@ import { FiMenu, FiX } from "react-icons/fi"
 import Link from "next/link"
 import TopNotification, { TopNotificationProps } from "./top-notification"
 import Menu from "components/sections/primer/Menu"
+import { useRouter } from "next/router"
 
 type LinkType = {
   label: string
@@ -73,6 +74,7 @@ const Nav = ({
   topNotification = defaultTopNotification,
   isPrimer = false
 }: NavProps) => {
+  const router = useRouter()
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
 
@@ -297,7 +299,15 @@ const Nav = ({
             </Flex>
 
             <Flex sx={{ flexDirection: "column" }}>
-              <Button sx={{ mb: 3 }}>Get started</Button>
+              <Button
+                sx={{ mb: 3 }}
+                onClick={() => {
+                  setMobileMenuIsOpen(false)
+                  router.push("/#get-started")
+                }}
+              >
+                Get started
+              </Button>
               <Text sx={{ fontSize: "14px", textAlign: "center" }}>
                 © Livepeer, Inc. 2020 - All rights reserved.
               </Text>
