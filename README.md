@@ -9,6 +9,14 @@ Livepeer.org is a primary online resource for participants and users of the Live
 
 ## Local Development
 
+### Step 1
+
+Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
+
+`cp .env.local.example .env.local`
+
+### Step 2
+
 Install it and run:
 
 ```bash
