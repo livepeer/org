@@ -197,7 +197,10 @@ const questions: Question[] = [
     question: "How was Livepeer token distributed? Was there an ICO?",
     answer: (
       <>
-        No ICO. Details regarding the token distribution can be found{" "}
+        No ICO. Livepeer token was originally distributed via a Merkle Mine, an
+        algorithm that allows for large-scale, decentralized distribution of
+        token during genesis state. Details regarding Livepeer's token
+        distribution can be found{" "}
         <AnswerLink
           label="here"
           href="https://medium.com/livepeer-blog/the-end-of-the-initial-livepeer-token-distribution-6fa9894f0f16"
@@ -363,6 +366,18 @@ const questions: Question[] = [
         />
         , tokens at stake provide security for developers using the network that
         work will be performed honestly, correctly and competitively.
+      </>
+    ),
+    category: categories[4]
+  },
+  {
+    question: "Merkle Mine",
+    answer: (
+      <>
+        A Merkle Mine is an algorithm that allows for the large-scale,
+        decentralized distribution of token during the genesis state. It was
+        first introduced by Livepeer and was the mechanism by which LPT was
+        originally distributed.
       </>
     ),
     category: categories[4]
