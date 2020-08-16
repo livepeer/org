@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import Link from "next/link"
 import { jsx, Box, Heading, Link as A, Grid } from "theme-ui"
 import HowToGetStartedStep, { HowToGetStartedStepProps } from "./step"
 
@@ -22,14 +23,9 @@ const steps: HowToGetStartedStepProps[] = [
     children: (
       <>
         Check out the{" "}
-        <A
-          variant="accent"
-          href="https://livepeer.basement.studio/faq?filter=video-miners"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          video miner FAQ{" "}
-        </A>
+        <Link href="/faq?filter=video-miners" passHref>
+          <A variant="accent">video miner FAQ</A>
+        </Link>
       </>
     )
   },
