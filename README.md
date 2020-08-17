@@ -17,6 +17,10 @@ Copy the .env.local.example file in this directory to .env.local (which will be 
 
 ### Step 2
 
+Add a youtube api key and an ethereum provider (ie an infura endpoint) to .env.local
+
+### Step 3
+
 Install it and run:
 
 ```bash
