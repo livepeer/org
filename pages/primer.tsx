@@ -4,6 +4,7 @@ import { Element } from "react-scroll"
 import PageLayout from "components/layouts/primer"
 import { HeadProps } from "components/primitives/head"
 import { request } from "graphql-request"
+import LivepeerSDK from "@livepeer/sdk"
 
 // TODO: refactor primer components to use theme-ui
 import Masthead from "components/sections/primer/Masthead"
@@ -85,6 +86,10 @@ const Primer = ({ data }) => {
 }
 
 export async function getStaticProps() {
+  const { rpc } = await LivepeerSDK({
+    provider: process.env.PROVIDER
+  })
+
   const reqDelegators = async (skip) => {
     const query = `query delegators ($first: Int $skip: Int $where: Delegator_filter) {
           delegators(first: $first skip: $skip where: $where) {
@@ -121,25 +126,13 @@ export async function getStaticProps() {
   }
   let delegators = await getDelegators()
 
-  let totalSupplyResponse = await fetch(
-    "https://scout.cool/supermax/api/v2/charts/preview/livepeer/mainnet/5bc630c60a7b0ea5ffae004d"
-  )
-  let totalSupplyResult = await totalSupplyResponse.json()
+  let totalSupply = (await rpc.getTokenTotalSupply()) / 10e17
 
-  let inflationPerRoundResponse = await fetch(
-    "https://scout.cool/supermax/api/v2/charts/preview/livepeer/mainnet/5c35522c869d0d001761784b"
-  )
-  let inflationPerRoundResult = await inflationPerRoundResponse.json()
+  let inflationPerRound = (await rpc.getInflation()) / 10000
 
-  let participationRateResponse = await fetch(
-    "https://scout.cool/supermax/api/v2/charts/preview/livepeer/mainnet/5c35f206a9c1841fb7d4a9ad"
-  )
-  let participationRateResult = await participationRateResponse.json()
+  let totalBonded = (await rpc.getTotalBonded()) / 10e17
 
-  let totalBondedResponse = await fetch(
-    "https://scout.cool/supermax/api/v2/charts/preview/livepeer/mainnet/5bc62d260a7b0ea5ffae004c"
-  )
-  let totalBondedResult = await totalBondedResponse.json()
+  let participationRate = ((+totalBonded / totalSupply) * 100).toPrecision(4)
 
   let ethGasStationResponse = await fetch(
     "https://ethgasstation.info/json/ethgasAPI.json"
@@ -149,11 +142,11 @@ export async function getStaticProps() {
   return {
     props: {
       data: {
-        totalSupply: totalSupplyResult.data.rows[0][1],
+        totalSupply,
         totalDelegators: delegators.length,
-        inflationPerRound: inflationPerRoundResult.data.rows[0][1],
-        totalBonded: totalBondedResult.data.rows[0][1],
-        participationRate: participationRateResult.data.rows[0][1],
+        inflationPerRound,
+        totalBonded,
+        participationRate,
         blockTime: ethGasStationResult.block_time
       }
     },
