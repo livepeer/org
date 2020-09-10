@@ -121,13 +121,16 @@ const Chapter8 = ({ data, onChange }) => {
             }
           `}
         >
-          Livepeer presupposes that a target rate of <strong>50%</strong> is a
-          healthy trade-off between network security and token liquidity, so in
-          order to hit this target, the protocol incentivizes participation by
-          increasing the inflation rate by <strong>0.0003%</strong> for every
-          round the participation rate is below <strong>50%</strong> and
-          decreasing it <strong>0.0003%</strong> for every round the
-          participation rate is above <strong>50%</strong>.
+          Livepeer presupposes that a target rate of{" "}
+          <strong>{data.targetBondingRate}%</strong> is a healthy trade-off
+          between network security and token liquidity, so in order to hit this
+          target, the protocol incentivizes participation by increasing the
+          inflation rate by <strong>{data.inflationChange}%</strong> for every
+          round the participation rate is below{" "}
+          <strong>{data.targetBondingRate}%</strong> and decreasing it{" "}
+          <strong>{data.inflationChange}%</strong> for every round the
+          participation rate is above <strong>{data.targetBondingRate}%</strong>
+          .
         </p>
       </Section3>
     </Container>
