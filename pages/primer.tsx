@@ -128,11 +128,15 @@ export async function getStaticProps() {
 
   let totalSupply = (await rpc.getTokenTotalSupply()) / 10e17
 
+  let inflationChange = (await rpc.getInflationChange()) / 10000000
+
   let inflationPerRound = (await rpc.getInflation()) / 10000000
 
   let totalBonded = (await rpc.getTotalBonded()) / 10e17
 
   let participationRate = ((+totalBonded / totalSupply) * 100).toPrecision(4)
+
+  let targetBondingRate = (await rpc.getTargetBondingRate()) / 10000000
 
   let ethGasStationResponse = await fetch(
     "https://ethgasstation.info/json/ethgasAPI.json"
@@ -145,7 +149,9 @@ export async function getStaticProps() {
         totalSupply,
         totalDelegators: delegators.length,
         inflationPerRound,
+        inflationChange,
         totalBonded,
+        targetBondingRate,
         participationRate,
         blockTime: ethGasStationResult.block_time
       }
