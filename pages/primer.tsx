@@ -128,7 +128,7 @@ export async function getStaticProps() {
 
   let totalSupply = (await rpc.getTokenTotalSupply()) / 10e17
 
-  let inflationPerRound = (await rpc.getInflation()) / 10000
+  let inflationPerRound = (await rpc.getInflation()) / 10000000
 
   let totalBonded = (await rpc.getTotalBonded()) / 10e17
 
