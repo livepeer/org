@@ -14,7 +14,7 @@ const cards: RequirementCardProps[] = [
       <>
         Access to affordable
         <br />
-        bandwith
+        bandwidth
       </>
     ),
     description: "With good connectivity to major internet service providers",
