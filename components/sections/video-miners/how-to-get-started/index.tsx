@@ -35,7 +35,7 @@ const steps: HowToGetStartedStepProps[] = [
         Reach out to the Livepeer team and community in the{" "}
         <A
           variant="accent"
-          href="https://discord.com/invite/RR4kFAh"
+          href="https://discord.gg/uaPhtyrWsF"
           target="_blank"
           rel="noopener noreferrer"
         >
