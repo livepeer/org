@@ -19,7 +19,7 @@ const links: IconLinkProps[] = [
         Join our&nbsp;<b>Discord Server</b>
       </>
     ),
-    href: "https://discord.com/invite/RR4kFAh",
+    href: "https://discord.gg/uaPhtyrWsF",
     isExternal: true
   },
   {
