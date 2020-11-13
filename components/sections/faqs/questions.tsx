@@ -134,7 +134,7 @@ const questions: Question[] = [
           The best way to get started is to join the discussion in{" "}
           <AnswerLink
             label="the Discord Developer Chat. "
-            href="https://discord.gg/EjTrNcu"
+            href="https://discord.gg/uaPhtyrWsF"
             isExternal
           />
           These links could be useful to you in terms of discovering development

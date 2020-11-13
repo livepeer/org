@@ -62,7 +62,7 @@ const lists: FooterListProps[] = [
       },
       {
         label: "Discord Chat",
-        href: "https://discord.com/invite/RR4kFAh",
+        href: "https://discord.gg/uaPhtyrWsF",
         isExternal: true
       },
       { label: "Forum", href: "https://forum.livepeer.org/", isExternal: true },
