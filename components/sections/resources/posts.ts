@@ -151,6 +151,20 @@ const posts: Post[] = [
     }
   },
   {
+    title: "Matcha",
+    subtitle: "Non-custodial exchange",
+    link: {
+      href:
+        "https://matcha.xyz/markets/LPT/ETH",
+      isExternal: true
+    },
+    category: categories[2],
+    image: {
+      src: "/images/posts/post-cover-13.png",
+      alt: "Resource cover image"
+    }
+  },
+  {
     title: "Uniswap",
     subtitle: "Non-custodial exchange",
     link: {
@@ -160,7 +174,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-13.png",
+      src: "/images/posts/post-cover-14.png",
       alt: "Resource cover image"
     }
   },
@@ -174,7 +188,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-14.png",
+      src: "/images/posts/post-cover-15.png",
       alt: "Resource cover image"
     }
   },
@@ -184,7 +198,7 @@ const posts: Post[] = [
     link: { href: "https://poloniex.com/exchange#btc_lpt", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-15.png",
+      src: "/images/posts/post-cover-1.png",
       alt: "Resource cover image"
     }
   }
