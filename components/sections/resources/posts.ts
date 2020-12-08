@@ -71,6 +71,18 @@ const posts: Post[] = [
     }
   },
   {
+    title: "The Livepeer Explorer",
+    description:
+      "View orchestrator campaigns, protocol statistics and manage your stake.",
+    subtitle: "By Livepeer, Inc.",
+    link: { href: "https://explorer.livepeer.org", isExternal: true },
+    category: categories[1],
+    image: {
+      src: "/images/posts/post-cover-7.png",
+      alt: "Resource cover image"
+    }
+  },
+  {
     title: "Telegram Orchestrator Watcher Bot",
     description:
       "A telegram bot for real time notifications about your orchestrator",
@@ -78,7 +90,7 @@ const posts: Post[] = [
     link: { href: "https://t.me/OrchestratorWatcherBot", isExternal: true },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-7.png",
+      src: "/images/posts/post-cover-8.png",
       alt: "Resource cover image"
     }
   },
@@ -90,7 +102,7 @@ const posts: Post[] = [
     link: { href: "https://scout.cool/livepeer/mainnet", isExternal: true },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-8.png",
+      src: "/images/posts/post-cover-9.png",
       alt: "Resource cover image"
     }
   },
@@ -104,7 +116,7 @@ const posts: Post[] = [
     },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-9.png",
+      src: "/images/posts/post-cover-10.png",
       alt: "Resource cover image"
     }
   },
@@ -116,7 +128,7 @@ const posts: Post[] = [
     link: { href: "https://www.livepool.io/", isExternal: true },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-10.png",
+      src: "/images/posts/post-cover-11.png",
       alt: "Resource cover image"
     }
   },
@@ -131,7 +143,7 @@ const posts: Post[] = [
     },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-11.png",
+      src: "/images/posts/post-cover-12.png",
       alt: "Resource cover image"
     }
   },
@@ -146,7 +158,7 @@ const posts: Post[] = [
     },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-12.png",
+      src: "/images/posts/post-cover-13.png",
       alt: "Resource cover image"
     }
   },
@@ -160,7 +172,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-13.png",
+      src: "/images/posts/post-cover-14.png",
       alt: "Resource cover image"
     }
   },
@@ -174,7 +186,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-14.png",
+      src: "/images/posts/post-cover-15.png",
       alt: "Resource cover image"
     }
   },
@@ -188,7 +200,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-15.png",
+      src: "/images/posts/post-cover-1.png",
       alt: "Resource cover image"
     }
   },
@@ -198,7 +210,7 @@ const posts: Post[] = [
     link: { href: "https://poloniex.com/exchange#btc_lpt", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-1.png",
+      src: "/images/posts/post-cover-2.png",
       alt: "Resource cover image"
     }
   }
