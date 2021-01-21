@@ -18,9 +18,9 @@ const HaveACallSection = ({ youtubeVideos }) => (
           variant="accent"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://livepeer.com/tv"
+          href="https://livepeer.org/tv"
         >
-          livepeer.com/tv
+          livepeer.org/tv
         </A>
       </>
     }
