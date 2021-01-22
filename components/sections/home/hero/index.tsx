@@ -136,7 +136,7 @@ const HomeHero = () => {
             </Heading>
             <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
             <Heading variant="section.subtitle">
-              Livepeer is a decentralized video transcoding network built on{" "}
+              Livepeer is a decentralized video streaming network built on{" "}
               <br /> the Ethereum blockchain.
             </Heading>
           </Box>
