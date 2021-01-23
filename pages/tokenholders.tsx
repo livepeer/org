@@ -40,7 +40,7 @@ const TokenholdersPage = ({
     <CroppedIllustrationHero
       withAnimation
       title="Tokenholders"
-      subtitle="Every day thousands of tokenholders participate in Livepeer, the world’s first open source, peer-to-peer video transcoding platform."
+      subtitle="Every day thousands of tokenholders participate in Livepeer, the world’s first open source, peer-to-peer video streaming network."
       illustration={
         <IllustratedBackgroundBox pushContentSx={{ overflow: "hidden" }}>
           <TokenholdersDashboardSvg />
