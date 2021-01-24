@@ -213,6 +213,16 @@ const posts: Post[] = [
       src: "/images/posts/post-cover-2.png",
       alt: "Resource cover image"
     }
+  },
+  {
+    title: "Gate.io",
+    subtitle: "Custodial exchange",
+    link: { href: "https://www.gate.io/en/trade/LPT_USDT", isExternal: true },
+    category: categories[2],
+    image: {
+      src: "/images/posts/post-cover-3.png",
+      alt: "Resource cover image"
+    }
   }
 ]
 
