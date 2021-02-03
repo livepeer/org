@@ -29,7 +29,7 @@ const WhoIsBuildingSection = () => (
     subtitle={
       <>
         In 2017, the founders of the Livepeer project formed a company called
-        Livepeer Inc to help facilitate its early development, bootstrap the
+        Livepeer, Inc. to help facilitate its early development, bootstrap the
         network’s supply and demand sides, and guide the project’s{" "}
         <A
           href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532"
@@ -56,7 +56,7 @@ const WhoIsBuildingSection = () => (
       variant="buttons.primary"
       sx={{ display: "flex" }}
     >
-      Meet Livepeer Inc.{" "}
+      Meet Livepeer, Inc.{" "}
       <i sx={{ ml: 2, fontSize: 4 }}>
         <FiArrowUpRight />
       </i>
@@ -77,7 +77,7 @@ const WhoIsBuildingSection = () => (
       ))}
     </Slider>
     <Heading variant="heading.5">
-      Interested in Joining Livepeer Inc?{" "}
+      Interested in Joining Livepeer, Inc.?{" "}
       <A
         href="https://angel.co/company/livepeer/jobs"
         target="_blank"
