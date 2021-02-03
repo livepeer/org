@@ -52,7 +52,7 @@ const basementMaintainers: MaintainerProps[] = [
 const accordionItems: AccordionItemProps[] = [
   {
     heading: {
-      title: "Livepeer Inc",
+      title: "Livepeer, Inc.",
       icon: {
         children: <LivepeerIconSvg pushSx={{ width: "20px" }} isDark />
       },
