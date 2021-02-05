@@ -3,7 +3,7 @@ import SectionLayout from "components/layouts/section"
 import StatsGrid from "components/layouts/stats-grid"
 import { nFormatter } from "lib/document-helpers"
 
-const LetTheNumbersTalkSection = ({ totalGeneratedFees }) => {
+const LetTheNumbersTalkSection = ({ totalVolume }) => {
   const stats: StatProps[] = [
     {
       title: "45",
@@ -14,7 +14,7 @@ const LetTheNumbersTalkSection = ({ totalGeneratedFees }) => {
       )
     },
     {
-      title: `${nFormatter(totalGeneratedFees, 1)} ETH`,
+      title: `${nFormatter(totalVolume, 1)} USD`,
       label: (
         <>
           Total <br /> fees earned
