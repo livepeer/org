@@ -59,7 +59,7 @@ const getTotalActiveStake = async () => {
   return totalActiveStake
 }
 
-const getTotalGeneratedFees = async () => {
+const getTotalVolume = async () => {
   const graphqlResponse = await fetch(
     "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
     {
@@ -69,16 +69,16 @@ const getTotalGeneratedFees = async () => {
         Accept: "application/json"
       },
       body: JSON.stringify({
-        query: '{ protocol(id: "0") { totalGeneratedFees } } '
+        query: '{ protocol(id: "0") { totalVolumeUSD } } '
       })
     }
   )
   const {
     data: {
-      protocol: { totalGeneratedFees }
+      protocol: { totalVolumeUSD }
     }
   } = await graphqlResponse.json()
-  return totalGeneratedFees
+  return totalVolumeUSD
 }
 
 const getTotalDelegators = async () => {
@@ -122,5 +122,5 @@ export {
   nFormatter,
   getTotalActiveStake,
   getTotalDelegators,
-  getTotalGeneratedFees
+  getTotalVolume
 }

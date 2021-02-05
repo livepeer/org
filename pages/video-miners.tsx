@@ -4,7 +4,7 @@ import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-n
 import HowToGetStartedSection from "components/sections/video-miners/how-to-get-started"
 import RequirementsSection from "components/sections/video-miners/requirements"
 import VideoMinerHero from "components/sections/video-miners/hero"
-import { getTotalGeneratedFees } from "lib/document-helpers"
+import { getTotalVolume } from "lib/document-helpers"
 import { HeadProps } from "components/primitives/head"
 
 const headProps: HeadProps = {
@@ -19,22 +19,22 @@ const headProps: HeadProps = {
   }
 }
 
-const VideoMinerPage = ({ totalGeneratedFees }) => (
+const VideoMinerPage = ({ totalVolume }) => (
   <PageLayout headProps={headProps}>
     <VideoMinerHero />
     <HowVideoMiningWorksSection />
-    <LetTheNumbersTalkSection totalGeneratedFees={totalGeneratedFees} />
+    <LetTheNumbersTalkSection totalVolume={totalVolume} />
     <RequirementsSection />
     <HowToGetStartedSection />
   </PageLayout>
 )
 
 export async function getStaticProps() {
-  const totalGeneratedFees = await getTotalGeneratedFees()
+  const totalVolume = await getTotalVolume()
 
   return {
     props: {
-      totalGeneratedFees: totalGeneratedFees / 10e17
+      totalVolume
     },
     revalidate: 1
   }
