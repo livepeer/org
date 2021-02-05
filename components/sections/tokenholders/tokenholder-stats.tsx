@@ -6,13 +6,13 @@ import { nFormatter } from "lib/document-helpers"
 type Props = {
   totalActiveStake: number
   totalDelegators: number
-  totalGeneratedFees: number
+  totalVolume: number
 }
 
 const TokenholderStatsSection = ({
   totalActiveStake,
   totalDelegators,
-  totalGeneratedFees
+  totalVolume
 }: Props) => {
   const stats: StatProps[] = [
     {
@@ -20,7 +20,7 @@ const TokenholderStatsSection = ({
       label: <>Total LPT Staked</>
     },
     {
-      title: `${nFormatter(totalGeneratedFees, 1)} ETH`,
+      title: `${nFormatter(totalVolume, 1)} USD`,
       label: <>Total Fees Paid Out</>,
       color: "gradient"
     },

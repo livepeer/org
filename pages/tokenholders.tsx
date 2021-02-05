@@ -7,7 +7,7 @@ import TokenholderStatsSection from "components/sections/tokenholders/tokenholde
 import {
   getTotalActiveStake,
   getTotalDelegators,
-  getTotalGeneratedFees
+  getTotalVolume
 } from "lib/document-helpers"
 import { HeadProps } from "components/primitives/head"
 
@@ -26,7 +26,7 @@ const headProps: HeadProps = {
 const TokenholdersPage = ({
   totalActiveStake,
   totalDelegators,
-  totalGeneratedFees
+  totalVolume
 }) => (
   <PageLayout
     headProps={headProps}
@@ -52,7 +52,7 @@ const TokenholdersPage = ({
     <TokenholderStatsSection
       totalActiveStake={totalActiveStake}
       totalDelegators={totalDelegators}
-      totalGeneratedFees={totalGeneratedFees}
+      totalVolume={totalVolume}
     />
   </PageLayout>
 )
@@ -60,13 +60,13 @@ const TokenholdersPage = ({
 export async function getStaticProps() {
   const totalActiveStake = await getTotalActiveStake()
   const totalDelegators = await getTotalDelegators()
-  const totalGeneratedFees = await getTotalGeneratedFees()
+  const totalVolume = await getTotalVolume()
 
   return {
     props: {
-      totalActiveStake: totalActiveStake / 10e17,
+      totalActiveStake,
       totalDelegators,
-      totalGeneratedFees: totalGeneratedFees / 10e17
+      totalVolume
     },
     revalidate: 1
   }
