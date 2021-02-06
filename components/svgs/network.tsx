@@ -1,23 +1,23 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from "theme-ui"
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { DURATION } from "lib/animations"
+import { jsx, SxStyleProp } from "theme-ui";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { DURATION } from "lib/animations";
 
 type Props = {
-  pushSx?: SxStyleProp
-}
+  pushSx?: SxStyleProp;
+};
 
 const NetworkSvg = ({ pushSx }: Props) => {
-  const svgRef = useRef(null)
+  const svgRef = useRef(null);
 
   useEffect(() => {
-    const pathInner = document.querySelector(".path--inner")
-    const pathOuter = document.querySelector(".path--outer")
-    const pathGreen = document.querySelector(".path--green")
-    const circles = document.querySelectorAll(".path--circle")
-    const dotInner = document.querySelector(".dot--inner")
-    const dotOuter = document.querySelector(".dot--outer")
+    const pathInner = document.querySelector(".path--inner");
+    const pathOuter = document.querySelector(".path--outer");
+    const pathGreen = document.querySelector(".path--green");
+    const circles = document.querySelectorAll(".path--circle");
+    const dotInner = document.querySelector(".dot--inner");
+    const dotOuter = document.querySelector(".dot--outer");
 
     if (
       !svgRef.current ||
@@ -28,22 +28,22 @@ const NetworkSvg = ({ pushSx }: Props) => {
       !dotInner ||
       !dotOuter
     ) {
-      return
+      return;
     }
 
     const tl = gsap.timeline({
       delay: DURATION,
       scrollTrigger: {
         trigger: svgRef.current,
-        start: "top 80%"
-      }
-    })
+        start: "top 80%",
+      },
+    });
 
-    tl.set([dotInner, dotOuter], { autoAlpha: 0 })
-    tl.set([pathInner, pathOuter, circles], { autoAlpha: 0 })
-    tl.set([pathGreen], { drawSVG: false })
+    tl.set([dotInner, dotOuter], { autoAlpha: 0 });
+    tl.set([pathInner, pathOuter, circles], { autoAlpha: 0 });
+    tl.set([pathGreen], { drawSVG: false });
 
-    tl.to(svgRef.current, { autoAlpha: 1, duration: DURATION * 0.5 })
+    tl.to(svgRef.current, { autoAlpha: 1, duration: DURATION * 0.5 });
     tl.to(
       [pathInner, pathOuter, circles],
       {
@@ -53,11 +53,11 @@ const NetworkSvg = ({ pushSx }: Props) => {
         ease: "sine.out",
         stagger: {
           each: 0.1,
-          from: "start"
-        }
+          from: "start",
+        },
       },
       "<"
-    )
+    );
     tl.to(dotInner, {
       duration: DURATION * 18,
       immediateRender: true,
@@ -66,12 +66,12 @@ const NetworkSvg = ({ pushSx }: Props) => {
       motionPath: {
         path: ".path--inner",
         align: ".path--inner",
-        alignOrigin: [0.5, 0.5]
+        alignOrigin: [0.5, 0.5],
       },
       stagger: {
-        repeat: -1
-      }
-    })
+        repeat: -1,
+      },
+    });
     tl.to(
       dotOuter,
       {
@@ -82,29 +82,29 @@ const NetworkSvg = ({ pushSx }: Props) => {
         motionPath: {
           path: ".path--outer",
           align: ".path--outer",
-          alignOrigin: [0.5, 0.5]
+          alignOrigin: [0.5, 0.5],
         },
         stagger: {
-          repeat: -1
-        }
+          repeat: -1,
+        },
       },
       "<"
-    )
+    );
     tl.to(
       [dotInner, dotOuter],
       {
         delay: DURATION * 0.5,
         autoAlpha: 1,
         duration: DURATION,
-        ease: "sine.out"
+        ease: "sine.out",
       },
       "<"
-    )
+    );
 
     return () => {
-      tl.kill()
-    }
-  }, [svgRef])
+      tl.kill();
+    };
+  }, [svgRef]);
 
   return (
     <svg
@@ -113,8 +113,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       sx={{ width: "464px", ...pushSx }}
-      className="c--hide"
-    >
+      className="c--hide">
       <path
         className="path--inner"
         d="M304 232c0 39.765-32.235 72-72 72s-72-32.235-72-72 32.235-72 72-72 72 32.235 72 72z"
@@ -195,7 +194,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default NetworkSvg
+export default NetworkSvg;

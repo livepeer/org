@@ -27,7 +27,7 @@ const theme = {
     "3xl": "48rem",
     "4xl": "56rem",
     "5xl": "64rem",
-    "6xl": "72rem"
+    "6xl": "72rem",
   },
   colors: {
     text: "#131418",
@@ -39,7 +39,7 @@ const theme = {
     gray: "#666666",
     lightGray: "#A5A5A5",
     ultraLightGray: "#E5E5E5",
-    gradient: { from: "#00A55F", mid: "#28CD88", to: "#4CF1AC" }
+    gradient: { from: "#00A55F", mid: "#28CD88", to: "#4CF1AC" },
   },
   fonts: {
     body:
@@ -47,16 +47,16 @@ const theme = {
     heading: "inherit",
     special:
       '"TT Firs Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    mono: "'Roboto Mono', monospace"
+    mono: "'Roboto Mono', monospace",
   },
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 96],
   letterSpacings: {
     heading: "-0.05em",
-    default: "0em"
+    default: "0em",
   },
   lineHeights: {
     heading: 0.9,
-    body: 1.6
+    body: 1.6,
   },
   breakpoints: ["640px", "832px", "1024px", "1280px"],
   radii: {
@@ -66,7 +66,7 @@ const theme = {
     md: "0.375rem",
     lg: "0.5rem",
     xl: "0.75rem",
-    full: "50%"
+    full: "50%",
   },
   shadows: {
     sm: "0px 1px 2px rgba(0, 0, 0, 0.1)",
@@ -80,59 +80,59 @@ const theme = {
     inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
     long: "0px 8px 32px rgba(0, 0, 0, 0.12)",
     magical:
-      "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)"
+      "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)",
   },
   zIndices: {
     header: 1000,
     dropdown: 90,
     general: 10,
-    behind: -1
+    behind: -1,
   },
   // VARIANTS
   layout: {
     container: {
       maxWidth: 1200,
       mx: "auto",
-      p: 3
+      p: 3,
     },
     hero: {
       maxWidth: 1200,
       mx: "auto",
       p: 3,
-      pt: "80px"
+      pt: "80px",
     },
     section: {
       variant: "layout.container",
       position: "relative",
       px: 3,
-      py: "80px"
+      py: "80px",
     },
     flexCenter: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
     },
     centerAbsolute: {
       left: "50%",
-      transform: "translateX(-50%)"
-    }
+      transform: "translateX(-50%)",
+    },
   },
   text: {
     normal: {
       fontFamily: "body",
       fontSize: [2, 3],
       fontWeight: 400,
-      lineHeight: "body"
+      lineHeight: "body",
     },
     large: {
       fontFamily: "body",
       fontSize: [3, "22px"],
-      fontWeight: 500
+      fontWeight: 500,
     },
     small: {
       fontFamily: "body",
       fontSize: [1, 2],
-      fontWeight: 400
+      fontWeight: 400,
     },
     clamp: {
       3: {
@@ -142,8 +142,8 @@ const theme = {
         lineHeight: "body",
         textOverflow: "ellipsis",
         WebkitLineClamp: "3",
-        WebkitBoxOrient: "vertical"
-      }
+        WebkitBoxOrient: "vertical",
+      },
     },
     heading: {
       1: {
@@ -152,7 +152,7 @@ const theme = {
         fontWeight: 700,
         letterSpacing: "heading",
         lineHeight: [1, "heading"],
-        textAlign: "center"
+        textAlign: "center",
       },
       2: {
         fontFamily: "special",
@@ -160,7 +160,7 @@ const theme = {
         fontWeight: 800,
         letterSpacing: "heading",
         lineHeight: [1.2, "heading"],
-        textAlign: "center"
+        textAlign: "center",
       },
       3: {
         fontFamily: "special",
@@ -168,14 +168,14 @@ const theme = {
         fontWeight: 800,
         letterSpacing: "heading",
         lineHeight: [1, "heading"],
-        textAlign: "center"
+        textAlign: "center",
       },
       4: {
         fontFamily: "body",
         fontSize: [6, 7],
         fontWeight: 700,
         letterSpacing: "heading",
-        textAlign: "center"
+        textAlign: "center",
       },
       5: {
         fontFamily: "body",
@@ -184,16 +184,16 @@ const theme = {
         letterSpacing: "heading",
         lineHeight: "body",
         textAlign: "center",
-        color: "gray"
-      }
+        color: "gray",
+      },
     },
     gradientBase: {
       WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent"
+      WebkitTextFillColor: "transparent",
     },
     gradient: {
       background: `linear-gradient(90deg, #00A55F 0%, #4CF1AC 100%)`,
-      variant: "text.gradientBase"
+      variant: "text.gradientBase",
     },
     section: {
       titleLabel: {
@@ -202,7 +202,7 @@ const theme = {
         textAlign: "center",
         mb: [2, 3],
         maxWidth: "960px",
-        mx: "auto"
+        mx: "auto",
       },
       title: {
         variant: "text.heading.2",
@@ -210,14 +210,14 @@ const theme = {
         fontFamily: "body",
         mb: [3, 4],
         maxWidth: "960px",
-        mx: "auto"
+        mx: "auto",
       },
       subtitle: {
         variant: "text.heading.5",
         maxWidth: "960px",
-        mx: "auto"
-      }
-    }
+        mx: "auto",
+      },
+    },
   },
   buttons: {
     primary: {
@@ -234,12 +234,12 @@ const theme = {
       fontWeight: 600,
       transition: "background .15s",
       "&:hover": {
-        bg: "gradient.to"
+        bg: "gradient.to",
       },
       "&:focus": {
         boxShadow: "0 0 0 4px rgba(0, 235, 136, .5)",
-        outline: "none"
-      }
+        outline: "none",
+      },
     },
     secondary: {
       display: "inline-flex",
@@ -255,12 +255,12 @@ const theme = {
       fontWeight: 600,
       transition: "background .15s",
       "&:hover": {
-        bg: "#6565FC"
+        bg: "#6565FC",
       },
       "&:focus": {
         boxShadow: "0 0 0 4px rgba(0, 0, 235, 0.5)",
-        outline: "none"
-      }
+        outline: "none",
+      },
     },
     neutral: {
       display: "inline-flex",
@@ -276,19 +276,19 @@ const theme = {
       fontWeight: 600,
       transition: "opacity .15s",
       "&:hover": {
-        opacity: 0.82
+        opacity: 0.82,
       },
       "&:focus": {
         boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
-        outline: "none"
-      }
+        outline: "none",
+      },
     },
     icon: {
       p: 2,
       borderRadius: "md",
       height: "auto",
-      width: "auto"
-    }
+      width: "auto",
+    },
   },
   cards: {
     primary: {
@@ -298,50 +298,50 @@ const theme = {
       bg: "background",
       border: "1px solid",
       borderColor: "ultraLightGray",
-      overflow: "hidden"
-    }
+      overflow: "hidden",
+    },
   },
   links: {
     nav: {
       transition: "color .1s",
       color: "text",
       ":hover": {
-        color: "secondary"
+        color: "secondary",
       },
       ":focus": {
         color: "text",
         ":hover": {
-          color: "secondary"
-        }
+          color: "secondary",
+        },
       },
       '&[data-dark="true"]': {
         color: "background",
         ":hover": {
-          color: "primary"
+          color: "primary",
         },
         ":focus": {
           color: "background",
           ":hover": {
-            color: "primary"
-          }
-        }
-      }
+            color: "primary",
+          },
+        },
+      },
     },
     accent: {
       color: "secondary",
       fontWeight: 600,
       ":hover": {
         opacity: 0.8,
-        color: "secondary"
+        color: "secondary",
       },
       '&[data-dark="true"]': {
         color: "primary",
         ":hover": {
           opacity: 0.8,
-          color: "primary"
-        }
-      }
-    }
+          color: "primary",
+        },
+      },
+    },
   },
   forms: {
     input: {
@@ -351,37 +351,37 @@ const theme = {
       px: 3,
       height: 12,
       "&::placeholder": {
-        color: "gray"
+        color: "gray",
       },
       "&:focus": {
         boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
-        outline: "none"
-      }
-    }
+        outline: "none",
+      },
+    },
   },
   // STYLES
   styles: {
     root: {
       fontFamily: "body",
       color: "text",
-      bg: "background"
+      bg: "background",
     },
     a: {
       color: "text",
       ":hover": {
-        color: "secondary"
+        color: "secondary",
       },
       "&[data-dark]": {
         color: "background",
         ":hover": {
-          color: "primary"
-        }
-      }
+          color: "primary",
+        },
+      },
     },
     progress: {
-      height: "1px"
-    }
-  }
-}
+      height: "1px",
+    },
+  },
+};
 
-export default theme
+export default theme;

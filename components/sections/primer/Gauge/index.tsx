@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { Container, Inflation } from "./styles"
+import { jsx, css } from "@emotion/core";
+import { Container, Inflation } from "./styles";
 
 const Gauge = ({ data }) => {
   return (
@@ -11,8 +11,7 @@ const Gauge = ({ data }) => {
         viewBox="0 0 271 76"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
+        xmlnsXlink="http://www.w3.org/1999/xlink">
         <defs>
           <path
             d="M0.965,72.905 L24.659,72.812 C24.659,45.539 46.232,24.158 73.504,24.158 L73.504,24.158 C100.776,24.158 121.777,45.73 121.777,73.003 L121.777,73.003 L145.345,72.432 L145.725,72.432 C145.725,32.455 113.326,0.521 73.35,0.521 L73.35,0.521 C33.372,0.521 0.965,32.929 0.965,72.905"
@@ -23,8 +22,7 @@ const Gauge = ({ data }) => {
             y1="49.9993804%"
             x2="100.000115%"
             y2="49.9993804%"
-            id="linearGradient-43"
-          >
+            id="linearGradient-43">
             <stop stopColor="#24A8DF" offset="0%" />
             <stop stopColor="#EB858A" offset="100%" />
           </linearGradient>
@@ -34,8 +32,7 @@ const Gauge = ({ data }) => {
           stroke="none"
           strokeWidth="1"
           fill="none"
-          fillRule="evenodd"
-        >
+          fillRule="evenodd">
           <g id="illu_inflation" transform="translate(-62.000000, -110.000000)">
             <g id="Group-119">
               <g id="Group" transform="translate(62.102700, 110.020600)">
@@ -123,8 +120,7 @@ const Gauge = ({ data }) => {
         css={css`
           margin: 16px 0 32px;
           font-weight: bold;
-        `}
-      >
+        `}>
         {data.participationRate}% participation
       </div>
       <Inflation>
@@ -132,14 +128,13 @@ const Gauge = ({ data }) => {
           css={css`
             font-family: Monaco;
             font-weight: normal;
-          `}
-        >
+          `}>
           {data.inflationPerRound}%
         </span>{" "}
         inflation
       </Inflation>
     </Container>
-  )
-}
+  );
+};
 
-export default Gauge
+export default Gauge;

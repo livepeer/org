@@ -1,40 +1,40 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp, Box } from "theme-ui"
-import { keyframes } from "@emotion/core"
-import { useMemo } from "react"
+import { jsx, SxStyleProp, Box } from "theme-ui";
+import { keyframes } from "@emotion/core";
+import { useMemo } from "react";
 
 const float = keyframes({
   "0%": {
-    transform: "translateZ(0)"
+    transform: "translateZ(0)",
   },
   "65%": {
-    transform: "translate3d(0,10px,0)"
+    transform: "translate3d(0,10px,0)",
   },
   "100%": {
-    transform: "translateZ(0)"
-  }
-})
+    transform: "translateZ(0)",
+  },
+});
 
 type Props = {
-  pushSx?: SxStyleProp
-}
+  pushSx?: SxStyleProp;
+};
 
 type ImageProps = {
-  src: string
-  alt?: string
-  pushSx?: SxStyleProp
-}
+  src: string;
+  alt?: string;
+  pushSx?: SxStyleProp;
+};
 
-const getRandomDelay = () => Math.random() * 1.5 + "s"
+const getRandomDelay = () => Math.random() * 1.5 + "s";
 const getRandomDuration = (min = 4, max = 5) => {
-  const candidate = Math.random() * max
-  if (candidate < min) return min + "s"
-  return candidate + "s"
-}
+  const candidate = Math.random() * max;
+  if (candidate < min) return min + "s";
+  return candidate + "s";
+};
 
 const FloatingImage = ({ src, alt, pushSx }: ImageProps) => {
-  const animationDelay = useMemo(() => getRandomDelay(), [])
-  const animationDuration = useMemo(() => getRandomDuration(), [])
+  const animationDelay = useMemo(() => getRandomDelay(), []);
+  const animationDuration = useMemo(() => getRandomDuration(), []);
   return (
     <img
       src={src}
@@ -50,11 +50,11 @@ const FloatingImage = ({ src, alt, pushSx }: ImageProps) => {
         width: "86px",
         height: "86px",
         objectFit: "cover",
-        ...pushSx
+        ...pushSx,
       }}
     />
-  )
-}
+  );
+};
 
 const images: ImageProps[] = [
   {
@@ -63,8 +63,8 @@ const images: ImageProps[] = [
     pushSx: {
       left: 39,
       top: 42,
-      bg: "primary"
-    }
+      bg: "primary",
+    },
   },
   {
     src: "/images/avatars/avatar-female-2.png",
@@ -72,8 +72,8 @@ const images: ImageProps[] = [
     pushSx: {
       right: 12,
       bottom: 120,
-      display: ["none", null, "block"]
-    }
+      display: ["none", null, "block"],
+    },
   },
   {
     src: "/images/avatars/avatar-male-1.png",
@@ -82,8 +82,8 @@ const images: ImageProps[] = [
       right: 87,
       top: 12,
       bg: "primary",
-      display: ["none", null, "block"]
-    }
+      display: ["none", null, "block"],
+    },
   },
   {
     src: "/images/avatars/avatar-male-2.png",
@@ -91,8 +91,8 @@ const images: ImageProps[] = [
     pushSx: {
       top: 112,
       left: ["unset", null, 174],
-      right: [0, null, "unset"]
-    }
+      right: [0, null, "unset"],
+    },
   },
   {
     src: "/images/avatars/avatar-male-3.png",
@@ -100,8 +100,8 @@ const images: ImageProps[] = [
     pushSx: {
       left: 122,
       bottom: 0,
-      display: ["none", "block"]
-    }
+      display: ["none", "block"],
+    },
   },
   {
     src: "/images/avatars/avatar-male-4.png",
@@ -110,19 +110,18 @@ const images: ImageProps[] = [
       right: 57,
       bottom: -31,
       bg: "primary",
-      display: ["none", null, "block"]
-    }
-  }
-]
+      display: ["none", null, "block"],
+    },
+  },
+];
 
 const ParticipantsSvg = ({ pushSx }: Props) => (
   <Box
     sx={{
       position: "relative",
       width: "100%",
-      ...pushSx
-    }}
-  >
+      ...pushSx,
+    }}>
     {images.map((i) => (
       <FloatingImage key={`participants-svg-floating-image-${i.src}`} {...i} />
     ))}
@@ -207,14 +206,13 @@ const ParticipantsSvg = ({ pushSx }: Props) => (
           y1="3"
           x2="275.5"
           y2="372"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0" />
           <stop offset="1" stopColor="white" stopOpacity="0.953125" />
         </linearGradient>
       </defs>
     </svg>
   </Box>
-)
+);
 
-export default ParticipantsSvg
+export default ParticipantsSvg;

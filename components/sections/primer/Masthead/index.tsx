@@ -1,4 +1,4 @@
-import { Root, Container, Body, Heading, Subheading, Arrow } from "./styles"
+import { Root, Container, Body, Heading, Subheading, Arrow } from "./styles";
 
 const Masthead = () => {
   return (
@@ -16,7 +16,7 @@ const Masthead = () => {
                 width: "100%",
                 maxWidth: 550,
                 color: "#FFA3A3",
-                minWidth: "100%"
+                minWidth: "100%",
               }}
             />
           </Heading>
@@ -35,7 +35,7 @@ const Masthead = () => {
         </Arrow>
       </Container>
     </Root>
-  )
-}
+  );
+};
 
-export default Masthead
+export default Masthead;

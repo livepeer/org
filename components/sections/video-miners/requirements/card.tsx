@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import { jsx, Card, Box, Heading, Text } from "theme-ui"
+import { jsx, Card, Box, Heading, Text } from "theme-ui";
 
 export type RequirementCardProps = {
-  icon: React.ReactNode
-  title: React.ReactNode
-  description: string
-  className?: string
-}
+  icon: React.ReactNode;
+  title: React.ReactNode;
+  description: string;
+  className?: string;
+};
 
 const RequirementCard = ({
   icon,
   title,
   description,
-  className
+  className,
 }: RequirementCardProps) => (
   <Card
     className={className}
@@ -23,9 +23,8 @@ const RequirementCard = ({
       justifyContent: "space-between",
       bg: "transparent",
       p: 0,
-      border: "none"
-    }}
-  >
+      border: "none",
+    }}>
     <div>
       <Box sx={{ mb: 4 }}>
         <i
@@ -36,16 +35,14 @@ const RequirementCard = ({
             color: "text",
             fontSize: 6,
             variant: "layout.flexCenter",
-            borderRadius: "full"
-          }}
-        >
+            borderRadius: "full",
+          }}>
           {icon}
         </i>
       </Box>
       <Heading
         variant="heading.5"
-        sx={{ textAlign: "left", mb: "24px", color: "background" }}
-      >
+        sx={{ textAlign: "left", mb: "24px", color: "background" }}>
         {title}
       </Heading>
       <Text variant="normal" color="lightGray">
@@ -53,6 +50,6 @@ const RequirementCard = ({
       </Text>
     </div>
   </Card>
-)
+);
 
-export default RequirementCard
+export default RequirementCard;

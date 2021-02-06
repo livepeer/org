@@ -1,13 +1,13 @@
-import NextHead from "next/head"
+import NextHead from "next/head";
 
 export type MetaType = {
-  title?: string
-  description?: string
-  url?: string
-  siteName?: string
-  image?: string
-  twitterUsername?: string
-}
+  title?: string;
+  description?: string;
+  url?: string;
+  siteName?: string;
+  image?: string;
+  twitterUsername?: string;
+};
 
 const defaultMeta: MetaType = {
   title: "Livepeer",
@@ -16,17 +16,17 @@ const defaultMeta: MetaType = {
   url: "https://livepeer.org",
   siteName: "Livepeer",
   image: "https://livepeer.org/OG.png",
-  twitterUsername: "@LivepeerOrg"
-}
+  twitterUsername: "@LivepeerOrg",
+};
 
 export type HeadProps = {
-  meta?: MetaType
-}
+  meta?: MetaType;
+};
 
 const Head = ({ meta = {} }: HeadProps) => {
-  meta = { ...defaultMeta, ...meta }
+  meta = { ...defaultMeta, ...meta };
   if (meta.title !== defaultMeta.title) {
-    meta.title = `Livepeer - ${meta.title}`
+    meta.title = `Livepeer - ${meta.title}`;
   }
 
   return (
@@ -49,7 +49,7 @@ const Head = ({ meta = {} }: HeadProps) => {
       <meta name="twitter:site" content={meta.twitterUsername} />
       <meta name="twitter:image" content={`${meta.image}`} />
     </NextHead>
-  )
-}
+  );
+};
 
-export default Head
+export default Head;

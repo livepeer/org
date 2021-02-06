@@ -6,8 +6,8 @@ import {
   Header,
   Icon,
   Text,
-  Body
-} from "./styles"
+  Body,
+} from "./styles";
 
 const Chapter2 = () => {
   return (
@@ -54,7 +54,7 @@ const Chapter2 = () => {
         </Item>
       </List>
     </Container>
-  )
-}
+  );
+};
 
-export default Chapter2
+export default Chapter2;

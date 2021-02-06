@@ -1,15 +1,15 @@
-import { Link as A } from "theme-ui"
-import { useMemo, ElementType } from "react"
-import { LinkProps } from "lib/types/link-props"
-import { FiArrowRight, FiArrowUpRight } from "react-icons/fi"
-import Link from "next/link"
+import { Link as A } from "theme-ui";
+import { useMemo, ElementType } from "react";
+import { LinkProps } from "lib/types/link-props";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
+import Link from "next/link";
 
 export type CardLinkProps = {
-  link: LinkProps
-  isDark?: boolean
-  as?: ElementType<any>
-  className?: string
-}
+  link: LinkProps;
+  isDark?: boolean;
+  as?: ElementType<any>;
+  className?: string;
+};
 
 const CardLink = ({ as = "a", link, isDark, className }: CardLinkProps) => {
   const linkChildren = useMemo(
@@ -24,7 +24,7 @@ const CardLink = ({ as = "a", link, isDark, className }: CardLinkProps) => {
       </>
     ),
     [link]
-  )
+  );
 
   const linkSx = useMemo(
     () => ({
@@ -36,11 +36,11 @@ const CardLink = ({ as = "a", link, isDark, className }: CardLinkProps) => {
       alignItems: "center",
       "&:hover": {
         opacity: 0.8,
-        color: isDark ? "primary" : "secondary"
-      }
+        color: isDark ? "primary" : "secondary",
+      },
     }),
     [isDark]
-  )
+  );
 
   if (link.isExternal) {
     return (
@@ -49,11 +49,10 @@ const CardLink = ({ as = "a", link, isDark, className }: CardLinkProps) => {
         href={link.href}
         className={className}
         target="_blank"
-        sx={linkSx}
-      >
+        sx={linkSx}>
         {linkChildren}
       </A>
-    )
+    );
   }
   return (
     <Link href={link.href} as={link.asPath} passHref>
@@ -61,7 +60,7 @@ const CardLink = ({ as = "a", link, isDark, className }: CardLinkProps) => {
         {linkChildren}
       </A>
     </Link>
-  )
-}
+  );
+};
 
-export default CardLink
+export default CardLink;

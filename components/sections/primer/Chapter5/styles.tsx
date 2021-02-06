@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Root = styled.div({
   backgroundImage: `url('/images/primer/tokens.svg')`,
@@ -9,9 +9,9 @@ export const Root = styled.div({
   ["@media (min-width: 1024px)"]: {
     marginBottom: 0,
     backgroundSize: "100% 100%",
-    backgroundPosition: "top"
-  }
-})
+    backgroundPosition: "top",
+  },
+});
 
 export const Container = styled.div({
   maxWidth: 1024,
@@ -21,9 +21,9 @@ export const Container = styled.div({
   ["@media (min-width: 1024px)"]: {
     padding: 0,
     overflow: "initial",
-    margin: "0 auto 120px"
-  }
-})
+    margin: "0 auto 120px",
+  },
+});
 
 export const Title = styled.h2({
   transform: "rotate(3deg)",
@@ -37,13 +37,13 @@ export const Title = styled.h2({
   ["@media (min-width: 1024px)"]: {
     fontSize: "54px",
     lineHeight: "56px",
-    marginBottom: 50
-  }
-})
+    marginBottom: 50,
+  },
+});
 
 export const Section = styled.div({
   display: "flex",
   alignItems: "center",
   flexDirection: "column",
-  justifyContent: "center"
-})
+  justifyContent: "center",
+});

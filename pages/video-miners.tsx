@@ -1,11 +1,11 @@
-import PageLayout from "components/layouts/page"
-import HowVideoMiningWorksSection from "components/sections/video-miners/how-video-mining-works"
-import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk"
-import HowToGetStartedSection from "components/sections/video-miners/how-to-get-started"
-import RequirementsSection from "components/sections/video-miners/requirements"
-import VideoMinerHero from "components/sections/video-miners/hero"
-import { getTotalVolume } from "lib/document-helpers"
-import { HeadProps } from "components/primitives/head"
+import PageLayout from "components/layouts/page";
+import HowVideoMiningWorksSection from "components/sections/video-miners/how-video-mining-works";
+import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
+import HowToGetStartedSection from "components/sections/video-miners/how-to-get-started";
+import RequirementsSection from "components/sections/video-miners/requirements";
+import VideoMinerHero from "components/sections/video-miners/hero";
+import { getTotalVolume } from "lib/document-helpers";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -15,9 +15,9 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/video-miners",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const VideoMinerPage = ({ totalVolume }) => (
   <PageLayout headProps={headProps}>
@@ -27,17 +27,17 @@ const VideoMinerPage = ({ totalVolume }) => (
     <RequirementsSection />
     <HowToGetStartedSection />
   </PageLayout>
-)
+);
 
 export async function getStaticProps() {
-  const totalVolume = await getTotalVolume()
+  const totalVolume = await getTotalVolume();
 
   return {
     props: {
-      totalVolume
+      totalVolume,
     },
-    revalidate: 1
-  }
+    revalidate: 1,
+  };
 }
 
-export default VideoMinerPage
+export default VideoMinerPage;

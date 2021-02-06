@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "theme-ui";
 
 const FaqHeroSvg = () => (
   <svg
@@ -8,8 +8,7 @@ const FaqHeroSvg = () => (
     viewBox="0 0 508 354"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ width: "508px" }}
-  >
+    sx={{ width: "508px" }}>
     <g clipPath="url(#faq-hero-svg-clip0)">
       <g filter="url(#faq-hero-svg-filter0_d)">
         <path
@@ -77,8 +76,7 @@ const FaqHeroSvg = () => (
         width="562"
         height="434"
         filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
+        colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
@@ -110,8 +108,7 @@ const FaqHeroSvg = () => (
         width="440"
         height="166"
         filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
+        colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
@@ -174,8 +171,7 @@ const FaqHeroSvg = () => (
         width="474"
         height="182"
         filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
+        colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
@@ -238,8 +234,7 @@ const FaqHeroSvg = () => (
         width="508"
         height="188"
         filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
+        colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
@@ -301,8 +296,7 @@ const FaqHeroSvg = () => (
         y1="-343.03"
         x2="419.971"
         y2="404.48"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
@@ -312,8 +306,7 @@ const FaqHeroSvg = () => (
         y1="665.179"
         x2="672.415"
         y2="-84.2563"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
@@ -323,8 +316,7 @@ const FaqHeroSvg = () => (
         y1="-149.397"
         x2="25.5469"
         y2="210.107"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
@@ -334,8 +326,7 @@ const FaqHeroSvg = () => (
         y1="-409.655"
         x2="-172.378"
         y2="337.582"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
@@ -347,6 +338,6 @@ const FaqHeroSvg = () => (
       </clipPath>
     </defs>
   </svg>
-)
+);
 
-export default FaqHeroSvg
+export default FaqHeroSvg;

@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
+import { jsx, css } from "@emotion/core";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import {
   Container,
   Section1,
@@ -11,20 +11,20 @@ import {
   Heading,
   MobileTitle,
   Rounds,
-  RoundMobile
-} from "./styles"
-import Gauge from "../Gauge"
+  RoundMobile,
+} from "./styles";
+import Gauge from "../Gauge";
 
-const threshold = [0.3]
+const threshold = [0.3];
 
 const Chapter8 = ({ data, onChange }) => {
-  const [ref, inView, entry] = useInView({ threshold })
+  const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
     if (inView) {
-      onChange()
+      onChange();
     }
-  }, [inView])
+  }, [inView]);
 
   return (
     <Container ref={ref}>
@@ -35,8 +35,7 @@ const Chapter8 = ({ data, onChange }) => {
             @media (min-width: 1024px) {
               max-width: 500px;
             }
-          `}
-        >
+          `}>
           <Title>Rounds & Inflation</Title>
           <Heading>Rounds</Heading>
           <p
@@ -44,8 +43,7 @@ const Chapter8 = ({ data, onChange }) => {
               @media (min-width: 1024px) {
                 margin-bottom: 40px;
               }
-            `}
-          >
+            `}>
             In Livepeer, new tokens are minted every so-called round. Rounds are
             measured in Ethereum blocks, where one round is equal to{" "}
             <strong>5760</strong> Ethereum blocks. In Ethereum, one block is
@@ -70,8 +68,7 @@ const Chapter8 = ({ data, onChange }) => {
             @media (min-width: 1024px) {
               margin-right: 120px;
             }
-          `}
-        >
+          `}>
           <Gauge data={data} />
         </div>
         <div
@@ -81,8 +78,7 @@ const Chapter8 = ({ data, onChange }) => {
               max-width: 500px;
               margin-bottom: 0;
             }
-          `}
-        >
+          `}>
           <Heading>Inflation</Heading>
           <p>
             The current rate of inflation as of today's round is{" "}
@@ -119,8 +115,7 @@ const Chapter8 = ({ data, onChange }) => {
               max-width: 470px;
               text-align: center;
             }
-          `}
-        >
+          `}>
           Livepeer presupposes that a target rate of{" "}
           <strong>{data.targetBondingRate}%</strong> is a healthy trade-off
           between network security and token liquidity, so in order to hit this
@@ -134,7 +129,7 @@ const Chapter8 = ({ data, onChange }) => {
         </p>
       </Section3>
     </Container>
-  )
-}
+  );
+};
 
-export default Chapter8
+export default Chapter8;

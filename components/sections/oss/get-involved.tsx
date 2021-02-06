@@ -1,18 +1,26 @@
 /** @jsx jsx */
-import { jsx, Box, Text, Heading, Link as A, SxStyleProp, Grid } from "theme-ui"
+import {
+  jsx,
+  Box,
+  Text,
+  Heading,
+  Link as A,
+  SxStyleProp,
+  Grid,
+} from "theme-ui";
 import {
   FiGithub,
   FiCode,
   FiBook,
   FiMessageCircle,
-  FiPlay
-} from "react-icons/fi"
-import ListItem, { ListItemProps } from "components/primitives/list-item"
+  FiPlay,
+} from "react-icons/fi";
+import ListItem, { ListItemProps } from "components/primitives/list-item";
 
 const linkSx: SxStyleProp = {
   color: "primary",
-  fontWeight: 600
-}
+  fontWeight: 600,
+};
 
 const listItems: ListItemProps[] = [
   {
@@ -25,13 +33,12 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           Livepeer.js
         </A>{" "}
         contributor guidelines.
       </>
-    )
+    ),
   },
   {
     icon: <FiGithub />,
@@ -43,8 +50,7 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           Livepeer.js
         </A>{" "}
         (Javascript),{" "}
@@ -53,8 +59,7 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           LPMS
         </A>{" "}
         (video development in C or Go), or{" "}
@@ -63,13 +68,12 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           Go-Livepeer
         </A>{" "}
         (go).
       </>
-    )
+    ),
   },
   {
     icon: <FiBook />,
@@ -81,13 +85,12 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           Grant Proposals
         </A>{" "}
         to see application concepts with some funding attached.
       </>
-    )
+    ),
   },
   {
     icon: <FiMessageCircle />,
@@ -99,14 +102,13 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           Discord
         </A>{" "}
         - we’re a welcoming bunch, so don’t be shy. Ask how you can get
         involved.
       </>
-    )
+    ),
   },
   {
     icon: <FiPlay />,
@@ -118,8 +120,7 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           developer docs
         </A>{" "}
         or enterprise hosted services <br /> at{" "}
@@ -128,15 +129,14 @@ const listItems: ListItemProps[] = [
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
-          data-dark
-        >
+          data-dark>
           livepeer.com
         </A>
         .
       </>
-    )
-  }
-]
+    ),
+  },
+];
 
 const GetInvolvedSection = () => (
   <Box sx={{ bg: "text", color: "background" }}>
@@ -144,25 +144,21 @@ const GetInvolvedSection = () => (
       variant="layout.section"
       gap={5}
       columns={[1, null, 2]}
-      sx={{ pt: ["80px", null, null, "160px"] }}
-    >
+      sx={{ pt: ["80px", null, null, "160px"] }}>
       <Box>
         <Text
           variant="section.titleLabel"
-          sx={{ textAlign: ["center", null, "left"] }}
-        >
+          sx={{ textAlign: ["center", null, "left"] }}>
           Collaborate
         </Text>
         <Heading
           variant="section.title"
-          sx={{ textAlign: ["center", null, "left"] }}
-        >
+          sx={{ textAlign: ["center", null, "left"] }}>
           Get involved
         </Heading>
         <Heading
           variant="section.subtitle"
-          sx={{ textAlign: ["center", null, "left"], color: "lightGray" }}
-        >
+          sx={{ textAlign: ["center", null, "left"], color: "lightGray" }}>
           There are many opportunities to collaborate with others in the
           Livepeer ecosystem on code both on the video side, and on the
           blockchain side.
@@ -171,10 +167,9 @@ const GetInvolvedSection = () => (
       <Box
         sx={{
           ".list-item:not(:last-of-type)": {
-            mb: "40px"
-          }
-        }}
-      >
+            mb: "40px",
+          },
+        }}>
         {listItems.map((item, i) => (
           <ListItem
             key={`get-involved-link-${i}`}
@@ -185,6 +180,6 @@ const GetInvolvedSection = () => (
       </Box>
     </Grid>
   </Box>
-)
+);
 
-export default GetInvolvedSection
+export default GetInvolvedSection;

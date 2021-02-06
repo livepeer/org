@@ -1,11 +1,11 @@
-import { Box, SxStyleProp, BoxProps } from "theme-ui"
-import { forwardRef } from "react"
+import { Box, SxStyleProp, BoxProps } from "theme-ui";
+import { forwardRef } from "react";
 
 type Props = {
-  pushSx?: SxStyleProp
-  pushContentSx?: SxStyleProp
-  contentProps?: BoxProps
-} & BoxProps
+  pushSx?: SxStyleProp;
+  pushContentSx?: SxStyleProp;
+  contentProps?: BoxProps;
+} & BoxProps;
 
 const IllustratedBackgroundBox = forwardRef(
   (
@@ -21,9 +21,8 @@ const IllustratedBackgroundBox = forwardRef(
           backgroundImage: "url(/backgrounds/illustrated.svg)",
           backgroundSize: "cover",
           borderRadius: "lg",
-          ...pushSx
-        }}
-      >
+          ...pushSx,
+        }}>
         <Box
           {...contentProps}
           sx={{
@@ -31,9 +30,8 @@ const IllustratedBackgroundBox = forwardRef(
             borderRadius: "lg",
             height: "100%",
             overflow: "hidden",
-            ...pushContentSx
-          }}
-        >
+            ...pushContentSx,
+          }}>
           {children}
         </Box>
       </Box>
@@ -41,11 +39,11 @@ const IllustratedBackgroundBox = forwardRef(
       <Box
         sx={{
           backgroundImage: "url(/backgrounds/illustrated.svg)",
-          display: "none"
+          display: "none",
         }}
       />
     </>
   )
-)
+);
 
-export default IllustratedBackgroundBox
+export default IllustratedBackgroundBox;

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Container = styled.div({
   maxWidth: "1024px",
@@ -6,9 +6,9 @@ export const Container = styled.div({
   padding: "0 24px",
   ["@media (min-width: 1024px)"]: {
     margin: "0 auto 240px",
-    padding: 0
-  }
-})
+    padding: 0,
+  },
+});
 
 export const Title = styled.h2({
   transform: "rotate(-6deg)",
@@ -21,9 +21,9 @@ export const Title = styled.h2({
   ["@media (min-width: 1024px)"]: {
     fontSize: "54px",
     lineHeight: "56px",
-    marginBottom: "120px"
-  }
-})
+    marginBottom: "120px",
+  },
+});
 
 export const Section1 = styled.div({
   display: "flex",
@@ -31,21 +31,21 @@ export const Section1 = styled.div({
   justifyContent: "space-between",
   flexDirection: "column",
   ["@media (min-width: 1024px)"]: {
-    flexDirection: "row"
-  }
-})
+    flexDirection: "row",
+  },
+});
 
 export const Ethereum = styled.img({
   width: "100%",
   ["@media (min-width: 1024px)"]: {
-    width: "auto"
-  }
-})
+    width: "auto",
+  },
+});
 
 export const Text = styled.div({
   marginBottom: 40,
   ["@media (min-width: 1024px)"]: {
     width: "400px",
-    marginBottom: 0
-  }
-})
+    marginBottom: 0,
+  },
+});

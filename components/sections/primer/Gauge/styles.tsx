@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Container = styled.div({
   borderRadius: 1000,
@@ -13,13 +13,13 @@ export const Container = styled.div({
   ["@media (min-width: 1024px)"]: {
     margin: 0,
     width: 400,
-    height: 400
-  }
-})
+    height: 400,
+  },
+});
 
 export const Inflation = styled.div({
   border: "2px solid #000",
   padding: "8px 24px",
   backgroundColor: "#A6ADEB",
-  fontSize: 22
-})
+  fontSize: 22,
+});

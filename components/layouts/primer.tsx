@@ -1,20 +1,20 @@
-import Head, { HeadProps } from "components/primitives/head"
-import Nav, { NavProps } from "components/sections/nav"
-import { Box, SxStyleProp } from "theme-ui"
+import Head, { HeadProps } from "components/primitives/head";
+import Nav, { NavProps } from "components/sections/nav";
+import { Box, SxStyleProp } from "theme-ui";
 
 type Props = {
-  headProps?: HeadProps
-  isDark?: boolean
-  navProps?: NavProps
-  pushContentSx?: SxStyleProp
-}
+  headProps?: HeadProps;
+  isDark?: boolean;
+  navProps?: NavProps;
+  pushContentSx?: SxStyleProp;
+};
 
 const PageLayout: React.FC<Props> = ({
   children,
   headProps,
   isDark,
   navProps,
-  pushContentSx
+  pushContentSx,
 }) => (
   <>
     <Head {...headProps} />
@@ -24,8 +24,7 @@ const PageLayout: React.FC<Props> = ({
     />
     <Box
       as="main"
-      sx={{ position: "relative", overflow: "hidden", ...pushContentSx }}
-    >
+      sx={{ position: "relative", overflow: "hidden", ...pushContentSx }}>
       {children}
     </Box>
     <style global jsx>{`
@@ -130,6 +129,6 @@ const PageLayout: React.FC<Props> = ({
       }
     `}</style>
   </>
-)
+);
 
-export default PageLayout
+export default PageLayout;

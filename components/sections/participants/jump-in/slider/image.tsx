@@ -1,10 +1,10 @@
-import { Image } from "theme-ui"
+import { Image } from "theme-ui";
 
 export type SliderImageProps = {
-  src: string
-  alt?: string
-  className?: string
-}
+  src: string;
+  alt?: string;
+  className?: string;
+};
 
 const SliderImage = ({ src, alt, className }: SliderImageProps) => (
   <Image
@@ -15,11 +15,11 @@ const SliderImage = ({ src, alt, className }: SliderImageProps) => (
       borderRadius: "md",
       height: "100%",
       objectFit: "cover",
-      objectPosition: "top"
+      objectPosition: "top",
     }}
     src={src}
     alt={alt}
   />
-)
+);
 
-export default SliderImage
+export default SliderImage;

@@ -1,9 +1,9 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Root = styled.div({
   height: "50px",
-  zIndex: 100
-})
+  zIndex: 100,
+});
 
 export const Inner = styled.div((props: any) => ({
   borderRadius: "5px 5px 0 0",
@@ -12,8 +12,8 @@ export const Inner = styled.div((props: any) => ({
   zIndex: 100,
   display: "flex",
   width: 308,
-  pointerEvents: props.isActive ? "initial" : "none"
-}))
+  pointerEvents: props.isActive ? "initial" : "none",
+}));
 
 export const Header = styled.div((props: any) => ({
   backgroundColor: "#A6ADEB",
@@ -38,9 +38,9 @@ export const Header = styled.div((props: any) => ({
   zIndex: 300,
   "&:hover .menu__circle": {
     backgroundColor: "#FFAD61",
-    transition: "background-color .6s"
-  }
-}))
+    transition: "background-color .6s",
+  },
+}));
 
 export const List = styled.div((props: any) => ({
   overflow: "hidden",
@@ -51,8 +51,8 @@ export const List = styled.div((props: any) => ({
   zIndex: 400,
   paddingRight: "4px",
   left: "4px",
-  pointerEvents: props.isActive ? "initial" : "none"
-}))
+  pointerEvents: props.isActive ? "initial" : "none",
+}));
 
 export const ListContainer = styled.div((props: any) => ({
   backgroundColor: "#A6ADEB",
@@ -71,8 +71,8 @@ export const ListContainer = styled.div((props: any) => ({
     ? "transform .8s cubic-bezier(.165,.84,.44,1) .45s"
     : "transform .5s cubic-bezier(.23,1,.32,1)",
   width: 304,
-  zIndex: 200
-}))
+  zIndex: 200,
+}));
 
 export const Item = styled.div({
   cursor: "pointer",
@@ -85,11 +85,11 @@ export const Item = styled.div({
     color: "initial",
     position: "relative",
     left: 0,
-    transition: "left .3s"
+    transition: "left .3s",
   },
   "a:hover": {
     left: 8,
-    transition: "left .3s"
+    transition: "left .3s",
   },
   "a:hover::before": {
     content: '"›"',
@@ -97,11 +97,11 @@ export const Item = styled.div({
     marginLeft: -12,
     transition: ".6s",
     width: 14,
-    height: 14
+    height: 14,
   },
   ".active": {
     left: 8,
-    transition: "left .3s"
+    transition: "left .3s",
   },
   ".active::before": {
     content: '"›"',
@@ -109,9 +109,9 @@ export const Item = styled.div({
     marginLeft: -12,
     transition: ".6s",
     width: 14,
-    height: 14
-  }
-})
+    height: 14,
+  },
+});
 
 export const ButtonText = styled.div({
   textTransform: "uppercase",
@@ -119,13 +119,13 @@ export const ButtonText = styled.div({
   fontSize: 16,
   fontFamily: "Roboto Mono",
   marginRight: 16,
-  position: "relative"
-})
+  position: "relative",
+});
 
 export const Circle = styled.div({
   borderRadius: 1000,
   width: 10,
   height: 10,
   border: "1px solid black",
-  transition: "background-color .6s"
-})
+  transition: "background-color .6s",
+});

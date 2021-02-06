@@ -1,17 +1,16 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from "theme-ui"
+import { jsx, SxStyleProp } from "theme-ui";
 
 type Props = {
-  pushSx?: SxStyleProp
-}
+  pushSx?: SxStyleProp;
+};
 
 const BasementIconSvg = ({ pushSx }: Props) => (
   <svg
     viewBox="0 0 20 22"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ width: "20px", ...pushSx }}
-  >
+    sx={{ width: "20px", ...pushSx }}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -20,6 +19,6 @@ const BasementIconSvg = ({ pushSx }: Props) => (
     />
     <rect x="16.8" y="18.3203" width="3.2" height="3.16735" fill="white" />
   </svg>
-)
+);
 
-export default BasementIconSvg
+export default BasementIconSvg;

@@ -1,36 +1,36 @@
 /** @jsx jsx */
-import { jsx, Card, Box, Heading, Text } from "theme-ui"
-import CardLink, { CardLinkProps } from "../links/card"
-import cn from "classnames"
-import Link from "next/link"
+import { jsx, Card, Box, Heading, Text } from "theme-ui";
+import CardLink, { CardLinkProps } from "../links/card";
+import cn from "classnames";
+import Link from "next/link";
 
 export type IconCardProps = {
-  icon: React.ReactNode
-  title: React.ReactNode
-  description: string
-  linkProps: CardLinkProps
-  titleLabel?: string
-  className?: string
-  isClickable?: boolean
-}
+  icon: React.ReactNode;
+  title: React.ReactNode;
+  description: string;
+  linkProps: CardLinkProps;
+  titleLabel?: string;
+  className?: string;
+  isClickable?: boolean;
+};
 
 const hoverSx = {
   transition: "all .2s",
   ".icon-card-link": {
-    transition: "color .2s"
+    transition: "color .2s",
   },
   "&:hover": {
     boxShadow: "0px 80px 96px rgba(0, 0, 0, 0.32)",
     bg: "text",
     color: "background",
     ".title_label": {
-      color: "lightGray"
+      color: "lightGray",
     },
     ".icon-card-link": {
-      color: "primary"
-    }
-  }
-}
+      color: "primary",
+    },
+  },
+};
 
 const IconCard = ({
   icon,
@@ -39,7 +39,7 @@ const IconCard = ({
   titleLabel = "For",
   linkProps,
   className,
-  isClickable
+  isClickable,
 }: IconCardProps) => {
   const markup = (
     <Card
@@ -49,9 +49,8 @@ const IconCard = ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        ...(isClickable ? hoverSx : {})
-      }}
-    >
+        ...(isClickable ? hoverSx : {}),
+      }}>
       <div>
         <Box sx={{ mb: 5 }}>
           <i
@@ -62,17 +61,15 @@ const IconCard = ({
               color: "text",
               fontSize: 6,
               variant: "layout.flexCenter",
-              borderRadius: "full"
-            }}
-          >
+              borderRadius: "full",
+            }}>
             {icon}
           </i>
         </Box>
         <Text
           variant="heading.5"
           sx={{ textAlign: "left", mb: 1 }}
-          className="title_label"
-        >
+          className="title_label">
           {titleLabel}
         </Text>
         <Heading variant="heading.4" sx={{ textAlign: "left", mb: "24px" }}>
@@ -86,21 +83,21 @@ const IconCard = ({
         className="icon-card-link"
       />
     </Card>
-  )
+  );
 
-  if (!isClickable) return markup
+  if (!isClickable) return markup;
   if (linkProps.link.isExternal) {
     return (
       <a href={linkProps.link.href} target="_blank">
         {markup}
       </a>
-    )
+    );
   }
   return (
     <Link href={linkProps.link.href} as={linkProps.link.asPath} passHref>
       <a>{markup}</a>
     </Link>
-  )
-}
+  );
+};
 
-export default IconCard
+export default IconCard;

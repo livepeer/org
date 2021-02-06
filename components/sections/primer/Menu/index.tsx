@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link, Events } from "react-scroll"
+import { useState } from "react";
+import { Link, Events } from "react-scroll";
 import {
   Root,
   Inner,
@@ -8,20 +8,19 @@ import {
   ListContainer,
   Item,
   ButtonText,
-  Circle
-} from "./styles"
+  Circle,
+} from "./styles";
 
 const Menu = () => {
-  const [active, setActiveState] = useState(false)
+  const [active, setActiveState] = useState(false);
   return (
     <Root>
       <Inner isActive={active}>
         <Header
           isActive={active}
           onClick={() => {
-            active ? setActiveState(false) : setActiveState(true)
-          }}
-        >
+            active ? setActiveState(false) : setActiveState(true);
+          }}>
           <ButtonText>Contents</ButtonText>
           <Circle className="menu__circle" />
         </Header>
@@ -36,9 +35,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Introduction
               </Link>
             </Item>
@@ -52,9 +50,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 What is Livepeer?
               </Link>
             </Item>
@@ -67,9 +64,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Who is Livepeer for?
               </Link>
             </Item>
@@ -82,9 +78,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 How Does Livepeer Work?
               </Link>
             </Item>
@@ -97,9 +92,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Orchestrators
               </Link>
             </Item>
@@ -112,9 +106,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Livepeer Tokens
               </Link>
             </Item>
@@ -127,9 +120,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Delegators
               </Link>
             </Item>
@@ -142,9 +134,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Rewarding Participation
               </Link>
             </Item>
@@ -157,9 +148,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Rounds & Inflation
               </Link>
             </Item>
@@ -172,9 +162,8 @@ const Menu = () => {
                 offset={-50}
                 duration={500}
                 onClick={() => {
-                  setActiveState(false)
-                }}
-              >
+                  setActiveState(false);
+                }}>
                 Get Involved
               </Link>
             </Item>
@@ -182,7 +171,7 @@ const Menu = () => {
         </List>
       </Inner>
     </Root>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

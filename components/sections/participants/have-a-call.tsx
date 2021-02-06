@@ -1,7 +1,7 @@
-import SectionLayout from "components/layouts/section"
-import { Link as A, Box } from "theme-ui"
-import ImageCard from "components/primitives/cards/image"
-import KeenSliderGrid from "components/layouts/keen-slider-grid"
+import SectionLayout from "components/layouts/section";
+import { Link as A, Box } from "theme-ui";
+import ImageCard from "components/primitives/cards/image";
+import KeenSliderGrid from "components/layouts/keen-slider-grid";
 
 const HaveACallSection = ({ youtubeVideos }) => (
   <SectionLayout
@@ -18,13 +18,11 @@ const HaveACallSection = ({ youtubeVideos }) => (
           variant="accent"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://livepeer.org/tv"
-        >
+          href="https://livepeer.org/tv">
           livepeer.org/tv
         </A>
       </>
-    }
-  >
+    }>
     <KeenSliderGrid withArrowControls>
       {youtubeVideos.map((v: any) => (
         <ImageCard
@@ -35,9 +33,8 @@ const HaveACallSection = ({ youtubeVideos }) => (
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
-                maxWidth: "85ch"
-              }}
-            >
+                maxWidth: "85ch",
+              }}>
               {v.snippet.title}
             </Box>
           }
@@ -51,8 +48,8 @@ const HaveACallSection = ({ youtubeVideos }) => (
             link: {
               label: `youtu.be/${v.snippet.resourceId.videoId}`,
               href: `https://youtu.be/${v.snippet.resourceId.videoId}`,
-              isExternal: true
-            }
+              isExternal: true,
+            },
           }}
           pushSx={{ maxWidth: "unset" }}
           isLink
@@ -60,6 +57,6 @@ const HaveACallSection = ({ youtubeVideos }) => (
       ))}
     </KeenSliderGrid>
   </SectionLayout>
-)
+);
 
-export default HaveACallSection
+export default HaveACallSection;

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Container = styled.div({
   maxWidth: 1024,
@@ -8,9 +8,9 @@ export const Container = styled.div({
   ["@media (min-width: 1024px)"]: {
     overflow: "initial",
     padding: 0,
-    margin: "0 auto 160px"
-  }
-})
+    margin: "0 auto 160px",
+  },
+});
 
 export const Title = styled.h2({
   transform: "rotate(3deg)",
@@ -24,9 +24,9 @@ export const Title = styled.h2({
   ["@media (min-width: 1024px)"]: {
     marginBottom: 80,
     fontSize: "54px",
-    lineHeight: "56px"
-  }
-})
+    lineHeight: "56px",
+  },
+});
 
 export const Section1 = styled.div({
   display: "flex",
@@ -35,9 +35,9 @@ export const Section1 = styled.div({
   flexDirection: "column-reverse",
   ["@media (min-width: 1024px)"]: {
     marginBottom: 120,
-    flexDirection: "row"
-  }
-})
+    flexDirection: "row",
+  },
+});
 
 export const Section2 = styled.div({
   display: "flex",
@@ -46,9 +46,9 @@ export const Section2 = styled.div({
   flexDirection: "column",
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: "120px"
-  }
-})
+    marginBottom: "120px",
+  },
+});
 
 export const Section3 = styled.div({
   display: "flex",
@@ -56,15 +56,15 @@ export const Section3 = styled.div({
   justifyContent: "center",
   flexDirection: "column-reverse",
   ["@media (min-width: 1024px)"]: {
-    flexDirection: "row"
-  }
-})
+    flexDirection: "row",
+  },
+});
 
 export const Fees = styled.img({
   width: "100%",
   marginBottom: 40,
   ["@media (min-width: 1024px)"]: {
     width: "auto",
-    marginBottom: 0
-  }
-})
+    marginBottom: 0,
+  },
+});

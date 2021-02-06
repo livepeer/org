@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import Link from "next/link"
-import { jsx, Box, Heading, Link as A, Grid } from "theme-ui"
-import HowToGetStartedStep, { HowToGetStartedStepProps } from "./step"
+import Link from "next/link";
+import { jsx, Box, Heading, Link as A, Grid } from "theme-ui";
+import HowToGetStartedStep, { HowToGetStartedStepProps } from "./step";
 
 const steps: HowToGetStartedStepProps[] = [
   {
@@ -11,13 +11,12 @@ const steps: HowToGetStartedStepProps[] = [
           variant="accent"
           href="https://livepeer.readthedocs.io/en/latest/transcoding.html"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Read the docs
         </A>{" "}
         for transcoding on the livepeer network
       </>
-    )
+    ),
   },
   {
     children: (
@@ -27,7 +26,7 @@ const steps: HowToGetStartedStepProps[] = [
           <A variant="accent">video miner FAQ</A>
         </Link>
       </>
-    )
+    ),
   },
   {
     children: (
@@ -37,16 +36,15 @@ const steps: HowToGetStartedStepProps[] = [
           variant="accent"
           href="https://discord.gg/uaPhtyrWsF"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Discord chat room
         </A>
         , #transcoding channel. Initial testing and setup can require some
         DevOps, so we are happy to help.
       </>
-    )
-  }
-]
+    ),
+  },
+];
 
 const HowToGetStartedSection = () => (
   <Box>
@@ -54,29 +52,25 @@ const HowToGetStartedSection = () => (
       variant="layout.section"
       gap={5}
       columns={[1, null, 2]}
-      sx={{ pt: ["80px", null, null, "160px"] }}
-    >
+      sx={{ pt: ["80px", null, null, "160px"] }}>
       <Box>
         <Heading
           variant="section.title"
-          sx={{ textAlign: ["center", null, "left"] }}
-        >
+          sx={{ textAlign: ["center", null, "left"] }}>
           How to get started
         </Heading>
         <Heading
           variant="section.subtitle"
-          sx={{ textAlign: ["center", null, "left"] }}
-        >
+          sx={{ textAlign: ["center", null, "left"] }}>
           Become a video miner in three steps.
         </Heading>
       </Box>
       <Box
         sx={{
           ".list-item:not(:last-of-type)": {
-            mb: 2
-          }
-        }}
-      >
+            mb: 2,
+          },
+        }}>
         {steps.map((s, i, { length }) => (
           <HowToGetStartedStep
             key={`how-to-get-started-step-${i}`}
@@ -89,6 +83,6 @@ const HowToGetStartedSection = () => (
       </Box>
     </Grid>
   </Box>
-)
+);
 
-export default HowToGetStartedSection
+export default HowToGetStartedSection;

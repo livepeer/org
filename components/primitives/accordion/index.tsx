@@ -1,15 +1,15 @@
-import { Box, SxStyleProp } from "theme-ui"
-import AccordionItem, { AccordionItemProps } from "./item"
-import { useState } from "react"
+import { Box, SxStyleProp } from "theme-ui";
+import AccordionItem, { AccordionItemProps } from "./item";
+import { useState } from "react";
 
 type Props = {
-  items: AccordionItemProps[]
-  withIllustratedBackground?: boolean
-  pushSx?: SxStyleProp
-}
+  items: AccordionItemProps[];
+  withIllustratedBackground?: boolean;
+  pushSx?: SxStyleProp;
+};
 
 const Accordion = ({ items, withIllustratedBackground, pushSx }: Props) => {
-  const [currentlyToggled, setCurrentlyToggled] = useState<string>()
+  const [currentlyToggled, setCurrentlyToggled] = useState<string>();
 
   return (
     <Box sx={pushSx}>
@@ -23,7 +23,7 @@ const Accordion = ({ items, withIllustratedBackground, pushSx }: Props) => {
         />
       ))}
     </Box>
-  )
-}
+  );
+};
 
-export default Accordion
+export default Accordion;

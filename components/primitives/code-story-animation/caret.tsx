@@ -1,17 +1,17 @@
-import { Box, SxStyleProp } from "theme-ui"
-import { forwardRef } from "react"
-import { keyframes } from "@emotion/core"
+import { Box, SxStyleProp } from "theme-ui";
+import { forwardRef } from "react";
+import { keyframes } from "@emotion/core";
 
 const blinkKeyframe = keyframes({
   "0%": { opacity: 1 },
   "50%": { opacity: 0 },
-  "100%": { opacity: 1 }
-})
+  "100%": { opacity: 1 },
+});
 
 type Props = {
-  blink?: boolean
-  pushSx?: SxStyleProp
-}
+  blink?: boolean;
+  pushSx?: SxStyleProp;
+};
 
 const Caret = forwardRef(
   ({ blink, pushSx }: Props, ref: React.RefObject<HTMLDivElement>) => (
@@ -25,10 +25,10 @@ const Caret = forwardRef(
         width: 2,
         bg: "primary",
         animation: blink ? `${blinkKeyframe} 1s step-end infinite` : "",
-        ...pushSx
+        ...pushSx,
       }}
     />
   )
-)
+);
 
-export default Caret
+export default Caret;

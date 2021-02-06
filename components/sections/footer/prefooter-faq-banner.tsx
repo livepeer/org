@@ -1,11 +1,11 @@
-import { Container, Heading, Text, Box, Link as A } from "theme-ui"
-import PrefooterSvg from "components/svgs/prefooter"
-import Link from "next/link"
+import { Container, Heading, Text, Box, Link as A } from "theme-ui";
+import PrefooterSvg from "components/svgs/prefooter";
+import Link from "next/link";
 
 const PrefooterFaqBanner = ({
-  cta = { label: "View FAQ", href: "/faq" }
+  cta = { label: "View FAQ", href: "/faq" },
 }: {
-  cta?: { label: string; href: string; asPath?: string }
+  cta?: { label: string; href: string; asPath?: string };
 }) => (
   <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: [0, "80px"] }}>
     <Container
@@ -16,9 +16,8 @@ const PrefooterFaqBanner = ({
         position: "relative",
         overflow: "hidden",
         borderRadius: "lg",
-        boxShadow: "magical"
-      }}
-    >
+        boxShadow: "magical",
+      }}>
       <Box
         sx={{
           display: "flex",
@@ -26,17 +25,15 @@ const PrefooterFaqBanner = ({
           alignItems: ["center", null, null, "flex-start"],
           mx: ["auto", null, null, 0],
           zIndex: "general",
-          position: "relative"
-        }}
-      >
+          position: "relative",
+        }}>
         <Heading
           variant="heading.3"
           sx={{
             textAlign: ["center", null, null, "left"],
             color: "background",
-            maxWidth: "xl"
-          }}
-        >
+            maxWidth: "xl",
+          }}>
           Questions?
           <br />
           Check out the FAQ.
@@ -48,9 +45,8 @@ const PrefooterFaqBanner = ({
             mb: "40px",
             textAlign: ["center", null, null, "left"],
             color: "lightGray",
-            maxWidth: "30ch"
-          }}
-        >
+            maxWidth: "30ch",
+          }}>
           Discover the most frequently asked questions about Livepeer.
         </Text>
         <Link href={cta.href} as={cta.asPath} passHref>
@@ -63,13 +59,12 @@ const PrefooterFaqBanner = ({
           right: "-336px",
           top: ["unset", null, null, "50%"],
           bottom: ["-232px", "-190px", null, "unset"],
-          transform: ["none", null, null, "translateY(-50%)"]
-        }}
-      >
+          transform: ["none", null, null, "translateY(-50%)"],
+        }}>
         <PrefooterSvg fill="primary" />
       </Box>
     </Container>
   </Box>
-)
+);
 
-export default PrefooterFaqBanner
+export default PrefooterFaqBanner;

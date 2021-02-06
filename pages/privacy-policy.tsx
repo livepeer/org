@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Heading, Text, Container, Link as A } from "theme-ui"
-import PageLayout from "components/layouts/page"
+import { jsx, Heading, Text, Container, Link as A } from "theme-ui";
+import PageLayout from "components/layouts/page";
 
-import { HeadProps } from "components/primitives/head"
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -12,9 +12,9 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/privacy-policy",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const PrivacyPolicyPage = () => (
   <PageLayout headProps={headProps} footerProps={{ prefooter: null }}>
@@ -128,9 +128,8 @@ const PrivacyPolicyPage = () => (
           overflow: "auto",
           width: "100vw",
           maxWidth: "1000px",
-          position: "relative"
-        }}
-      >
+          position: "relative",
+        }}>
         <thead>
           <tr>
             <th sx={{ minWidth: "132px", textAlign: "left" }}>
@@ -184,8 +183,7 @@ const PrivacyPolicyPage = () => (
               Cookies here:{" "}
               <A
                 variant="accent"
-                href="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies"
-              >
+                href="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies">
                 https://developers.google.com/analytics/resources/concepts/gaConceptsCookies
               </A>
               . You can find out more about how Google protects your data here:
@@ -195,8 +193,7 @@ const PrivacyPolicyPage = () => (
               link:{" "}
               <A
                 variant="accent"
-                href="http://tools.google.com/dlpage/gaoptout?hl=en-GB"
-              >
+                href="http://tools.google.com/dlpage/gaoptout?hl=en-GB">
                 http://tools.google.com/dlpage/gaoptout?hl=en-GB
               </A>
               .
@@ -405,6 +402,6 @@ const PrivacyPolicyPage = () => (
       <Text as="p">Attn: Privacy</Text>
     </Container>
   </PageLayout>
-)
+);
 
-export default PrivacyPolicyPage
+export default PrivacyPolicyPage;

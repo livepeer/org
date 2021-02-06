@@ -1,20 +1,20 @@
-import { useForm } from "react-hook-form"
-import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui"
-import PrefooterSvg from "components/svgs/prefooter"
-import { useMailchimp } from "react-use-mailchimp"
+import { useForm } from "react-hook-form";
+import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui";
+import PrefooterSvg from "components/svgs/prefooter";
+import { useMailchimp } from "react-use-mailchimp";
 
 const MailchimpResponse = ({
   result,
-  msg
+  msg,
 }: {
-  result?: string
-  msg?: string
+  result?: string;
+  msg?: string;
 }) => {
-  if (!result || !msg) return null
+  if (!result || !msg) return null;
 
   const message = msg.includes("is already subscribed to list")
     ? msg.split(" <a href=")[0]
-    : msg
+    : msg;
 
   return (
     <Text
@@ -28,29 +28,28 @@ const MailchimpResponse = ({
         bottom: -3,
         textOverflow: "ellipsis",
         whiteSpace: "nowrap",
-        overflow: "hidden"
-      }}
-    >
+        overflow: "hidden",
+      }}>
       {message}
     </Text>
-  )
-}
+  );
+};
 
 const PrefooterBanner = () => {
   const [mailchimp, subscribe] = useMailchimp({
     url:
-      "https://livepeer.us16.list-manage.com/subscribe/post?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5"
-  })
+      "https://livepeer.us16.list-manage.com/subscribe/post?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5",
+  });
 
-  const { loading, data: mailchimpResponseData } = mailchimp
+  const { loading, data: mailchimpResponseData } = mailchimp;
 
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data: { BOT?: string; EMAIL?: string }) => {
-    const { BOT, EMAIL } = data
-    if (BOT) alert("Please don't do it")
-    else subscribe({ EMAIL })
-  }
+    const { BOT, EMAIL } = data;
+    if (BOT) alert("Please don't do it");
+    else subscribe({ EMAIL });
+  };
 
   return (
     <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: ["-122px", "80px"] }}>
@@ -62,9 +61,8 @@ const PrefooterBanner = () => {
           position: "relative",
           overflow: "hidden",
           borderRadius: "lg",
-          boxShadow: "magical"
-        }}
-      >
+          boxShadow: "magical",
+        }}>
         <Box
           onSubmit={handleSubmit(onSubmit)}
           as="form"
@@ -75,9 +73,8 @@ const PrefooterBanner = () => {
             alignItems: ["center", null, null, "flex-start"],
             mx: ["auto", null, null, 0],
             zIndex: "general",
-            position: "relative"
-          }}
-        >
+            position: "relative",
+          }}>
           <input
             type="checkbox"
             name="BOT"
@@ -86,8 +83,7 @@ const PrefooterBanner = () => {
           />
           <Heading
             variant="heading.3"
-            sx={{ textAlign: ["center", null, null, "left"] }}
-          >
+            sx={{ textAlign: ["center", null, null, "left"] }}>
             Stay Informed
           </Heading>
           <Text
@@ -95,9 +91,8 @@ const PrefooterBanner = () => {
             sx={{
               mt: "18px",
               mb: "40px",
-              textAlign: ["center", null, null, "left"]
-            }}
-          >
+              textAlign: ["center", null, null, "left"],
+            }}>
             Subscribe to our newsletter and get updates from the Livepeer
             ecosystem straight to your Inbox.
           </Text>
@@ -106,9 +101,8 @@ const PrefooterBanner = () => {
               width: "100%",
               flexWrap: "wrap",
               mx: [-1, 0],
-              zIndex: "general"
-            }}
-          >
+              zIndex: "general",
+            }}>
             <Input
               ref={register}
               name="EMAIL"
@@ -124,9 +118,8 @@ const PrefooterBanner = () => {
                 minWidth: "fit-content",
                 flex: "1 1",
                 mx: 1,
-                cursor: loading ? "wait" : "pointer"
-              }}
-            >
+                cursor: loading ? "wait" : "pointer",
+              }}>
               Subscribe
             </Button>
           </Flex>
@@ -140,14 +133,13 @@ const PrefooterBanner = () => {
             right: "-336px",
             top: ["unset", null, null, "50%"],
             bottom: ["-232px", "-190px", null, "unset"],
-            transform: ["none", null, null, "translateY(-50%)"]
-          }}
-        >
+            transform: ["none", null, null, "translateY(-50%)"],
+          }}>
           <PrefooterSvg />
         </Box>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default PrefooterBanner
+export default PrefooterBanner;

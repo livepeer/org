@@ -1,24 +1,24 @@
-import React, { useState } from "react"
-import { Box } from "theme-ui"
-import { Element } from "react-scroll"
-import PageLayout from "components/layouts/primer"
-import { HeadProps } from "components/primitives/head"
-import { request } from "graphql-request"
-import LivepeerSDK from "@livepeer/sdk"
+import React, { useState } from "react";
+import { Box } from "theme-ui";
+import { Element } from "react-scroll";
+import PageLayout from "components/layouts/primer";
+import { HeadProps } from "components/primitives/head";
+import { request } from "graphql-request";
+import LivepeerSDK from "@livepeer/sdk";
 
 // TODO: refactor primer components to use theme-ui
-import Masthead from "components/sections/primer/Masthead"
-import Introduction from "components/sections/primer/Introduction"
-import Chapter1 from "components/sections/primer/Chapter1"
-import Chapter2 from "components/sections/primer/Chapter2"
-import Chapter3 from "components/sections/primer/Chapter3"
-import Chapter4 from "components/sections/primer/Chapter4"
-import Chapter5 from "components/sections/primer/Chapter5"
-import Chapter6 from "components/sections/primer/Chapter6"
-import Chapter7 from "components/sections/primer/Chapter7"
-import Chapter8 from "components/sections/primer/Chapter8"
-import Chapter9 from "components/sections/primer/Chapter9"
-import Footer from "components/sections/primer/Footer"
+import Masthead from "components/sections/primer/Masthead";
+import Introduction from "components/sections/primer/Introduction";
+import Chapter1 from "components/sections/primer/Chapter1";
+import Chapter2 from "components/sections/primer/Chapter2";
+import Chapter3 from "components/sections/primer/Chapter3";
+import Chapter4 from "components/sections/primer/Chapter4";
+import Chapter5 from "components/sections/primer/Chapter5";
+import Chapter6 from "components/sections/primer/Chapter6";
+import Chapter7 from "components/sections/primer/Chapter7";
+import Chapter8 from "components/sections/primer/Chapter8";
+import Chapter9 from "components/sections/primer/Chapter9";
+import Footer from "components/sections/primer/Footer";
 
 const headProps: HeadProps = {
   meta: {
@@ -28,21 +28,20 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/primer",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/images/primer/share-image.jpg",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const Primer = ({ data }) => {
-  const [section, setActiveSection] = useState("introduction")
+  const [section, setActiveSection] = useState("introduction");
   const onChange = (section) => {
-    setActiveSection(section)
-  }
+    setActiveSection(section);
+  };
 
   return (
     <PageLayout
       navProps={{ background: "translucent", isInmersive: true }}
-      headProps={headProps}
-    >
+      headProps={headProps}>
       <Box className="primer">
         <Box className={`bg ${section}`} />
         <Element name="top" />
@@ -82,20 +81,20 @@ const Primer = ({ data }) => {
         </Box>
       </Box>
     </PageLayout>
-  )
-}
+  );
+};
 
 export async function getStaticProps() {
   const { rpc } = await LivepeerSDK({
-    provider: process.env.PROVIDER
-  })
+    provider: process.env.PROVIDER,
+  });
 
   const reqDelegators = async (skip) => {
     const query = `query delegators ($first: Int $skip: Int $where: Delegator_filter) {
           delegators(first: $first skip: $skip where: $where) {
               id
             }
-        }`
+        }`;
     let response = await request(
       "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
       query,
@@ -103,45 +102,45 @@ export async function getStaticProps() {
         skip: skip,
         first: 1000,
         where: {
-          bondedAmount_gt: "0"
-        }
+          bondedAmount_gt: "0",
+        },
       }
-    )
-    return response.delegators
-  }
+    );
+    return response.delegators;
+  };
   const getDelegators = async () => {
-    const PAGE_SIZE = 1000
-    let delegators = []
-    let keepGoing = true
-    let skip = 0
+    const PAGE_SIZE = 1000;
+    let delegators = [];
+    let keepGoing = true;
+    let skip = 0;
     while (keepGoing) {
-      let response = await reqDelegators(skip)
-      await delegators.push.apply(delegators, response)
-      skip += PAGE_SIZE
+      let response = await reqDelegators(skip);
+      await delegators.push.apply(delegators, response);
+      skip += PAGE_SIZE;
       if (response.length < PAGE_SIZE) {
-        keepGoing = false
-        return delegators
+        keepGoing = false;
+        return delegators;
       }
     }
-  }
-  let delegators = await getDelegators()
+  };
+  let delegators = await getDelegators();
 
-  let totalSupply = (await rpc.getTokenTotalSupply()) / 10e17
+  let totalSupply = (await rpc.getTokenTotalSupply()) / 10e17;
 
-  let inflationChange = (await rpc.getInflationChange()) / 10000000
+  let inflationChange = (await rpc.getInflationChange()) / 10000000;
 
-  let inflationPerRound = (await rpc.getInflation()) / 10000000
+  let inflationPerRound = (await rpc.getInflation()) / 10000000;
 
-  let totalBonded = (await rpc.getTotalBonded()) / 10e17
+  let totalBonded = (await rpc.getTotalBonded()) / 10e17;
 
-  let participationRate = ((+totalBonded / totalSupply) * 100).toPrecision(4)
+  let participationRate = ((+totalBonded / totalSupply) * 100).toPrecision(4);
 
-  let targetBondingRate = (await rpc.getTargetBondingRate()) / 10000000
+  let targetBondingRate = (await rpc.getTargetBondingRate()) / 10000000;
 
   let ethGasStationResponse = await fetch(
     "https://ethgasstation.info/json/ethgasAPI.json"
-  )
-  let ethGasStationResult = await ethGasStationResponse.json()
+  );
+  let ethGasStationResult = await ethGasStationResponse.json();
 
   return {
     props: {
@@ -153,11 +152,11 @@ export async function getStaticProps() {
         totalBonded,
         targetBondingRate,
         participationRate,
-        blockTime: ethGasStationResult.block_time
-      }
+        blockTime: ethGasStationResult.block_time,
+      },
     },
-    revalidate: 1
-  }
+    revalidate: 1,
+  };
 }
 
-export default Primer
+export default Primer;

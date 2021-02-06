@@ -1,48 +1,48 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from "theme-ui"
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { DURATION } from "lib/animations"
+import { jsx, SxStyleProp } from "theme-ui";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { DURATION } from "lib/animations";
 
 type Props = {
-  pushSx?: SxStyleProp
-}
+  pushSx?: SxStyleProp;
+};
 
 const HostedApiSvg = ({ pushSx }: Props) => {
-  const svgRef = useRef(null)
+  const svgRef = useRef(null);
   useEffect(() => {
-    if (!svgRef.current) return
+    if (!svgRef.current) return;
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: svgRef.current,
-        start: "top 70%"
-      }
-    })
+        start: "top 70%",
+      },
+    });
 
-    const circles = document.querySelectorAll(".dots")
-    const mainLine = document.querySelectorAll(".main--line")
+    const circles = document.querySelectorAll(".dots");
+    const mainLine = document.querySelectorAll(".main--line");
 
-    tl.set([mainLine, circles], { autoAlpha: 0 })
-    tl.to(svgRef.current, { autoAlpha: 1, duration: DURATION * 0.5 })
+    tl.set([mainLine, circles], { autoAlpha: 0 });
+    tl.to(svgRef.current, { autoAlpha: 1, duration: DURATION * 0.5 });
     tl.to(mainLine, {
       autoAlpha: 1,
       duration: DURATION,
       ease: "sine.out",
       stagger: {
         each: 0.1,
-        from: "start"
-      }
-    })
+        from: "start",
+      },
+    });
     tl.to(circles, {
       autoAlpha: 1,
       duration: DURATION,
       ease: "sine.out",
       stagger: {
         each: 0.1,
-        from: "start"
-      }
-    })
-  }, [])
+        from: "start",
+      },
+    });
+  }, []);
   return (
     <svg
       className="c--hide"
@@ -50,8 +50,7 @@ const HostedApiSvg = ({ pushSx }: Props) => {
       viewBox="0 0 968 968"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      sx={{ width: "968px", ...pushSx }}
-    >
+      sx={{ width: "968px", ...pushSx }}>
       <mask
         id="hosted-api-svg-mask0"
         mask-type="alpha"
@@ -59,8 +58,7 @@ const HostedApiSvg = ({ pushSx }: Props) => {
         x="0"
         y="0"
         width="968"
-        height="968"
-      >
+        height="968">
         <circle
           className="main--line"
           cx="484"
@@ -318,15 +316,14 @@ const HostedApiSvg = ({ pushSx }: Props) => {
           cy="0"
           r="1"
           gradientUnits="userSpaceOnUse"
-          gradientTransform="translate(484 484) rotate(90) scale(484)"
-        >
+          gradientTransform="translate(484 484) rotate(90) scale(484)">
           <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
 const MobileHostedApiSvg = ({ pushSx }: Props) => (
   <svg
@@ -335,8 +332,7 @@ const MobileHostedApiSvg = ({ pushSx }: Props) => (
     viewBox="0 0 376 376"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={pushSx}
-  >
+    sx={pushSx}>
     <mask
       id="mobile-hosted-api-svg-mask0"
       mask-type="alpha"
@@ -344,8 +340,7 @@ const MobileHostedApiSvg = ({ pushSx }: Props) => (
       x="0"
       y="0"
       width="376"
-      height="376"
-    >
+      height="376">
       <rect
         width="376"
         height="376"
@@ -383,14 +378,13 @@ const MobileHostedApiSvg = ({ pushSx }: Props) => (
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(188 188) rotate(90) scale(188)"
-      >
+        gradientTransform="translate(188 188) rotate(90) scale(188)">
         <stop stopColor="white" />
         <stop offset="1" stopColor="white" stopOpacity="0" />
       </radialGradient>
     </defs>
   </svg>
-)
+);
 
-export default HostedApiSvg
-export { MobileHostedApiSvg }
+export default HostedApiSvg;
+export { MobileHostedApiSvg };

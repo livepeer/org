@@ -1,6 +1,7 @@
 # livepeer.org
 
-Livepeer.org is a primary online resource for participants and users of the Livepeer network. It includes:
+Livepeer.org is a primary online resource for participants and users of the
+Livepeer network. It includes:
 
 - Useful getting started content
 - Community built resources
@@ -11,13 +12,15 @@ Livepeer.org is a primary online resource for participants and users of the Live
 
 ### Step 1
 
-Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
+Copy the .env.local.example file in this directory to .env.local (which will be
+ignored by Git):
 
 `cp .env.local.example .env.local`
 
 ### Step 2
 
-Add a youtube api key and an ethereum provider (ie an infura endpoint) to .env.local
+Add a youtube api key and an ethereum provider (ie an infura endpoint) to
+.env.local
 
 ### Step 3
 
@@ -30,6 +33,12 @@ yarn dev
 
 ## Contribution
 
-Anyone is welcome and encouraged to help improve the site on GitHub by opening an issue or pull request. When submitting a pull request, please take required time to discuss your changes and adapt your work.
+Anyone is welcome and encouraged to help improve the site on GitHub by opening
+an issue or pull request. When submitting a pull request, please take required
+time to discuss your changes and adapt your work.
 
-_Note, the site is intended to be useful to the majority of Livepeer participants and users, but still be concise and navigable. Not every link to every partly built project can be included unfortunately. But please feel free to file an issue here if you have questions or would like to start a discussion._
+_Note, the site is intended to be useful to the majority of Livepeer
+participants and users, but still be concise and navigable. Not every link to
+every partly built project can be included unfortunately. But please feel free
+to file an issue here if you have questions or would like to start a
+discussion._
