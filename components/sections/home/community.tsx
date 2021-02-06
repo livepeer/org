@@ -1,15 +1,15 @@
-import SectionLayout from "components/layouts/section"
-import { Grid, Flex } from "theme-ui"
-import IconLink, { IconLinkProps } from "components/primitives/links/icon"
+import SectionLayout from "components/layouts/section";
+import { Grid, Flex } from "theme-ui";
+import IconLink, { IconLinkProps } from "components/primitives/links/icon";
 import {
   FaDiscourse,
   FaDiscord,
   FaTwitter,
   FaReddit,
   FaTelegram,
-  FaMedium
-} from "react-icons/fa"
-import Divider from "components/primitives/divider"
+  FaMedium,
+} from "react-icons/fa";
+import Divider from "components/primitives/divider";
 
 const links: IconLinkProps[] = [
   {
@@ -20,7 +20,7 @@ const links: IconLinkProps[] = [
       </>
     ),
     href: "https://discord.gg/uaPhtyrWsF",
-    isExternal: true
+    isExternal: true,
   },
   {
     icon: <FaReddit />,
@@ -30,7 +30,7 @@ const links: IconLinkProps[] = [
       </>
     ),
     href: "https://www.reddit.com/r/livepeer/",
-    isExternal: true
+    isExternal: true,
   },
   {
     icon: <FaTwitter />,
@@ -40,7 +40,7 @@ const links: IconLinkProps[] = [
       </>
     ),
     href: "https://twitter.com/LivepeerOrg",
-    isExternal: true
+    isExternal: true,
   },
   {
     icon: <FaDiscourse />,
@@ -50,7 +50,7 @@ const links: IconLinkProps[] = [
       </>
     ),
     href: "https://forum.livepeer.org/",
-    isExternal: true
+    isExternal: true,
   },
 
   {
@@ -61,7 +61,7 @@ const links: IconLinkProps[] = [
       </>
     ),
     href: "https://t.me/livepeerorg",
-    isExternal: true
+    isExternal: true,
   },
   {
     icon: <FaMedium />,
@@ -71,9 +71,9 @@ const links: IconLinkProps[] = [
       </>
     ),
     href: "https://medium.com/livepeer-blog",
-    isExternal: true
-  }
-]
+    isExternal: true,
+  },
+];
 
 const CommunitySection = ({ title = "Join the Livepeer Community" }) => (
   <SectionLayout
@@ -81,8 +81,7 @@ const CommunitySection = ({ title = "Join the Livepeer Community" }) => (
     title={title}
     titleLabel="Livepeer Communities"
     subtitle="Livepeer is an open project that believes in open source code and creative contribution from people with diverse interests and skillsets. Join us."
-    pushSx={{ pt: "160px" }}
-  >
+    pushSx={{ pt: "160px" }}>
     <Grid
       columns={"repeat(3, 372px)"}
       gap={[3, null, null, null, 0]}
@@ -94,10 +93,9 @@ const CommunitySection = ({ title = "Join the Livepeer Community" }) => (
           null,
           null,
           null,
-          ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`
-        ]
-      }}
-    >
+          ({ space }) => `372px calc(372px + 2 * ${space[3]}px) 372px`,
+        ],
+      }}>
       {links.map((link, i) => {
         if (i === 1 || i === 4) {
           return (
@@ -114,7 +112,7 @@ const CommunitySection = ({ title = "Join the Livepeer Community" }) => (
                 pushSx={{ mx: 3, display: ["none", null, null, null, "block"] }}
               />
             </Flex>
-          )
+          );
         }
         return (
           <IconLink
@@ -122,10 +120,10 @@ const CommunitySection = ({ title = "Join the Livepeer Community" }) => (
             pushSx={{ width: "372px" }}
             {...link}
           />
-        )
+        );
       })}
     </Grid>
   </SectionLayout>
-)
+);
 
-export default CommunitySection
+export default CommunitySection;

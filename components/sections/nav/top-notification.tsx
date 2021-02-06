@@ -1,18 +1,18 @@
-import { Box, Text, Link as A } from "theme-ui"
-import { FiArrowRight, FiArrowUpRight } from "react-icons/fi"
-import Link from "next/link"
-import { forwardRef } from "react"
+import { Box, Text, Link as A } from "theme-ui";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
+import Link from "next/link";
+import { forwardRef } from "react";
 
 export type TopNotificationProps = {
-  title?: string
-  description?: string
+  title?: string;
+  description?: string;
   link: {
-    label: string
-    href: string
-    asPath?: string
-    isExternal?: boolean
-  }
-}
+    label: string;
+    href: string;
+    asPath?: string;
+    isExternal?: boolean;
+  };
+};
 
 const TopNotification = forwardRef(
   (
@@ -28,9 +28,8 @@ const TopNotification = forwardRef(
         p: 2,
         variant: "text.small",
         position: "relative",
-        zIndex: "1"
-      }}
-    >
+        zIndex: "1",
+      }}>
       {title && (
         <Text sx={{ fontWeight: 600, display: "inline" }}>{title}: </Text>
       )}
@@ -42,13 +41,12 @@ const TopNotification = forwardRef(
             display: "inline-flex",
             cursor: "pointer",
             alignItems: "center",
-            ml: 2
+            ml: 2,
           }}
           target="_blank"
           rel="noopener noreferrer"
           href={link.href}
-          data-dark
-        >
+          data-dark>
           {link.label}
           <i sx={{ ml: 1 }}>
             <FiArrowUpRight strokeWidth={3} />
@@ -62,10 +60,9 @@ const TopNotification = forwardRef(
               display: "inline-flex",
               cursor: "pointer",
               alignItems: "center",
-              ml: 2
+              ml: 2,
             }}
-            data-dark
-          >
+            data-dark>
             {link.label}
             <i sx={{ ml: 1 }}>
               <FiArrowRight strokeWidth={3} />
@@ -75,6 +72,6 @@ const TopNotification = forwardRef(
       )}
     </Box>
   )
-)
+);
 
-export default TopNotification
+export default TopNotification;

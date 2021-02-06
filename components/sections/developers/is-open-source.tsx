@@ -1,25 +1,25 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Link as A } from "theme-ui"
-import Divider from "components/primitives/divider"
-import StatsGrid from "components/layouts/stats-grid"
-import { StatProps } from "components/primitives/stat"
-import Link from "next/link"
+import { jsx, Box, Container, Heading, Link as A } from "theme-ui";
+import Divider from "components/primitives/divider";
+import StatsGrid from "components/layouts/stats-grid";
+import { StatProps } from "components/primitives/stat";
+import Link from "next/link";
 
 const stats: StatProps[] = [
   {
     title: "100+",
-    label: "Github Contributors"
+    label: "Github Contributors",
   },
   {
     title: "1k+",
     label: <>Stargazers</>,
-    color: "gradient"
+    color: "gradient",
   },
   {
     title: "12",
-    label: <>Languages</>
-  }
-]
+    label: <>Languages</>,
+  },
+];
 
 const CoverImage = () => (
   <figure
@@ -27,9 +27,8 @@ const CoverImage = () => (
       position: "absolute",
       top: 4,
       left: "50%",
-      transform: "translateX(-50%)"
-    }}
-  >
+      transform: "translateX(-50%)",
+    }}>
     <img
       sx={{ minWidth: "1440px", maxWidth: "1440px" }}
       src="/images/contributors.png"
@@ -44,11 +43,11 @@ const CoverImage = () => (
         left: "50%",
         transform: "translateX(-50%)",
         background:
-          "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)"
+          "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)",
       }}
     />
   </figure>
-)
+);
 
 const IsOpenSourceSection = () => (
   <Box sx={{ position: "relative", bg: "background" }}>
@@ -60,18 +59,16 @@ const IsOpenSourceSection = () => (
         flexDirection: "column",
         alignItems: "center",
         pt: "160px",
-        pb: [0, null, null, 5]
-      }}
-    >
+        pb: [0, null, null, 5],
+      }}>
       <Box
         sx={{
           maxWidth: "2xl",
           mb: ["32px", "40px"],
           display: "flex",
           flexDirection: "column",
-          alignItems: "center"
-        }}
-      >
+          alignItems: "center",
+        }}>
         <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
           Livepeer is open source
         </Heading>
@@ -90,6 +87,6 @@ const IsOpenSourceSection = () => (
       </Box>
     </Container>
   </Box>
-)
+);
 
-export default IsOpenSourceSection
+export default IsOpenSourceSection;

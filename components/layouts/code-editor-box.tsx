@@ -1,6 +1,6 @@
-import { BoxProps, Box, Flex, Text } from "theme-ui"
-import { forwardRef } from "react"
-import WindowDots from "components/primitives/window-dots"
+import { BoxProps, Box, Flex, Text } from "theme-ui";
+import { forwardRef } from "react";
+import WindowDots from "components/primitives/window-dots";
 
 const LineNumbers = ({ length = 64 }) => (
   <Box sx={{ position: "absolute", left: 4 }}>
@@ -11,16 +11,15 @@ const LineNumbers = ({ length = 64 }) => (
           color: "lightGray",
           fontSize: 1,
           fontFamily: "mono",
-          lineHeight: "24px"
-        }}
-      >
+          lineHeight: "24px",
+        }}>
         {n}
       </Text>
     ))}
   </Box>
-)
+);
 
-type TabProps = { label: string; isSelected?: boolean }
+type TabProps = { label: string; isSelected?: boolean };
 
 const Tab = ({ label, isSelected }: TabProps) => (
   <Box
@@ -28,17 +27,16 @@ const Tab = ({ label, isSelected }: TabProps) => (
       height: "100%",
       variant: "layout.flexCenter",
       bg: isSelected ? "muted" : "transparent",
-      px: 4
-    }}
-  >
+      px: 4,
+    }}>
     {label}
   </Box>
-)
+);
 
 type Props = BoxProps & {
-  tabs: TabProps[]
-  withLineNumbers?: boolean
-}
+  tabs: TabProps[];
+  withLineNumbers?: boolean;
+};
 
 const CodeEditorBox = forwardRef(
   (
@@ -56,9 +54,8 @@ const CodeEditorBox = forwardRef(
           color: "gray",
           fontSize: 1,
           bg: "#F0F0F0",
-          pl: "88px"
-        }}
-      >
+          pl: "88px",
+        }}>
         <WindowDots />
         {tabs.map((t) => (
           <Tab key={`window-box-tab-${t.label}`} {...t} />
@@ -70,14 +67,13 @@ const CodeEditorBox = forwardRef(
           pl: withLineNumbers ? 5 : 3,
           position: "relative",
           boxShadow: "0px 16px 40px rgba(0, 0, 0, 0.06)",
-          height: "100%"
-        }}
-      >
+          height: "100%",
+        }}>
         {withLineNumbers && <LineNumbers />}
         {children}
       </Box>
     </Box>
   )
-)
+);
 
-export default CodeEditorBox
+export default CodeEditorBox;

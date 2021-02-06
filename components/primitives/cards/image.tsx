@@ -1,24 +1,24 @@
 /** @jsx jsx */
-import { jsx, Box, Card, Heading, Text, SxStyleProp } from "theme-ui"
-import CardLink, { CardLinkProps } from "../links/card"
-import React, { useMemo } from "react"
-import Link from "next/link"
+import { jsx, Box, Card, Heading, Text, SxStyleProp } from "theme-ui";
+import CardLink, { CardLinkProps } from "../links/card";
+import React, { useMemo } from "react";
+import Link from "next/link";
 
 export type ImageCardProps = {
-  title?: React.ReactNode
-  description?: string
-  footnote?: string
-  linkProps: CardLinkProps
+  title?: React.ReactNode;
+  description?: string;
+  footnote?: string;
+  linkProps: CardLinkProps;
   image: {
-    src: string
-    alt?: string
-  }
-  isLink?: boolean
-  className?: string
-  pushSx?: SxStyleProp
-  pushContentSx?: SxStyleProp
-  gradientEffect?: boolean
-}
+    src: string;
+    alt?: string;
+  };
+  isLink?: boolean;
+  className?: string;
+  pushSx?: SxStyleProp;
+  pushContentSx?: SxStyleProp;
+  gradientEffect?: boolean;
+};
 
 const ImageCard = ({
   title,
@@ -30,7 +30,7 @@ const ImageCard = ({
   pushSx,
   pushContentSx,
   isLink,
-  gradientEffect
+  gradientEffect,
 }: ImageCardProps) => {
   const markup = useMemo(
     () => (
@@ -45,12 +45,11 @@ const ImageCard = ({
             boxShadow: isLink ? "long" : "magical",
             "> .cardHeaderGradient": {
               opacity: 0.5,
-              transition: "opacity .3s"
-            }
+              transition: "opacity .3s",
+            },
           },
-          ...pushSx
-        }}
-      >
+          ...pushSx,
+        }}>
         {gradientEffect && (
           <Box
             className="cardHeaderGradient"
@@ -67,7 +66,7 @@ const ImageCard = ({
               borderTopLeftRadius: "4px",
               borderTopRightRadius: "4px",
               opacity: 0,
-              transition: "opacity .3s"
+              transition: "opacity .3s",
             }}
           />
         )}
@@ -77,7 +76,7 @@ const ImageCard = ({
             width: "100%",
             height: "182px",
             objectFit: "cover",
-            filter: gradientEffect ? "grayscale(100%)" : "none"
+            filter: gradientEffect ? "grayscale(100%)" : "none",
           }}
         />
         <Box
@@ -87,14 +86,12 @@ const ImageCard = ({
             justifyContent: "space-between",
             p: "24px",
             height: "196px",
-            ...pushContentSx
-          }}
-        >
+            ...pushContentSx,
+          }}>
           {title && (
             <Heading
               variant="heading.5"
-              sx={{ color: "text", textAlign: "left", mb: 2 }}
-            >
+              sx={{ color: "text", textAlign: "left", mb: 2 }}>
               {title}
             </Heading>
           )}
@@ -106,22 +103,19 @@ const ImageCard = ({
                 display: "-webkit-box",
                 maxWidth: "100%",
                 margin: "0 auto",
-                overflow: "hidden"
-              }}
-            >
+                overflow: "hidden",
+              }}>
               {description}
             </Text>
           )}
           <Box
             sx={{
-              marginTop: "auto"
-            }}
-          >
+              marginTop: "auto",
+            }}>
             {footnote && (
               <Text
                 variant="small"
-                sx={{ mb: 3, color: title ? "lightGray" : "gray" }}
-              >
+                sx={{ mb: 3, color: title ? "lightGray" : "gray" }}>
                 {footnote}
               </Text>
             )}
@@ -140,22 +134,21 @@ const ImageCard = ({
       className,
       pushSx,
       pushContentSx,
-      isLink
+      isLink,
     ]
-  )
+  );
 
-  if (!isLink) return markup
+  if (!isLink) return markup;
   if (linkProps.link.isExternal) {
     return (
       <a
         href={linkProps.link.href}
         className={className}
         target="_blank"
-        sx={{ overflow: "visible" }}
-      >
+        sx={{ overflow: "visible" }}>
         {markup}
       </a>
-    )
+    );
   }
   return (
     <Link href={linkProps.link.href} as={linkProps.link.asPath} passHref>
@@ -163,7 +156,7 @@ const ImageCard = ({
         {markup}
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default ImageCard
+export default ImageCard;

@@ -4,8 +4,7 @@ const PrimerSvg = () => (
     height="447"
     viewBox="0 0 615 447"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <mask
       id="primer-svg-mask0"
       mask-type="alpha"
@@ -13,8 +12,7 @@ const PrimerSvg = () => (
       x="0"
       y="0"
       width="615"
-      height="447"
-    >
+      height="447">
       <path
         d="M0 22C0 9.84973 9.84974 0 22 0H593C605.15 0 615 9.84973 615 22V425C615 437.15 605.15 447 593 447H22C9.84975 447 0 437.15 0 425V22Z"
         fill="#00EB88"
@@ -1288,6 +1286,6 @@ const PrimerSvg = () => (
       />
     </g>
   </svg>
-)
+);
 
-export default PrimerSvg
+export default PrimerSvg;

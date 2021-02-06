@@ -1,13 +1,12 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "theme-ui";
 
 const TokenholdersDashboardSvg = () => (
   <svg
     viewBox="0 0 673 393"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ width: "100%" }}
-  >
+    sx={{ width: "100%" }}>
     <g clipPath="url(#tokenholders-dashboard-svg-clip0)">
       <rect width="673" height="393" fill="white" />
       <g filter="url(#tokenholders-dashboard-svg-filter0_d)">
@@ -56,8 +55,7 @@ const TokenholdersDashboardSvg = () => (
         x="21"
         y="64"
         width="605"
-        height="313"
-      >
+        height="313">
         <rect
           x="21.7964"
           y="65.2691"
@@ -76,8 +74,7 @@ const TokenholdersDashboardSvg = () => (
         x="36"
         y="65"
         width="637"
-        height="311"
-      >
+        height="311">
         <rect
           x="36"
           y="65"
@@ -178,8 +175,7 @@ const TokenholdersDashboardSvg = () => (
         width="788.427"
         height="508.427"
         filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
+        colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
@@ -210,8 +206,7 @@ const TokenholdersDashboardSvg = () => (
         y1="258.4"
         x2="592.708"
         y2="257.098"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopColor="white" />
         <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
@@ -221,8 +216,7 @@ const TokenholdersDashboardSvg = () => (
         y1="300.919"
         x2="638.808"
         y2="269.051"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopColor="white" stopOpacity="0" />
         <stop offset="0.255208" stopColor="white" />
       </linearGradient>
@@ -231,6 +225,6 @@ const TokenholdersDashboardSvg = () => (
       </clipPath>
     </defs>
   </svg>
-)
+);
 
-export default TokenholdersDashboardSvg
+export default TokenholdersDashboardSvg;

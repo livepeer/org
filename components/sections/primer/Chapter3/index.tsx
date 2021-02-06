@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
+import { jsx, css } from "@emotion/core";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import {
   Container,
   Title,
@@ -14,19 +14,19 @@ import {
   Alice,
   Bob,
   Devices,
-  Actors
-} from "./styles"
+  Actors,
+} from "./styles";
 
-const threshold = [0.1]
+const threshold = [0.1];
 
 const Chapter3 = ({ onChange }) => {
-  const [ref, inView, entry] = useInView({ threshold })
+  const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
     if (inView) {
-      onChange()
+      onChange();
     }
-  }, [inView])
+  }, [inView]);
 
   return (
     <Container ref={ref}>
@@ -37,8 +37,7 @@ const Chapter3 = ({ onChange }) => {
           @media (min-width: 1024px) {
             margin-bottom: 24px;
           }
-        `}
-      >
+        `}>
         <Alice src="/images/primer/alice.svg" />
         <Body
           css={css`
@@ -46,8 +45,7 @@ const Chapter3 = ({ onChange }) => {
             @media (min-width: 1024px) {
               margin-bottom: 0;
             }
-          `}
-        >
+          `}>
           <Heading>Meet Alice</Heading>
           <p>
             Alice is an app developer. She's using Livepeer to add live video
@@ -64,8 +62,7 @@ const Chapter3 = ({ onChange }) => {
               margin-right: 160px;
               margin-bottom: 0;
             }
-          `}
-        >
+          `}>
           <Heading>Meet Bob</Heading>
           <p>
             Bob is an event coordinator in charge of broadcasting his high
@@ -82,8 +79,7 @@ const Chapter3 = ({ onChange }) => {
             @media (min-width: 1024px) {
               margin-bottom: 0;
             }
-          `}
-        >
+          `}>
           <p>
             When Bob opens the app and taps "Record" at the start of each game,
             the app sends the live video along with broadcaster fees into the
@@ -106,8 +102,7 @@ const Chapter3 = ({ onChange }) => {
               margin-right: 80px;
               margin-bottom: 0;
             }
-          `}
-        >
+          `}>
           <p>
             There are two key actors in the Livepeer network that ensure the
             quality of the live stream. Orchestrators and Delegators.
@@ -118,7 +113,7 @@ const Chapter3 = ({ onChange }) => {
         <Actors src="/images/primer/actors.svg" />
       </Section4>
     </Container>
-  )
-}
+  );
+};
 
-export default Chapter3
+export default Chapter3;

@@ -1,17 +1,16 @@
-import { Flex, Box, Heading, Text, SxStyleProp } from "theme-ui"
+import { Flex, Box, Heading, Text, SxStyleProp } from "theme-ui";
 
 export type StatProps = {
-  title: string
-  label: React.ReactNode
-  color?: "text" | "gradient"
-  pushSx?: SxStyleProp
-}
+  title: string;
+  label: React.ReactNode;
+  color?: "text" | "gradient";
+  pushSx?: SxStyleProp;
+};
 
 const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
   <Box
     sx={{ width: "280px", height: "240px", ...pushSx }}
-    className="c-animate"
-  >
+    className="c-animate">
     <Flex
       sx={{
         mx: "auto",
@@ -23,9 +22,8 @@ const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
         position: "relative",
         boxShadow: "magical",
         borderRadius: "md",
-        mb: 3
-      }}
-    >
+        mb: 3,
+      }}>
       <Heading
         variant="heading.3"
         sx={{
@@ -33,9 +31,8 @@ const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
           position: "absolute",
           variant: color === "gradient" ? "text.gradient" : "text",
           whiteSpace: "nowrap",
-          fontSize: "64px"
-        }}
-      >
+          fontSize: "64px",
+        }}>
         {title}
       </Heading>
     </Flex>
@@ -43,6 +40,6 @@ const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
       {label}
     </Text>
   </Box>
-)
+);
 
-export default Stat
+export default Stat;

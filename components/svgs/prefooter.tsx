@@ -1,29 +1,29 @@
 /** @jsx jsx */
-import { gsap } from "gsap"
-import { jsx } from "theme-ui"
-import { useEffect, useRef } from "react"
+import { gsap } from "gsap";
+import { jsx } from "theme-ui";
+import { useEffect, useRef } from "react";
 
 const PrefooterSvg = ({ fill = "white" }) => {
-  const svgRef = useRef(null)
+  const svgRef = useRef(null);
 
   useEffect(() => {
-    const layers = svgRef.current.querySelectorAll(".c-animate")
+    const layers = svgRef.current.querySelectorAll(".c-animate");
 
     if (!svgRef.current || !layers) {
-      return
+      return;
     }
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: svgRef.current,
-        start: "top 80%"
-      }
-    })
+        start: "top 80%",
+      },
+    });
 
-    tl.set([layers], { autoAlpha: 0 })
+    tl.set([layers], { autoAlpha: 0 });
     //@ts-ignore
-    tl.elementsEntrance([layers])
-  }, [svgRef])
+    tl.elementsEntrance([layers]);
+  }, [svgRef]);
 
   return (
     <svg
@@ -32,8 +32,7 @@ const PrefooterSvg = ({ fill = "white" }) => {
       height="365"
       viewBox="0 0 655 365"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <g className="c-animate">
         <path
           d="M320.759 101.182L18.1499 222.508C11.5046 225.173 11.4377 234.556 18.0444 237.316L320.671 363.725C322.626 364.541 324.825 364.549 326.785 363.747L635.552 237.338C642.228 234.605 642.161 225.127 635.446 222.489L326.662 101.161C324.764 100.415 322.652 100.423 320.759 101.182Z"
@@ -53,7 +52,7 @@ const PrefooterSvg = ({ fill = "white" }) => {
         />
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default PrefooterSvg
+export default PrefooterSvg;

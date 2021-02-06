@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Box, Text, BoxProps, SxStyleProp } from "theme-ui"
+import { jsx, Box, Text, BoxProps, SxStyleProp } from "theme-ui";
 
 export type ListItemProps = {
-  icon: React.ReactNode
-  children: React.ReactNode
-  gap?: string | number | string[]
-  pushSx?: SxStyleProp
-} & BoxProps
+  icon: React.ReactNode;
+  children: React.ReactNode;
+  gap?: string | number | string[];
+  pushSx?: SxStyleProp;
+} & BoxProps;
 
 const ListItem: React.FC<ListItemProps> = ({
   icon,
@@ -23,15 +23,14 @@ const ListItem: React.FC<ListItemProps> = ({
         width: "24px",
         height: "24px",
         mr: gap,
-        variant: "layout.flexCenter"
-      }}
-    >
+        variant: "layout.flexCenter",
+      }}>
       {icon}
     </i>
     <Text variant="normal" sx={{ maxWidth: "35ch" }}>
       {children}
     </Text>
   </Box>
-)
+);
 
-export default ListItem
+export default ListItem;

@@ -1344,6 +1344,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@livepeer/prettier-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@livepeer/prettier-config/-/prettier-config-1.0.1.tgz#69923de8a530ceda2d458f5c7746ffaf0592ba66"
+  integrity sha512-GvfEEbt/CU6VfXM+ZJ1v4MeDtVQbj3dwupoyR/43JwIqV0yl4IH4Q5vlgK8fvtpl7gIolOg8AiQepdPVwWB0wA==
+
 "@livepeer/sdk@^1.0.0-alpha.19":
   version "1.0.0-alpha.19"
   resolved "https://registry.yarnpkg.com/@livepeer/sdk/-/sdk-1.0.0-alpha.19.tgz#8d70c69829a893aa33f5108bb6762debc691c9f8"
@@ -6806,10 +6811,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
-  integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
+prettier@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"

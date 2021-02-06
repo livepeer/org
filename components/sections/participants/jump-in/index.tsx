@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import SectionLayout from "components/layouts/section"
-import JumpInSlider from "./slider"
-import MobileJumpInSlider from "./slider/mobile"
+import { jsx } from "theme-ui";
+import SectionLayout from "components/layouts/section";
+import JumpInSlider from "./slider";
+import MobileJumpInSlider from "./slider/mobile";
 
 const JumpInSection = () => (
   <SectionLayout
@@ -10,8 +10,7 @@ const JumpInSection = () => (
     pushSx={{ py: "160px" }}
     subtitle="Get started by choosing the option that best describes your role in the network"
     title="Jump in"
-    withAnimation
-  >
+    withAnimation>
     <div sx={{ display: ["none", null, null, "block"] }}>
       <JumpInSlider />
     </div>
@@ -19,6 +18,6 @@ const JumpInSection = () => (
       <MobileJumpInSlider />
     </div>
   </SectionLayout>
-)
+);
 
-export default JumpInSection
+export default JumpInSection;

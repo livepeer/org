@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx, Box, Text, Flex, Link as A } from "theme-ui"
-import Link from "next/link"
-import { FiArrowUpRight } from "react-icons/fi"
+import { jsx, Box, Text, Flex, Link as A } from "theme-ui";
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export type FooterListProps = {
-  title: string
+  title: string;
   items: {
-    label: string
-    href: string
-    asPath?: string
-    isExternal?: boolean
-  }[]
-}
+    label: string;
+    href: string;
+    asPath?: string;
+    isExternal?: boolean;
+  }[];
+};
 
 const FooterList = ({ title, items }: FooterListProps) => (
   <Box>
@@ -19,9 +19,8 @@ const FooterList = ({ title, items }: FooterListProps) => (
       sx={{
         fontWeight: 600,
         mb: "24px",
-        textAlign: ["center", null, null, "left"]
-      }}
-    >
+        textAlign: ["center", null, null, "left"],
+      }}>
       {title}
     </Text>
     <Flex
@@ -29,10 +28,9 @@ const FooterList = ({ title, items }: FooterListProps) => (
         flexDirection: "column",
         alignItems: ["center", null, null, "flex-start"],
         "a:not(:last-of-type)": {
-          mb: 2
-        }
-      }}
-    >
+          mb: 2,
+        },
+      }}>
       {items.map((item) =>
         item.isExternal ? (
           <A
@@ -42,11 +40,10 @@ const FooterList = ({ title, items }: FooterListProps) => (
               width: "fit-content",
               textAlign: ["center", null, null, "left"],
               display: "inline-flex",
-              alignItems: "center"
+              alignItems: "center",
             }}
             target="_blank"
-            data-dark
-          >
+            data-dark>
             {item.label}
             <i sx={{ variant: "layout.flexCenter", ml: 1 }}>
               <FiArrowUpRight />
@@ -57,15 +54,13 @@ const FooterList = ({ title, items }: FooterListProps) => (
             key={`footer-list-link-${title}-${item.label}`}
             href={item.href}
             as={item.asPath}
-            passHref
-          >
+            passHref>
             <A
               sx={{
                 width: "fit-content",
-                textAlign: ["center", null, null, "left"]
+                textAlign: ["center", null, null, "left"],
               }}
-              data-dark
-            >
+              data-dark>
               {item.label}
             </A>
           </Link>
@@ -73,6 +68,6 @@ const FooterList = ({ title, items }: FooterListProps) => (
       )}
     </Flex>
   </Box>
-)
+);
 
-export default FooterList
+export default FooterList;

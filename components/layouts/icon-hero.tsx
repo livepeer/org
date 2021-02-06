@@ -1,20 +1,20 @@
 /** @jsx jsx */
-import React, { forwardRef, useRef, useEffect } from "react"
-import { jsx, Box, Container, Heading, Grid, SxStyleProp } from "theme-ui"
-import Divider from "components/primitives/divider"
-import heroEffect from "lib/animations/hero-effect"
-import cn from "classnames"
+import React, { forwardRef, useRef, useEffect } from "react";
+import { jsx, Box, Container, Heading, Grid, SxStyleProp } from "theme-ui";
+import Divider from "components/primitives/divider";
+import heroEffect from "lib/animations/hero-effect";
+import cn from "classnames";
 
 type Props = {
-  icon: React.ReactNode
-  title: React.ReactNode
-  subtitle: React.ReactNode
-  illustration: React.ReactNode
-  background?: "muted" | "dark" | "black"
-  pushSx?: SxStyleProp
-  className?: string
-  withAnimation?: boolean
-}
+  icon: React.ReactNode;
+  title: React.ReactNode;
+  subtitle: React.ReactNode;
+  illustration: React.ReactNode;
+  background?: "muted" | "dark" | "black";
+  pushSx?: SxStyleProp;
+  className?: string;
+  withAnimation?: boolean;
+};
 
 const IconHero = forwardRef(
   (
@@ -26,32 +26,32 @@ const IconHero = forwardRef(
       illustration,
       background,
       pushSx,
-      withAnimation
+      withAnimation,
     }: Props,
     ref: React.RefObject<HTMLDivElement>
   ) => {
-    const sectionRef = useRef<HTMLDivElement>(null)
+    const sectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-      if (!sectionRef.current || !withAnimation) return
-      heroEffect(sectionRef.current)
-    }, [sectionRef, withAnimation])
+      if (!sectionRef.current || !withAnimation) return;
+      heroEffect(sectionRef.current);
+    }, [sectionRef, withAnimation]);
 
-    let bg = "background"
-    let titleColor = "text"
-    let subTitleColor = "gray"
+    let bg = "background";
+    let titleColor = "text";
+    let subTitleColor = "gray";
     switch (background) {
       case "muted":
-        bg = "muted"
-        break
+        bg = "muted";
+        break;
       case "dark":
       case "black":
-        titleColor = "background"
-        subTitleColor = "lightGray"
-        bg = background === "black" ? "black" : "text"
-        break
+        titleColor = "background";
+        subTitleColor = "lightGray";
+        bg = background === "black" ? "black" : "text";
+        break;
       default:
-        break
+        break;
     }
 
     return (
@@ -64,9 +64,8 @@ const IconHero = forwardRef(
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            pt: 0
-          }}
-        >
+            pt: 0,
+          }}>
           <Grid variant="layout.section" gap={5} columns={[1, null, null, 2]}>
             <Box>
               <i
@@ -81,9 +80,8 @@ const IconHero = forwardRef(
                   mb: 4,
                   variant: "layout.flexCenter",
                   zIndex: "general",
-                  position: "relative"
-                }}
-              >
+                  position: "relative",
+                }}>
                 {icon}
               </i>
               <Heading
@@ -93,9 +91,8 @@ const IconHero = forwardRef(
                   textAlign: ["left", "left"],
                   color: titleColor,
                   zIndex: "general",
-                  position: "relative"
-                }}
-              >
+                  position: "relative",
+                }}>
                 {title}
               </Heading>
               <Divider
@@ -110,23 +107,21 @@ const IconHero = forwardRef(
                   textAlign: "left",
                   color: subTitleColor,
                   zIndex: "general",
-                  position: "relative"
-                }}
-              >
+                  position: "relative",
+                }}>
                 {subtitle}
               </Heading>
             </Box>
             <Box
               className={cn({ "c-animate": withAnimation })}
-              variant="layout.flexCenter"
-            >
+              variant="layout.flexCenter">
               {illustration}
             </Box>
           </Grid>
         </Container>
       </Box>
-    )
+    );
   }
-)
+);
 
-export default IconHero
+export default IconHero;

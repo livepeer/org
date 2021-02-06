@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Container = styled.div({
   maxWidth: 1024,
@@ -6,9 +6,9 @@ export const Container = styled.div({
   padding: "0 24px",
   ["@media (min-width: 1024px)"]: {
     padding: 0,
-    margin: "0 auto 160px"
-  }
-})
+    margin: "0 auto 160px",
+  },
+});
 
 export const Title = styled.h2({
   transform: "rotate(3deg)",
@@ -29,9 +29,9 @@ export const Title = styled.h2({
     backgroundColor: "#FFD184",
     width: 215,
     height: 215,
-    zIndex: -1
-  }
-})
+    zIndex: -1,
+  },
+});
 
 export const Section = styled.div({
   display: "flex",
@@ -41,27 +41,27 @@ export const Section = styled.div({
   marginBottom: 40,
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: 80
-  }
-})
+    marginBottom: 80,
+  },
+});
 
 export const Flowers = styled.img({
   marginBottom: 40,
   width: "100%",
   ["@media (min-width: 1024px)"]: {
     width: "auto",
-    marginBottom: 50
-  }
-})
+    marginBottom: 50,
+  },
+});
 
 export const List = styled.div({
   display: "grid",
   gridTemplateColumns: "100%",
   ["@media (min-width: 1024px)"]: {
     gridTemplateColumns: "33.33% 33.33% 33.33%",
-    margin: "0 -24px"
-  }
-})
+    margin: "0 -24px",
+  },
+});
 
 export const Item = styled.div({
   margin: "0 0 70px",
@@ -69,9 +69,9 @@ export const Item = styled.div({
   ["@media (min-width: 1024px)"]: {
     textAlign: "left",
     paddingRight: "24px",
-    margin: "0 24px"
-  }
-})
+    margin: "0 24px",
+  },
+});
 
 export const Header = styled.div({
   display: "flex",
@@ -79,27 +79,27 @@ export const Header = styled.div({
   flexDirection: "column",
   alignItems: "center",
   ["@media (min-width: 1024px)"]: {
-    alignItems: "initial"
-  }
-})
+    alignItems: "initial",
+  },
+});
 
 export const Icon = styled.img({
   width: 80,
   height: 80,
-  margin: 0
-})
+  margin: 0,
+});
 
 export const Text = styled.h3({
   fontSize: "28px",
   lineHeight: "38px",
-  margin: 0
-})
+  margin: 0,
+});
 
 export const Heading = styled.h3({
   fontSize: "28px",
   lineHeight: "38px",
-  marginBottom: "24px"
-})
+  marginBottom: "24px",
+});
 
 export const Button = styled.a({
   display: "inline-block",
@@ -115,6 +115,6 @@ export const Button = styled.a({
   transition: "background .3s",
   "&:hover": {
     background: "#95F58C",
-    transition: "background .3s"
-  }
-})
+    transition: "background .3s",
+  },
+});

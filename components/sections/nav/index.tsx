@@ -8,47 +8,47 @@ import {
   IconButton,
   Flex,
   Button,
-  Text
-} from "theme-ui"
-import LivepeerLogo from "components/svgs/livepeer-logo"
-import { useEffect, useCallback, useState } from "react"
-import { FiMenu, FiX } from "react-icons/fi"
-import Link from "next/link"
-import TopNotification, { TopNotificationProps } from "./top-notification"
-import Menu from "components/sections/primer/Menu"
-import { useRouter } from "next/router"
+  Text,
+} from "theme-ui";
+import LivepeerLogo from "components/svgs/livepeer-logo";
+import { useEffect, useCallback, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import Link from "next/link";
+import TopNotification, { TopNotificationProps } from "./top-notification";
+import Menu from "components/sections/primer/Menu";
+import { useRouter } from "next/router";
 
 type LinkType = {
-  label: string
-  href: string
-  isExternal?: boolean
-  asPath?: string
-}
+  label: string;
+  href: string;
+  isExternal?: boolean;
+  asPath?: string;
+};
 
 const links: LinkType[] = [
   {
     label: "About",
-    href: "/about"
+    href: "/about",
   },
   {
     label: "Developers",
-    href: "/developers"
+    href: "/developers",
   },
   {
     label: "Tokenholders",
-    href: "/tokenholders"
+    href: "/tokenholders",
   },
   {
     label: "Video Miners",
-    href: "/video-miners"
+    href: "/video-miners",
   },
   {
     label: "Resources",
-    href: "/resources"
-  }
-]
+    href: "/resources",
+  },
+];
 
-const navHeight = "72px"
+const navHeight = "72px";
 
 const defaultTopNotification: TopNotificationProps = {
   title: "Introducing",
@@ -57,84 +57,84 @@ const defaultTopNotification: TopNotificationProps = {
     label: "Read post",
     href:
       "https://medium.com/livepeer-blog/introducing-a-brand-new-livepeer-org-3e433519b5d0",
-    isExternal: true
-  }
-}
+    isExternal: true,
+  },
+};
 
 export type NavProps = {
-  isInmersive?: boolean
-  isPrimer?: boolean
-  background?: "muted" | "dark" | "white" | "black" | "translucent"
-  topNotification?: TopNotificationProps
-}
+  isInmersive?: boolean;
+  isPrimer?: boolean;
+  background?: "muted" | "dark" | "white" | "black" | "translucent";
+  topNotification?: TopNotificationProps;
+};
 
 const Nav = ({
   background,
   isInmersive,
   topNotification = defaultTopNotification,
-  isPrimer = false
+  isPrimer = false,
 }: NavProps) => {
-  const router = useRouter()
-  const [hasScrolled, setHasScrolled] = useState(false)
-  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false)
+  const router = useRouter();
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
-    const { scrollTop } = document.documentElement
-    if (scrollTop > 0) setHasScrolled(true)
-    else setHasScrolled(false)
-  }, [])
+    const { scrollTop } = document.documentElement;
+    if (scrollTop > 0) setHasScrolled(true);
+    else setHasScrolled(false);
+  }, []);
 
   useEffect(() => {
-    handleScroll()
-    document.addEventListener("scroll", handleScroll)
+    handleScroll();
+    document.addEventListener("scroll", handleScroll);
 
     return () => {
-      document.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  const isDark = background === "black" || background === "dark"
-  let bg: string
-  let color: string
+  const isDark = background === "black" || background === "dark";
+  let bg: string;
+  let color: string;
   switch (background) {
     default:
     case "white":
       bg =
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
-          : "background"
-      color = "text"
-      break
+          : "background";
+      color = "text";
+      break;
     case "muted":
       bg =
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
           : isPrimer
           ? "rgba(255, 255, 255, .6)"
-          : "muted"
-      color = "text"
-      break
+          : "muted";
+      color = "text";
+      break;
     case "dark":
       bg =
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
-          : "text"
-      color = "background"
-      break
+          : "text";
+      color = "background";
+      break;
     case "black":
       bg =
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
-          : "black"
-      color = "background"
-      break
+          : "black";
+      color = "background";
+      break;
     case "translucent":
       bg =
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
-          : "rgba(255, 255, 255, .5)"
-      color = "text"
-      break
+          : "rgba(255, 255, 255, .5)";
+      color = "text";
+      break;
   }
 
   return (
@@ -151,17 +151,15 @@ const Nav = ({
           transition: "box-shadow .3s, top .3s",
           boxShadow: hasScrolled ? "magical" : "none",
           backdropFilter:
-            isPrimer && hasScrolled ? "saturate(180%) blur(5px)" : "none"
-        }}
-      >
+            isPrimer && hasScrolled ? "saturate(180%) blur(5px)" : "none",
+        }}>
         <Container
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            height: navHeight
-          }}
-        >
+            height: navHeight,
+          }}>
           <LivepeerLogo
             isDark={isDark}
             disableHover={isPrimer ? true : false}
@@ -169,9 +167,8 @@ const Nav = ({
           <Box
             sx={{
               "a:not(:last-of-type)": { mr: 5 },
-              display: [isPrimer ? "null" : "none", null, "flex"]
-            }}
-          >
+              display: [isPrimer ? "null" : "none", null, "flex"],
+            }}>
             {!isPrimer &&
               links.map((link) =>
                 link.isExternal ? (
@@ -179,8 +176,7 @@ const Nav = ({
                     key={`desktop-nav-link-${link.label}`}
                     href={link.href}
                     data-dark={isDark}
-                    target="_blank"
-                  >
+                    target="_blank">
                     {link.label}
                   </NavLink>
                 ) : (
@@ -188,8 +184,7 @@ const Nav = ({
                     key={`desktop-nav-link-${link.label}`}
                     href={link.href}
                     as={link.asPath}
-                    passHref
-                  >
+                    passHref>
                     <NavLink data-dark={isDark}>{link.label}</NavLink>
                   </Link>
                 )
@@ -200,9 +195,8 @@ const Nav = ({
                   top: [hasScrolled ? 12 : 48, 0],
                   right: [16, 0],
                   position: ["fixed", "initial"],
-                  pointerEvents: "none"
-                }}
-              >
+                  pointerEvents: "none",
+                }}>
                 <Menu />
               </Box>
             )}
@@ -212,10 +206,9 @@ const Nav = ({
               sx={{
                 color,
                 display: ["block", "block", "none"],
-                fontSize: 6
+                fontSize: 6,
               }}
-              onClick={() => setMobileMenuIsOpen(true)}
-            >
+              onClick={() => setMobileMenuIsOpen(true)}>
               <FiMenu size="24px" />
             </IconButton>
           )}
@@ -231,22 +224,19 @@ const Nav = ({
             overflow: "hidden",
             width: "100%",
             zIndex: "dropdown",
-            visibility: mobileMenuIsOpen ? "visible" : "hidden"
-          }}
-        >
+            visibility: mobileMenuIsOpen ? "visible" : "hidden",
+          }}>
           <Container
             sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              height: navHeight
-            }}
-          >
+              height: navHeight,
+            }}>
             <LivepeerLogo isDark={isDark} />
             <IconButton
               sx={{ color, fontSize: 6 }}
-              onClick={() => setMobileMenuIsOpen(false)}
-            >
+              onClick={() => setMobileMenuIsOpen(false)}>
               <FiX size="24px" />
             </IconButton>
           </Container>
@@ -258,9 +248,8 @@ const Nav = ({
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              height: `calc(100vh - ${navHeight})`
-            }}
-          >
+              height: `calc(100vh - ${navHeight})`,
+            }}>
             <Flex sx={{ flexDirection: "column" }}>
               {links.map((link) =>
                 link.isExternal ? (
@@ -272,25 +261,22 @@ const Nav = ({
                       color,
                       textAlign: "center",
                       fontSize: 7,
-                      fontWeight: 600
-                    }}
-                  >
+                      fontWeight: 600,
+                    }}>
                     {link.label}
                   </A>
                 ) : (
                   <Link
                     key={`link-${link.label}-${link.href}`}
                     href={link.href}
-                    passHref
-                  >
+                    passHref>
                     <A
                       sx={{
                         color,
                         textAlign: "center",
                         fontSize: 7,
-                        fontWeight: 600
-                      }}
-                    >
+                        fontWeight: 600,
+                      }}>
                       {link.label}
                     </A>
                   </Link>
@@ -302,10 +288,9 @@ const Nav = ({
               <Button
                 sx={{ mb: 3 }}
                 onClick={() => {
-                  setMobileMenuIsOpen(false)
-                  router.push("/#get-started")
-                }}
-              >
+                  setMobileMenuIsOpen(false);
+                  router.push("/#get-started");
+                }}>
                 Get started
               </Button>
               <Text sx={{ fontSize: "14px", textAlign: "center" }}>
@@ -316,7 +301,7 @@ const Nav = ({
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

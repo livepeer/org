@@ -1,20 +1,20 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui"
-import { useKeenSlider } from "keen-slider/react"
-import { useState, useCallback } from "react"
-import SliderCard, { SliderCardProps } from "./card"
-import { SliderImageProps } from "./image"
+import { jsx, Box } from "theme-ui";
+import { useKeenSlider } from "keen-slider/react";
+import { useState, useCallback } from "react";
+import SliderCard, { SliderCardProps } from "./card";
+import { SliderImageProps } from "./image";
 
 const images: SliderImageProps[] = [
   {
     src: "/images/slider/tokenholders.png",
-    alt: ""
+    alt: "",
   },
   {
     src: "/images/slider/infrastructure.png",
-    alt: ""
-  }
-]
+    alt: "",
+  },
+];
 
 const MobileJumpInSlider = () => {
   const [sliderRef, slider] = useKeenSlider({
@@ -22,28 +22,28 @@ const MobileJumpInSlider = () => {
     duration: 1000,
     spacing: 15,
     slideChanged: (slider) => {
-      const { direction } = slider.details()
+      const { direction } = slider.details();
 
       setCards((prev) => {
-        let newActiveIndex: number
-        const currentlyActiveIndex = prev.findIndex((p) => p.isActive)
-        const newIndexCandidate = currentlyActiveIndex + direction
+        let newActiveIndex: number;
+        const currentlyActiveIndex = prev.findIndex((p) => p.isActive);
+        const newIndexCandidate = currentlyActiveIndex + direction;
 
-        if (newIndexCandidate >= prev.length) newActiveIndex = 0
-        else if (newIndexCandidate < 0) newActiveIndex = prev.length - 1
-        else newActiveIndex = newIndexCandidate
+        if (newIndexCandidate >= prev.length) newActiveIndex = 0;
+        else if (newIndexCandidate < 0) newActiveIndex = prev.length - 1;
+        else newActiveIndex = newIndexCandidate;
 
         return prev.map((card, i) => {
-          if (i === newActiveIndex) return { ...card, isActive: true }
-          if (i === currentlyActiveIndex) return { ...card, isActive: false }
-          return card
-        })
-      })
-      setProgress(0)
-    }
-  })
+          if (i === newActiveIndex) return { ...card, isActive: true };
+          if (i === currentlyActiveIndex) return { ...card, isActive: false };
+          return card;
+        });
+      });
+      setProgress(0);
+    },
+  });
 
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
 
   const [cards, setCards] = useState<SliderCardProps[]>([
     {
@@ -53,11 +53,11 @@ const MobileJumpInSlider = () => {
       linkProps: {
         link: {
           label: "/tokenholders",
-          href: "/tokenholders"
+          href: "/tokenholders",
         },
-        isDark: true
+        isDark: true,
       },
-      isActive: true
+      isActive: true,
     },
     {
       title: "Video Miners",
@@ -66,32 +66,30 @@ const MobileJumpInSlider = () => {
       linkProps: {
         link: {
           label: "/video-miners",
-          href: "/video-miners"
+          href: "/video-miners",
         },
-        isDark: true
+        isDark: true,
       },
-      isActive: false
-    }
-  ])
+      isActive: false,
+    },
+  ]);
 
   const nextSlide = useCallback(() => {
-    slider.next()
-  }, [slider])
+    slider.next();
+  }, [slider]);
 
   return (
     <Box>
       <Box
         className="keen-slider"
-        ref={sliderRef as React.RefObject<HTMLDivElement>}
-      >
+        ref={sliderRef as React.RefObject<HTMLDivElement>}>
         {cards.map((card, i) => (
           <Box
             key={`jump-in-slider-card-${card.title}`}
             className="keen-slider__slide"
             sx={{
-              maxWidth: "24rem"
-            }}
-          >
+              maxWidth: "24rem",
+            }}>
             <img {...images[i]} sx={{ mb: 3, borderRadius: "lg" }} />
             <SliderCard
               {...card}
@@ -105,7 +103,7 @@ const MobileJumpInSlider = () => {
         ))}
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default MobileJumpInSlider
+export default MobileJumpInSlider;

@@ -1,19 +1,19 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import { Container, Section, Title, Orchestration } from "./styles"
+import { jsx, css } from "@emotion/core";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { Container, Section, Title, Orchestration } from "./styles";
 
-const threshold = [0.2]
+const threshold = [0.2];
 
 const Chapter4 = ({ onChange }) => {
-  const [ref, inView, entry] = useInView({ threshold })
+  const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
     if (inView) {
-      onChange()
+      onChange();
     }
-  }, [inView])
+  }, [inView]);
 
   return (
     <Container ref={ref}>
@@ -26,8 +26,7 @@ const Chapter4 = ({ onChange }) => {
               max-width: 570px;
               margin-bottom: 80px;
             }
-          `}
-        >
+          `}>
           <p>
             In Livepeer, anyone can join the network and become what's known as
             an "Orchestrator" by running software that allows you to contribute
@@ -46,8 +45,7 @@ const Chapter4 = ({ onChange }) => {
             @media (min-width: 1024px) {
               max-width: 570px;
             }
-          `}
-        >
+          `}>
           <p>
             Sounds good, right? But wait, there's a catch! In order to earn the
             right to do this type of work on the network, you must first earn or
@@ -56,7 +54,7 @@ const Chapter4 = ({ onChange }) => {
         </div>
       </Section>
     </Container>
-  )
-}
+  );
+};
 
-export default Chapter4
+export default Chapter4;

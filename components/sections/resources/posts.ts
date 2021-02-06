@@ -1,31 +1,31 @@
-import { SxStyleProp } from "theme-ui"
+import { SxStyleProp } from "theme-ui";
 
-type Category = { label: string; value: string }
+type Category = { label: string; value: string };
 
 export type Post = {
-  title: string
-  subtitle: string
-  description?: string
-  link: { href: string; asPath?: string; isExternal: boolean }
-  category: Category
-  image: { src: string; alt?: string }
-  pushContentSx?: SxStyleProp
-}
+  title: string;
+  subtitle: string;
+  description?: string;
+  link: { href: string; asPath?: string; isExternal: boolean };
+  category: Category;
+  image: { src: string; alt?: string };
+  pushContentSx?: SxStyleProp;
+};
 
 const categories: Category[] = [
   {
     label: "Education",
-    value: "education"
+    value: "education",
   },
   {
     label: "Products & Tools",
-    value: "products-and-tools"
+    value: "products-and-tools",
   },
   {
     label: "Exchange",
-    value: "exchange"
-  }
-]
+    value: "exchange",
+  },
+];
 
 const posts: Post[] = [
   {
@@ -35,13 +35,13 @@ const posts: Post[] = [
     subtitle: "By Doug Petkanics & Eric Tang",
     link: {
       href: "https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md",
-      isExternal: true
+      isExternal: true,
     },
     category: categories[0],
     image: {
       src: "/images/posts/post-cover-1.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "The Livepeer Streamflow Paper",
@@ -50,13 +50,13 @@ const posts: Post[] = [
     subtitle: "By Doug Petkanics & Yondon Fu",
     link: {
       href: "https://github.com/livepeer/wiki/blob/master/STREAMFLOW.md",
-      isExternal: true
+      isExternal: true,
     },
     category: categories[0],
     image: {
       src: "/images/posts/post-cover-4.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "The Livepeer Primer",
@@ -67,8 +67,8 @@ const posts: Post[] = [
     category: categories[0],
     image: {
       src: "/images/posts/post-cover-6.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "The Livepeer Explorer",
@@ -79,8 +79,8 @@ const posts: Post[] = [
     category: categories[1],
     image: {
       src: "/images/posts/post-cover-7.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Telegram Orchestrator Watcher Bot",
@@ -91,8 +91,8 @@ const posts: Post[] = [
     category: categories[1],
     image: {
       src: "/images/posts/post-cover-8.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Scout Analytics",
@@ -103,8 +103,8 @@ const posts: Post[] = [
     category: categories[1],
     image: {
       src: "/images/posts/post-cover-9.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Hubble",
@@ -112,13 +112,13 @@ const posts: Post[] = [
     description: "Rewards reporting and alerts for stakers",
     link: {
       href: "https://hubble.figment.network/livepeer/chains/mainnet",
-      isExternal: true
+      isExternal: true,
     },
     category: categories[1],
     image: {
       src: "/images/posts/post-cover-10.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Livepool",
@@ -129,8 +129,8 @@ const posts: Post[] = [
     category: categories[1],
     image: {
       src: "/images/posts/post-cover-11.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Orchestrator Price API",
@@ -139,13 +139,13 @@ const posts: Post[] = [
       "An API for fetching off-chain orchestrator pricing information",
     link: {
       href: "https://github.com/buidl-labs/livepeer-pricing-tool",
-      isExternal: true
+      isExternal: true,
     },
     category: categories[1],
     image: {
       src: "/images/posts/post-cover-12.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "The Livepeer Subgraph",
@@ -154,27 +154,26 @@ const posts: Post[] = [
       "Query indexed Livepeer protocol data over GraphQL using the Graph Protocol.",
     link: {
       href: "https://thegraph.com/explorer/subgraph/livepeer/livepeer",
-      isExternal: true
+      isExternal: true,
     },
     category: categories[1],
     image: {
       src: "/images/posts/post-cover-13.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Matcha",
     subtitle: "Non-custodial exchange",
     link: {
-      href:
-        "https://matcha.xyz/markets/LPT/ETH",
-      isExternal: true
+      href: "https://matcha.xyz/markets/LPT/ETH",
+      isExternal: true,
     },
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-14.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Uniswap",
@@ -182,13 +181,13 @@ const posts: Post[] = [
     link: {
       href:
         "https://uniswap.exchange/swap/0x58b6a8a3302369daec383334672404ee733ab239",
-      isExternal: true
+      isExternal: true,
     },
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-15.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Balancer",
@@ -196,13 +195,13 @@ const posts: Post[] = [
     link: {
       href:
         "https://balancer.exchange/#/swap/0x58b6a8a3302369daec383334672404ee733ab239",
-      isExternal: true
+      isExternal: true,
     },
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-1.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Poloniex",
@@ -211,8 +210,8 @@ const posts: Post[] = [
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-2.png",
-      alt: "Resource cover image"
-    }
+      alt: "Resource cover image",
+    },
   },
   {
     title: "Gate.io",
@@ -221,10 +220,10 @@ const posts: Post[] = [
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-3.png",
-      alt: "Resource cover image"
-    }
-  }
-]
+      alt: "Resource cover image",
+    },
+  },
+];
 
-export default posts
-export { categories }
+export default posts;
+export { categories };

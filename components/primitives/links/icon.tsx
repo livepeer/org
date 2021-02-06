@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Link as A, SxStyleProp } from "theme-ui"
-import Link from "next/link"
-import { LinkProps } from "lib/types/link-props"
+import { jsx, Link as A, SxStyleProp } from "theme-ui";
+import Link from "next/link";
+import { LinkProps } from "lib/types/link-props";
 
 export type IconLinkProps = LinkProps & {
-  icon: React.ReactNode
-  pushSx?: SxStyleProp
-}
+  icon: React.ReactNode;
+  pushSx?: SxStyleProp;
+};
 
 const sx: SxStyleProp = {
   display: "flex",
@@ -17,8 +17,8 @@ const sx: SxStyleProp = {
   width: "fit-content",
   transition: "box-shadow .2s",
   color: "text",
-  "&:hover": { boxShadow: "magical", color: "text" }
-}
+  "&:hover": { boxShadow: "magical", color: "text" },
+};
 
 const IconLink = ({
   icon,
@@ -26,7 +26,7 @@ const IconLink = ({
   href,
   asPath,
   isExternal = false,
-  pushSx
+  pushSx,
 }: IconLinkProps) =>
   isExternal ? (
     <A
@@ -34,8 +34,7 @@ const IconLink = ({
       target="_blank"
       rel="noopener noreferrer"
       sx={{ ...sx, ...pushSx }}
-      className="c-animate"
-    >
+      className="c-animate">
       <i sx={{ fontSize: 6, mr: 2 }}>{icon}</i>
       {label}
     </A>
@@ -46,6 +45,6 @@ const IconLink = ({
         {label}
       </A>
     </Link>
-  )
+  );
 
-export default IconLink
+export default IconLink;

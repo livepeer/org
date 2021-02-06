@@ -8,29 +8,29 @@ import {
   Button,
   Box,
   Link as A,
-  SxStyleProp
-} from "theme-ui"
-import { FiArrowUpRight, FiCheckCircle } from "react-icons/fi"
-import { LinkProps } from "lib/types/link-props"
-import Link from "next/link"
-import { useMemo } from "react"
+  SxStyleProp,
+} from "theme-ui";
+import { FiArrowUpRight, FiCheckCircle } from "react-icons/fi";
+import { LinkProps } from "lib/types/link-props";
+import Link from "next/link";
+import { useMemo } from "react";
 
 type ButtonCta = {
-  isLink: false
-  label: string
-  onClick: () => void
-  isExternal?: boolean
-}
-type LinkCta = { isLink: true } & LinkProps
+  isLink: false;
+  label: string;
+  onClick: () => void;
+  isExternal?: boolean;
+};
+type LinkCta = { isLink: true } & LinkProps;
 
 export type HugeCardProps = {
-  title: React.ReactNode
-  titleLabel: string
-  accent: "primary" | "secondary"
-  cta?: ButtonCta | LinkCta
-  headerIllustration: React.ReactNode
-  listItems: React.ReactNode[]
-}
+  title: React.ReactNode;
+  titleLabel: string;
+  accent: "primary" | "secondary";
+  cta?: ButtonCta | LinkCta;
+  headerIllustration: React.ReactNode;
+  listItems: React.ReactNode[];
+};
 
 const HugeCard = ({
   title,
@@ -38,7 +38,7 @@ const HugeCard = ({
   listItems,
   accent,
   cta,
-  headerIllustration
+  headerIllustration,
 }: HugeCardProps) => {
   const ctaSx: SxStyleProp = useMemo(
     () => ({
@@ -48,11 +48,11 @@ const HugeCard = ({
       left: 0,
       "@media screen and (max-width: 360px)": {
         width: "112%",
-        left: "-6%"
-      }
+        left: "-6%",
+      },
     }),
     [accent]
-  )
+  );
 
   return (
     <Card
@@ -63,9 +63,8 @@ const HugeCard = ({
         position: "relative",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between"
-      }}
-    >
+        justifyContent: "space-between",
+      }}>
       <Box
         sx={{
           position: "absolute",
@@ -76,9 +75,8 @@ const HugeCard = ({
           height: "464px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
-        }}
-      >
+          justifyContent: "center",
+        }}>
         {headerIllustration}
       </Box>
       <div sx={{ zIndex: "general", position: "relative" }}>
@@ -92,8 +90,7 @@ const HugeCard = ({
           {listItems.map((item) => (
             <Flex
               key={`list-item-${item}`}
-              sx={{ "&:not(:last-of-type)": { mb: 4 } }}
-            >
+              sx={{ "&:not(:last-of-type)": { mb: 4 } }}>
               <i sx={{ color: accent, fontSize: 5, mr: 3 }}>
                 <FiCheckCircle />
               </i>
@@ -109,8 +106,7 @@ const HugeCard = ({
             href={cta.href}
             target="_blank"
             sx={ctaSx}
-            variant={`buttons.${accent}`}
-          >
+            variant={`buttons.${accent}`}>
             {cta.label}
             <i sx={{ ml: 2, fontSize: 4 }}>
               <FiArrowUpRight />
@@ -127,8 +123,7 @@ const HugeCard = ({
         <Button
           variant={accent}
           onClick={(cta as ButtonCta).onClick}
-          sx={ctaSx}
-        >
+          sx={ctaSx}>
           {cta.label}
           {cta.isExternal && (
             <i sx={{ ml: 2, fontSize: 4 }}>
@@ -138,7 +133,7 @@ const HugeCard = ({
         </Button>
       )}
     </Card>
-  )
-}
+  );
+};
 
-export default HugeCard
+export default HugeCard;

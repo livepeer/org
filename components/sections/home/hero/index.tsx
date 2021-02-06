@@ -1,49 +1,49 @@
 /** @jsx jsx */
-import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui"
-import { useRef, useEffect, useState } from "react"
-import gsap, { Power1 } from "gsap"
-import Globe from "./globe"
-import VideoSwapper from "./video-swapper"
-import GlobeDot from "./globe-dots"
-import Divider from "components/primitives/divider"
+import { jsx, Container, Heading, Text, Box, Link as A } from "theme-ui";
+import { useRef, useEffect, useState } from "react";
+import gsap, { Power1 } from "gsap";
+import Globe from "./globe";
+import VideoSwapper from "./video-swapper";
+import GlobeDot from "./globe-dots";
+import Divider from "components/primitives/divider";
 
 const HomeHero = () => {
-  const [globeDotIndex, setGlobeDotIndex] = useState(0)
-  const animationTimelineRef = useRef<gsap.core.Timeline>()
-  const videoBoxRef = useRef<HTMLDivElement>(null)
-  const headerRef = useRef<HTMLDivElement>(null)
-  const dotsRef = useRef<HTMLDivElement>(null)
+  const [globeDotIndex, setGlobeDotIndex] = useState(0);
+  const animationTimelineRef = useRef<gsap.core.Timeline>();
+  const videoBoxRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const dotsRef = useRef<HTMLDivElement>(null);
 
   const videos = [
     "/hero-videos/1.mp4",
     "/hero-videos/2.mp4",
     "/hero-videos/3.mp4",
-    "/hero-videos/4.mp4"
-  ]
+    "/hero-videos/4.mp4",
+  ];
 
   const onVideoChange = () => {
     if (globeDotIndex < 3) {
-      setGlobeDotIndex(globeDotIndex + 1)
+      setGlobeDotIndex(globeDotIndex + 1);
     } else {
-      setGlobeDotIndex(0)
+      setGlobeDotIndex(0);
     }
-  }
+  };
 
   useEffect(() => {
-    if (!dotsRef.current || !videoBoxRef.current) return
+    if (!dotsRef.current || !videoBoxRef.current) return;
 
     animationTimelineRef.current = gsap.timeline({
       defaults: {
         delay: 1,
         duration: 0.2,
         ease: Power1.easeOut,
-        autoAlpha: 1
-      }
-    })
+        autoAlpha: 1,
+      },
+    });
 
     animationTimelineRef.current.to(headerRef.current, {
-      opacity: 1
-    })
+      opacity: 1,
+    });
 
     animationTimelineRef.current.to(
       dotsRef.current.getElementsByClassName("highlight-dot"),
@@ -53,12 +53,12 @@ const HomeHero = () => {
         stagger: {
           each: 0.2,
           from: "center",
-          grid: "auto"
-        }
+          grid: "auto",
+        },
       }
-    )
+    );
 
-    animationTimelineRef.current.to(videoBoxRef.current, { opacity: 1 }, "-=1")
+    animationTimelineRef.current.to(videoBoxRef.current, { opacity: 1 }, "-=1");
 
     animationTimelineRef.current.to(
       dotsRef.current.getElementsByClassName("highlight-dot"),
@@ -71,11 +71,11 @@ const HomeHero = () => {
         stagger: {
           each: 0.1,
           from: "center",
-          grid: "auto"
-        }
+          grid: "auto",
+        },
       }
-    )
-  }, [animationTimelineRef, dotsRef, videoBoxRef])
+    );
+  }, [animationTimelineRef, dotsRef, videoBoxRef]);
 
   return (
     <Box sx={{ position: "relative" }}>
@@ -90,24 +90,21 @@ const HomeHero = () => {
           overflow: "visible",
           pt: ["100px", "150px"],
           pb: 0,
-          maxWidth: "100%"
-        }}
-      >
+          maxWidth: "100%",
+        }}>
         <span
           ref={headerRef}
           sx={{
             opacity: 0,
-            textAlign: "center"
-          }}
-        >
+            textAlign: "center",
+          }}>
           <Box
             sx={{
               maxWidth: "5xl",
               mb: "28px",
               zIndex: "general",
-              position: "relative"
-            }}
-          >
+              position: "relative",
+            }}>
             <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
               The&nbsp;
               <Text
@@ -116,9 +113,8 @@ const HomeHero = () => {
                   pr: ["2px", "4px"], // Fix text being clipped
                   background: ({ colors }) =>
                     `linear-gradient(90deg, #00A55F 0%, ${colors.gradient.mid} 100%)`,
-                  variant: "text.gradientBase"
-                }}
-              >
+                  variant: "text.gradientBase",
+                }}>
                 World's
               </Text>{" "}
               <Text
@@ -126,9 +122,8 @@ const HomeHero = () => {
                 sx={{
                   background: ({ colors }) =>
                     `linear-gradient(90deg, ${colors.gradient.mid} 0%, #4CF1AC 100%)`,
-                  variant: "text.gradientBase"
-                }}
-              >
+                  variant: "text.gradientBase",
+                }}>
                 Open&nbsp;
               </Text>
               <br sx={{ display: ["none", null, "block"] }} />
@@ -146,9 +141,8 @@ const HomeHero = () => {
             href="/#get-started"
             sx={{
               zIndex: "general",
-              position: "relative"
-            }}
-          >
+              position: "relative",
+            }}>
             Get started
           </A>
         </span>
@@ -158,9 +152,8 @@ const HomeHero = () => {
             position: "relative",
             width: "100vw",
             height: "100%",
-            overflow: "hidden"
-          }}
-        >
+            overflow: "hidden",
+          }}>
           <Globe />
 
           <div ref={dotsRef}>
@@ -224,15 +217,14 @@ const HomeHero = () => {
               zIndex: "100",
               borderRadius: "6px",
               overflow: "hidden",
-              opacity: 0
-            }}
-          >
+              opacity: 0,
+            }}>
             <VideoSwapper sources={videos} onChange={onVideoChange} />
           </div>
         </Box>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default HomeHero
+export default HomeHero;

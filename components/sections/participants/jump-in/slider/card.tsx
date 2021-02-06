@@ -1,22 +1,22 @@
-import { useState, useEffect, useRef } from "react"
-import { Box, Card, Heading, Text, SxStyleProp } from "theme-ui"
-import CardLink, { CardLinkProps } from "components/primitives/links/card"
-import Progress from "components/primitives/progress"
+import { useState, useEffect, useRef } from "react";
+import { Box, Card, Heading, Text, SxStyleProp } from "theme-ui";
+import CardLink, { CardLinkProps } from "components/primitives/links/card";
+import Progress from "components/primitives/progress";
 
 export type SliderCardProps = {
-  title: React.ReactNode
-  description: string
-  linkProps: CardLinkProps
-  isActive: boolean
-  nextSlide?: () => void
-  moveToMySlide?: () => void
-  progress?: number
-  setProgress?: React.Dispatch<React.SetStateAction<number>>
-  className?: string
-  pushSx?: SxStyleProp
-}
+  title: React.ReactNode;
+  description: string;
+  linkProps: CardLinkProps;
+  isActive: boolean;
+  nextSlide?: () => void;
+  moveToMySlide?: () => void;
+  progress?: number;
+  setProgress?: React.Dispatch<React.SetStateAction<number>>;
+  className?: string;
+  pushSx?: SxStyleProp;
+};
 
-const intervalTime = 500
+const intervalTime = 500;
 
 const SliderCard = ({
   title,
@@ -28,32 +28,32 @@ const SliderCard = ({
   setProgress,
   moveToMySlide,
   className,
-  pushSx
+  pushSx,
 }: SliderCardProps) => {
-  const timer = useRef<NodeJS.Timeout>()
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const timer = useRef<NodeJS.Timeout>();
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     if (isActive) {
       timer.current = setInterval(() => {
-        let newProgress: number
+        let newProgress: number;
         setProgress((prev) => {
-          newProgress = prev + 20
-          return newProgress
-        })
+          newProgress = prev + 20;
+          return newProgress;
+        });
         if (newProgress > 100) {
           if (!isTransitioning) {
-            nextSlide()
-            setIsTransitioning(true)
+            nextSlide();
+            setIsTransitioning(true);
           }
-        } else setIsTransitioning(false)
-      }, intervalTime)
+        } else setIsTransitioning(false);
+      }, intervalTime);
     }
 
     return () => {
-      clearInterval(timer.current)
-    }
-  }, [isActive, nextSlide, isTransitioning])
+      clearInterval(timer.current);
+    };
+  }, [isActive, nextSlide, isTransitioning]);
 
   return (
     <Card
@@ -62,10 +62,9 @@ const SliderCard = ({
         color: "text",
         p: 0,
         border: "none",
-        ...pushSx
+        ...pushSx,
       }}
-      className={className}
-    >
+      className={className}>
       <Progress
         value={!isActive ? 0 : progress}
         max={100}
@@ -79,9 +78,8 @@ const SliderCard = ({
           flexDirection: "column",
           justifyContent: "space-between",
           pr: 4,
-          height: "218px"
-        }}
-      >
+          height: "218px",
+        }}>
         <Box sx={{ cursor: "pointer" }} onClick={moveToMySlide}>
           <Heading
             variant="heading.5"
@@ -89,25 +87,23 @@ const SliderCard = ({
               textAlign: "left",
               mb: 3,
               color: isActive ? "background" : "lightGray",
-              transition: "color .2s"
-            }}
-          >
+              transition: "color .2s",
+            }}>
             {title}
           </Heading>
           <Text
             variant="normal"
             sx={{
               color: isActive ? "background" : "lightGray",
-              transition: "color .2s"
-            }}
-          >
+              transition: "color .2s",
+            }}>
             {description}
           </Text>
         </Box>
         <CardLink {...linkProps} />
       </Box>
     </Card>
-  )
-}
+  );
+};
 
-export default SliderCard
+export default SliderCard;
