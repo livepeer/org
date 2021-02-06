@@ -13,6 +13,7 @@ type Prefooter =
   | {
       type: "subscribe";
     }
+  | { type: "jobs"; cta?: { label: string; href: string; asPath?: string } }
   | { type: "faqs"; cta?: { label: string; href: string; asPath?: string } };
 
 export type FooterProps = {
@@ -101,6 +102,21 @@ const Footer = ({
         },
       ],
     },
+    {
+      title: t("nav-about-livepeer"),
+      items: [
+        { label: t("nav-about"), href: "/about" },
+        { label: "Jobs", href: "/jobs" },
+        {
+          label: t("nav-privacy-policy"),
+          href: "/privacy-policy",
+        },
+        {
+          label: t("nav-contact"),
+          href: "mailto:contact@livepeer.org",
+        },
+      ],
+    },
   ];
   return (
     <Box as="footer" bg={isDark ? "text" : "background"}>
@@ -122,10 +138,13 @@ const Footer = ({
               "minmax(auto, 184px)",
               null,
               null,
-              "repeat(4, minmax(auto, 184px))",
+              "repeat(5, minmax(auto, 184px))",
             ]}
             gap={[5, null, null, 0]}
-            sx={{ justifyContent: ["center", null, null, "space-between"] }}>
+            sx={{
+              mb: 5,
+              justifyContent: ["center", null, null, "space-between"],
+            }}>
             {lists.map((list) => (
               <FooterList key={`footer-list-${list.title}`} {...list} />
             ))}

@@ -193,9 +193,35 @@ export const getStyles: any = () => {
       marginBottom: "0",
     },
 
+    h1: {
+      fontSize: ["40px", "48px"],
+      mb: "32px",
+      "&:not(:first-of-type)": {
+        mt: "72px",
+      },
+    },
+
+    h2: {
+      fontSize: ["24px", "32px"],
+      mb: "24px",
+      "&:not(:first-of-type)": {
+        mt: "40px",
+      },
+    },
+
+    h3: {
+      fontSize: ["18px", "24px"],
+      mb: "18px",
+      "&:not(:first-of-type)": {
+        mt: "48px",
+      },
+    },
+
     "h1, h2, h3, h4, h5, h6": {
+      fontWeight: "bold",
+      fontFamily: "special",
+      textRendering: "optimizeLegibility",
       marginTop: "24px",
-      fontWeight: "600",
       lineHeight: "1.25",
     },
 
@@ -303,6 +329,7 @@ export const getStyles: any = () => {
 };
 
 const Markdown = ({ children }) => {
+  console.log(children);
   return (
     <Box
       sx={{

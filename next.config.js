@@ -10,4 +10,28 @@ const withTM = require('next-transpile-modules')([
   'react-use-mailchimp',
 ]);
 
-module.exports = withPlugins([withSvgr, withTM], { i18n });
+module.exports = withPlugins([
+  withSvgr,
+  [
+    {
+      images: {
+        domains: ['assets.vercel.com', 'cdn.sanity.io'],
+      },
+      pageExtensions: ['mdx', 'tsx'],
+      webpack(config, _options) {
+        config.module.rules.push({
+          test: /\.(graphql|gql)$/,
+          exclude: /node_modules/,
+          loader: 'graphql-tag/loader',
+        });
+        config.module.rules.push({
+          test: /\.md$/,
+          use: 'raw-loader',
+        });
+        return config;
+      },
+    },
+  ],
+  withTM,
+  { i18n },
+]);
