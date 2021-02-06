@@ -4,6 +4,7 @@ import FooterList, { FooterListProps } from "./list";
 import LogoAndEmail from "./logo-and-email";
 import PrefooterBanner from "./prefooter-banner";
 import PrefooterFaqBanner from "./prefooter-faq-banner";
+import PrefooterJobsBanner from "./prefooter-jobs-banner";
 
 const lists: FooterListProps[] = [
   {
@@ -38,6 +39,7 @@ const lists: FooterListProps[] = [
   {
     title: "Resources",
     items: [
+      { label: "About Livepeer.org", href: "/about" },
       {
         label: "10-minute Primer",
         href: "/primer",
@@ -49,7 +51,6 @@ const lists: FooterListProps[] = [
       },
       { label: "FAQ", href: "/faq" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "About Livepeer.org", href: "/about" },
     ],
   },
   {
@@ -73,6 +74,20 @@ const lists: FooterListProps[] = [
       },
     ],
   },
+  {
+    title: "Livepeer, Inc.",
+    items: [
+      { label: "Team", href: "/team" },
+      {
+        label: "Jobs",
+        href: "/jobs",
+      },
+      {
+        label: "Contact",
+        href: "mailto:contact@livepeer.org",
+      },
+    ],
+  },
 ];
 
 type Prefooter =
@@ -82,6 +97,7 @@ type Prefooter =
   | {
       type: "subscribe";
     }
+  | { type: "jobs"; cta?: { label: string; href: string; asPath?: string } }
   | { type: "faqs"; cta?: { label: string; href: string; asPath?: string } };
 
 export type FooterProps = {
@@ -96,6 +112,7 @@ const Footer = ({
   <Box as="footer" bg={isDark ? "text" : "background"}>
     {prefooter?.type === "subscribe" && <PrefooterBanner />}
     {prefooter?.type === "faqs" && <PrefooterFaqBanner cta={prefooter.cta} />}
+    {prefooter?.type === "jobs" && <PrefooterJobsBanner cta={prefooter.cta} />}
     <Box sx={{ bg: "text", color: "background" }}>
       <Container sx={{ pt: [prefooter ? 6 : 5, 5], pb: 4 }}>
         <LogoAndEmail
@@ -112,10 +129,13 @@ const Footer = ({
             "minmax(auto, 184px)",
             null,
             null,
-            "repeat(4, minmax(auto, 184px))",
+            "repeat(5, minmax(auto, 184px))",
           ]}
           gap={[5, null, null, 0]}
-          sx={{ justifyContent: ["center", null, null, "space-between"] }}>
+          sx={{
+            mb: 5,
+            justifyContent: ["center", null, null, "space-between"],
+          }}>
           {lists.map((list) => (
             <FooterList key={`footer-list-${list.title}`} {...list} />
           ))}

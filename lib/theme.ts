@@ -96,10 +96,10 @@ const theme = {
       p: 3,
     },
     hero: {
-      maxWidth: 1200,
+      textAlign: "center",
+      maxWidth: 900,
       mx: "auto",
       p: 3,
-      pt: "80px",
     },
     section: {
       variant: "layout.container",
@@ -145,7 +145,27 @@ const theme = {
         WebkitBoxOrient: "vertical",
       },
     },
+    heroDescription: {
+      lineHeight: "32px",
+      fontSize: 4,
+      color: "text",
+      mx: "auto",
+    },
     heading: {
+      section: {
+        fontSize: [5, 6],
+        color: "text",
+        fontWeight: "bold",
+      },
+      hero: {
+        lineHeight: ["48px", "72px"],
+        mt: [4, 5],
+        mb: [2, 3],
+        fontSize: ["40px", "8"],
+        letterSpacing: "-0.05em",
+        mx: "auto",
+        fontWeight: "bold",
+      },
       1: {
         fontFamily: "special",
         fontSize: ["56px", "88px"],

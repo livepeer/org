@@ -12,6 +12,26 @@ const withTM = require('next-transpile-modules')([
 
 module.exports = withPlugins([
   withSvgr,
-  [withMDX, { pageExtensions: ['mdx', 'tsx'] }],
+  [
+    withMDX,
+    {
+      images: {
+        domains: ['assets.vercel.com', 'cdn.sanity.io'],
+      },
+      pageExtensions: ['mdx', 'tsx'],
+      webpack(config, _options) {
+        config.module.rules.push({
+          test: /\.(graphql|gql)$/,
+          exclude: /node_modules/,
+          loader: 'graphql-tag/loader',
+        });
+        config.module.rules.push({
+          test: /\.md$/,
+          use: 'raw-loader',
+        });
+        return config;
+      },
+    },
+  ],
   withTM,
 ]);

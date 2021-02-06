@@ -3,6 +3,7 @@ import { jsx, Heading, Link as A } from "theme-ui";
 import SectionLayout from "components/layouts/section";
 import { FiArrowUpRight } from "react-icons/fi";
 import Slider from "components/primitives/slider";
+import Link from "next/link";
 
 const images = [
   {
@@ -47,17 +48,14 @@ const WhoIsBuildingSection = () => (
       alignItems: "center",
       py: ["80px", "160px"],
     }}>
-    <A
-      href="https://livepeer.com/team"
-      target="_blank"
-      rel="noopener noreferrer"
-      variant="buttons.primary"
-      sx={{ display: "flex" }}>
-      Meet Livepeer, Inc.{" "}
-      <i sx={{ ml: 2, fontSize: 4 }}>
-        <FiArrowUpRight />
-      </i>
-    </A>
+    <Link href="/team" passHref>
+      <A variant="buttons.primary" sx={{ display: "flex" }}>
+        Meet Livepeer, Inc.{" "}
+        <i sx={{ ml: 2, fontSize: 4 }}>
+          <FiArrowUpRight />
+        </i>
+      </A>
+    </Link>
     <Slider pushSx={{ my: 5 }} numberOfCopies={4} duration={20}>
       {images.map((img) => (
         <div key={`slider-image-${img.src}`} sx={{ mx: 4, ...img.sx }}>
@@ -75,14 +73,13 @@ const WhoIsBuildingSection = () => (
     </Slider>
     <Heading variant="heading.5">
       Interested in Joining Livepeer, Inc.?{" "}
-      <A
-        href="https://angel.co/company/livepeer/jobs"
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="accent"
-        sx={{ variant: "layout.flexCenter", display: "inline-flex" }}>
-        View its open positions <FiArrowUpRight />
-      </A>
+      <Link href="/jobs" passHref>
+        <A
+          variant="accent"
+          sx={{ variant: "layout.flexCenter", display: "inline-flex" }}>
+          View its open positions <FiArrowUpRight />
+        </A>
+      </Link>
     </Heading>
   </SectionLayout>
 );

@@ -1,6 +1,7 @@
 import { ThemeProvider } from "theme-ui";
 import theme from "lib/theme";
 import "css/global.css";
+import "css/markdown.css";
 import "keen-slider/keen-slider.min.css";
 import initGsap from "lib/animations";
 import * as gtag from "../lib/gtag";
