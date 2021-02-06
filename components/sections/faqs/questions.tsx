@@ -1,38 +1,38 @@
 /** @jsx jsx */
-import { jsx, Link as A, Text } from "theme-ui"
-import Link from "next/link"
-import { LinkProps } from "lib/types/link-props"
+import { jsx, Link as A, Text } from "theme-ui";
+import Link from "next/link";
+import { LinkProps } from "lib/types/link-props";
 
-type Category = { label: string; value: string }
+type Category = { label: string; value: string };
 
 export type Question = {
-  question: string
-  answer: React.ReactNode
-  category: Category
-}
+  question: string;
+  answer: React.ReactNode;
+  category: Category;
+};
 
 const categories: Category[] = [
   {
     label: "General",
-    value: "general"
+    value: "general",
   },
   {
     label: "Developers",
-    value: "developers"
+    value: "developers",
   },
   {
     label: "Tokenholders",
-    value: "tokenholders"
+    value: "tokenholders",
   },
   {
     label: "Video Miners",
-    value: "video-miners"
+    value: "video-miners",
   },
   {
     label: "Lexicon",
-    value: "lexicon"
-  }
-]
+    value: "lexicon",
+  },
+];
 
 const AnswerLink: React.FC<LinkProps> = ({ label, href, asPath, isExternal }) =>
   isExternal ? (
@@ -45,7 +45,7 @@ const AnswerLink: React.FC<LinkProps> = ({ label, href, asPath, isExternal }) =>
         {label}
       </A>
     </Link>
-  )
+  );
 
 const questions: Question[] = [
   {
@@ -56,7 +56,7 @@ const questions: Question[] = [
         serves as a great starting point.
       </>
     ),
-    category: categories[0]
+    category: categories[0],
   },
   {
     question: "Who is Livepeer Inc.?",
@@ -71,7 +71,7 @@ const questions: Question[] = [
         />
       </>
     ),
-    category: categories[0]
+    category: categories[0],
   },
   {
     question: "Does Livepeer have a roadmap?",
@@ -87,7 +87,7 @@ const questions: Question[] = [
         .
       </>
     ),
-    category: categories[0]
+    category: categories[0],
   },
   {
     question: "What is the current implementation Livepeer team is working on?",
@@ -102,7 +102,7 @@ const questions: Question[] = [
         .
       </>
     ),
-    category: categories[0]
+    category: categories[0],
   },
   {
     question: "Where can I find the Livepeer whitepaper?",
@@ -123,7 +123,7 @@ const questions: Question[] = [
         .
       </>
     ),
-    category: categories[0]
+    category: categories[0],
   },
   {
     question:
@@ -165,7 +165,7 @@ const questions: Question[] = [
         </ul>
       </>
     ),
-    category: categories[1]
+    category: categories[1],
   },
   {
     question:
@@ -191,7 +191,7 @@ const questions: Question[] = [
         </p>
       </>
     ),
-    category: categories[1]
+    category: categories[1],
   },
   {
     question: "How was Livepeer token distributed? Was there an ICO?",
@@ -209,7 +209,7 @@ const questions: Question[] = [
         .
       </>
     ),
-    category: categories[2]
+    category: categories[2],
   },
   {
     question: "How do I stake my LPT?",
@@ -224,31 +224,31 @@ const questions: Question[] = [
         .
       </>
     ),
-    category: categories[2]
+    category: categories[2],
   },
   {
     question:
       "What is the contract address for adding LPT to Metamask or MyCrypto?",
     answer: "0x58b6a8a3302369daec383334672404ee733ab239",
-    category: categories[2]
+    category: categories[2],
   },
   {
     question:
       "How do I evaluate which orchestrator I should stake my LPT towards?",
     answer:
       "It's your job as a tokenholder to research orchestrators based upon their past performance, statistics, rates they are charging, and any social campaigns that they’ve posted indicating why they believe they will do a good job for the network.",
-    category: categories[2]
+    category: categories[2],
   },
   {
     question: "How long do I need to wait for unstaking/withdrawing my tokens?",
     answer:
       "Once you click on Unstake, it takes seven days for your LPT to unstake at which point your tokens will be ready for you to withdraw into your own wallet.",
-    category: categories[2]
+    category: categories[2],
   },
   {
     question: "Can I stake to multiple orchestrators?",
     answer: "Yes, but not from the same ETH account.",
-    category: categories[2]
+    category: categories[2],
   },
   {
     question: "I want to become an orchestrator. How do I do that?",
@@ -263,7 +263,7 @@ const questions: Question[] = [
         guide.
       </>
     ),
-    category: categories[3]
+    category: categories[3],
   },
   {
     question: "Why am I not receiving any fees?",
@@ -293,7 +293,7 @@ const questions: Question[] = [
         </ol>
       </>
     ),
-    category: categories[3]
+    category: categories[3],
   },
   {
     question: "How much should I charge per pixel?",
@@ -306,7 +306,7 @@ const questions: Question[] = [
         your price at or below 3k wei per pixel.
       </>
     ),
-    category: categories[3]
+    category: categories[3],
   },
   {
     question: "How can I optimize my ROI?",
@@ -321,7 +321,7 @@ const questions: Question[] = [
         open sourced by Chris Remus and Gleb Dudka.
       </>
     ),
-    category: categories[3]
+    category: categories[3],
   },
   {
     question:
@@ -332,7 +332,7 @@ const questions: Question[] = [
         orchestrators page under the “price” column.
       </>
     ),
-    category: categories[3]
+    category: categories[3],
   },
   {
     question:
@@ -349,7 +349,7 @@ const questions: Question[] = [
         .
       </>
     ),
-    category: categories[3]
+    category: categories[3],
   },
   {
     question: "Staking (Bonding)",
@@ -368,7 +368,7 @@ const questions: Question[] = [
         work will be performed honestly, correctly and competitively.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Merkle Mine",
@@ -380,7 +380,7 @@ const questions: Question[] = [
         originally distributed.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Livepeer Protocol",
@@ -391,7 +391,7 @@ const questions: Question[] = [
         Ethereum blockchain.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Segment",
@@ -402,7 +402,7 @@ const questions: Question[] = [
         whole video.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Transcoding",
@@ -413,7 +413,7 @@ const questions: Question[] = [
         device, you're ensured the most optimal viewing experience.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Rendition",
@@ -423,7 +423,7 @@ const questions: Question[] = [
         transcoded.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Delegator",
@@ -434,7 +434,7 @@ const questions: Question[] = [
         exchange for a cut of its rewards and fees.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Broadcaster",
@@ -443,7 +443,7 @@ const questions: Question[] = [
         A Livepeer actor sending video streams into the network for transcoding.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Orchestrator",
@@ -454,7 +454,7 @@ const questions: Question[] = [
         they’re going to do the work correctly.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Transcoder",
@@ -465,7 +465,7 @@ const questions: Question[] = [
         back.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Node",
@@ -476,7 +476,7 @@ const questions: Question[] = [
         broadcaster mode, transcoder mode, or orchestrator mode.
       </>
     ),
-    category: categories[4]
+    category: categories[4],
   },
   {
     question: "Livepeer Token (LPT)",
@@ -489,9 +489,9 @@ const questions: Question[] = [
         and useful as possible.
       </>
     ),
-    category: categories[4]
-  }
-]
+    category: categories[4],
+  },
+];
 
-export default questions
-export { categories }
+export default questions;
+export { categories };

@@ -1,21 +1,21 @@
-import { StatProps } from "components/primitives/stat"
-import SectionLayout from "components/layouts/section"
-import StatsGrid from "components/layouts/stats-grid"
-import { nFormatter } from "lib/document-helpers"
+import { StatProps } from "components/primitives/stat";
+import SectionLayout from "components/layouts/section";
+import StatsGrid from "components/layouts/stats-grid";
+import { nFormatter } from "lib/document-helpers";
 
 type Props = {
-  totalActiveStake: number
-}
+  totalActiveStake: number;
+};
 const ByTheNumbersSection = ({ totalActiveStake }: Props) => {
   const stats: StatProps[] = [
     {
       title: "1.2.2017",
-      label: "Date founded"
+      label: "Date founded",
     },
     {
       title: "70k+",
       label: <>GPUs accessible to the network</>,
-      color: "gradient"
+      color: "gradient",
     },
     {
       title: `${nFormatter(totalActiveStake, 1)}`,
@@ -23,9 +23,9 @@ const ByTheNumbersSection = ({ totalActiveStake }: Props) => {
         <>
           Total <br /> LPT staked
         </>
-      )
-    }
-  ]
+      ),
+    },
+  ];
   return (
     <SectionLayout
       background="muted"
@@ -38,11 +38,10 @@ const ByTheNumbersSection = ({ totalActiveStake }: Props) => {
         </>
       }
       titleLabel="Project Statistics"
-      pushSx={{ pb: ["80px", null, null, "160px"] }}
-    >
+      pushSx={{ pb: ["80px", null, null, "160px"] }}>
       <StatsGrid stats={stats} />
     </SectionLayout>
-  )
-}
+  );
+};
 
-export default ByTheNumbersSection
+export default ByTheNumbersSection;

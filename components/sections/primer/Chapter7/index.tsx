@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { Container, Section1, Section2, Section3, Title, Fees } from "./styles"
-import Rewards from "../Rewards"
+import { jsx, css } from "@emotion/core";
+import { Container, Section1, Section2, Section3, Title, Fees } from "./styles";
+import Rewards from "../Rewards";
 
 const Chapter7 = ({ data }) => {
   return (
@@ -16,8 +16,7 @@ const Chapter7 = ({ data }) => {
               margin-bottom: 0;
               margin-right: 152px;
             }
-          `}
-        >
+          `}>
           <p>
             When a broadcaster pays fees into the network, both Orchestrators
             and Delegators earn a portion of those fees as a reward for ensuring
@@ -38,8 +37,7 @@ const Chapter7 = ({ data }) => {
               min-width: 972px;
               min-height: 816px;
             }
-          `}
-        >
+          `}>
           <Rewards data={data} />
         </div>
         <div>
@@ -68,13 +66,12 @@ const Chapter7 = ({ data }) => {
           css={css`
             max-width: 370px;
             textalign: center;
-          `}
-        >
+          `}>
           Neat right? Next, let's go over how often new tokens are minted.
         </p>
       </Section3>
     </Container>
-  )
-}
+  );
+};
 
-export default Chapter7
+export default Chapter7;

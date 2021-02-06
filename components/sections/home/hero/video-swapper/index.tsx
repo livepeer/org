@@ -1,50 +1,48 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { useRef, useState, useCallback, useEffect } from "react"
+import { jsx } from "theme-ui";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 type Props = {
-  sources: string[]
-  onChange: () => void
-}
+  sources: string[];
+  onChange: () => void;
+};
 
 const VideoSwapper = ({ sources, onChange }: Props) => {
-  const videosRef = useRef([])
-  const [currentVideo, setCurrentVideo] = useState(0)
-  const [isInitialized, setIsInitialized] = useState(false)
+  const videosRef = useRef([]);
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    if (isInitialized) return
-    setIsInitialized(true)
-    videosRef.current[currentVideo].play()
-  }, [currentVideo, isInitialized])
+    if (isInitialized) return;
+    setIsInitialized(true);
+    videosRef.current[currentVideo].play();
+  }, [currentVideo, isInitialized]);
 
   const onVideoEnded = useCallback(
     (i) => {
-      if (!videosRef.current) return
-      const newCurrentVideo = i + 1 < videosRef.current.length ? i + 1 : 0
-      videosRef.current[newCurrentVideo].play()
-      setCurrentVideo(newCurrentVideo)
-      onChange()
+      if (!videosRef.current) return;
+      const newCurrentVideo = i + 1 < videosRef.current.length ? i + 1 : 0;
+      videosRef.current[newCurrentVideo].play();
+      setCurrentVideo(newCurrentVideo);
+      onChange();
     },
     [videosRef, onChange]
-  )
+  );
 
   return (
     <div
       sx={{
         position: "relative",
         width: ["60vw", "25vw"],
-        height: ["33vw", "14vw"]
-      }}
-    >
+        height: ["33vw", "14vw"],
+      }}>
       <span
         sx={{
           position: "absolute",
           left: 3,
           top: 3,
-          zIndex: "101"
-        }}
-      >
+          zIndex: "101",
+        }}>
         <p
           sx={{
             fontSize: 0,
@@ -55,16 +53,15 @@ const VideoSwapper = ({ sources, onChange }: Props) => {
             fontWeight: 700,
             px: 2,
             height: "20px",
-            textTransform: "uppercase"
-          }}
-        >
+            textTransform: "uppercase",
+          }}>
           <span
             sx={{
               width: "5px",
               height: "5px",
               borderRadius: "full",
               backgroundColor: "background",
-              mr: 1
+              mr: 1,
             }}
           />
           Live
@@ -74,7 +71,7 @@ const VideoSwapper = ({ sources, onChange }: Props) => {
         {sources.map((source, i) => (
           <video
             onEnded={() => {
-              onVideoEnded(i)
+              onVideoEnded(i);
             }}
             key={`video-swapper-item-${i}`}
             ref={(el) => (videosRef.current[i] = el)}
@@ -86,7 +83,7 @@ const VideoSwapper = ({ sources, onChange }: Props) => {
               height: "100%",
               width: "100%",
               opacity: i === currentVideo ? 1 : 0,
-              transition: "opacity 1s ease-out"
+              transition: "opacity 1s ease-out",
             }}
             src={source}
             muted
@@ -95,7 +92,7 @@ const VideoSwapper = ({ sources, onChange }: Props) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default VideoSwapper
+export default VideoSwapper;

@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
+import { jsx, css } from "@emotion/core";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import {
   Container,
   Section1,
@@ -14,19 +14,19 @@ import {
   TranscodingIn,
   TranscodingOut,
   TranscoderRunning,
-  Scissors
-} from "./styles"
+  Scissors,
+} from "./styles";
 
-const threshold = [0.1]
+const threshold = [0.1];
 
 const Introduction = ({ onChange }) => {
-  const [ref, inView, entry] = useInView({ threshold })
+  const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
     if (inView) {
-      onChange()
+      onChange();
     }
-  }, [inView])
+  }, [inView]);
 
   return (
     <div ref={ref}>
@@ -39,8 +39,7 @@ const Introduction = ({ onChange }) => {
               @media (min-width: 1024px) {
                 margin-bottom: 0;
               },
-            `}
-          >
+            `}>
             <h3 className="primer__heading">
               Today, 80% of all internet bandwidth is consumed by video
               streaming.
@@ -60,8 +59,7 @@ const Introduction = ({ onChange }) => {
                 margin-right: 120px;
                 margin-bottom: 0;
               },
-            `}
-          >
+            `}>
             <p>
               But, for companies, video is insanely expensive to stream — and
               even more expensive to live stream.
@@ -83,8 +81,7 @@ const Introduction = ({ onChange }) => {
                 margin-right: 40px;
                 margin-bottom: 0;
               },
-            `}
-          >
+            `}>
             <p>
               Transcoding is the process of taking a raw video file and
               reformatting it so that no matter what bandwidth you have -
@@ -100,8 +97,7 @@ const Introduction = ({ onChange }) => {
                 max-width: 420px;
                 margin-top: 136px;
               },
-            `}
-          >
+            `}>
             <p>
               Today, this process costs around $3 per stream per hour to a cloud
               service such as Amazon, up to $4500 per month for one media
@@ -120,8 +116,7 @@ const Introduction = ({ onChange }) => {
                 margin-top: 80px;
                 margin-bottom: 0;
               }
-            `}
-          >
+            `}>
             <p>
               Due to such high infrastructure costs, it's become commonplace for
               aspiring social video startups to find initial success upon
@@ -149,7 +144,7 @@ const Introduction = ({ onChange }) => {
         </Section6>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Introduction
+export default Introduction;

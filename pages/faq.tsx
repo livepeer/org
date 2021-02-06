@@ -1,9 +1,9 @@
-import PageLayout from "components/layouts/page"
-import IconHero from "components/layouts/icon-hero"
-import { FiHelpCircle } from "react-icons/fi"
-import FaqsSection from "components/sections/faqs"
-import FaqHeroSvg from "components/svgs/faq-hero"
-import { HeadProps } from "components/primitives/head"
+import PageLayout from "components/layouts/page";
+import IconHero from "components/layouts/icon-hero";
+import { FiHelpCircle } from "react-icons/fi";
+import FaqsSection from "components/sections/faqs";
+import FaqHeroSvg from "components/svgs/faq-hero";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -13,9 +13,9 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/participants",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const ParticipantsPage = () => (
   <PageLayout headProps={headProps} navProps={{ background: "dark" }}>
@@ -29,6 +29,6 @@ const ParticipantsPage = () => (
     />
     <FaqsSection />
   </PageLayout>
-)
+);
 
-export default ParticipantsPage
+export default ParticipantsPage;

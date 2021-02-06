@@ -1,17 +1,17 @@
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import { Container, Section1, Title, Text, Ethereum } from "./styles"
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { Container, Section1, Title, Text, Ethereum } from "./styles";
 
-const threshold = [0.5]
+const threshold = [0.5];
 
 const Chapter1 = ({ onChange }) => {
-  const [ref, inView, entry] = useInView({ threshold })
+  const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
     if (inView) {
-      onChange()
+      onChange();
     }
-  }, [inView])
+  }, [inView]);
 
   return (
     <Container ref={ref}>
@@ -32,7 +32,7 @@ const Chapter1 = ({ onChange }) => {
         <Ethereum src="/images/primer/livepeer-ethereum.svg" />
       </Section1>
     </Container>
-  )
-}
+  );
+};
 
-export default Chapter1
+export default Chapter1;

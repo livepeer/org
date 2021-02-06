@@ -1,6 +1,6 @@
 export type LinkProps = {
-  label: React.ReactNode
-  href: string
-  asPath?: string
-  isExternal?: boolean
-}
+  label: React.ReactNode;
+  href: string;
+  asPath?: string;
+  isExternal?: boolean;
+};

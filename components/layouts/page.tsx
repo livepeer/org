@@ -1,15 +1,15 @@
-import Head, { HeadProps } from "components/primitives/head"
-import Nav, { NavProps } from "components/sections/nav"
-import { Box, SxStyleProp } from "theme-ui"
-import Footer, { FooterProps } from "components/sections/footer"
+import Head, { HeadProps } from "components/primitives/head";
+import Nav, { NavProps } from "components/sections/nav";
+import { Box, SxStyleProp } from "theme-ui";
+import Footer, { FooterProps } from "components/sections/footer";
 
 type Props = {
-  headProps?: HeadProps
-  isDark?: boolean
-  navProps?: NavProps
-  footerProps?: FooterProps
-  pushContentSx?: SxStyleProp
-}
+  headProps?: HeadProps;
+  isDark?: boolean;
+  navProps?: NavProps;
+  footerProps?: FooterProps;
+  pushContentSx?: SxStyleProp;
+};
 
 const PageLayout: React.FC<Props> = ({
   children,
@@ -17,7 +17,7 @@ const PageLayout: React.FC<Props> = ({
   isDark,
   navProps,
   pushContentSx,
-  footerProps
+  footerProps,
 }) => (
   <>
     <Head {...headProps} />
@@ -26,12 +26,11 @@ const PageLayout: React.FC<Props> = ({
     />
     <Box
       as="main"
-      sx={{ position: "relative", overflow: "hidden", ...pushContentSx }}
-    >
+      sx={{ position: "relative", overflow: "hidden", ...pushContentSx }}>
       {children}
     </Box>
     <Footer {...footerProps} isDark={isDark} />
   </>
-)
+);
 
-export default PageLayout
+export default PageLayout;

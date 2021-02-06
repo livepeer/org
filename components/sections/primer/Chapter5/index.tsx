@@ -1,19 +1,19 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import { Root, Container, Section, Title } from "./styles"
+import { jsx, css } from "@emotion/core";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { Root, Container, Section, Title } from "./styles";
 
-const threshold = [0.1]
+const threshold = [0.1];
 
 const Chapter5 = ({ onChange }) => {
-  const [ref, inView, entry] = useInView({ threshold })
+  const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
     if (inView) {
-      onChange()
+      onChange();
     }
-  }, [inView])
+  }, [inView]);
 
   return (
     <Root ref={ref}>
@@ -26,8 +26,7 @@ const Chapter5 = ({ onChange }) => {
                 max-width: 472px;
                 margin-bottom: 80px;
               }
-            `}
-          >
+            `}>
             <p>
               The purpose of the Livepeer token (LPT) is to coordinate,
               bootstrap, and incentivize participants to make sure the Livepeer
@@ -54,7 +53,7 @@ const Chapter5 = ({ onChange }) => {
         </Section>
       </Container>
     </Root>
-  )
-}
+  );
+};
 
-export default Chapter5
+export default Chapter5;

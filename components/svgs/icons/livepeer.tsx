@@ -1,18 +1,17 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from "theme-ui"
+import { jsx, SxStyleProp } from "theme-ui";
 
 type Props = {
-  pushSx?: SxStyleProp
-  isDark?: boolean
-}
+  pushSx?: SxStyleProp;
+  isDark?: boolean;
+};
 
 const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
   <svg
     viewBox="0 0 236 250"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ width: "246px", ...pushSx }}
-  >
+    sx={{ width: "246px", ...pushSx }}>
     <mask
       id="livepeer-svg-mask0"
       mask-type="alpha"
@@ -20,8 +19,7 @@ const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
       x="0"
       y="0"
       width="236"
-      height="250"
-    >
+      height="250">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -37,8 +35,7 @@ const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
         x="-845"
         y="-38"
         width="1465"
-        height="300"
-      >
+        height="300">
         <rect
           x="-844.711"
           y="-37.002"
@@ -85,8 +82,7 @@ const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
         width="1544.06"
         height="378.474"
         filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
+        colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
@@ -117,8 +113,7 @@ const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
         y1="-508.445"
         x2="225.127"
         y2="411.246"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
@@ -128,8 +123,7 @@ const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
         y1="735.044"
         x2="395.273"
         y2="-186.969"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
@@ -139,8 +133,7 @@ const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
         y1="-269.625"
         x2="-11.1365"
         y2="173.579"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
@@ -150,13 +143,12 @@ const LivepeerIconSvg = ({ pushSx, isDark }: Props) => (
         y1="-590.619"
         x2="-181.294"
         y2="327.959"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopOpacity="0.72" />
         <stop offset="1" stopColor="#9BF0E1" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
-)
+);
 
-export default LivepeerIconSvg
+export default LivepeerIconSvg;

@@ -1,15 +1,15 @@
-import PageLayout from "components/layouts/page"
-import CroppedIllustrationHero from "components/layouts/cropped-illustration-hero"
-import IllustratedBackgroundBox from "components/layouts/illustrated-background-box"
-import TokenholdersDashboardSvg from "components/svgs/tokenholders-dashboard"
-import GetTokenSection from "components/sections/tokenholders/get-token"
-import TokenholderStatsSection from "components/sections/tokenholders/tokenholder-stats"
+import PageLayout from "components/layouts/page";
+import CroppedIllustrationHero from "components/layouts/cropped-illustration-hero";
+import IllustratedBackgroundBox from "components/layouts/illustrated-background-box";
+import TokenholdersDashboardSvg from "components/svgs/tokenholders-dashboard";
+import GetTokenSection from "components/sections/tokenholders/get-token";
+import TokenholderStatsSection from "components/sections/tokenholders/tokenholder-stats";
 import {
   getTotalActiveStake,
   getTotalDelegators,
-  getTotalVolume
-} from "lib/document-helpers"
-import { HeadProps } from "components/primitives/head"
+  getTotalVolume,
+} from "lib/document-helpers";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -19,24 +19,23 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/tokenholders",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const TokenholdersPage = ({
   totalActiveStake,
   totalDelegators,
-  totalVolume
+  totalVolume,
 }) => (
   <PageLayout
     headProps={headProps}
     footerProps={{
       prefooter: {
         type: "faqs",
-        cta: { label: "Tokenholder FAQ", href: "/faq?filter=tokenholders" }
-      }
-    }}
-  >
+        cta: { label: "Tokenholder FAQ", href: "/faq?filter=tokenholders" },
+      },
+    }}>
     <CroppedIllustrationHero
       withAnimation
       title="Tokenholders"
@@ -55,21 +54,21 @@ const TokenholdersPage = ({
       totalVolume={totalVolume}
     />
   </PageLayout>
-)
+);
 
 export async function getStaticProps() {
-  const totalActiveStake = await getTotalActiveStake()
-  const totalDelegators = await getTotalDelegators()
-  const totalVolume = await getTotalVolume()
+  const totalActiveStake = await getTotalActiveStake();
+  const totalDelegators = await getTotalDelegators();
+  const totalVolume = await getTotalVolume();
 
   return {
     props: {
       totalActiveStake,
       totalDelegators,
-      totalVolume
+      totalVolume,
     },
-    revalidate: 1
-  }
+    revalidate: 1,
+  };
 }
 
-export default TokenholdersPage
+export default TokenholdersPage;

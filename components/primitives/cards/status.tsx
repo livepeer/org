@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import { jsx, Card, Heading, Text, Box, SxStyleProp } from "theme-ui"
-import StatusLink, { StatusLinkProps } from "../links/status"
-import Link from "next/link"
-import { useMemo } from "react"
+import { jsx, Card, Heading, Text, Box, SxStyleProp } from "theme-ui";
+import StatusLink, { StatusLinkProps } from "../links/status";
+import Link from "next/link";
+import { useMemo } from "react";
 
 export type StatusCardProps = {
-  title: React.ReactNode
-  description: string
-  linkProps: StatusLinkProps
-  isDark?: boolean
-  pushSx?: SxStyleProp
-  className?: string
-  isClickable?: boolean
-}
+  title: React.ReactNode;
+  description: string;
+  linkProps: StatusLinkProps;
+  isDark?: boolean;
+  pushSx?: SxStyleProp;
+  className?: string;
+  isClickable?: boolean;
+};
 
 const StatusCard = ({
   title,
@@ -21,19 +21,19 @@ const StatusCard = ({
   isDark = false,
   pushSx,
   className,
-  isClickable
+  isClickable,
 }: StatusCardProps) => {
   const hoverSx = useMemo(
     () => ({
       transition: "box-shadow .2s, color .2s, background .2s",
       ".status-card-link": {
-        transition: "color .2s"
+        transition: "color .2s",
       },
       ".status-card-link .status_container": {
         transition: "color .2s",
         circle: {
-          transition: "fill .2s"
-        }
+          transition: "fill .2s",
+        },
       },
       "&:hover": {
         boxShadow: "0px 80px 96px rgba(0, 0, 0, 0.32)",
@@ -44,20 +44,20 @@ const StatusCard = ({
           ".status_container": {
             color: isDark ? "text" : "background",
             circle: {
-              fill: isDark ? "secondary" : "primary"
-            }
+              fill: isDark ? "secondary" : "primary",
+            },
           },
           "&:hover": {
-            color: isDark ? "secondary" : "primary"
-          }
+            color: isDark ? "secondary" : "primary",
+          },
         },
         ".title": {
-          color: isDark ? "text" : "background"
-        }
-      }
+          color: isDark ? "text" : "background",
+        },
+      },
     }),
     [isDark]
-  )
+  );
 
   const markup = (
     <Card
@@ -70,10 +70,9 @@ const StatusCard = ({
         justifyContent: "space-between",
         maxWidth: "unset",
         ...(isClickable ? hoverSx : {}),
-        ...pushSx
+        ...pushSx,
       }}
-      className={isClickable ? undefined : className}
-    >
+      className={isClickable ? undefined : className}>
       <Box>
         <Heading
           variant="heading.5"
@@ -81,10 +80,9 @@ const StatusCard = ({
             textAlign: "left",
             my: 3,
             transition: "color .2s",
-            color: isDark ? "background" : "text"
+            color: isDark ? "background" : "text",
           }}
-          className="title"
-        >
+          className="title">
           {title}
         </Heading>
         <Text variant="normal">{description}</Text>
@@ -96,25 +94,24 @@ const StatusCard = ({
         className="status-card-link"
       />
     </Card>
-  )
+  );
 
-  if (!isClickable) return markup
+  if (!isClickable) return markup;
   if (linkProps.link.isExternal) {
     return (
       <a
         href={linkProps.link.href}
         className={isClickable ? className : undefined}
-        target="_blank"
-      >
+        target="_blank">
         {markup}
       </a>
-    )
+    );
   }
   return (
     <Link href={linkProps.link.href} as={linkProps.link.asPath} passHref>
       <a className={isClickable ? className : undefined}>{markup}</a>
     </Link>
-  )
-}
+  );
+};
 
-export default StatusCard
+export default StatusCard;

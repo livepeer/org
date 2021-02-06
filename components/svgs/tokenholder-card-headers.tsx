@@ -1,13 +1,12 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "theme-ui";
 
 const GetTokenSvg = () => (
   <svg
     viewBox="0 0 464 464"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ width: "464px" }}
-  >
+    sx={{ width: "464px" }}>
     <circle opacity="0.1" cx="232" cy="232" r="71.5" stroke="#666666" />
     <circle opacity="0.1" cx="232" cy="232" r="111.5" stroke="#666666" />
     <circle opacity="0.1" cx="232" cy="232" r="151.5" stroke="#666666" />
@@ -29,15 +28,14 @@ const GetTokenSvg = () => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
 const StakeTokenSvg = () => (
   <svg
     viewBox="0 0 464 464"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ width: "464px" }}
-  >
+    sx={{ width: "464px" }}>
     <g opacity="0.25">
       <path
         opacity="0.25"
@@ -78,6 +76,6 @@ const StakeTokenSvg = () => (
     <path d="M236 225H231V230H236V225Z" fill="#231F20" />
     <path d="M236 234H231V239H236V234Z" fill="#231F20" />
   </svg>
-)
+);
 
-export { GetTokenSvg, StakeTokenSvg }
+export { GetTokenSvg, StakeTokenSvg };

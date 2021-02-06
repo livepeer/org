@@ -1,11 +1,11 @@
-import { Grid, SxStyleProp } from "theme-ui"
-import Stat, { StatProps } from "components/primitives/stat"
-import Slider from "components/primitives/slider"
+import { Grid, SxStyleProp } from "theme-ui";
+import Stat, { StatProps } from "components/primitives/stat";
+import Slider from "components/primitives/slider";
 
 type Props = {
-  stats: StatProps[]
-  pushSx?: SxStyleProp
-}
+  stats: StatProps[];
+  pushSx?: SxStyleProp;
+};
 
 const StatsGrid = ({ stats, pushSx }: Props) => (
   <>
@@ -20,9 +20,8 @@ const StatsGrid = ({ stats, pushSx }: Props) => (
         position: "relative",
         justifyContent: "center",
         display: ["none", null, null, "grid"],
-        ...pushSx
-      }}
-    >
+        ...pushSx,
+      }}>
       {stats.map((stat) => (
         <Stat key={`stat-${stat.title}-${stat.label}`} {...stat} />
       ))}
@@ -37,6 +36,6 @@ const StatsGrid = ({ stats, pushSx }: Props) => (
       ))}
     </Slider>
   </>
-)
+);
 
-export default StatsGrid
+export default StatsGrid;

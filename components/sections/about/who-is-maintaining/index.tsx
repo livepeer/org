@@ -1,10 +1,10 @@
-import SectionLayout from "components/layouts/section"
-import { Link as A, Heading, Text, Box } from "theme-ui"
-import Accordion from "components/primitives/accordion"
-import { AccordionItemProps } from "components/primitives/accordion/item"
-import LivepeerIconSvg from "components/svgs/icons/livepeer"
-import BasementIconSvg from "components/svgs/icons/basement"
-import Maintainer, { MaintainerProps } from "./maintainer"
+import SectionLayout from "components/layouts/section";
+import { Link as A, Heading, Text, Box } from "theme-ui";
+import Accordion from "components/primitives/accordion";
+import { AccordionItemProps } from "components/primitives/accordion/item";
+import LivepeerIconSvg from "components/svgs/icons/livepeer";
+import BasementIconSvg from "components/svgs/icons/basement";
+import Maintainer, { MaintainerProps } from "./maintainer";
 
 const livepeerMaintainers: MaintainerProps[] = [
   {
@@ -12,11 +12,11 @@ const livepeerMaintainers: MaintainerProps[] = [
     position: "Developer",
     avatar: {
       src:
-        "https://avatars3.githubusercontent.com/u/555740?s=460&u=af1ec022281bf42faadde807895f47230583c0d8&v=4"
+        "https://avatars3.githubusercontent.com/u/555740?s=460&u=af1ec022281bf42faadde807895f47230583c0d8&v=4",
     },
-    githubHref: "https://github.com/adamsoffer"
-  }
-]
+    githubHref: "https://github.com/adamsoffer",
+  },
+];
 
 const basementMaintainers: MaintainerProps[] = [
   {
@@ -24,9 +24,9 @@ const basementMaintainers: MaintainerProps[] = [
     position: "Product Designer",
     avatar: {
       src:
-        "https://avatars1.githubusercontent.com/u/13522179?s=460&u=357b008de640d8d353a203a08bbaad37151ef9cb&v=4"
+        "https://avatars1.githubusercontent.com/u/13522179?s=460&u=357b008de640d8d353a203a08bbaad37151ef9cb&v=4",
     },
-    githubHref: "https://github.com/ragojose"
+    githubHref: "https://github.com/ragojose",
   },
 
   {
@@ -34,35 +34,35 @@ const basementMaintainers: MaintainerProps[] = [
     position: "Developer",
     avatar: {
       src:
-        "https://avatars1.githubusercontent.com/u/40034115?s=400&u=3bf788afbbf0fe34bda786a12fe7dd0480830531&v=4"
+        "https://avatars1.githubusercontent.com/u/40034115?s=400&u=3bf788afbbf0fe34bda786a12fe7dd0480830531&v=4",
     },
-    githubHref: "https://github.com/julianbenegas"
+    githubHref: "https://github.com/julianbenegas",
   },
   {
     name: "Franco Arza",
     position: "Developer",
     avatar: {
       src:
-        "https://avatars3.githubusercontent.com/u/466367?s=460&u=f01535059f726cc441b47e044ec92c6b9b0f4024&v=4"
+        "https://avatars3.githubusercontent.com/u/466367?s=460&u=f01535059f726cc441b47e044ec92c6b9b0f4024&v=4",
     },
-    githubHref: "https://github.com/arzafran"
-  }
-]
+    githubHref: "https://github.com/arzafran",
+  },
+];
 
 const accordionItems: AccordionItemProps[] = [
   {
     heading: {
       title: "Livepeer, Inc.",
       icon: {
-        children: <LivepeerIconSvg pushSx={{ width: "20px" }} isDark />
+        children: <LivepeerIconSvg pushSx={{ width: "20px" }} isDark />,
       },
       pushSx: {
         h5: {
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
-          overflow: "hidden"
-        }
-      }
+          overflow: "hidden",
+        },
+      },
     },
     children: (
       <Box pl={3} className="maintainer">
@@ -70,22 +70,22 @@ const accordionItems: AccordionItemProps[] = [
           <Maintainer key={`maintainer-${m.name}`} {...m} />
         ))}
       </Box>
-    )
+    ),
   },
   {
     heading: {
       title: "basement.studio",
       icon: {
         bg: "#000",
-        children: <BasementIconSvg />
+        children: <BasementIconSvg />,
       },
       pushSx: {
         h5: {
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
-          overflow: "hidden"
-        }
-      }
+          overflow: "hidden",
+        },
+      },
     },
     children: (
       <Box pl={3} className="maintainer">
@@ -93,16 +93,15 @@ const accordionItems: AccordionItemProps[] = [
           <Maintainer key={`maintainer-${m.name}`} {...m} />
         ))}
       </Box>
-    )
-  }
-]
+    ),
+  },
+];
 
 const WhoIsMaintainingSection = () => (
   <SectionLayout
     title="Livepeer.org Maintainers"
     subtitle="The Livepeer.org site is maintained by members of the following organizations:"
-    pushSx={{ pt: ["80px", "160px"] }}
-  >
+    pushSx={{ pt: ["80px", "160px"] }}>
     <Accordion
       items={accordionItems}
       pushSx={{
@@ -110,11 +109,11 @@ const WhoIsMaintainingSection = () => (
           mb: 3,
           pb: 3,
           borderBottom: "1px solid",
-          borderColor: "ultraLightGray"
+          borderColor: "ultraLightGray",
         },
         maxWidth: "800px",
         mx: "auto",
-        mb: 5
+        mb: 5,
       }}
       withIllustratedBackground
     />
@@ -123,8 +122,7 @@ const WhoIsMaintainingSection = () => (
       <A
         href="https://github.com/livepeer/livepeer-org"
         target="_blank"
-        variant="accent"
-      >
+        variant="accent">
         GitHub
       </A>{" "}
       by opening an issue or pull request. When submitting a pull request,
@@ -132,14 +130,13 @@ const WhoIsMaintainingSection = () => (
     </Heading>
     <Text
       variant="normal"
-      sx={{ color: "gray", textAlign: "center", maxWidth: "4xl", mx: "auto" }}
-    >
+      sx={{ color: "gray", textAlign: "center", maxWidth: "4xl", mx: "auto" }}>
       Note: Livepeer.org is not an “official” website. Just like nobody owns or
       controls the technology behind email or bitcoin, nobody owns or controls
       the technology behind Livepeer. As such, nobody can speak with authority
       in the name of Livepeer.
     </Text>
   </SectionLayout>
-)
+);
 
-export default WhoIsMaintainingSection
+export default WhoIsMaintainingSection;

@@ -1,11 +1,11 @@
-import JumpInSection from "components/sections/participants/jump-in"
-import CommunitySection from "components/sections/home/community"
-import HaveACallSection from "components/sections/participants/have-a-call"
-import PageLayout from "components/layouts/page"
-import IconHero from "components/layouts/icon-hero"
-import { FiUserCheck } from "react-icons/fi"
-import ParticipantsSvg from "components/svgs/participants"
-import { HeadProps } from "components/primitives/head"
+import JumpInSection from "components/sections/participants/jump-in";
+import CommunitySection from "components/sections/home/community";
+import HaveACallSection from "components/sections/participants/have-a-call";
+import PageLayout from "components/layouts/page";
+import IconHero from "components/layouts/icon-hero";
+import { FiUserCheck } from "react-icons/fi";
+import ParticipantsSvg from "components/svgs/participants";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -15,9 +15,9 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/participants",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const ParticipantsPage = ({ youtubeVideos }) => {
   return (
@@ -39,20 +39,20 @@ const ParticipantsPage = ({ youtubeVideos }) => {
       <CommunitySection title="Join the Livepeer Community" />
       <HaveACallSection youtubeVideos={youtubeVideos} />
     </PageLayout>
-  )
-}
+  );
+};
 
 export async function getStaticProps() {
   const response = await fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?maxResults=100&part=snippet&playlistId=PLkw6hm1fcjtEo9HydrGKP2R_NHhSu1Mpl&key=${process.env.YOUTUBE_API_KEY}`
-  )
-  const youtubeData = await response.json()
+  );
+  const youtubeData = await response.json();
   return {
     props: {
-      youtubeVideos: youtubeData.items
+      youtubeVideos: youtubeData.items,
     },
-    revalidate: 1
-  }
+    revalidate: 1,
+  };
 }
 
-export default ParticipantsPage
+export default ParticipantsPage;

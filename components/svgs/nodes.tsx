@@ -1,13 +1,12 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "theme-ui";
 
 const NodesSvg = () => (
   <svg
     viewBox="0 0 558 399"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ maxWidth: "100%", width: "558px" }}
-  >
+    sx={{ maxWidth: "100%", width: "558px" }}>
     <mask
       id="nodes-svg-mask0"
       mask-type="alpha"
@@ -15,8 +14,7 @@ const NodesSvg = () => (
       x="0"
       y="0"
       width="558"
-      height="399"
-    >
+      height="399">
       <rect width="557.872" height="399" fill="url(#nodes-svg-paint0_linear)" />
     </mask>
     <g mask="url(#nodes-svg-mask0)">
@@ -180,8 +178,7 @@ const NodesSvg = () => (
         y1="0"
         x2="278.936"
         y2="399"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop />
         <stop offset="1" stopOpacity="0" />
       </linearGradient>
@@ -191,13 +188,12 @@ const NodesSvg = () => (
         y1="121.978"
         x2="53.9363"
         y2="121.978"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopColor="#00A55F" />
         <stop offset="1" stopColor="#4CF1AC" />
       </linearGradient>
     </defs>
   </svg>
-)
+);
 
-export default NodesSvg
+export default NodesSvg;

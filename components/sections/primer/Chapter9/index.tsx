@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import Link from "next/link"
+import { jsx, css } from "@emotion/core";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 import {
   Container,
@@ -14,19 +14,19 @@ import {
   Header,
   Item,
   Icon,
-  Flowers
-} from "./styles"
+  Flowers,
+} from "./styles";
 
-const threshold = [0.3]
+const threshold = [0.3];
 
 const Chapter9 = ({ onChange, data }) => {
-  const [ref, inView, entry] = useInView({ threshold })
+  const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
     if (inView) {
-      onChange()
+      onChange();
     }
-  }, [inView])
+  }, [inView]);
 
   return (
     <Container ref={ref}>
@@ -38,8 +38,7 @@ const Chapter9 = ({ onChange, data }) => {
               max-width: 330px;
               margin-right: 80px;
             }
-          `}
-        >
+          `}>
           <p>
             Today, there are{" "}
             <strong>{data.totalDelegators.toLocaleString()}</strong> delegators
@@ -64,8 +63,7 @@ const Chapter9 = ({ onChange, data }) => {
             <Button
               href="https://explorer.livepeer.org/"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               Stake Livepeer
             </Button>
           </Item>
@@ -78,8 +76,7 @@ const Chapter9 = ({ onChange, data }) => {
             <Button
               href="https://livepeer.com/register"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               Sign Up
             </Button>
           </Item>
@@ -100,7 +97,7 @@ const Chapter9 = ({ onChange, data }) => {
         </List>
       </Section>
     </Container>
-  )
-}
+  );
+};
 
-export default Chapter9
+export default Chapter9;

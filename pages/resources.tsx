@@ -1,9 +1,9 @@
-import PageLayout from "components/layouts/page"
-import IconHero from "components/layouts/icon-hero"
-import { FiBook } from "react-icons/fi"
-import ResourcesHeroSvg from "components/svgs/resources-hero"
-import ResourcesDirectory from "components/sections/resources"
-import { HeadProps } from "components/primitives/head"
+import PageLayout from "components/layouts/page";
+import IconHero from "components/layouts/icon-hero";
+import { FiBook } from "react-icons/fi";
+import ResourcesHeroSvg from "components/svgs/resources-hero";
+import ResourcesDirectory from "components/sections/resources";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -13,16 +13,15 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/resources",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const ResourcesPage = () => (
   <PageLayout
     headProps={headProps}
     navProps={{ background: "muted" }}
-    footerProps={{ prefooter: { type: "faqs" } }}
-  >
+    footerProps={{ prefooter: { type: "faqs" } }}>
     <IconHero
       icon={<FiBook />}
       title="Resources"
@@ -33,6 +32,6 @@ const ResourcesPage = () => (
     />
     <ResourcesDirectory />
   </PageLayout>
-)
+);
 
-export default ResourcesPage
+export default ResourcesPage;

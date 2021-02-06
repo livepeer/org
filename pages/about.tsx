@@ -1,10 +1,10 @@
-import PageLayout from "components/layouts/page"
-import IconHero from "components/layouts/icon-hero"
-import LivepeerIconSvg from "components/svgs/icons/livepeer"
-import MissionSection from "components/sections/about/mission"
-import WhoIsBuildingSection from "components/sections/about/who-is-building"
-import WhoIsMaintainingSection from "components/sections/about/who-is-maintaining"
-import { HeadProps } from "components/primitives/head"
+import PageLayout from "components/layouts/page";
+import IconHero from "components/layouts/icon-hero";
+import LivepeerIconSvg from "components/svgs/icons/livepeer";
+import MissionSection from "components/sections/about/mission";
+import WhoIsBuildingSection from "components/sections/about/who-is-building";
+import WhoIsMaintainingSection from "components/sections/about/who-is-maintaining";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -14,9 +14,9 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/about",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const AboutPage = () => (
   <PageLayout headProps={headProps}>
@@ -31,6 +31,6 @@ const AboutPage = () => (
     <WhoIsBuildingSection />
     <WhoIsMaintainingSection />
   </PageLayout>
-)
+);
 
-export default AboutPage
+export default AboutPage;

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "theme-ui";
 
 const BlockchainSvg = () => (
   <svg
@@ -7,8 +7,7 @@ const BlockchainSvg = () => (
     viewBox="0 0 586 586"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    sx={{ maxWidth: "100%", width: "586px" }}
-  >
+    sx={{ maxWidth: "100%", width: "586px" }}>
     <mask
       id="blockchain-svg-mask0"
       mask-type="alpha"
@@ -16,8 +15,7 @@ const BlockchainSvg = () => (
       x="0"
       y="0"
       width="586"
-      height="586"
-    >
+      height="586">
       <circle
         cx="293"
         cy="293"
@@ -625,8 +623,7 @@ const BlockchainSvg = () => (
         cy="0"
         r="1"
         gradientUnits="userSpaceOnUse"
-        gradientTransform="translate(293 293) rotate(90) scale(293)"
-      >
+        gradientTransform="translate(293 293) rotate(90) scale(293)">
         <stop />
         <stop offset="1" stopOpacity="0" />
       </radialGradient>
@@ -635,6 +632,6 @@ const BlockchainSvg = () => (
       </clipPath>
     </defs>
   </svg>
-)
+);
 
-export default BlockchainSvg
+export default BlockchainSvg;

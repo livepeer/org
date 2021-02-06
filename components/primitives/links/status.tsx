@@ -1,24 +1,24 @@
 /** @jsx jsx */
-import { jsx, Text, Link as A } from "theme-ui"
-import { useMemo, ElementType } from "react"
-import { LinkProps } from "lib/types/link-props"
-import { FiArrowUpRight } from "react-icons/fi"
-import Link from "next/link"
+import { jsx, Text, Link as A } from "theme-ui";
+import { useMemo, ElementType } from "react";
+import { LinkProps } from "lib/types/link-props";
+import { FiArrowUpRight } from "react-icons/fi";
+import Link from "next/link";
 
 export type StatusLinkProps = {
-  link: LinkProps
-  status: string
-  isDark?: boolean
-  as?: ElementType<any>
-  className?: string
-}
+  link: LinkProps;
+  status: string;
+  isDark?: boolean;
+  as?: ElementType<any>;
+  className?: string;
+};
 
 const StatusLink = ({
   as = "a",
   link,
   status,
   isDark,
-  className
+  className,
 }: StatusLinkProps) => {
   const linkChildren = useMemo(
     () => (
@@ -27,18 +27,16 @@ const StatusLink = ({
           sx={{
             variant: "layout.flexCenter",
             fontWeight: 400,
-            color: isDark ? "background" : "text"
+            color: isDark ? "background" : "text",
           }}
-          className="status_container"
-        >
+          className="status_container">
           <svg
             width="12"
             height="12"
             viewBox="0 0 12 12"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            sx={{ mr: 2 }}
-          >
+            sx={{ mr: 2 }}>
             <circle
               cx="6"
               cy="6"
@@ -55,16 +53,16 @@ const StatusLink = ({
       </>
     ),
     [link, isDark]
-  )
+  );
 
   const linkSx = useMemo(
     () => ({
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center"
+      alignItems: "center",
     }),
     [isDark]
-  )
+  );
 
   if (link.isExternal) {
     return (
@@ -75,11 +73,10 @@ const StatusLink = ({
         target="_blank"
         sx={linkSx}
         as={as}
-        className={className}
-      >
+        className={className}>
         {linkChildren}
       </A>
-    )
+    );
   }
   return (
     <Link href={link.href} as={link.asPath} passHref>
@@ -88,12 +85,11 @@ const StatusLink = ({
         data-dark={isDark}
         sx={linkSx}
         as={as}
-        className={className}
-      >
+        className={className}>
         {linkChildren}
       </A>
     </Link>
-  )
-}
+  );
+};
 
-export default StatusLink
+export default StatusLink;

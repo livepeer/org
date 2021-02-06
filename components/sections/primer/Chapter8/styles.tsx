@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Container = styled.div({
   maxWidth: 1024,
@@ -6,9 +6,9 @@ export const Container = styled.div({
   padding: "20px 24px 0",
   ["@media (min-width: 1024px)"]: {
     padding: 0,
-    margin: "0 auto 200px"
-  }
-})
+    margin: "0 auto 200px",
+  },
+});
 
 export const Title = styled.h2({
   transform: "rotate(-3deg)",
@@ -20,9 +20,9 @@ export const Title = styled.h2({
   ["@media (min-width: 1024px)"]: {
     fontSize: "54px",
     lineHeight: "56px",
-    display: "block"
-  }
-})
+    display: "block",
+  },
+});
 
 export const MobileTitle = styled.h2({
   transform: "rotate(-3deg)",
@@ -33,9 +33,9 @@ export const MobileTitle = styled.h2({
   textTransform: "uppercase",
   marginBottom: "48px",
   ["@media (min-width: 1024px)"]: {
-    display: "none"
-  }
-})
+    display: "none",
+  },
+});
 
 export const Section1 = styled.div({
   display: "flex",
@@ -44,9 +44,9 @@ export const Section1 = styled.div({
   flexDirection: "column-reverse",
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: 80
-  }
-})
+    marginBottom: 80,
+  },
+});
 
 export const Section2 = styled.div({
   display: "flex",
@@ -55,9 +55,9 @@ export const Section2 = styled.div({
   flexDirection: "column-reverse",
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: 120
-  }
-})
+    marginBottom: 120,
+  },
+});
 
 export const Section3 = styled.div({
   display: "flex",
@@ -66,9 +66,9 @@ export const Section3 = styled.div({
   flexDirection: "column-reverse",
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: 80
-  }
-})
+    marginBottom: 80,
+  },
+});
 
 export const Rounds = styled.img({
   width: "100%",
@@ -79,9 +79,9 @@ export const Rounds = styled.img({
     marginBottom: 0,
     width: "auto",
     position: "relative",
-    right: "-160px"
-  }
-})
+    right: "-160px",
+  },
+});
 
 export const RoundMobile = styled.img({
   width: "100%",
@@ -90,12 +90,12 @@ export const RoundMobile = styled.img({
   ["@media (min-width: 1024px)"]: {
     display: "none",
     marginBottom: 0,
-    width: "auto"
-  }
-})
+    width: "auto",
+  },
+});
 
 export const Heading = styled.h3({
   fontSize: "28px",
   lineHeight: "38px",
-  marginBottom: "16px"
-})
+  marginBottom: "16px",
+});

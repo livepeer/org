@@ -1,67 +1,66 @@
-import { Container, Grid } from "theme-ui"
-import Tabs, { TabProps } from "components/primitives/tabs"
-import { useRouter } from "next/router"
-import ImageCard, { ImageCardProps } from "components/primitives/cards/image"
-import { useMemo, useRef, useEffect } from "react"
-import posts, { categories } from "./posts"
-import sectionEffect from "lib/animations/section-effect"
+import { Container, Grid } from "theme-ui";
+import Tabs, { TabProps } from "components/primitives/tabs";
+import { useRouter } from "next/router";
+import ImageCard, { ImageCardProps } from "components/primitives/cards/image";
+import { useMemo, useRef, useEffect } from "react";
+import posts, { categories } from "./posts";
+import sectionEffect from "lib/animations/section-effect";
 
 const ResourcesDirectory = () => {
-  const router = useRouter()
-  const { filter } = router.query
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const router = useRouter();
+  const { filter } = router.query;
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return
-    sectionEffect(sectionRef.current)
-  }, [sectionRef])
+    if (!sectionRef.current) return;
+    sectionEffect(sectionRef.current);
+  }, [sectionRef]);
 
   const filteredCards: ImageCardProps[] = useMemo(() => {
     const filteredPosts = posts.filter((c) =>
       filter ? c.category.value === filter : true
-    )
+    );
     return filteredPosts.map((p) => ({
       title: p.title,
       description: p.description,
       footnote: p.subtitle,
       linkProps: { link: { ...p.link, label: p.category.label }, as: "div" },
       image: p.image,
-      pushContentSx: p.pushContentSx
-    }))
-  }, [posts, filter])
+      pushContentSx: p.pushContentSx,
+    }));
+  }, [posts, filter]);
 
   const handleClick = (value?: string) => {
-    if (!value) return router.push("/resources")
-    return router.push(`/resources?filter=${value}`)
-  }
+    if (!value) return router.push("/resources");
+    return router.push(`/resources?filter=${value}`);
+  };
 
   const tabs: TabProps[] = useMemo(
     () => [
       {
         label: "All",
         onClick: () => {
-          handleClick()
+          handleClick();
         },
-        isSelected: !filter
+        isSelected: !filter,
       },
       ...categories.map((c) => ({
         label: c.label,
         onClick: () => {
-          handleClick(c.value)
+          handleClick(c.value);
         },
-        isSelected: filter === c.value
-      }))
+        isSelected: filter === c.value,
+      })),
     ],
     [filter, categories]
-  )
+  );
 
   return (
     <Container
       id="tabs"
       variant="section"
       className="hide__section"
-      ref={sectionRef}
-    >
+      ref={sectionRef}>
       <Tabs
         items={tabs}
         pushSx={{ justifyContent: ["flex-start", "center"] }}
@@ -72,14 +71,13 @@ const ResourcesDirectory = () => {
           null,
           "repeat(2, minmax(auto, 366px))",
           null,
-          "repeat(3, 366px)"
+          "repeat(3, 366px)",
         ]}
         gap={4}
         sx={{
           my: 5,
-          justifyContent: "center"
-        }}
-      >
+          justifyContent: "center",
+        }}>
         {filteredCards.map((c) => (
           <ImageCard
             {...c}
@@ -88,13 +86,13 @@ const ResourcesDirectory = () => {
             pushContentSx={{
               height: "315px",
               overflow: "hidden",
-              ...c.pushContentSx
+              ...c.pushContentSx,
             }}
           />
         ))}
       </Grid>
     </Container>
-  )
-}
+  );
+};
 
-export default ResourcesDirectory
+export default ResourcesDirectory;

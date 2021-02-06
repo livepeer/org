@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from "next/document"
-import { GA_TRACKING_ID } from "../lib/gtag"
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
 export default class MyDocument extends Document {
   render() {
@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
             gtag('config', '${GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
-          `
+          `,
             }}
           />
         </Head>
@@ -29,6 +29,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }

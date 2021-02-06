@@ -1,9 +1,9 @@
-import { Box, Container, Grid, Flex, Text } from "theme-ui"
-import Divider from "components/primitives/divider"
-import FooterList, { FooterListProps } from "./list"
-import LogoAndEmail from "./logo-and-email"
-import PrefooterBanner from "./prefooter-banner"
-import PrefooterFaqBanner from "./prefooter-faq-banner"
+import { Box, Container, Grid, Flex, Text } from "theme-ui";
+import Divider from "components/primitives/divider";
+import FooterList, { FooterListProps } from "./list";
+import LogoAndEmail from "./logo-and-email";
+import PrefooterBanner from "./prefooter-banner";
+import PrefooterFaqBanner from "./prefooter-faq-banner";
 
 const lists: FooterListProps[] = [
   {
@@ -14,14 +14,14 @@ const lists: FooterListProps[] = [
       {
         label: "Protocol Explorer",
         href: "https://explorer.livepeer.org/",
-        isExternal: true
+        isExternal: true,
       },
       {
         label: "The Grant Program",
         href: "https://github.com/livepeer/Grant-Program",
-        isExternal: true
-      }
-    ]
+        isExternal: true,
+      },
+    ],
   },
   {
     title: "Developers",
@@ -29,28 +29,28 @@ const lists: FooterListProps[] = [
       {
         label: "Documentation",
         href: "https://livepeer.readthedocs.io/",
-        isExternal: true
+        isExternal: true,
       },
       { label: "Livepeer.com", href: "https://livepeer.com", isExternal: true },
-      { label: "Open Source Software", href: "/oss" }
-    ]
+      { label: "Open Source Software", href: "/oss" },
+    ],
   },
   {
     title: "Resources",
     items: [
       {
         label: "10-minute Primer",
-        href: "/primer"
+        href: "/primer",
       },
       {
         label: "The Whitepaper",
         href: "https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md",
-        isExternal: true
+        isExternal: true,
       },
       { label: "FAQ", href: "/faq" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "About Livepeer.org", href: "/about" }
-    ]
+      { label: "About Livepeer.org", href: "/about" },
+    ],
   },
   {
     title: "Community",
@@ -58,40 +58,40 @@ const lists: FooterListProps[] = [
       {
         label: "Twitter",
         href: "https://twitter.com/LivepeerOrg",
-        isExternal: true
+        isExternal: true,
       },
       {
         label: "Discord Chat",
         href: "https://discord.gg/uaPhtyrWsF",
-        isExternal: true
+        isExternal: true,
       },
       { label: "Forum", href: "https://forum.livepeer.org/", isExternal: true },
       {
         label: "Reddit",
         href: "https://www.reddit.com/r/livepeer/",
-        isExternal: true
-      }
-    ]
-  }
-]
+        isExternal: true,
+      },
+    ],
+  },
+];
 
 type Prefooter =
   | {
-      type: "none"
+      type: "none";
     }
   | {
-      type: "subscribe"
+      type: "subscribe";
     }
-  | { type: "faqs"; cta?: { label: string; href: string; asPath?: string } }
+  | { type: "faqs"; cta?: { label: string; href: string; asPath?: string } };
 
 export type FooterProps = {
-  isDark?: boolean
-  prefooter?: Prefooter
-}
+  isDark?: boolean;
+  prefooter?: Prefooter;
+};
 
 const Footer = ({
   isDark = false,
-  prefooter = { type: "subscribe" }
+  prefooter = { type: "subscribe" },
 }: FooterProps) => (
   <Box as="footer" bg={isDark ? "text" : "background"}>
     {prefooter?.type === "subscribe" && <PrefooterBanner />}
@@ -102,7 +102,7 @@ const Footer = ({
           pushSx={{
             display: ["flex", null, null, "none"],
             flexDirection: "column",
-            mb: 5
+            mb: 5,
           }}
           pushLogoSx={{ mr: 0, mb: 3 }}
           id="footer-logo-mobile"
@@ -112,11 +112,10 @@ const Footer = ({
             "minmax(auto, 184px)",
             null,
             null,
-            "repeat(4, minmax(auto, 184px))"
+            "repeat(4, minmax(auto, 184px))",
           ]}
           gap={[5, null, null, 0]}
-          sx={{ justifyContent: ["center", null, null, "space-between"] }}
-        >
+          sx={{ justifyContent: ["center", null, null, "space-between"] }}>
           {lists.map((list) => (
             <FooterList key={`footer-list-${list.title}`} {...list} />
           ))}
@@ -126,29 +125,27 @@ const Footer = ({
           pushSx={{
             opacity: 0.1,
             bg: ["transparent", null, null, "background"],
-            my: 4
+            my: 4,
           }}
         />
         <Flex
           sx={{
             justifyContent: ["center", null, null, "space-between"],
-            alignItems: "center"
-          }}
-        >
+            alignItems: "center",
+          }}>
           <LogoAndEmail
             pushSx={{ display: ["none", null, null, "flex"] }}
             id="footer-logo-desktop"
           />
           <Text
             variant="small"
-            sx={{ textAlign: ["center", null, null, "left"] }}
-          >
+            sx={{ textAlign: ["center", null, null, "left"] }}>
             Copyright © 2020 Livepeer, Inc. All rights reserved.
           </Text>
         </Flex>
       </Container>
     </Box>
   </Box>
-)
+);
 
-export default Footer
+export default Footer;

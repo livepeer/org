@@ -11,7 +11,8 @@
     "lint": "(eslint . && prettier --check '**/*.{js,ts,tsx}' --loglevel warn) || yarn lint:warn",
     "lint:warn": "echo '\\nError: Not all files are pretty, run yarn lint:fix\\n'",
     "lint:fix": "eslint . --fix --rule 'react-hooks/exhaustive-deps: off' && prettier --write '**/*.{js,ts,tsx}'",
-    "lint:staged": "lint-staged --quiet"
+    "lint:staged": "lint-staged --quiet",
+    "prettier": "prettier --write '**/*.{ts,js,css,html,md,tsx,mdx,yaml,yml,gql,graphql,json}'"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -39,6 +40,7 @@
     "three": "^0.119.1"
   },
   "devDependencies": {
+    "@livepeer/prettier-config": "^1.0.1",
     "@types/classnames": "^2.2.10",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.44",
@@ -53,8 +55,8 @@
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "typescript": "^3.9.7"
   },
   "yarn-upgrade-all": {
@@ -67,5 +69,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{ts,js,css,html,md,tsx,mdx,yaml,yml,gql,graphql,json}": "prettier --write"
   }
 }

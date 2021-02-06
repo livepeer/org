@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import { css, keyframes } from "@emotion/core"
+import styled from "@emotion/styled";
+import { css, keyframes } from "@emotion/core";
 
 export const Root = styled.div({
   backgroundSize: "contain",
@@ -8,9 +8,9 @@ export const Root = styled.div({
   height: "100%",
   backgroundPosition: "100% 80%",
   ["@media (min-width: 1124px)"]: {
-    backgroundImage: "url(/images/primer/tvs.svg)"
-  }
-})
+    backgroundImage: "url(/images/primer/tvs.svg)",
+  },
+});
 
 export const Container = styled.div({
   display: "flex",
@@ -24,16 +24,16 @@ export const Container = styled.div({
     margin: "0 auto",
     justifyContent: "center",
     height: "calc(100vh - 116px )",
-    padding: 0
-  }
-})
+    padding: 0,
+  },
+});
 
 export const Body = styled.div({
   alignSelf: "flex-start",
-  margin: "0 auto"
-})
+  margin: "0 auto",
+});
 
-export const Heading = styled.h1({})
+export const Heading = styled.h1({});
 
 export const Subheading = styled.h2({
   transform: "rotate(2deg)",
@@ -44,8 +44,8 @@ export const Subheading = styled.h2({
   fontWeight: 100,
   marginBottom: 16,
   textTransform: "uppercase",
-  fontFamily: "Roboto Mono !important"
-})
+  fontFamily: "Roboto Mono !important",
+});
 
 const scrollPrompt = keyframes`
   0%, 100%, 70% {
@@ -56,11 +56,11 @@ const scrollPrompt = keyframes`
   85% {
     transform: translate3d(-50%,160%,0)
   }
-`
+`;
 
 const scrollPromptRule = css`
   ${scrollPrompt} 4s linear infinite;
-`
+`;
 
 export const Arrow = styled.div`
   z-index: 2;
@@ -74,4 +74,4 @@ export const Arrow = styled.div`
   @media (min-width: 1024px) {
     bottom: 72px;
   }
-`
+`;

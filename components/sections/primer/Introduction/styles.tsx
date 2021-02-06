@@ -1,13 +1,13 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const Container = styled.div({
   maxWidth: "1024px",
   margin: "60px auto 80px",
   padding: "0 24px",
   ["@media (min-width: 1024px)"]: {
-    margin: "100px auto 200px"
-  }
-})
+    margin: "100px auto 200px",
+  },
+});
 
 export const Section1 = styled.div({
   display: "flex",
@@ -16,16 +16,16 @@ export const Section1 = styled.div({
   flexDirection: "column-reverse",
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: 80
-  }
-})
+    marginBottom: 80,
+  },
+});
 
 export const PieChart = styled.img({
   width: "100%",
   ["@media (min-width: 1024px)"]: {
-    marginRight: 120
-  }
-})
+    marginRight: 120,
+  },
+});
 
 export const Section2 = styled.div({
   display: "flex",
@@ -35,21 +35,21 @@ export const Section2 = styled.div({
   flexDirection: "column",
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: 0
-  }
-})
+    marginBottom: 0,
+  },
+});
 
 export const TranscodingIn = styled.img({
   width: "100%",
   transform: "translateX(70px) scale(1.5)",
   ["@media (min-width: 768px)"]: {
     transform: "initial",
-    width: "auto"
+    width: "auto",
   },
   ["@media (min-width: 1024px)"]: {
-    width: "auto"
-  }
-})
+    width: "auto",
+  },
+});
 
 export const TranscodingOut = styled.img({
   width: "100%",
@@ -58,28 +58,28 @@ export const TranscodingOut = styled.img({
   position: "relative",
   ["@media (min-width: 768px)"]: {
     left: "initial",
-    width: "auto"
+    width: "auto",
   },
   ["@media (min-width: 1024px)"]: {
     position: "relative",
     marginBottom: 0,
     width: "auto",
     top: 160,
-    left: -230
-  }
-})
+    left: -230,
+  },
+});
 
 export const TranscoderRunning = styled.img({
   width: "100%",
   marginBottom: 40,
   ["@media (min-width: 768px)"]: {
-    width: "auto"
+    width: "auto",
   },
   ["@media (min-width: 1024px)"]: {
     width: "auto",
-    marginBottom: 0
-  }
-})
+    marginBottom: 0,
+  },
+});
 
 export const Section3 = styled.div({
   display: "flex",
@@ -90,9 +90,9 @@ export const Section3 = styled.div({
   flexDirection: "column",
   ["@media (min-width: 1024px)"]: {
     flexDirection: "row",
-    marginBottom: 200
-  }
-})
+    marginBottom: 200,
+  },
+});
 
 export const Section4 = styled.div({
   display: "flex",
@@ -104,9 +104,9 @@ export const Section4 = styled.div({
   ["@media (min-width: 1024px)"]: {
     marginTop: -80,
     flexDirection: "row",
-    marginBottom: 120
-  }
-})
+    marginBottom: 120,
+  },
+});
 
 export const Section5 = styled.div({
   display: "flex",
@@ -115,9 +115,9 @@ export const Section5 = styled.div({
   flexDirection: "column-reverse",
   ["@media (min-width: 1024px)"]: {
     marginBottom: 140,
-    flexDirection: "row"
-  }
-})
+    flexDirection: "row",
+  },
+});
 
 export const Section6 = styled.div({
   display: "flex",
@@ -127,9 +127,9 @@ export const Section6 = styled.div({
   margin: "0 auto",
   p: {
     fontSize: "28px",
-    lineHeight: "38px"
-  }
-})
+    lineHeight: "38px",
+  },
+});
 
 export const Scissors = styled.img({
   width: "100%",
@@ -138,8 +138,8 @@ export const Scissors = styled.img({
     position: "relative",
     marginBottom: 0,
     marginLeft: "-380px",
-    marginRight: "120px"
-  }
-})
+    marginRight: "120px",
+  },
+});
 
-export const Text = styled.div({})
+export const Text = styled.div({});

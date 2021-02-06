@@ -1,4 +1,4 @@
-import { request } from "graphql-request"
+import { request } from "graphql-request";
 
 /**
  *
@@ -6,14 +6,14 @@ import { request } from "graphql-request"
  * Solution: Iterate through all parent elements and sum all offsets
  */
 const getPageOffsetLeft = (elem: HTMLElement | null) => {
-  if (!elem) return
-  let distance = 0
+  if (!elem) return;
+  let distance = 0;
   do {
-    distance += elem.offsetLeft
-    elem = elem.offsetParent as HTMLElement | null
-  } while (elem)
-  return distance < 0 ? 0 : distance
-}
+    distance += elem.offsetLeft;
+    elem = elem.offsetParent as HTMLElement | null;
+  } while (elem);
+  return distance < 0 ? 0 : distance;
+};
 
 const nFormatter = (num, digits) => {
   var si = [
@@ -23,19 +23,19 @@ const nFormatter = (num, digits) => {
     { value: 1e9, symbol: "G" },
     { value: 1e12, symbol: "T" },
     { value: 1e15, symbol: "P" },
-    { value: 1e18, symbol: "E" }
-  ]
-  var rx = /\.0+$|(\.[0-9]*[1-9])0+$/
-  var i
+    { value: 1e18, symbol: "E" },
+  ];
+  var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+  var i;
   for (i = si.length - 1; i > 0; i--) {
     if (num >= si[i].value) {
-      break
+      break;
     }
   }
   return (
     (num / si[i].value).toFixed(digits).replace(rx, "$1") + " " + si[i].symbol
-  )
-}
+  );
+};
 
 const getTotalActiveStake = async () => {
   const graphqlResponse = await fetch(
@@ -44,20 +44,20 @@ const getTotalActiveStake = async () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
       },
       body: JSON.stringify({
-        query: '{ protocol(id: "0") { totalActiveStake } } '
-      })
+        query: '{ protocol(id: "0") { totalActiveStake } } ',
+      }),
     }
-  )
+  );
   const {
     data: {
-      protocol: { totalActiveStake }
-    }
-  } = await graphqlResponse.json()
-  return totalActiveStake
-}
+      protocol: { totalActiveStake },
+    },
+  } = await graphqlResponse.json();
+  return totalActiveStake;
+};
 
 const getTotalVolume = async () => {
   const graphqlResponse = await fetch(
@@ -66,29 +66,29 @@ const getTotalVolume = async () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
       },
       body: JSON.stringify({
-        query: '{ protocol(id: "0") { totalVolumeUSD } } '
-      })
+        query: '{ protocol(id: "0") { totalVolumeUSD } } ',
+      }),
     }
-  )
+  );
   const {
     data: {
-      protocol: { totalVolumeUSD }
-    }
-  } = await graphqlResponse.json()
-  return totalVolumeUSD
-}
+      protocol: { totalVolumeUSD },
+    },
+  } = await graphqlResponse.json();
+  return totalVolumeUSD;
+};
 
 const getTotalDelegators = async () => {
-  const PAGE_SIZE = 100
+  const PAGE_SIZE = 100;
   const reqDelegators = async (skip) => {
     const query = `query delegators ($skip: Int $where: Delegator_filter) {
     delegators(skip: $skip where: $where) {
       id
     }
-  }`
+  }`;
     let response = await request(
       "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
       query,
@@ -96,31 +96,31 @@ const getTotalDelegators = async () => {
         first: PAGE_SIZE,
         skip: skip,
         where: {
-          bondedAmount_not: 0
-        }
+          bondedAmount_not: 0,
+        },
       }
-    )
-    return response.delegators
-  }
+    );
+    return response.delegators;
+  };
 
-  let delegators = []
-  let keepGoing = true
-  let skip = 0
+  let delegators = [];
+  let keepGoing = true;
+  let skip = 0;
   while (keepGoing) {
-    let response = await reqDelegators(skip)
-    await delegators.push.apply(delegators, response)
-    skip += PAGE_SIZE
+    let response = await reqDelegators(skip);
+    await delegators.push.apply(delegators, response);
+    skip += PAGE_SIZE;
     if (response.length < PAGE_SIZE) {
-      keepGoing = false
+      keepGoing = false;
     }
   }
-  return delegators.length
-}
+  return delegators.length;
+};
 
 export {
   getPageOffsetLeft,
   nFormatter,
   getTotalActiveStake,
   getTotalDelegators,
-  getTotalVolume
-}
+  getTotalVolume,
+};

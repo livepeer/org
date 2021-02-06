@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui"
-import OpenSourceSection from "components/sections/oss/open-source"
-import GetInvolvedSection from "components/sections/oss/get-involved"
-import PageLayout from "components/layouts/page"
-import IconHero from "components/layouts/icon-hero"
-import { FiHeart } from "react-icons/fi"
-import { HeadProps } from "components/primitives/head"
+import { jsx, Box } from "theme-ui";
+import OpenSourceSection from "components/sections/oss/open-source";
+import GetInvolvedSection from "components/sections/oss/get-involved";
+import PageLayout from "components/layouts/page";
+import IconHero from "components/layouts/icon-hero";
+import { FiHeart } from "react-icons/fi";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -15,9 +15,9 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/oss",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const CoverImage = () => (
   <figure
@@ -26,9 +26,8 @@ const CoverImage = () => (
       top: "50%",
       left: "50%",
       transform: "translate(-50%,-50%)",
-      userSelect: "none"
-    }}
-  >
+      userSelect: "none",
+    }}>
     <img
       sx={{ minWidth: "1440px", maxWidth: "1440px" }}
       src="/images/contributors.png"
@@ -43,7 +42,7 @@ const CoverImage = () => (
         left: "50%",
         transform: "translateX(-50%)",
         background:
-          "linear-gradient(90deg, #131418 18.82%, rgba(19, 20, 24, 0) 100%)"
+          "linear-gradient(90deg, #131418 18.82%, rgba(19, 20, 24, 0) 100%)",
       }}
     />
     <Box
@@ -55,11 +54,11 @@ const CoverImage = () => (
         height: "270px",
         left: "50%",
         transform: "translateX(-50%)",
-        background: "rgba(19, 20, 24, 0.7)"
+        background: "rgba(19, 20, 24, 0.7)",
       }}
     />
   </figure>
-)
+);
 
 const CodePage = () => (
   <PageLayout headProps={headProps} pushContentSx={{ bg: "text" }} isDark>
@@ -74,6 +73,6 @@ const CodePage = () => (
     <OpenSourceSection />
     <GetInvolvedSection />
   </PageLayout>
-)
+);
 
-export default CodePage
+export default CodePage;

@@ -1,69 +1,69 @@
 /** @jsx jsx */
-import { jsx, SxStyleProp } from "theme-ui"
-import Link from "next/link"
-import { useMemo, useRef, useEffect, useState, useCallback } from "react"
-import gsap from "gsap"
-import { DURATION } from "lib/animations"
+import { jsx, SxStyleProp } from "theme-ui";
+import Link from "next/link";
+import { useMemo, useRef, useEffect, useState, useCallback } from "react";
+import gsap from "gsap";
+import { DURATION } from "lib/animations";
 
 type Props = {
-  pushSx?: SxStyleProp
-  isDark?: boolean
-  isLink?: boolean
-  disableHover?: boolean
-  id?: string
-}
+  pushSx?: SxStyleProp;
+  isDark?: boolean;
+  isLink?: boolean;
+  disableHover?: boolean;
+  id?: string;
+};
 
 const LivepeerLogo = ({
   pushSx,
   isDark,
   isLink = true,
   disableHover = false,
-  id = ""
+  id = "",
 }: Props) => {
-  const [hover, setHover] = useState(false)
-  const svgRef = useRef(null)
+  const [hover, setHover] = useState(false);
+  const svgRef = useRef(null);
 
-  const handleMouseOver = useCallback(() => setHover(true), [])
-  const handleMouseOut = useCallback(() => setHover(false), [])
+  const handleMouseOver = useCallback(() => setHover(true), []);
+  const handleMouseOut = useCallback(() => setHover(false), []);
 
   useEffect(() => {
-    const node = svgRef.current
+    const node = svgRef.current;
     if (node) {
-      node.addEventListener("mouseover", handleMouseOver)
-      node.addEventListener("mouseout", handleMouseOut)
+      node.addEventListener("mouseover", handleMouseOver);
+      node.addEventListener("mouseout", handleMouseOut);
 
       return () => {
-        node.removeEventListener("mouseover", handleMouseOver)
-        node.removeEventListener("mouseout", handleMouseOut)
-      }
+        node.removeEventListener("mouseover", handleMouseOver);
+        node.removeEventListener("mouseout", handleMouseOut);
+      };
     }
-  }, [svgRef])
+  }, [svgRef]);
 
   useEffect(() => {
-    if (!svgRef.current) return
+    if (!svgRef.current) return;
 
-    const words = svgRef.current.querySelectorAll(".w-animate")
-    const color1 = svgRef.current.querySelector(".w-color-1")
-    const color2 = svgRef.current.querySelector(".w-color-2")
-    const hexDark = isDark ? "#fff" : "#131418"
-    const hexHover1 = isDark ? "#fefefe" : "#1f2027"
-    const hexHover2 = isDark ? "#ffffff" : "#131418"
+    const words = svgRef.current.querySelectorAll(".w-animate");
+    const color1 = svgRef.current.querySelector(".w-color-1");
+    const color2 = svgRef.current.querySelector(".w-color-2");
+    const hexDark = isDark ? "#fff" : "#131418";
+    const hexHover1 = isDark ? "#fefefe" : "#1f2027";
+    const hexHover2 = isDark ? "#ffffff" : "#131418";
 
     gsap.to(color1, {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover1 : disableHover ? "#131418" : "#00A55F"
-      }
-    })
+        "stop-color": hover ? hexHover1 : disableHover ? "#131418" : "#00A55F",
+      },
+    });
 
     gsap.to(color2, {
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover2 : disableHover ? "#131418" : "#4CF1AC"
-      }
-    })
+        "stop-color": hover ? hexHover2 : disableHover ? "#131418" : "#4CF1AC",
+      },
+    });
 
     gsap.to(words, {
       duration: DURATION,
@@ -71,10 +71,10 @@ const LivepeerLogo = ({
       stagger: {
         each: 0.03,
         from: "end",
-        ease: "sine.inOut"
-      }
-    })
-  }, [hover, svgRef])
+        ease: "sine.inOut",
+      },
+    });
+  }, [hover, svgRef]);
 
   const markup = useMemo(
     () => (
@@ -83,8 +83,7 @@ const LivepeerLogo = ({
         sx={{ width: "123px", height: "34px", ...pushSx }}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        ref={svgRef}
-      >
+        ref={svgRef}>
         <path
           className="w-animate"
           fillRule="evenodd"
@@ -148,8 +147,7 @@ const LivepeerLogo = ({
             y1="17.0847"
             x2="33.6519"
             y2="17.0848"
-            gradientUnits="userSpaceOnUse"
-          >
+            gradientUnits="userSpaceOnUse">
             <stop
               className="w-color-1"
               stopColor={disableHover ? "#131418" : "#00A55F"}
@@ -164,14 +162,14 @@ const LivepeerLogo = ({
       </svg>
     ),
     [pushSx, isDark]
-  )
+  );
 
-  if (!isLink) return markup
+  if (!isLink) return markup;
   return (
     <Link href="/" passHref>
       <a>{markup}</a>
     </Link>
-  )
-}
+  );
+};
 
-export default LivepeerLogo
+export default LivepeerLogo;

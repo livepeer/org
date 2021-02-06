@@ -1,8 +1,8 @@
-import IsOpenSourceSection from "components/sections/developers/is-open-source"
-import PageLayout from "components/layouts/page"
-import DevelopersHero from "components/sections/developers/hero"
-import HugeCardsSection from "components/sections/developers/huge-cards"
-import { HeadProps } from "components/primitives/head"
+import IsOpenSourceSection from "components/sections/developers/is-open-source";
+import PageLayout from "components/layouts/page";
+import DevelopersHero from "components/sections/developers/hero";
+import HugeCardsSection from "components/sections/developers/huge-cards";
+import { HeadProps } from "components/primitives/head";
 
 const headProps: HeadProps = {
   meta: {
@@ -12,9 +12,9 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/developers",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg"
-  }
-}
+    twitterUsername: "@LivepeerOrg",
+  },
+};
 
 const CodePage = () => (
   <PageLayout headProps={headProps} pushContentSx={{ bg: "text" }}>
@@ -22,6 +22,6 @@ const CodePage = () => (
     <HugeCardsSection />
     <IsOpenSourceSection />
   </PageLayout>
-)
+);
 
-export default CodePage
+export default CodePage;

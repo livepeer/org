@@ -1,10 +1,12 @@
 /** @jsx jsx */
-import SectionLayout from "components/layouts/section"
-import { jsx, Link as A } from "theme-ui"
-import StatusCard, { StatusCardProps } from "components/primitives/cards/status"
-import Divider from "components/primitives/divider"
-import KeenSliderGrid from "components/layouts/keen-slider-grid"
-import { FiArrowUpRight } from "react-icons/fi"
+import SectionLayout from "components/layouts/section";
+import { jsx, Link as A } from "theme-ui";
+import StatusCard, {
+  StatusCardProps,
+} from "components/primitives/cards/status";
+import Divider from "components/primitives/divider";
+import KeenSliderGrid from "components/layouts/keen-slider-grid";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const cards: StatusCardProps[] = [
   {
@@ -14,11 +16,11 @@ const cards: StatusCardProps[] = [
       link: {
         label: "/go-livepeer",
         href: "https://github.com/livepeer/go-livepeer",
-        isExternal: true
+        isExternal: true,
       },
-      status: "Go"
+      status: "Go",
     },
-    isClickable: true
+    isClickable: true,
   },
   {
     title: "Protocol",
@@ -27,11 +29,11 @@ const cards: StatusCardProps[] = [
       link: {
         label: "/protocol",
         href: "https://github.com/livepeer/protocol",
-        isExternal: true
+        isExternal: true,
       },
-      status: "Solidity"
+      status: "Solidity",
     },
-    isClickable: true
+    isClickable: true,
   },
   {
     title: "Livepeer Media Server",
@@ -41,13 +43,13 @@ const cards: StatusCardProps[] = [
       link: {
         label: "/lpms",
         href: "https://github.com/livepeer/lpms",
-        isExternal: true
+        isExternal: true,
       },
-      status: "Go"
+      status: "Go",
     },
-    isClickable: true
-  }
-]
+    isClickable: true,
+  },
+];
 
 const OpenSourceSection = () => (
   <SectionLayout
@@ -58,18 +60,16 @@ const OpenSourceSection = () => (
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      py: "160px"
+      py: "160px",
     }}
     headingContainerPushSx={{ mb: 4 }}
-    withAnimation
-  >
+    withAnimation>
     <A
       href="https://github.com/livepeer/"
       target="_blank"
       rel="noopener noreferrer"
       variant="buttons.primary"
-      sx={{ display: "flex" }}
-    >
+      sx={{ display: "flex" }}>
       View All Projects{" "}
       <i sx={{ ml: 2, fontSize: 4 }}>
         <FiArrowUpRight />
@@ -80,9 +80,8 @@ const OpenSourceSection = () => (
       breakpoints={[
         { value: "320px", slidesPerView: 1 },
         { value: "664px", slidesPerView: 2 },
-        { value: "1152px", slidesPerView: 3 }
-      ]}
-    >
+        { value: "1152px", slidesPerView: 3 },
+      ]}>
       {cards.map((card) => (
         <StatusCard
           key={`card-${card.title}`}
@@ -93,6 +92,6 @@ const OpenSourceSection = () => (
       ))}
     </KeenSliderGrid>
   </SectionLayout>
-)
+);
 
-export default OpenSourceSection
+export default OpenSourceSection;
