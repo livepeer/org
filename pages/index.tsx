@@ -56,7 +56,7 @@ export async function getStaticProps() {
   return {
     props: {
       youtubeVideos: youtubeData.items,
-      totalActiveStake: totalActiveStake / 10e17,
+      totalActiveStake: totalActiveStake,
     },
     revalidate: 1,
   };
