@@ -113,9 +113,7 @@ const ImageCard = ({
               marginTop: "auto",
             }}>
             {footnote && (
-              <Text
-                variant="small"
-                sx={{ mb: 3, color: title ? "lightGray" : "gray" }}>
+              <Text variant="small" sx={{ mb: 3, color: "gray" }}>
                 {footnote}
               </Text>
             )}
@@ -126,15 +124,16 @@ const ImageCard = ({
       </Card>
     ),
     [
+      isLink,
+      className,
+      pushSx,
+      gradientEffect,
+      image,
+      pushContentSx,
       title,
       description,
       footnote,
       linkProps,
-      image,
-      className,
-      pushSx,
-      pushContentSx,
-      isLink,
     ]
   );
 
@@ -145,6 +144,7 @@ const ImageCard = ({
         href={linkProps.link.href}
         className={className}
         target="_blank"
+        rel="noopener"
         sx={{ overflow: "visible" }}>
         {markup}
       </a>
