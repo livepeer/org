@@ -25,7 +25,7 @@
     "graphql-request": "^2.0.0",
     "gsap": "./lib/animations/gsap-bonus.tgz",
     "keen-slider": "^5.2.2",
-    "next": "^9.5.1",
+    "next": "^10.0.7",
     "next-compose-plugins": "^2.2.0",
     "next-svgr": "^0.0.2",
     "next-transpile-modules": "^4.0.2",

@@ -41,7 +41,7 @@ const KeenSliderGrid: React.FC<Props> = ({
 }) => {
   const [slidesPerView, setSlidesPerView] = useState(3);
 
-  const [sliderRef, slider] = useKeenSlider({
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     slidesPerView,
     duration: 1000,
     spacing: 20,
@@ -92,13 +92,13 @@ const KeenSliderGrid: React.FC<Props> = ({
         }
       });
     };
-  }, [breakpoints]);
+  }, [breakpoints, handleScreenSizeChange]);
 
   return (
     <>
       <Box
         className="keen-slider"
-        ref={sliderRef as React.RefObject<HTMLDivElement>}
+        ref={sliderRef}
         sx={{
           position: "relative",
           overflow: "visible",
@@ -124,6 +124,7 @@ const KeenSliderGrid: React.FC<Props> = ({
       {withArrowControls && (
         <Box sx={{ variant: "layout.flexCenter", mt: 4 }}>
           <IconButton
+            aria-label="go left"
             sx={{
               borderRadius: "full",
               border: "1px solid",
@@ -138,6 +139,7 @@ const KeenSliderGrid: React.FC<Props> = ({
             <FiChevronLeft />
           </IconButton>
           <IconButton
+            aria-label="go right"
             sx={{
               borderRadius: "full",
               border: "1px solid",

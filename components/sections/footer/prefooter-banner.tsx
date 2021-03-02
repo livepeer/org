@@ -1,5 +1,14 @@
 import { useForm } from "react-hook-form";
-import { Container, Heading, Text, Box, Flex, Input, Button } from "theme-ui";
+import {
+  Container,
+  Heading,
+  Text,
+  Box,
+  Flex,
+  Input,
+  Button,
+  Label,
+} from "theme-ui";
 import PrefooterSvg from "components/svgs/prefooter";
 import { useMailchimp } from "react-use-mailchimp";
 
@@ -75,12 +84,6 @@ const PrefooterBanner = () => {
             zIndex: "general",
             position: "relative",
           }}>
-          <input
-            type="checkbox"
-            name="BOT"
-            ref={register}
-            style={{ opacity: 0, position: "absolute", left: "-9999px" }}
-          />
           <Heading
             variant="heading.3"
             sx={{ textAlign: ["center", null, null, "left"] }}>
@@ -103,8 +106,12 @@ const PrefooterBanner = () => {
               mx: [-1, 0],
               zIndex: "general",
             }}>
+            <Label variant="srOnly" htmlFor="prefooter-email-input">
+              Email
+            </Label>
             <Input
               ref={register}
+              id="prefooter-email-input"
               name="EMAIL"
               type="email"
               placeholder="Enter your email address"
