@@ -1,7 +1,7 @@
 {
   "root": true,
-  "parser": "babel-eslint",
-  "plugins": ["react", "react-hooks"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "env": {
     "browser": true,
     "commonjs": true,
