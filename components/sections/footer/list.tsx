@@ -43,6 +43,7 @@ const FooterList = ({ title, items }: FooterListProps) => (
               alignItems: "center",
             }}
             target="_blank"
+            rel="noopener"
             data-dark>
             {item.label}
             <i sx={{ variant: "layout.flexCenter", ml: 1 }}>
