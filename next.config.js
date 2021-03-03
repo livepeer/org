@@ -1,5 +1,4 @@
 const withPlugins = require('next-compose-plugins');
-const withMDX = require('@next/mdx')();
 const withSvgr = require('next-svgr');
 const withTM = require('next-transpile-modules')([
   'gsap',
@@ -10,8 +9,4 @@ const withTM = require('next-transpile-modules')([
   'react-use-mailchimp',
 ]);
 
-module.exports = withPlugins([
-  withSvgr,
-  [withMDX, { pageExtensions: ['mdx', 'tsx'] }],
-  withTM,
-]);
+module.exports = withPlugins([withSvgr, withTM]);
