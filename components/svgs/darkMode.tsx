@@ -108,7 +108,7 @@ export const SearchIcon = ({ color }: Props) => {
   );
 };
 
-export const MobileMenuIcon = () => {
+export const MobileMenuIcon = ({ color }) => {
   return (
     <svg
       width="24"
@@ -118,42 +118,42 @@ export const MobileMenuIcon = () => {
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M8 6H21"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M8 12H21"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M8 18H21"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3 6H3.01"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3 12H3.01"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3 18H3.01"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -162,7 +162,7 @@ export const MobileMenuIcon = () => {
   );
 };
 
-export const CloseMobileNav = () => {
+export const CloseMobileNav = ({ color }) => {
   return (
     <svg
       width="24"
@@ -172,14 +172,14 @@ export const CloseMobileNav = () => {
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M18 6L6 18"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M6 6L18 18"
-        stroke="#131418"
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
