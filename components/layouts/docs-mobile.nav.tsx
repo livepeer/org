@@ -9,9 +9,15 @@ import {
   CloseMobileNav,
 } from "components/svgs/darkMode";
 
-const DocsMobileNav = () => {
+type Props = {
+  setColorMode: React.Dispatch<React.SetStateAction<string>>;
+  colorMode: string;
+};
+
+const DocsMobileNav = ({ setColorMode, colorMode }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [inputOpen, setInputOpen] = useState<boolean>(false);
+
   return (
     <div
       sx={{
@@ -21,6 +27,7 @@ const DocsMobileNav = () => {
           "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
         overflow: "hidden",
         position: "relative",
+        backgroundColor: "docsBackground",
       }}>
       <div
         sx={{
@@ -28,7 +35,7 @@ const DocsMobileNav = () => {
           padding: "9px 32px",
           position: "absolute",
           left: "0",
-          background: "white",
+          backgroundColor: "docsBackground",
           zIndex: "100",
           transform: inputOpen ? "translateX(-150%)" : "0",
           justifyContent: "space-between",
@@ -44,13 +51,13 @@ const DocsMobileNav = () => {
             transition: "all 0.3s",
           }}>
           <LivepeerIconSvg pushSx={{ width: "24px", height: "22px" }} />
-          <p sx={{ color: "#A5A5A5", fontSize: "16px", ml: "8px" }}>
+          <p sx={{ color: "docsLightGray", fontSize: "16px", ml: "8px" }}>
             /{" "}
             <span
               sx={{
                 fontWeight: "bold",
                 fontSize: "16px",
-                color: "#131418",
+                color: "docsText",
                 ml: "6px",
               }}>
               Docs
@@ -59,10 +66,10 @@ const DocsMobileNav = () => {
         </div>
         <div sx={{ display: "flex", alignItems: "center" }}>
           <i onClick={() => setInputOpen(true)} sx={{ mr: "30px" }}>
-            <SearchIcon color="#131418" />
+            <SearchIcon color={colorMode === "dark" ? "#fff" : "#131418"} />
           </i>
           <i onClick={() => setMenuOpen(true)}>
-            <MobileMenuIcon />
+            <MobileMenuIcon color={colorMode === "dark" ? "#fff" : "#131418"} />
           </i>
         </div>
       </div>
@@ -102,10 +109,11 @@ const DocsMobileNav = () => {
               width: "100%",
               height: "100%",
               outline: "none",
-              background: "#F9F9F9",
+              backgroundColor: "docsMuted",
+              color: "docsText",
               px: "42px",
               "&::placeholder": {
-                color: "#A5A5A5",
+                color: "docsLightGray",
                 fontSize: "16px",
               },
             }}
@@ -114,7 +122,7 @@ const DocsMobileNav = () => {
         <i
           sx={{ display: "flex", ml: "22px" }}
           onClick={() => setInputOpen(false)}>
-          <CloseMobileNav />
+          <CloseMobileNav color={colorMode === "dark" ? "#fff" : "#131418"} />
         </i>
       </div>
     </div>

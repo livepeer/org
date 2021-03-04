@@ -26,7 +26,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
         }}>
         <div sx={{ display: "flex", alignItems: "center" }}>
           <LivepeerIconSvg pushSx={{ width: "24px", height: "22px" }} />
-          <p sx={{ color: "#A5A5A5", fontSize: "16px", ml: "8px" }}>
+          <p sx={{ color: "docsLightGray", fontSize: "16px", ml: "8px" }}>
             /{" "}
             <span
               sx={{
@@ -76,7 +76,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
       <div sx={{ display: ["flex", null, "none"] }}>
-        <DocsMobileNav />
+        <DocsMobileNav setColorMode={setColorMode} colorMode={colorMode} />
       </div>
     </div>
   );
