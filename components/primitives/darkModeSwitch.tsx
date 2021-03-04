@@ -4,17 +4,17 @@ import { jsx } from "theme-ui";
 import { DarkIcon, LightIcon } from "components/svgs/darkMode";
 
 type Props = {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  colorMode: string;
+  setColorMode: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const DarkModeSwitch = ({ darkMode, setDarkMode }: Props) => {
+const DarkModeSwitch = ({ setColorMode, colorMode }: Props) => {
   return (
     <label
       sx={{
         width: "80px",
         height: "40px",
-        background: "#F5F5F5",
+        backgroundColor: "docsDarkGrey",
         borderRadius: "24px",
         position: "relative",
         display: "flex",
@@ -24,19 +24,22 @@ const DarkModeSwitch = ({ darkMode, setDarkMode }: Props) => {
       <input
         id="darkMode"
         name="darkMode"
-        onChange={() => setDarkMode((prev) => !prev)}
+        onChange={() =>
+          setColorMode(colorMode === "default" ? "dark" : "default")
+        }
         type="checkbox"
         sx={{ opacity: "0", width: "0", height: "0" }}
       />
       <span
         sx={{
           position: "absolute",
-          left: darkMode ? "40px" : "0",
+          left: colorMode === "dark" ? "40px" : "0",
           cursor: "pointer",
           width: "40px",
           height: "40px",
-          background: "white",
-          border: "1px solid #E5E5E5",
+          backgroundColor: "docsMuted",
+          border: "1px solid",
+          borderColor: "docsBorder",
           borderRadius: "50%",
           display: "flex",
           alignItems: "center",
@@ -44,7 +47,11 @@ const DarkModeSwitch = ({ darkMode, setDarkMode }: Props) => {
           transition: "all 0.3s",
           zIndex: "1",
         }}>
-        {darkMode ? <DarkIcon color="black" /> : <LightIcon color="black" />}
+        {colorMode === "dark" ? (
+          <DarkIcon color="white" />
+        ) : (
+          <LightIcon color="black" />
+        )}
       </span>
       <i
         sx={{

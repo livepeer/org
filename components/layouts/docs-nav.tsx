@@ -2,15 +2,18 @@
 
 import { jsx } from "theme-ui";
 import LivepeerIconSvg from "components/svgs/icons/livepeer";
-import { useState } from "react";
-import { DarkIcon, LightIcon, SearchIcon } from "components/svgs/darkMode";
+import { SearchIcon } from "components/svgs/darkMode";
 import DocsMobileNav from "./docs-mobile.nav";
 import DarkModeSwitch from "components/primitives/darkModeSwitch";
 
-const DocsNav = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+type Props = {
+  setColorMode: React.Dispatch<React.SetStateAction<string>>;
+  colorMode: string;
+};
+
+const DocsNav = ({ setColorMode, colorMode }: Props) => {
   return (
-    <div sx={{ width: "100%" }}>
+    <div sx={{ width: "100%", backgroundColor: "docsBackground" }}>
       <div
         sx={{
           width: "100%",
@@ -27,9 +30,10 @@ const DocsNav = () => {
             /{" "}
             <span
               sx={{
+                useColorSchemeMediaQuery: true,
                 fontWeight: "bold",
                 fontSize: "16px",
-                color: "#131418",
+                color: "docsText",
                 ml: "6px",
               }}>
               Docs
@@ -58,16 +62,18 @@ const DocsNav = () => {
               width: "100%",
               height: "100%",
               outline: "none",
-              background: "#F9F9F9",
+              backgroundColor: "docsMuted",
+              color: "docsText",
               px: "42px",
               "&::placeholder": {
-                color: "#A5A5A5",
+                color: "docsLightGray",
                 fontSize: "16px",
+                fontWeight: "300",
               },
             }}
           />
         </label>
-        <DarkModeSwitch darkMode={darkMode} setDarkMode={setDarkMode} />
+        <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
       <div sx={{ display: ["flex", null, "none"] }}>
         <DocsMobileNav />
