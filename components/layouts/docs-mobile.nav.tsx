@@ -1,5 +1,4 @@
 /** @jsx jsx */
-// @ts-nocheck
 
 import { jsx } from "theme-ui";
 import LivepeerIconSvg from "components/svgs/icons/livepeer";
