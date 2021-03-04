@@ -22,6 +22,7 @@ const Docs = ({
   return (
     <div>
       <h1>{JSON.stringify(meta)}</h1>
+      <p>test</p>
       {content}
     </div>
   );
