@@ -13,7 +13,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
 import DocsNav from "components/layouts/docs-nav";
-import { Container, jsx } from "theme-ui";
+import { Container, jsx, useColorMode } from "theme-ui";
 
 type Params = { slug?: string[] };
 
@@ -22,10 +22,11 @@ const Docs = ({
   meta,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const content = hydrate(mdx, { components: {} });
+  const [colorMode, setColorMode] = useColorMode();
 
   return (
     <div sx={{ width: "100vw" }}>
-      <DocsNav />
+      <DocsNav setColorMode={setColorMode} colorMode={colorMode} />
       <h1>{JSON.stringify(meta)}</h1>
       {content}
     </div>
