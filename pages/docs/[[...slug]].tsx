@@ -1,3 +1,5 @@
+/** @jsx jsx */
+
 import {
   GetStaticPaths,
   GetStaticPropsContext,
@@ -10,6 +12,8 @@ import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
+import DocsNav from "components/layouts/docs-nav";
+import { Container, jsx } from "theme-ui";
 
 type Params = { slug?: string[] };
 
@@ -20,9 +24,9 @@ const Docs = ({
   const content = hydrate(mdx, { components: {} });
 
   return (
-    <div>
+    <div sx={{ width: "100vw" }}>
+      <DocsNav />
       <h1>{JSON.stringify(meta)}</h1>
-      <p>test</p>
       {content}
     </div>
   );
