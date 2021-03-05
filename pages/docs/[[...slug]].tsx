@@ -12,8 +12,9 @@ import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
-import DocsNav from "components/layouts/docs-nav";
-import { Container, jsx, useColorMode } from "theme-ui";
+import DocsNav from "components/sections/docs/docs-nav";
+import DocsCard from "components/sections/docs/docs-card";
+import { jsx, useColorMode } from "theme-ui";
 
 type Params = { slug?: string[] };
 
@@ -21,14 +22,33 @@ const Docs = ({
   mdx,
   meta,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const content = hydrate(mdx, { components: {} });
+  const content = hydrate(mdx, { components: { DocsCard } });
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <div sx={{ width: "100vw" }}>
+    <div sx={{ width: "100vw", backgroundColor: "docs.background" }}>
       <DocsNav setColorMode={setColorMode} colorMode={colorMode} />
-      <h1>{JSON.stringify(meta)}</h1>
-      {content}
+      <div
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          px: "80px",
+          my: "60px",
+        }}>
+        <div
+          sx={{
+            height: "100vh",
+            width: "218px",
+            backgroundColor: "docs.text",
+            display: ["none", null, null, "flex"],
+          }}>
+          menu
+        </div>
+        <div sx={{ width: "100%", maxWidth: "730px", color: "docs.text" }}>
+          {content}
+        </div>
+      </div>
     </div>
   );
 };
