@@ -13,7 +13,13 @@ type Props = {
 
 const DocsNav = ({ setColorMode, colorMode }: Props) => {
   return (
-    <div sx={{ width: "100%", backgroundColor: "docsBackground" }}>
+    <div
+      sx={{
+        width: "100%",
+        backgroundColor: "docs.lightBlack",
+        position: "sticky",
+        top: "0",
+      }}>
       <div
         sx={{
           width: "100%",
@@ -33,7 +39,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
                 useColorSchemeMediaQuery: true,
                 fontWeight: "bold",
                 fontSize: "16px",
-                color: "docsText",
+                color: "docs.text",
                 ml: "6px",
               }}>
               Docs
@@ -62,11 +68,11 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
               width: "100%",
               height: "100%",
               outline: "none",
-              backgroundColor: "docsMuted",
-              color: "docsText",
+              backgroundColor: "docs.muted",
+              color: "docs.text",
               px: "42px",
               "&::placeholder": {
-                color: "docsLightGray",
+                color: "docs.lightGray",
                 fontSize: "16px",
                 fontWeight: "300",
               },
