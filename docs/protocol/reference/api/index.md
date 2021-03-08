@@ -6,8 +6,8 @@ description:
 
 This section explains the Livepeer Subgraph and how to interact with it. The
 Livepeer subgraph indexes data from the Livepeer contracts over time. It
-organizes data about orchestrators, delegators, staking pools and more. The
-subgraph updates any time a transaction is made on Livepeer. It runs on
+organizes data about orchestrators, delegators, and more. The subgraph updates
+any time a transaction is made on Livepeer. It runs on
 [The Graph](https://thegraph.com/) protocol's hosted service and can be openly
 queried.
 
@@ -16,7 +16,7 @@ queried.
 [Subgraph Explorer](https://thegraph.com/explorer/subgraph/livepeer/livepeer) -
 sandbox for querying data and endpoints for developers.
 
-[Livepeer Subgraph](https://github.com/livepeer/livepeerjs/tree/as/shares/packages/subgraph) -
+[Livepeer Subgraph](https://github.com/livepeer/livepeerjs/tree/master/packages/subgraph) -
 source code for deployed subgraph.
 
 ## Usage

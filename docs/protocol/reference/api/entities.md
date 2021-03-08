@@ -228,8 +228,9 @@ Total rounds
 
 ### Transcoder
 
-Information about a transcoder. Includes references to each pool belonging to
-the transocder, fee volume information, total stake, delegators, and more.
+The transcoder entity contains data associated with the orchestrator role. It
+includes references to each of its earning pools, fee volume information, total
+stake, delegators, and more.
 
 <table>
 <thead>
@@ -2257,6 +2258,8 @@ Block hash for the round
 </tbody>
 </table>
 
+### WinningTicketRedeemedEvent
+
 WinningTicketRedeemedEvent entities are created for every emitted
 WinningTicketRedeemed event.
 
@@ -2379,6 +2382,8 @@ Auxilary data included in ticket used for additional validation
 </tr>
 </tbody>
 </table>
+
+### DepositFundedEvent
 
 DepositFundedEvent entities are created for every emitted DepositFunded event.
 
@@ -2597,6 +2602,8 @@ Amount of funds claimed by claimant from the reserve for the reserve holder
 </tbody>
 </table>
 
+### WithdrawalEvent
+
 WithdrawalEvent entities are created for every emitted Withdrawal event.
 
 <table>
@@ -2673,6 +2680,8 @@ Reserve amount withdrawn
 </tr>
 </tbody>
 </table>
+
+### SetCurrentRewardTokensEvent
 
 SetCurrentRewardTokensEvent entities are created for every emitted
 SetCurrentRewardTokens event.
