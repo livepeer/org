@@ -5,6 +5,7 @@ import LivepeerIconSvg from "components/svgs/icons/livepeer";
 import { SearchIcon } from "components/svgs/darkMode";
 import DocsMobileNav from "./docs-mobile.nav";
 import DarkModeSwitch from "components/primitives/darkModeSwitch";
+import { useState, useCallback } from "react";
 
 type Props = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
@@ -12,6 +13,16 @@ type Props = {
 };
 
 const DocsNav = ({ setColorMode, colorMode }: Props) => {
+  const [search, setSearch] = useState("");
+
+  const handleChange = useCallback(
+    (e) => {
+      const value = e.target.value;
+      setSearch(value);
+    },
+    [search, setSearch]
+  );
+
   return (
     <div
       sx={{
@@ -36,8 +47,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
             /{" "}
             <span
               sx={{
-                useColorSchemeMediaQuery: true,
-                fontWeight: "bold",
+                fontWeight: "600",
                 fontSize: "16px",
                 color: "docs.text",
                 ml: "6px",
@@ -64,6 +74,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
             name="Search"
             id="search"
             placeholder="Search in docs"
+            onChange={handleChange}
             sx={{
               width: "100%",
               height: "100%",

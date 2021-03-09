@@ -37,16 +37,17 @@ const sections = [
     links: [
       {
         title: "Overview",
-        href: "/video-application-developers/overview",
+        href: "docs/video-application-developers/overview",
         links: [],
       },
       {
         title: "Getting Started",
-        href: "/video-application-developers/getting-started",
+        href: "docs/video-application-developers/getting-started",
         links: [
           {
             title: "Installation",
-            href: "/video-application-developers/getting-started/installation",
+            href:
+              "docs/video-application-developers/getting-started/installation",
             links: [],
           },
           {
@@ -61,7 +62,7 @@ const sections = [
           },
           {
             title: "Boradcasting to your Livepeer node using OBS",
-            href: "/oss",
+            href: "/",
             links: [],
           },
           {
@@ -79,7 +80,18 @@ const sections = [
       {
         title: "Core Concepts",
         href: "/",
-        links: [],
+        links: [
+          {
+            title: "Benefits of using Livepeer",
+            href: "/",
+            links: [],
+          },
+          {
+            title: "Use Cases",
+            href: "/",
+            links: [],
+          },
+        ],
       },
       {
         title: "Reference",
@@ -93,20 +105,21 @@ const sections = [
     links: [
       {
         title: "Overview",
-        href: "/video-miners/overview",
+        href: "/docs/video-miners/overview",
         links: [],
       },
       {
         title: "Getting Started",
-        href: "/video-miners/getting-started",
+        href: "/docs/video-miners/getting-started",
         links: [
           {
             title: "Installation",
-            href: "/video-miners/getting-started/installation",
+            href: "/docs/video-miners/getting-started/installation",
             links: [
               {
                 title: "Installation",
-                href: "/video-miners/getting-started/installation/installation",
+                href:
+                  "/docs/video-miners/getting-started/installation/installation",
               },
             ],
           },
@@ -127,7 +140,7 @@ const sections = [
           },
           {
             title: "Playing the local video stream",
-            href: "/about",
+            href: "/",
             links: [],
           },
         ],
@@ -232,7 +245,6 @@ const Trigger = ({ title, selected }: TriggerProps) => {
 };
 
 const Section = ({ title, links, selected }: SectionProps) => {
-  const [trigger, setTrigger] = useState<string>("");
   return (
     <div>
       <p
@@ -253,6 +265,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
           links.map((link, idx) =>
             link.links.length > 0 ? (
               <Collapsible
+                open={selected === link.href ? true : false}
                 key={idx}
                 trigger={
                   <Trigger
@@ -262,7 +275,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                 }
                 transitionTime={300}
                 sx={{
-                  color: trigger === link.href ? "docs.select" : "docs.text",
+                  color: selected === link.href ? "docs.select" : "docs.text",
                   mt: "12px",
                   cursor: "pointer",
                   fontSize: "14px",
@@ -272,6 +285,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                   link.links.map((secondLink, idx) =>
                     secondLink.links.length > 0 ? (
                       <Collapsible
+                        open={selected === link.href ? true : false}
                         trigger={
                           <Trigger
                             selected={
@@ -283,7 +297,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                         transitionTime={300}
                         sx={{
                           color:
-                            trigger === secondLink.href
+                            selected === secondLink.href
                               ? "docs.select"
                               : "docs.text",
                           mt: "12px",
@@ -348,9 +362,9 @@ const Section = ({ title, links, selected }: SectionProps) => {
 
 const DocsMenu = ({ selected }: Props) => {
   return (
-    <div sx={{ display: "flex", flexDirection: "column" }}>
+    <div sx={{ display: ["none", "none", "flex"], flexDirection: "column" }}>
       <div sx={{ display: "flex", alignItems: "center" }}>
-        {selected === "introduction" && (
+        {selected === "docs" && (
           <div
             sx={{
               width: "6px",
@@ -360,14 +374,13 @@ const DocsMenu = ({ selected }: Props) => {
             }}
           />
         )}
-        <Link href="/">
+        <Link href="/docs">
           <a
             sx={{
               fontSize: "14px",
               lineHeight: "24px",
-              color:
-                selected === "introduction" ? "docs.selected" : "docs.text",
-              fontWeight: selected === "introduction" ? "600" : "normal",
+              color: selected === "docs" ? "docs.selected" : "docs.text",
+              fontWeight: selected === "docs" ? "600" : "normal",
               cursor: "pointer",
             }}>
             Introduction

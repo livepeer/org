@@ -12,6 +12,7 @@ const DocsCardsContainer = ({ children }: Props) => {
     <div
       sx={{
         width: "100%",
+        alignSelf: "center",
         display: "grid",
         gridTemplateColumns: ["1fr", "1fr 1fr"],
         gap: ["24px", "8px"],

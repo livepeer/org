@@ -1,6 +1,6 @@
-import { ThemeUIStyleObject } from "theme-ui";
+import { SxStyleProp } from "theme-ui";
 declare module "react" {
   interface Attributes {
-    sx?: ThemeUIStyleObject;
+    sx?: SxStyleProp;
   }
 }
