@@ -6,9 +6,12 @@ import { jsx, useColorMode } from "theme-ui";
 type Props = {
   color?: string;
   title?: string;
+  description?: string;
+  icon?: HTMLElement;
+  href?: string;
 };
 
-const Icon = () => {
+export const Icon = () => {
   return (
     <svg
       width="56"
@@ -20,16 +23,16 @@ const Icon = () => {
       <path
         d="M32.6666 35L39.6666 28L32.6666 21"
         stroke="#131418"
-        stroke-width="1.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M23.3334 21L16.3334 28L23.3334 35"
         stroke="#131418"
-        stroke-width="1.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -46,22 +49,22 @@ const Arrow = ({ color }: Props) => {
       <path
         d="M5 12H19"
         stroke={color}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M12 5L19 12L12 19"
         stroke={color}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
 };
 
-const DocsCard = ({ title }: Props) => {
+const DocsCard = ({ title, description, icon, href }: Props) => {
   const [colorMode] = useColorMode();
   return (
     <div
@@ -71,7 +74,6 @@ const DocsCard = ({ title }: Props) => {
         borderColor: "docs.border",
         width: "100%",
         maxWidth: "360px",
-        minHeight: "360px",
         padding: "24px",
         display: "flex",
         flexDirection: "column",
@@ -80,10 +82,9 @@ const DocsCard = ({ title }: Props) => {
         backgroundColor: "docs.switch",
       }}>
       <div>
-        <Icon />
+        {icon && <div sx={{ mb: "24px" }}>{icon}</div>}
         <h1
           sx={{
-            mt: "24px",
             mb: "16px",
             fontSize: "22px",
             lineHeight: "28px",
@@ -93,12 +94,13 @@ const DocsCard = ({ title }: Props) => {
           {title}
         </h1>
         <p sx={{ fontSize: "14px", lineHeight: "24px", color: "docs.text" }}>
-          Check how livepeer helps you develop video applications easily.
+          {description}
         </p>
       </div>
       <div
         sx={{
           width: "100%",
+          mt: "88px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -107,7 +109,7 @@ const DocsCard = ({ title }: Props) => {
           sx={{ color: "docs.secondary", fontSize: "14px", fontWeight: "600" }}>
           Start
         </p>
-        <Link href="">
+        <Link href={href}>
           <a>
             <Arrow color={colorMode === "dark" ? "white" : "#3F3FE2"} />
           </a>

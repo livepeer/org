@@ -52,6 +52,7 @@ const theme = {
       gray: "#666666",
       lightGray: "#A5A5A5",
       lightBlack: "#fff",
+      selected: "#3F3FE2",
     },
     modes: {
       dark: {
@@ -66,6 +67,7 @@ const theme = {
           lightGray: "#666666",
           secondary: "#fff",
           lightBlack: "#131418",
+          selected: "#00EB88",
         },
       },
     },

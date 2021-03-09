@@ -32,6 +32,7 @@
     "next-svgr": "^0.0.2",
     "next-transpile-modules": "^6.3.0",
     "react": "^16.13.1",
+    "react-collapsible": "^2.8.3",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.2.0",
     "react-icons": "^3.10.0",
