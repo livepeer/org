@@ -69,17 +69,22 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
   return (
     <div
       sx={{
-        boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
+        boxShadow:
+          "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
         border: "1px solid",
         borderColor: "docs.border",
         width: "100%",
-        maxWidth: "360px",
-        padding: "24px",
+        py: "24px",
+        px: ["24px", "24px", "16px", "24px"],
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         borderRadius: "16px",
         backgroundColor: "docs.switch",
+        transition: "all 0.2s",
+        ":hover": {
+          boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
+        },
       }}>
       <div>
         {icon && <div sx={{ mb: "24px" }}>{icon}</div>}
@@ -97,24 +102,29 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
           {description}
         </p>
       </div>
-      <div
-        sx={{
-          width: "100%",
-          mt: "88px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}>
-        <p
-          sx={{ color: "docs.secondary", fontSize: "14px", fontWeight: "600" }}>
-          Start
-        </p>
-        <Link href={href}>
+      <Link href={href}>
+        <div
+          sx={{
+            width: "100%",
+            cursor: "pointer",
+            mt: "88px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}>
+          <p
+            sx={{
+              color: "docs.secondary",
+              fontSize: "14px",
+              fontWeight: "600",
+            }}>
+            Start
+          </p>
           <a>
             <Arrow color={colorMode === "dark" ? "white" : "#3F3FE2"} />
           </a>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 };

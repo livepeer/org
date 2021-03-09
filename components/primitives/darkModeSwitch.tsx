@@ -44,7 +44,7 @@ const DarkModeSwitch = ({ setColorMode, colorMode }: Props) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          transition: "all 0.3s",
+          transition: "all 0.2s",
           zIndex: "1",
         }}>
         {colorMode === "dark" ? (

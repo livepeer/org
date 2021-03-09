@@ -41,3 +41,20 @@ export const Text = ({ children }) => {
     </p>
   );
 };
+
+export const Link = ({ children, href }) => {
+  return (
+    <Link href={href}>
+      <a
+        sx={{
+          fontSize: "16px",
+          lineHeight: "32px",
+          color: "docs.selected",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}>
+        {children}
+      </a>
+    </Link>
+  );
+};
