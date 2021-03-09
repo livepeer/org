@@ -28,6 +28,8 @@ type Params = { slug?: string[] };
 const Docs = ({
   mdx,
   meta,
+  path,
+  title,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const content = hydrate(mdx, {
     components: {
@@ -41,6 +43,10 @@ const Docs = ({
   });
   const [colorMode, setColorMode] = useColorMode();
 
+  const slug = path ? path : "";
+
+  const realSlug = slug.replace("/index.mdx", "");
+
   return (
     <div sx={{ width: "100vw", backgroundColor: "docs.background" }}>
       <DocsNav setColorMode={setColorMode} colorMode={colorMode} />
@@ -49,14 +55,23 @@ const Docs = ({
           width: "100%",
           display: "flex",
           justifyContent: "space-between",
-          px: "80px",
+          px: ["24px", null, null, "80px"],
           my: "60px",
         }}>
-        <DocsMenu selected="/video-application-developers/getting-started" />
-        <div sx={{ width: "100%", maxWidth: "730px", color: "docs.text" }}>
+        <DocsMenu selected={realSlug} />
+        <div
+          sx={{
+            width: "100%",
+            maxWidth: "730px",
+            color: "docs.text",
+            display: "flex",
+            flexDirection: "column",
+          }}>
           {content}
         </div>
-        <p sx={{ color: "docs.text" }}>Introduction</p>
+        <p sx={{ display: ["none", "none", "flex"], color: "docs.text" }}>
+          {title}
+        </p>
       </div>
     </div>
   );
@@ -115,10 +130,14 @@ export const getStaticProps = async ({
     scope: data,
   });
 
+  const title = parsedData.title;
+
   return {
     props: {
       mdx: mdxSource,
       meta: parsedData,
+      path: filePath,
+      title: title,
     },
     revalidate: 1,
   };

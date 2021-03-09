@@ -1,5 +1,4 @@
 import { Flex, Avatar, Text, Box, Link as A } from "theme-ui";
-import { FiGithub } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 
 export type MaintainerProps = {
