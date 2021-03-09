@@ -40,3 +40,20 @@
 .c--hide {
   opacity: 0;
 }
+
+.Collapsible {
+  margin-top: 12px;
+}
+
+.Collapsible__contentOuter {
+  margin-left: 32px;
+}
+
+.is-open {
+  color: inherit !important;
+}
+
+.Collapsible__contentInner {
+  display: flex;
+  flex-direction: column;
+}

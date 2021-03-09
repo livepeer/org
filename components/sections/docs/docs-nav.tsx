@@ -32,7 +32,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
         }}>
         <div sx={{ display: "flex", alignItems: "center" }}>
           <LivepeerIconSvg pushSx={{ width: "24px", height: "22px" }} />
-          <p sx={{ color: "docsLightGray", fontSize: "16px", ml: "8px" }}>
+          <p sx={{ color: "docs.lightGray", fontSize: "16px", ml: "8px" }}>
             /{" "}
             <span
               sx={{

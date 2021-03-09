@@ -13,8 +13,15 @@ import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
 import DocsNav from "components/sections/docs/docs-nav";
-import DocsCard from "components/sections/docs/docs-card";
+import DocsCard, { Icon } from "components/sections/docs/docs-card";
 import { jsx, useColorMode } from "theme-ui";
+import {
+  Heading,
+  SubHeading,
+  Text,
+} from "components/sections/docs/docs-content";
+import DocsCardsContainer from "components/sections/docs/docs-cards-container";
+import DocsMenu from "components/sections/docs/docs-menu";
 
 type Params = { slug?: string[] };
 
@@ -22,7 +29,16 @@ const Docs = ({
   mdx,
   meta,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const content = hydrate(mdx, { components: { DocsCard } });
+  const content = hydrate(mdx, {
+    components: {
+      DocsCard,
+      Icon,
+      Heading,
+      SubHeading,
+      Text,
+      DocsCardsContainer,
+    },
+  });
   const [colorMode, setColorMode] = useColorMode();
 
   return (
@@ -36,18 +52,11 @@ const Docs = ({
           px: "80px",
           my: "60px",
         }}>
-        <div
-          sx={{
-            height: "100vh",
-            width: "218px",
-            backgroundColor: "docs.text",
-            display: ["none", null, null, "flex"],
-          }}>
-          menu
-        </div>
+        <DocsMenu selected="/video-application-developers/getting-started" />
         <div sx={{ width: "100%", maxWidth: "730px", color: "docs.text" }}>
           {content}
         </div>
+        <p sx={{ color: "docs.text" }}>Introduction</p>
       </div>
     </div>
   );

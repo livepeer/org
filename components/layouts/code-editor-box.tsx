@@ -1,9 +1,11 @@
-import { BoxProps, Box, Flex, Text } from "theme-ui";
+/** @jsx jsx */
+
+import { BoxProps, Box, Flex, Text, jsx } from "theme-ui";
 import { forwardRef } from "react";
 import WindowDots from "components/primitives/window-dots";
 
 const LineNumbers = ({ length = 64 }) => (
-  <Box sx={{ position: "absolute", left: 4 }}>
+  <div sx={{ position: "absolute", left: 4 }}>
     {Array.from({ length }, (_, i) => i).map((n) => (
       <Text
         key={`code-editor-line-number-${n}`}
@@ -16,7 +18,7 @@ const LineNumbers = ({ length = 64 }) => (
         {n}
       </Text>
     ))}
-  </Box>
+  </div>
 );
 
 type TabProps = { label: string; isSelected?: boolean };
@@ -44,9 +46,10 @@ const CodeEditorBox = forwardRef(
     ref: React.RefObject<HTMLDivElement>
   ) => (
     <Box {...props} ref={ref} sx={{ overflow: "hidden", ...props.sx }}>
-      <Flex
+      <div
         sx={{
           position: "relative",
+          display: "flex",
           textAlign: "center",
           height: 10,
           alignItems: "center",
@@ -60,8 +63,8 @@ const CodeEditorBox = forwardRef(
         {tabs.map((t) => (
           <Tab key={`window-box-tab-${t.label}`} {...t} />
         ))}
-      </Flex>
-      <Box
+      </div>
+      <div
         sx={{
           p: 3,
           pl: withLineNumbers ? 5 : 3,
@@ -71,7 +74,7 @@ const CodeEditorBox = forwardRef(
         }}>
         {withLineNumbers && <LineNumbers />}
         {children}
-      </Box>
+      </div>
     </Box>
   )
 );
