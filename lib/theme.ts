@@ -53,6 +53,7 @@ const theme = {
       lightGray: "#A5A5A5",
       lightBlack: "#fff",
       selected: "#3F3FE2",
+      opacity: "rgba(225, 225, 225, 0.8)",
     },
     modes: {
       dark: {
@@ -68,6 +69,7 @@ const theme = {
           secondary: "#fff",
           lightBlack: "#131418",
           selected: "#00EB88",
+          opacity: "rgba(0, 0, 0, 0.8)",
         },
       },
     },

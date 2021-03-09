@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { ColorMode, jsx, useColorMode } from "theme-ui";
+import { jsx } from "theme-ui";
 import { useState } from "react";
 import {
   MobileMenuIcon,
@@ -9,14 +9,21 @@ import {
 } from "components/svgs/darkMode";
 import MobileLogo from "./mobile-logo";
 import DarkModeSwitch from "components/primitives/darkModeSwitch";
+import DocsMenu from "./docs-menu";
 
 type Props = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
   colorMode: string;
   handleClose: React.MouseEventHandler<HTMLDivElement>;
+  selected: string;
 };
 
-const OpenMenu = ({ colorMode, setColorMode, handleClose }: Props) => {
+const OpenMenu = ({
+  colorMode,
+  setColorMode,
+  handleClose,
+  selected,
+}: Props) => {
   return (
     <div
       sx={{
@@ -28,13 +35,20 @@ const OpenMenu = ({ colorMode, setColorMode, handleClose }: Props) => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        padding: "16px",
+        padding: "32px 24px",
       }}>
       <div
-        sx={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+          position: "sticky",
+          top: "0",
+        }}
         onClick={handleClose}>
         <CloseMobileNav color={colorMode === "dark" ? "#fff" : "#131418"} />
       </div>
+      <DocsMenu selected={selected} />
       <div sx={{ position: "fixed", bottom: "100px", right: "16px" }}>
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
@@ -42,7 +56,7 @@ const OpenMenu = ({ colorMode, setColorMode, handleClose }: Props) => {
   );
 };
 
-const DocsMobileNav = ({ setColorMode, colorMode }) => {
+const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [inputOpen, setInputOpen] = useState<boolean>(false);
 
@@ -170,8 +184,22 @@ const DocsMobileNav = ({ setColorMode, colorMode }) => {
           colorMode={colorMode}
           setColorMode={setColorMode}
           handleClose={() => setMenuOpen(false)}
+          selected={selected}
         />
       </div>
+      {inputOpen && (
+        <div
+          sx={{
+            height: "calc(100vh - 58px)",
+            position: "fixed",
+            width: "100vw",
+            left: "0",
+            top: "58px",
+            backgroundColor: "docs.opacity",
+            zIndex: "100",
+          }}
+        />
+      )}
     </div>
   );
 };

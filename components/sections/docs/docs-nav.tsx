@@ -6,13 +6,15 @@ import { SearchIcon } from "components/svgs/darkMode";
 import DocsMobileNav from "./docs-mobile.nav";
 import DarkModeSwitch from "components/primitives/darkModeSwitch";
 import { useState, useCallback } from "react";
+import Link from "next/link";
 
 type Props = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
   colorMode: string;
+  selected: string;
 };
 
-const DocsNav = ({ setColorMode, colorMode }: Props) => {
+const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
   const [search, setSearch] = useState("");
 
   const handleChange = useCallback(
@@ -28,6 +30,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
       sx={{
         width: "100%",
         backgroundColor: "docs.lightBlack",
+        transition: "all 0.2s",
         position: "sticky",
         top: "0",
       }}>
@@ -42,18 +45,26 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
           justifyContent: "space-between",
         }}>
         <div sx={{ display: "flex", alignItems: "center" }}>
-          <LivepeerIconSvg pushSx={{ width: "24px", height: "22px" }} />
+          <Link href="/">
+            <i sx={{ cursor: "pointer" }}>
+              <LivepeerIconSvg pushSx={{ width: "24px", height: "22px" }} />
+            </i>
+          </Link>
           <p sx={{ color: "docs.lightGray", fontSize: "16px", ml: "8px" }}>
             /{" "}
-            <span
-              sx={{
-                fontWeight: "600",
-                fontSize: "16px",
-                color: "docs.text",
-                ml: "6px",
-              }}>
-              Docs
-            </span>
+            <Link href="/docs">
+              <a
+                sx={{
+                  cursor: "pointer",
+                  fontWeight: "600",
+                  fontSize: "16px",
+                  color: "docs.text",
+                  transition: "all 0.2s",
+                  ml: "6px",
+                }}>
+                Docs
+              </a>
+            </Link>
           </p>
         </div>
         <label
@@ -80,6 +91,7 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
               height: "100%",
               outline: "none",
               backgroundColor: "docs.muted",
+              transition: "all 0.2s",
               color: "docs.text",
               px: "42px",
               "&::placeholder": {
@@ -93,7 +105,11 @@ const DocsNav = ({ setColorMode, colorMode }: Props) => {
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
       <div sx={{ display: ["flex", null, "none"] }}>
-        <DocsMobileNav setColorMode={setColorMode} colorMode={colorMode} />
+        <DocsMobileNav
+          selected={selected}
+          setColorMode={setColorMode}
+          colorMode={colorMode}
+        />
       </div>
     </div>
   );

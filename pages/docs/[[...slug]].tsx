@@ -14,12 +14,12 @@ import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
 import DocsNav from "components/sections/docs/docs-nav";
 import DocsCard, { Icon } from "components/sections/docs/docs-card";
-import { jsx, useColorMode } from "theme-ui";
 import {
   Heading,
   SubHeading,
   Text,
 } from "components/sections/docs/docs-content";
+import { jsx, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu from "components/sections/docs/docs-menu";
 
@@ -33,12 +33,18 @@ const Docs = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const content = hydrate(mdx, {
     components: {
+      h1: ({ children }) => {
+        return <Heading>{children}</Heading>;
+      },
+      h2: ({ children }) => {
+        return <SubHeading>{children}</SubHeading>;
+      },
+      p: ({ children }) => {
+        return <Text>{children}</Text>;
+      },
       DocsCard,
-      Icon,
-      Heading,
-      SubHeading,
-      Text,
       DocsCardsContainer,
+      Icon,
     },
   });
   const [colorMode, setColorMode] = useColorMode();
@@ -48,28 +54,52 @@ const Docs = ({
   const realSlug = slug.replace("/index.mdx", "");
 
   return (
-    <div sx={{ width: "100vw", backgroundColor: "docs.background" }}>
-      <DocsNav setColorMode={setColorMode} colorMode={colorMode} />
+    <div
+      sx={{
+        width: "100vw",
+        transition: "all 0.2s",
+        backgroundColor: "docs.background",
+        position: "relative",
+      }}>
+      <DocsNav
+        selected={realSlug}
+        setColorMode={setColorMode}
+        colorMode={colorMode}
+      />
       <div
         sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          px: ["24px", null, null, "80px"],
-          my: "60px",
+          display: ["none", "none", "flex"],
+          position: "fixed",
+          height: "calc(100vh - 120px)",
+          top: "100px",
+          overflowY: "scroll",
+          ml: ["24px", "24px", "24px", "80px"],
         }}>
         <DocsMenu selected={realSlug} />
+      </div>
+      <div
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          px: ["24px", "24px", "24px", "80px"],
+          ml: ["0", "0", "240px", "280px"],
+          my: "60px",
+        }}>
         <div
           sx={{
             width: "100%",
-            maxWidth: "730px",
+            maxWidth: ["100%", "100%", "730px"],
             color: "docs.text",
             display: "flex",
             flexDirection: "column",
           }}>
           {content}
         </div>
-        <p sx={{ display: ["none", "none", "flex"], color: "docs.text" }}>
+        <p
+          sx={{
+            display: ["none", "none", "none", "flex"],
+            color: "docs.text",
+          }}>
           {title}
         </p>
       </div>

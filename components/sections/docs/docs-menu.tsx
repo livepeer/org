@@ -219,6 +219,7 @@ const Trigger = ({ title, selected }: TriggerProps) => {
             width: "6px",
             height: "6px",
             backgroundColor: "docs.selected",
+            transition: "all 0.2s",
             mr: "10px",
           }}
         />
@@ -229,6 +230,7 @@ const Trigger = ({ title, selected }: TriggerProps) => {
           lineHeight: "24px",
           mr: "8px",
           color: selected ? "docs.selected" : "docs.text",
+          transition: "all 0.2s",
           fontWeight: selected ? "600" : "normal",
         }}>
         {title}
@@ -276,6 +278,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                 transitionTime={300}
                 sx={{
                   color: selected === link.href ? "docs.select" : "docs.text",
+                  transition: "all 0.2s",
                   mt: "12px",
                   cursor: "pointer",
                   fontSize: "14px",
@@ -301,6 +304,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                               ? "docs.select"
                               : "docs.text",
                           mt: "12px",
+                          transition: "all 0.2s",
                           cursor: "pointer",
                           fontSize: "14px",
                           lineHeight: "24px",
@@ -311,6 +315,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                               <a
                                 sx={{
                                   color: "docs.text",
+                                  transition: "all 0.2s",
                                   mt: "12px",
                                   cursor: "pointer",
                                   maxWidth: "fit-content",
@@ -327,6 +332,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                         <a
                           sx={{
                             color: "docs.text",
+                            transition: "all 0.2s",
                             mt: "12px",
                             cursor: "pointer",
                             maxWidth: "fit-content",
@@ -344,6 +350,7 @@ const Section = ({ title, links, selected }: SectionProps) => {
                 <a
                   sx={{
                     color: "docs.text",
+                    transition: "all 0.2s",
                     mt: "12px",
                     cursor: "pointer",
                     maxWidth: "fit-content",
@@ -362,13 +369,19 @@ const Section = ({ title, links, selected }: SectionProps) => {
 
 const DocsMenu = ({ selected }: Props) => {
   return (
-    <div sx={{ display: ["none", "none", "flex"], flexDirection: "column" }}>
+    <div
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        mr: [null, null, "40px", "10px"],
+      }}>
       <div sx={{ display: "flex", alignItems: "center" }}>
         {selected === "docs" && (
           <div
             sx={{
               width: "6px",
               height: "6px",
+              transition: "all 0.2s",
               backgroundColor: "docs.selected",
               mr: "10px",
             }}
@@ -381,6 +394,7 @@ const DocsMenu = ({ selected }: Props) => {
               lineHeight: "24px",
               color: selected === "docs" ? "docs.selected" : "docs.text",
               fontWeight: selected === "docs" ? "600" : "normal",
+              transition: "all 0.2s",
               cursor: "pointer",
             }}>
             Introduction
