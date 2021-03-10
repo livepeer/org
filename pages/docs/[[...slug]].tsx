@@ -22,6 +22,7 @@ import {
 import { jsx, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu from "components/sections/docs/docs-menu";
+import NextStep from "components/sections/docs/next-step";
 
 type Params = { slug?: string[] };
 
@@ -45,6 +46,7 @@ const Docs = ({
       DocsCard,
       DocsCardsContainer,
       Icon,
+      NextStep,
     },
   });
   const [colorMode, setColorMode] = useColorMode();
