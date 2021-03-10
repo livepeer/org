@@ -1,36 +1,31 @@
 /** @jsx jsx */
 
+import { ReactNode } from "react";
 import { jsx } from "theme-ui";
 
-export const Heading = ({ children }) => {
-  return (
-    <h1
-      sx={{
-        fontSize: ["40px", "48px"],
-        mb: "32px",
-        color: "docs.text",
-        fontWeight: "bold",
-        fontFamily: "special",
-      }}>
-      {children}
-    </h1>
-  );
+type HeadingProps = {
+  children: ReactNode;
+  as: "h1" | "h2" | "h3";
 };
 
-export const SubHeading = ({ children }) => {
+export const Heading = ({ children, as }: HeadingProps) => {
   return (
-    <h1
+    <p
       sx={{
+        fontSize:
+          as === "h1"
+            ? ["40px", "48px"]
+            : as === "h2"
+            ? ["24px", "32px"]
+            : ["18px", "24px"],
+        mb: as === "h1" ? "32px" : as === "h2" ? "24px" : "18px",
+        mt: as === "h2" ? "72px" : "",
         color: "docs.text",
-        fontSize: ["24px", "32px"],
-        lineHeight: ["24px", "40px"],
-        mb: "24px",
-        mt: "72px",
         fontWeight: "bold",
         fontFamily: "special",
       }}>
       {children}
-    </h1>
+    </p>
   );
 };
 

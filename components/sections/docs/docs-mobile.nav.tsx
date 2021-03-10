@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import { jsx } from "theme-ui";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   MobileMenuIcon,
   SearchIcon,
@@ -59,6 +59,14 @@ const OpenMenu = ({
 const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [inputOpen, setInputOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (menuOpen || inputOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.removeProperty("overflow");
+    }
+  }, [menuOpen, inputOpen]);
 
   return (
     <div sx={{ width: "100vw", position: "sticky", top: "0" }}>
@@ -133,7 +141,7 @@ const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
             transition: "all 0.4s",
           }}>
           <label
-            htmlFor="seach"
+            htmlFor="search"
             sx={{
               height: "40px",
               width: "100%",
