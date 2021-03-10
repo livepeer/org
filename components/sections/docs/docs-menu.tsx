@@ -37,17 +37,17 @@ const sections = [
     links: [
       {
         title: "Overview",
-        href: "docs/video-application-developers/overview",
+        href: "/docs/video-application-developers/overview",
         links: [],
       },
       {
         title: "Getting Started",
-        href: "docs/video-application-developers/getting-started",
+        href: "/docs/video-application-developers/getting-started",
         links: [
           {
             title: "Installation",
             href:
-              "docs/video-application-developers/getting-started/installation",
+              "/docs/video-application-developers/getting-started/installation",
             links: [],
           },
           {

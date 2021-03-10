@@ -14,11 +14,7 @@ import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
 import DocsNav from "components/sections/docs/docs-nav";
 import DocsCard, { Icon } from "components/sections/docs/docs-card";
-import {
-  Heading,
-  SubHeading,
-  Text,
-} from "components/sections/docs/docs-content";
+import { Heading, Text } from "components/sections/docs/docs-content";
 import { jsx, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu from "components/sections/docs/docs-menu";
@@ -35,10 +31,13 @@ const Docs = ({
   const content = hydrate(mdx, {
     components: {
       h1: ({ children }) => {
-        return <Heading>{children}</Heading>;
+        return <Heading as="h1">{children}</Heading>;
       },
       h2: ({ children }) => {
-        return <SubHeading>{children}</SubHeading>;
+        return <Heading as="h2">{children}</Heading>;
+      },
+      h3: ({ children }) => {
+        return <Heading as="h3">{children}</Heading>;
       },
       p: ({ children }) => {
         return <Text>{children}</Text>;
@@ -62,6 +61,7 @@ const Docs = ({
         transition: "all 0.2s",
         backgroundColor: "docs.background",
         position: "relative",
+        pb: "60px",
       }}>
       <DocsNav
         selected={realSlug}
@@ -70,23 +70,21 @@ const Docs = ({
       />
       <div
         sx={{
-          display: ["none", "none", "flex"],
-          position: "fixed",
-          height: "calc(100vh - 120px)",
-          top: "100px",
-          overflowY: "scroll",
-          ml: ["24px", "24px", "24px", "80px"],
-        }}>
-        <DocsMenu selected={realSlug} />
-      </div>
-      <div
-        sx={{
           display: "flex",
           justifyContent: "space-between",
           px: ["24px", "24px", "24px", "80px"],
-          ml: ["0", "0", "240px", "280px"],
-          my: "60px",
+          mt: "60px",
         }}>
+        <div
+          sx={{
+            display: ["none", "none", "flex"],
+            position: "sticky",
+            height: "calc(100vh - 120px)",
+            top: "100px",
+            overflowY: "scroll",
+          }}>
+          <DocsMenu selected={realSlug} />
+        </div>
         <div
           sx={{
             width: "100%",

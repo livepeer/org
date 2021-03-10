@@ -48,7 +48,7 @@
     "@types/classnames": "^2.2.10",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.44",
-    "@types/theme-ui": "^0.3.7",
+    "@types/theme-ui": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "babel-eslint": "^10.1.0",

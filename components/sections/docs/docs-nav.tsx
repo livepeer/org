@@ -68,7 +68,7 @@ const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
           </p>
         </div>
         <label
-          htmlFor="seach"
+          htmlFor="desktop-search"
           sx={{
             width: ["250px", "300px", "400px", "700px"],
             height: "40px",
@@ -83,7 +83,7 @@ const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
           </i>
           <input
             name="Search"
-            id="search"
+            id="desktop-search"
             placeholder="Search in docs"
             onChange={handleChange}
             sx={{
