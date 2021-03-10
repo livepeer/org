@@ -64,6 +64,7 @@ const theme = {
           switch: "#27282C",
           border: "#3E3E3E",
           muted: "#27282C",
+          gray: "#A5A5A5",
           primary: "#0cf",
           lightGray: "#666666",
           secondary: "#fff",
