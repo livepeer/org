@@ -15,14 +15,14 @@ type Props = {
 };
 
 const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
-  const [search, setSearch] = useState("");
+  const [, setSearch] = useState("");
 
   const handleChange = useCallback(
     (e) => {
       const value = e.target.value;
       setSearch(value);
     },
-    [search, setSearch]
+    [setSearch]
   );
 
   return (

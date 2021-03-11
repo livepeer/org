@@ -78,9 +78,9 @@ const Docs = ({
           sx={{
             display: ["none", "none", "flex"],
             position: "sticky",
-            height: "calc(100vh - 100px)",
-            top: "100px",
-            overflowY: "scroll",
+            height: "calc(100vh - 118px)",
+            top: "118px",
+            overflowY: "auto",
           }}>
           <DocsMenu selected={realSlug} />
         </div>
@@ -96,8 +96,12 @@ const Docs = ({
         </div>
         <p
           sx={{
+            position: "sticky",
+            height: "calc(100vh - 118px)",
+            top: "118px",
             display: ["none", "none", "none", "flex"],
             color: "docs.text",
+            overflowY: "auto",
           }}>
           {meta?.title}
         </p>
