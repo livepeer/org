@@ -263,105 +263,102 @@ const Section = ({ title, links, selected }: SectionProps) => {
       </p>
       <div
         sx={{ display: "flex", flexDirection: "column", color: "docs.text" }}>
-        {links &&
-          links.map((link, idx) =>
-            link.links.length > 0 ? (
-              <Collapsible
-                open={selected === link.href ? true : false}
-                key={idx}
-                trigger={
-                  <Trigger
-                    selected={selected === link.href ? selected : ""}
-                    title={link.title}
-                  />
-                }
-                transitionTime={300}
+        {links.map((link, idx) =>
+          link.links.length > 0 ? (
+            <Collapsible
+              open={selected === link.href ? true : false}
+              key={idx}
+              trigger={
+                <Trigger
+                  selected={selected === link.href ? selected : ""}
+                  title={link.title}
+                />
+              }
+              transitionTime={300}
+              sx={{
+                color: selected === link.href ? "docs.select" : "docs.text",
+                transition: "all 0.2s",
+                mt: "12px",
+                cursor: "pointer",
+                fontSize: "14px",
+                lineHeight: "24px",
+              }}>
+              {link.links?.map((secondLink, idx) =>
+                secondLink.links.length > 0 ? (
+                  <Collapsible
+                    key={idx}
+                    open={selected === link.href ? true : false}
+                    trigger={
+                      <Trigger
+                        selected={selected === secondLink.href ? selected : ""}
+                        title={secondLink.title}
+                      />
+                    }
+                    transitionTime={300}
+                    sx={{
+                      color:
+                        selected === secondLink.href
+                          ? "docs.select"
+                          : "docs.text",
+                      mt: "12px",
+                      transition: "all 0.2s",
+                      cursor: "pointer",
+                      fontSize: "14px",
+                      lineHeight: "24px",
+                    }}>
+                    {secondLink.links &&
+                      secondLink.links.map((thirdLink, idx) => (
+                        <Link href={thirdLink.href} key={idx}>
+                          <a
+                            sx={{
+                              color: "docs.text",
+                              transition: "all 0.2s",
+                              mt: "12px",
+                              cursor: "pointer",
+                              maxWidth: "fit-content",
+                              fontSize: "14px",
+                              lineHeight: "24px",
+                            }}>
+                            {thirdLink.title}
+                          </a>
+                        </Link>
+                      ))}
+                  </Collapsible>
+                ) : (
+                  <Link href={secondLink.href} key={idx}>
+                    <a
+                      sx={{
+                        color: "docs.text",
+                        transition: "all 0.2s",
+                        mt: "12px",
+                        cursor: "pointer",
+                        maxWidth: "fit-content",
+                        fontSize: "14px",
+                        lineHeight: "24px",
+                      }}>
+                      {secondLink.title}
+                    </a>
+                  </Link>
+                )
+              )}
+            </Collapsible>
+          ) : (
+            <Link href={link.href} key={idx}>
+              <a
                 sx={{
-                  color: selected === link.href ? "docs.select" : "docs.text",
+                  color: "docs.text",
                   transition: "all 0.2s",
                   mt: "12px",
                   cursor: "pointer",
+                  maxWidth: "fit-content",
                   fontSize: "14px",
                   lineHeight: "24px",
                 }}>
-                {link.links &&
-                  link.links.map((secondLink, idx) =>
-                    secondLink.links.length > 0 ? (
-                      <Collapsible
-                        open={selected === link.href ? true : false}
-                        trigger={
-                          <Trigger
-                            selected={
-                              selected === secondLink.href ? selected : ""
-                            }
-                            title={secondLink.title}
-                          />
-                        }
-                        transitionTime={300}
-                        sx={{
-                          color:
-                            selected === secondLink.href
-                              ? "docs.select"
-                              : "docs.text",
-                          mt: "12px",
-                          transition: "all 0.2s",
-                          cursor: "pointer",
-                          fontSize: "14px",
-                          lineHeight: "24px",
-                        }}>
-                        {secondLink.links &&
-                          secondLink.links.map((thirdLink, idx) => (
-                            <Link href={thirdLink.href} key={idx}>
-                              <a
-                                sx={{
-                                  color: "docs.text",
-                                  transition: "all 0.2s",
-                                  mt: "12px",
-                                  cursor: "pointer",
-                                  maxWidth: "fit-content",
-                                  fontSize: "14px",
-                                  lineHeight: "24px",
-                                }}>
-                                {thirdLink.title}
-                              </a>
-                            </Link>
-                          ))}
-                      </Collapsible>
-                    ) : (
-                      <Link href={secondLink.href} key={idx}>
-                        <a
-                          sx={{
-                            color: "docs.text",
-                            transition: "all 0.2s",
-                            mt: "12px",
-                            cursor: "pointer",
-                            maxWidth: "fit-content",
-                            fontSize: "14px",
-                            lineHeight: "24px",
-                          }}>
-                          {secondLink.title}
-                        </a>
-                      </Link>
-                    )
-                  )}
-              </Collapsible>
-            ) : (
-              <Link href={link.href} key={idx}>
-                <a
-                  sx={{
-                    color: "docs.text",
-                    transition: "all 0.2s",
-                    mt: "12px",
-                    cursor: "pointer",
-                    maxWidth: "fit-content",
-                    fontSize: "14px",
-                    lineHeight: "24px",
-                  }}>
-                  {link.title}
-                </a>
-              </Link>
-            )
-          )}
+                {link.title}
+              </a>
+            </Link>
+          )
+        )}
       </div>
     </div>
   );

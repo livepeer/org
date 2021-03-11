@@ -63,8 +63,9 @@ const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
   useEffect(() => {
     if (menuOpen || inputOpen) {
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.removeProperty("overflow");
+      return () => {
+        document.body.style.removeProperty("overflow");
+      };
     }
   }, [menuOpen, inputOpen]);
 
@@ -206,6 +207,9 @@ const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
             backgroundColor: "docs.opacity",
             zIndex: "100",
           }}
+          onClick={() => setInputOpen(false)}
+          role="button"
+          aria-label="close search"
         />
       )}
     </div>
