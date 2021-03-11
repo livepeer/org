@@ -26,7 +26,6 @@ const Docs = ({
   mdx,
   meta,
   path,
-  title,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const content = hydrate(mdx, {
     components: {
@@ -100,7 +99,7 @@ const Docs = ({
             display: ["none", "none", "none", "flex"],
             color: "docs.text",
           }}>
-          {title}
+          {meta?.title}
         </p>
       </div>
     </div>
@@ -137,10 +136,6 @@ export const getStaticProps = async ({
     (filePath) => filePath === fullSlug || filePath === fullSlugWithIndexEnding
   );
 
-  if (!filePath) {
-    return { notFound: true };
-  }
-
   const source = fs.readFileSync(path.join(process.cwd(), filePath));
   const { content, data } = matter(source);
 
@@ -160,14 +155,11 @@ export const getStaticProps = async ({
     scope: data,
   });
 
-  const title = parsedData.title;
-
   return {
     props: {
       mdx: mdxSource,
       meta: parsedData,
       path: filePath,
-      title: title,
     },
     revalidate: 1,
   };
