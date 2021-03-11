@@ -61,7 +61,7 @@ const Docs = ({
         transition: "all 0.2s",
         backgroundColor: "docs.background",
         position: "relative",
-        pb: "60px",
+        pb: "40px",
       }}>
       <DocsNav
         selected={realSlug}
@@ -79,7 +79,7 @@ const Docs = ({
           sx={{
             display: ["none", "none", "flex"],
             position: "sticky",
-            height: "calc(100vh - 120px)",
+            height: "calc(100vh - 100px)",
             top: "100px",
             overflowY: "scroll",
           }}>
