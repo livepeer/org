@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
-import { ReactNode } from "react";
-import { jsx } from "theme-ui";
+import { ReactNode, useMemo } from "react";
+import { Box, jsx, SxStyleProp } from "theme-ui";
 
 type HeadingProps = {
   children: ReactNode;
@@ -9,23 +9,49 @@ type HeadingProps = {
 };
 
 export const Heading = ({ children, as }: HeadingProps) => {
+  const sx: SxStyleProp = useMemo(() => {
+    switch (as) {
+      case "h1":
+        return {
+          fontSize: ["40px", "48px"],
+          mb: "32px",
+          "&:not(:first-child)": {
+            mt: "72px",
+          },
+        };
+      case "h2":
+        return {
+          fontSize: ["24px", "32px"],
+          mb: "24px",
+          "&:not(:first-child)": {
+            mt: "72px",
+          },
+        };
+      case "h3":
+        return {
+          fontSize: ["18px", "24px"],
+          mb: "18px",
+          "&:not(:first-child)": {
+            mt: "48px",
+          },
+        };
+
+      default:
+        break;
+    }
+  }, [as]);
+
   return (
-    <p
+    <Box
+      as={as}
       sx={{
-        fontSize:
-          as === "h1"
-            ? ["40px", "48px"]
-            : as === "h2"
-            ? ["24px", "32px"]
-            : ["18px", "24px"],
-        mb: as === "h1" ? "32px" : as === "h2" ? "24px" : "18px",
-        mt: as === "h2" ? "72px" : "",
+        ...sx,
         color: "docs.text",
         fontWeight: "bold",
         fontFamily: "special",
       }}>
       {children}
-    </p>
+    </Box>
   );
 };
 
