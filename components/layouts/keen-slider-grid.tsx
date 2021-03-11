@@ -1,4 +1,6 @@
-import { SxStyleProp, Box, IconButton } from "theme-ui";
+/** @jsx jsx */
+
+import { SxStyleProp, Box, IconButton, jsx } from "theme-ui";
 import { useKeenSlider } from "keen-slider/react";
 import { TOptionsEvents } from "keen-slider";
 import {
