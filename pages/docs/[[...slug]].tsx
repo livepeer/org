@@ -58,6 +58,7 @@ const Docs = ({
       sx={{
         width: "100vw",
         transition: "all 0.2s",
+        minHeight: "100vh",
         backgroundColor: "docs.background",
         position: "relative",
         pb: "40px",
