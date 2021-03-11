@@ -16,6 +16,7 @@ type Props = {
   colorMode: string;
   handleClose: React.MouseEventHandler<HTMLDivElement>;
   selected: string;
+  menuOpen: boolean;
 };
 
 const OpenMenu = ({
@@ -23,19 +24,20 @@ const OpenMenu = ({
   setColorMode,
   handleClose,
   selected,
+  menuOpen,
 }: Props) => {
   return (
     <div
       sx={{
-        height: "100vh",
+        height: menuOpen ? "100vh" : "0px",
+        width: "100%",
         position: "sticky",
         top: "0",
-        overflowY: "scroll",
-        backgroundColor: "docs.background",
-        width: "100%",
         display: "flex",
         flexDirection: "column",
+        backgroundColor: "docs.background",
         padding: "32px 24px",
+        overflowY: "scroll",
       }}>
       <div
         sx={{
@@ -189,6 +191,7 @@ const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
           height: menuOpen ? "100vh" : "0px",
         }}>
         <OpenMenu
+          menuOpen={menuOpen}
           colorMode={colorMode}
           setColorMode={setColorMode}
           handleClose={() => setMenuOpen(false)}
