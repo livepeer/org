@@ -17,7 +17,7 @@ import DocsCard, { Icon } from "components/sections/docs/docs-card";
 import { Heading, Text } from "components/sections/docs/docs-content";
 import { jsx, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
-import DocsMenu from "components/sections/docs/docs-menu";
+import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
 import NextStep from "components/sections/docs/next-step";
 
 type Params = { slug?: string[] };
@@ -111,15 +111,20 @@ const Docs = ({
   );
 };
 
+function getHref(filePath: string) {
+  const clean = filePath
+    .replace("docs/", "")
+    .replace("index.mdx", "")
+    .replace(".mdx", "");
+  return clean;
+}
+
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const filePaths = await globby("docs/**/*");
 
   const paths = filePaths.map((g) => {
-    const clean = g
-      .replace("docs/", "")
-      .replace(".mdx", "")
-      .split("/")
-      .filter((p) => p !== "index");
+    const href = getHref(g);
+    const clean = href.split("/");
     return { params: { slug: clean } };
   });
 
@@ -128,6 +133,18 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
     fallback: "blocking",
   };
 };
+
+// Runtime validation to make sure we have the correct front matter data in our .mdx files
+const dataSchema = z.object({
+  title: z.string(),
+});
+
+function getFileContent(filePath: string) {
+  const source = fs.readFileSync(path.join(process.cwd(), filePath));
+  const { content, data } = matter(source);
+  const parsedData = dataSchema.parse(data);
+  return { content, meta: parsedData };
+}
 
 export const getStaticProps = async ({
   params,
@@ -141,14 +158,16 @@ export const getStaticProps = async ({
     (filePath) => filePath === fullSlug || filePath === fullSlugWithIndexEnding
   );
 
-  const source = fs.readFileSync(path.join(process.cwd(), filePath));
-  const { content, data } = matter(source);
-
-  // Runtime validation to make sure we have the correct front matter data in our .mdx files
-  const dataSchema = z.object({
-    title: z.string(),
+  const menu: Menu[] = filePaths.map((filePath) => {
+    const { meta } = getFileContent(filePath);
+    const href = getHref(filePath);
+    return {
+      href,
+      title: meta.title,
+    };
   });
-  const parsedData = dataSchema.parse(data);
+
+  const { meta, content } = getFileContent(filePath);
 
   const mdxSource = await renderToString(content, {
     components: {},
@@ -157,13 +176,13 @@ export const getStaticProps = async ({
       remarkPlugins: [],
       rehypePlugins: [],
     },
-    scope: data,
+    scope: meta,
   });
 
   return {
     props: {
+      meta,
       mdx: mdxSource,
-      meta: parsedData,
       path: filePath,
     },
     revalidate: 1,

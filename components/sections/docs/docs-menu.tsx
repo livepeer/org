@@ -31,6 +31,12 @@ type SectionProps = {
   }[];
 };
 
+export type Menu = {
+  title: string;
+  href: string;
+  links?: Menu[];
+};
+
 const sections = [
   {
     title: "Video Application Developers",
