@@ -12,23 +12,101 @@ import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
-import DocsNav from "components/layouts/docs-nav";
-import { Container, jsx, useColorMode } from "theme-ui";
+import DocsNav from "components/sections/docs/docs-nav";
+import DocsCard, { Icon } from "components/sections/docs/docs-card";
+import { Heading, Text } from "components/sections/docs/docs-content";
+import { jsx, useColorMode } from "theme-ui";
+import DocsCardsContainer from "components/sections/docs/docs-cards-container";
+import DocsMenu from "components/sections/docs/docs-menu";
+import NextStep from "components/sections/docs/next-step";
 
 type Params = { slug?: string[] };
 
 const Docs = ({
   mdx,
   meta,
+  path,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const content = hydrate(mdx, { components: {} });
+  const content = hydrate(mdx, {
+    components: {
+      h1: ({ children }) => {
+        return <Heading as="h1">{children}</Heading>;
+      },
+      h2: ({ children }) => {
+        return <Heading as="h2">{children}</Heading>;
+      },
+      h3: ({ children }) => {
+        return <Heading as="h3">{children}</Heading>;
+      },
+      p: ({ children }) => {
+        return <Text>{children}</Text>;
+      },
+      DocsCard,
+      DocsCardsContainer,
+      Icon,
+      NextStep,
+    },
+  });
   const [colorMode, setColorMode] = useColorMode();
 
+  const slug = path ? path : "";
+
+  const realSlug = slug.replace("/index.mdx", "");
+
   return (
-    <div sx={{ width: "100vw" }}>
-      <DocsNav setColorMode={setColorMode} colorMode={colorMode} />
-      <h1>{JSON.stringify(meta)}</h1>
-      {content}
+    <div
+      sx={{
+        width: "100vw",
+        transition: "all 0.2s",
+        minHeight: "100vh",
+        backgroundColor: "docs.background",
+        position: "relative",
+        pb: "40px",
+      }}>
+      <DocsNav
+        selected={realSlug}
+        setColorMode={setColorMode}
+        colorMode={colorMode}
+      />
+      <div
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          px: ["24px", "24px", "24px", "80px"],
+          mt: "60px",
+        }}>
+        <div
+          sx={{
+            display: ["none", "none", "flex"],
+            position: "sticky",
+            height: "calc(100vh - 118px)",
+            top: "118px",
+            overflowY: "auto",
+          }}>
+          <DocsMenu selected={realSlug} />
+        </div>
+        <div
+          sx={{
+            width: "100%",
+            maxWidth: ["100%", "100%", "730px"],
+            color: "docs.text",
+            display: "flex",
+            flexDirection: "column",
+          }}>
+          {content}
+        </div>
+        <p
+          sx={{
+            position: "sticky",
+            height: "calc(100vh - 118px)",
+            top: "118px",
+            display: ["none", "none", "none", "flex"],
+            color: "docs.text",
+            overflowY: "auto",
+          }}>
+          {meta?.title}
+        </p>
+      </div>
     </div>
   );
 };
@@ -63,10 +141,6 @@ export const getStaticProps = async ({
     (filePath) => filePath === fullSlug || filePath === fullSlugWithIndexEnding
   );
 
-  if (!filePath) {
-    return { notFound: true };
-  }
-
   const source = fs.readFileSync(path.join(process.cwd(), filePath));
   const { content, data } = matter(source);
 
@@ -90,6 +164,7 @@ export const getStaticProps = async ({
     props: {
       mdx: mdxSource,
       meta: parsedData,
+      path: filePath,
     },
     revalidate: 1,
   };

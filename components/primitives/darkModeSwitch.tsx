@@ -14,11 +14,12 @@ const DarkModeSwitch = ({ setColorMode, colorMode }: Props) => {
       sx={{
         width: "80px",
         height: "40px",
-        backgroundColor: "docsDarkGrey",
+        backgroundColor: "docs.darkGrey",
         borderRadius: "24px",
         position: "relative",
         display: "flex",
         alignItems: "center",
+        transition: "all 0.2s",
       }}
       htmlFor="darkMode">
       <input
@@ -37,14 +38,14 @@ const DarkModeSwitch = ({ setColorMode, colorMode }: Props) => {
           cursor: "pointer",
           width: "40px",
           height: "40px",
-          backgroundColor: "docsMuted",
+          backgroundColor: "docs.muted",
           border: "1px solid",
-          borderColor: "docsBorder",
+          borderColor: "docs.border",
           borderRadius: "50%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          transition: "all 0.3s",
+          transition: "all 0.2s",
           zIndex: "1",
         }}>
         {colorMode === "dark" ? (
