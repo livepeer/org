@@ -213,7 +213,12 @@ const Trigger = ({ title, selected }: TriggerProps) => {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      sx={{ display: "flex", alignItems: "center" }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        color: "docs.text",
+        ":hover": { color: "docs.selected" },
+      }}
       onClick={() => setIsOpen(!isOpen)}>
       {selected && (
         <div
@@ -231,7 +236,7 @@ const Trigger = ({ title, selected }: TriggerProps) => {
           fontSize: "14px",
           lineHeight: "24px",
           mr: "8px",
-          color: selected ? "docs.selected" : "docs.text",
+          // color: selected ? "docs.selected" : "docs.text",
           transition: "all 0.2s",
           fontWeight: selected ? "600" : "normal",
           ":hover": {
