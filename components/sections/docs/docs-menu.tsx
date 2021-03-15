@@ -348,9 +348,13 @@ const Section = ({
                             <a
                               sx={{
                                 color:
-                                  `${path}/` === link.href
+                                  `${path}/` === thirdLink.href
                                     ? "docs.selected"
                                     : "docs.text",
+                                fontWeight:
+                                  `${path}/` === thirdLink.href
+                                    ? "600"
+                                    : "normal",
                                 transition: "all 0.2s",
                                 cursor: "pointer",
                                 maxWidth: "fit-content",
@@ -391,6 +395,8 @@ const Section = ({
                             `${path}/` === secondLink.href
                               ? "docs.selected"
                               : "docs.text",
+                          fontWeight:
+                            `${path}/` === secondLink.href ? "600" : "normal",
                           transition: "all 0.2s",
                           cursor: "pointer",
                           maxWidth: "fit-content",
@@ -429,6 +435,7 @@ const Section = ({
                     cursor: "pointer",
                     maxWidth: "fit-content",
                     fontSize: "14px",
+                    fontWeight: `${path}/` === link.href ? "600" : "normal",
                     lineHeight: "24px",
                     ":hover": {
                       color: "docs.selected",
