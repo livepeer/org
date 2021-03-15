@@ -44,14 +44,20 @@ const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
           alignItems: "center",
           justifyContent: "space-between",
         }}>
-        <div sx={{ display: "flex", alignItems: "center" }}>
+        <div
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            minWidth: "90px",
+            maxHeight: "25px",
+          }}>
           <Link href="/">
             <i sx={{ cursor: "pointer" }}>
               <LivepeerIconSvg pushSx={{ width: "24px", height: "22px" }} />
             </i>
           </Link>
           <p sx={{ color: "docs.lightGray", fontSize: "16px", ml: "8px" }}>
-            /{" "}
+            /
             <Link href="/docs">
               <a
                 sx={{

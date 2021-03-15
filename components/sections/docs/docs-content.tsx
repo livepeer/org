@@ -49,6 +49,7 @@ export const Heading = ({ children, as }: HeadingProps) => {
         color: "docs.text",
         fontWeight: "bold",
         fontFamily: "special",
+        textRendering: "optimizeLegibility",
       }}>
       {children}
     </Box>

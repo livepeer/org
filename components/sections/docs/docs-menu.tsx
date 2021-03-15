@@ -236,7 +236,6 @@ const Trigger = ({ title, selected }: TriggerProps) => {
           fontSize: "14px",
           lineHeight: "24px",
           mr: "8px",
-          // color: selected ? "docs.selected" : "docs.text",
           transition: "all 0.2s",
           fontWeight: selected ? "600" : "normal",
           ":hover": {
@@ -277,16 +276,10 @@ const Section = ({ title, links, selected }: SectionProps) => {
         {links.map((link, idx) =>
           link.links.length > 0 ? (
             <Collapsible
-              open={
-                selected === link.href
-                  ? true
-                  : isOpen !== link.href || isOpen !== ""
-                  ? false
-                  : false
-              }
+              open={isOpen !== link.href || isOpen !== "" ? false : true}
               key={idx}
               onOpen={() => setIsOpen(link.href)}
-              onClose={() => setIsOpen("none")}
+              onClose={() => setIsOpen("")}
               trigger={
                 <Trigger
                   selected={selected === link.href ? selected : ""}
