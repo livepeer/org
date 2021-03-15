@@ -86,6 +86,8 @@ const Docs = ({
         selected={realSlug}
         setColorMode={setColorMode}
         colorMode={colorMode}
+        menu={menu}
+        path={router.asPath}
       />
       <div
         sx={{
