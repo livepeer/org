@@ -116,10 +116,10 @@ const Docs = ({
             height: "calc(100vh - 118px)",
             top: "118px",
             display: ["none", "none", "none", "flex"],
-            color: "docs.text",
+            color: "docs.selected",
             overflowY: "auto",
           }}>
-          {meta?.title}
+          Getting Started
         </p>
       </div>
     </div>
