@@ -115,13 +115,7 @@ const sections = [
           {
             title: "Installation",
             href: "/docs/video-miners/getting-started/installation",
-            links: [
-              {
-                title: "Installation",
-                href:
-                  "/docs/video-miners/getting-started/installation/installation",
-              },
-            ],
+            links: [],
           },
           {
             title: "Depositing funds for transcoding",
@@ -232,6 +226,9 @@ const Trigger = ({ title, selected }: TriggerProps) => {
           color: selected ? "docs.selected" : "docs.text",
           transition: "all 0.2s",
           fontWeight: selected ? "600" : "normal",
+          ":hover": {
+            color: "docs.selected",
+          },
         }}>
         {title}
       </p>
@@ -247,6 +244,7 @@ const Trigger = ({ title, selected }: TriggerProps) => {
 };
 
 const Section = ({ title, links, selected }: SectionProps) => {
+  const [isOpen, setIsOpen] = useState("");
   return (
     <div>
       <p
@@ -266,8 +264,16 @@ const Section = ({ title, links, selected }: SectionProps) => {
         {links.map((link, idx) =>
           link.links.length > 0 ? (
             <Collapsible
-              open={selected === link.href ? true : false}
+              open={
+                selected === link.href
+                  ? true
+                  : isOpen !== link.href || isOpen !== ""
+                  ? false
+                  : false
+              }
               key={idx}
+              onOpen={() => setIsOpen(link.href)}
+              onClose={() => setIsOpen("none")}
               trigger={
                 <Trigger
                   selected={selected === link.href ? selected : ""}
@@ -318,6 +324,9 @@ const Section = ({ title, links, selected }: SectionProps) => {
                               maxWidth: "fit-content",
                               fontSize: "14px",
                               lineHeight: "24px",
+                              ":hover": {
+                                color: "docs.selected",
+                              },
                             }}>
                             {thirdLink.title}
                           </a>
@@ -335,6 +344,9 @@ const Section = ({ title, links, selected }: SectionProps) => {
                         maxWidth: "fit-content",
                         fontSize: "14px",
                         lineHeight: "24px",
+                        ":hover": {
+                          color: "docs.selected",
+                        },
                       }}>
                       {secondLink.title}
                     </a>
@@ -353,6 +365,9 @@ const Section = ({ title, links, selected }: SectionProps) => {
                   maxWidth: "fit-content",
                   fontSize: "14px",
                   lineHeight: "24px",
+                  ":hover": {
+                    color: "docs.selected",
+                  },
                 }}>
                 {link.title}
               </a>

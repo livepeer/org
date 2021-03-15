@@ -13,7 +13,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
 import DocsNav from "components/sections/docs/docs-nav";
-import DocsCard, { Icon } from "components/sections/docs/docs-card";
+import DocsCard, { Icon, IconMine } from "components/sections/docs/docs-card";
 import { Heading, Text } from "components/sections/docs/docs-content";
 import { jsx, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
@@ -41,10 +41,25 @@ const Docs = ({
       p: ({ children }) => {
         return <Text>{children}</Text>;
       },
+      a: ({ children }) => {
+        return (
+          <a
+            sx={{
+              fontSize: "16px",
+              lineHeight: "32px",
+              color: "docs.selected",
+              fontWeight: "600",
+              cursor: "pointer",
+            }}>
+            {children}
+          </a>
+        );
+      },
       DocsCard,
       DocsCardsContainer,
       Icon,
       NextStep,
+      IconMine,
     },
   });
   const [colorMode, setColorMode] = useColorMode();

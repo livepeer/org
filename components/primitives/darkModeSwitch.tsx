@@ -20,6 +20,7 @@ const DarkModeSwitch = ({ setColorMode, colorMode }: Props) => {
         display: "flex",
         alignItems: "center",
         transition: "all 0.2s",
+        cursor: "pointer",
       }}
       htmlFor="darkMode">
       <input
