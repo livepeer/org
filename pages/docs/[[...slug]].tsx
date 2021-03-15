@@ -17,8 +17,10 @@ import DocsCard, { Icon, IconMine } from "components/sections/docs/docs-card";
 import { Heading, Text } from "components/sections/docs/docs-content";
 import { jsx, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
-import DocsMenu from "components/sections/docs/docs-menu";
+import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
 import NextStep from "components/sections/docs/next-step";
+import { docsPositions } from "docs-positions";
+import { useRouter } from "next/router";
 
 type Params = { slug?: string[] };
 
@@ -26,7 +28,9 @@ const Docs = ({
   mdx,
   meta,
   path,
+  menu,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const router = useRouter();
   const content = hydrate(mdx, {
     components: {
       h1: ({ children }) => {
@@ -98,7 +102,7 @@ const Docs = ({
             top: "118px",
             overflowY: "auto",
           }}>
-          <DocsMenu selected={realSlug} />
+          <DocsMenu selected={realSlug} menu={menu} path={router.asPath} />
         </div>
         <div
           sx={{
@@ -127,15 +131,20 @@ const Docs = ({
   );
 };
 
+function getHref(filePath: string) {
+  const clean = filePath
+    .replace("docs/", "")
+    .replace("index.mdx", "")
+    .replace(".mdx", "");
+  return clean;
+}
+
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const filePaths = await globby("docs/**/*");
 
   const paths = filePaths.map((g) => {
-    const clean = g
-      .replace("docs/", "")
-      .replace(".mdx", "")
-      .split("/")
-      .filter((p) => p !== "index");
+    const href = getHref(g);
+    const clean = href.split("/");
     return { params: { slug: clean } };
   });
 
@@ -144,6 +153,22 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
     fallback: "blocking",
   };
 };
+
+// Runtime validation to make sure we have the correct front matter data in our .mdx files
+const dataSchema = z.object({
+  title: z.string(),
+});
+
+function getFileContent(filePath: string) {
+  const source = fs.readFileSync(path.join(process.cwd(), filePath));
+  const { content, data } = matter(source);
+  const parsedData = dataSchema?.parse(data);
+  return { content, meta: parsedData };
+}
+
+function splitHref(value) {
+  return value.href?.split("/");
+}
 
 export const getStaticProps = async ({
   params,
@@ -157,14 +182,60 @@ export const getStaticProps = async ({
     (filePath) => filePath === fullSlug || filePath === fullSlugWithIndexEnding
   );
 
-  const source = fs.readFileSync(path.join(process.cwd(), filePath));
-  const { content, data } = matter(source);
-
-  // Runtime validation to make sure we have the correct front matter data in our .mdx files
-  const dataSchema = z.object({
-    title: z.string(),
+  const sorted = filePaths.sort((a, b) => {
+    const indexA = docsPositions.indexOf(a);
+    const indexB = docsPositions.indexOf(b);
+    return indexA - indexB;
   });
-  const parsedData = dataSchema.parse(data);
+
+  const paths = sorted.map((path) =>
+    path
+      .split("/")
+      .splice(1, 1)
+      .filter((each) => each !== "index.mdx" || "index")
+      .toString()
+  );
+
+  const routePaths = [...Array.from(new Set(paths.map((item) => item)))];
+
+  const menu: Menu[] = sorted.map((filePath) => {
+    const { meta } = getFileContent(filePath);
+    const href = getHref(filePath);
+    return {
+      href,
+      title: meta.title,
+    };
+  });
+
+  const realMenu: Menu[] = routePaths.map((route) => {
+    return {
+      href: `/docs/${route}`,
+      title: route.replace(/-/g, " "),
+      links: menu
+        .filter(
+          (subPath) =>
+            splitHref(subPath).splice(0, 1)[0] === route &&
+            splitHref(subPath).length < 4 &&
+            subPath.href.replace("/", "") !== route
+        )
+        .map((secondLink) => {
+          return {
+            href: `/docs/${secondLink.href}`,
+            title: secondLink.title,
+            links: menu.filter(
+              (thirdLink) =>
+                splitHref(thirdLink).length > 3 &&
+                splitHref(thirdLink).splice(0, 1)[0] ===
+                  splitHref(secondLink).splice(0, 1)[0] &&
+                splitHref(thirdLink).splice(1, 2)[0] ===
+                  splitHref(secondLink).splice(1, 2)[0]
+            ),
+          };
+        }),
+    };
+  });
+
+  const { meta, content } = getFileContent(filePath);
 
   const mdxSource = await renderToString(content, {
     components: {},
@@ -173,14 +244,15 @@ export const getStaticProps = async ({
       remarkPlugins: [],
       rehypePlugins: [],
     },
-    scope: data,
+    scope: meta,
   });
 
   return {
     props: {
+      meta,
       mdx: mdxSource,
-      meta: parsedData,
       path: filePath,
+      menu: realMenu,
     },
     revalidate: 1,
   };

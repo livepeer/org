@@ -5,31 +5,30 @@ import Link from "next/link";
 import Collapsible from "react-collapsible";
 import { useState } from "react";
 
+export type Menu = {
+  selected?: string;
+  title: string;
+  href?: string;
+  links?: Menu[];
+};
+
+type SectionsMenu = {
+  path?: string;
+  sectionOpen?: string;
+  setSectionOpen?: React.Dispatch<React.SetStateAction<string>>;
+};
+
 type Props = {
   selected?: string;
+  menu: Menu[];
+  path: string;
 };
 
 type TriggerProps = {
   title?: string;
+  selected?: boolean;
   hover?: boolean;
-  selected?: string;
-};
-
-type SectionProps = {
-  title: string;
-  selected: string;
-  links?: {
-    title: string;
-    href: string;
-    links: {
-      title: string;
-      href: string;
-      links: {
-        title: string;
-        href: string;
-      }[];
-    }[];
-  }[];
+  isOpen?: boolean;
 };
 
 const sections = [
@@ -206,8 +205,7 @@ const TriggerIcon = ({ selected, hover }: TriggerProps) => {
   );
 };
 
-const Trigger = ({ title, selected }: TriggerProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const Trigger = ({ title, selected, isOpen }: TriggerProps) => {
   const [hover, setHover] = useState(false);
   return (
     <div
@@ -218,8 +216,7 @@ const Trigger = ({ title, selected }: TriggerProps) => {
         alignItems: "center",
         color: "docs.text",
         ":hover": { color: "docs.selected" },
-      }}
-      onClick={() => setIsOpen(!isOpen)}>
+      }}>
       {selected && (
         <div
           sx={{
@@ -255,8 +252,14 @@ const Trigger = ({ title, selected }: TriggerProps) => {
   );
 };
 
-const Section = ({ title, links, selected }: SectionProps) => {
-  const [isOpen, setIsOpen] = useState("");
+const Section = ({
+  title,
+  links,
+  selected,
+  sectionOpen,
+  setSectionOpen,
+  path,
+}: Menu & SectionsMenu) => {
   return (
     <div>
       <p
@@ -276,19 +279,23 @@ const Section = ({ title, links, selected }: SectionProps) => {
         {links.map((link, idx) =>
           link.links.length > 0 ? (
             <Collapsible
-              open={isOpen !== link.href || isOpen !== "" ? false : true}
+              open={sectionOpen === link.href || link.href === `${path}/`}
               key={idx}
-              onOpen={() => setIsOpen(link.href)}
-              onClose={() => setIsOpen("")}
+              handleTriggerClick={() => {
+                sectionOpen === link.href
+                  ? setSectionOpen("")
+                  : setSectionOpen(link.href);
+              }}
               trigger={
                 <Trigger
-                  selected={selected === link.href ? selected : ""}
+                  selected={link.href === `${path}/`}
                   title={link.title}
+                  isOpen={sectionOpen === link.href || link.href === `${path}/`}
                 />
               }
               transitionTime={300}
               sx={{
-                color: selected === link.href ? "docs.select" : "docs.text",
+                color: `${path}/` === link.href ? "docs.select" : "docs.text",
                 transition: "all 0.2s",
                 mt: "12px",
                 cursor: "pointer",
@@ -296,20 +303,20 @@ const Section = ({ title, links, selected }: SectionProps) => {
                 lineHeight: "24px",
               }}>
               {link.links?.map((secondLink, idx) =>
-                secondLink.links.length > 0 ? (
+                secondLink.links?.length > 0 ? (
                   <Collapsible
                     key={idx}
                     open={selected === link.href ? true : false}
                     trigger={
                       <Trigger
-                        selected={selected === secondLink.href ? selected : ""}
+                        selected={secondLink.href === `${path}/`}
                         title={secondLink.title}
                       />
                     }
                     transitionTime={300}
                     sx={{
                       color:
-                        selected === secondLink.href
+                        `${path}/` === secondLink.href
                           ? "docs.select"
                           : "docs.text",
                       mt: "12px",
@@ -321,62 +328,115 @@ const Section = ({ title, links, selected }: SectionProps) => {
                     {secondLink.links &&
                       secondLink.links.map((thirdLink, idx) => (
                         <Link href={thirdLink.href} key={idx}>
-                          <a
+                          <div
                             sx={{
-                              color: "docs.text",
-                              transition: "all 0.2s",
+                              display: "flex",
+                              alignItems: "center",
                               mt: "12px",
-                              cursor: "pointer",
-                              maxWidth: "fit-content",
-                              fontSize: "14px",
-                              lineHeight: "24px",
-                              ":hover": {
-                                color: "docs.selected",
-                              },
                             }}>
-                            {thirdLink.title}
-                          </a>
+                            {`${path}/` === thirdLink.href && (
+                              <div
+                                sx={{
+                                  width: "6px",
+                                  height: "6px",
+                                  backgroundColor: "docs.selected",
+                                  transition: "all 0.2s",
+                                  mr: "10px",
+                                }}
+                              />
+                            )}
+                            <a
+                              sx={{
+                                color:
+                                  `${path}/` === link.href
+                                    ? "docs.selected"
+                                    : "docs.text",
+                                transition: "all 0.2s",
+                                cursor: "pointer",
+                                maxWidth: "fit-content",
+                                fontSize: "14px",
+                                lineHeight: "24px",
+                                ":hover": {
+                                  color: "docs.selected",
+                                },
+                              }}>
+                              {thirdLink.title}
+                            </a>
+                          </div>
                         </Link>
                       ))}
                   </Collapsible>
                 ) : (
                   <Link href={secondLink.href} key={idx}>
-                    <a
+                    <div
                       sx={{
-                        color: "docs.text",
-                        transition: "all 0.2s",
+                        display: "flex",
+                        alignItems: "center",
                         mt: "12px",
-                        cursor: "pointer",
-                        maxWidth: "fit-content",
-                        fontSize: "14px",
-                        lineHeight: "24px",
-                        ":hover": {
-                          color: "docs.selected",
-                        },
                       }}>
-                      {secondLink.title}
-                    </a>
+                      {`${path}/` === secondLink.href && (
+                        <div
+                          sx={{
+                            width: "6px",
+                            height: "6px",
+                            backgroundColor: "docs.selected",
+                            transition: "all 0.2s",
+                            mr: "10px",
+                          }}
+                        />
+                      )}
+                      <a
+                        sx={{
+                          color:
+                            `${path}/` === secondLink.href
+                              ? "docs.selected"
+                              : "docs.text",
+                          transition: "all 0.2s",
+                          cursor: "pointer",
+                          maxWidth: "fit-content",
+                          fontSize: "14px",
+                          lineHeight: "24px",
+                          ":hover": {
+                            color: "docs.selected",
+                          },
+                        }}>
+                        {secondLink.title}
+                      </a>
+                    </div>
                   </Link>
                 )
               )}
             </Collapsible>
           ) : (
             <Link href={link.href} key={idx}>
-              <a
-                sx={{
-                  color: "docs.text",
-                  transition: "all 0.2s",
-                  mt: "12px",
-                  cursor: "pointer",
-                  maxWidth: "fit-content",
-                  fontSize: "14px",
-                  lineHeight: "24px",
-                  ":hover": {
-                    color: "docs.selected",
-                  },
-                }}>
-                {link.title}
-              </a>
+              <div sx={{ display: "flex", alignItems: "center", mt: "12px" }}>
+                {`${path}/` === link.href && (
+                  <div
+                    sx={{
+                      width: "6px",
+                      height: "6px",
+                      backgroundColor: "docs.selected",
+                      transition: "all 0.2s",
+                      mr: "10px",
+                    }}
+                  />
+                )}
+                <a
+                  sx={{
+                    color:
+                      `${path}/` === link.href ? "docs.selected" : "docs.text",
+                    transition: "all 0.2s",
+                    cursor: "pointer",
+                    maxWidth: "fit-content",
+                    fontSize: "14px",
+                    lineHeight: "24px",
+                    ":hover": {
+                      color: "docs.selected",
+                    },
+                  }}>
+                  {link.title}
+                </a>
+              </div>
             </Link>
           )
         )}
@@ -385,7 +445,8 @@ const Section = ({ title, links, selected }: SectionProps) => {
   );
 };
 
-const DocsMenu = ({ selected }: Props) => {
+const DocsMenu = ({ selected, menu, path }: Props) => {
+  const [sectionOpen, setSectionOpen] = useState("");
   return (
     <div
       sx={{
@@ -419,14 +480,19 @@ const DocsMenu = ({ selected }: Props) => {
           </a>
         </Link>
       </div>
-      {sections.map((section, idx) => (
-        <Section
-          selected={selected}
-          key={idx}
-          title={section.title}
-          links={section.links}
-        />
-      ))}
+      {menu
+        ?.filter((each) => each.title !== "index" && each.title !== "index.mdx")
+        .map((section, idx) => (
+          <Section
+            selected={selected}
+            path={path}
+            key={idx}
+            title={section.title}
+            links={section.links}
+            sectionOpen={sectionOpen}
+            setSectionOpen={setSectionOpen}
+          />
+        ))}
     </div>
   );
 };
