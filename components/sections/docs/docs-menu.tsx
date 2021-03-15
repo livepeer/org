@@ -11,6 +11,7 @@ type Props = {
 
 type TriggerProps = {
   title?: string;
+  hover?: boolean;
   selected?: string;
 };
 
@@ -173,7 +174,7 @@ const sections = [
   },
 ];
 
-const TriggerIcon = ({ selected }: TriggerProps) => {
+const TriggerIcon = ({ selected, hover }: TriggerProps) => {
   const [colorMode] = useColorMode();
   return (
     <svg
@@ -187,7 +188,11 @@ const TriggerIcon = ({ selected }: TriggerProps) => {
         stroke={
           selected && colorMode === "default"
             ? "#3F3FE2"
+            : hover && colorMode === "default"
+            ? "#3F3FE2"
             : selected && colorMode === "dark"
+            ? "#00EB88"
+            : hover && colorMode === "dark"
             ? "#00EB88"
             : colorMode === "default"
             ? "#131418"
@@ -203,8 +208,11 @@ const TriggerIcon = ({ selected }: TriggerProps) => {
 
 const Trigger = ({ title, selected }: TriggerProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [hover, setHover] = useState(false);
   return (
     <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       sx={{ display: "flex", alignItems: "center" }}
       onClick={() => setIsOpen(!isOpen)}>
       {selected && (
@@ -237,7 +245,7 @@ const Trigger = ({ title, selected }: TriggerProps) => {
           transform: isOpen ? "rotate(180deg)" : "",
           transition: "all 0.3s",
         }}>
-        <TriggerIcon selected={selected} />
+        <TriggerIcon selected={selected} hover={hover} />
       </i>
     </div>
   );
