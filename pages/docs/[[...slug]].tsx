@@ -104,6 +104,7 @@ const Docs = ({
           sx={{
             width: "100%",
             maxWidth: ["100%", "100%", "730px"],
+            minHeight: "calc(100vh - 118px)",
             color: "docs.text",
             display: "flex",
             flexDirection: "column",
