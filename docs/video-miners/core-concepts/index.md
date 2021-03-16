@@ -6,3 +6,4 @@ This section will help video miners to understand:
 - [Transcoding pools](./pools.md)
 - [Selection](./selection.md)
 - [Earnings](./earnings.md)
+- [Dual mining](./dual-mining.md)
