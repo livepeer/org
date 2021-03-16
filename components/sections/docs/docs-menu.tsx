@@ -4,7 +4,6 @@ import { jsx, useColorMode } from "theme-ui";
 import Link from "next/link";
 import Collapsible from "react-collapsible";
 import { useCallback, useState } from "react";
-import { link } from "node:fs";
 import { useRouter } from "next/router";
 
 export type Menu = {
@@ -33,148 +32,6 @@ type TriggerProps = {
   isOpen?: boolean;
   href?: string;
 };
-
-const sections = [
-  {
-    title: "Video Application Developers",
-    links: [
-      {
-        title: "Overview",
-        href: "/docs/video-application-developers/overview",
-        links: [],
-      },
-      {
-        title: "Getting Started",
-        href: "/docs/video-application-developers/getting-started",
-        links: [
-          {
-            title: "Installation",
-            href:
-              "/docs/video-application-developers/getting-started/installation",
-            links: [],
-          },
-          {
-            title: "Depositing funds for transcoding",
-            href: "/",
-            links: [],
-          },
-          {
-            title: "Running Livepeer in broadcaster mode",
-            href: "/",
-            links: [],
-          },
-          {
-            title: "Boradcasting to your Livepeer node using OBS",
-            href: "/",
-            links: [],
-          },
-          {
-            title: "Playing the local video stream",
-            href: "/",
-            links: [],
-          },
-        ],
-      },
-      {
-        title: "How-to Guides",
-        href: "/",
-        links: [],
-      },
-      {
-        title: "Core Concepts",
-        href: "/",
-        links: [
-          {
-            title: "Benefits of using Livepeer",
-            href: "/",
-            links: [],
-          },
-          {
-            title: "Use Cases",
-            href: "/",
-            links: [],
-          },
-        ],
-      },
-      {
-        title: "Reference",
-        href: "/",
-        links: [],
-      },
-    ],
-  },
-  {
-    title: "Video Miners",
-    links: [
-      {
-        title: "Overview",
-        href: "/docs/video-miners/overview",
-        links: [],
-      },
-      {
-        title: "Getting Started",
-        href: "/docs/video-miners/getting-started",
-        links: [
-          {
-            title: "Installation",
-            href: "/docs/video-miners/getting-started/installation",
-            links: [],
-          },
-          {
-            title: "Depositing funds for transcoding",
-            href: "/",
-            links: [],
-          },
-          {
-            title: "Running Livepeer in broadcaster mode",
-            href: "/",
-            links: [],
-          },
-          {
-            title: "Boradcasting to your Livepeer node using OBS",
-            href: "/",
-            links: [],
-          },
-          {
-            title: "Playing the local video stream",
-            href: "/",
-            links: [],
-          },
-        ],
-      },
-      {
-        title: "How-to Guides",
-        href: "/",
-        links: [],
-      },
-      {
-        title: "Core Concepts",
-        href: "/",
-        links: [],
-      },
-      {
-        title: "Reference",
-        href: "/",
-        links: [],
-      },
-    ],
-  },
-  {
-    title: "Protocol",
-    links: [
-      {
-        title: "Core Concepts",
-        href: "/",
-        links: [],
-      },
-      {
-        title: "Reference",
-        href: "/",
-        links: [],
-      },
-    ],
-  },
-];
 
 const TriggerIcon = ({ selected, hover }: TriggerProps) => {
   const [colorMode] = useColorMode();
@@ -211,10 +68,12 @@ const TriggerIcon = ({ selected, hover }: TriggerProps) => {
 const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
   const [hover, setHover] = useState(false);
   const router = useRouter();
+
   const handlePushRoute = useCallback(() => {
     if (!href) return;
     router.push(href);
-  }, []);
+  }, [href, router]);
+
   return (
     <div
       onMouseEnter={() => setHover(true)}

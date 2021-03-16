@@ -1,5 +1,6 @@
 /** @jsx jsx */
 
+import slugify from "@sindresorhus/slugify";
 import { ReactNode, useMemo } from "react";
 import { Box, jsx, SxStyleProp } from "theme-ui";
 
@@ -41,9 +42,12 @@ export const Heading = ({ children, as }: HeadingProps) => {
     }
   }, [as]);
 
+  const id = slugify(children.toString());
+
   return (
     <Box
       as={as}
+      id={id}
       sx={{
         ...sx,
         color: "docs.text",
