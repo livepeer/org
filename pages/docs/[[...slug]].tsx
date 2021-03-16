@@ -156,6 +156,7 @@ const Docs = ({
                     ? router.asPath
                     : `${router.asPath}#${title.slug}`
                 }
+                passHref
                 key={idx}>
                 <a
                   sx={{
