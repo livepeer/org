@@ -15,7 +15,7 @@ import * as z from "zod";
 import DocsNav from "components/sections/docs/docs-nav";
 import DocsCard, { Icon, IconMine } from "components/sections/docs/docs-card";
 import { Heading, Text } from "components/sections/docs/docs-content";
-import { jsx, useColorMode } from "theme-ui";
+import { jsx, ThemeProvider, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
 import NextStep from "components/sections/docs/next-step";
@@ -25,8 +25,46 @@ import { useRouter } from "next/router";
 import DocsPageLayout from "components/layouts/docs-page";
 import getToc from "markdown-toc";
 import Link from "next/link";
+import theme from "lib/theme";
 
 type Params = { slug?: string[] };
+
+const components = {
+  h1: ({ children }) => {
+    return <Heading as="h1">{children}</Heading>;
+  },
+  h2: ({ children }) => {
+    return <Heading as="h2">{children}</Heading>;
+  },
+  h3: ({ children }) => {
+    return <Heading as="h3">{children}</Heading>;
+  },
+  p: ({ children }) => {
+    return <Text>{children}</Text>;
+  },
+  a: ({ children, href }) => {
+    return (
+      <Link href={href} passHref>
+        <a
+          sx={{
+            fontSize: "16px",
+            lineHeight: "32px",
+            color: "docs.selected",
+            fontWeight: "600",
+            cursor: "pointer",
+          }}>
+          {children}
+        </a>
+      </Link>
+    );
+  },
+  DocsCard,
+  DocsCardsContainer,
+  Icon,
+  NextStep,
+  IconMine,
+  PreviousStep,
+};
 
 const Docs = ({
   mdx,
@@ -50,42 +88,7 @@ const Docs = ({
   const realSlug = slug.replace("/index.mdx", "");
 
   const content = hydrate(mdx, {
-    components: {
-      h1: ({ children }) => {
-        return <Heading as="h1">{children}</Heading>;
-      },
-      h2: ({ children }) => {
-        return <Heading as="h2">{children}</Heading>;
-      },
-      h3: ({ children }) => {
-        return <Heading as="h3">{children}</Heading>;
-      },
-      p: ({ children }) => {
-        return <Text>{children}</Text>;
-      },
-      a: ({ children, href }) => {
-        return (
-          <Link href={href} passHref>
-            <a
-              sx={{
-                fontSize: "16px",
-                lineHeight: "32px",
-                color: "docs.selected",
-                fontWeight: "600",
-                cursor: "pointer",
-              }}>
-              {children}
-            </a>
-          </Link>
-        );
-      },
-      DocsCard,
-      DocsCardsContainer,
-      Icon,
-      NextStep,
-      IconMine,
-      PreviousStep,
-    },
+    components,
   });
 
   return (
@@ -93,6 +96,7 @@ const Docs = ({
       headProps={{
         meta: {
           title: meta.title,
+          description: meta.description,
           url: `https://livepeer.org${router.asPath}`,
         },
       }}>
@@ -208,6 +212,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 // Runtime validation to make sure we have the correct front matter data in our .mdx files
 const dataSchema = z.object({
   title: z.string(),
+  description: z.string().optional(),
 });
 
 function getFileContent(filePath: string) {
@@ -299,7 +304,11 @@ export const getStaticProps = async ({
   const toc = getToc(content).json;
 
   const mdxSource = await renderToString(content, {
-    components: {},
+    components,
+    provider: {
+      component: ThemeProvider,
+      props: { theme },
+    },
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
