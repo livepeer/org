@@ -148,10 +148,10 @@ const Section = ({
         {links.map((link, idx) =>
           link.links.length > 0 ? (
             <Collapsible
-              open={link.href === `${path}/` || sectionOpen === link.href}
+              open={link.href === path || sectionOpen === link.href}
               key={idx}
               handleTriggerClick={() => {
-                sectionOpen === link.href && link.href !== `${path}/`
+                sectionOpen === link.href && link.href !== `${path}`
                   ? null
                   : sectionOpen === link.href
                   ? setSectionOpen("")
@@ -159,7 +159,7 @@ const Section = ({
               }}
               trigger={
                 <Trigger
-                  selected={link.href === `${path}/`}
+                  selected={`${path}/` === link.href}
                   title={link.title}
                   href={link.href}
                   isOpen={sectionOpen === link.href || link.href === `${path}/`}
@@ -167,7 +167,7 @@ const Section = ({
               }
               transitionTime={300}
               sx={{
-                color: `${path}/` === link.href ? "docs.selected" : "docs.text",
+                color: path === link.href ? "docs.selected" : "docs.text",
                 transition: "all 0.2s",
                 mt: "12px",
                 cursor: "pointer",
@@ -181,14 +181,14 @@ const Section = ({
                     open={selected === link.href ? true : false}
                     trigger={
                       <Trigger
-                        selected={secondLink.href === `${path}/`}
+                        selected={secondLink.href === path}
                         title={secondLink.title}
                       />
                     }
                     transitionTime={300}
                     sx={{
                       color:
-                        `${path}/` === secondLink.href
+                        path === secondLink.href
                           ? "docs.selected"
                           : "docs.text",
                       mt: "12px",
@@ -206,7 +206,7 @@ const Section = ({
                               alignItems: "center",
                               mt: "12px",
                             }}>
-                            {`${path}/` === `/docs/${thirdLink.href}` && (
+                            {path === `/docs/${thirdLink.href}` && (
                               <div
                                 sx={{
                                   width: "6px",
@@ -220,11 +220,11 @@ const Section = ({
                             <a
                               sx={{
                                 color:
-                                  `${path}/` === `/docs/${thirdLink.href}`
+                                  path === `/docs/${thirdLink.href}`
                                     ? "docs.selected"
                                     : "docs.text",
                                 fontWeight:
-                                  `${path}/` === `/docs/${thirdLink.href}`
+                                  path === `/docs/${thirdLink.href}`
                                     ? "600"
                                     : "normal",
                                 transition: "all 0.2s",
@@ -250,7 +250,7 @@ const Section = ({
                         alignItems: "flex-start",
                         mt: "12px",
                       }}>
-                      {`${path}/` === `/docs/${secondLink.href}` && (
+                      {path === `/docs/${secondLink.href}` && (
                         <div
                           sx={{
                             minWidth: "6px",
@@ -265,11 +265,11 @@ const Section = ({
                       <a
                         sx={{
                           color:
-                            `${path}/` === `/docs/${secondLink.href}`
+                            path === `/docs/${secondLink.href}`
                               ? "docs.selected"
                               : "docs.text",
                           fontWeight:
-                            `${path}/` === `/docs/${secondLink.href}`
+                            path === `/docs/${secondLink.href}`
                               ? "600"
                               : "normal",
                           transition: "all 0.2s",
@@ -291,7 +291,7 @@ const Section = ({
           ) : (
             <Link href={link.href} key={idx}>
               <div sx={{ display: "flex", alignItems: "center", mt: "12px" }}>
-                {`${path}/` === link.href && (
+                {path === link.href && (
                   <div
                     sx={{
                       width: "6px",
@@ -304,13 +304,12 @@ const Section = ({
                 )}
                 <a
                   sx={{
-                    color:
-                      `${path}/` === link.href ? "docs.selected" : "docs.text",
+                    color: path === link.href ? "docs.selected" : "docs.text",
                     transition: "all 0.2s",
                     cursor: "pointer",
                     maxWidth: "fit-content",
                     fontSize: "14px",
-                    fontWeight: `${path}/` === link.href ? "600" : "normal",
+                    fontWeight: path === link.href ? "600" : "normal",
                     lineHeight: "24px",
                     ":hover": {
                       color: "docs.selected",
