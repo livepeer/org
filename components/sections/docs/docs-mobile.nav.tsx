@@ -18,7 +18,6 @@ type Props = {
   selected: string;
   menuOpen: boolean;
   menu?: Menu[];
-  path?: string;
 };
 
 const OpenMenu = ({
@@ -28,7 +27,6 @@ const OpenMenu = ({
   selected,
   menuOpen,
   menu,
-  path,
 }: Props) => {
   return (
     <div
@@ -55,7 +53,7 @@ const OpenMenu = ({
         onClick={handleClose}>
         <CloseMobileNav color={colorMode === "dark" ? "#fff" : "#131418"} />
       </div>
-      <DocsMenu selected={selected} menu={menu} path={path} />
+      <DocsMenu selected={selected} menu={menu} />
       <div sx={{ position: "fixed", bottom: "100px", right: "16px" }}>
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
@@ -63,7 +61,7 @@ const OpenMenu = ({
   );
 };
 
-const DocsMobileNav = ({ setColorMode, colorMode, selected, menu, path }) => {
+const DocsMobileNav = ({ setColorMode, colorMode, selected, menu }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [inputOpen, setInputOpen] = useState<boolean>(false);
 
@@ -203,7 +201,6 @@ const DocsMobileNav = ({ setColorMode, colorMode, selected, menu, path }) => {
           setColorMode={setColorMode}
           handleClose={() => setMenuOpen(false)}
           selected={selected}
-          path={path}
         />
       </div>
       {inputOpen && (

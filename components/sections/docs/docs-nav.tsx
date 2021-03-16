@@ -8,22 +8,16 @@ import DarkModeSwitch from "components/primitives/darkModeSwitch";
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { Menu } from "./docs-menu";
+import { useRouter } from "next/router";
 
 export type DocsNavProps = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
   colorMode: string;
   selected: string;
   menu?: Menu[];
-  path: string;
 };
 
-const DocsNav = ({
-  setColorMode,
-  colorMode,
-  selected,
-  menu,
-  path,
-}: DocsNavProps) => {
+const DocsNav = ({ setColorMode, colorMode, selected, menu }: DocsNavProps) => {
   const [, setSearch] = useState("");
 
   const handleChange = useCallback(
@@ -121,7 +115,6 @@ const DocsNav = ({
       </div>
       <div sx={{ display: ["flex", null, "none"] }}>
         <DocsMobileNav
-          path={path}
           menu={menu}
           selected={selected}
           setColorMode={setColorMode}

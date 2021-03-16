@@ -32,8 +32,22 @@ const Docs = ({
   meta,
   path,
   menu,
+  toc,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
+
+  const rightSideBar = toc.filter(
+    (title) => title.lvl === 2 || title.lvl === 3
+  );
+
+  const idSlug = router.asPath.split("#")[1];
+
+  const [colorMode, setColorMode] = useColorMode();
+
+  const slug = path ? path : "";
+
+  const realSlug = slug.replace("/index.mdx", "");
+
   const content = hydrate(mdx, {
     components: {
       h1: ({ children }) => {
@@ -71,18 +85,12 @@ const Docs = ({
       IconMine,
     },
   });
-  const [colorMode, setColorMode] = useColorMode();
-
-  const slug = path ? path : "";
-
-  const realSlug = slug.replace("/index.mdx", "");
 
   return (
     <DocsPageLayout
       headProps={{
         meta: {
           title: meta.title,
-          // description: meta.description,
           url: `https://livepeer.org${router.asPath}`,
         },
       }}>
@@ -100,13 +108,12 @@ const Docs = ({
           setColorMode={setColorMode}
           colorMode={colorMode}
           menu={menu}
-          path={router.asPath}
         />
         <div
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            px: ["24px", "24px", "24px", "80px"],
+            px: ["24px", "24px", "24px", "32px"],
             mt: "60px",
           }}>
           <div
@@ -116,8 +123,9 @@ const Docs = ({
               height: "calc(100vh - 118px)",
               top: "118px",
               overflowY: "auto",
+              minWidth: "220px",
             }}>
-            <DocsMenu selected={realSlug} menu={menu} path={router.asPath} />
+            <DocsMenu selected={realSlug} menu={menu} />
           </div>
           <div
             sx={{
@@ -130,17 +138,35 @@ const Docs = ({
             }}>
             {content}
           </div>
-          <p
+          <div
             sx={{
               position: "sticky",
               height: "calc(100vh - 118px)",
               top: "118px",
+              minWidth: "200px",
               display: ["none", "none", "none", "flex"],
-              color: "docs.selected",
+              flexDirection: "column",
               overflowY: "auto",
+              ml: "20px",
             }}>
-            Getting Started
-          </p>
+            {rightSideBar.map((title, idx) => (
+              <Link href={`#${title.slug}`} key={idx}>
+                <a
+                  sx={{
+                    color:
+                      idSlug !== title.slug ? "docs.text" : "docs.selected",
+                    mt: "8px",
+                    cursor: "pointer",
+                    ml: title.lvl === 2 ? "0" : "24px",
+                    ":first-child": {
+                      mt: "0",
+                    },
+                  }}>
+                  {title.content}
+                </a>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </DocsPageLayout>
@@ -204,15 +230,19 @@ export const getStaticProps = async ({
     return indexA - indexB;
   });
 
-  const paths = sorted.map((path) =>
-    path
-      .split("/")
-      .splice(1, 1)
-      .filter((each) => each !== "index.mdx" || "index")
-      .toString()
-  );
+  const paths = sorted.map((path) => {
+    const { meta } = getFileContent(path);
+    return {
+      path: path
+        .split("/")
+        .splice(1, 1)
+        .filter((each) => each !== "index.mdx" || "index")
+        .toString(),
+      title: meta.title,
+    };
+  });
 
-  const routePaths = [...Array.from(new Set(paths.map((item) => item)))];
+  const routePaths = [...Array.from(new Set(paths.map((item) => item.path)))];
 
   const menu: Menu[] = sorted.map((filePath) => {
     const { meta } = getFileContent(filePath);
@@ -224,9 +254,12 @@ export const getStaticProps = async ({
   });
 
   const realMenu: Menu[] = routePaths.map((route) => {
+    const metaSlug =
+      route === "index.mdx" ? `docs/${route}` : `docs/${route}/index.mdx`;
+    const { meta } = getFileContent(metaSlug);
     return {
       href: `/docs/${route}`,
-      title: route.replace(/-/g, " "),
+      title: meta.title,
       links: menu
         .filter(
           (subPath) =>
@@ -254,7 +287,6 @@ export const getStaticProps = async ({
   const { meta, content } = getFileContent(filePath);
 
   const toc = getToc(content).json;
-  console.log(toc);
 
   const mdxSource = await renderToString(content, {
     components: {},
@@ -272,6 +304,7 @@ export const getStaticProps = async ({
       mdx: mdxSource,
       path: filePath,
       menu: realMenu,
+      toc,
     },
     revalidate: 1,
   };

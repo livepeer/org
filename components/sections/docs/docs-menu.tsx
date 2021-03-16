@@ -22,7 +22,6 @@ type SectionsMenu = {
 type Props = {
   selected?: string;
   menu: Menu[];
-  path: string;
 };
 
 type TriggerProps = {
@@ -149,10 +148,12 @@ const Section = ({
         {links.map((link, idx) =>
           link.links.length > 0 ? (
             <Collapsible
-              open={sectionOpen === link.href || link.href === `${path}/`}
+              open={link.href === `${path}/` || sectionOpen === link.href}
               key={idx}
               handleTriggerClick={() => {
-                sectionOpen === link.href
+                sectionOpen === link.href && link.href !== `${path}/`
+                  ? null
+                  : sectionOpen === link.href
                   ? setSectionOpen("")
                   : setSectionOpen(link.href);
               }}
@@ -326,8 +327,12 @@ const Section = ({
   );
 };
 
-const DocsMenu = ({ selected, menu, path }: Props) => {
+const DocsMenu = ({ selected, menu }: Props) => {
   const [sectionOpen, setSectionOpen] = useState("");
+
+  const router = useRouter();
+  const path = router.asPath;
+
   return (
     <div
       sx={{
@@ -335,34 +340,44 @@ const DocsMenu = ({ selected, menu, path }: Props) => {
         flexDirection: "column",
         mr: [null, null, "40px", "10px"],
       }}>
-      <div sx={{ display: "flex", alignItems: "center" }}>
-        {selected === "docs" && (
-          <div
-            sx={{
-              width: "6px",
-              height: "6px",
-              transition: "all 0.2s",
-              backgroundColor: "docs.selected",
-              mr: "10px",
-            }}
-          />
-        )}
-        <Link href="/docs">
-          <a
-            sx={{
-              fontSize: "14px",
-              lineHeight: "24px",
-              color: selected === "docs" ? "docs.selected" : "docs.text",
-              fontWeight: selected === "docs" ? "600" : "normal",
-              transition: "all 0.2s",
-              cursor: "pointer",
-            }}>
-            Introduction
-          </a>
-        </Link>
-      </div>
       {menu
-        ?.filter((each) => each.title !== "index" && each.title !== "index.mdx")
+        .filter(
+          (section) =>
+            section.href === "/docs/index.mdx" || section.href === "/docs/index"
+        )
+        .map((intro) => (
+          <div sx={{ display: "flex", alignItems: "center" }}>
+            {selected === "docs" && (
+              <div
+                sx={{
+                  width: "6px",
+                  height: "6px",
+                  transition: "all 0.2s",
+                  backgroundColor: "docs.selected",
+                  mr: "10px",
+                }}
+              />
+            )}
+            <Link href={intro.href.replace("index.mdx", "")}>
+              <a
+                sx={{
+                  fontSize: "14px",
+                  lineHeight: "24px",
+                  color: selected === "docs" ? "docs.selected" : "docs.text",
+                  fontWeight: selected === "docs" ? "600" : "normal",
+                  transition: "all 0.2s",
+                  cursor: "pointer",
+                }}>
+                {intro.title}
+              </a>
+            </Link>
+          </div>
+        ))}
+      {menu
+        ?.filter(
+          (each) =>
+            each.href !== "/docs/index" && each.href !== "/docs/index.mdx"
+        )
         .map((section, idx) => (
           <Section
             selected={selected}
