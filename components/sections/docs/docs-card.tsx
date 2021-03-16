@@ -98,8 +98,8 @@ const Arrow = ({ color }: Props) => {
 const DocsCard = ({ title, description, icon, href }: Props) => {
   const [colorMode] = useColorMode();
   return (
-    <Link href={href}>
-      <div
+    <Link href={href} passHref>
+      <a
         sx={{
           boxShadow:
             "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
@@ -155,7 +155,7 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
             <Arrow color={colorMode === "dark" ? "white" : "#3F3FE2"} />
           </a>
         </div>
-      </div>
+      </a>
     </Link>
   );
 };
