@@ -148,13 +148,16 @@ const Section = ({
         {links.map((link, idx) =>
           link.links.length > 0 ? (
             <Collapsible
-              open={sectionOpen === link.href || `${path}/` === link.href}
+              open={
+                sectionOpen === link.href ||
+                `${path}/` === link.href ||
+                link.links?.filter((child) => `/docs/${child.href}` === path)
+                  .length > 0
+              }
               key={idx}
               handleTriggerClick={() => {
-                sectionOpen === link.href && `${path}/` !== link.href
+                sectionOpen === link.href && `${path}` !== link.href
                   ? setSectionOpen("")
-                  : sectionOpen === link.href
-                  ? null
                   : setSectionOpen(link.href);
               }}
               trigger={
