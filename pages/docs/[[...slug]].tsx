@@ -21,6 +21,9 @@ import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
 import NextStep from "components/sections/docs/next-step";
 import { docsPositions } from "docs-positions";
 import { useRouter } from "next/router";
+import DocsPageLayout from "components/layouts/docs-page";
+import getToc from "markdown-toc";
+import Link from "next/link";
 
 type Params = { slug?: string[] };
 
@@ -45,18 +48,20 @@ const Docs = ({
       p: ({ children }) => {
         return <Text>{children}</Text>;
       },
-      a: ({ children }) => {
+      a: ({ children, href }) => {
         return (
-          <a
-            sx={{
-              fontSize: "16px",
-              lineHeight: "32px",
-              color: "docs.selected",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}>
-            {children}
-          </a>
+          <Link href={href} passHref>
+            <a
+              sx={{
+                fontSize: "16px",
+                lineHeight: "32px",
+                color: "docs.selected",
+                fontWeight: "600",
+                cursor: "pointer",
+              }}>
+              {children}
+            </a>
+          </Link>
         );
       },
       DocsCard,
@@ -73,63 +78,72 @@ const Docs = ({
   const realSlug = slug.replace("/index.mdx", "");
 
   return (
-    <div
-      sx={{
-        width: "100vw",
-        transition: "all 0.2s",
-        minHeight: "100vh",
-        backgroundColor: "docs.background",
-        position: "relative",
-        pb: "40px",
+    <DocsPageLayout
+      headProps={{
+        meta: {
+          title: meta.title,
+          // description: meta.description,
+          url: `https://livepeer.org${router.asPath}`,
+        },
       }}>
-      <DocsNav
-        selected={realSlug}
-        setColorMode={setColorMode}
-        colorMode={colorMode}
-        menu={menu}
-        path={router.asPath}
-      />
       <div
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          px: ["24px", "24px", "24px", "80px"],
-          mt: "60px",
+          width: "100vw",
+          transition: "all 0.2s",
+          minHeight: "100vh",
+          backgroundColor: "docs.background",
+          position: "relative",
+          pb: "40px",
         }}>
+        <DocsNav
+          selected={realSlug}
+          setColorMode={setColorMode}
+          colorMode={colorMode}
+          menu={menu}
+          path={router.asPath}
+        />
         <div
           sx={{
-            display: ["none", "none", "flex"],
-            position: "sticky",
-            height: "calc(100vh - 118px)",
-            top: "118px",
-            overflowY: "auto",
-          }}>
-          <DocsMenu selected={realSlug} menu={menu} path={router.asPath} />
-        </div>
-        <div
-          sx={{
-            width: "100%",
-            maxWidth: ["100%", "100%", "730px"],
-            minHeight: "calc(100vh - 118px)",
-            color: "docs.text",
             display: "flex",
-            flexDirection: "column",
+            justifyContent: "space-between",
+            px: ["24px", "24px", "24px", "80px"],
+            mt: "60px",
           }}>
-          {content}
+          <div
+            sx={{
+              display: ["none", "none", "flex"],
+              position: "sticky",
+              height: "calc(100vh - 118px)",
+              top: "118px",
+              overflowY: "auto",
+            }}>
+            <DocsMenu selected={realSlug} menu={menu} path={router.asPath} />
+          </div>
+          <div
+            sx={{
+              width: "100%",
+              maxWidth: ["100%", "100%", "730px"],
+              minHeight: "calc(100vh - 118px)",
+              color: "docs.text",
+              display: "flex",
+              flexDirection: "column",
+            }}>
+            {content}
+          </div>
+          <p
+            sx={{
+              position: "sticky",
+              height: "calc(100vh - 118px)",
+              top: "118px",
+              display: ["none", "none", "none", "flex"],
+              color: "docs.selected",
+              overflowY: "auto",
+            }}>
+            Getting Started
+          </p>
         </div>
-        <p
-          sx={{
-            position: "sticky",
-            height: "calc(100vh - 118px)",
-            top: "118px",
-            display: ["none", "none", "none", "flex"],
-            color: "docs.selected",
-            overflowY: "auto",
-          }}>
-          Getting Started
-        </p>
       </div>
-    </div>
+    </DocsPageLayout>
   );
 };
 
@@ -238,6 +252,9 @@ export const getStaticProps = async ({
   });
 
   const { meta, content } = getFileContent(filePath);
+
+  const toc = getToc(content).json;
+  console.log(toc);
 
   const mdxSource = await renderToString(content, {
     components: {},

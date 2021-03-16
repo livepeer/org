@@ -9,7 +9,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import { Menu } from "./docs-menu";
 
-type Props = {
+export type DocsNavProps = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
   colorMode: string;
   selected: string;
@@ -17,7 +17,13 @@ type Props = {
   path: string;
 };
 
-const DocsNav = ({ setColorMode, colorMode, selected, menu, path }: Props) => {
+const DocsNav = ({
+  setColorMode,
+  colorMode,
+  selected,
+  menu,
+  path,
+}: DocsNavProps) => {
   const [, setSearch] = useState("");
 
   const handleChange = useCallback(

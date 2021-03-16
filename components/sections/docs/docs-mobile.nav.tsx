@@ -42,6 +42,7 @@ const OpenMenu = ({
         backgroundColor: "docs.background",
         padding: "32px 24px",
         overflowY: "scroll",
+        transition: "all 0.2s",
       }}>
       <div
         sx={{
