@@ -17,4 +17,4 @@ ie `https://infura.io/v3/[PRODUCT_ID]`
 See the [Infura docs](https://infura.io/docs/gettingStarted/makeRequests.md) for
 more details on how to obtain a `<PROJECT_ID>`.
 
-Next, learn how to deposit (and withdraw) broadcasting funds.
+Next, learn how to deposit broadcasting funds.
