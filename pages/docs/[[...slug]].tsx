@@ -150,7 +150,13 @@ const Docs = ({
               ml: "20px",
             }}>
             {rightSideBar.map((title, idx) => (
-              <Link href={`${router.asPath}#${title.slug}`} key={idx}>
+              <Link
+                href={
+                  router.asPath.split("#")[1] === title.slug
+                    ? router.asPath
+                    : `${router.asPath}#${title.slug}`
+                }
+                key={idx}>
                 <a
                   sx={{
                     color:

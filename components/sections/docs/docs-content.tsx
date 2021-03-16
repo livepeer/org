@@ -45,18 +45,20 @@ export const Heading = ({ children, as }: HeadingProps) => {
   const id = slugify(children.toString());
 
   return (
-    <Box
-      as={as}
-      id={id}
-      sx={{
-        ...sx,
-        color: "docs.text",
-        fontWeight: "bold",
-        fontFamily: "special",
-        textRendering: "optimizeLegibility",
-      }}>
-      {children}
-    </Box>
+    <div>
+      {as !== "h1" && <span id={id} sx={{ marginBottom: "100px" }} />}
+      <Box
+        as={as}
+        sx={{
+          ...sx,
+          color: "docs.text",
+          fontWeight: "bold",
+          fontFamily: "special",
+          textRendering: "optimizeLegibility",
+        }}>
+        {children}
+      </Box>
+    </div>
   );
 };
 
