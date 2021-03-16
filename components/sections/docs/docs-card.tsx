@@ -98,46 +98,46 @@ const Arrow = ({ color }: Props) => {
 const DocsCard = ({ title, description, icon, href }: Props) => {
   const [colorMode] = useColorMode();
   return (
-    <div
-      sx={{
-        boxShadow:
-          "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
-        border: "1px solid",
-        borderColor: "docs.border",
-        width: "100%",
-        py: "24px",
-        px: ["24px", "24px", "16px", "24px"],
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        borderRadius: "16px",
-        backgroundColor: "docs.switch",
-        transition: "all 0.2s",
-        ":hover": {
-          boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
-        },
-      }}>
-      <div>
-        {icon && <div sx={{ mb: "24px" }}>{icon}</div>}
-        <h1
-          sx={{
-            mb: "16px",
-            fontSize: "22px",
-            lineHeight: "28px",
-            color: "docs.text",
-            fontWeight: "bold",
-          }}>
-          {title}
-        </h1>
-        <p sx={{ fontSize: "14px", lineHeight: "24px", color: "docs.text" }}>
-          {description}
-        </p>
-      </div>
-      <Link href={href}>
+    <Link href={href}>
+      <div
+        sx={{
+          boxShadow:
+            "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
+          border: "1px solid",
+          borderColor: "docs.border",
+          width: "100%",
+          py: "24px",
+          px: ["24px", "24px", "16px", "24px"],
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          borderRadius: "16px",
+          backgroundColor: "docs.switch",
+          cursor: "pointer",
+          transition: "all 0.2s",
+          ":hover": {
+            boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
+          },
+        }}>
+        <div>
+          {icon && <div sx={{ mb: "24px" }}>{icon}</div>}
+          <h1
+            sx={{
+              mb: "16px",
+              fontSize: "22px",
+              lineHeight: "28px",
+              color: "docs.text",
+              fontWeight: "bold",
+            }}>
+            {title}
+          </h1>
+          <p sx={{ fontSize: "14px", lineHeight: "24px", color: "docs.text" }}>
+            {description}
+          </p>
+        </div>
         <div
           sx={{
             width: "100%",
-            cursor: "pointer",
             mt: "88px",
             display: "flex",
             justifyContent: "space-between",
@@ -155,8 +155,8 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
             <Arrow color={colorMode === "dark" ? "white" : "#3F3FE2"} />
           </a>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

@@ -6,6 +6,7 @@ import { jsx, useColorMode } from "theme-ui";
 type Props = {
   href: string;
   title: string;
+  isLeft?: boolean;
 };
 
 const Arrow = () => {
@@ -35,15 +36,18 @@ const Arrow = () => {
   );
 };
 
-const NextStep = ({ href, title }: Props) => {
+const NextStep = ({ href, title, isLeft }: Props) => {
   return (
     <Link href={href}>
       <div
         sx={{
           width: "100%",
+          alignSelf: isLeft ? "flex-start" : "flex-end",
+          mt: "72px",
           maxWidth: "360px",
           display: "flex",
           flexDirection: "column",
+          cursor: "pointer",
           padding: "24px",
           boxShadow:
             "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
