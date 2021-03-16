@@ -54,7 +54,7 @@ const OpenMenu = ({
         <CloseMobileNav color={colorMode === "dark" ? "#fff" : "#131418"} />
       </div>
       <DocsMenu selected={selected} menu={menu} />
-      <div sx={{ position: "fixed", bottom: "100px", right: "16px" }}>
+      <div sx={{ position: "fixed", bottom: "150px", right: "16px" }}>
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
     </div>
