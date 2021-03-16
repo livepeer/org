@@ -6,4 +6,5 @@ This section will help video miners to:
 - [Benchmark transcoding](./benchmark.md)
 - [Set transcoding session limits](./limits.md)
 - [Setup orchestrator and transcoder metrics monitoring](./monitor.md)
+- [Dual mine](./dual-mine.md)
 - [Troubleshoot](./troubleshoot.md)
