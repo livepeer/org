@@ -148,13 +148,13 @@ const Section = ({
         {links.map((link, idx) =>
           link.links.length > 0 ? (
             <Collapsible
-              open={link.href === path || sectionOpen === link.href}
+              open={sectionOpen === link.href || `${path}/` === link.href}
               key={idx}
               handleTriggerClick={() => {
-                sectionOpen === link.href && link.href !== `${path}`
-                  ? null
-                  : sectionOpen === link.href
+                sectionOpen === link.href && `${path}/` !== link.href
                   ? setSectionOpen("")
+                  : sectionOpen === link.href
+                  ? null
                   : setSectionOpen(link.href);
               }}
               trigger={
@@ -162,7 +162,7 @@ const Section = ({
                   selected={`${path}/` === link.href}
                   title={link.title}
                   href={link.href}
-                  isOpen={sectionOpen === link.href || link.href === `${path}/`}
+                  isOpen={sectionOpen === link.href}
                 />
               }
               transitionTime={300}
@@ -290,7 +290,9 @@ const Section = ({
             </Collapsible>
           ) : (
             <Link href={link.href} key={idx}>
-              <div sx={{ display: "flex", alignItems: "center", mt: "12px" }}>
+              <div
+                sx={{ display: "flex", alignItems: "center", mt: "12px" }}
+                onClick={() => setSectionOpen("")}>
                 {path === link.href && (
                   <div
                     sx={{

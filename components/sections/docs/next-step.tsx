@@ -38,8 +38,8 @@ const Arrow = () => {
 
 const NextStep = ({ href, title, isLeft }: Props) => {
   return (
-    <Link href={href}>
-      <div
+    <Link href={href} passHref>
+      <a
         sx={{
           width: "100%",
           alignSelf: isLeft ? "flex-start" : "flex-end",
@@ -75,7 +75,7 @@ const NextStep = ({ href, title, isLeft }: Props) => {
           }}>
           {title}
         </p>
-      </div>
+      </a>
     </Link>
   );
 };
