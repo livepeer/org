@@ -156,8 +156,13 @@ const Section = ({
               }
               key={idx}
               handleTriggerClick={() => {
-                sectionOpen === link.href && `${path}` !== link.href
+                sectionOpen === link.href
                   ? setSectionOpen("")
+                  : sectionOpen === link.href &&
+                    link.links?.filter(
+                      (child) => `/docs/${child.href}` === path
+                    ).length > 0
+                  ? null
                   : setSectionOpen(link.href);
               }}
               trigger={
@@ -165,7 +170,13 @@ const Section = ({
                   selected={`${path}/` === link.href}
                   title={link.title}
                   href={link.href}
-                  isOpen={sectionOpen === link.href}
+                  isOpen={
+                    sectionOpen === link.href ||
+                    `${path}/` === link.href ||
+                    link.links?.filter(
+                      (child) => `/docs/${child.href}` === path
+                    ).length > 0
+                  }
                 />
               }
               transitionTime={300}
