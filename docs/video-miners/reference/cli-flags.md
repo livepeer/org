@@ -1,0 +1,5 @@
+# Command Line Flags
+
+`livepeer` can be configured with a number of command line flags.
+
+In the future, more thorough documentation for command line flag usage will be added. For now, a list of the available command line flags can be found in [this file](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer/livepeer.go). The [go-livepeer developer docs](https://github.com/livepeer/go-livepeer/tree/master/doc) also contain instructions for using certain command line flags to enable certain functionality in `livepeer`.
