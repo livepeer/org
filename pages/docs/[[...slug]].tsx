@@ -19,6 +19,7 @@ import { jsx, useColorMode } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
 import NextStep from "components/sections/docs/next-step";
+import PreviousStep from "components/sections/docs/previous-step";
 import { docsPositions } from "docs-positions";
 import { useRouter } from "next/router";
 import DocsPageLayout from "components/layouts/docs-page";
@@ -83,6 +84,7 @@ const Docs = ({
       Icon,
       NextStep,
       IconMine,
+      PreviousStep,
     },
   });
 
