@@ -264,7 +264,7 @@ export const getStaticProps = async ({
         .filter(
           (subPath) =>
             splitHref(subPath).splice(0, 1)[0] === route &&
-            splitHref(subPath).length < 4 &&
+            splitHref(subPath).filter((each) => each !== "").length < 3 &&
             subPath.href.replace("/", "") !== route
         )
         .map((secondLink) => {
@@ -273,7 +273,8 @@ export const getStaticProps = async ({
             title: secondLink.title,
             links: menu.filter(
               (thirdLink) =>
-                splitHref(thirdLink).length > 3 &&
+                splitHref(thirdLink).filter((each) => each !== "").length >=
+                  3 &&
                 splitHref(thirdLink).splice(0, 1)[0] ===
                   splitHref(secondLink).splice(0, 1)[0] &&
                 splitHref(thirdLink).splice(1, 2)[0] ===
