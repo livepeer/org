@@ -3,7 +3,9 @@
 import { jsx, useColorMode } from "theme-ui";
 import Link from "next/link";
 import Collapsible from "react-collapsible";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { link } from "node:fs";
+import { useRouter } from "next/router";
 
 export type Menu = {
   selected?: string;
@@ -29,6 +31,7 @@ type TriggerProps = {
   selected?: boolean;
   hover?: boolean;
   isOpen?: boolean;
+  href?: string;
 };
 
 const sections = [
@@ -205,8 +208,13 @@ const TriggerIcon = ({ selected, hover }: TriggerProps) => {
   );
 };
 
-const Trigger = ({ title, selected, isOpen }: TriggerProps) => {
+const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
   const [hover, setHover] = useState(false);
+  const router = useRouter();
+  const handlePushRoute = useCallback(() => {
+    if (!href) return;
+    router.push(href);
+  }, []);
   return (
     <div
       onMouseEnter={() => setHover(true)}
@@ -229,12 +237,15 @@ const Trigger = ({ title, selected, isOpen }: TriggerProps) => {
         />
       )}
       <p
+        data-href={href}
+        onClick={handlePushRoute}
         sx={{
           fontSize: "14px",
           lineHeight: "24px",
           mr: "8px",
           transition: "all 0.2s",
           fontWeight: selected ? "600" : "normal",
+          color: selected ? "docs.selected" : "docs.text",
           ":hover": {
             color: "docs.selected",
           },
@@ -290,12 +301,13 @@ const Section = ({
                 <Trigger
                   selected={link.href === `${path}/`}
                   title={link.title}
+                  href={link.href}
                   isOpen={sectionOpen === link.href || link.href === `${path}/`}
                 />
               }
               transitionTime={300}
               sx={{
-                color: `${path}/` === link.href ? "docs.select" : "docs.text",
+                color: `${path}/` === link.href ? "docs.selected" : "docs.text",
                 transition: "all 0.2s",
                 mt: "12px",
                 cursor: "pointer",
@@ -317,7 +329,7 @@ const Section = ({
                     sx={{
                       color:
                         `${path}/` === secondLink.href
-                          ? "docs.select"
+                          ? "docs.selected"
                           : "docs.text",
                       mt: "12px",
                       transition: "all 0.2s",
@@ -334,7 +346,7 @@ const Section = ({
                               alignItems: "center",
                               mt: "12px",
                             }}>
-                            {`${path}/` === thirdLink.href && (
+                            {`${path}/` === `/docs/${thirdLink.href}` && (
                               <div
                                 sx={{
                                   width: "6px",
@@ -348,11 +360,11 @@ const Section = ({
                             <a
                               sx={{
                                 color:
-                                  `${path}/` === thirdLink.href
+                                  `${path}/` === `/docs/${thirdLink.href}`
                                     ? "docs.selected"
                                     : "docs.text",
                                 fontWeight:
-                                  `${path}/` === thirdLink.href
+                                  `${path}/` === `/docs/${thirdLink.href}`
                                     ? "600"
                                     : "normal",
                                 transition: "all 0.2s",
@@ -375,28 +387,31 @@ const Section = ({
                     <div
                       sx={{
                         display: "flex",
-                        alignItems: "center",
+                        alignItems: "flex-start",
                         mt: "12px",
                       }}>
-                      {`${path}/` === secondLink.href && (
+                      {`${path}/` === `/docs/${secondLink.href}` && (
                         <div
                           sx={{
-                            width: "6px",
-                            height: "6px",
+                            minWidth: "6px",
+                            minHeight: "6px",
                             backgroundColor: "docs.selected",
                             transition: "all 0.2s",
                             mr: "10px",
+                            mt: "9px",
                           }}
                         />
                       )}
                       <a
                         sx={{
                           color:
-                            `${path}/` === secondLink.href
+                            `${path}/` === `/docs/${secondLink.href}`
                               ? "docs.selected"
                               : "docs.text",
                           fontWeight:
-                            `${path}/` === secondLink.href ? "600" : "normal",
+                            `${path}/` === `/docs/${secondLink.href}`
+                              ? "600"
+                              : "normal",
                           transition: "all 0.2s",
                           cursor: "pointer",
                           maxWidth: "fit-content",
