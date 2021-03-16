@@ -151,9 +151,9 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
             }}>
             Start
           </p>
-          <a>
+          <p>
             <Arrow color={colorMode === "dark" ? "white" : "#3F3FE2"} />
-          </a>
+          </p>
         </div>
       </a>
     </Link>
