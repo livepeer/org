@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Container, Section, Title, Orchestration } from "./styles";
@@ -7,6 +8,7 @@ import { Container, Section, Title, Orchestration } from "./styles";
 const threshold = [0.2];
 
 const Chapter4 = ({ onChange }) => {
+  const { t } = useTranslation(["primer"]);
   const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
@@ -17,7 +19,7 @@ const Chapter4 = ({ onChange }) => {
 
   return (
     <Container ref={ref}>
-      <Title>Orchestrators</Title>
+      <Title>{t("page-primer-contents-orchestrators")}</Title>
       <Section>
         <div
           css={css`
@@ -27,17 +29,8 @@ const Chapter4 = ({ onChange }) => {
               margin-bottom: 80px;
             }
           `}>
-          <p>
-            In Livepeer, anyone can join the network and become what's known as
-            an "Orchestrator" by running software that allows you to contribute
-            your computer's resources (CPU, GPU, and bandwidth) in service of
-            transcoding and distributing video for paying broadcasters and
-            developers like Alice.
-          </p>
-          <p>
-            For doing so, you earn fees in the form of a cryptocurrency like ETH
-            or a stablecoin pegged to the US dollar like DAI.
-          </p>
+          <p>{t("page-primer-contents-orchestrators-text-one")}</p>
+          <p>{t("page-primer-contents-orchestrators-text-two")}</p>
         </div>
         <Orchestration src="/images/primer/orchestration.svg" />
         <div
@@ -46,11 +39,7 @@ const Chapter4 = ({ onChange }) => {
               max-width: 570px;
             }
           `}>
-          <p>
-            Sounds good, right? But wait, there's a catch! In order to earn the
-            right to do this type of work on the network, you must first earn or
-            acquire Livepeer Token, also known as LPT.
-          </p>
+          <p>{t("page-primer-contents-orchestrators-text-three")}</p>
         </div>
       </Section>
     </Container>

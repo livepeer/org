@@ -28,17 +28,6 @@ type LinkType = {
 
 const navHeight = "72px";
 
-const defaultTopNotification: TopNotificationProps = {
-  title: "Latest Post",
-  description: "Metrics That Matter",
-  link: {
-    label: "Read",
-    href:
-      "https://medium.com/livepeer-blog/metrics-that-matter-minutes-of-video-transcoded-by-the-livepeer-network-e9b298d9ac5f",
-    isExternal: true,
-  },
-};
-
 export type NavProps = {
   isInmersive?: boolean;
   isPrimer?: boolean;
@@ -67,11 +56,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title: t("banner-top"),
+    title: "Latest Post: Metrics That Matter",
     link: {
       label: t("read-post"),
       href:
-        "https://medium.com/livepeer-blog/introducing-a-brand-new-livepeer-org-3e433519b5d0",
+        "https://medium.com/livepeer-blog/metrics-that-matter-minutes-of-video-transcoded-by-the-livepeer-network-e9b298d9ac5f",
       isExternal: true,
     },
   };

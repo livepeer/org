@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import {
@@ -20,6 +21,7 @@ import {
 const threshold = [0.1];
 
 const Chapter3 = ({ onChange }) => {
+  const { t } = useTranslation(["primer"]);
   const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const Chapter3 = ({ onChange }) => {
 
   return (
     <Container ref={ref}>
-      <Title>How Does Livepeer Work?</Title>
+      <Title>{t("page-primer-contents-how")}</Title>
       <Section1
         css={css`
           margin-bottom: 40px;
@@ -46,12 +48,8 @@ const Chapter3 = ({ onChange }) => {
               margin-bottom: 0;
             }
           `}>
-          <Heading>Meet Alice</Heading>
-          <p>
-            Alice is an app developer. She's using Livepeer to add live video
-            streaming capabilities to an app she's building for high schools
-            that want to broadcast their team's sporting events.
-          </p>
+          <Heading>{t("page-primer-contents-how-h3-one")}</Heading>
+          <p>{t("page-primer-contents-how-text-one")}</p>
         </Body>
       </Section1>
       <Section2>
@@ -63,11 +61,8 @@ const Chapter3 = ({ onChange }) => {
               margin-bottom: 0;
             }
           `}>
-          <Heading>Meet Bob</Heading>
-          <p>
-            Bob is an event coordinator in charge of broadcasting his high
-            school's basketball games using Alice’s app.
-          </p>
+          <Heading>{t("page-primer-contents-how-h3-two")}</Heading>
+          <p>{t("page-primer-contents-how-text-two")}</p>
         </Body>
         <Bob src="/images/primer/bob.svg" />
       </Section2>
@@ -80,18 +75,9 @@ const Chapter3 = ({ onChange }) => {
               margin-bottom: 0;
             }
           `}>
-          <p>
-            When Bob opens the app and taps "Record" at the start of each game,
-            the app sends the live video along with broadcaster fees into the
-            Livepeer network. Livepeer then transcodes the video into all the
-            formats and bitrates that his viewers can consume.
-          </p>
+          <p>{t("page-primer-contents-how-text-three")}</p>
 
-          <p>
-            Today is a really important broadcast for Bob. It's the championship
-            game! How can Alice be sure that the live streaming experience will
-            be high-quality for Bob's viewers?
-          </p>
+          <p>{t("page-primer-contents-how-text-four")}</p>
         </Body>
       </Section3>
       <Section4>
@@ -103,12 +89,9 @@ const Chapter3 = ({ onChange }) => {
               margin-bottom: 0;
             }
           `}>
-          <p>
-            There are two key actors in the Livepeer network that ensure the
-            quality of the live stream. Orchestrators and Delegators.
-          </p>
+          <p>{t("page-primer-contents-how-text-five")}</p>
 
-          <p>First, let's go over the role of Orchestrators.</p>
+          <p>{t("page-primer-contents-how-text-six")}</p>
         </Body>
         <Actors src="/images/primer/actors.svg" />
       </Section4>

@@ -123,12 +123,42 @@ const Footer = ({
             pushLogoSx={{ mr: 0, mb: 3 }}
             id="footer-logo-mobile"
           />
-          <Text
-            variant="small"
-            sx={{ textAlign: ["center", null, null, "left"] }}>
-            Copyright © {new Date().getFullYear()} Livepeer, Inc. All rights
-            reserved.
-          </Text>
+          <Grid
+            columns={[
+              "minmax(auto, 184px)",
+              null,
+              null,
+              "repeat(4, minmax(auto, 184px))",
+            ]}
+            gap={[5, null, null, 0]}
+            sx={{ justifyContent: ["center", null, null, "space-between"] }}>
+            {lists.map((list) => (
+              <FooterList key={`footer-list-${list.title}`} {...list} />
+            ))}
+          </Grid>
+          <Divider
+            size="100%"
+            pushSx={{
+              opacity: 0.1,
+              bg: ["transparent", null, null, "background"],
+              my: 4,
+            }}
+          />
+          <Flex
+            sx={{
+              justifyContent: ["center", null, null, "space-between"],
+              alignItems: "center",
+            }}>
+            <LogoAndEmail
+              pushSx={{ display: ["none", null, null, "flex"] }}
+              id="footer-logo-desktop"
+            />
+            <Text
+              variant="small"
+              sx={{ textAlign: ["center", null, null, "left"] }}>
+              Copyright © {new Date().getFullYear()} Livepeer, Inc.
+            </Text>
+          </Flex>
         </Container>
       </Box>
     </Box>

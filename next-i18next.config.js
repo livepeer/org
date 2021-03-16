@@ -3,4 +3,8 @@ module.exports = {
     locales: ['en', 'es', 'ru', 'zh', 'ko'],
     defaultLocale: 'en',
   },
+  interpolation: {
+    prefix: '{{',
+    suffix: '}}',
+  },
 };

@@ -118,7 +118,7 @@ export const ButtonText = styled.div({
   lineHeight: "19px",
   fontSize: 16,
   fontFamily: "Roboto Mono",
-  marginRight: 16,
+  marginRight: 8,
   position: "relative",
 });
 
@@ -126,6 +126,8 @@ export const Circle = styled.div({
   borderRadius: 1000,
   width: 10,
   height: 10,
+  minWidth: 10,
+  minHeight: 10,
   border: "1px solid black",
   transition: "background-color .6s",
 });

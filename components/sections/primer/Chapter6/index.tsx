@@ -1,20 +1,23 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { useTranslation } from "next-i18next";
 import { Container, Section, Title, MobileTitle, Staking } from "./styles";
 
 const Chapter6 = () => {
+  const { t } = useTranslation(["primer"]);
+
   return (
     <Container>
-      <MobileTitle>Delegators</MobileTitle>
+      <MobileTitle>{t("page-primer-contents-delegators")}</MobileTitle>
       <Section>
         <Staking src="/images/primer/staking.svg" />
         <div
           css={css`
             @media (min-width: 1024px) {
-              max-width: 440px;
+              min-width: 440px !important;
             }
           `}>
-          <Title>Delegators</Title>
+          <Title>{t("page-primer-contents-delegators")}</Title>
           <p
             css={css`
               margin-bottom: 56px;
@@ -22,21 +25,14 @@ const Chapter6 = () => {
                 margin-bottom: 80px;
               }
             `}>
-            Delegators are Livepeer tokenholders who participate in the network
-            by "staking" their tokens towards Orchestrators who they believe are
-            doing good and honest work. You can think about staking like putting
-            a deposit down. When you stake, your tokens become locked up for a
-            period of time and then you can take them back or stake them to a
-            different Orchestrator. Doing this helps ensure that the network is
-            more secure.
+            {t("page-primer-contents-delegators-text-one")}
           </p>
           <p
             css={css`
               font-size: 28px;
               line-height: 38px;
             `}>
-            You may be wondering, why would a tokenholder stake their tokens?
-            What's in it for them?
+            {t("page-primer-contents-delegators-text-two")}
           </p>
         </div>
       </Section>

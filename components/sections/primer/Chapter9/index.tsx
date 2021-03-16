@@ -16,10 +16,12 @@ import {
   Icon,
   Flowers,
 } from "./styles";
+import { useTranslation } from "next-i18next";
 
 const threshold = [0.3];
 
 const Chapter9 = ({ onChange, data }) => {
+  const { t } = useTranslation(["primer", "home"]);
   const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const Chapter9 = ({ onChange, data }) => {
 
   return (
     <Container ref={ref}>
-      <Title>Livepeer is Growing!</Title>
+      <Title>{t("page-primer-contents-involved-h2")}</Title>
       <Section>
         <div
           css={css`
@@ -39,12 +41,14 @@ const Chapter9 = ({ onChange, data }) => {
               margin-right: 80px;
             }
           `}>
-          <p>
-            Today, there are{" "}
-            <strong>{data.totalDelegators.toLocaleString()}</strong> delegators
-            securing the network, with more and more participants joining the
-            network every day.
-          </p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t("page-primer-contents-involved-text-one", {
+                interpolation: { escapeValue: false },
+                totalDelegators: data.totalDelegators,
+              }),
+            }}
+          />
         </div>
         <Flowers src="/images/primer/growing.svg" />
       </Section>
@@ -54,44 +58,39 @@ const Chapter9 = ({ onChange, data }) => {
             <Header>
               <Icon src={"/images/primer/wallet.svg"} />
             </Header>
-            <Heading>Interested in participating?</Heading>
-            <p>Get Livepeer token</p>
+            <Heading>{t("page-primer-contents-involved-interested")}</Heading>
+            <p>{t("page-primer-contents-involved-interested-text-one")}</p>
             <Link href="/resources?filter=exchange#tabs" passHref>
-              <Button style={{ marginBottom: 32 }}>Get Token</Button>
+              <Button style={{ marginBottom: 32 }}>
+                {t("page-primer-contents-involved-interested-cta-one")}
+              </Button>
             </Link>
-            <p>Stake token towards an Orchestrator</p>
+            <p>{t("page-primer-contents-involved-interested-text-two")}</p>
             <Button
               href="https://explorer.livepeer.org/"
               target="_blank"
               rel="noopener noreferrer">
-              Stake Livepeer
+              {t("page-primer-contents-involved-interested-cta-two")}
             </Button>
           </Item>
           <Item>
             <Header>
               <Icon src={"/images/primer/video.svg"} />
             </Header>
-            <Heading>Are you a video engineer?</Heading>
-            <p>Sign up here for the API beta</p>
-            <Button
-              href="https://livepeer.com/register"
-              target="_blank"
-              rel="noopener noreferrer">
-              Sign Up
-            </Button>
+            <Heading>{t("page-primer-contents-involved-engineer")}</Heading>
+            <p>{t("home:page-home-developers-text")}</p>
+            <Link href="/developers" passHref>
+              <Button>{t("page-primer-contents-involved-miner-cta")}</Button>
+            </Link>
           </Item>
           <Item>
             <Header>
               <Icon src={"/images/primer/pick.svg"} />
             </Header>
-            <Heading>Are you a cryptocurrency miner?</Heading>
-            <p>
-              Learn how you can earn additional income on Livepeer's open
-              marketplace by renting out the idle capacity on your GPU mining
-              rig.
-            </p>
+            <Heading>{t("page-primer-contents-involved-miner")}</Heading>
+            <p>{t("page-primer-contents-involved-miner-text")}</p>
             <Link href="/video-miners" passHref>
-              <Button>Learn More</Button>
+              <Button>{t("page-primer-contents-involved-miner-cta")}</Button>
             </Link>
           </Item>
         </List>

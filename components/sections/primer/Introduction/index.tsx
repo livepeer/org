@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import {
@@ -20,6 +21,7 @@ import {
 const threshold = [0.1];
 
 const Introduction = ({ onChange }) => {
+  const { t } = useTranslation(["primer"]);
   const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
@@ -41,13 +43,9 @@ const Introduction = ({ onChange }) => {
               },
             `}>
             <h3 className="primer__heading">
-              Today, 80% of all internet bandwidth is consumed by video
-              streaming.
+              {t("page-primer-contents-intro-h3")}
             </h3>
-            <p>
-              It’s easy to understand why: video is engaging, educational,
-              illuminating, and empowering 💪.
-            </p>
+            <p>{t("page-primer-contents-intro-text-one")}</p>
           </div>
         </Section1>
         <Section2>
@@ -60,14 +58,8 @@ const Introduction = ({ onChange }) => {
                 margin-bottom: 0;
               },
             `}>
-            <p>
-              But, for companies, video is insanely expensive to stream — and
-              even more expensive to live stream.
-            </p>
-            <p>
-              Why? Because broadcasters who want to distribute video on the
-              internet need to first transcode it.
-            </p>
+            <p>{t("page-primer-contents-intro-text-two")}</p>
+            <p>{t("page-primer-contents-intro-text-three")}</p>
           </div>
           <TranscodingIn src="/images/primer/transcoding-in.svg" />
         </Section2>
@@ -82,12 +74,7 @@ const Introduction = ({ onChange }) => {
                 margin-bottom: 0;
               },
             `}>
-            <p>
-              Transcoding is the process of taking a raw video file and
-              reformatting it so that no matter what bandwidth you have -
-              whether 2g or 5g - and no matter what device, you're ensured the
-              most optimal viewing experience.
-            </p>
+            <p>{t("page-primer-contents-intro-text-four")}</p>
           </div>
         </Section3>
         <Section4>
@@ -98,12 +85,7 @@ const Introduction = ({ onChange }) => {
                 margin-top: 136px;
               },
             `}>
-            <p>
-              Today, this process costs around $3 per stream per hour to a cloud
-              service such as Amazon, up to $4500 per month for one media
-              server, and up to $1500 per month before bandwidth for a content
-              delivery network. That's a lot!
-            </p>
+            <p>{t("page-primer-contents-intro-text-five")}</p>
           </div>
           <TranscoderRunning src="/images/primer/transcoder-running.svg" />
         </Section4>
@@ -117,29 +99,13 @@ const Introduction = ({ onChange }) => {
                 margin-bottom: 0;
               }
             `}>
-            <p>
-              Due to such high infrastructure costs, it's become commonplace for
-              aspiring social video startups to find initial success upon
-              launch, adding hundreds of thousands of users in a single month,
-              only to end up with multi-million dollar streaming bills that
-              drain their funding prior to finding a working business model. As
-              a result, startups are forced to tax their users by selling their
-              data, bombard them with ads, or shut down operations completely.
-            </p>
-            <p>
-              Demand for video services is increasing exponentially on the
-              infrastructure side with the arrival of 4k video, ultra-HD, VR
-              streaming, and all the cord-cutting that's moving broadcasts off
-              of the traditional broadcast pipes and on to the internet. 
-            </p>
+            <p>{t("page-primer-contents-intro-text-six")}</p>
+            <p>{t("page-primer-contents-intro-text-seven")}</p>
           </div>
         </Section5>
         <Section6>
           <div>
-            <p>
-              Video infrastructure needs a more scalable and cost-effective
-              solution to keep up with this growth.
-            </p>
+            <p>{t("page-primer-contents-intro-text-eight")}</p>
           </div>
         </Section6>
       </Container>
