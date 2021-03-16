@@ -21,3 +21,5 @@ $ tar -zxvf livepeer-<YOUR_PLATFORM>-amd64.tar.gz
 $ mv livepeer-<YOUR_PLATFORM>-amd64/livepeer /usr/local/bin
 $ mv livepeer-<YOUR_PLATFORM>-amd64/livepeer_cli /usr/local/bin
 ```
+
+Next, learn how to run a broadcaster node.
