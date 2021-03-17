@@ -145,7 +145,8 @@ const Footer = ({
           <Text
             variant="small"
             sx={{ textAlign: ["center", null, null, "left"] }}>
-            Copyright © 2020 Livepeer, Inc. All rights reserved.
+            Copyright © {new Date().getFullYear()} Livepeer, Inc. All rights
+            reserved.
           </Text>
         </Flex>
       </Container>
