@@ -142,7 +142,7 @@ const Docs = ({
               display: "flex",
               flexDirection: "column",
             }}>
-            {content}
+            {content && content}
           </div>
           <div
             sx={{
