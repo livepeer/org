@@ -7,14 +7,16 @@ import DocsMobileNav from "./docs-mobile.nav";
 import DarkModeSwitch from "components/primitives/darkModeSwitch";
 import { useState, useCallback } from "react";
 import Link from "next/link";
+import { Menu } from "./docs-menu";
 
 type Props = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
   colorMode: string;
   selected: string;
+  menu: Menu[];
 };
 
-const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
+const DocsNav = ({ setColorMode, colorMode, selected, menu }: Props) => {
   const [, setSearch] = useState("");
 
   const handleChange = useCallback(
@@ -51,7 +53,7 @@ const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
             </i>
           </Link>
           <p sx={{ color: "docs.lightGray", fontSize: "16px", ml: "8px" }}>
-            /{" "}
+            /
             <Link href="/docs">
               <a
                 sx={{
@@ -106,6 +108,7 @@ const DocsNav = ({ setColorMode, colorMode, selected }: Props) => {
       </div>
       <div sx={{ display: ["flex", null, "none"] }}>
         <DocsMobileNav
+          menu={menu}
           selected={selected}
           setColorMode={setColorMode}
           colorMode={colorMode}

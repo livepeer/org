@@ -13,7 +13,8 @@
     "lint:fix": "eslint . --fix --rule 'react-hooks/exhaustive-deps: off' && prettier --write '**/*.{js,ts,tsx}'",
     "lint:staged": "lint-staged --quiet",
     "prettier": "prettier --write '**/*.{ts,js,css,html,md,tsx,mdx,yaml,yml,gql,graphql,json}'",
-    "type-check": "tsc --pretty --noEmit"
+    "type-check": "tsc --pretty --noEmit",
+    "docs-positions": "node ./generate-docs-positions.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -26,6 +27,7 @@
     "gray-matter": "^4.0.2",
     "gsap": "./lib/animations/gsap-bonus.tgz",
     "keen-slider": "^5.2.2",
+    "markdown-toc": "^1.2.0",
     "next": "^10.0.7",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote": "^2.1.3",

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { jsx, useColorMode } from "theme-ui";
+import { Arrow } from "./next-step";
 
 type Props = {
   href: string;
@@ -9,35 +10,9 @@ type Props = {
   isLeft?: boolean;
 };
 
-export const Arrow = () => {
+const PreviousStep = ({ href, title, isLeft }: Props) => {
   const [colorMode] = useColorMode();
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M3.33301 8L12.6663 8"
-        stroke={colorMode === "default" ? "#666666" : "#A5A5A5"}
-        strokeWidth="1.33333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 3.3335L12.6667 8.00016L8 12.6668"
-        stroke={colorMode === "default" ? "#666666" : "#A5A5A5"}
-        strokeWidth="1.33333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-};
 
-const NextStep = ({ href, title, isLeft }: Props) => {
-  const [colorMode] = useColorMode();
   return (
     <Link href={href} passHref>
       <a
@@ -63,10 +38,12 @@ const NextStep = ({ href, title, isLeft }: Props) => {
           },
         }}>
         <div sx={{ display: "flex", alignItems: "center", mb: "16px" }}>
-          <p sx={{ mr: "8px", fontSize: "14px", color: "docs.gray" }}>
-            Next Step
+          <i sx={{ transform: "rotate(180deg)" }}>
+            <Arrow />
+          </i>
+          <p sx={{ ml: "8px", fontSize: "14px", color: "docs.gray" }}>
+            Previous Step
           </p>
-          <Arrow />
         </div>
         <p
           sx={{
@@ -82,4 +59,4 @@ const NextStep = ({ href, title, isLeft }: Props) => {
   );
 };
 
-export default NextStep;
+export default PreviousStep;
