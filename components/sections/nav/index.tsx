@@ -51,12 +51,12 @@ const links: LinkType[] = [
 const navHeight = "72px";
 
 const defaultTopNotification: TopNotificationProps = {
-  title: "Introducing",
-  description: "A brand new Livepeer.org",
+  title: "Latest Post",
+  description: "Metrics That Matter",
   link: {
-    label: "Read post",
+    label: "Read",
     href:
-      "https://medium.com/livepeer-blog/introducing-a-brand-new-livepeer-org-3e433519b5d0",
+      "https://medium.com/livepeer-blog/metrics-that-matter-minutes-of-video-transcoded-by-the-livepeer-network-e9b298d9ac5f",
     isExternal: true,
   },
 };
