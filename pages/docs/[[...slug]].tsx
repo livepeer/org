@@ -102,7 +102,7 @@ const Docs = ({
       }}>
       <div
         sx={{
-          width: "100vw",
+          maxWidth: "100vw",
           transition: "all 0.2s",
           minHeight: "100vh",
           backgroundColor: "docs.background",

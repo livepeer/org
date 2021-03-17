@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import Link from "next/link";
-import { jsx } from "theme-ui";
+import { jsx, useColorMode } from "theme-ui";
 import { Arrow } from "./next-step";
 
 type Props = {
@@ -11,6 +11,8 @@ type Props = {
 };
 
 const PreviousStep = ({ href, title, isLeft }: Props) => {
+  const [colorMode] = useColorMode();
+
   return (
     <Link href={href} passHref>
       <a
@@ -32,6 +34,7 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
           transition: "all 0.2s",
           ":hover": {
             boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
+            backgroundColor: colorMode === "dark" && "#45464A",
           },
         }}>
         <div sx={{ display: "flex", alignItems: "center", mb: "16px" }}>

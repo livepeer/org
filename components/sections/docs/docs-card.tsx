@@ -117,6 +117,7 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
           transition: "all 0.2s",
           ":hover": {
             boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
+            backgroundColor: colorMode === "dark" && "#45464A",
           },
         }}>
         <div>

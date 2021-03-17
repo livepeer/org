@@ -101,7 +101,6 @@ const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
           fontSize: "14px",
           lineHeight: "24px",
           mr: "8px",
-          transition: "all 0.2s",
           fontWeight: selected ? "600" : "normal",
           color: selected ? "docs.selected" : "docs.text",
           ":hover": {
@@ -206,7 +205,6 @@ const Section = ({
                           ? "docs.selected"
                           : "docs.text",
                       mt: "12px",
-                      transition: "all 0.2s",
                       cursor: "pointer",
                       fontSize: "14px",
                       lineHeight: "24px",
@@ -226,7 +224,6 @@ const Section = ({
                                   width: "6px",
                                   height: "6px",
                                   backgroundColor: "docs.selected",
-                                  transition: "all 0.2s",
                                   mr: "10px",
                                 }}
                               />
@@ -241,7 +238,6 @@ const Section = ({
                                   path === `/docs/${thirdLink.href}`
                                     ? "600"
                                     : "normal",
-                                transition: "all 0.2s",
                                 cursor: "pointer",
                                 maxWidth: "fit-content",
                                 fontSize: "14px",
@@ -261,7 +257,7 @@ const Section = ({
                     <div
                       sx={{
                         display: "flex",
-                        alignItems: "flex-start",
+                        alignItems: "center",
                         mt: "12px",
                       }}>
                       {path === `/docs/${secondLink.href}` && (
@@ -270,9 +266,7 @@ const Section = ({
                             minWidth: "6px",
                             minHeight: "6px",
                             backgroundColor: "docs.selected",
-                            transition: "all 0.2s",
                             mr: "10px",
-                            mt: "9px",
                           }}
                         />
                       )}
@@ -286,7 +280,6 @@ const Section = ({
                             path === `/docs/${secondLink.href}`
                               ? "600"
                               : "normal",
-                          transition: "all 0.2s",
                           cursor: "pointer",
                           maxWidth: "fit-content",
                           fontSize: "14px",
@@ -313,7 +306,6 @@ const Section = ({
                       width: "6px",
                       height: "6px",
                       backgroundColor: "docs.selected",
-                      transition: "all 0.2s",
                       mr: "10px",
                     }}
                   />
@@ -321,7 +313,6 @@ const Section = ({
                 <a
                   sx={{
                     color: path === link.href ? "docs.selected" : "docs.text",
-                    transition: "all 0.2s",
                     cursor: "pointer",
                     maxWidth: "fit-content",
                     fontSize: "14px",
