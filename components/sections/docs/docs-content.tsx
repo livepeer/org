@@ -1,7 +1,10 @@
 /** @jsx jsx */
 
+import slugify from "@sindresorhus/slugify";
 import { ReactNode, useMemo } from "react";
 import { Box, jsx, SxStyleProp } from "theme-ui";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 type HeadingProps = {
   children: ReactNode;
@@ -9,6 +12,9 @@ type HeadingProps = {
 };
 
 export const Heading = ({ children, as }: HeadingProps) => {
+  const router = useRouter();
+  const path = router?.asPath;
+
   const sx: SxStyleProp = useMemo(() => {
     switch (as) {
       case "h1":
@@ -41,17 +47,43 @@ export const Heading = ({ children, as }: HeadingProps) => {
     }
   }, [as]);
 
+  const id = slugify(children.toString());
+
   return (
-    <Box
-      as={as}
-      sx={{
-        ...sx,
-        color: "docs.text",
-        fontWeight: "bold",
-        fontFamily: "special",
-      }}>
-      {children}
-    </Box>
+    <>
+      {as === "h1" ? (
+        <Box
+          as={as}
+          sx={{
+            ...sx,
+            color: "docs.text",
+            fontWeight: "bold",
+            fontFamily: "special",
+            textRendering: "optimizeLegibility",
+          }}>
+          {children}
+        </Box>
+      ) : (
+        <NextLink
+          href={path?.split("#")[1] === id ? path : `${path}#${id}`}
+          passHref>
+          <a>
+            <span id={id} sx={{ marginBottom: "100px" }} />
+            <Box
+              as={as}
+              sx={{
+                ...sx,
+                color: "docs.text",
+                fontWeight: "bold",
+                fontFamily: "special",
+                textRendering: "optimizeLegibility",
+              }}>
+              {children}
+            </Box>
+          </a>
+        </NextLink>
+      )}
+    </>
   );
 };
 
@@ -65,7 +97,7 @@ export const Text = ({ children }) => {
 
 export const Link = ({ children, href }) => {
   return (
-    <Link href={href}>
+    <NextLink href={href}>
       <a
         sx={{
           fontSize: "16px",
@@ -76,6 +108,6 @@ export const Link = ({ children, href }) => {
         }}>
         {children}
       </a>
-    </Link>
+    </NextLink>
   );
 };

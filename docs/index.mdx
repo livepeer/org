@@ -1,5 +1,6 @@
 ---
 title: Introduction
+description: Documentation Introduction
 ---
 
 # Introduction
@@ -8,7 +9,7 @@ Welcome! The pages that follow contain comprehensive documentation of the
 Livepeer ecosystem. The documentation is split into two parts: Livepeer for
 video application developers and Livepeer for video miners. If you are new to
 Livepeer and interested in how it works, you might want to check out the
-Protocol Overview [Core Concepts](https://nextjs.org/)
+[Protocol Overview ](/docs/protocol/)
 
 ## Getting Started
 
@@ -17,20 +18,37 @@ Protocol Overview [Core Concepts](https://nextjs.org/)
     key={1}
     title="For Video Application Developers"
     description="Check how livepeer helps you develop video applications easily."
-    href="/"
-    icon={<Icon />}
+    href="/docs/video-application-developers"
+    icon={
+      <svg
+        width="56"
+        height="56"
+        viewBox="0 0 56 56"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="28" fill="#00EB88" />
+        <path
+          d="M32.6667 35L39.6667 28L32.6667 21"
+          stroke="#131418"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M23.3333 21L16.3333 28L23.3333 35"
+          stroke="#131418"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    }
   />
   <DocsCard
     key={2}
-    title="For Video Application Developers"
+    title="For Video Miners"
     description="Check how livepeer helps you develop video applications easily."
-    href="/"
-  />
-  <DocsCard
-    key={3}
-    title="For Video Application Developers"
-    description="Check how livepeer helps you develop video applications easily."
-    href="/"
-    icon={<Icon />}
+    href="/docs/video-miners"
+    icon={<IconMine />}
   />
 </DocsCardsContainer>

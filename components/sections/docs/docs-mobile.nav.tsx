@@ -9,7 +9,7 @@ import {
 } from "components/svgs/darkMode";
 import MobileLogo from "./mobile-logo";
 import DarkModeSwitch from "components/primitives/darkModeSwitch";
-import DocsMenu from "./docs-menu";
+import DocsMenu, { Menu } from "./docs-menu";
 
 type Props = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
@@ -17,6 +17,7 @@ type Props = {
   handleClose: React.MouseEventHandler<HTMLDivElement>;
   selected: string;
   menuOpen: boolean;
+  menu?: Menu[];
 };
 
 const OpenMenu = ({
@@ -25,6 +26,7 @@ const OpenMenu = ({
   handleClose,
   selected,
   menuOpen,
+  menu,
 }: Props) => {
   return (
     <div
@@ -38,6 +40,7 @@ const OpenMenu = ({
         backgroundColor: "docs.background",
         padding: "32px 24px",
         overflowY: "scroll",
+        transition: "all 0.2s",
       }}>
       <div
         sx={{
@@ -50,15 +53,15 @@ const OpenMenu = ({
         onClick={handleClose}>
         <CloseMobileNav color={colorMode === "dark" ? "#fff" : "#131418"} />
       </div>
-      <DocsMenu selected={selected} />
-      <div sx={{ position: "fixed", bottom: "100px", right: "16px" }}>
+      <DocsMenu selected={selected} menu={menu} />
+      <div sx={{ position: "fixed", bottom: "150px", right: "16px" }}>
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
     </div>
   );
 };
 
-const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
+const DocsMobileNav = ({ setColorMode, colorMode, selected, menu }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [inputOpen, setInputOpen] = useState<boolean>(false);
 
@@ -192,6 +195,7 @@ const DocsMobileNav = ({ setColorMode, colorMode, selected }) => {
           height: menuOpen ? "100vh" : "0px",
         }}>
         <OpenMenu
+          menu={menu}
           menuOpen={menuOpen}
           colorMode={colorMode}
           setColorMode={setColorMode}
