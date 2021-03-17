@@ -8,16 +8,15 @@ import DarkModeSwitch from "components/primitives/darkModeSwitch";
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { Menu } from "./docs-menu";
-import { useRouter } from "next/router";
 
-export type DocsNavProps = {
+type Props = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
   colorMode: string;
   selected: string;
-  menu?: Menu[];
+  menu: Menu[];
 };
 
-const DocsNav = ({ setColorMode, colorMode, selected, menu }: DocsNavProps) => {
+const DocsNav = ({ setColorMode, colorMode, selected, menu }: Props) => {
   const [, setSearch] = useState("");
 
   const handleChange = useCallback(
@@ -47,13 +46,7 @@ const DocsNav = ({ setColorMode, colorMode, selected, menu }: DocsNavProps) => {
           alignItems: "center",
           justifyContent: "space-between",
         }}>
-        <div
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            minWidth: "90px",
-            maxHeight: "25px",
-          }}>
+        <div sx={{ display: "flex", alignItems: "center" }}>
           <Link href="/">
             <i sx={{ cursor: "pointer" }}>
               <LivepeerIconSvg pushSx={{ width: "24px", height: "22px" }} />
