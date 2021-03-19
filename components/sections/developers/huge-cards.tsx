@@ -51,8 +51,7 @@ const HugeCardsSection = ({ card1, card2 }) => {
       cta: {
         label: card1.ctaText,
         isLink: true,
-        isExternal: true,
-        href: "https://livepeer.readthedocs.io/",
+        href: "/docs",
       },
       accent: "primary",
       headerIllustration: <NetworkSvg />,
