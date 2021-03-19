@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import Link from "next/link";
-import { jsx, useColorMode } from "theme-ui";
+import { jsx, Heading, useColorMode, Box } from "theme-ui";
 
 type Props = {
   color?: string;
@@ -9,6 +9,7 @@ type Props = {
   description?: string;
   icon?: HTMLElement;
   href?: string;
+  ctaText?: string;
 };
 
 export const Icon = () => {
@@ -95,11 +96,18 @@ const Arrow = ({ color }: Props) => {
   );
 };
 
-const DocsCard = ({ title, description, icon, href }: Props) => {
+const DocsCard = ({
+  title,
+  description,
+  icon,
+  href,
+  ctaText = "Read",
+}: Props) => {
   const [colorMode] = useColorMode();
   return (
     <Link href={href} passHref>
       <a
+        className="card"
         sx={{
           boxShadow:
             "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
@@ -115,24 +123,35 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
           backgroundColor: "docs.switch",
           cursor: "pointer",
           transition: "all 0.2s",
-          ":hover": {
+          "&:hover": {
+            textDecoration: "none !important",
             boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
             backgroundColor: colorMode === "dark" && "#45464A",
           },
         }}>
         <div>
           {icon && <div sx={{ mb: "24px" }}>{icon}</div>}
-          <h1
+          <Box
+            as="h2"
             sx={{
-              mb: "16px",
-              fontSize: "22px",
+              mb: "10px !important",
+              fontSize: "22px !important",
               lineHeight: "28px",
               color: "docs.text",
               fontWeight: "bold",
+              fontFamily: "Inter !important",
+              mt: "0 !important",
             }}>
             {title}
-          </h1>
-          <p sx={{ fontSize: "14px", lineHeight: "24px", color: "docs.text" }}>
+          </Box>
+          <p
+            sx={{
+              fontSize: "14px",
+              lineHeight: "24px !important",
+              color: "docs.text",
+              fontWeight: 400,
+              mb: "0 !important",
+            }}>
             {description}
           </p>
         </div>
@@ -149,10 +168,11 @@ const DocsCard = ({ title, description, icon, href }: Props) => {
               color: "docs.secondary",
               fontSize: "14px",
               fontWeight: "600",
+              mb: "0 !important",
             }}>
-            Start
+            {ctaText}
           </p>
-          <p>
+          <p sx={{ mb: "0 !important" }}>
             <Arrow color={colorMode === "dark" ? "white" : "#3F3FE2"} />
           </p>
         </div>

@@ -1,0 +1,27 @@
+---
+title: Run Broadcaster
+---
+
+# Run Livepeer in broadcaster mode
+
+Starting livepeer with the -broadcaster flag starts the node in broadcaster mode
+enabling you to stream livepeer video into the Livepeer network.
+
+`livepeer -network rinkeby -ethUrl <ETH_RPC_URL> -broadcaster -currentManifest`
+
+An Ethereum RPC provider needs to be specified via the `-ethUrl` flag when
+starting `livepeer` in order to connect to mainnet or Rinkeby.
+
+If you do not want to run your own Ethereum node, you can use services such as
+[Infura](https://infura.io/) or [Alchemy](https://alchemyapi.io/) that host
+Ethereum nodes on behalf of users.
+
+ie `https://rinkeby.infura.io/v3/[PRODUCT_ID]`
+
+See the [Infura docs](https://infura.io/docs/gettingStarted/makeRequests.md) for
+more details on how to obtain a `<PROJECT_ID>`.
+
+Note: for the sake of this guide, we'll be live streaming using the Rinkeby
+testnet network. You can think of this network like a sandbox environment for
+testing your live streams. If you're live-streaming in a production setting make
+sure to change the network to "mainnet".

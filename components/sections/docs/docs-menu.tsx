@@ -96,7 +96,7 @@ const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
       )}
       <p
         data-href={href}
-        onClick={handlePushRoute}
+        // onClick={handlePushRoute}
         sx={{
           fontSize: "14px",
           lineHeight: "24px",
@@ -112,7 +112,7 @@ const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
       <i
         sx={{
           transform: isOpen ? "rotate(180deg)" : "",
-          transition: "all 0.3s",
+          // transition: "all 0.3s",
         }}>
         <TriggerIcon selected={selected} hover={hover} />
       </i>
@@ -178,10 +178,10 @@ const Section = ({
                   }
                 />
               }
-              transitionTime={300}
+              transitionTime={5}
               sx={{
                 color: path === link.href ? "docs.selected" : "docs.text",
-                transition: "all 0.2s",
+                // transition: "all 0.2s",
                 mt: "12px",
                 cursor: "pointer",
                 fontSize: "14px",
@@ -198,7 +198,7 @@ const Section = ({
                         title={secondLink.title}
                       />
                     }
-                    transitionTime={300}
+                    transitionTime={5}
                     sx={{
                       color:
                         path === secondLink.href
@@ -345,14 +345,15 @@ const DocsMenu = ({ selected, menu }: Props) => {
         display: "flex",
         flexDirection: "column",
         mr: [null, null, "40px", "10px"],
+        width: "100%",
       }}>
       {menu
         .filter(
           (section) =>
             section.href === "/docs/index.mdx" || section.href === "/docs/index"
         )
-        .map((intro) => (
-          <div sx={{ display: "flex", alignItems: "center" }}>
+        .map((intro, i) => (
+          <div key={i} sx={{ display: "flex", alignItems: "center" }}>
             {selected === "docs" && (
               <div
                 sx={{

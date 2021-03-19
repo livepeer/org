@@ -14,8 +14,8 @@ import hydrate from "next-mdx-remote/hydrate";
 import * as z from "zod";
 import DocsNav from "components/sections/docs/docs-nav";
 import DocsCard, { Icon, IconMine } from "components/sections/docs/docs-card";
-import { Heading, Text } from "components/sections/docs/docs-content";
-import { jsx, ThemeProvider, useColorMode } from "theme-ui";
+import { Heading } from "components/sections/docs/docs-content";
+import { jsx, ThemeProvider, useColorMode, Box } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
 import NextStep from "components/sections/docs/next-step";
@@ -26,6 +26,7 @@ import DocsPageLayout from "components/layouts/docs-page";
 import getToc from "markdown-toc";
 import Link from "next/link";
 import theme from "lib/theme";
+import Markdown from "components/primitives/markdown";
 
 type Params = { slug?: string[] };
 
@@ -39,25 +40,15 @@ const components = {
   h3: ({ children }) => {
     return <Heading as="h3">{children}</Heading>;
   },
-  p: ({ children }) => {
-    return <Text>{children}</Text>;
-  },
+
   a: ({ children, href }) => {
     return (
       <Link href={href} passHref>
-        <a
-          sx={{
-            fontSize: "16px",
-            lineHeight: "32px",
-            color: "docs.selected",
-            fontWeight: "600",
-            cursor: "pointer",
-          }}>
-          {children}
-        </a>
+        <a>{children}</a>
       </Link>
     );
   },
+  Box,
   DocsCard,
   DocsCardsContainer,
   Icon,
@@ -129,7 +120,7 @@ const Docs = ({
               height: "calc(100vh - 118px)",
               top: "118px",
               overflowY: "auto",
-              minWidth: "220px",
+              minWidth: "250px",
             }}>
             <DocsMenu selected={realSlug} menu={menu} />
           </div>
@@ -142,7 +133,7 @@ const Docs = ({
               display: "flex",
               flexDirection: "column",
             }}>
-            {content}
+            <Markdown>{content}</Markdown>
           </div>
           <div
             sx={{
@@ -166,12 +157,12 @@ const Docs = ({
                 key={idx}>
                 <a
                   sx={{
-                    color:
-                      idSlug !== title.slug ? "docs.text" : "docs.selected",
                     mt: "8px",
+                    fontSize: 14,
+                    color: "docs.gray",
                     cursor: "pointer",
                     ml: title.lvl === 2 ? "0" : "24px",
-                    ":first-child": {
+                    ":first-of-type": {
                       mt: "0",
                     },
                   }}>

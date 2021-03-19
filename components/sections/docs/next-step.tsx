@@ -45,11 +45,11 @@ const NextStep = ({ href, title, isLeft }: Props) => {
           width: "100%",
           alignSelf: isLeft ? "flex-start" : "flex-end",
           mt: "72px",
-          maxWidth: "360px",
+          maxWidth: ["200px", "240px"],
           display: "flex",
           flexDirection: "column",
           cursor: "pointer",
-          padding: "24px",
+          padding: "16px 24px",
           boxShadow:
             "0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 30px 30px rgba(0, 0, 0, 0.02)",
           border: "1px solid",
@@ -58,18 +58,26 @@ const NextStep = ({ href, title, isLeft }: Props) => {
           backgroundColor: "docs.switch",
           transition: "all 0.2s",
           ":hover": {
+            textDecoration: "none !important",
             boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
             backgroundColor: colorMode === "dark" && "#45464A",
           },
         }}>
         <div sx={{ display: "flex", alignItems: "center", mb: "16px" }}>
-          <p sx={{ mr: "8px", fontSize: "14px", color: "docs.gray" }}>
-            Next Step
+          <p
+            sx={{
+              mb: "0 !important",
+              mr: "8px",
+              fontSize: "14px",
+              color: "docs.gray",
+            }}>
+            Next
           </p>
           <Arrow />
         </div>
         <p
           sx={{
+            mb: "0 !important",
             color: "docs.text",
             fontSize: "22px",
             lineHeight: "28px",
