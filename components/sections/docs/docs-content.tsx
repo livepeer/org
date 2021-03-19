@@ -21,7 +21,7 @@ export const Heading = ({ children, as }: HeadingProps) => {
         return {
           fontSize: ["40px", "48px"],
           mb: "32px",
-          "&:not(:first-child)": {
+          "&:not(:first-of-type)": {
             mt: "72px",
           },
         };
@@ -29,15 +29,15 @@ export const Heading = ({ children, as }: HeadingProps) => {
         return {
           fontSize: ["24px", "32px"],
           mb: "24px",
-          "&:not(:first-child)": {
-            mt: "72px",
+          "&:not(:first-of-type)": {
+            mt: "40px",
           },
         };
       case "h3":
         return {
           fontSize: ["18px", "24px"],
           mb: "18px",
-          "&:not(:first-child)": {
+          "&:not(:first-of-type)": {
             mt: "48px",
           },
         };
@@ -67,7 +67,12 @@ export const Heading = ({ children, as }: HeadingProps) => {
         <NextLink
           href={path?.split("#")[1] === id ? path : `${path}#${id}`}
           passHref>
-          <a>
+          <a
+            sx={{
+              "&:hover": {
+                textDecoration: "none !important",
+              },
+            }}>
             <span id={id} sx={{ marginBottom: "100px" }} />
             <Box
               as={as}
@@ -89,7 +94,7 @@ export const Heading = ({ children, as }: HeadingProps) => {
 
 export const Text = ({ children }) => {
   return (
-    <p sx={{ fontSize: "16px", lineHeight: "32px", color: "docs.text" }}>
+    <p sx={{ fontSize: "16px", mb: 3, lineHeight: "32px", color: "docs.text" }}>
       {children}
     </p>
   );
