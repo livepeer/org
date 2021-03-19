@@ -51,8 +51,7 @@ const cards: HugeCardProps[] = [
     cta: {
       label: "Read the docs",
       isLink: true,
-      isExternal: true,
-      href: "https://livepeer.readthedocs.io/",
+      href: "/docs",
     },
     accent: "primary",
     headerIllustration: <NetworkSvg />,
