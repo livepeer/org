@@ -179,7 +179,10 @@ export const getStyles: any = () => {
       padding: "0 1em",
       color: "#6a737d",
       borderLeft: "0.25em solid #dfe2e5",
-      margin: 0,
+      mt: 0,
+      ml: 0,
+      mr: 0,
+      mb: 5,
     },
 
     "blockquote > :first-of-type": {
