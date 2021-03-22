@@ -64,9 +64,7 @@ export const Heading = ({ children, as }: HeadingProps) => {
           {children}
         </Box>
       ) : (
-        <NextLink
-          href={path?.split("#")[1] === id ? path : `${path}#${id}`}
-          passHref>
+        <NextLink href={`${path?.split("#")[0]}#${id}`} passHref>
           <a
             sx={{
               "&:hover": {
