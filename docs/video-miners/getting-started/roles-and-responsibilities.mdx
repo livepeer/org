@@ -54,18 +54,13 @@ video miners to work with it will send segments of a video stream to the video
 miners with micropayments based on the agreed upon price. The video miners then
 return transcoded results for each segment to the broadcasters.
 
-<Box
-  sx={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-  }}>
-  <PreviousStep
-    href="/docs/video-miners/getting-started/overview"
-    title="Overview"
-  />
-  <NextStep
-    href="/docs/video-miners/getting-started/activation"
-    title="Activation"
-  />
-</Box>
+<Pagination
+  previousStep={{
+    title: "Overview",
+    href: "/docs/video-miners/getting-started/overview",
+  }}
+  nextStep={{
+    title: "Activation",
+    href: "/docs/video-miners/getting-started/activation",
+  }}
+/>

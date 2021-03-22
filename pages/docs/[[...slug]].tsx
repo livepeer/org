@@ -18,8 +18,7 @@ import { Heading } from "components/sections/docs/docs-content";
 import { jsx, ThemeProvider, useColorMode, Box } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
-import NextStep from "components/sections/docs/next-step";
-import PreviousStep from "components/sections/docs/previous-step";
+import Pagination from "components/sections/docs/pagination";
 import { docsPositions } from "docs-positions";
 import { useRouter } from "next/router";
 import DocsPageLayout from "components/layouts/docs-page";
@@ -52,9 +51,8 @@ const components = {
   DocsCard,
   DocsCardsContainer,
   Icon,
-  NextStep,
+  Pagination,
   IconMine,
-  PreviousStep,
 };
 
 const Docs = ({

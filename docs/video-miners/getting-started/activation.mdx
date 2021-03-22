@@ -4,17 +4,10 @@ title: Activation
 
 # Activation
 
-- [Activation](#activation)
-  - [Pre-requisites](#pre-requisites)
-    - [Nvidia GPU IDs](#nvidia-gpu-ids)
-  - [Start a combined orchestrator and transcoder](#start-a-combined-orchestrator-and-transcoder)
-  - [Fund your account with ETH and LPT](#fund-your-account-with-eth-and-lpt)
-  - [Activate](#activate)
-
 ## Pre-requisites
 
-- Make sure you have `livepeer`
-  [installed](https://github.com/livepeer/go-livepeer/blob/master/doc/install.md)
+- Make sure you have
+  `livepeer`[ installed](https://github.com/livepeer/go-livepeer/blob/master/doc/install.md)
 - Make sure you have access to an
   [Ethereum JSON-RPC URL](https://github.com/livepeer/go-livepeer/blob/master/doc/ethereum.md)
 - If you are transcoding with Nvidia GPUs:
@@ -176,12 +169,13 @@ Once you have your orchestrator running, you can activate using `livepeer_cli`.
    After the transactions have confirmed, your orchestrator will join the active
    set in the following round.
 
-<div
-  sx={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-  }}>
-  <NextStep href="/docs/video-miners/getting-started/test" title="Test" />
-  <NextStep href="/docs/video-miners/getting-started/test" title="Test" />
-</div>
+<Pagination
+  previousStep={{
+    title: "Roles & Responsibilities",
+    href: "/docs/video-miners/getting-started/roles-and-responsibilities",
+  }}
+  nextStep={{
+    title: "Test",
+    href: "/docs/video-miners/getting-started/test",
+  }}
+/>
