@@ -20,7 +20,7 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
           width: "100%",
           alignSelf: isLeft ? "flex-start" : "flex-end",
           mt: "72px",
-          maxWidth: ["200px", "240px"],
+          maxWidth: 260,
           display: "flex",
           flexDirection: "column",
           cursor: "pointer",
@@ -32,6 +32,9 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
           borderRadius: "16px",
           backgroundColor: "docs.switch",
           transition: "all 0.2s",
+          ":only-child": {
+            mr: "auto",
+          },
           ":hover": {
             textDecoration: "none !important",
             boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
@@ -56,7 +59,7 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
           sx={{
             mb: "0 !important",
             color: "docs.text",
-            fontSize: "22px",
+            fontSize: "18px",
             lineHeight: "28px",
             fontWeight: "600",
           }}>

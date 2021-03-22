@@ -18,8 +18,7 @@ import { Heading } from "components/sections/docs/docs-content";
 import { jsx, ThemeProvider, useColorMode, Box } from "theme-ui";
 import DocsCardsContainer from "components/sections/docs/docs-cards-container";
 import DocsMenu, { Menu } from "components/sections/docs/docs-menu";
-import NextStep from "components/sections/docs/next-step";
-import PreviousStep from "components/sections/docs/previous-step";
+import Pagination from "components/sections/docs/pagination";
 import { docsPositions } from "docs-positions";
 import { useRouter } from "next/router";
 import DocsPageLayout from "components/layouts/docs-page";
@@ -52,9 +51,8 @@ const components = {
   DocsCard,
   DocsCardsContainer,
   Icon,
-  NextStep,
+  Pagination,
   IconMine,
-  PreviousStep,
 };
 
 const Docs = ({
@@ -79,6 +77,8 @@ const Docs = ({
   const content = hydrate(mdx, {
     components,
   });
+
+  const topLevel = slug.split("/").slice(1, -1);
 
   return (
     <DocsPageLayout
@@ -131,6 +131,28 @@ const Docs = ({
               display: "flex",
               flexDirection: "column",
             }}>
+            <div sx={{ display: "flex" }}>
+              {topLevel.map((each, idx) => (
+                <>
+                  <p
+                    key={idx}
+                    sx={{
+                      color: "docs.text",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      textTransform: "capitalize",
+                    }}>
+                    {each.replace(/-/g, " ")}
+                  </p>
+                  {idx !== topLevel?.length - 1 && (
+                    <span
+                      sx={{ mx: "5px", fontWeight: "600", fontSize: "14px" }}>
+                      /
+                    </span>
+                  )}
+                </>
+              ))}
+            </div>
             <Markdown>{content}</Markdown>
           </div>
           <div
@@ -146,11 +168,7 @@ const Docs = ({
             }}>
             {rightSideBar.map((title, idx) => (
               <Link
-                href={
-                  router.asPath.split("#")[1] === title.slug
-                    ? router.asPath
-                    : `${router.asPath}#${title.slug}`
-                }
+                href={`${router.asPath.split("#")[0]}#${title.slug}`}
                 passHref
                 key={idx}>
                 <a
