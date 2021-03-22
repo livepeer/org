@@ -70,8 +70,6 @@ const Docs = ({
     (title) => title.lvl === 2 || title.lvl === 3
   );
 
-  const idSlug = router.asPath.split("#")[1];
-
   const [colorMode, setColorMode] = useColorMode();
 
   const slug = path ? path : "";
