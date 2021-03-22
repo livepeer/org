@@ -258,7 +258,7 @@ export const getStaticProps = async ({
 
   const realMenu: Menu[] = routePaths.map((route) => {
     const metaSlug =
-      route === "index.mdx" ? `docs/${route}` : `docs/${route}/index.mdx`;
+      route.split(".").length > 1 ? `docs/${route}` : `docs/${route}/index.mdx`;
     const { meta } = getFileContent(metaSlug);
     return {
       href: `/docs/${route}`,

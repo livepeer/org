@@ -348,13 +348,20 @@ const DocsMenu = ({ selected, menu }: Props) => {
         width: "100%",
       }}>
       {menu
-        .filter(
-          (section) =>
-            section.href === "/docs/index.mdx" || section.href === "/docs/index"
-        )
+        .filter((section) => section.links.length === 0)
         .map((intro, i) => (
-          <div key={i} sx={{ display: "flex", alignItems: "center" }}>
-            {selected === "docs" && (
+          <div
+            key={i}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              mt: "20px",
+              ":first-of-type": {
+                mt: "0",
+              },
+            }}>
+            {intro.href.replace("/index.mdx", "").replace(".mdx", "") ===
+              path && (
               <div
                 sx={{
                   width: "6px",
@@ -365,13 +372,22 @@ const DocsMenu = ({ selected, menu }: Props) => {
                 }}
               />
             )}
-            <Link href={intro.href.replace("index.mdx", "")}>
+            <Link
+              href={intro.href.replace("index.mdx", "").replace(".mdx", "")}>
               <a
                 sx={{
                   fontSize: "14px",
                   lineHeight: "24px",
-                  color: selected === "docs" ? "docs.selected" : "docs.text",
-                  fontWeight: selected === "docs" ? "600" : "normal",
+                  color:
+                    intro.href.replace("/index.mdx", "").replace(".mdx", "") ===
+                    path
+                      ? "docs.selected"
+                      : "docs.text",
+                  fontWeight:
+                    intro.href.replace("/index.mdx", "").replace(".mdx", "") ===
+                    path
+                      ? "600"
+                      : "normal",
                   transition: "all 0.2s",
                   cursor: "pointer",
                 }}>
@@ -381,10 +397,7 @@ const DocsMenu = ({ selected, menu }: Props) => {
           </div>
         ))}
       {menu
-        ?.filter(
-          (each) =>
-            each.href !== "/docs/index" && each.href !== "/docs/index.mdx"
-        )
+        ?.filter((each) => each.links.length > 0)
         .map((section, idx) => (
           <Section
             selected={selected}
