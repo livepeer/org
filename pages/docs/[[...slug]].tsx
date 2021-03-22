@@ -80,6 +80,8 @@ const Docs = ({
     components,
   });
 
+  const topLevel = slug.split("/").slice(1, -1);
+
   return (
     <DocsPageLayout
       headProps={{
@@ -131,6 +133,28 @@ const Docs = ({
               display: "flex",
               flexDirection: "column",
             }}>
+            <div sx={{ display: "flex" }}>
+              {topLevel.map((each, idx) => (
+                <>
+                  <p
+                    key={idx}
+                    sx={{
+                      color: "docs.text",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      textTransform: "capitalize",
+                    }}>
+                    {each.replace(/-/g, " ")}
+                  </p>
+                  {idx !== topLevel?.length - 1 && (
+                    <span
+                      sx={{ mx: "5px", fontWeight: "600", fontSize: "14px" }}>
+                      /
+                    </span>
+                  )}
+                </>
+              ))}
+            </div>
             <Markdown>{content}</Markdown>
           </div>
           <div
@@ -146,11 +170,7 @@ const Docs = ({
             }}>
             {rightSideBar.map((title, idx) => (
               <Link
-                href={
-                  router.asPath.split("#")[1] === title.slug
-                    ? router.asPath
-                    : `${router.asPath}#${title.slug}`
-                }
+                href={`${router.asPath.split("#")[0]}#${title.slug}`}
                 passHref
                 key={idx}>
                 <a
