@@ -139,14 +139,14 @@ const Docs = ({
                     sx={{
                       color: "docs.text",
                       fontSize: "14px",
-                      fontWeight: "600",
+                      fontWeight: "400",
                       textTransform: "capitalize",
                     }}>
                     {each.replace(/-/g, " ")}
                   </p>
                   {idx !== topLevel?.length - 1 && (
                     <span
-                      sx={{ mx: "5px", fontWeight: "600", fontSize: "14px" }}>
+                      sx={{ mx: "5px", fontWeight: "500", fontSize: "14px" }}>
                       /
                     </span>
                   )}
@@ -244,7 +244,6 @@ export const getStaticProps = async ({
   const filePath = filePaths.find(
     (filePath) => filePath === fullSlug || filePath === fullSlugWithIndexEnding
   );
-
   const sorted = filePaths.sort((a, b) => {
     const indexA = docsPositions.indexOf(a);
     const indexB = docsPositions.indexOf(b);

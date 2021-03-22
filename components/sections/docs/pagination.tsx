@@ -1,4 +1,6 @@
-import { Box } from "theme-ui";
+/** @jsx jsx */
+
+import { jsx, Box } from "theme-ui";
 import NextStep from "./next-step";
 import PreviousStep from "./previous-step";
 
