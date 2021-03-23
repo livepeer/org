@@ -51,7 +51,7 @@ export const getStyles: any = () => {
 
     "*": {
       boxSizing: "border-box",
-      lineHeight: "30px",
+      lineHeight: "28px",
     },
 
     table: {
@@ -285,7 +285,7 @@ export const getStyles: any = () => {
       lineHeight: "1.45",
       backgroundColor: "#000",
       color: "#fff",
-      borderRadius: "4px",
+      borderRadius: "16px",
     },
 
     "pre code": {

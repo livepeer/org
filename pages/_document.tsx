@@ -6,6 +6,11 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link
+            href="https://unpkg.com/prismjs@1.23.0/themes/prism-funky.css"
+            rel="stylesheet"
+          />
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async

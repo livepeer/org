@@ -160,7 +160,8 @@ const Docs = ({
               position: "sticky",
               height: "calc(100vh - 118px)",
               top: "118px",
-              minWidth: "200px",
+              minWidth: 240,
+              width: 240,
               display: ["none", "none", "none", "flex"],
               flexDirection: "column",
               overflowY: "auto",
@@ -320,7 +321,7 @@ export const getStaticProps = async ({
     },
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: [[require("remark-prism")]],
       rehypePlugins: [],
     },
     scope: meta,

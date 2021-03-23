@@ -6,6 +6,7 @@ import { jsx, useColorMode } from "theme-ui";
 type Props = {
   href: string;
   title: string;
+  label?: string;
   isLeft?: boolean;
 };
 
@@ -36,7 +37,7 @@ export const Arrow = () => {
   );
 };
 
-const NextStep = ({ href, title, isLeft }: Props) => {
+const NextStep = ({ href, title, label, isLeft }: Props) => {
   const [colorMode] = useColorMode();
   return (
     <Link href={href} passHref>
@@ -45,7 +46,7 @@ const NextStep = ({ href, title, isLeft }: Props) => {
           width: "100%",
           alignSelf: isLeft ? "flex-start" : "flex-end",
           mt: "72px",
-          maxWidth: 260,
+          maxWidth: 268,
           display: "flex",
           flexDirection: "column",
           cursor: "pointer",
@@ -74,7 +75,7 @@ const NextStep = ({ href, title, isLeft }: Props) => {
               fontSize: "14px",
               color: "docs.gray",
             }}>
-            Next
+            {label}
           </p>
           <Arrow />
         </div>
@@ -82,7 +83,7 @@ const NextStep = ({ href, title, isLeft }: Props) => {
           sx={{
             mb: "0 !important",
             color: "docs.text",
-            fontSize: "18px",
+            fontSize: [14, 14, 16],
             lineHeight: "28px",
             fontWeight: "600",
           }}>
