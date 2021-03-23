@@ -9,7 +9,7 @@ export const docsPositions = [
   "docs/video-developers/getting-started/overview.mdx",
   "docs/video-developers/getting-started/run-broadcaster.mdx",
   "docs/video-developers/getting-started/deposit-broadcaster-funds.mdx",
-  "docs/video-developers/getting-started/create-a-livestream.mdx",
+  "docs/video-developers/getting-started/create-livestream.mdx",
   "docs/video-developers/getting-started/playback-livestream.mdx",
   "docs/video-developers/how-to-guides/index.mdx",
   "docs/video-developers/how-to-guides/overview.mdx",

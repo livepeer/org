@@ -30,7 +30,7 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
           border: "1px solid",
           borderColor: "docs.border",
           borderRadius: "16px",
-          backgroundColor: "docs.switch",
+          backgroundColor: (theme) => `${theme.colors.docs.switch} !important`,
           transition: "all 0.2s",
           ":only-child": {
             mr: "auto",
@@ -38,7 +38,7 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
           ":hover": {
             textDecoration: "none !important",
             boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
-            backgroundColor: colorMode === "dark" && "#45464A",
+            backgroundColor: `${colorMode === "dark" && "#45464A"} !important`,
           },
         }}>
         <div sx={{ display: "flex", alignItems: "center", mb: "16px" }}>

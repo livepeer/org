@@ -120,13 +120,13 @@ const DocsCard = ({
           flexDirection: "column",
           justifyContent: "space-between",
           borderRadius: "16px",
-          backgroundColor: "docs.switch",
+          backgroundColor: (theme) => `${theme.colors.docs.switch} !important`,
           cursor: "pointer",
           transition: "all 0.2s",
           "&:hover": {
             textDecoration: "none !important",
             boxShadow: "0px 8px 32px rgba(0, 0, 0, 0.12)",
-            backgroundColor: colorMode === "dark" && "#45464A",
+            backgroundColor: `${colorMode === "dark" && "#45464A"} !important`,
           },
         }}>
         <div>
