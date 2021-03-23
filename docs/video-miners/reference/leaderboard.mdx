@@ -1,11 +1,11 @@
 ---
-title: Performance Leaderboard
+title: Orchestrator Performance Leaderboard
 ---
 
 # Orchestrator Performance Leaderboard FAQ
 
 The orchestrator performance leaderboard can be found in the
-`explorer <https://explorer.livepeer.org/?orchestratorTable=performance>`\_.
+[Protocol Explorer](https://explorer.livepeer.org/?orchestratorTable=performance).
 
 ## What is the orchestrator performance leaderboard?
 
@@ -32,17 +32,17 @@ as well.
 
 The software used to run these tests consists of:
 
-- A `broadcaster node <https://github.com/livepeer/go-livepeer>`\_
-- A `stream-tester <https://github.com/livepeer/stream-tester>`\_ that sends
+- A [broadcaster node](https://github.com/livepeer/go-livepeer)
+- A [stream-tester](https://github.com/livepeer/stream-tester) that sends
   streams to the broadcaster
 - A
-  `monitoring instance <https://github.com/livepeer/docker-livepeer/tree/master/monitoring>`\_
+  [monitoring instance](https://github.com/livepeer/docker-livepeer/tree/master/monitoring)
   that collects metrics from the broadcaster
 - An
-  `orch-tester process <https://github.com/livepeer/stream-tester/tree/master/cmd/orch-tester>`\_
+  [orch-tester process](https://github.com/livepeer/stream-tester/tree/master/cmd/orch-tester)
   that automates tests and saves metrics
-- A `leaderboard API <https://github.com/livepeer/leaderboard-serverless>`\_
-  that serves aggregated and raw test metrics
+- A [leaderboard API](https://github.com/livepeer/leaderboard-serverless) that
+  serves aggregated and raw test metrics
 
 ## What happens during a transcoding test?
 
@@ -214,3 +214,14 @@ curl https://leaderboard-serverless.vercel.app/api/raw_stats?orchestrator=<ORCHE
   the last 24 hours, to get the aggregated stats for all time you can use
   `since=1`.
 - `<REGION>` the region to get results for, returns all regions by default.
+
+<Pagination
+  previousStep={{
+    title: "Bandwidth Requirements",
+    href: "/docs/video-miners/reference/bandwidth",
+  }}
+  nextStep={{
+    title: "Command Line Flags",
+    href: "/docs/video-miners/reference/cli-flags",
+  }}
+/>
