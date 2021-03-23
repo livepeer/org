@@ -67,7 +67,7 @@ const theme = {
           gray: "#A5A5A5",
           primary: "#0cf",
           lightGray: "#666666",
-          secondary: "#fff",
+          secondary: "#00EB88",
           lightBlack: "#131418",
           selected: "#00EB88",
           opacity: "rgba(0, 0, 0, 0.8)",

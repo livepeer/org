@@ -178,6 +178,9 @@ const Docs = ({
                     color: "docs.gray",
                     cursor: "pointer",
                     ml: title.lvl === 2 ? "0" : "24px",
+                    ":hover": {
+                      textDecoration: "underline",
+                    },
                     ":first-of-type": {
                       mt: "0",
                     },
