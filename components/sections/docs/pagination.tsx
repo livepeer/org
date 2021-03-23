@@ -7,6 +7,7 @@ import PreviousStep from "./previous-step";
 type Step = {
   title: string;
   href: string;
+  label?: string;
 };
 
 type Props = {
@@ -23,9 +24,19 @@ const Pagination = ({ previousStep, nextStep }: Props) => {
         justifyContent: "space-between",
       }}>
       {previousStep && (
-        <PreviousStep href={previousStep.href} title={previousStep.title} />
+        <PreviousStep
+          href={previousStep.href}
+          title={previousStep.title}
+          label={previousStep.label ? previousStep.label : "Previous"}
+        />
       )}
-      {nextStep && <NextStep href={nextStep.href} title={nextStep.title} />}
+      {nextStep && (
+        <NextStep
+          href={nextStep.href}
+          title={nextStep.title}
+          label={nextStep.label ? nextStep.label : "Next"}
+        />
+      )}
     </Box>
   );
 };

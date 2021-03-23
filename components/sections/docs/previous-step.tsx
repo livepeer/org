@@ -7,10 +7,11 @@ import { Arrow } from "./next-step";
 type Props = {
   href: string;
   title: string;
+  label?: string;
   isLeft?: boolean;
 };
 
-const PreviousStep = ({ href, title, isLeft }: Props) => {
+const PreviousStep = ({ href, title, label, isLeft }: Props) => {
   const [colorMode] = useColorMode();
 
   return (
@@ -20,7 +21,7 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
           width: "100%",
           alignSelf: isLeft ? "flex-start" : "flex-end",
           mt: "72px",
-          maxWidth: 260,
+          maxWidth: 268,
           display: "flex",
           flexDirection: "column",
           cursor: "pointer",
@@ -52,14 +53,14 @@ const PreviousStep = ({ href, title, isLeft }: Props) => {
               fontSize: "14px",
               color: "docs.gray",
             }}>
-            Previous
+            {label}
           </p>
         </div>
         <p
           sx={{
             mb: "0 !important",
             color: "docs.text",
-            fontSize: "18px",
+            fontSize: [14, 14, 16],
             lineHeight: "28px",
             fontWeight: "600",
           }}>

@@ -111,7 +111,14 @@ implementation 'com.google.android.exoplayer:exoplayer-hls:2.X.X'
 // Create a player instance.
 SimpleExoPlayer player = new SimpleExoPlayer.Builder(context).build();
 // Set the media item to be played.
-player.setMediaItem(MediaItem.fromUri("https://stream.mux.com/{PLAYBACK_ID}.m3u8"));
+player.setMediaItem(MediaItem.fromUri("http://localhost:8935/stream/current.m3u8"));
 // Prepare the player.
 player.prepare();
 ```
+
+<Pagination
+  previousStep={{
+    title: "Create a Livestream",
+    href: "/docs/video-developers/getting-started/create-livestream",
+  }}
+/>
