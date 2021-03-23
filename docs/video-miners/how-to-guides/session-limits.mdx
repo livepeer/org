@@ -2,7 +2,7 @@
 title: Set Session Limits
 ---
 
-# Set transcoding session limits
+# Set Session Limits
 
 ## Pre-requisites
 
@@ -54,7 +54,7 @@ do
         -in bbb/source.m3u8 \
         -transcodingOptions transcodingOptions.json \
         -nvidia 0 \ # Only required for transcoding with Nvidia GPUs
-        -concurrentSessions $i |& grep "Took" >> bench.log
+        -concurrentSessions $i |& grep "Duration Ratio" >> bench.log
 done
 ```
 
@@ -65,30 +65,30 @@ Nvidia GPUs, you should benchmark each unique GPU and determine a limit that is
 specific to that GPU.
 
 You can adjust the loop range (`{1..20}`) to reflect the maximum number of
-concurrent sessions that you want to benchmark. If the transcode time is still
-below the total duration at 20 maximum concurrent sessions then you should
-increase the maximum number of concurrent sessions. If you are transcoding with
-a CPU, you will likely want to adjust the maximum number of concurrent sessions
-to a smaller value (i.e. 5).
+concurrent sessions that you want to benchmark. If the real-time duration is
+still below 1.0 at 20 maximum concurrent sessions then you should increase the
+maximum number of concurrent sessions. If you are transcoding with a CPU, you
+will likely want to adjust the maximum number of concurrent sessions to a
+smaller value (i.e. 5).
 
 You will see the final output in a file called `bench.log`:
 
 ```bash
-Took <X> seconds to transcode 30 segments of total duration 60s (1 concurrent sessions)
-Took <X> seconds to transcode 30 segments of total duration 60s (2 concurrent sessions)
+| * Real-Time Duration Ratio * | <Ratio> |    // Concurrent Session Count 1
+| * Real-Time Duration Ratio * | <Ratio> |    // Concurrent Session Count 2
 ...
-Took <X> seconds to transcode 30 segments of total duration 60s (20 concurrent sessions)
+| * Real-Time Duration Ratio * | <Ratio> |    // Concurrent Session Count 20
 ```
 
 The recommendation for determining a hardware level limit is to use the
-concurrent sessions value of the last log indicating that the transcode time `X`
-was less than or equal to 50 seconds which leaves a ~20% buffer for
-upload/download within real-time for 60 seconds of source video.
+concurrent sessions value of the last log indicating that the real-time duration
+ratio `X` was less than or equal 0.8 which leaves a ~20% buffer for
+upload/download within real-time.
 
 ### Evaluate bandwidth
 
 The most
-[common output rendition configuration](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/transcodingOptions.json>)
+[common output rendition configuration](https://github.com/livepeer/go-livepeer/blob/master/cmd/livepeer_bench/transcodingOptions.json)
 found on the network is (assuming source is `1080p30fps`):
 
 ```bash
@@ -109,7 +109,7 @@ found on the network is (assuming source is `1080p30fps`):
 
 For a single stream you will require 6000 kbps for downloading the source
 rendition and 5600 kbps for uploading the output renditions. Thus, you will
-roughly need -
+roughly need:
 
 _Download Bandwidth_ = **6 Mbps** Per Stream
 
@@ -120,7 +120,7 @@ your network provider's limits. For example a typical broadband connection with
 upstream/downstream of 100 Mbps should serve ~16 streams reliably. You can
 probably stretch it by ~20% more as not all streams' segments would be processed
 at the same time. You may want to refer to some suggestions in the
-[bandwidth requirements](/docs/video-miners/reference/bandwidth)` around testing
+[bandwidth requirements](/docs/video-miners/reference/bandwidth) around testing
 your available upload/download bandwidth.
 
 ### Derive a session limit based on hardware and bandwidth
@@ -152,11 +152,11 @@ livepeer \
 
 <Pagination
   previousStep={{
-    title: "Session Limits",
-    href: "/docs/video-miners/how-to-guides/session-limits",
+    title: "Benchmark Transcoding",
+    href: "/docs/video-miners/how-to-guides/benchmarking",
   }}
   nextStep={{
-    title: "Metrics Monitoring",
+    title: "Monitor Metrics",
     href: "/docs/video-miners/how-to-guides/metrics-monitoring",
   }}
 />
