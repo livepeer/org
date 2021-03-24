@@ -3,11 +3,7 @@ import PrefooterSvg from "components/svgs/prefooter";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
-const PrefooterFaqBanner = ({
-  cta = { label: "View FAQ", href: "/faq" },
-}: {
-  cta?: { label: string; href: string; asPath?: string };
-}) => {
+const PrefooterFaqBanner = () => {
   const { t } = useTranslation(["common"]);
   return (
     <Box sx={{ px: 3, pt: [4, "80px"], pb: "80px", mb: [0, "80px"] }}>
@@ -37,9 +33,9 @@ const PrefooterFaqBanner = ({
               color: "background",
               maxWidth: "xl",
             }}>
-            Questions?
+            {t("prefooter-questions")}
             <br />
-            Check out the FAQ.
+            {t("prefooter-questions-intro")}
           </Heading>
           <Text
             variant="normal"
@@ -50,10 +46,10 @@ const PrefooterFaqBanner = ({
               color: "lightGray",
               maxWidth: "30ch",
             }}>
-            Discover the most frequently asked questions about Livepeer.
+            {t("prefooter-questions-text")}
           </Text>
-          <Link href={cta.href} as={cta.asPath} passHref>
-            <A variant="buttons.primary">{cta.label}</A>
+          <Link href="/faq" passHref>
+            <A variant="buttons.primary">{t("prefooter-questions-button")}</A>
           </Link>
         </Box>
         <Box

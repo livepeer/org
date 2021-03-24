@@ -26,5 +26,9 @@
   "nav-discord-chat": "Discord Chat",
   "nav-forum": "Forum",
   "nav-reddit": "Reddit",
-  "copyright": "Copyright © 2020 Livepeer, Inc. Todos los derechos reservados."
+  "copyright": "Copyright © 2020 Livepeer, Inc. Todos los derechos reservados.",
+  "prefooter-questions": "¿Preguntas?",
+  "prefooter-questions-intro": "Mire las Preguntas frecuentes.",
+  "prefooter-questions-text": "Descubra las preguntas más frecuentes sobre Livepeer.",
+  "prefooter-questions-button": "Ver Preguntas frecuentes"
 }

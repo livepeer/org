@@ -26,5 +26,9 @@
   "nav-discord-chat": "Discord 聊天",
   "nav-forum": "Forum 论坛",
   "nav-reddit": "Reddit",
-  "copyright": "版权所有©2020 Livepeer，Inc.保留所有权利。"
+  "copyright": "版权所有©2020 Livepeer，Inc.保留所有权利。",
+  "prefooter-questions": "有什么问题吗？",
+  "prefooter-questions-intro": "查看常见问题",
+  "prefooter-questions-text": "发现有关Livepeer的最常见问题。",
+  "prefooter-questions-button": "查看常见问题"
 }

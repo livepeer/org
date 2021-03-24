@@ -26,5 +26,9 @@
   "nav-discord-chat": "Discord 채팅",
   "nav-forum": "포럼",
   "nav-reddit": "Reddit",
-  "copyright": "Copyright © 2020 Livepeer, Inc. 모든 권리 보유."
+  "copyright": "Copyright © 2020 Livepeer, Inc. 모든 권리 보유.",
+  "prefooter-questions": "질문이 있으세요?",
+  "prefooter-questions-intro": "자주 묻는 질문을 확인하세요.",
+  "prefooter-questions-text": "Livepeer에 관하여 가장 자주 묻는 질문을 확인하세요.",
+  "prefooter-questions-button": "자주 묻는 질문 보기"
 }

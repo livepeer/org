@@ -111,7 +111,7 @@ const Footer = ({
   return (
     <Box as="footer" bg={isDark ? "text" : "background"}>
       {prefooter?.type === "subscribe" && <PrefooterBanner />}
-      {prefooter?.type === "faqs" && <PrefooterFaqBanner cta={prefooter.cta} />}
+      {prefooter?.type === "faqs" && <PrefooterFaqBanner />}
       <Box sx={{ bg: "text", color: "background" }}>
         <Container sx={{ pt: [prefooter ? 6 : 5, 5], pb: 4 }}>
           <LogoAndEmail
