@@ -52,11 +52,6 @@ const Footer = ({
           href: "https://livepeer.readthedocs.io/",
           isExternal: true,
         },
-        {
-          label: "Livepeer.com",
-          href: "https://livepeer.com",
-          isExternal: true,
-        },
         { label: t("nav-open-source-software"), href: "/oss" },
       ],
     },
