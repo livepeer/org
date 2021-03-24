@@ -93,9 +93,16 @@ I0302 15:27:28.463151   25418 rpc.go:207] Received Ping request
 
 Your account should have:
 
-- ETH to pay for transaction fees. Recommendation: start with a small amount and
-  add more when needed
-- LPT to stake in order to activate. Recommendation: at least 100 LPT
+- ETH to pay for transaction fees
+  - Recommendation: Start with a small amount and add more when needed.
+    `livepeer` and `livepeer_cli` will inform you if your account's ETH balance
+    is insufficient to pay for transaction fees when attempting to submit the
+    transactions
+- LPT to stake in order to activate
+  - Recommendation: Check the [explorer](https://explorer.livepeer.org/) and
+    find the 100th orchestrator with the most stake. This is the amount of stake
+    required for you to activate. Note that more stake will help you receive
+    more work
 
 ## Activate
 

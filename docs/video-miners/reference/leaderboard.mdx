@@ -2,7 +2,7 @@
 title: Orchestrator Performance Leaderboard
 ---
 
-# Orchestrator Performance Leaderboard FAQ
+# Orchestrator Performance Leaderboard
 
 The orchestrator performance leaderboard can be found in the
 [Protocol Explorer](https://explorer.livepeer.org/?orchestratorTable=performance).
@@ -214,6 +214,13 @@ curl https://leaderboard-serverless.vercel.app/api/raw_stats?orchestrator=<ORCHE
   the last 24 hours, to get the aggregated stats for all time you can use
   `since=1`.
 - `<REGION>` the region to get results for, returns all regions by default.
+
+## What does the NoOrchestrators error in the test results mean?
+
+This error indicates that the orchestrator was unable to keep up with the test
+stream in real-time so the broadcaster had to drop segments from the stream
+without transcoding them resulting in a lower success rate recorded for the
+orchestrator.
 
 <Pagination
   previousStep={{
