@@ -143,7 +143,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
 
           <A
             variant="buttons.primary"
-            href="/#get-started"
+            href={`#get-started`}
             sx={{
               zIndex: "general",
               position: "relative",
