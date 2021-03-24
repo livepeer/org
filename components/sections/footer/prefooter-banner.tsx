@@ -11,6 +11,7 @@ import {
 } from "theme-ui";
 import PrefooterSvg from "components/svgs/prefooter";
 import { useMailchimp } from "react-use-mailchimp";
+import { useTranslation } from "next-i18next";
 
 const MailchimpResponse = ({
   result,
@@ -45,6 +46,8 @@ const MailchimpResponse = ({
 };
 
 const PrefooterBanner = () => {
+  const { t } = useTranslation(["common"]);
+
   const [mailchimp, subscribe] = useMailchimp({
     url:
       "https://livepeer.us16.list-manage.com/subscribe/post?u=57807e9b74db375864b2c4c68&id=ecd3bf60d5",
@@ -76,7 +79,7 @@ const PrefooterBanner = () => {
           onSubmit={handleSubmit(onSubmit)}
           as="form"
           sx={{
-            maxWidth: "lg",
+            maxWidth: "xl",
             display: "flex",
             flexDirection: "column",
             alignItems: ["center", null, null, "flex-start"],
@@ -87,7 +90,7 @@ const PrefooterBanner = () => {
           <Heading
             variant="heading.3"
             sx={{ textAlign: ["center", null, null, "left"] }}>
-            Stay Informed
+            {t("cta-stay-informed")}
           </Heading>
           <Text
             variant="normal"
@@ -96,8 +99,7 @@ const PrefooterBanner = () => {
               mb: "40px",
               textAlign: ["center", null, null, "left"],
             }}>
-            Subscribe to our newsletter and get updates from the Livepeer
-            ecosystem straight to your Inbox.
+            {t("cta-text")}
           </Text>
           <Flex
             sx={{
@@ -114,7 +116,7 @@ const PrefooterBanner = () => {
               id="prefooter-email-input"
               name="EMAIL"
               type="email"
-              placeholder="Enter your email address"
+              placeholder={t("cta-enter-email")}
               sx={{ mx: 1, flex: "1 1 60%", mb: 2 }}
               required
             />
@@ -127,7 +129,7 @@ const PrefooterBanner = () => {
                 mx: 1,
                 cursor: loading ? "wait" : "pointer",
               }}>
-              Subscribe
+              {t("cta-subscribe")}
             </Button>
           </Flex>
           {mailchimpResponseData && (

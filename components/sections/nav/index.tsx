@@ -83,10 +83,10 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       label: t("nav-video-miners"),
       href: "/video-miners",
     },
-    // {
-    //   label: t("nav-resources"),
-    //   href: "/resources",
-    // },
+    {
+      label: t("nav-resources"),
+      href: "/resources",
+    },
   ];
 
   const isDark = background === "black" || background === "dark";
@@ -162,7 +162,10 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
           />
           <Box
             sx={{
-              ".nav-link:not(:last-child)": { mr: 58 },
+              ".nav-link": {
+                fontSize: 16,
+              },
+              ".nav-link:not(:last-child)": { mr: 56 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer &&

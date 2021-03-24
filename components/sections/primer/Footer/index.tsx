@@ -15,7 +15,7 @@ const Footer = () => {
         align-items: center;
         font-size: 14px;
       `}>
-      <div>{t("page-primer-meta-title")}</div>
+      <div>Livepeer: {t("page-primer-meta-title")}</div>
       <Link
         style={{
           textDecoration: "none",

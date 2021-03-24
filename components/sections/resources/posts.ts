@@ -1,6 +1,6 @@
 import { SxStyleProp } from "theme-ui";
 
-type Category = { label: string; value: string };
+type Category = { label: string; value: string; translationKey: string };
 
 export type Post = {
   title: string;
@@ -16,14 +16,17 @@ const categories: Category[] = [
   {
     label: "Education",
     value: "education",
+    translationKey: "page-resources-menu-education",
   },
   {
     label: "Products & Tools",
     value: "products-and-tools",
+    translationKey: "page-resources-menu-products",
   },
   {
     label: "Exchange",
     value: "exchange",
+    translationKey: "page-resources-menu-exchange",
   },
 ];
 
