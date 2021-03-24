@@ -1,13 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Box,
-  Text,
-  Heading,
-  Link as A,
-  SxStyleProp,
-  Grid,
-} from "theme-ui";
+import { jsx, Box, Text, Heading, Link as A, Grid } from "theme-ui";
 import {
   FiGithub,
   FiCode,
@@ -16,11 +8,6 @@ import {
   FiPlay,
 } from "react-icons/fi";
 import ListItem, { ListItemProps } from "components/primitives/list-item";
-
-const linkSx: SxStyleProp = {
-  color: "primary",
-  fontWeight: 600,
-};
 
 const listItems: ListItemProps[] = [
   {
@@ -138,7 +125,7 @@ const listItems: ListItemProps[] = [
   },
 ];
 
-const GetInvolvedSection = () => (
+const GetInvolvedSection = ({ label, title, subtitle }) => (
   <Box sx={{ bg: "text", color: "background" }}>
     <Grid
       variant="layout.section"
@@ -149,19 +136,17 @@ const GetInvolvedSection = () => (
         <Text
           variant="section.titleLabel"
           sx={{ textAlign: ["center", null, "left"] }}>
-          Collaborate
+          {label}
         </Text>
         <Heading
           variant="section.title"
           sx={{ textAlign: ["center", null, "left"] }}>
-          Get involved
+          {title}
         </Heading>
         <Heading
           variant="section.subtitle"
           sx={{ textAlign: ["center", null, "left"], color: "lightGray" }}>
-          There are many opportunities to collaborate with others in the
-          Livepeer ecosystem on code both on the video side, and on the
-          blockchain side.
+          {subtitle}
         </Heading>
       </Box>
       <Box

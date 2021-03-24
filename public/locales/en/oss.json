@@ -1,0 +1,23 @@
+{
+  "page-oss-title": "Livepeer open source",
+  "page-oss-intro": "Open video infrastructure for an open web.",
+  "page-oss-featured": "Featured Open Source projects",
+  "page-oss-featured-text": "Technologies used in Livepeer’s open source software include Golang, Solidity, Typescript, open source video tools like ffmpeg, and smart contract platforms like Ethereum.",
+  "page-oss-featured-cta": "View All Projects",
+  "page-oss-featured-go": "Go Livepeer",
+  "page-oss-featured-go-text": "Official Go implementation of the Livepeer protocol",
+  "page-oss-featured-protocol": "Protocol",
+  "page-oss-featured-protocol-text": "Ethereum smart contracts used for the Livepeer protocol",
+  "page-oss-featured-media-server": "Livepeer Media Server",
+  "page-oss-featured-media-server-text": "A golang developer library to enable video ingest, transcoding, streaming, and many other video related features.",
+  "page-oss-collaborate": "Collaborate",
+  "page-oss-collaborate-title": "Get involved",
+  "page-oss-collaborate-intro": "There are many opportunities to collaborate with others in the Livepeer ecosystem on code both on the video side, and on the blockchain side.",
+  "page-oss-collaborate-text-one": "Read the Livepeer.js contributor guidelines.",
+  "page-oss-collaborate-text-two": "Look for “good first issues” in Livepeer.js (Javascript), LPMS (video development in C or Go), or Go-Livepeer (go).",
+  "page-oss-collaborate-text-three": "View the Grant Proposals to see application concepts with some funding attached.",
+  "page-oss-collaborate-text-four": "Chat with the development team in Discord - we’re a welcoming bunch, so don’t be shy. Ask how you can get involved.",
+  "page-oss-collaborate-text-five": "Looking to build a video application using Livepeer? Check out our open developer docs or enterprise hosted services at livepeer.com.",
+  "page-oss-meta-title": "Livepeer - Open Source Software",
+  "page-oss-meta-description": "Livepeer.org is a primary online resource for participants and users of the Livepeer network."
+}

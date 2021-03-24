@@ -7,18 +7,7 @@ import IconHero from "components/layouts/icon-hero";
 import { FiHeart } from "react-icons/fi";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-const headProps: HeadProps = {
-  meta: {
-    title: "Open Source Software",
-    description:
-      "Livepeer.org is a primary online resource for participants and users of the Livepeer network.",
-    url: "https://livepeer.org/oss",
-    siteName: "Livepeer.org",
-    image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg",
-  },
-};
+import { useTranslation } from "next-i18next";
 
 const CoverImage = () => (
   <figure
@@ -61,20 +50,55 @@ const CoverImage = () => (
   </figure>
 );
 
-const CodePage = () => (
-  <PageLayout headProps={headProps} pushContentSx={{ bg: "text" }} isDark>
-    <IconHero
-      icon={<FiHeart />}
-      title="Livepeer open source"
-      subtitle="Open video infrastructure for an open web."
-      illustration={<CoverImage />}
-      background="dark"
-      withAnimation
-    />
-    <OpenSourceSection />
-    <GetInvolvedSection />
-  </PageLayout>
-);
+const CodePage = () => {
+  const { t } = useTranslation(["oss"]);
+  const headProps: HeadProps = {
+    meta: {
+      title: t("page-oss-meta-title"),
+      description: t("page-oss-meta-description"),
+      url: "https://livepeer.org/oss",
+      siteName: "Livepeer.org",
+      image: "https://livepeer.org/OG.png",
+      twitterUsername: "@LivepeerOrg",
+    },
+  };
+  return (
+    <PageLayout headProps={headProps} pushContentSx={{ bg: "text" }} isDark>
+      <IconHero
+        icon={<FiHeart />}
+        title={t("page-oss-title")}
+        subtitle={t("page-oss-intro")}
+        illustration={<CoverImage />}
+        background="dark"
+        withAnimation
+      />
+      <OpenSourceSection
+        title={t("page-oss-featured")}
+        subtitle={t("page-oss-featured-text")}
+        ctaText={t("page-oss-featured-cta")}
+        cards={[
+          {
+            title: t("page-oss-featured-go"),
+            description: t("page-oss-featured-go-text"),
+          },
+          {
+            title: t("page-oss-featured-protocol"),
+            description: t("page-oss-featured-protocol-text"),
+          },
+          {
+            title: t("page-oss-featured-media-server"),
+            description: t("page-oss-featured-media-server-text"),
+          },
+        ]}
+      />
+      <GetInvolvedSection
+        label={t("page-oss-collaborate")}
+        title={t("page-oss-collaborate-title")}
+        subtitle={t("page-oss-collaborate-intro")}
+      />
+    </PageLayout>
+  );
+};
 
 export async function getStaticProps({ locale }) {
   return {

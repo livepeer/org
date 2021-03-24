@@ -1,0 +1,23 @@
+{
+  "page-oss-title": "Código abierto de Livepeer",
+  "page-oss-intro": "Infraestructura de video abierta para una web abierta.",
+  "page-oss-featured": "Con proyectos de código abierto",
+  "page-oss-featured-text": "Entre las tecnologías que se utilizan en el software de código abierto de Livepeer se encuentran Golang, Solidity, Typescript, herramientas de video de código abierto como ffmpeg, y plataformas de contractos inteligentes como Ethereum.",
+  "page-oss-featured-cta": "Ver todos los proyectos",
+  "page-oss-featured-go": "Go Livepeer",
+  "page-oss-featured-go-text": "Implementación oficial GO del protocolo Livepeer",
+  "page-oss-featured-protocol": "Protocolo",
+  "page-oss-featured-protocol-text": "Contratos inteligentes de Ethereum utilizados para el protocolo Livepeer",
+  "page-oss-featured-media-server": "Servidor de medios de Livepeer",
+  "page-oss-featured-media-server-text": "Una biblioteca de desarrollador golang para permitir ingesta de videos, transcodificación, streaming y otras muchas funciones relacionadas con videos.",
+  "page-oss-collaborate": "Colabore",
+  "page-oss-collaborate-title": "Involúcrese",
+  "page-oss-collaborate-intro": "Son muchas las oportunidades para colaborar con otros en el ecosistema Livepeer en código, tanto en la parte del video como de la blockchain.",
+  "page-oss-collaborate-text-one": "Lea las directrices de colaboradores de Livepeer.js.",
+  "page-oss-collaborate-text-two": "Busque “buenos primeros números” en Livepeer.js (Javascript), LPMS (desarrollo de video en C o Go), o Go-Livepeer (go).",
+  "page-oss-collaborate-text-three": "Vea las Propuestas de subvenciones para examinar conceptos de la aplicación conectados a financiación.",
+  "page-oss-collaborate-text-four": "Chatee con el equipo de desarrollo en Discord - somos un grupo acogedor, así que no sea tímido. Pregúntenos cómo implicarse.",
+  "page-oss-collaborate-text-five": "¿Quiere crear una aplicación de video usando Livepeer? Eche un vistazo a los documentos de desarrolladores abiertos o a los servicios hospedados de empresa en livepeer.com.",
+  "page-oss-meta-title": "Livepeer - Software de código abierto",
+  "page-oss-meta-description": "Livepeer.org es un recurso online vital para participantes y usuarios de la red Livepeer."
+}

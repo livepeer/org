@@ -1,0 +1,23 @@
+{
+  "page-oss-title": "Livepeer 오픈 소스",
+  "page-oss-intro": "오픈 웹을 위한 개방형 비디오 인프라.",
+  "page-oss-featured": "주요 오픈 소스 프로젝트",
+  "page-oss-featured-text": "Livepeer의 오픈 소스 소프트웨어에 사용된 기술에는 Golang, Solidity, Typescript, ffmpeg와 같은 오픈 소스 비디오 도구, 이더리움과 같은 스마트 컨트랙트 플랫폼 등이 있습니다",
+  "page-oss-featured-cta": "모든 프로젝트 보기",
+  "page-oss-featured-go": "Go Livepeer",
+  "page-oss-featured-go-text": "Livepeer 프로토콜의 공식 Go 구현",
+  "page-oss-featured-protocol": "프로토콜",
+  "page-oss-featured-protocol-text": "Livepeer 프로토콜에 사용된 이더리움 스마트 컨트랙트",
+  "page-oss-featured-media-server": "Livepeer 미디어 서버",
+  "page-oss-featured-media-server-text": "비디오 처리, 코드 변환, 스트리밍 등 수많은 비디오 관련 기능을 지원하는 golang 개발자 라이브러리.",
+  "page-oss-collaborate": "협력",
+  "page-oss-collaborate-title": "참여하기",
+  "page-oss-collaborate-intro": "비디오 측면과 블록체인 측면의 양측에서 코드와 관련하여 다른 사람들과 협력할 수 있는 기회가 Livepeer 에코시스템에 많이 있습니다.",
+  "page-oss-collaborate-text-one": "Livepeer.js 기여자 가이드라인을 읽어 보세요.",
+  "page-oss-collaborate-text-two": "Livepeer.js(Javascript), LPMS(C 또는 Go를 사용한 비디오 개발) 또는 Go-Livepeer(go)에서 “good first issues”를 찾아보세요.",
+  "page-oss-collaborate-text-three": "장려금 제안에서 자금 제공이 포함된 애플리케이션 컨셉을 확인해 보세요.",
+  "page-oss-collaborate-text-four": "Discord에서 개발팀과 대화를 나누세요. 저희는 누구나 환영합니다. 부끄러워지 마세요. 어떻게 참여할 수 있는지 물어보세요.",
+  "page-oss-collaborate-text-five": "Livepeer를 사용해 비디오 애플리케이션을 개발하고 싶으세요? 당사의 공개 개발자 설명서를 확인하거나 livepeer.com에서 엔터프라이즈 호스트 서비스를 살펴보세요.",
+  "page-oss-meta-title": "Livepeer - 오픈 소스 소프트웨어",
+  "page-oss-meta-description": "Livepeer.org는 Livepeer 네트워크 참가자 및 사용자를 위한 기본 온라인 리소스입니다."
+}
