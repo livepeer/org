@@ -34,6 +34,7 @@ export const docsPositions = [
   "docs/video-miners/how-to-guides/session-limits.mdx",
   "docs/video-miners/how-to-guides/metrics-monitoring.mdx",
   "docs/video-miners/how-to-guides/dual-mining.mdx",
+  "docs/video-miners/how-to-guides/pricing.mdx",
   "docs/video-miners/how-to-guides/vote.mdx",
   "docs/video-miners/how-to-guides/troubleshooting.mdx",
   "docs/video-miners/core-concepts/index.mdx",
