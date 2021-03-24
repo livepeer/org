@@ -18,6 +18,7 @@ import TopNotification, { TopNotificationProps } from "./top-notification";
 import Menu from "components/sections/primer/Menu";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import LanguageDropdown from "components/primitives/language-dropdown";
 
 type LinkType = {
   label: string;
@@ -82,10 +83,10 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       label: t("nav-video-miners"),
       href: "/video-miners",
     },
-    {
-      label: t("nav-resources"),
-      href: "/resources",
-    },
+    // {
+    //   label: t("nav-resources"),
+    //   href: "/resources",
+    // },
   ];
 
   const isDark = background === "black" || background === "dark";
@@ -161,13 +162,14 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
           />
           <Box
             sx={{
-              "a:not(:last-of-type)": { mr: 5 },
+              ".nav-link:not(:last-child)": { mr: 58 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer &&
               links.map((link) =>
                 link.isExternal ? (
                   <NavLink
+                    className="nav-link"
                     key={`desktop-nav-link-${link.label}`}
                     href={link.href}
                     data-dark={isDark}
@@ -180,10 +182,17 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                     href={link.href}
                     as={link.asPath}
                     passHref>
-                    <NavLink data-dark={isDark}>{link.label}</NavLink>
+                    <NavLink className="nav-link" data-dark={isDark}>
+                      {link.label}
+                    </NavLink>
                   </Link>
                 )
               )}
+            {!isPrimer && (
+              <NavLink className="nav-link" as={Box} data-dark={isDark}>
+                <LanguageDropdown />
+              </NavLink>
+            )}
             {isPrimer && (
               <Box
                 sx={{
@@ -229,11 +238,25 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               height: navHeight,
             }}>
             <LivepeerLogo isDark={isDark} />
-            <IconButton
-              sx={{ color, fontSize: 6 }}
-              onClick={() => setMobileMenuIsOpen(false)}>
-              <FiX size="24px" />
-            </IconButton>
+            <Flex sx={{ alignItems: "center" }}>
+              <NavLink
+                sx={{
+                  mr: 3,
+                  pr: 20,
+                  borderRight: "1px solid",
+                  borderColor: "ultraLightGray",
+                }}
+                className="nav-link"
+                as={Box}
+                data-dark={isDark}>
+                <LanguageDropdown />
+              </NavLink>
+              <IconButton
+                sx={{ color, fontSize: 6 }}
+                onClick={() => setMobileMenuIsOpen(false)}>
+                <FiX size="24px" />
+              </IconButton>
+            </Flex>
           </Container>
           <Container
             sx={{

@@ -7,6 +7,7 @@ import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
 import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
+import { IdProvider } from "@radix-ui/react-id";
 
 initGsap();
 
@@ -22,9 +23,11 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <IdProvider>
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </IdProvider>
   );
 };
 
