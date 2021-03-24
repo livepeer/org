@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting
+title: Troubleshoot
 ---
 
 # Troubleshoot
@@ -29,6 +29,26 @@ This error means that the node attempted to submit a transaction, but its
 account did not have enough ETH available for the transaction. You should add
 more ETH to your account in order to submit the transaction.
 
+## Transcode loop timed out and Segment loop timed out logs
+
+These logs indicate that a session that was previously being used to transcode a
+stream was cleaned up because no segments were received for awhile. These are
+not errors and are expected to show up.
+
+## MB rate > Level limit warning
+
+This is a warning about the source video segment being transcoded (see this
+[page](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Levels) for more
+technical details), but typically should not impact operation as long as
+transcoding completes.
+
+## Unable to transcode errors
+
+These errors occur when a source video segment with certain properties that
+prevent it from being transcoded. There are no actionable steps for an operator
+in this scenario since the broadcaster is responsible for sending video segments
+that are supported by the Livepeer network.
+
 ## Common Questions
 
 **What does being ‘publicly accessible’ mean? Can I run a transcoder from
@@ -40,13 +60,13 @@ the one that was set during registration (default 8935). Be aware that there are
 many risks to running a public server. Only set up an orchestrator if you are
 comfortable with managing these risks.
 
-Transcoders will not be able to serve the Livepeer network if they are behind a
-NAT (eg, a home router). If this is the case, special accommodations must be
-made for the transcoder, such as port forwarding or putting the the transcoder
-in the DMZ. The only port that is required to be public is the one that was set
-during the transcoder registration step (default 8935). Be aware that there are
-many risks to running a public server. Only set up a transcoder if you are
-comfortable with managing these risks.
+Orchestrators will not be able to serve the Livepeer network if they are behind
+a NAT (eg, a home router). If this is the case, special accommodations must be
+made for the transcoder, such as port forwarding or putting the orchestrator in
+the DMZ. The only port that is required to be public is the one that was set
+during the orchestrator registration step (default 8935). Be aware that there
+are many risks to running a public server. Only set up an orchestrator if you
+are comfortable with managing these risks.
 
 **Can I run an orchestrator from home?**
 
@@ -75,7 +95,7 @@ Some orchestrators in the past have used
 
 The service registry acts as a discovery mechanism to allow broadcasters to look
 up the addresses of orchestrators on the network. Orchestrators register their
-service URI by storing it on the blockchain. During reigstration you are only
+service URI by storing it on the blockchain. During registration you are only
 asked for your IP:port, but the URI stored on the blockchain in the form of
 https://IP:port. Orchestrators are expected to provide a consistent and reliable
 service, so IPs here should remain static. However, a host (DNS) name is also
@@ -90,6 +110,23 @@ IP that is stored on the blockchain. If there is a mismatch, there is a
 possibility that your node is not publicly accessible. Override the locally
 inferred IP address by setting `-serviceAddr IP:port` to what is stored on the
 blockchain. Ensure your node is actually accessible at that address.
+
+**How do I know if my node is transcoding?**
+
+If you set the `-v 6` flag when starting `livepeer`, more verbose logs
+indicating transcoding activity will be available. You can also setup
+[metrics monitoring](/docs/video-miner/how-to-guides/metrics-monitoring).
+
+**How do I keep a record of my node's logs?**
+
+By default, `livepeer` will only send logs to stdout so they can be shown in
+your terminal. However, a tool such as
+[tee](https://linuxize.com/post/linux-tee-command/) can be used to pipe the logs
+to both stdout and a log file.
+
+```bash
+livepeer ... 2>&1 | tee livepeer.log
+```
 
 <Pagination
   previousStep={{

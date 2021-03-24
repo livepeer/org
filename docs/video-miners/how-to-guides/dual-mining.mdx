@@ -1,8 +1,8 @@
 ---
-title: Dual Mining
+title: Dual Mine
 ---
 
-# How to Dual Mine
+# Dual Mine
 
 ## Pre-requisites
 
@@ -48,42 +48,59 @@ The following instructions will assume you are using either t-rex or ethminer.
 If you are using a different miner, the miner commands should be updated to
 reflect the requirements of the miner being used.
 
-If you are using a post-Volta GPU:
+If you are using CUDA MPS, start the MPS server by following
+[these instructions](https://docs.nvidia.com/deploy/mps/index.html#topic_6_1_2)
 
-1. Enable CUDA by following
-   [these instructions](https://docs.nvidia.com/deploy/mps/index.html#topic_6_1_2)
+Take note of the following points that are mentioned in the docs:
 
-2. Run ethminer with flags to adjust the GPU workload (other flags to connect to
-   a mining pool omitted):
+- The `CUDA_VISIBLE_DEVICES` environment variable should be set with device IDs
+  of the GPUS you will be using before the MPS daemon is started, but it should
+  NOT be set before starting the miner and `livepeer`
+- If you are using a mix of pre-Volta and post-Volta GPUs, make sure to read
+  this [section](https://docs.nvidia.com/deploy/mps/index.html#topic_3_3_4) to
+  avoid device ID issues
 
-   ```bash
-   ethminer \
-     -U \
-     --cu-devices <GPU_DEVICE_IDS> \ # List of Nvidia GPU IDs
-     --cuda-streams <CUDA_STREAMS> \ # Number of multiprocessor streams
-     --cuda-block-size <CUDA_BLOCK_SIZE> \ # Number of threads per block
-     --cuda-grid-size <CUDA_GRID_SIZE> \ # Number of blocks per grid
-   ```
+If you are using ethminer, run ethminer with flags to adjust the GPU workload
+(other flags to connect to a mining pool omitted):
+
+```bash
+ethminer \
+  -U \
+  --cu-devices <GPU_DEVICE_IDS> \ # List of Nvidia GPU IDs
+  --cuda-streams <CUDA_STREAMS> \ # Number of multiprocessor streams
+  --cuda-block-size <CUDA_BLOCK_SIZE> \ # Number of threads per block
+  --cuda-grid-size <CUDA_GRID_SIZE> \ # Number of blocks per grid
+```
 
 The `--cuda-streams`, `--cuda-block-size` and `--cuda-grid-size` flags are used
 to adjust the GPU workload. The best values to use for these flags will depend
 on your GPU and whether you want lower hashrate and faster transcoding speed or
 higher hashrate and lower transcoding speed.
 
-If you are using a pre-Volta GPU:
+If you are using t-rex, run t-rex with a flag to adjust mining intensity (other
+flags to connect to a mining pool omitted):
 
-1. Run t-rex (other flags to connect to a mining pool omitted):
+```bash
+t-rex \
+  -a ethash \
+  -d <GPU_DEVICE_IDS> \ # List of Nvidia GPU IDs
+  -i <MINING_INTENSITY \ # The mining intensity
+```
 
-   ```bash
-   t-rex \
-     -a ethash \
-     -d <GPU_DEVICE_IDS> \ # List of Nvidia GPU IDs
-   ```
+The `-i` flag is used to adjust the mining intensity. Note that in testing, this
+flag did not seem to provide very granual control over the GPU workload so
+adjusting it to a level at which CUDA MPS could work led to a larger hashrate
+drop which is why ethminer is recommended if you plan on using CUDA MPS.
 
 ### Run livepeer
 
-Run `livepeer` on the same machine as the miner and using the same GPU device
-IDs as the miner with the `-nvidia` flag.
+1. Wait until the miner completes DAG generation
+
+2. Run `livepeer` on the same machine as the miner and using the same GPU device
+   IDs as the miner with the `-nvidia` flag
+
+3. `livepeer` will need to be stopped when the miner re-generates the DAG to
+   avoid transcoding issues and can be re-started when DAG generation completes
 
 ### Switching
 
@@ -94,11 +111,11 @@ transcoding demand.
 
 <Pagination
   previousStep={{
-    title: "O-T Split",
+    title: "Monitor Metrics",
     href: "/docs/video-miners/how-to-guides/metrics-monitoring",
   }}
   nextStep={{
-    title: "Troubleshooting",
+    title: "Troubleshoot",
     href: "/docs/video-miners/how-to-guides/troubleshooting",
   }}
 />
