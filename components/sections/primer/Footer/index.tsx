@@ -1,8 +1,11 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import { Link } from "react-scroll";
+import { useTranslation } from "next-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation(["primer"]);
+
   return (
     <div
       css={css`
@@ -12,7 +15,7 @@ const Footer = () => {
         align-items: center;
         font-size: 14px;
       `}>
-      <div>Livepeer: A 10-minute Primer</div>
+      <div>Livepeer: {t("page-primer-meta-title")}</div>
       <Link
         style={{
           textDecoration: "none",
@@ -30,7 +33,7 @@ const Footer = () => {
             align-items: center;
             cursor: pointer;
           `}>
-          Back to the top{" "}
+          {t("page-primer-back")}{" "}
           <img
             style={{ margin: "0 0 0 8px" }}
             src="/images/primer/arrow-up.svg"

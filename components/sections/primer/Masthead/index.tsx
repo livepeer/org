@@ -1,11 +1,11 @@
 import { Root, Container, Body, Heading, Subheading, Arrow } from "./styles";
 
-const Masthead = () => {
+const Masthead = ({ title }) => {
   return (
     <Root>
       <Container>
         <Body>
-          <Subheading>A 10-Minute Primer</Subheading>
+          <Subheading>{title}</Subheading>
           <Heading>
             <img
               src="/images/primer/livepeer-letters.svg"

@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import {
   Container,
   Title,
@@ -10,46 +11,38 @@ import {
 } from "./styles";
 
 const Chapter2 = () => {
+  // eslint-disable-next-line no-undef
+  const { t } = useTranslation(["primer"]);
+
   return (
     <Container>
-      <Title>Who is Livepeer for?</Title>
+      <Title>{t("page-primer-contents-who")}</Title>
       <List>
         <Item>
           <Header>
             <Icon src={"/images/primer/development.svg"} />
-            <Text>Developers</Text>
+            <Text>{t("page-primer-contents-who-h3-one")}</Text>
           </Header>
           <Body>
-            <p>
-              who want to build applications that include live or on demand
-              video can use Livepeer to power their video functionality.
-            </p>
+            <p>{t("page-primer-contents-who-text-one")}</p>
           </Body>
         </Item>
         <Item>
           <Header>
             <Icon src={"/images/primer/mobile-app.svg"} />
-            <Text>Users</Text>
+            <Text>{t("page-primer-contents-who-h3-two")}</Text>
           </Header>
           <Body>
-            <p>
-              who want to stream video, gaming, coding, entertainment,
-              educational courses, and other types of content can use
-              applications built on Livepeer to do so.
-            </p>
+            <p>{t("page-primer-contents-who-text-two")}</p>
           </Body>
         </Item>
         <Item>
           <Header>
             <Icon src={"/images/primer/twitch.svg"} />
-            <Text>Broadcasters</Text>
+            <Text>{t("page-primer-contents-who-h3-three")}</Text>
           </Header>
           <Body>
-            <p>
-              such as Twitch who have large audiences and high streaming bills
-              or infrastructure costs can use Livepeer to reduce costs or
-              infrastructure overhead.
-            </p>
+            <p>{t("page-primer-contents-who-text-three")}</p>
           </Body>
         </Item>
       </List>

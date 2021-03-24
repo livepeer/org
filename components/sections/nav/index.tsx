@@ -17,6 +17,8 @@ import Link from "next/link";
 import TopNotification, { TopNotificationProps } from "./top-notification";
 import Menu from "components/sections/primer/Menu";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import LanguageDropdown from "components/primitives/language-dropdown";
 
 type LinkType = {
   label: string;
@@ -25,55 +27,16 @@ type LinkType = {
   asPath?: string;
 };
 
-const links: LinkType[] = [
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Developers",
-    href: "/developers",
-  },
-  {
-    label: "Tokenholders",
-    href: "/tokenholders",
-  },
-  {
-    label: "Video Miners",
-    href: "/video-miners",
-  },
-  {
-    label: "Resources",
-    href: "/resources",
-  },
-];
-
 const navHeight = "72px";
-
-const defaultTopNotification: TopNotificationProps = {
-  title: "Latest Post",
-  description: "Metrics That Matter",
-  link: {
-    label: "Read",
-    href:
-      "https://medium.com/livepeer-blog/metrics-that-matter-minutes-of-video-transcoded-by-the-livepeer-network-e9b298d9ac5f",
-    isExternal: true,
-  },
-};
 
 export type NavProps = {
   isInmersive?: boolean;
   isPrimer?: boolean;
   background?: "muted" | "dark" | "white" | "black" | "translucent";
-  topNotification?: TopNotificationProps;
 };
 
-const Nav = ({
-  background,
-  isInmersive,
-  topNotification = defaultTopNotification,
-  isPrimer = false,
-}: NavProps) => {
+const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
+  const { t } = useTranslation(["common"]);
   const router = useRouter();
   const [hasScrolled, setHasScrolled] = useState(false);
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
@@ -91,7 +54,40 @@ const Nav = ({
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
+
+  const topNotification: TopNotificationProps = {
+    title: "Latest Post: Metrics That Matter",
+    link: {
+      label: t("read-post"),
+      href:
+        "https://medium.com/livepeer-blog/metrics-that-matter-minutes-of-video-transcoded-by-the-livepeer-network-e9b298d9ac5f",
+      isExternal: true,
+    },
+  };
+
+  const links: LinkType[] = [
+    {
+      label: t("nav-about"),
+      href: "/about",
+    },
+    {
+      label: t("nav-developers"),
+      href: "/developers",
+    },
+    {
+      label: t("nav-tokenholders"),
+      href: "/tokenholders",
+    },
+    {
+      label: t("nav-video-miners"),
+      href: "/video-miners",
+    },
+    {
+      label: t("nav-resources"),
+      href: "/resources",
+    },
+  ];
 
   const isDark = background === "black" || background === "dark";
   let bg: string;
@@ -166,13 +162,17 @@ const Nav = ({
           />
           <Box
             sx={{
-              "a:not(:last-of-type)": { mr: 5 },
+              ".nav-link": {
+                fontSize: 16,
+              },
+              ".nav-link:not(:last-child)": { mr: 56 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer &&
               links.map((link) =>
                 link.isExternal ? (
                   <NavLink
+                    className="nav-link"
                     key={`desktop-nav-link-${link.label}`}
                     href={link.href}
                     data-dark={isDark}
@@ -185,10 +185,17 @@ const Nav = ({
                     href={link.href}
                     as={link.asPath}
                     passHref>
-                    <NavLink data-dark={isDark}>{link.label}</NavLink>
+                    <NavLink className="nav-link" data-dark={isDark}>
+                      {link.label}
+                    </NavLink>
                   </Link>
                 )
               )}
+            {!isPrimer && (
+              <NavLink className="nav-link" as={Box} data-dark={isDark}>
+                <LanguageDropdown />
+              </NavLink>
+            )}
             {isPrimer && (
               <Box
                 sx={{
@@ -234,11 +241,25 @@ const Nav = ({
               height: navHeight,
             }}>
             <LivepeerLogo isDark={isDark} />
-            <IconButton
-              sx={{ color, fontSize: 6 }}
-              onClick={() => setMobileMenuIsOpen(false)}>
-              <FiX size="24px" />
-            </IconButton>
+            <Flex sx={{ alignItems: "center" }}>
+              <NavLink
+                sx={{
+                  mr: 3,
+                  pr: 20,
+                  borderRight: "1px solid",
+                  borderColor: "ultraLightGray",
+                }}
+                className="nav-link"
+                as={Box}
+                data-dark={isDark}>
+                <LanguageDropdown />
+              </NavLink>
+              <IconButton
+                sx={{ color, fontSize: 6 }}
+                onClick={() => setMobileMenuIsOpen(false)}>
+                <FiX size="24px" />
+              </IconButton>
+            </Flex>
           </Container>
           <Container
             sx={{
@@ -291,10 +312,10 @@ const Nav = ({
                   setMobileMenuIsOpen(false);
                   router.push("/#get-started");
                 }}>
-                Get started
+                {t("nav-get-started")}
               </Button>
               <Text sx={{ fontSize: "14px", textAlign: "center" }}>
-                © Livepeer, Inc. 2020 - All rights reserved.
+                © Livepeer, Inc. {new Date().getFullYear()}
               </Text>
             </Flex>
           </Container>

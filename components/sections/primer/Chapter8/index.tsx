@@ -14,10 +14,28 @@ import {
   RoundMobile,
 } from "./styles";
 import Gauge from "../Gauge";
+import { useTranslation } from "next-i18next";
 
 const threshold = [0.3];
 
 const Chapter8 = ({ data, onChange }) => {
+  const translationData = {
+    interpolation: { escapeValue: false },
+    ethereumBlocksPerRound: "5760",
+    blockTime: data.blockTime.toFixed(2),
+    hoursPerRound: ((data.blockTime * 5760) / 60 / 60).toFixed(2),
+    inflationPerRound: data.inflationPerRound,
+    totalSupply: data.totalSupply.toLocaleString(),
+    mintableTokens: (
+      (parseFloat(data.inflationPerRound) / 100.0) *
+      data.totalSupply
+    ).toLocaleString(),
+    totalStaked: data.totalSupply.toLocaleString(),
+    participationRate: data.participationRate,
+    targetRate: data.targetBondingRate,
+    inflationChange: data.inflationChange,
+  };
+  const { t } = useTranslation(["primer"]);
   const [ref, inView, entry] = useInView({ threshold });
 
   useEffect(() => {
@@ -28,7 +46,7 @@ const Chapter8 = ({ data, onChange }) => {
 
   return (
     <Container ref={ref}>
-      <MobileTitle>Rounds & Inflation</MobileTitle>
+      <MobileTitle>{t("page-primer-contents-rounds")}</MobileTitle>
       <Section1>
         <div
           css={css`
@@ -36,28 +54,22 @@ const Chapter8 = ({ data, onChange }) => {
               max-width: 500px;
             }
           `}>
-          <Title>Rounds & Inflation</Title>
-          <Heading>Rounds</Heading>
+          <Title>{t("page-primer-contents-rounds")}</Title>
+          <Heading>{t("page-primer-contents-rounds-h3-one")}</Heading>
           <p
             css={css`
               @media (min-width: 1024px) {
                 margin-bottom: 40px;
               }
-            `}>
-            In Livepeer, new tokens are minted every so-called round. Rounds are
-            measured in Ethereum blocks, where one round is equal to{" "}
-            <strong>5760</strong> Ethereum blocks. In Ethereum, one block is
-            mined on average every <strong>{data.blockTime.toFixed(2)}</strong>{" "}
-            seconds, which means one Livepeer round lasts roughly{" "}
-            <strong>{((data.blockTime * 5760) / 60 / 60).toFixed(2)}</strong>{" "}
-            hours. Assuming the Orchestrator you're staked to is doing its job,
-            this is how often you can expect to receive reward tokens.
-          </p>
-          <p>
-            Next, let's go over the Livepeer inflation rate, or in other words,
-            the way by which the Livepeer protocol determines how many new
-            tokens to mint each round.
-          </p>
+            `}
+            dangerouslySetInnerHTML={{
+              __html: t(
+                "page-primer-contents-rounds-text-one",
+                translationData
+              ),
+            }}
+          />
+          <p>{t("page-primer-contents-rounds-text-two")}</p>
         </div>
         <Rounds src="/images/primer/rounds.svg" />
         <RoundMobile src="/images/primer/rounds-mobile.svg" />
@@ -79,33 +91,23 @@ const Chapter8 = ({ data, onChange }) => {
               margin-bottom: 0;
             }
           `}>
-          <Heading>Inflation</Heading>
-          <p>
-            The current rate of inflation as of today's round is{" "}
-            <strong>{data.inflationPerRound}%</strong> and there are currently a
-            total of <strong>{data.totalSupply.toLocaleString()}</strong>{" "}
-            Livepeer tokens in supply. So, if you do the math, a total of{" "}
-            <strong>
-              {(
-                (parseFloat(data.inflationPerRound) / 100.0) *
-                data.totalSupply
-              ).toLocaleString()}{" "}
-            </strong>
-            newly minted Livepeer tokens will be rewarded to all participants
-            during the next round.
-          </p>
-
-          <p>
-            The cool thing about Livepeer is the inflation rate adjusts
-            automatically depending on how many tokens are staked out of the
-            total circulating supply. Currently, the total supply of Livepeer
-            tokens stands at{" "}
-            <strong>{data.totalSupply.toLocaleString()}</strong> and of those,{" "}
-            <strong>{data.totalBonded.toLocaleString()}</strong> are staked.
-            Livepeer refers to this ratio (
-            <strong>{data.participationRate}%</strong>) as its "participation
-            rate”.
-          </p>
+          <Heading>{t("page-primer-contents-rounds-h3-two")}</Heading>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t(
+                "page-primer-contents-rounds-text-three",
+                translationData
+              ),
+            }}
+          />
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t(
+                "page-primer-contents-rounds-text-four",
+                translationData
+              ),
+            }}
+          />
         </div>
       </Section2>
       <Section3>
@@ -115,18 +117,11 @@ const Chapter8 = ({ data, onChange }) => {
               max-width: 470px;
               text-align: center;
             }
-          `}>
-          Livepeer presupposes that a target rate of{" "}
-          <strong>{data.targetBondingRate}%</strong> is a healthy trade-off
-          between network security and token liquidity, so in order to hit this
-          target, the protocol incentivizes participation by increasing the
-          inflation rate by <strong>{data.inflationChange}%</strong> for every
-          round the participation rate is below{" "}
-          <strong>{data.targetBondingRate}%</strong> and decreasing it{" "}
-          <strong>{data.inflationChange}%</strong> for every round the
-          participation rate is above <strong>{data.targetBondingRate}%</strong>
-          .
-        </p>
+          `}
+          dangerouslySetInnerHTML={{
+            __html: t("page-primer-contents-rounds-text-five", translationData),
+          }}
+        />
       </Section3>
     </Container>
   );

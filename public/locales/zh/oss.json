@@ -1,0 +1,23 @@
+{
+  "page-oss-title": "Livepeer 开源",
+  "page-oss-intro": "用于开放网络的开放视频基础架构。",
+  "page-oss-featured": "特色开源项目",
+  "page-oss-featured-text": "Livepeer的开源软件中使用的技术包括Golang，Solidity，Typescript，ffmpeg等开源视频工具以及以太坊等智能合约平台。",
+  "page-oss-featured-cta": "查看所有项目",
+  "page-oss-featured-go": "访问Livepeer",
+  "page-oss-featured-go-text": "Livepeer协议的正式GO语音实现",
+  "page-oss-featured-protocol": "协议",
+  "page-oss-featured-protocol-text": "用于Livepeer协议的以太坊智能合约。",
+  "page-oss-featured-media-server": "Livepeer媒体服务器",
+  "page-oss-featured-media-server-text": "一个golang开发人员库，用于启动视频提取，转码，流传输以及许多其他与视频相关的功能。",
+  "page-oss-collaborate": "合作",
+  "page-oss-collaborate-title": "参与其中",
+  "page-oss-collaborate-intro": "在Livepeer生态系统中，与视频方面和区块链方面的代码都有很多与他人合作的机会。",
+  "page-oss-collaborate-text-one": "阅读Livepeer.js贡献者指南。",
+  "page-oss-collaborate-text-two": "查找在“良好的第一问题” Livepeer.js（JavaScript）的，LPMS（C或转到视频开发），或转到-Livepeer（GO）。",
+  "page-oss-collaborate-text-three": "查看赠款提案，以查看带有附加资金的申请概念。",
+  "page-oss-collaborate-text-four": "我们热衷于与Discord的开发团队聊天，所以不要害羞。询问您如何参与。",
+  "page-oss-collaborate-text-five": "想要使用Livepeer构建视频应用程序？在livepeer.com上查看我们的开放式开发人员文档或企业托管服务。",
+  "page-oss-meta-title": "Livepeer - 开源软件",
+  "page-oss-meta-description": "Livepeer.org是Livepeer网络参与者和用户的主要在线资源。"
+}

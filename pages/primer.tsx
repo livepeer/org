@@ -19,34 +19,46 @@ import Chapter7 from "components/sections/primer/Chapter7";
 import Chapter8 from "components/sections/primer/Chapter8";
 import Chapter9 from "components/sections/primer/Chapter9";
 import Footer from "components/sections/primer/Footer";
-
-const headProps: HeadProps = {
-  meta: {
-    title: "A 10-Minute Primer",
-    description:
-      "Through storytelling, illustration, and data, the Livepeer Primer explains, at a high level, the problem Livepeer solves, and how it works.",
-    url: "https://livepeer.org/primer",
-    siteName: "Livepeer.org",
-    image: "https://livepeer.org/images/primer/share-image.jpg",
-    twitterUsername: "@LivepeerOrg",
-  },
-};
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 const Primer = ({ data }) => {
+  const { t } = useTranslation(["primer"]);
+  const { locale } = useRouter();
   const [section, setActiveSection] = useState("introduction");
   const onChange = (section) => {
     setActiveSection(section);
+  };
+
+  const headProps: HeadProps = {
+    meta: {
+      title: t("page-primer-meta-title"),
+      description: t("page-primer-meta-description"),
+      url: "https://livepeer.org/primer",
+      siteName: "Livepeer.org",
+      image: "https://livepeer.org/images/primer/share-image.jpg",
+      twitterUsername: "@LivepeerOrg",
+    },
   };
 
   return (
     <PageLayout
       navProps={{ background: "translucent", isInmersive: true }}
       headProps={headProps}>
-      <Box className="primer">
+      <Box
+        className="primer"
+        sx={{
+          // agrandir doesn't support cyrillic so we use another sans font instead
+          fontFamily: locale === "ru" ? "Helvetica, sans-serif" : "agrandir",
+          "h1, h2, h3, h4, h5, h6": {
+            fontFamily: locale === "ru" ? "Helvetica, sans-serif" : "agrandir",
+          },
+        }}>
         <Box className={`bg ${section}`} />
         <Element name="top" />
         <Box id="containerElement" style={{ position: "relative", zIndex: 10 }}>
-          <Masthead />
+          <Masthead title={t("page-primer-title")} />
           <Element name="introduction">
             <Introduction onChange={() => onChange("introduction")} />
           </Element>
@@ -84,7 +96,7 @@ const Primer = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const { rpc } = await LivepeerSDK({
     provider: process.env.PROVIDER,
   });
@@ -144,6 +156,8 @@ export async function getStaticProps() {
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ["common", "primer", "home"])),
+      locale,
       data: {
         totalSupply,
         totalDelegators: delegators.length,

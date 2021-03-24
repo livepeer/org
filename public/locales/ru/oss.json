@@ -1,0 +1,23 @@
+{
+  "page-oss-title": "Открытый исходный код Livepeer",
+  "page-oss-intro": "Открытая видеоинфраструктура для открытого Интернета.",
+  "page-oss-featured": "Рекомендованные проекты с открытым исходным кодом",
+  "page-oss-featured-text": "В программном обеспечении Livepeer с открытым исходным кодом используются такие технологии, как Golang, Solidity, Typescript, инструменты для обработки видео с открытым исходным кодом, такие как ffmpeg, а также интеллектуальные платформы смарт-контрактов Ethereum.",
+  "page-oss-featured-cta": "Просмотреть все проекты",
+  "page-oss-featured-go": "Livepeer на Go",
+  "page-oss-featured-go-text": "Официальная реализация протокола Livepeer на языке Go",
+  "page-oss-featured-protocol": "Протокол",
+  "page-oss-featured-protocol-text": "Для протокола Livepeer используются смарт-контракты Ethereum",
+  "page-oss-featured-media-server": "Медиасервер Livepeer",
+  "page-oss-featured-media-server-text": "Библиотека разработчика Golang, позволяющая реализовывать получение, перекодировку, потоковую передачу и многие другие связанные с видео функции.",
+  "page-oss-collaborate": "Сотрудничество",
+  "page-oss-collaborate-title": "Подключайтесь",
+  "page-oss-collaborate-intro": "Экосистема Livepeer предоставляет множество возможностей для совместной работы над кодом с другими пользователями как на стороне видео, так и на стороне блокчейна.",
+  "page-oss-collaborate-text-one": "Ознакомьтесь с руководством для участников Livepeer.js.",
+  "page-oss-collaborate-text-two": "Поищите «старые добрые выпуски» на Livepeer.js (Javascript), LPMS (разработка видео на C или Go) или Go-Livepeer (Go).",
+  "page-oss-collaborate-text-three": "Просмотрите заявки на гранты, чтобы ознакомиться с концепциями приложений, на которые выделяется финансирование.",
+  "page-oss-collaborate-text-four": "Пообщайтесь с командой разработчиков в Discord — не стесняйтесь, мы доброжелательные ребята. Спросите, как вы можете поучаствовать.",
+  "page-oss-collaborate-text-five": "Хотите создать видеоприложение с помощью Livepeer? Ознакомьтесь с нашей открытой документацией для разработчиков или сервисами корпоративного класса, размещенными на livepeer.com.",
+  "page-oss-meta-title": "Livepeer — ПО с открытым исходным кодом",
+  "page-oss-meta-description": "Livepeer.org — основной интернет-ресурс для участников и пользователей сети Livepeer."
+}

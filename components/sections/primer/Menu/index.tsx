@@ -1,5 +1,6 @@
+import { useTranslation } from "next-i18next";
 import { useState } from "react";
-import { Link, Events } from "react-scroll";
+import { Link } from "react-scroll";
 import {
   Root,
   Inner,
@@ -12,6 +13,7 @@ import {
 } from "./styles";
 
 const Menu = () => {
+  const { t } = useTranslation(["primer"]);
   const [active, setActiveState] = useState(false);
   return (
     <Root>
@@ -21,7 +23,7 @@ const Menu = () => {
           onClick={() => {
             active ? setActiveState(false) : setActiveState(true);
           }}>
-          <ButtonText>Contents</ButtonText>
+          <ButtonText>{t("page-primer-contents")}</ButtonText>
           <Circle className="menu__circle" />
         </Header>
         <List isActive={active}>
@@ -37,7 +39,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Introduction
+                {t("page-primer-contents-intro")}
               </Link>
             </Item>
             <Item>
@@ -52,7 +54,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                What is Livepeer?
+                {t("page-primer-contents-what")}
               </Link>
             </Item>
             <Item>
@@ -66,7 +68,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Who is Livepeer for?
+                {t("page-primer-contents-who")}
               </Link>
             </Item>
             <Item>
@@ -80,7 +82,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                How Does Livepeer Work?
+                {t("page-primer-contents-how")}
               </Link>
             </Item>
             <Item>
@@ -94,7 +96,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Orchestrators
+                {t("page-primer-contents-orchestrators")}
               </Link>
             </Item>
             <Item>
@@ -108,7 +110,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Livepeer Tokens
+                {t("page-primer-contents-token")}
               </Link>
             </Item>
             <Item>
@@ -122,7 +124,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Delegators
+                {t("page-primer-contents-delegators")}
               </Link>
             </Item>
             <Item>
@@ -136,7 +138,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Rewarding Participation
+                {t("page-primer-contents-rewarding")}
               </Link>
             </Item>
             <Item>
@@ -150,7 +152,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Rounds & Inflation
+                {t("page-primer-contents-rounds")}
               </Link>
             </Item>
             <Item>
@@ -164,7 +166,7 @@ const Menu = () => {
                 onClick={() => {
                   setActiveState(false);
                 }}>
-                Get Involved
+                {t("page-primer-contents-involved")}
               </Link>
             </Item>
           </ListContainer>
