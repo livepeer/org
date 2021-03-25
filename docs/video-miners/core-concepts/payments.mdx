@@ -1,0 +1,35 @@
+---
+title: Payments
+---
+
+# Payments
+
+## Per Pixel Pricing
+
+The value of payments is based on the number of pixels of video transcoded.
+Orchestrators advertise a price per pixel off-chain. Broadcasters filter and
+select orchestrators based on a maximum price per pixel that they are willing to
+pay for transcoding.
+
+The video profiles requested by broadcasters will impact the number of pixels
+transcoded. A higher number of video profiles or more complex video profiles
+will require more pixels to be transcoded and also require more payments.
+
+## Probabilistic Micropayments
+
+Payments are implemented using a
+[probabilistic micropayment protocol](https://medium.com/livepeer-blog/streamflow-probabilistic-micropayments-f3a647672462).
+
+Broadcasters send lottery tickets to orchestrators in exchange for transcoded
+results. Each lottery ticket is defined with a face value, the payout to the
+orchestrator if the ticket wins, and the probability that the ticket will win.
+Each ticket is treated as a micropayment worth the expected value of the ticket
+(calculated as face value multiplied by the winning probability). Orchestrators
+will redeem winning tickets on-chain to receive the face value of tickets.
+
+<Pagination
+  previousStep={{
+    title: "Dual Mining",
+    href: "/docs/video-miners/core-concepts/dual-mining",
+  }}
+/>
