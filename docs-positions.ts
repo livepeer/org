@@ -16,6 +16,7 @@ export const docsPositions = [
   "docs/video-developers/how-to-guides/broadcasting-preferences.mdx",
   "docs/video-developers/how-to-guides/cdn-integration.mdx",
   "docs/video-developers/how-to-guides/withdrawing-broadcaster-funds.mdx",
+  "docs/video-developers/how-to-guides/verification.mdx",
   "docs/video-developers/how-to-guides/troubleshooting.mdx",
   "docs/video-developers/core-concepts/index.mdx",
   "docs/video-developers/core-concepts/overview.mdx",
