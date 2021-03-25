@@ -3,8 +3,9 @@
 import { jsx, useColorMode } from "theme-ui";
 import Link from "next/link";
 import Collapsible from "react-collapsible";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
+import { isInRoute } from "lib/router-utils";
 
 export type Menu = {
   selected?: string;
@@ -66,12 +67,6 @@ const TriggerIcon = ({ selected, hover }: TriggerProps) => {
 
 const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
   const [hover, setHover] = useState(false);
-  const router = useRouter();
-
-  const handlePushRoute = useCallback(() => {
-    if (!href) return;
-    router.push(href);
-  }, [href, router]);
 
   return (
     <div
@@ -96,7 +91,6 @@ const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
       )}
       <p
         data-href={href}
-        // onClick={handlePushRoute}
         sx={{
           fontSize: "14px",
           lineHeight: "24px",
@@ -120,6 +114,13 @@ const Trigger = ({ title, selected, isOpen, href }: TriggerProps) => {
   );
 };
 
+function cleanupHrefForComparison(href: string) {
+  if (href.startsWith("/docs")) return href;
+  if (href.startsWith("docs")) return "/" + href;
+  if (href.startsWith("/")) return "/docs" + href;
+  return "/docs/" + href;
+}
+
 const Section = ({
   title,
   links,
@@ -128,6 +129,8 @@ const Section = ({
   setSectionOpen,
   path,
 }: Menu & SectionsMenu) => {
+  const router = useRouter();
+
   return (
     <div>
       <p
@@ -144,12 +147,17 @@ const Section = ({
       </p>
       <div
         sx={{ display: "flex", flexDirection: "column", color: "docs.text" }}>
-        {links.map((link, idx) =>
-          link.links.length > 0 ? (
+        {links.map((link, idx) => {
+          const isHere = isInRoute(
+            router.asPath,
+            cleanupHrefForComparison(link.href)
+          );
+
+          return link.links.length > 0 ? (
             <Collapsible
               open={
                 sectionOpen === link.href ||
-                `${path}/` === link.href ||
+                isHere ||
                 link.links?.filter((child) => `/docs/${child.href}` === path)
                   .length > 0
               }
@@ -166,12 +174,12 @@ const Section = ({
               }}
               trigger={
                 <Trigger
-                  selected={`${path}/` === link.href}
+                  selected={isHere}
                   title={link.title}
                   href={link.href}
                   isOpen={
                     sectionOpen === link.href ||
-                    `${path}/` === link.href ||
+                    isHere ||
                     link.links?.filter(
                       (child) => `/docs/${child.href}` === path
                     ).length > 0
@@ -187,70 +195,75 @@ const Section = ({
                 fontSize: "14px",
                 lineHeight: "24px",
               }}>
-              {link.links?.map((secondLink, idx) =>
-                secondLink.links?.length > 0 ? (
+              {link.links?.map((secondLink, idx) => {
+                const isHereSecondLink = isInRoute(
+                  router.asPath,
+                  cleanupHrefForComparison(secondLink.href)
+                );
+                return secondLink.links?.length > 0 ? (
                   <Collapsible
                     key={idx}
                     open={selected === link.href ? true : false}
                     trigger={
                       <Trigger
-                        selected={secondLink.href === path}
+                        selected={isHereSecondLink}
                         title={secondLink.title}
                       />
                     }
                     transitionTime={5}
                     sx={{
-                      color:
-                        path === secondLink.href
-                          ? "docs.selected"
-                          : "docs.text",
+                      color: isHereSecondLink ? "docs.selected" : "docs.text",
                       mt: "12px",
                       cursor: "pointer",
                       fontSize: "14px",
                       lineHeight: "24px",
                     }}>
                     {secondLink.links &&
-                      secondLink.links.map((thirdLink, idx) => (
-                        <Link href={thirdLink.href} key={idx}>
-                          <div
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              mt: "12px",
-                            }}>
-                            {path === `/docs/${thirdLink.href}` && (
-                              <div
-                                sx={{
-                                  width: "6px",
-                                  height: "6px",
-                                  backgroundColor: "docs.selected",
-                                  mr: "10px",
-                                }}
-                              />
-                            )}
-                            <a
+                      secondLink.links.map((thirdLink, idx) => {
+                        const isHereThirdLink = isInRoute(
+                          router.asPath,
+                          cleanupHrefForComparison(thirdLink.href)
+                        );
+                        return (
+                          <Link href={thirdLink.href} key={idx}>
+                            <div
                               sx={{
-                                color:
-                                  path === `/docs/${thirdLink.href}`
+                                display: "flex",
+                                alignItems: "center",
+                                mt: "12px",
+                              }}>
+                              {isHereThirdLink && (
+                                <div
+                                  sx={{
+                                    width: "6px",
+                                    height: "6px",
+                                    backgroundColor: "docs.selected",
+                                    mr: "10px",
+                                  }}
+                                />
+                              )}
+                              <a
+                                sx={{
+                                  color: isHereThirdLink
                                     ? "docs.selected"
                                     : "docs.text",
-                                fontWeight:
-                                  path === `/docs/${thirdLink.href}`
+                                  fontWeight: isHereThirdLink
                                     ? "600"
                                     : "normal",
-                                cursor: "pointer",
-                                maxWidth: "fit-content",
-                                fontSize: "14px",
-                                lineHeight: "24px",
-                                ":hover": {
-                                  color: "docs.selected",
-                                },
-                              }}>
-                              {thirdLink.title}
-                            </a>
-                          </div>
-                        </Link>
-                      ))}
+                                  cursor: "pointer",
+                                  maxWidth: "fit-content",
+                                  fontSize: "14px",
+                                  lineHeight: "24px",
+                                  ":hover": {
+                                    color: "docs.selected",
+                                  },
+                                }}>
+                                {thirdLink.title}
+                              </a>
+                            </div>
+                          </Link>
+                        );
+                      })}
                   </Collapsible>
                 ) : (
                   <Link href={secondLink.href} key={idx}>
@@ -260,7 +273,7 @@ const Section = ({
                         alignItems: "center",
                         mt: "12px",
                       }}>
-                      {path === `/docs/${secondLink.href}` && (
+                      {isHereSecondLink && (
                         <div
                           sx={{
                             minWidth: "6px",
@@ -272,14 +285,10 @@ const Section = ({
                       )}
                       <a
                         sx={{
-                          color:
-                            path === `/docs/${secondLink.href}`
-                              ? "docs.selected"
-                              : "docs.text",
-                          fontWeight:
-                            path === `/docs/${secondLink.href}`
-                              ? "600"
-                              : "normal",
+                          color: isHereSecondLink
+                            ? "docs.selected"
+                            : "docs.text",
+                          fontWeight: isHereSecondLink ? "600" : "normal",
                           cursor: "pointer",
                           maxWidth: "fit-content",
                           fontSize: "14px",
@@ -292,15 +301,15 @@ const Section = ({
                       </a>
                     </div>
                   </Link>
-                )
-              )}
+                );
+              })}
             </Collapsible>
           ) : (
             <Link href={link.href} key={idx}>
               <div
                 sx={{ display: "flex", alignItems: "center", mt: "12px" }}
                 onClick={() => setSectionOpen("")}>
-                {path === link.href && (
+                {isHere && (
                   <div
                     sx={{
                       width: "6px",
@@ -312,11 +321,11 @@ const Section = ({
                 )}
                 <a
                   sx={{
-                    color: path === link.href ? "docs.selected" : "docs.text",
+                    color: isHere ? "docs.selected" : "docs.text",
                     cursor: "pointer",
                     maxWidth: "fit-content",
                     fontSize: "14px",
-                    fontWeight: path === link.href ? "600" : "normal",
+                    fontWeight: isHere ? "600" : "normal",
                     lineHeight: "24px",
                     ":hover": {
                       color: "docs.selected",
@@ -326,8 +335,8 @@ const Section = ({
                 </a>
               </div>
             </Link>
-          )
-        )}
+          );
+        })}
       </div>
     </div>
   );

@@ -54,6 +54,7 @@ export const Heading = ({ children, as }: HeadingProps) => {
       {as === "h1" ? (
         <Box
           as={as}
+          id={id}
           sx={{
             ...sx,
             color: "docs.text",
@@ -71,9 +72,9 @@ export const Heading = ({ children, as }: HeadingProps) => {
                 textDecoration: "none !important",
               },
             }}>
-            <span id={id} sx={{ marginBottom: "100px" }} />
             <Box
               as={as}
+              id={id}
               sx={{
                 ...sx,
                 color: "docs.text",

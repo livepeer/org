@@ -308,7 +308,7 @@ const Markdown = ({ children }) => {
       sx={{
         ...getStyles(),
       }}>
-      <Box id="markdown">{children}</Box>
+      <Box>{children}</Box>
     </Box>
   );
 };

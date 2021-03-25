@@ -50,14 +50,10 @@ export const useDocSearch = () => {
           <DocSearchModal
             initialQuery={initialQuery}
             initialScrollY={window.scrollY}
-            searchParameters={{
-              facetFilters: "version:v2",
-              distinct: 1,
-            }}
             onClose={onClose}
-            indexName="tailwindcss"
-            apiKey="3df93446658cd9c4e314d4c02a052188"
-            appId="BH4D9OD16A"
+            indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
+            apiKey={process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY}
+            appId={process.env.NEXT_PUBLIC_ALGOLIA_APP_ID}
             navigator={{
               navigate({ suggestionUrl }) {
                 setIsOpen(false);
