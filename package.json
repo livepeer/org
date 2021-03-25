@@ -14,7 +14,8 @@
     "lint:staged": "lint-staged --quiet",
     "prettier": "prettier --write '**/*.{ts,js,css,html,md,tsx,mdx,yaml,yml,gql,graphql,json}'",
     "type-check": "tsc --pretty --noEmit",
-    "docs-positions": "node ./generate-docs-positions.js"
+    "docs-positions": "node ./generate-docs-positions.js",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@docsearch/react": "^1.0.0-alpha.14",
@@ -70,6 +71,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
     "lint-staged": "^10.5.4",
+    "next-sitemap": "^1.6.9",
     "prettier": "^2.2.1",
     "typescript": "^3.9.7"
   },
