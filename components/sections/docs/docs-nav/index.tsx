@@ -57,9 +57,7 @@ const DocsNav = ({ setColorMode, colorMode, selected, menu }: Props) => {
             </Link>
           </p>
         </div>
-        {process.env.NEXT_PUBLIC_SHOW_DOCS_SEARCH === "true" ? (
-          <DocsSearch />
-        ) : null}
+        <DocsSearch />
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
       <div sx={{ display: ["flex", null, "none"] }}>
