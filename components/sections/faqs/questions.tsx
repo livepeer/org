@@ -41,7 +41,7 @@ const AnswerLink: FC<LinkProps> = ({ label, href, asPath, isExternal }) =>
       {label}
     </A>
   ) : (
-    <Link href={href} as={asPath}>
+    <Link href={href} as={asPath} passHref>
       <A variant="accent" sx={{ fontWeight: 400 }}>
         {label}
       </A>
@@ -143,10 +143,7 @@ const questions: Question[] = [
         </Text>
         <ul>
           <li>
-            <AnswerLink
-              label="https://livepeer.readthedocs.io/en/latest/developers.html"
-              href="https://livepeer.readthedocs.io/en/latest/developers.html"
-            />
+            <AnswerLink label="https://livepeer.org/oss" href="/oss" />
           </li>
           <li>
             <AnswerLink
@@ -280,9 +277,8 @@ const questions: Question[] = [
             <ul sx={{ listStyle: "inside", paddingInlineStart: "24px" }}>
               <li>
                 <AnswerLink
-                  href="https://livepeer.readthedocs.io/en/latest/transcoding.html#testing-your-transcoding-setup"
-                  label="Check the docs"
-                  isExternal
+                  href="/docs/video-miners/how-to-guides/troubleshooting"
+                  label="Check the video miner troubleshooting docs"
                 />{" "}
                 to test your own transcoding setup. Turn on logging to a more
                 verbose level to debug this (-v 10).
