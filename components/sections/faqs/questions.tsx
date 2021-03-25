@@ -146,7 +146,6 @@ const questions: Question[] = [
             <AnswerLink
               label="https://livepeer.readthedocs.io/en/latest/developers.html"
               href="https://livepeer.readthedocs.io/en/latest/developers.html"
-              isExternal
             />
           </li>
           <li>
@@ -258,8 +257,7 @@ const questions: Question[] = [
         Follow{" "}
         <AnswerLink
           label="this"
-          href="https://livepeer.readthedocs.io/en/latest/transcoding.html"
-          isExternal
+          href="/docs/video-miners/getting-started/overview"
         />{" "}
         guide.
       </>
