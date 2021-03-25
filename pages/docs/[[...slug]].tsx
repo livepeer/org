@@ -322,8 +322,8 @@ export const getStaticProps = async ({
     },
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [[require("remark-prism")]],
-      rehypePlugins: [],
+      remarkPlugins: [],
+      rehypePlugins: [[require("@mapbox/rehype-prism")]],
     },
     scope: meta,
   });
