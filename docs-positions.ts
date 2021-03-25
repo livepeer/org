@@ -45,6 +45,7 @@ export const docsPositions = [
   "docs/video-miners/core-concepts/selection.mdx",
   "docs/video-miners/core-concepts/earnings.mdx",
   "docs/video-miners/core-concepts/dual-mining.mdx",
+  "docs/video-miners/core-concepts/payments.mdx",
   "docs/video-miners/reference/index.mdx",
   "docs/video-miners/reference/overview.mdx",
   "docs/video-miners/reference/hardware.mdx",
