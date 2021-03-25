@@ -1,14 +1,20 @@
 ---
-title: Withdrawing Broadcasting Funds
+title: Withdraw Broadcasting Funds
 ---
 
-# How to withdraw your broadcasting funds
+# Withdraw Broadcasting Funds
+
+## Pre-requisites
+
+- Make sure your broadcaster is running
+
+## Withdraw broadcasting funds using `livepeer_cli`
 
 When you want to withdraw your broadcasting funds you will need to wait a fixed
 number of rounds before gaining access to your funds. The first step for
 withdrawal is to request to unlock your funds.
 
-In livepeer_cli, select the following option:
+In `livepeer_cli`, select the following option:
 
 ```
 13. Invoke "unlock broadcasting funds"
@@ -31,7 +37,8 @@ answering the wizard’s prompt, you should see a transaction submitted by your
 node. After the transaction confirms, your unlock request will be cancelled.
 Another way to cancel an unlock request is to deposit more funds.
 
-If you want to withdraw your funds, in livepeer_cli select the following option:
+If you want to withdraw your funds, in `livepeer_cli` select the following
+option:
 
 ```
 15. Invoke "withdraw broadcasting funds"
@@ -44,3 +51,14 @@ that you would like to withdraw your funds. After answering the wizard’s promp
 you should see a transaction submitted by your node. After the transaction
 confirms, your withdrawal will be complete and can see your empty deposit and
 reserve by refreshing the wizard.
+
+<Pagination
+  previousStep={{
+    title: "Integrate a CDN",
+    href: "/docs/video-developers/how-to-guides/cdn-integration",
+  }}
+  nextStep={{
+    title: "Troubleshoot",
+    href: "/docs/video-developers/how-to-guides/troubleshooting",
+  }}
+/>
