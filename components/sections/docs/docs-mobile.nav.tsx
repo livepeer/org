@@ -1,5 +1,4 @@
 /** @jsx jsx */
-
 import { jsx } from "theme-ui";
 import { useState, useEffect } from "react";
 import {
@@ -127,12 +126,16 @@ const DocsMobileNav = ({ setColorMode, colorMode, selected, menu }) => {
               </p>
             </div>
             <div sx={{ display: "flex", alignItems: "center" }}>
-              <button
-                onClick={onOpen}
-                ref={searchButtonRef}
-                sx={{ mr: "6px", p: 2 }}>
-                <SearchIcon color={colorMode === "dark" ? "#fff" : "#131418"} />
-              </button>
+              {process.env.NEXT_PUBLIC_SHOW_DOCS_SEARCH === "true" ? (
+                <button
+                  onClick={onOpen}
+                  ref={searchButtonRef}
+                  sx={{ mr: "6px", p: 2 }}>
+                  <SearchIcon
+                    color={colorMode === "dark" ? "#fff" : "#131418"}
+                  />
+                </button>
+              ) : null}
               <button onClick={() => setMenuOpen(true)} sx={{ p: 1 }}>
                 <MobileMenuIcon
                   color={colorMode === "dark" ? "#fff" : "#131418"}
