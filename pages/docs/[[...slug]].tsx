@@ -207,8 +207,7 @@ function getHref(filePath: string) {
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const filePaths = await globby("docs/**/*");
-
+  let filePaths = await globby(["docs/**/*", "!docs/assets"]);
   const paths = filePaths.map((g) => {
     const href = getHref(g);
     const clean = href.split("/");
@@ -242,7 +241,7 @@ export const getStaticProps = async ({
   locale,
   params,
 }: GetStaticPropsContext<Params>) => {
-  const filePaths = await globby("docs/**/*");
+  const filePaths = await globby(["docs/**/*", "!docs/assets"]);
 
   const fullSlug = `docs/${params?.slug?.join("/") ?? "index"}.mdx`;
   const fullSlugWithIndexEnding = `docs/${params?.slug?.join("/")}/index.mdx`;
