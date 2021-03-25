@@ -26,6 +26,7 @@ import getToc from "markdown-toc";
 import Link from "next/link";
 import theme from "lib/theme";
 import Markdown from "components/primitives/markdown";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 type Params = { slug?: string[] };
 
@@ -238,6 +239,7 @@ function splitHref(value) {
 }
 
 export const getStaticProps = async ({
+  locale,
   params,
 }: GetStaticPropsContext<Params>) => {
   const filePaths = await globby("docs/**/*");
@@ -334,6 +336,7 @@ export const getStaticProps = async ({
       path: filePath,
       menu: realMenu,
       toc,
+      ...(await serverSideTranslations(locale, ["common"])),
     },
     revalidate: 1,
   };

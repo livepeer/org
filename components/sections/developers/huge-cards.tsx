@@ -119,8 +119,8 @@ const HugeCardsSection = ({ card1, card2 }) => {
           "repeat(2, minmax(auto, 632px))",
         ]}
         sx={{ justifyContent: "center" }}>
-        {cards.map((c) => (
-          <HugeCard key={`get-token-card-${c.titleLabel}=${c.title}`} {...c} />
+        {cards.map((c, i) => (
+          <HugeCard key={i} {...c} />
         ))}
       </Grid>
     </SectionLayout>
