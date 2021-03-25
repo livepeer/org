@@ -92,6 +92,7 @@ const Docs = ({
         },
       }}>
       <div
+        id="docs-container"
         sx={{
           maxWidth: "100vw",
           transition: "all 0.2s",
