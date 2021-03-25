@@ -20,6 +20,7 @@ export const docsPositions = [
   "docs/video-developers/core-concepts/index.mdx",
   "docs/video-developers/core-concepts/use-cases.mdx",
   "docs/video-developers/reference/index.mdx",
+  "docs/video-developers/reference/overview.mdx",
   "docs/video-developers/reference/ingest.mdx",
   "docs/video-miners/overview.mdx",
   "docs/video-miners/getting-started/index.mdx",
