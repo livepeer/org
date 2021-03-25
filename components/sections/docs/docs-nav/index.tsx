@@ -1,13 +1,11 @@
 /** @jsx jsx */
-
 import { jsx } from "theme-ui";
 import LivepeerIconSvg from "components/svgs/icons/livepeer";
-import { SearchIcon } from "components/svgs/darkMode";
-import DocsMobileNav from "./docs-mobile.nav";
+import DocsMobileNav from "../docs-mobile.nav";
 import DarkModeSwitch from "components/primitives/darkModeSwitch";
-import { useState, useCallback } from "react";
 import Link from "next/link";
-import { Menu } from "./docs-menu";
+import { Menu } from "../docs-menu";
+import DocsSearch from "./search";
 
 type Props = {
   setColorMode: React.Dispatch<React.SetStateAction<string>>;
@@ -17,16 +15,6 @@ type Props = {
 };
 
 const DocsNav = ({ setColorMode, colorMode, selected, menu }: Props) => {
-  const [, setSearch] = useState("");
-
-  const handleChange = useCallback(
-    (e) => {
-      const value = e.target.value;
-      setSearch(value);
-    },
-    [setSearch]
-  );
-
   return (
     <div
       sx={{
@@ -69,41 +57,9 @@ const DocsNav = ({ setColorMode, colorMode, selected, menu }: Props) => {
             </Link>
           </p>
         </div>
-        <label
-          htmlFor="desktop-search"
-          sx={{
-            width: ["250px", "300px", "400px", "700px"],
-            height: "40px",
-            borderRadius: "40px",
-            overflow: "hidden",
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-          }}>
-          <i sx={{ position: "absolute", left: "16px" }}>
-            <SearchIcon color="#A5A5A5" />
-          </i>
-          <input
-            name="Search"
-            id="desktop-search"
-            placeholder="Search in docs"
-            onChange={handleChange}
-            sx={{
-              width: "100%",
-              height: "100%",
-              outline: "none",
-              backgroundColor: "docs.muted",
-              transition: "all 0.2s",
-              color: "docs.text",
-              px: "42px",
-              "&::placeholder": {
-                color: "docs.lightGray",
-                fontSize: "16px",
-                fontWeight: "300",
-              },
-            }}
-          />
-        </label>
+        {process.env.NEXT_PUBLIC_SHOW_DOCS_SEARCH === "true" ? (
+          <DocsSearch />
+        ) : null}
         <DarkModeSwitch colorMode={colorMode} setColorMode={setColorMode} />
       </div>
       <div sx={{ display: ["flex", null, "none"] }}>
