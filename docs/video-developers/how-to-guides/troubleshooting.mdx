@@ -1,16 +1,16 @@
 ---
-title: Troubleshooting
+title: Troubleshoot
 ---
 
-# Troubleshooting
+# Troubleshoot
 
 In order to see more detailed logs, run your broadcaster with `-v 6` to enable
 verbose logging.
 
-After receiving a stream, your Broadcaster will try to connect to a set of
-Orchestrators (ether based on the registered Orchestrators on-chain or based on
-the Orchestrators specified using the `-orchAddr` flag). Your broadcaster might
-reject certain Orchestrators based on their required price or ticket parameters.
+After receiving a stream, your broadcaster will try to connect to a set of
+orchestrators (ether based on the registered orchestrators on-chain or based on
+the orchestrators specified using the `-orchAddr` flag). Your broadcaster might
+reject certain orchestrators based on their required price or ticket parameters.
 
 ## `faceValue higher than max faceValue` error
 
@@ -34,8 +34,8 @@ where `MAX_TICKET_EV` is the maximum expected value (denominated in wei) for
 tickets sent by the broadcaster. The default value is 10 gwei so you could try
 using a higher value.
 
-For help from the Livepeer community, join the Livepeer Discord Server and post
-in the #broadcasting channel.
+For help from the Livepeer community, join the Livepeer
+[Discord](https://discord.gg/uaPhtyrWsF) and post in the #broadcasting channel.
 
 <Pagination
   previousStep={{

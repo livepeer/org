@@ -1,17 +1,17 @@
 ---
-title: CDN Integration
+title: Integrate a CDN
 ---
 
-# How to integrate a CDN with your Livepeer broadcaster node
+# Integrate a CDN
 
 CDN's allow many viewers to view your transcoded video simultaneously while
-protecting your Broadcaster node from being inundated with requests.
+protecting your broadcaster node from being inundated with requests.
 
-Here is how to make your output video via a conventional CDN:
+Here is how to make your output video available via a conventional CDN:
 
-1. Run a Livepeer node on a server, and expose ports `8935` and `1935`.
-2. Boot up the livepeer node with the `-rtmpAddr 0.0.0.0` and
-   `-httpAddr 0.0.0.0` flags
+1. Run a broadcaster on a server, and expose ports `8935` and `1935`.
+2. Boot up broadcaster with the `-rtmpAddr 0.0.0.0` and `-httpAddr 0.0.0.0`
+   flags
 3. Configure your CDN to cache video content running at
    `http://hostname:8935/stream/{streamID}.m3u8`
 
@@ -22,11 +22,11 @@ Livepeer forms around a stream.
 
 <Pagination
   previousStep={{
-    title: "Broadcasting Preferences",
+    title: "Configure Broadcasting Preferences",
     href: "/docs/video-developers/how-to-guides/broadcasting-preferences",
   }}
   nextStep={{
-    title: "Troubleshooting",
-    href: "/docs/video-developers/how-to-guides/troubleshooting",
+    title: "Withdraw Broadcasting Funds",
+    href: "/docs/video-developers/how-to-guides/withdrawing-broadcaster-funds",
   }}
 />
