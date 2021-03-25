@@ -17,6 +17,7 @@
     "docs-positions": "node ./generate-docs-positions.js"
   },
   "dependencies": {
+    "@docsearch/react": "^1.0.0-alpha.14",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@livepeer/sdk": "^1.0.0-alpha.19",
