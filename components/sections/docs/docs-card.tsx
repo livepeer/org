@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import Link from "next/link";
-import { jsx, Heading, useColorMode, Box } from "theme-ui";
+import { jsx, useColorMode, Box } from "theme-ui";
 
 type Props = {
   color?: string;

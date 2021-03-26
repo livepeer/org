@@ -25,6 +25,7 @@ const Pagination = ({ previousStep, nextStep }: Props) => {
         display: "grid",
         gridTemplateColumns: ["1fr", "1fr 1fr"],
         gap: ["24px", "8px"],
+        pb: 5,
       }}>
       {previousStep && (
         <PreviousStep

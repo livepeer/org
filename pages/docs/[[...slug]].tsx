@@ -28,6 +28,7 @@ import theme from "lib/theme";
 import Markdown from "components/primitives/markdown";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Fragment } from "react";
+import Pre from "components/sections/docs/pre";
 
 type Params = { slug?: string[] };
 
@@ -41,6 +42,7 @@ const components = {
   h3: ({ children }) => {
     return <Heading as="h3">{children}</Heading>;
   },
+  pre: Pre,
 
   a: ({ children, href }) => {
     return (
@@ -122,19 +124,19 @@ const Docs = ({
               height: "calc(100vh - 118px)",
               top: "118px",
               overflowY: "auto",
-              minWidth: "250px",
+              width: "250px",
             }}>
             <DocsMenu selected={realSlug} menu={menu} />
           </div>
           <div
             sx={{
-              width: "100%",
               maxWidth: ["100%", "100%", "730px"],
               minHeight: "calc(100vh - 118px)",
               color: "docs.text",
               display: "flex",
               flexDirection: "column",
-              overflow: "hidden",
+              width: 240,
+              flexGrow: 1,
             }}>
             <div sx={{ display: "flex" }}>
               {topLevel.map((each, idx) => (
@@ -164,12 +166,11 @@ const Docs = ({
               position: "sticky",
               height: "calc(100vh - 118px)",
               top: "118px",
-              minWidth: 240,
-              width: 240,
               display: ["none", "none", "none", "flex"],
               flexDirection: "column",
               overflowY: "auto",
               ml: "20px",
+              width: 240,
             }}>
             {rightSideBar.map((title, idx) => (
               <Link
