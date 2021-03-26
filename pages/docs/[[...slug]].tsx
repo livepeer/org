@@ -27,6 +27,7 @@ import Link from "next/link";
 import theme from "lib/theme";
 import Markdown from "components/primitives/markdown";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Fragment } from "react";
 
 type Params = { slug?: string[] };
 
@@ -137,9 +138,8 @@ const Docs = ({
             }}>
             <div sx={{ display: "flex" }}>
               {topLevel.map((each, idx) => (
-                <>
+                <Fragment key={idx}>
                   <p
-                    key={idx}
                     sx={{
                       color: "docs.text",
                       fontSize: "14px",
@@ -154,7 +154,7 @@ const Docs = ({
                       /
                     </span>
                   )}
-                </>
+                </Fragment>
               ))}
             </div>
             <Markdown>{content}</Markdown>
