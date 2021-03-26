@@ -129,6 +129,7 @@ const Docs = ({
             mt: "60px",
           }}>
           <div
+            className="docs__menu__container"
             sx={{
               display: ["none", "none", "flex"],
               position: "sticky",
