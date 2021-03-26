@@ -96,7 +96,10 @@ const Docs = ({
     <DocsPageLayout
       headProps={{
         meta: {
-          title: meta.title,
+          title:
+            meta.title === "Introduction"
+              ? "Livepeer Documentation"
+              : meta.title,
           description: meta.description,
           url: `https://livepeer.org${router.asPath}`,
           image: "https://livepeer.org/OG_docs.png",
