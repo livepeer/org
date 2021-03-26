@@ -58,7 +58,7 @@ const NextStep = ({ href, title, label, isLeft }: Props) => {
           backgroundColor: (theme) => `${theme.colors.docs.switch} !important`,
           transition: "all 0.2s",
           ":only-child": {
-            ml: "auto",
+            gridColumn: 2,
           },
           ":hover": {
             textDecoration: "none !important",
