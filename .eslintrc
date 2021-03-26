@@ -1,7 +1,7 @@
 {
   "root": true,
-  "parser": "babel-eslint",
-  "plugins": ["react", "react-hooks"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -141,16 +141,16 @@
     ],
     "react/jsx-no-undef": "error",
     "react/jsx-pascal-case": "off",
-    "react/jsx-uses-react": "warn",
     "react/jsx-uses-vars": "warn",
     "react/no-danger-with-children": "warn",
     "react/no-deprecated": "warn",
     "react/no-direct-mutation-state": "warn",
     "react/no-is-mounted": "warn",
     "react/no-typos": "error",
-    "react/react-in-jsx-scope": "off",
     "react/require-render-return": "error",
     "react/style-prop-object": "warn",
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

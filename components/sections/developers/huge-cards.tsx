@@ -51,8 +51,7 @@ const HugeCardsSection = ({ card1, card2 }) => {
       cta: {
         label: card1.ctaText,
         isLink: true,
-        isExternal: true,
-        href: "https://livepeer.readthedocs.io/",
+        href: "/docs",
       },
       accent: "primary",
       headerIllustration: <NetworkSvg />,
@@ -120,8 +119,8 @@ const HugeCardsSection = ({ card1, card2 }) => {
           "repeat(2, minmax(auto, 632px))",
         ]}
         sx={{ justifyContent: "center" }}>
-        {cards.map((c) => (
-          <HugeCard key={`get-token-card-${c.titleLabel}=${c.title}`} {...c} />
+        {cards.map((c, i) => (
+          <HugeCard key={i} {...c} />
         ))}
       </Grid>
     </SectionLayout>

@@ -1,10 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { InitializeColorMode } from "theme-ui";
 import { GA_TRACKING_ID } from "../lib/gtag";
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
+          <link
+            href="https://unpkg.com/prismjs@1.23.0/themes/prism-funky.css"
+            rel="stylesheet"
+          />
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
@@ -24,6 +30,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
+          <InitializeColorMode />
           <Main />
           <NextScript />
         </body>

@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import "./fonts.css";
+@import "./docsearch.css";
 
 /* Global Styles
    ========================================================================== */
@@ -39,4 +40,22 @@
 .hide__section,
 .c--hide {
   opacity: 0;
+}
+
+.Collapsible {
+  margin-top: 12px;
+}
+
+.Collapsible__contentOuter {
+  margin-left: 22px;
+}
+
+.is-open {
+  color: inherit !important;
+  cursor: pointer;
+}
+
+.Collapsible__contentInner {
+  display: flex;
+  flex-direction: column;
 }
