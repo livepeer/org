@@ -49,6 +49,7 @@ const DocsSearch = () => {
               borderColor: "docs.border",
               px: 2,
               height: "26px",
+              transition: "all 0.2s",
             }}>
             <span sx={{ variant: "srOnly" }}>Press </span>
             <kbd>

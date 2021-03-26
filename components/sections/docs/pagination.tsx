@@ -18,10 +18,13 @@ type Props = {
 const Pagination = ({ previousStep, nextStep }: Props) => {
   return (
     <Box
+      className="no-index"
       sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
+        width: "100%",
+        alignSelf: "center",
+        display: "grid",
+        gridTemplateColumns: ["1fr", "1fr 1fr"],
+        gap: ["24px", "8px"],
       }}>
       {previousStep && (
         <PreviousStep

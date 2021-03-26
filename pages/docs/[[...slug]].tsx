@@ -133,6 +133,7 @@ const Docs = ({
               color: "docs.text",
               display: "flex",
               flexDirection: "column",
+              overflow: "hidden",
             }}>
             <div sx={{ display: "flex" }}>
               {topLevel.map((each, idx) => (

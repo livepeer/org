@@ -46,7 +46,6 @@ const NextStep = ({ href, title, label, isLeft }: Props) => {
           width: "100%",
           alignSelf: isLeft ? "flex-start" : "flex-end",
           mt: "72px",
-          maxWidth: 268,
           display: "flex",
           flexDirection: "column",
           cursor: "pointer",
