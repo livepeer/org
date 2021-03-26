@@ -8,6 +8,7 @@ import {
   FiPlay,
 } from "react-icons/fi";
 import ListItem, { ListItemProps } from "components/primitives/list-item";
+import Link from "next/link";
 
 const listItems: ListItemProps[] = [
   {
@@ -102,14 +103,11 @@ const listItems: ListItemProps[] = [
     children: (
       <>
         Looking to build a video application using Livepeer? Check out our open{" "}
-        <A
-          href="https://livepeer.readthedocs.io/en/latest/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="accent"
-          data-dark>
-          developer docs
-        </A>{" "}
+        <Link href="/docs/video-developers/overview" passHref>
+          <A variant="accent" data-dark>
+            developer docs
+          </A>
+        </Link>{" "}
         or enterprise hosted services <br /> at{" "}
         <A
           href="https://livepeer.com"

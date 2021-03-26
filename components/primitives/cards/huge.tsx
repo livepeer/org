@@ -87,10 +87,8 @@ const HugeCard = ({
           {title}
         </Heading>
         <Box sx={{ mt: "48px", mb: "40px" }}>
-          {listItems.map((item) => (
-            <Flex
-              key={`list-item-${item}`}
-              sx={{ "&:not(:last-of-type)": { mb: 4 } }}>
+          {listItems.map((item, i) => (
+            <Flex key={i} sx={{ "&:not(:last-of-type)": { mb: 4 } }}>
               <i sx={{ color: accent, fontSize: 5, mr: 3 }}>
                 <FiCheckCircle />
               </i>
