@@ -23,16 +23,11 @@ with the following miners:
 If you successfully test with other miners, contributions to this document are
 welcome.
 
-If you are using a Nvidia GPU from the Volta generation or later, you can use
-[CUDA MPS](https://docs.nvidia.com/deploy/mps/index.html) to try to improve
-parallelization of the ethash mining and transcoding workloads. Refer to the
-[GPU NVENC/NVDEC support matrix](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new)
-for the generation that a GPU is from.
-
 If you are using a post-Volta GPU, the recommendation is to use ethminer because
 it exposes flags for more granular adjustments to the GPU workload which will be
-needed when using CUDA MPS to prevent the miner from fully staturating the GPU.
-Other miners that support similar flags can be substituted for ethminer as well.
+needed when using CUDA MPS (see the next section) to prevent the miner from
+fully staturating the GPU. Other miners that support similar flags can be
+substituted for ethminer as well.
 
 If you are using a pre-Volta GPU, the recommendation is to use t-rex because it
 is, at the time of writing, the most popular and efficient ethash miner that has
@@ -42,13 +37,29 @@ with `livepeer` can be substituted for t-rex as well.
 Note that regardless of the miner used, the VRAM available on your GPU will
 affect the number of concurrent streams that can be transcoded while mining.
 
-### Run the miner
+### Run a ethminer + livepeer script
 
-The following instructions will assume you are using either t-rex or ethminer.
-If you are using a different miner, the miner commands should be updated to
-reflect the requirements of the miner being used.
+If you are using ethminer,
+[this script](https://github.com/livepeer/ethminer/blob/master/start.sh) can be
+used to start both processes.
 
-If you are using CUDA MPS, start the MPS server by following
+If you want to setup a dual mining manually perhaps because the script does not
+serve your needs, continue to the next sections.
+
+### Run CUDA MPS
+
+[CUDA MPS](https://docs.nvidia.com/deploy/mps/index.html) can be used to try to
+improve parallelization of the ethash mining and transcoding workloads on the
+GPU. If you are not using CUDA MPS you can move on to the next section.
+
+Requirements:
+
+- Linux
+- A post-Volta Nvidia GPU. Refer to the
+  [GPU NVENC/NVDEC support matrix](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new)
+  for the generation that a GPU is from.
+
+Start the MPS server by following
 [these instructions](https://docs.nvidia.com/deploy/mps/index.html#topic_6_1_2)
 
 Take note of the following points that are mentioned in the docs:
@@ -59,6 +70,12 @@ Take note of the following points that are mentioned in the docs:
 - If you are using a mix of pre-Volta and post-Volta GPUs, make sure to read
   this [section](https://docs.nvidia.com/deploy/mps/index.html#topic_3_3_4) to
   avoid device ID issues
+
+### Run the miner
+
+The following instructions will assume you are using either t-rex or ethminer.
+If you are using a different miner, the miner commands should be updated to
+reflect the requirements of the miner being used.
 
 If you are using ethminer, run ethminer with flags to adjust the GPU workload
 (other flags to connect to a mining pool omitted):
@@ -94,13 +111,14 @@ drop which is why ethminer is recommended if you plan on using CUDA MPS.
 
 ### Run livepeer
 
-1. Wait until the miner completes DAG generation
+1. If you are using CUDA MPS, wait until the miner completes DAG generation
 
 2. Run `livepeer` on the same machine as the miner and using the same GPU device
    IDs as the miner with the `-nvidia` flag
 
-3. `livepeer` will need to be stopped when the miner re-generates the DAG to
-   avoid transcoding issues and can be re-started when DAG generation completes
+3. If you are using CUDA MPS, `livepeer` will need to be stopped when the miner
+   re-generates the DAG to avoid transcoding issues and can be re-started when
+   DAG generation completes
 
 ### Switching
 
