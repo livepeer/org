@@ -13,6 +13,12 @@ const DocsSearch = ({ searchButtonRef, onOpen }) => {
         position: "relative",
         display: "flex",
         alignItems: "center",
+        border: "1px solid",
+        borderColor: "transparent",
+        ":focus": {
+          outline: "none",
+          borderColor: "docs.border",
+        },
       }}
       ref={searchButtonRef}
       onClick={onOpen}>

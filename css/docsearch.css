@@ -1,14 +1,5 @@
 .DocSearch--active {
   overflow: hidden !important;
-
-  --gray-100: #f9fafb;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #70717a;
-  --gray-600: #4a5563;
-  --text: #000;
-  --accent: #00b569;
 }
 
 .DocSearch-Container {
@@ -22,6 +13,32 @@
   flex-direction: column;
   background: rgba(0, 0, 0, 0.25);
   padding: 1rem;
+
+  --background: white;
+  --border: white;
+  --gray-100: #f9fafb;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #70717a;
+  --gray-600: #4a5563;
+  --text: #000;
+  --accent: #00b569;
+
+  color: var(--text);
+}
+
+.dark .DocSearch-Container {
+  --background: #1d1e21;
+  --border: #3e3e3e;
+  --gray-100: #464749;
+  --gray-200: var(--border);
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #d3d3d3;
+  --gray-600: #d0d5db;
+  --text: white;
+  --accent: #00b569;
 }
 
 @media (min-width: 640px) {
@@ -67,7 +84,8 @@
   min-height: 0;
   border-radius: 1rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  background: white;
+  background: var(--background);
+  border: 1px solid var(--border);
 }
 
 .DocSearch-SearchBar {
@@ -117,7 +135,7 @@
   height: 4.5rem;
   font-size: 1rem;
   font-weight: 500;
-  color: black;
+  color: var(--text);
   margin-left: 1rem;
   margin-right: 1rem;
   flex: auto;
@@ -188,11 +206,11 @@
 
 .DocSearch-Hit-icon path {
   stroke-width: 2px;
-  stroke: #71717a;
+  stroke: var(--gray-500);
 }
 
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-icon path {
-  stroke: white;
+  stroke: var(--background);
 }
 
 .DocSearch-Hit-content-wrapper {
@@ -210,11 +228,11 @@
 }
 
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-path {
-  color: white;
+  color: var(--background);
 }
 
 .DocSearch-Hit-title {
-  color: black;
+  color: var(--text);
   line-height: 1.5rem;
   font-weight: 600;
   overflow: hidden;
@@ -223,7 +241,7 @@
 }
 
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-title {
-  color: white;
+  color: var(--background);
 }
 
 .DocSearch-Hit-title + .DocSearch-Hit-path {
@@ -245,11 +263,11 @@
 
 .DocSearch-Hit-action path {
   stroke-width: 2px;
-  stroke: #71717a;
+  stroke: var(--gray-500);
 }
 
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-action path {
-  stroke: white;
+  stroke: var(--background);
 }
 
 .DocSearch-Hit > a {
@@ -301,14 +319,14 @@
   left: 0;
   width: 1.25rem;
   height: 0.25rem;
-  background: #fff;
+  background: var(--background);
 }
 
 .DocSearch-Hit--Child + .DocSearch-Hit:not(.DocSearch-Hit--Child)::before {
   top: auto;
   bottom: calc(100% + 0.25rem);
   height: calc(100% + 0.25rem);
-  background-color: #fff;
+  background-color: var(--background);
 }
 
 .DocSearch-Hits mark {

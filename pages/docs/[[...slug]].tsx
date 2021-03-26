@@ -27,7 +27,7 @@ import Link from "next/link";
 import theme from "lib/theme";
 import Markdown from "components/primitives/markdown";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Pre from "components/sections/docs/pre";
 
 type Params = { slug?: string[] };
@@ -84,6 +84,14 @@ const Docs = ({
 
   const topLevel = slug.split("/").slice(1, -1);
 
+  useEffect(() => {
+    document.documentElement.classList.add(colorMode);
+
+    return () => {
+      document.documentElement.classList.remove(colorMode);
+    };
+  }, [colorMode]);
+
   return (
     <DocsPageLayout
       headProps={{
@@ -95,7 +103,7 @@ const Docs = ({
         },
       }}>
       <div
-        className="docs-container"
+        className={"docs-container" + " " + colorMode}
         sx={{
           maxWidth: "100vw",
           transition: "all 0.2s",
