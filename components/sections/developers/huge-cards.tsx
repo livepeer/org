@@ -51,7 +51,7 @@ const HugeCardsSection = ({ card1, card2 }) => {
       cta: {
         label: card1.ctaText,
         isLink: true,
-        href: "/docs",
+        href: "/docs/video-developers/overview",
       },
       accent: "primary",
       headerIllustration: <NetworkSvg />,
