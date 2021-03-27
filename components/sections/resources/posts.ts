@@ -6,7 +6,7 @@ export type Post = {
   title: string;
   subtitle: string;
   description?: string;
-  link: { href: string; asPath?: string; isExternal: boolean };
+  link: { href: string; asPath?: string; isExternal?: boolean };
   category: Category;
   image: { src: string; alt?: string };
   pushContentSx?: SxStyleProp;
@@ -66,10 +66,22 @@ const posts: Post[] = [
     description:
       "Through storytelling, illustration, and data, the Livepeer Primer explains, at a high level, the problem Livepeer solves, and how it works. ",
     subtitle: "By Adam Soffer & Kellie Pcolar",
-    link: { href: "https://livepeer.org/primer/", isExternal: true },
+    link: { href: "/primer/" },
     category: categories[0],
     image: {
       src: "/images/posts/post-cover-6.png",
+      alt: "Resource cover image",
+    },
+  },
+  {
+    title: "The Livepeer Docs",
+    description:
+      "Comprehensive documentation for both video developers and video miners.",
+    subtitle: "By Livepeer, Inc.",
+    link: { href: "/docs" },
+    category: categories[0],
+    image: {
+      src: "/images/posts/post-cover-7.png",
       alt: "Resource cover image",
     },
   },
@@ -81,7 +93,7 @@ const posts: Post[] = [
     link: { href: "https://explorer.livepeer.org", isExternal: true },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-7.png",
+      src: "/images/posts/post-cover-8.png",
       alt: "Resource cover image",
     },
   },
@@ -93,7 +105,7 @@ const posts: Post[] = [
     link: { href: "https://t.me/OrchestratorWatcherBot", isExternal: true },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-8.png",
+      src: "/images/posts/post-cover-9.png",
       alt: "Resource cover image",
     },
   },
@@ -105,7 +117,7 @@ const posts: Post[] = [
     link: { href: "https://scout.cool/livepeer/mainnet", isExternal: true },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-9.png",
+      src: "/images/posts/post-cover-10.png",
       alt: "Resource cover image",
     },
   },
@@ -119,7 +131,7 @@ const posts: Post[] = [
     },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-10.png",
+      src: "/images/posts/post-cover-11.png",
       alt: "Resource cover image",
     },
   },
@@ -131,7 +143,7 @@ const posts: Post[] = [
     link: { href: "https://www.livepool.io/", isExternal: true },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-11.png",
+      src: "/images/posts/post-cover-12.png",
       alt: "Resource cover image",
     },
   },
@@ -146,13 +158,13 @@ const posts: Post[] = [
     },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-12.png",
+      src: "/images/posts/post-cover-13.png",
       alt: "Resource cover image",
     },
   },
   {
     title: "The Livepeer Subgraph",
-    subtitle: "By Livepeer Inc.",
+    subtitle: "By Livepeer, Inc.",
     description:
       "Query indexed Livepeer protocol data over GraphQL using the Graph Protocol.",
     link: {
@@ -161,7 +173,7 @@ const posts: Post[] = [
     },
     category: categories[1],
     image: {
-      src: "/images/posts/post-cover-13.png",
+      src: "/images/posts/post-cover-14.png",
       alt: "Resource cover image",
     },
   },
@@ -174,7 +186,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-14.png",
+      src: "/images/posts/post-cover-15.png",
       alt: "Resource cover image",
     },
   },
@@ -188,7 +200,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-15.png",
+      src: "/images/posts/post-cover-1.png",
       alt: "Resource cover image",
     },
   },
@@ -202,7 +214,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-1.png",
+      src: "/images/posts/post-cover-2.png",
       alt: "Resource cover image",
     },
   },
@@ -212,7 +224,7 @@ const posts: Post[] = [
     link: { href: "https://poloniex.com/exchange#btc_lpt", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-2.png",
+      src: "/images/posts/post-cover-3.png",
       alt: "Resource cover image",
     },
   },
@@ -222,7 +234,7 @@ const posts: Post[] = [
     link: { href: "https://www.gate.io/en/trade/LPT_USDT", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-3.png",
+      src: "/images/posts/post-cover-4.png",
       alt: "Resource cover image",
     },
   },
