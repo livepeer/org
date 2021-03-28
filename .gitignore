@@ -5,3 +5,5 @@ node_modules
 .vercel
 yarn-error.log
 .env.local
+robots.txt
+sitemap.xml
