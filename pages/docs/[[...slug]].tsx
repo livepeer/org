@@ -229,9 +229,10 @@ export const getStaticPaths: GetStaticPaths<Params> = async ({ locales }) => {
     for (const locale of locales) {
       const href = getHref(path);
       const clean = href.split("/");
-      paths.push({ params: { locale, slug: clean } });
+      paths.push({ locale, params: { slug: clean } });
     }
   }
+
   return {
     paths,
     fallback: "blocking",
