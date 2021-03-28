@@ -30,7 +30,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Fragment, useEffect } from "react";
 import Pre from "components/sections/docs/pre";
 
-type Params = { slug?: string[] };
+type Params = { slug?: string[]; locale?: string };
 
 const components = {
   h1: ({ children }) => {
@@ -221,14 +221,17 @@ function getHref(filePath: string) {
   return clean;
 }
 
-export const getStaticPaths: GetStaticPaths<Params> = async () => {
+export const getStaticPaths: GetStaticPaths<Params> = async ({ locales }) => {
   let filePaths = await globby(["docs/**/*", "!docs/assets"]);
-  const paths = filePaths.map((g) => {
-    const href = getHref(g);
-    const clean = href.split("/");
-    return { params: { slug: clean } };
-  });
+  let paths = [];
 
+  for (const path of filePaths) {
+    for (const locale of locales) {
+      const href = getHref(path);
+      const clean = href.split("/");
+      paths.push({ params: { locale, slug: clean } });
+    }
+  }
   return {
     paths,
     fallback: "blocking",
@@ -326,7 +329,6 @@ export const getStaticProps = async ({
   });
 
   const { meta, content } = getFileContent(filePath);
-
   const toc = getToc(content).json;
 
   const mdxSource = await renderToString(content, {
