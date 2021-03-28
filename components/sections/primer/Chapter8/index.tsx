@@ -30,7 +30,7 @@ const Chapter8 = ({ data, onChange }) => {
       (parseFloat(data.inflationPerRound) / 100.0) *
       data.totalSupply
     ).toLocaleString(),
-    totalStaked: data.totalSupply.toLocaleString(),
+    totalStaked: data.totalBonded.toLocaleString(),
     participationRate: data.participationRate,
     targetRate: data.targetBondingRate,
     inflationChange: data.inflationChange,
