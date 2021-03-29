@@ -4,12 +4,12 @@ import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-n
 import HowToGetStartedSection from "components/sections/video-miners/how-to-get-started";
 import RequirementsSection from "components/sections/video-miners/requirements";
 import VideoMinerHero from "components/sections/video-miners/hero";
-import { getTotalVolume } from "lib/document-helpers";
+import { getTotalVolume, getTotalActiveNodes } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
-const VideoMinerPage = ({ totalVolume }) => {
+const VideoMinerPage = ({ totalVolume, totalActiveNodes }) => {
   const { t } = useTranslation(["video-miners", "developers", "common"]);
 
   const headProps: HeadProps = {
@@ -40,6 +40,7 @@ const VideoMinerPage = ({ totalVolume }) => {
         label1={t("page-video-miners-numbers-nodes-text")}
         label2={t("page-video-miners-numbers-fees-text")}
         label3={t("page-video-miners-numbers-cost-text")}
+        totalActiveNodes={totalActiveNodes}
         totalVolume={totalVolume}
       />
       <RequirementsSection
@@ -71,10 +72,12 @@ const VideoMinerPage = ({ totalVolume }) => {
 
 export async function getStaticProps({ locale }) {
   const totalVolume = await getTotalVolume();
+  const totalActiveNodes = await getTotalActiveNodes();
 
   return {
     props: {
       totalVolume,
+      totalActiveNodes,
       ...(await serverSideTranslations(locale, [
         "common",
         "video-miners",
