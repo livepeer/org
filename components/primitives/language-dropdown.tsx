@@ -67,7 +67,7 @@ const items = [
 
 const LanguageDropdown = () => {
   const router = useRouter();
-  const { locale, pathname } = router;
+  const { locale, pathname, asPath } = router;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -108,7 +108,7 @@ const LanguageDropdown = () => {
           <Item
             key={i}
             onSelect={() =>
-              router.push(pathname, pathname, { locale: item.locale })
+              router.push(pathname, asPath, { locale: item.locale })
             }
             flag={item.flag}
             active={locale === item.locale ? true : false}
