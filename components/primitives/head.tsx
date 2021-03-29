@@ -7,6 +7,7 @@ export type MetaType = {
   siteName?: string;
   image?: string;
   twitterUsername?: string;
+  canonical?: string;
 };
 
 const defaultMeta: MetaType = {
@@ -48,6 +49,7 @@ const Head = ({ meta = {} }: HeadProps) => {
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:site" content={meta.twitterUsername} />
       <meta name="twitter:image" content={`${meta.image}`} />
+      {meta?.canonical && <link rel="canonical" href={meta.canonical} />}
     </NextHead>
   );
 };

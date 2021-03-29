@@ -1,0 +1,13 @@
+#import "./fragments.gql"
+query allPage($where: PageFilter) {
+  allPage(where: $where) {
+    _id
+    title
+    slug {
+      current
+    }
+    content {
+      ...teamSection
+    }
+  }
+}

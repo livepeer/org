@@ -3,6 +3,7 @@ import { jsx, Heading, Link as A } from "theme-ui";
 import SectionLayout from "components/layouts/section";
 import { FiArrowUpRight } from "react-icons/fi";
 import Slider from "components/primitives/slider";
+import Link from "next/link";
 
 const images = [
   {
@@ -84,15 +85,14 @@ const WhoIsBuildingSection = ({
       ))}
     </Slider>
     <Heading variant="heading.5">
-      {text}{" "}
-      <A
-        href="https://angel.co/company/livepeer/jobs"
-        target="_blank"
-        rel="noopener noreferrer"
-        variant="accent"
-        sx={{ variant: "layout.flexCenter", display: "inline-flex" }}>
-        {ctaText2} <FiArrowUpRight />
-      </A>
+      Interested in Joining Livepeer, Inc.?{" "}
+      <Link href="/jobs" passHref>
+        <A
+          variant="accent"
+          sx={{ variant: "layout.flexCenter", display: "inline-flex" }}>
+          View its open positions <FiArrowUpRight />
+        </A>
+      </Link>
     </Heading>
   </SectionLayout>
 );
