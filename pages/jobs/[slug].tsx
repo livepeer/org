@@ -12,7 +12,7 @@ import Markdown from "components/primitives/markdown";
 const Page = ({ title, slug, body }) => {
   const headProps: HeadProps = {
     meta: {
-      title: `Livepeer - ${title}`,
+      title: `${title}`,
       description: "Join Us. From Anywhere.",
       url: `https://livepeer.org/jobs/${slug}`,
       siteName: "Livepeer.org",

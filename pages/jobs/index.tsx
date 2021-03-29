@@ -9,7 +9,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const headProps: HeadProps = {
   meta: {
-    title: "Livepeer - Jobs",
+    title: "Jobs",
     description: "Join Us. From Anywhere.",
     url: "https://livepeer.org/jobs",
     siteName: "Livepeer.org",
