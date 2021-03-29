@@ -329,7 +329,6 @@ export const getStyles: any = () => {
 };
 
 const Markdown = ({ children }) => {
-  console.log(children);
   return (
     <Box
       sx={{
