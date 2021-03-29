@@ -6,6 +6,7 @@ import { nFormatter } from "lib/document-helpers";
 const LetTheNumbersTalkSection = ({
   title,
   subtitle,
+  totalActiveNodes,
   totalVolume,
   label1,
   label2,
@@ -13,7 +14,7 @@ const LetTheNumbersTalkSection = ({
 }) => {
   const stats: StatProps[] = [
     {
-      title: "45",
+      title: totalActiveNodes,
       label: label1,
     },
     {

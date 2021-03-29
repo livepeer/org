@@ -81,6 +81,24 @@ const getTotalVolume = async () => {
   return totalVolumeUSD;
 };
 
+const getTotalActiveNodes = async () => {
+  const query = `query transcoders ($where: Transcoder_filter) {
+    transcoders(where: $where) {
+      id
+    }
+  }`;
+  let response = await request(
+    "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
+    query,
+    {
+      where: {
+        active: true,
+      },
+    }
+  );
+  return response.transcoders.length;
+};
+
 const getTotalDelegators = async () => {
   const PAGE_SIZE = 100;
   const reqDelegators = async (skip) => {
@@ -123,4 +141,5 @@ export {
   getTotalActiveStake,
   getTotalDelegators,
   getTotalVolume,
+  getTotalActiveNodes,
 };
