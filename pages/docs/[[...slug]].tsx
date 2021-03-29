@@ -29,6 +29,7 @@ import Markdown from "components/primitives/markdown";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Fragment, useEffect } from "react";
 import Pre from "components/sections/docs/pre";
+import slugify from "@sindresorhus/slugify";
 
 type Params = { slug?: string[]; locale?: string };
 
@@ -330,7 +331,7 @@ export const getStaticProps = async ({
   });
 
   const { meta, content } = getFileContent(filePath);
-  const toc = getToc(content).json;
+  const toc = getToc(content, { slugify }).json;
 
   const mdxSource = await renderToString(content, {
     components,
