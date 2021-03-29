@@ -69,7 +69,6 @@ const Footer = ({
         },
         { label: t("nav-faq"), href: "/faq" },
         { label: t("nav-privacy-policy"), href: "/privacy-policy" },
-        { label: t("nav-about-livepeer"), href: "/about" },
       ],
     },
     {
