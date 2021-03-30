@@ -21,7 +21,6 @@
     "@docsearch/react": "^1.0.0-alpha.14",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@livepeer/sdk": "^1.0.0-alpha.19",
     "@mapbox/rehype-prism": "^0.6.0",
     "@mdx-js/loader": "^1.6.16",
     "@next/mdx": "^9.5.1",

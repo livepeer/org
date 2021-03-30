@@ -86,6 +86,7 @@ const PageLayout: FC<Props> = ({
 
       .primer strong {
         font-size: 16px;
+        letter-spacing: 0.8px;
       }
 
       .primer .bg {

@@ -5,9 +5,8 @@ import TokenholdersDashboardSvg from "components/svgs/tokenholders-dashboard";
 import GetTokenSection from "components/sections/tokenholders/get-token";
 import TokenholderStatsSection from "components/sections/tokenholders/tokenholder-stats";
 import {
-  getTotalActiveStake,
+  getProtocolStatistics,
   getTotalDelegators,
-  getTotalVolume,
 } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -88,15 +87,14 @@ const TokenholdersPage = ({
 };
 
 export async function getStaticProps({ locale }) {
-  const totalActiveStake = await getTotalActiveStake();
+  const { totalActiveStake, totalVolumeUSD } = await getProtocolStatistics();
   const totalDelegators = await getTotalDelegators();
-  const totalVolume = await getTotalVolume();
 
   return {
     props: {
       totalActiveStake,
       totalDelegators,
-      totalVolume,
+      totalVolume: totalVolumeUSD,
       ...(await serverSideTranslations(locale, ["common", "tokenholders"])),
     },
     revalidate: 1,

@@ -19,8 +19,8 @@ ignored by Git):
 
 ### Step 2
 
-Add a youtube api key and an ethereum provider (ie an infura endpoint) to
-.env.local
+Optionally add a youtube api key to .env.local to fetch and display community
+calls uploaded to youtube
 
 ### Step 3
 

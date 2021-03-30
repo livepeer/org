@@ -22,15 +22,12 @@ const Chapter8 = ({ data, onChange }) => {
   const translationData = {
     interpolation: { escapeValue: false },
     ethereumBlocksPerRound: "5760",
-    blockTime: data.blockTime.toFixed(2),
-    hoursPerRound: ((data.blockTime * 5760) / 60 / 60).toFixed(2),
-    inflationPerRound: data.inflationPerRound,
-    totalSupply: data.totalSupply.toLocaleString(),
-    mintableTokens: (
-      (parseFloat(data.inflationPerRound) / 100.0) *
-      data.totalSupply
-    ).toLocaleString(),
-    totalStaked: data.totalBonded.toLocaleString(),
+    blockTime: data.blockTime,
+    hoursPerRound: data.hoursPerRound,
+    inflation: data.inflation,
+    totalSupply: data.totalSupply,
+    mintableTokens: data.mintableTokens,
+    totalStaked: data.totalBonded,
     participationRate: data.participationRate,
     targetRate: data.targetBondingRate,
     inflationChange: data.inflationChange,
