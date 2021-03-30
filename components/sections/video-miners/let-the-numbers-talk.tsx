@@ -8,6 +8,7 @@ const LetTheNumbersTalkSection = ({
   subtitle,
   totalActiveNodes,
   totalVolume,
+  totalMinutes,
   label1,
   label2,
   label3,
@@ -24,7 +25,7 @@ const LetTheNumbersTalkSection = ({
     },
 
     {
-      title: "Free",
+      title: `${nFormatter(totalMinutes, 1)}`,
       label: label3,
     },
   ];

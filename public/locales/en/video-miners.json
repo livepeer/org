@@ -11,7 +11,7 @@
   "page-video-miners-numbers-fees": "28.5 ETH",
   "page-video-miners-numbers-fees-text": "Total fees earned",
   "page-video-miners-numbers-cost": "Free",
-  "page-video-miners-numbers-cost-text": "Cost to activate your node",
+  "page-video-miners-numbers-cost-text": "Total minutes of transcoded video",
   "page-video-miners-requirements": "Requirements",
   "page-video-miners-requirements-intro": "To become a video miner you must have the following:",
   "page-video-miners-requirements-title-one": "Datacenter based GPUs with video encoding chips",
