@@ -2,7 +2,7 @@
   "page-primer-title": "10分钟入门",
   "page-primer-contents": "内容",
   "page-primer-contents-intro": "介绍",
-  "page-primer-contents-what": "什么是Livpeer?",
+  "page-primer-contents-what": "什么是Livepeer?",
   "page-primer-contents-who": "Livepeer是为谁服务的?",
   "page-primer-contents-how": "Livepeer是如何工作的?",
   "page-primer-contents-orchestrators": "Orchestrators(协调器)",
@@ -71,5 +71,5 @@
   "page-primer-contents-involved-miner-cta": "学习更多",
   "page-primer-back": "回到顶端",
   "page-primer-meta-title": "Livepeer: 10分钟入门",
-  "page-primer-meta-description": "通过讲故事、插图和数据的方式，Livpeer Primer从高层次上解释了Livpeer解决的问题及其工作方式。"
+  "page-primer-meta-description": "通过讲故事、插图和数据的方式，Livepeer Primer从高层次上解释了Livepeer解决的问题及其工作方式。"
 }
