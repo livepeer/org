@@ -2679,7 +2679,7 @@ const Rewards = ({ data }) => {
                 fontWeight="600"
                 fill="#000000">
                 <tspan x="718.992188" y="680">
-                  {data.inflationPerRound}% inflation
+                  {data.inflation}% inflation
                 </tspan>
               </text>
             </g>

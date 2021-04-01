@@ -129,7 +129,7 @@ const Gauge = ({ data }) => {
             font-family: Monaco;
             font-weight: normal;
           `}>
-          {data.inflationPerRound}%
+          {data.inflation}%
         </span>{" "}
         inflation
       </Inflation>

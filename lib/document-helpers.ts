@@ -37,7 +37,7 @@ const nFormatter = (num, digits) => {
   );
 };
 
-const getTotalActiveStake = async () => {
+const getProtocolStatistics = async () => {
   const graphqlResponse = await fetch(
     "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
     {
@@ -47,38 +47,24 @@ const getTotalActiveStake = async () => {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        query: '{ protocol(id: "0") { totalActiveStake } } ',
+        query: `{
+          protocol(id: "0") { 
+            inflation
+            inflationChange
+            totalSupply
+            totalActiveStake
+            targetBondingRate
+            participationRate
+            totalVolumeUSD
+          } 
+        }`,
       }),
     }
   );
-  const {
-    data: {
-      protocol: { totalActiveStake },
-    },
-  } = await graphqlResponse.json();
-  return totalActiveStake;
-};
-
-const getTotalVolume = async () => {
-  const graphqlResponse = await fetch(
-    "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        query: '{ protocol(id: "0") { totalVolumeUSD } } ',
-      }),
-    }
-  );
-  const {
-    data: {
-      protocol: { totalVolumeUSD },
-    },
-  } = await graphqlResponse.json();
-  return totalVolumeUSD;
+  const { data } = await graphqlResponse.json();
+  return {
+    ...data.protocol,
+  };
 };
 
 const getTotalActiveNodes = async () => {
@@ -138,8 +124,7 @@ const getTotalDelegators = async () => {
 export {
   getPageOffsetLeft,
   nFormatter,
-  getTotalActiveStake,
   getTotalDelegators,
-  getTotalVolume,
   getTotalActiveNodes,
+  getProtocolStatistics,
 };

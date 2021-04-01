@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box } from "theme-ui";
 import { Element } from "react-scroll";
 import PageLayout from "components/layouts/primer";
 import { HeadProps } from "components/primitives/head";
-import { request } from "graphql-request";
-import LivepeerSDK from "@livepeer/sdk";
-
-// TODO: refactor primer components to use theme-ui
 import Masthead from "components/sections/primer/Masthead";
 import Introduction from "components/sections/primer/Introduction";
 import Chapter1 from "components/sections/primer/Chapter1";
@@ -22,6 +18,10 @@ import Footer from "components/sections/primer/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import {
+  getTotalDelegators,
+  getProtocolStatistics,
+} from "lib/document-helpers";
 
 const Primer = ({ data }) => {
   const { t } = useTranslation(["primer"]);
@@ -97,76 +97,53 @@ const Primer = ({ data }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  const { rpc } = await LivepeerSDK({
-    provider: process.env.PROVIDER,
-  });
-
-  const reqDelegators = async (skip) => {
-    const query = `query delegators ($first: Int $skip: Int $where: Delegator_filter) {
-          delegators(first: $first skip: $skip where: $where) {
-              id
-            }
-        }`;
-    let response = await request(
-      "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
-      query,
-      {
-        skip: skip,
-        first: 1000,
-        where: {
-          bondedAmount_gt: "0",
-        },
-      }
-    );
-    return response.delegators;
-  };
-  const getDelegators = async () => {
-    const PAGE_SIZE = 1000;
-    let delegators = [];
-    let keepGoing = true;
-    let skip = 0;
-    while (keepGoing) {
-      let response = await reqDelegators(skip);
-      await delegators.push.apply(delegators, response);
-      skip += PAGE_SIZE;
-      if (response.length < PAGE_SIZE) {
-        keepGoing = false;
-        return delegators;
-      }
-    }
-  };
-  let delegators = await getDelegators();
-
-  let totalSupply = (await rpc.getTokenTotalSupply()) / 10e17;
-
-  let inflationChange = (await rpc.getInflationChange()) / 10000000;
-
-  let inflationPerRound = (await rpc.getInflation()) / 10000000;
-
-  let totalBonded = (await rpc.getTotalBonded()) / 10e17;
-
-  let participationRate = ((+totalBonded / totalSupply) * 100).toPrecision(4);
-
-  let targetBondingRate = (await rpc.getTargetBondingRate()) / 10000000;
+  let totalDelegators = await getTotalDelegators();
+  let {
+    inflation,
+    inflationChange,
+    totalSupply,
+    totalActiveStake,
+    targetBondingRate,
+    participationRate,
+  } = await getProtocolStatistics();
 
   let ethGasStationResponse = await fetch(
     "https://ethgasstation.info/json/ethgasAPI.json"
   );
-  let ethGasStationResult = await ethGasStationResponse.json();
+  let { block_time } = await ethGasStationResponse.json();
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "primer", "home"])),
       locale,
       data: {
-        totalSupply,
-        totalDelegators: delegators.length,
-        inflationPerRound,
-        inflationChange,
-        totalBonded,
-        targetBondingRate,
-        participationRate,
-        blockTime: ethGasStationResult.block_time,
+        totalSupply: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format(+totalSupply),
+        totalDelegators: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format(+totalDelegators),
+        inflation: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 10,
+        }).format(inflation / 10000000),
+        inflationChange: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 10,
+        }).format(inflationChange / 10000000),
+        totalBonded: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format(+totalActiveStake),
+        targetBondingRate: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format(targetBondingRate / 10000000),
+        participationRate: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format(participationRate * 100),
+        mintableTokens: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format((inflation / 1000000000) * totalSupply),
+        hoursPerRound: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format((block_time * 5760) / 60 / 60),
       },
     },
     revalidate: 1,
