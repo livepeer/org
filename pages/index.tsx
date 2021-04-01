@@ -6,7 +6,7 @@ import CommunitySection from "components/sections/home/community";
 import PageLayout from "components/layouts/page";
 import { useEffect } from "react";
 import HaveACallSection from "components/sections/home/have-a-call";
-import { getTotalActiveStake } from "lib/document-helpers";
+import { getProtocolStatistics } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -90,18 +90,23 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  const response = await fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?maxResults=100&part=snippet&playlistId=PLkw6hm1fcjtEo9HydrGKP2R_NHhSu1Mpl&key=${process.env.YOUTUBE_API_KEY}`
-  );
+  let youtubeVideos = [];
 
-  const youtubeData = await response.json();
+  if (process.env.YOUTUBE_API_KEY) {
+    const response = await fetch(
+      `https://www.googleapis.com/youtube/v3/playlistItems?maxResults=100&part=snippet&playlistId=PLkw6hm1fcjtEo9HydrGKP2R_NHhSu1Mpl&key=${process.env.YOUTUBE_API_KEY}`
+    );
 
-  const totalActiveStake = await getTotalActiveStake();
+    const youtubeData = await response.json();
+    youtubeVideos = youtubeData.items;
+  }
+
+  const { totalActiveStake } = await getProtocolStatistics();
 
   return {
     props: {
-      youtubeVideos: youtubeData.items,
-      totalActiveStake: totalActiveStake,
+      youtubeVideos,
+      totalActiveStake,
       ...(await serverSideTranslations(locale, ["common", "home"])),
     },
     revalidate: 1,

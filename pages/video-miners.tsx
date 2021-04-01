@@ -5,9 +5,9 @@ import HowToGetStartedSection from "components/sections/video-miners/how-to-get-
 import RequirementsSection from "components/sections/video-miners/requirements";
 import VideoMinerHero from "components/sections/video-miners/hero";
 import {
-  getTotalVolume,
   getTotalActiveNodes,
   getTotalMinutes,
+  getProtocolStatistics,
 } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -76,13 +76,13 @@ const VideoMinerPage = ({ totalVolume, totalActiveNodes, totalMinutes }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  const totalVolume = await getTotalVolume();
+  const { totalVolumeUSD } = await getProtocolStatistics();
   const totalActiveNodes = await getTotalActiveNodes();
   const totalMinutes = await getTotalMinutes();
 
   return {
     props: {
-      totalVolume,
+      totalVolumeUSD,
       totalActiveNodes,
       totalMinutes,
       ...(await serverSideTranslations(locale, [

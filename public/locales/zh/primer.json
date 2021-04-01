@@ -2,7 +2,7 @@
   "page-primer-title": "10分钟入门",
   "page-primer-contents": "内容",
   "page-primer-contents-intro": "介绍",
-  "page-primer-contents-what": "什么是Livpeer?",
+  "page-primer-contents-what": "什么是Livepeer?",
   "page-primer-contents-who": "Livepeer是为谁服务的?",
   "page-primer-contents-how": "Livepeer是如何工作的?",
   "page-primer-contents-orchestrators": "Orchestrators(协调器)",
@@ -53,7 +53,7 @@
   "page-primer-contents-rounds-text-one": "在Livepeer中，每个所谓的回合都会铸造新的代币。轮次以以太坊块为单位，其中一轮等于<strong>{{ethereumBlocksPerRound}}</strong>以太坊块。在以太坊中，平均每<strong>{{blockTime}}</strong>秒开采一次区块，这意味着一轮Livepeer攻击持续约<strong>{{hoursPerRound}}</strong>小时。假设您质押的协调器正在执行其工作，这就是您期望获得奖励代币的频率。",
   "page-primer-contents-rounds-text-two": "接下来，让我们讨论一下Livepeer的通货膨胀率，换句话说，即Livepeer协议确定每轮铸造多少新代币的方式。",
   "page-primer-contents-rounds-h3-two": "",
-  "page-primer-contents-rounds-text-three": "截至今天为止的当前通货膨胀率是<strong>{{inflationPerRound}} ％</strong>，目前总共提供<strong>{{totalSupply}}</strong>个Livepeer代币。因此，如果您进行数学计算，则下一轮将向所有参与者奖励总计<strong>{{mintableTokens}}</strong>个新铸造的Livepeer代币。",
+  "page-primer-contents-rounds-text-three": "截至今天为止的当前通货膨胀率是<strong>{{inflation}} ％</strong>，目前总共提供<strong>{{totalSupply}}</strong>个Livepeer代币。因此，如果您进行数学计算，则下一轮将向所有参与者奖励总计<strong>{{mintableTokens}}</strong>个新铸造的Livepeer代币。",
   "page-primer-contents-rounds-text-four": "Livepeer的妙处在于，通货膨胀率会根据总流通量中放出的代币数量自动调整。目前，Livepeer令牌的总供应量维持在<strong>{{totalSupply}}</strong>和那些，<strong>{{totalSTaked}}</strong>都押。Livepeer将该比率（<strong>{{participationRate}} %</strong>）称为其“参与率”。",
   "page-primer-contents-rounds-text-five": "Livepeer假设目标比率为<strong>{{targetRate}} %</strong>是网络安全性和代币流动性之间的健康折衷，因此为了达到此目标，协议通过将参与率低于以下水平的每一轮通货膨胀率提高<strong>{{inflationChange}} %</strong>来激励参与<strong>{{targetRate}} %</strong>，每轮降低<strong>{{inflationChange}} %</strong>，参与率在<strong>{{targetRate}} %</strong>以上。",
   "page-primer-contents-involved-h2": "LIVEPEER正在不断成长！",
@@ -71,5 +71,5 @@
   "page-primer-contents-involved-miner-cta": "学习更多",
   "page-primer-back": "回到顶端",
   "page-primer-meta-title": "Livepeer: 10分钟入门",
-  "page-primer-meta-description": "通过讲故事、插图和数据的方式，Livpeer Primer从高层次上解释了Livpeer解决的问题及其工作方式。"
+  "page-primer-meta-description": "通过讲故事、插图和数据的方式，Livepeer Primer从高层次上解释了Livepeer解决的问题及其工作方式。"
 }
