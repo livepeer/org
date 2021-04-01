@@ -10,6 +10,7 @@ export type FooterListProps = {
     href: string;
     asPath?: string;
     isExternal?: boolean;
+    download?: boolean;
   }[];
 };
 
@@ -61,6 +62,7 @@ const FooterList = ({ title, items }: FooterListProps) => (
                 width: "fit-content",
                 textAlign: ["center", null, null, "left"],
               }}
+              download={item.download ? item.download : false}
               data-dark>
               {item.label}
             </A>
