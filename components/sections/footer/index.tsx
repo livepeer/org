@@ -68,6 +68,11 @@ const Footer = ({
           isExternal: true,
         },
         { label: t("nav-faq"), href: "/faq" },
+        {
+          label: "Brand Assets",
+          href: "/brand.zip",
+          download: true,
+        },
         { label: t("nav-privacy-policy"), href: "/privacy-policy" },
       ],
     },
