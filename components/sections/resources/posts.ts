@@ -219,12 +219,25 @@ const posts: Post[] = [
     },
   },
   {
+    title: "OKEx",
+    subtitle: "Custodial exchange (Asia only)",
+    link: {
+      href: "https://www.okex.com/trade-spot/lpt-usdt",
+      isExternal: true,
+    },
+    category: categories[2],
+    image: {
+      src: "/images/posts/post-cover-3.png",
+      alt: "Resource cover image",
+    },
+  },
+  {
     title: "Poloniex",
     subtitle: "Custodial exchange (Asia only)",
     link: { href: "https://poloniex.com/exchange#btc_lpt", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-3.png",
+      src: "/images/posts/post-cover-4.png",
       alt: "Resource cover image",
     },
   },
@@ -234,7 +247,7 @@ const posts: Post[] = [
     link: { href: "https://www.gate.io/en/trade/LPT_USDT", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-4.png",
+      src: "/images/posts/post-cover-5.png",
       alt: "Resource cover image",
     },
   },

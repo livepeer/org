@@ -57,11 +57,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title: "Latest Post: Metrics That Matter",
+    title: "Latest Post: Seizing the Web3 Opportunity",
     link: {
       label: t("read-post"),
       href:
-        "https://medium.com/livepeer-blog/metrics-that-matter-minutes-of-video-transcoded-by-the-livepeer-network-e9b298d9ac5f",
+        "https://medium.com/livepeer-blog/seizing-the-web3-opportunity-edabb2c23807",
       isExternal: true,
     },
   };

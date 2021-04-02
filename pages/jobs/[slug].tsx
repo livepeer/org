@@ -18,7 +18,6 @@ const Page = ({ title, slug, body }) => {
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
       twitterUsername: "@LivepeerOrg",
-      canonical: `https://livepeer.com/jobs/${slug}`,
     },
   };
   return (
