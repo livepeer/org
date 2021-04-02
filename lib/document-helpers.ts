@@ -128,3 +128,9 @@ export {
   getTotalActiveNodes,
   getProtocolStatistics,
 };
+
+export const getTotalMinutes = async () => {
+  const response = await fetch("https://explorer.livepeer.org/api/usage");
+  const { totalUsage } = await response.json();
+  return totalUsage;
+};

@@ -11,7 +11,7 @@
   "page-video-miners-numbers-fees": "28,5 ETH",
   "page-video-miners-numbers-fees-text": "Total de tarifas ganadas",
   "page-video-miners-numbers-cost": "Gratuito",
-  "page-video-miners-numbers-cost-text": "Costo para activar su nodo",
+  "page-video-miners-numbers-cost-text": "Total de minutos de video transcodificado",
   "page-video-miners-requirements": "Requisitos",
   "page-video-miners-requirements-intro": "Para convertirse en minero de videos debe tener lo siguiente:",
   "page-video-miners-requirements-title-one": "GPU basados en centros de datos con chips de codificación de video",
