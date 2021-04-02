@@ -1,5 +1,5 @@
 import PageLayout from "components/layouts/page";
-import { Box, Container, Text, Grid, Link as A, Heading } from "theme-ui";
+import { Box, Container, Grid, Link as A, Heading } from "theme-ui";
 import { GraphQLClient } from "graphql-request";
 import { print } from "graphql/language/printer";
 import Link from "next/link";
@@ -15,7 +15,6 @@ const headProps: HeadProps = {
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
     twitterUsername: "@LivepeerOrg",
-    canonical: "https://livepeer.com/jobs",
   },
 };
 
