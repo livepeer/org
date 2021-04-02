@@ -12,7 +12,7 @@ import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
-const VideoMinerPage = ({ totalVolume, totalActiveNodes }) => {
+const VideoMinerPage = ({ totalVolumeUSD, totalActiveNodes }) => {
   const { t } = useTranslation(["video-miners", "developers", "common"]);
 
   const headProps: HeadProps = {
@@ -44,7 +44,7 @@ const VideoMinerPage = ({ totalVolume, totalActiveNodes }) => {
         label2={t("page-video-miners-numbers-fees-text")}
         label3={t("page-video-miners-numbers-cost-text")}
         totalActiveNodes={totalActiveNodes}
-        totalVolume={totalVolume}
+        totalVolume={totalVolumeUSD}
       />
       <RequirementsSection
         title={t("page-video-miners-requirements")}
