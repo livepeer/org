@@ -1,7 +1,11 @@
 import React, { forwardRef, useRef, useEffect } from "react";
-import { Container, Heading, SxStyleProp } from "theme-ui";
+import { Container, Heading, SxStyleProp, Box, Link as A } from "theme-ui";
 import heroEffect from "lib/animations/hero-effect";
 import cn from "classnames";
+import Link from "next/link";
+import { LinkProps } from "lib/types/link-props";
+
+type LinkCta = LinkProps;
 
 type Props = {
   title: React.ReactNode;
@@ -11,6 +15,7 @@ type Props = {
   pushSx?: SxStyleProp;
   className?: string;
   withAnimation?: boolean;
+  cta?: LinkCta;
 };
 
 const CroppedIllustrationHero = forwardRef(
@@ -23,6 +28,7 @@ const CroppedIllustrationHero = forwardRef(
       subtitle,
       title,
       withAnimation,
+      cta,
     }: Props,
     ref: React.RefObject<HTMLDivElement>
   ) => {
@@ -65,10 +71,27 @@ const CroppedIllustrationHero = forwardRef(
         <Heading
           className={cn({ "h-animate": withAnimation })}
           variant="heading.5"
-          sx={{ mb: 5, color: subTitleColor }}>
+          sx={{ color: subTitleColor }}>
           {subtitle}
         </Heading>
-        <div className={cn({ "c-animate": withAnimation })}>{illustration}</div>
+        {cta && (
+          <Box sx={{ textAlign: "center" }}>
+            <Link href={cta.href} passHref>
+              <A
+                variant="buttons.primary"
+                sx={{
+                  mt: 4,
+                  zIndex: "general",
+                  position: "relative",
+                }}>
+                {cta.label}
+              </A>
+            </Link>
+          </Box>
+        )}
+        <Box sx={{ mt: 5 }} className={cn({ "c-animate": withAnimation })}>
+          {illustration}
+        </Box>
       </Container>
     );
   }

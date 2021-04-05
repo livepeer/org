@@ -32,6 +32,10 @@ const VideoMinerPage = ({ totalVolumeUSD, totalActiveNodes, totalMinutes }) => {
       <VideoMinerHero
         title={t("page-video-miners-title")}
         subtitle={t("page-video-miners-intro")}
+        cta={{
+          label: t("common:nav-get-started"),
+          href: "/docs/video-miners/getting-started/overview",
+        }}
       />
       <HowVideoMiningWorksSection
         title={t("page-video-miners-how")}
