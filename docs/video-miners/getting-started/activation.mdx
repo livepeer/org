@@ -158,12 +158,15 @@ Once you have your orchestrator running, you can activate using `livepeer_cli`.
    This should be the same as the value used with the `-serviceAddr` flag when
    starting your orchestrator.
 
-8. Set the amount of LPT that you want to stake:
+8. Set the amount of LPTU (1 LPT = 1e18 LPTU) that you want to stake:
 
    ```bash
    You must bond to yourself in order to become a orchestrator
    Enter bond amount - >
    ```
+
+   Since the amount is denominated in LPTU, if you want to bond 5 LPT, you would
+   enter 5000000000000000000.
 
    If the active orchestrator set is full (i.e. at 100), the minimum stake you
    need to stake to activate is the lowest total stake of an orchestrator in the
