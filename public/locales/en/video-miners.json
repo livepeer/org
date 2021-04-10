@@ -1,6 +1,6 @@
 {
   "page-video-miners-title": "Video Miners",
-  "page-video-miners-intro": "Increase profits by transcoding video on GPUs while mining",
+  "page-video-miners-intro": "Increase profits by transcoding video on GPUs while mining.",
   "page-video-miners-how": "How video mining works",
   "page-video-miners-how-text-one": "Run a node on the Livepeer network that advertises the price it will charge for video transcoding. Continue your cryptocurrency mining with your GPUs.",
   "page-video-miners-how-text-two": "When video encoding jobs come your way, the Livepeer node routes the tasks to your GPUs, and the encoding leverages a different part of the GPUs than the mining, so the mining can also continue with minimal hashrate loss. No opportunity cost!",
@@ -26,5 +26,5 @@
   "page-video-miners-get-started-two": "Check out the video miner FAQ",
   "page-video-miners-get-started-three": "Reach out to the Livepeer team and community in the Discord chat room, #transcoding channel. Initial testing and setup can require some DevOps, so we are happy to help.",
   "page-video-miners-meta-title": "Video miners",
-  "page-video-miners-meta-description": "Livepeer.org is a primary online resource for participants and users of the Livepeer network."
+  "page-video-miners-meta-description": "Increase profits by transcoding video on GPUs while mining."
 }

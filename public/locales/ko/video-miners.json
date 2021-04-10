@@ -1,6 +1,6 @@
 {
   "page-video-miners-title": "비디오 채굴자",
-  "page-video-miners-intro": "채굴하는 동안 GPU로 비디오를 변환하여 수익을 늘립니다",
+  "page-video-miners-intro": "채굴하는 동안 GPU로 비디오를 변환하여 수익을 늘립니다.",
   "page-video-miners-how": "비디오 채굴의 작동 방식",
   "page-video-miners-how-text-one": "Livepeer 네트워크에서 노드를 운영하고 비디오 변환 시 부과하는 가격을 광고합니다. GPU를 사용해 암호화폐 채굴을 계속 진행합니다.",
   "page-video-miners-how-text-two": "비디오 인코딩 작업이 들어오면, Livepeer 노드가 이 작업을 귀하의 GPU로 전달합니다. 비디오 인코딩 시 채굴하지 않는 GPU 영역을 사용하므로 해시레이트 손실을 최소화한 채 채굴을 계속 진행할 수 있습니다. 기회 비용은 없습니다!",
@@ -25,6 +25,6 @@
   "page-video-miners-get-started-one": "Livepeer 네트워크에서 코드 변환을 하는 방법에 대한 설명서를 읽습니다",
   "page-video-miners-get-started-two": "비디오 채굴자 FAQ를 확인합니다",
   "page-video-miners-get-started-three": "Discord 채팅방, #transcoding 채널에서 Livepeer 팀 및 커뮤니티와 연락합니다. 초기 테스트 및 설정에서 약간의 데브옵스가 필요하므로 저희가 기꺼이 도와 드리겠습니다.",
-  "page-video-miners-meta-title": "Livepeer - 비디오 채굴자",
-  "page-video-miners-meta-description": "Livepeer.org는 Livepeer 네트워크 참가자 및 사용자를 위한 기본 온라인 리소스입니다."
+  "page-video-miners-meta-title": "비디오 채굴자",
+  "page-video-miners-meta-description": "채굴하는 동안 GPU로 비디오를 변환하여 수익을 늘립니다."
 }

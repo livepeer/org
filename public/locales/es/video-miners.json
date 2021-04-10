@@ -1,6 +1,6 @@
 {
   "page-video-miners-title": "Mineros de video",
-  "page-video-miners-intro": "Aumente los beneficios transcodificando video de GPU mientras mina",
+  "page-video-miners-intro": "Aumente los beneficios transcodificando video de GPU mientras mina.",
   "page-video-miners-how": "Cómo funciona la minería de videos",
   "page-video-miners-how-text-one": "Ejecute un nodo en la red Livepeer que publicita el precio que cobrará por transcodificación de video. Continúe su minería de criptomonedas con su GPU.",
   "page-video-miners-how-text-two": "Cuando le llegan trabajos de codificación de video, el nodo Livepeer enruta las tareas a sus GPU, y la codificación aprovecha una parte diferente de los GPU para la minería, a fin de que la minería pueda continuar con una pérdida mínima de velocidad de comprobación aleatoria. ¡Sin costo de oportunidad!",
@@ -25,6 +25,6 @@
   "page-video-miners-get-started-one": "Lea la documentación para transcodificar en la red livepeer",
   "page-video-miners-get-started-two": "Examine las Preguntas frecuentes sobre minero de video",
   "page-video-miners-get-started-three": "Contacte con el equipo y comunidad de Livepeer en la chat room Discord, #canal transcodificación. Las pruebas y configuración iniciales pueden requerir algunas DevOps, así que aquí estamos para ayudarle.",
-  "page-video-miners-meta-title": "Livepeer - Mineros de video",
-  "page-video-miners-meta-description": "Livepeer.org es un recurso online vital para participantes y usuarios de la red Livepeer."
+  "page-video-miners-meta-title": "Mineros de video",
+  "page-video-miners-meta-description": "Aumente los beneficios transcodificando video de GPU mientras mina."
 }
