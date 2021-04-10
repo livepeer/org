@@ -19,7 +19,7 @@ const VideoMinerPage = ({ totalVolumeUSD, totalActiveNodes, totalMinutes }) => {
   const headProps: HeadProps = {
     meta: {
       title: t("page-video-miners-meta-title"),
-      description: t("page-video-miners-meta-desecription"),
+      description: t("page-video-miners-meta-description"),
       url: "https://livepeer.org/video-miners",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
