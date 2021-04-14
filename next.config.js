@@ -30,6 +30,16 @@ module.exports = withPlugins([
         });
         return config;
       },
+      async redirects() {
+        return [
+          {
+            source: '/tv',
+            destination:
+              'https://media.livepeer.org/play?url=https%3A%2F%2Fd21gyr0uv5jqnv.cloudfront.net%2F4br7%252Badam_obs%2Findex.m3u8',
+            permanent: false,
+          },
+        ];
+      },
     },
   ],
   withTM,
