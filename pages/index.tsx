@@ -105,7 +105,9 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      youtubeVideos,
+      youtubeVideos: youtubeVideos.filter(
+        (v) => v.snippet.title !== "Deleted video"
+      ),
       totalActiveStake,
       ...(await serverSideTranslations(locale, ["common", "home"])),
     },
