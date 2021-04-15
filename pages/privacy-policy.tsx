@@ -24,7 +24,7 @@ const PrivacyPolicyPage = () => (
         Privacy Policy
       </Heading>
       <Heading variant="heading.5" sx={{ textAlign: "left", mb: 4 }}>
-        Last Updated: April 26, 2018
+        Last Updated: April 15, 2021
       </Heading>
       <Text as="p">
         Livepeer, Inc. (<b>"Livepeer"</b>, <b>"we"</b> or <b>"us"</b>) is
@@ -325,6 +325,24 @@ const PrivacyPolicyPage = () => (
         third parties or their products, content or websites.
       </Text>
       <Text as="p">
+        Third-party web sites include:
+        <ul
+          sx={{
+            listStyle: "initial",
+            paddingLeft: "20px",
+          }}>
+          <li>
+            <A
+              variant="accent"
+              rel="noopener noreferrer"
+              href="https://policies.google.com/privacy"
+              target="_blank">
+              Google Privacy Policy
+            </A>
+          </li>
+        </ul>
+      </Text>
+      <Text as="p">
         <b>26. Your Choices Regarding Information.</b> You have several choices
         regarding the use of information on our Service:
       </Text>
@@ -397,10 +415,14 @@ const PrivacyPolicyPage = () => (
         any security violations to us, please contact us at the following
         address or phone number:
       </Text>
-      <Text as="p">Livepeer, Inc.</Text>
-      <Text as="p">85 Broad Street</Text>
-      <Text as="p">New York, NY 10004</Text>
-      <Text as="p">Attn: Privacy</Text>
+      <Text as="p">
+        Livepeer, Inc.
+        <br />
+        85 Broad Street
+        <br />
+        New York, NY 10004 <br />
+        Attn: Privacy
+      </Text>
     </Container>
   </PageLayout>
 );

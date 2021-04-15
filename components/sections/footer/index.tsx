@@ -73,7 +73,6 @@ const Footer = ({
           href: "/brand.zip",
           download: true,
         },
-        { label: t("nav-privacy-policy"), href: "/privacy-policy" },
       ],
     },
     {
@@ -114,6 +113,10 @@ const Footer = ({
         {
           label: t("nav-privacy-policy"),
           href: "/privacy-policy",
+        },
+        {
+          label: "Terms of Service",
+          href: "/terms-of-service",
         },
         {
           label: t("nav-contact"),
