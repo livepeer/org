@@ -129,7 +129,6 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       positions: data.allJob,
-      preview: false,
       ...(await serverSideTranslations(locale, ["common"])),
     },
     revalidate: 1,

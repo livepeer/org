@@ -8,8 +8,12 @@ import Code from "components/primitives/code";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Markdown from "components/primitives/markdown";
+import { useRouter } from "next/router";
 
 const Page = ({ title, slug, body }) => {
+  const router = useRouter();
+  const { isFallback } = router;
+
   const headProps: HeadProps = {
     meta: {
       title: `${title}`,
@@ -20,6 +24,11 @@ const Page = ({ title, slug, body }) => {
       twitterUsername: "@LivepeerOrg",
     },
   };
+
+  if (isFallback) {
+    return <Box>Loading</Box>;
+  }
+
   return (
     <PageLayout
       headProps={headProps}
