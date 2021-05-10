@@ -6,7 +6,6 @@ import {
   InferGetStaticPropsType,
 } from "next";
 import globby from "globby";
-import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
@@ -30,6 +29,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Fragment, useEffect } from "react";
 import Pre from "components/sections/docs/pre";
 import slugify from "@sindresorhus/slugify";
+
+const { readFileSync } = require("fs");
 
 type Params = { slug?: string[]; locale?: string };
 
@@ -247,7 +248,7 @@ const dataSchema = z.object({
 });
 
 function getFileContent(filePath: string) {
-  const source = fs.readFileSync(path.join(process.cwd(), filePath));
+  const source = readFileSync(path.join(process.cwd(), filePath));
   const { content, data } = matter(source);
   const parsedData = dataSchema?.parse(data);
   return { content, meta: parsedData };
