@@ -178,6 +178,20 @@ const posts: Post[] = [
     },
   },
   {
+    title: "Kraken",
+    subtitle: "Custodial exchange",
+    link: {
+      href:
+        "https://www.kraken.com/prices/lpt-livepeer-price-chart/usd-us-dollar?interval=1m",
+      isExternal: true,
+    },
+    category: categories[2],
+    image: {
+      src: "/images/posts/post-cover-15.png",
+      alt: "Resource cover image",
+    },
+  },
+  {
     title: "Gemini",
     subtitle: "Custodial exchange",
     link: {
@@ -187,7 +201,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-15.png",
+      src: "/images/posts/post-cover-1.png",
       alt: "Resource cover image",
     },
   },
@@ -200,7 +214,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-1.png",
+      src: "/images/posts/post-cover-2.png",
       alt: "Resource cover image",
     },
   },
@@ -214,7 +228,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-2.png",
+      src: "/images/posts/post-cover-3.png",
       alt: "Resource cover image",
     },
   },
@@ -228,7 +242,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-3.png",
+      src: "/images/posts/post-cover-4.png",
       alt: "Resource cover image",
     },
   },
@@ -241,7 +255,7 @@ const posts: Post[] = [
     },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-4.png",
+      src: "/images/posts/post-cover-5.png",
       alt: "Resource cover image",
     },
   },
@@ -251,7 +265,7 @@ const posts: Post[] = [
     link: { href: "https://poloniex.com/exchange#btc_lpt", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-5.png",
+      src: "/images/posts/post-cover-6.png",
       alt: "Resource cover image",
     },
   },
@@ -261,7 +275,7 @@ const posts: Post[] = [
     link: { href: "https://www.gate.io/en/trade/LPT_USDT", isExternal: true },
     category: categories[2],
     image: {
-      src: "/images/posts/post-cover-6.png",
+      src: "/images/posts/post-cover-7.png",
       alt: "Resource cover image",
     },
   },
