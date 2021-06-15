@@ -20,12 +20,16 @@ will require more pixels to be transcoded and also require more payments.
 Payments are implemented using a
 [probabilistic micropayment protocol](https://medium.com/livepeer-blog/streamflow-probabilistic-micropayments-f3a647672462).
 
-Broadcasters send lottery tickets to orchestrators in exchange for transcoded
-results. Each lottery ticket is defined with a face value, the payout to the
-orchestrator if the ticket wins, and the probability that the ticket will win.
-Each ticket is treated as a micropayment worth the expected value of the ticket
-(calculated as face value multiplied by the winning probability). Orchestrators
-will redeem winning tickets on-chain to receive the face value of tickets.
+Broadcasters send "lottery tickets" to Orchestrators in exchange for transcoded
+results. Each "lottery ticket" is defined with:
+
+- a _face value_: the payout to the orchestrator if the ticket wins, and
+- a _probability that the ticket will win_.
+
+Each ticket is treated as a micropayment worth the _expected value_ of the ticket
+(calculated as: _face value_ multiplied by _probability that the ticket will win_).
+
+Orchestrators will redeem winning tickets on-chain, to receive the _face value_ of tickets.
 
 <Pagination
   previousStep={{
