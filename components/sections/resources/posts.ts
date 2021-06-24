@@ -181,6 +181,7 @@ const posts: Post[] = [
     title: "CoinMarketCap",
     description:
       "LPT price, marketcap, charts and info",
+    subtitle: "",
     link: {
       href: "https://coinmarketcap.com/currencies/livepeer/",
       isExternal: true,
