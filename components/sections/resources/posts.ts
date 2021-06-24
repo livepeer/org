@@ -178,6 +178,48 @@ const posts: Post[] = [
     },
   },
   {
+    title: "CoinMarketCap",
+    description:
+      "LPT price, marketcap, charts and info",
+    link: {
+      href: "https://coinmarketcap.com/currencies/livepeer/",
+      isExternal: true,
+    },
+    category: categories[1],
+    image: {
+      src: "/images/posts/post-cover-14.png",
+      alt: "Resource cover image",
+    },
+  },
+  {
+    title: "Coinbase",
+    subtitle: "Custodial exchange",
+    link: {
+      href:
+        "https://pro.coinbase.com/",
+      isExternal: true,
+    },
+    category: categories[2],
+    image: {
+      src: "/images/posts/post-cover-2.png",
+      alt: "Resource cover image",
+    },
+  },
+  {
+    title: "Binance",
+    subtitle: "Custodial exchange",
+    link: {
+      href:
+        "https://www.binance.com/en/trade/LPT_BNB?layout=pro&type=spot",
+      isExternal: true,
+    },
+    category: categories[2],
+    image: {
+      src: "/images/posts/post-cover-3.png",
+      alt: "Resource cover image",
+    },
+  },
+  {
     title: "Kraken",
     subtitle: "Custodial exchange",
     link: {
