@@ -101,14 +101,14 @@ Building `livepeer` requires Go. Follow the
    export PKG_CONFIG_PATH=~/compiled/lib/pkgconfig
    ```
 
-   Set the `HIGHEST_CHAIN_TAG` variable to enable mainnet support:
+   Set the `BUILD_TAGS` variable to enable mainnet support:
 
    ```bash
-   export HIGHEST_CHAIN_TAG=mainnet
+   export BUILD_TAGS=mainnet
    # To build with support for only development networks and the Rinkeby test network
-   # export HIGHEST_CHAIN_TAG=rinkeby
+   # export BUILD_TAGS=rinkeby
    # To build with support for only development networks
-   # export HIGHEST_CHAIN_TAG=dev
+   # export BUILD_TAGS=dev
    ```
 
 4. Build and install `livepeer`:
