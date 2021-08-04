@@ -144,6 +144,9 @@ export async function getStaticProps({ locale }) {
         hoursPerRound: Intl.NumberFormat(locale, {
           maximumFractionDigits: 2,
         }).format((block_time * 5760) / 60 / 60),
+        blockTime: Intl.NumberFormat(locale, {
+          maximumFractionDigits: 2,
+        }).format(block_time),
       },
     },
     revalidate: 1,
