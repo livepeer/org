@@ -317,6 +317,27 @@ const theme = {
         outline: "none",
       },
     },
+    com: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
+      bg: "#6e56cf",
+      color: "white",
+      py: 2,
+      px: 4,
+      height: 12,
+      variant: "text.default",
+      fontWeight: 600,
+      transition: "background .15s",
+      "&:hover": {
+        bg: "#6e56cf",
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px #6e56cf",
+        outline: "none",
+      },
+    },
     neutral: {
       display: "inline-flex",
       alignItems: "center",
