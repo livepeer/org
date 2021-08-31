@@ -1,10 +1,11 @@
 import IsOpenSourceSection from "components/sections/developers/is-open-source";
 import PageLayout from "components/layouts/page";
 import DevelopersHero from "components/sections/developers/hero";
-import HugeCardsSection from "components/sections/developers/huge-cards";
+import HugeCardSection from "components/sections/developers/huge-card";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { Box } from "theme-ui";
 
 const Developers = () => {
   const { t } = useTranslation(["developers"]);
@@ -26,41 +27,34 @@ const Developers = () => {
         title={t("page-developers-title")}
         subtitle={t("page-developers-intro")}
       />
-      <HugeCardsSection
-        card1={{
-          label: t("page-developers-build-with"),
-          title: t("page-developers-public-network"),
+      <HugeCardSection
+        card={{
+          label: <Box>Build with the Livepeer.com</Box>,
+          title: (
+            <Box>
+              Gateway<Box>API.</Box>
+            </Box>
+          ),
           list: [
             {
-              title: t("page-developers-decentralized"),
-              subtitle: t("page-developers-decentralized-text"),
+              title: "Easy-to-use API",
+              subtitle:
+                "Straight forward APIs make integrating with Livepeer quick and easy. Build your own streaming platform in days not months.",
             },
             {
-              title: t("page-developers-cost"),
-              subtitle: t("page-developers-cost-text"),
+              title: "Affordable",
+              subtitle:
+                "Affordable transcoding backed by the Livepeer network allows you to operate a UGC streaming platform with millions of content creators.",
             },
             {
-              title: t("page-developers-flexible"),
-              subtitle: t("page-developers-flexible-text"),
-            },
-          ],
-          ctaText: t("page-developers-public-network-cta"),
-        }}
-        card2={{
-          label: t("page-developers-build-with"),
-          title: t("page-developers-hosted-service"),
-          list: [
-            {
-              title: t("page-developers-easy"),
-              subtitle: t("page-developers-easy-text"),
+              title: "Scalable",
+              subtitle:
+                "Freedom to scale up or down so you can manage content creator demand without over investing in infrastructure.",
             },
             {
-              title: t("page-developers-powered"),
-              subtitle: t("page-developers-powered-text"),
-            },
-            {
-              title: t("page-developers-smart"),
-              subtitle: t("page-developers-smart-text"),
+              title: "Reliable",
+              subtitle:
+                "Ensure content creator audiences remain engaged by delivering high quality streams with 99.99% reliability.",
             },
           ],
           ctaText: t("page-developers-hosted-service-cta"),

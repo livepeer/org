@@ -129,8 +129,135 @@ export {
   getProtocolStatistics,
 };
 
+type LivepeerComUsageParams = {
+  fromTime: number;
+  toTime: number;
+};
+
+export const getLivepeerComUsageData = async (
+  params?: LivepeerComUsageParams
+) => {
+  try {
+    const endpoint = `https://livepeer.com/api/usage${
+      params ? `?fromTime=${params.fromTime}&toTime=${params.toTime}` : ""
+    }`;
+
+    const livepeerComUsageDataReponse = await fetch(endpoint, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${process.env.LIVEPEER_COM_API_ADMIN_TOKEN}`,
+      },
+    });
+
+    const livepeerComUsageData = await livepeerComUsageDataReponse.json();
+    return livepeerComUsageData;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+// the # of pixels in a minute of 240p30fps, 360p30fps, 480p30fps, 720p30fps transcoded renditions.
+// (width * height * framerate * seconds in a minute)
+const pixelsPerMinute = 2995488000;
+
+// Date to price mapping used to calculate estimated usage
+// based on the Livepeer.com broadcaster's max price
+const pricePerPixel = [
+  {
+    startDate: 1577836800,
+    endDate: 1616457600,
+    price: 0.000000000000006, // (6000 wei)
+  },
+  {
+    startDate: 1616457600,
+    endDate: 1620201600,
+    price: 0.000000000000003, // (3000 wei)
+  },
+  {
+    startDate: 1620201600,
+    endDate: 1621465200,
+    price: 0.0000000000000006,
+  }, // (600 wei),
+  { startDate: 1621465200, endDate: Infinity, price: 0.0000000000000012 }, // (1200 wei)
+];
+
+const getFeeDerivedMinutes = ({
+  totalVolumeETH,
+  totalVolumeUSD,
+  pricePerPixel,
+  pixelsPerMinute,
+}): number => {
+  const ethDaiRate = totalVolumeETH / totalVolumeUSD;
+  const usdAveragePricePerPixel = pricePerPixel / ethDaiRate;
+  const feeDerivedMinutes =
+    totalVolumeUSD / usdAveragePricePerPixel / pixelsPerMinute || 0;
+  return feeDerivedMinutes;
+};
+
+const getTotalFeeDerivedMinutes = async () => {
+  let totalFeeDerivedMinutes = 0;
+  let pricePerPixelIndex = pricePerPixel.length - 1;
+
+  const res = await fetch(
+    "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+    query days(
+      $first: Int
+      $orderBy: Day_orderBy
+      $orderDirection: OrderDirection
+    ) {
+      days(first: $first, orderBy: $orderBy, orderDirection: $orderDirection) {
+        date
+        volumeUSD
+        volumeETH
+        participationRate
+      }
+    }
+      `,
+        variables: {
+          first: 1000,
+          orderBy: "date",
+          orderDirection: "desc",
+        },
+      }),
+    }
+  );
+
+  const dayData = await res.json();
+
+  dayData.data.days.map((item) => {
+    // if Livepeer.com's broadcaster changed max price, use updated price
+    if (
+      pricePerPixelIndex &&
+      item.date < pricePerPixel[pricePerPixelIndex].startDate
+    ) {
+      pricePerPixelIndex--;
+    }
+
+    const feeDerivedMinutes = getFeeDerivedMinutes({
+      pricePerPixel: pricePerPixel[pricePerPixelIndex].price,
+      totalVolumeETH: +item.volumeETH,
+      totalVolumeUSD: +item.volumeUSD,
+      pixelsPerMinute,
+    });
+
+    totalFeeDerivedMinutes += feeDerivedMinutes;
+  });
+
+  return totalFeeDerivedMinutes;
+};
+
 export const getTotalMinutes = async () => {
-  const response = await fetch("https://explorer.livepeer.org/api/usage");
-  const { totalUsage } = await response.json();
-  return totalUsage;
+  const livepeerComDayData = await getLivepeerComUsageData();
+  const totalLivepeerComUsage = livepeerComDayData.reduce((x, y) => {
+    return x + y.sourceSegmentsDuration / 60;
+  }, 0);
+  const totalFeeDerivedMinutes = await getTotalFeeDerivedMinutes();
+  return totalFeeDerivedMinutes + totalLivepeerComUsage;
 };

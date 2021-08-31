@@ -8,6 +8,7 @@ import {
   getTotalActiveNodes,
   getTotalMinutes,
   getProtocolStatistics,
+  getLivepeerComUsageData,
 } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -80,9 +81,12 @@ const VideoMinerPage = ({ totalVolumeUSD, totalActiveNodes, totalMinutes }) => {
 };
 
 export async function getStaticProps({ locale }) {
+  let totalMinutes = 0;
   const { totalVolumeUSD } = await getProtocolStatistics();
   const totalActiveNodes = await getTotalActiveNodes();
-  const totalMinutes = await getTotalMinutes();
+  if (process.env.LIVEPEER_COM_API_ADMIN_TOKEN) {
+    totalMinutes = await getTotalMinutes();
+  }
 
   return {
     props: {
