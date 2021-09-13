@@ -21,6 +21,15 @@ decisions. Currently, the recommendation is to ask in
 [Discord](https://discord.gg/uaPhtyrWsF) if you are looking for help with
 setting a price that will allow you to receive work on the network.
 
+## Configure automatic price adjustments
+
+You can configure your orchestrator to advertise a constant price by starting it
+with the `-autoAdjustPrice=false` flag. Otherwise, the orchestrator will
+automatically adjust its price based on the overhead of ticket redemption. Refer
+to the
+[Automatic Price Adjustment](/docs/video-miners/core-concepts/payments#automatic-price-adjustments)
+docs for more information.
+
 ## Set the price with livepeer_cli
 
 The base price per pixel can be set using `livepeer_cli`:
