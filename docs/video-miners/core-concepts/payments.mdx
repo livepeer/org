@@ -43,6 +43,25 @@ default ticket EV).
 Orchestrators will redeem winning tickets on-chain, to receive the _face value_
 of tickets.
 
+## Automatic Price Adjustments
+
+The default behavior of orchestrators is to automatically adjust their
+advertised price per pixel based on the estimated overhead for redeeming a
+ticket. The overhead for redeeming a ticket is the estiamted transaction cost of
+the redemption transaction divided by the face value of the ticket represented
+as a percentage. For example, given a base price per pixel of 1000 wei:
+
+- If the overhead is 1%, the advertised price would be 1010 wei
+- If the overhead is 20%, the advertised price would be 1200 wei
+- If the overhead is 50%, the advertised price is 1500 wei
+
+The motivation for this automatic price adjustment mechanism is to allow
+orchestrators to dynamically adjust their price to compensate for higher
+overheads for ticket redemptions when gas prices are high.
+
+Orchestrators can disable this mechanism and advertise a constant price by
+setting the `-autoAdjustPrice=false` flag.
+
 <Pagination
   previousStep={{
     title: "Dual Mining",
