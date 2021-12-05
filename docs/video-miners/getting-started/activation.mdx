@@ -45,7 +45,7 @@ livepeer \
     -transcoder \
     -nvidia <NVIDIA_DEVICE_IDs> \ # Only required for transcoding with Nvidia GPUs
     -pricePerUnit <PRICE_PER_UNIT> \
-    -serviceAddr <SERVICE_ADDR>
+    -serviceAddr <SERVICE_ADDR> # Hostname/IP:port
 ```
 
 - `-ethAcctAddr` is used to specify the ETH account address that you want the
@@ -61,7 +61,9 @@ livepeer \
 - `-pricePerUnit` is used to specify the price (wei per pixel) for transcoding.
   The flag is required on startup, but the value can be changed later on
 - `-serviceAddr` is used to specify the publicly accessible address that the
-  orchestrator should receive requests at
+  orchestrator should receive requests at. Changing this requires a blockchain
+  transaction, so it's preferable to use a hostname for a domain you own, not
+  an IP address that may change.
 
 If you did not use the `-ethAcctAddr` flag, an ETH account will automatically be
 created and you will be prompted for a passphrase:
