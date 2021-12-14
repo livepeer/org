@@ -39,12 +39,12 @@ Start your orchestrator before activation:
 ```bash
 livepeer \
     -network mainnet \
-    -ethUrl <ETH_URL> \
-    -ethAcctAddr <ETH_ACCT_ADDR> \ # Only required if you already have an ETH account you want to use
+    -ethUrl <ETH_URL> \ # API URL from either 1) www.infura.io  2) www.alchemy.com  3) Self-hosted Geth node
+    -ethAcctAddr <ETH_ACCT_ADDR> \ # Only required if you wish to use an existing ETH wallet
     -orchestrator \
     -transcoder \
     -nvidia <NVIDIA_DEVICE_IDs> \ # Only required for transcoding with Nvidia GPUs
-    -pricePerUnit <PRICE_PER_UNIT> \
+    -pricePerUnit <PRICE_PER_UNIT> \ # Your price per pixel in Wei
     -serviceAddr <SERVICE_ADDR> # Hostname/IP:port
 ```
 
