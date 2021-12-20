@@ -1,32 +1,8 @@
 ---
-title: Install Livepeer Client
+title: Install for Development
 ---
 
-# Install the Livepeer Client
-
-## Install a binary release
-
-Find the latest release for your platform on the
-[releases page](https://github.com/livepeer/go-livepeer/releases). Linux, Darwin
-(macOS) and Windows are supported.
-
-```bash
-# <RELEASE_VERSION> is the release version i.e. 0.5.14
-# <YOUR_PLATFORM> is your platform i.e. linux, darwin, windows
-wget https://github.com/livepeer/go-livepeer/releases/download/<RELEASE_VERSION>/livepeer-<YOUR PLATFORM>-amd64.tar.gz
-tar -zxvf livepeer-<YOUR_PLATFORM>-amd64.tar.gz
-mv livepeer-<YOUR_PLATFORM>-amd64/* /usr/local/bin/
-```
-
-## Install with Docker
-
-Docker images are pushed to
-[DockerHub](https://hub.docker.com/r/livepeer/go-livepeer).
-
-```bash
-# <RELEASE_VERSION> is the release version i.e. 0.5.14
-docker pull livepeer/go-livepeer:<RELEASE_VERSION>
-```
+### Installing pre-releases with Docker
 
 To pull the latest pre-release version:
 
@@ -34,7 +10,7 @@ To pull the latest pre-release version:
 docker pull livepeer/go-livepeer:master
 ```
 
-## Install a binary pre-release
+### Installing a binary pre-release
 
 Binaries are produced from every GitHub commit and download links are available
 in
@@ -142,6 +118,6 @@ Building `livepeer` requires Go. Follow the
 <Pagination
   nextStep={{
     title: "Connect to Ethereum",
-    href: "/docs/installation/connect-to-ethereum",
+    href: "/docs/installation/configuring-livepeer",
   }}
 />

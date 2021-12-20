@@ -10,6 +10,11 @@ Livepeer network. It includes:
 
 ## Local Development
 
+### Prerequisites
+
+- Node (LTS)
+- yarn
+
 ### Step 1
 
 Copy the .env.local.example file in this directory to .env.local (which will be
