@@ -109,7 +109,7 @@ const Footer = ({
       title: t("nav-about-livepeer"),
       items: [
         { label: t("nav-about"), href: "/about" },
-        { label: "Jobs", href: "/jobs" },
+        { label: "Jobs", href: "https://livepeer.com/jobs", isExternal: true },
         {
           label: t("nav-privacy-policy"),
           href: "/privacy-policy",
