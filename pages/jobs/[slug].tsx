@@ -1,13 +1,16 @@
 import PageLayout from "components/layouts/page";
 import { Box, Container, Grid, Heading, Text, Link as A } from "theme-ui";
-import { GraphQLClient, request } from "graphql-request";
-import { print } from "graphql/language/printer";
 import ReactMarkdown from "react-markdown";
-import allJobs from "../../queries/allJobs.gql";
 import Code from "components/primitives/code";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Markdown from "components/primitives/markdown";
+import {
+  getJobs,
+  getJobById,
+  getQuestionIdsByJobId,
+  getQuestionsById,
+} from "lib/teamtailer/use-teamtailor";
 
 const Page = ({ title, slug, body }) => {
   const headProps: HeadProps = {
@@ -44,9 +47,8 @@ const Page = ({ title, slug, body }) => {
         </Heading>
         <Grid columns={[1, 1, 2]} sx={{ maxWidth: 1200, margin: "0 auto" }}>
           <Markdown>
-            <ReactMarkdown children={body} renderers={{ code: Code }} />
+            <Box as="div" dangerouslySetInnerHTML={{ __html: body }} />
           </Markdown>
-
           <Box
             sx={{
               position: "sticky",
@@ -92,21 +94,9 @@ const Page = ({ title, slug, body }) => {
 };
 
 export async function getStaticPaths({ locales }) {
-  const { allJob } = await request(
-    "https://dp4k3mpw.api.sanity.io/v1/graphql/production/default",
-    print(allJobs),
-    {
-      where: {},
-    }
-  );
-
+  const allJobs = await getJobs();
   let paths = [];
-  for (const page of allJob) {
-    for (const locale of locales) {
-      paths.push({ locale, params: { slug: page.slug.current } });
-    }
-  }
-
+  allJobs.map((page) => paths.push({ params: { slug: page.id } }));
   return {
     fallback: true,
     paths,
@@ -115,21 +105,29 @@ export async function getStaticPaths({ locales }) {
 
 export async function getStaticProps({ locale, params, preview = false }) {
   const { slug } = params;
-  const graphQLClient = new GraphQLClient(
-    "https://dp4k3mpw.api.sanity.io/v1/graphql/production/default"
-  );
+  const job = await getJobById(slug);
+  const questionIds = await getQuestionIdsByJobId(slug);
 
-  let data: any = await graphQLClient.request(print(allJobs), {
-    where: {
-      slug: { current: { eq: slug } },
-    },
-  });
+  const questions = [];
+  for (const questionId of questionIds) {
+    const question = await getQuestionsById(questionId.id);
 
-  let job = data.allJob.find((j) => j.slug.current === slug);
+    questions.push({
+      id: question.id,
+      type: question.attributes["question-type"],
+      title: question.attributes.title,
+    });
+  }
 
   return {
     props: {
-      ...job,
+      title: job.attributes.title,
+      body: job.attributes.body,
+      name: job.attributes["name-requirement"],
+      resume: job.attributes["resume-requirement"],
+      coverLetter: job.attributes["cover-letter-requirement"],
+      phone: job.attributes["phone-requirement"],
+      questions,
       slug,
       preview,
       ...(await serverSideTranslations(locale, ["common"])),

@@ -1,11 +1,10 @@
 import PageLayout from "components/layouts/page";
 import { Box, Container, Grid, Link as A, Heading } from "theme-ui";
-import { GraphQLClient } from "graphql-request";
-import { print } from "graphql/language/printer";
 import Link from "next/link";
 import { HeadProps } from "components/primitives/head";
-import allJobs from "../../queries/allJobs.gql";
+
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { getJobs } from "lib/teamtailer/use-teamtailor";
 
 const headProps: HeadProps = {
   meta: {
@@ -20,9 +19,8 @@ const headProps: HeadProps = {
 
 const Page = ({ positions }) => {
   const getFirstParagraph = (content) => {
-    return !!content.split("\n")[1]
-      ? content.split("\n")[1]
-      : content.split("\n")[2];
+    const result = content.match(/<span>(.*?)<\/span>/g);
+    return result ? result[0] : null;
   };
 
   return (
@@ -43,7 +41,7 @@ const Page = ({ positions }) => {
               <Link
                 key={i}
                 href={p.title === "All" ? "/jobs" : `/jobs/[slug]`}
-                as={p.title === "All" ? "/jobs" : `/jobs/${p.slug.current}`}
+                as={p.title === "All" ? "/jobs" : `/jobs/${p.slug}`}
                 passHref>
                 <A
                   sx={{
@@ -94,7 +92,12 @@ const Page = ({ positions }) => {
                         WebkitBoxOrient: "vertical",
                         overflow: "hidden",
                       }}>
-                      {getFirstParagraph(p.body)}
+                      <Box
+                        as="div"
+                        dangerouslySetInnerHTML={{
+                          __html: getFirstParagraph(p.body),
+                        }}
+                      />
                     </Box>
                   </Box>
                   <Box
@@ -118,17 +121,11 @@ const Page = ({ positions }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  const graphQLClient = new GraphQLClient(
-    "https://dp4k3mpw.api.sanity.io/v1/graphql/production/default"
-  );
-
-  let data: any = await graphQLClient.request(print(allJobs), {
-    where: {},
-  });
+  const allJobs = await getJobs();
 
   return {
     props: {
-      positions: data.allJob,
+      positions: allJobs,
       preview: false,
       ...(await serverSideTranslations(locale, ["common"])),
     },
