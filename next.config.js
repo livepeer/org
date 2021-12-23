@@ -38,6 +38,11 @@ module.exports = withPlugins([
               'https://media.livepeer.org/play?url=https%3A%2F%2Fcdn.livepeer.com%2Fhls%2F83f6hvl1i9noskxb%2Findex.m3u8',
             permanent: false,
           },
+          {
+            source: '/jobs',
+            destination: 'https://livepeer.com/jobs',
+            permanent: true,
+          },
         ];
       },
     },
