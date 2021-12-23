@@ -45,7 +45,7 @@ module.exports = withPlugins([
           },
           {
             source: '/jobs/:path*',
-            destination: 'https://livepeer.com/jobs/:path*',
+            destination: 'https://livepeer.com/jobs',
             permanent: false,
           },
         ];
