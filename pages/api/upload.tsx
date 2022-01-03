@@ -1,3 +1,5 @@
+import cors from "cors";
+import nc from "next-connect";
 import { IncomingForm } from "formidable";
 import type { NextApiRequest, NextApiResponse } from "next";
 import sanityClient from "@sanity/client";
@@ -15,22 +17,26 @@ export const config = {
   },
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const data: any = await new Promise((resolve, reject) => {
-    const form = new IncomingForm();
-    form.parse(req, (err, fields, files) => {
-      if (err) return reject(err);
-      resolve({ fields, files });
+const handler = nc()
+  .use(cors())
+  .post(async (req: NextApiRequest, res: NextApiResponse) => {
+    const data: any = await new Promise((resolve, reject) => {
+      const form = new IncomingForm();
+      form.parse(req, (err, fields, files) => {
+        if (err) return reject(err);
+        resolve({ fields, files });
+      });
     });
+
+    if (data.files.file.path)
+      client.assets
+        .upload("file", data.files.file.path, {
+          filename: data.files.file.name,
+        })
+        .then((fileAsset) => {
+          res.status(200).json(fileAsset);
+        })
+        .catch((e) => res.status(400).json({ errors: e }));
   });
 
-  if (data.files.file.path)
-    client.assets
-      .upload("file", data.files.file.path, {
-        filename: data.files.file.name,
-      })
-      .then((fileAsset) => {
-        res.status(200).json(fileAsset);
-      })
-      .catch((e) => res.status(400).json({ errors: e }));
-};
+export default handler;
