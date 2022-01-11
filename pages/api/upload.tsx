@@ -3,6 +3,7 @@ import nc from "next-connect";
 import { IncomingForm } from "formidable";
 import type { NextApiRequest, NextApiResponse } from "next";
 import sanityClient from "@sanity/client";
+import { createReadStream, ReadStream } from "fs";
 
 const client = sanityClient({
   projectId: "dp4k3mpw",
@@ -28,15 +29,22 @@ const handler = nc()
       });
     });
 
-    if (data.files.file.path)
+    if (data.files.file.path) {
+      const filePath = data.files.file.path;
+      const readStream: ReadStream = createReadStream(filePath);
+      const stream: ReadableStream = (readStream as unknown) as ReadableStream;
+
       client.assets
-        .upload("file", data.files.file.path, {
+        .upload("file", stream, {
           filename: data.files.file.name,
         })
         .then((fileAsset) => {
           res.status(200).json(fileAsset);
         })
-        .catch((e) => res.status(400).json({ errors: e }));
+        .catch((e) => {
+          res.status(400).json({ errors: e });
+        });
+    }
   });
 
 export default handler;
