@@ -254,7 +254,7 @@ const questions: Question[] = [
         Follow{" "}
         <AnswerLink
           label="this"
-          href="/docs/video-miners/getting-started/overview"
+          href="https://docs.livepeer.org/video-miners/getting-started/overview"
         />{" "}
         guide.
       </>
@@ -277,7 +277,7 @@ const questions: Question[] = [
             <ul sx={{ listStyle: "inside", paddingInlineStart: "24px" }}>
               <li>
                 <AnswerLink
-                  href="/docs/video-miners/how-to-guides/troubleshooting"
+                  href="https://docs.livepeer.org/video-miners/how-to-guides/troubleshooting"
                   label="Check the video miner troubleshooting docs"
                 />{" "}
                 to test your own transcoding setup. Turn on logging to a more

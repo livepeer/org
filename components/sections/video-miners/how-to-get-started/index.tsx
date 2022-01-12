@@ -44,9 +44,13 @@ const HowToGetStartedSection = ({ title, subtitle, ctaText }) => (
           }}>
           {subtitle}
         </Text>
-        <Link href="/docs/video-miners/overview" passHref>
-          <A variant="buttons.primary">{ctaText}</A>
-        </Link>
+        <A
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://docs.livepeer.org/video-miners/overview"
+          variant="buttons.primary">
+          {ctaText}
+        </A>
       </Box>
       <Box
         sx={{
