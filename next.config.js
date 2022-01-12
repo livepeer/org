@@ -33,6 +33,11 @@ module.exports = withPlugins([
       async redirects() {
         return [
           {
+            source: '/docs/:slug*',
+            destination: 'https://docs.livepeer.org/:slug*',
+            permanent: false,
+          },
+          {
             source: '/tv',
             destination:
               'https://media.livepeer.org/play?url=https%3A%2F%2Fcdn.livepeer.com%2Fhls%2F7062iaygm8eip421%2Findex.m3u8',

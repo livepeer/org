@@ -78,7 +78,7 @@ const posts: Post[] = [
     description:
       "Comprehensive documentation for both video developers and video miners.",
     subtitle: "By Livepeer, Inc.",
-    link: { href: "/docs" },
+    link: { href: "https://docs.livepeer.org", isExternal: true },
     category: categories[0],
     image: {
       src: "/images/posts/post-cover-7.png",
@@ -179,8 +179,7 @@ const posts: Post[] = [
   },
   {
     title: "CoinMarketCap",
-    description:
-      "LPT price, marketcap, charts and info",
+    description: "LPT price, marketcap, charts and info",
     subtitle: "",
     link: {
       href: "https://coinmarketcap.com/currencies/livepeer/",
@@ -196,8 +195,7 @@ const posts: Post[] = [
     title: "Coinbase",
     subtitle: "Custodial exchange",
     link: {
-      href:
-        "https://pro.coinbase.com/",
+      href: "https://pro.coinbase.com/",
       isExternal: true,
     },
     category: categories[2],
@@ -210,8 +208,7 @@ const posts: Post[] = [
     title: "Binance",
     subtitle: "Custodial exchange",
     link: {
-      href:
-        "https://www.binance.com/en/trade/LPT_BNB?layout=pro&type=spot",
+      href: "https://www.binance.com/en/trade/LPT_BNB?layout=pro&type=spot",
       isExternal: true,
     },
     category: categories[2],
