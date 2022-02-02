@@ -78,6 +78,7 @@ const CroppedIllustrationHero = forwardRef(
           <Box sx={{ textAlign: "center" }}>
             <Link href={cta.href} passHref>
               <A
+                target={cta.isExternal && "_blank"}
                 variant="buttons.primary"
                 sx={{
                   mt: 4,
