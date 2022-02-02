@@ -57,10 +57,7 @@ const InfrastructureHero = ({ title, subtitle, cta }) => (
   <CroppedIllustrationHero
     title={title}
     subtitle={subtitle}
-    cta={{
-      label: cta.label,
-      href: cta.href,
-    }}
+    cta={cta}
     withAnimation
     illustration={
       <IllustratedBackgroundBox
