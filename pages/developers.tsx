@@ -32,7 +32,7 @@ const Developers = () => {
           label: <Box>Build with Livepeer Video Services</Box>,
           title: (
             <Box>
-              Gateway<Box>APIs</Box>
+              Gateway<Box>API</Box>
             </Box>
           ),
           list: [
