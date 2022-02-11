@@ -117,7 +117,7 @@ const listItems: ListItemProps[] = [
           rel="noopener noreferrer"
           variant="accent"
           data-dark>
-          Livepeer.com
+          Livepeer Video Services
         </A>
         .
       </>
