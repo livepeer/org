@@ -29,32 +29,32 @@ const Developers = () => {
       />
       <HugeCardSection
         card={{
-          label: <Box>Build with the Livepeer.com</Box>,
+          label: <Box>Build with Livepeer Video Services</Box>,
           title: (
             <Box>
-              Gateway<Box>API.</Box>
+              Gateway<Box>API</Box>
             </Box>
           ),
           list: [
             {
-              title: "Easy-to-use API",
+              title: "Accessible",
               subtitle:
-                "Straight forward APIs make integrating with Livepeer quick and easy. Build your own streaming platform in days not months.",
+                "Straightforward, no nonsense product and documentation designed for developers. Build your own streaming app in days, not months.",
             },
             {
               title: "Affordable",
               subtitle:
-                "Affordable transcoding backed by the Livepeer network allows you to operate a UGC streaming platform with millions of content creators.",
+                "Extraordinary cost savings up to 10x less expensive than centralized industry standards.",
             },
             {
               title: "Scalable",
               subtitle:
-                "Freedom to scale up or down so you can manage content creator demand without over investing in infrastructure.",
+                "Leverage the near-infinite scalability of the Livepeer Network, rivaling Amazon’s cloud compute.",
             },
             {
               title: "Reliable",
               subtitle:
-                "Ensure content creator audiences remain engaged by delivering high quality streams with 99.99% reliability.",
+                "An always-on, incentivized network and intelligent distribution guarantees transcoding never stops.",
             },
           ],
           ctaText: t("page-developers-hosted-service-cta"),

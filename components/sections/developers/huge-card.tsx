@@ -55,9 +55,9 @@ const HugeCardSection = ({ card }) => {
               <A
                 sx={{ mb: 4 }}
                 variant="buttons.com"
-                href="https://Livepeer.com"
+                href="https://livepeer.com"
                 target="_blank">
-                Livepeer.com
+                Livepeer Video Services
                 <i sx={{ ml: 2, fontSize: 4 }}>
                   <FiArrowUpRight />
                 </i>
