@@ -54,6 +54,11 @@ const Footer = ({
           isExternal: true,
         },
         { label: t("nav-open-source-software"), href: "/oss" },
+        {
+          label: "Bug Bounty",
+          href: "https://immunefi.com/bounty/livepeer/",
+          isExternal: true,
+        },
       ],
     },
     {
