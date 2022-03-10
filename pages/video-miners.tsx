@@ -37,7 +37,7 @@ const VideoMinerPage = ({ totalVolumeUSD, totalActiveNodes, totalMinutes }) => {
           isExternal: true,
           label: t("common:nav-get-started"),
           href:
-            "https://docs.livepeer.org/video-miners/getting-started/overview",
+            "https://docs.livepeer.org/video-miners/getting-started/",
         }}
       />
       <HowVideoMiningWorksSection
