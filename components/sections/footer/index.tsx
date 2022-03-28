@@ -109,6 +109,11 @@ const Footer = ({
           href: "https://www.reddit.com/r/livepeer/",
           isExternal: true,
         },
+        {
+          label: "Telegram",
+          href: "https://t.me/livepeerorg",
+          isExternal: true,
+        },
       ],
     },
     {
