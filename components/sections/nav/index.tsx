@@ -57,11 +57,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title: "The Livepeer Roadmap — 2021 And Beyond",
+    title: "The Livepeer Roadmap — March 2022 to June 2022",
     link: {
       label: t("read-post"),
       href:
-        "https://medium.com/livepeer-blog/the-livepeer-roadmap-2021-and-beyond-5281776e9b3d",
+        "https://medium.com/livepeer-blog/livepeer-network-product-roadmap-march-2022-to-june-2022-2b3270de0aaf",
       isExternal: true,
     },
   };
