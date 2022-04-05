@@ -16,7 +16,6 @@ const Stat = ({ title, label, color = "text", pushSx }: StatProps) => (
       sx={{
         mx: "auto",
         bg: "background",
-        width: "140px",
         height: "140px",
         alignItems: "center",
         justifyContent: "center",
