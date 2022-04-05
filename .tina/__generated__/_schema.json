@@ -1,0 +1,65 @@
+{
+  "version": {
+    "fullVersion": "0.59.10",
+    "major": "0",
+    "minor": "59",
+    "patch": "10"
+  },
+  "meta": {},
+  "collections": [
+    {
+      "label": "Blog Posts",
+      "name": "posts",
+      "path": "content/posts",
+      "fields": [
+        {
+          "type": "string",
+          "label": "Title",
+          "name": "title",
+          "namespace": ["posts", "title"]
+        },
+        {
+          "type": "string",
+          "label": "Blog Post Body",
+          "name": "body",
+          "isBody": true,
+          "ui": {
+            "component": "textarea"
+          },
+          "namespace": ["posts", "body"]
+        }
+      ],
+      "namespace": ["posts"]
+    },
+    {
+      "label": "Pages",
+      "name": "pages",
+      "path": "content/pages",
+      "fields": [
+        {
+          "type": "string",
+          "label": "Title",
+          "name": "title",
+          "namespace": ["pages", "title"]
+        },
+        {
+          "type": "datetime",
+          "label": "Updated at",
+          "name": "updatedAt",
+          "ui": {
+            "defaultValue": "Tue Apr 05 2022"
+          },
+          "namespace": ["pages", "updatedAt"]
+        },
+        {
+          "type": "rich-text",
+          "label": "Body",
+          "name": "body",
+          "isBody": true,
+          "namespace": ["pages", "body"]
+        }
+      ],
+      "namespace": ["pages"]
+    }
+  ]
+}
