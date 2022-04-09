@@ -1,0 +1,10 @@
+fragment PostsParts on Posts {
+  title
+  body
+}
+
+fragment PagesParts on Pages {
+  title
+  updatedAt
+  body
+}

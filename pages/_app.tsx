@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
 import { IdProvider } from "@radix-ui/react-id";
+import TinaProvider from "../.tina/components/TinaDynamicProvider";
 
 initGsap();
 
@@ -23,11 +24,13 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <IdProvider>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </IdProvider>
+    <TinaProvider>
+      <IdProvider>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </IdProvider>
+    </TinaProvider>
   );
 };
 

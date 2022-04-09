@@ -5,17 +5,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
+    "dev": "tinacms server:start -c \"next\"",
+    "build": "tinacms server:start -c \"next build\"",
+    "start": "tinacms server:start -c \"next start\"",
     "lint": "(eslint . && prettier --check '**/*.{js,ts,tsx}' --loglevel warn) || yarn lint:warn",
     "lint:warn": "echo '\\nError: Not all files are pretty, run yarn lint:fix\\n'",
-    "lint:fix": "eslint . --fix --rule 'react-hooks/exhaustive-deps: off' && prettier --write '**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint . --fix --rule 'react-hooks/exhaustive-deps: off' && prettier --write '**/*.{js,ts,tsx,json}'",
     "lint:staged": "lint-staged --quiet",
     "prettier": "prettier --write '**/*.{ts,js,css,html,md,tsx,mdx,yaml,yml,gql,graphql,json}'",
     "type-check": "tsc --pretty --noEmit",
-    "docs-positions": "node ./generate-docs-positions.js",
-    "postbuild": "next-sitemap"
+    "docs-positions": "node ./generate-docs-positions.js"
   },
   "dependencies": {
     "@docsearch/react": "^1.0.0-alpha.14",
@@ -30,11 +29,11 @@
     "@sanity/client": "^2.2.6",
     "@sanity/image-url": "^0.140.22",
     "@sindresorhus/slugify": "^1.1.0",
+    "@tinacms/cli": "^0.60.11",
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "formidable-serverless": "^1.1.1",
     "globby": "^11.0.2",
-    "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
     "graphql-tag": "^2.11.0",
     "gray-matter": "^4.0.2",
@@ -58,8 +57,10 @@
     "react-markdown": "^5.0.3",
     "react-scroll": "^1.8.0",
     "react-use-mailchimp": "^0.4.0",
+    "styled-components": "^5.3.5",
     "theme-ui": "^0.3.1",
     "three": "^0.119.1",
+    "tinacms": "^0.67.0",
     "zod": "^2.0.0-beta.30"
   },
   "devDependencies": {
@@ -81,7 +82,6 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
     "lint-staged": "^10.5.4",
-    "next-sitemap": "^1.6.9",
     "prettier": "^2.2.1",
     "typescript": "^3.9.7"
   },
