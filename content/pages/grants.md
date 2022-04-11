@@ -15,8 +15,7 @@ incorrect, please edit this page!
 ## Broad Livepeer Ecosystem
 
 These programs support the broad Livepeer ecosystem by offering grants to a wide
-scope of projects. These include solutions for scalability, community building,
-security, privacy, and more.&#x20;
+scope of projects. These include solutions for community building, core protocol research and development, integrations, and more.&#x20;
 
 *   [Livepeer Grants](https://livepeergrants.org) - Funding open source projects
     that benefit Livepeer, with particular focus on universal tools,
