@@ -85,7 +85,7 @@ const getTotalActiveNodes = async () => {
   return response.transcoders.length;
 };
 
-const getTotalDelegators = async () => {
+const getDelegators = async (id) => {
   const PAGE_SIZE = 100;
   const reqDelegators = async (skip) => {
     const query = `query delegators ($skip: Int $where: Delegator_filter) {
@@ -94,7 +94,7 @@ const getTotalDelegators = async () => {
     }
   }`;
     let response = await request(
-      "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
+      `https://api.thegraph.com/subgraphs/name/livepeer/${id}`,
       query,
       {
         first: PAGE_SIZE,
@@ -118,6 +118,27 @@ const getTotalDelegators = async () => {
       keepGoing = false;
     }
   }
+  return delegators;
+};
+
+function mergeObjectsInUnique<T>(array: T[], property: any): T[] {
+  const newArray = new Map();
+
+  array.forEach((item: T) => {
+    const propertyValue = item[property];
+    newArray.has(propertyValue)
+      ? newArray.set(propertyValue, { ...item, ...newArray.get(propertyValue) })
+      : newArray.set(propertyValue, item);
+  });
+
+  return Array.from(newArray.values());
+}
+
+const getTotalDelegators = async () => {
+  const delegatorsMainnet = await getDelegators("livepeer");
+  const delegatorsArbitrum = await getDelegators("arbitrum-one");
+  const arr = [...delegatorsMainnet, ...delegatorsArbitrum];
+  const delegators = mergeObjectsInUnique(arr, "id");
   return delegators.length;
 };
 
