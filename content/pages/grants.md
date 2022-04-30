@@ -3,7 +3,7 @@ title: Grants
 updatedAt: '2022-04-03T04:00:00.000Z'
 ---
 
-# Livepeer Grant Programs
+# Livepeer Grants Programs
 
 The programs listed below offer a variety of funding grants for projects working
 to promote the success and growth of the Livepeer ecosystem. Use this as a guide
