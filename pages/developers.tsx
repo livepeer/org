@@ -17,7 +17,7 @@ const Developers = () => {
       url: "https://livepeer.org/developers",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
-      twitterUsername: "@LivepeerOrg",
+      twitterUsername: "@Livepeer",
     },
   };
 

@@ -59,7 +59,7 @@ const CodePage = () => {
       url: "https://livepeer.org/oss",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
-      twitterUsername: "@LivepeerOrg",
+      twitterUsername: "@Livepeer",
     },
   };
   return (

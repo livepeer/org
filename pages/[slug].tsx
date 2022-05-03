@@ -34,7 +34,7 @@ const Page = (props) => {
       url: "https://livepeer.org/grants",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
-      twitterUsername: "@LivepeerOrg",
+      twitterUsername: "@Livepeer",
     },
   };
 

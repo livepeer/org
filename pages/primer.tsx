@@ -38,7 +38,7 @@ const Primer = ({ data }) => {
       url: "https://livepeer.org/primer",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/images/primer/share-image.jpg",
-      twitterUsername: "@LivepeerOrg",
+      twitterUsername: "@Livepeer",
     },
   };
 

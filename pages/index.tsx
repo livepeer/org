@@ -30,7 +30,7 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
       url: "https://livepeer.org",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
-      twitterUsername: "@LivepeerOrg",
+      twitterUsername: "@Livepeer",
     },
   };
 

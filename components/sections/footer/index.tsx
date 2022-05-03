@@ -86,7 +86,7 @@ const Footer = ({
       items: [
         {
           label: "Twitter",
-          href: "https://twitter.com/LivepeerOrg",
+          href: "https://twitter.com/Livepeer",
           isExternal: true,
         },
         {

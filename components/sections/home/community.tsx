@@ -39,7 +39,7 @@ const links: IconLinkProps[] = [
         twitter.com/<b>LivepeerOrg</b>
       </>
     ),
-    href: "https://twitter.com/LivepeerOrg",
+    href: "https://twitter.com/Livepeer",
     isExternal: true,
   },
   {

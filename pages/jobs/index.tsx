@@ -14,7 +14,7 @@ const headProps: HeadProps = {
     url: "https://livepeer.org/jobs",
     siteName: "Livepeer.org",
     image: "https://livepeer.org/OG.png",
-    twitterUsername: "@LivepeerOrg",
+    twitterUsername: "@Livepeer",
   },
 };
 

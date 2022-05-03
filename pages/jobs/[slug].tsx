@@ -17,7 +17,7 @@ const Page = ({ title, slug, body }) => {
       url: `https://livepeer.org/jobs/${slug}`,
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
-      twitterUsername: "@LivepeerOrg",
+      twitterUsername: "@Livepeer",
     },
   };
   return (

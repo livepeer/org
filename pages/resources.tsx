@@ -17,7 +17,7 @@ const ResourcesPage = () => {
       url: "https://livepeer.org/resources",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
-      twitterUsername: "@LivepeerOrg",
+      twitterUsername: "@Livepeer",
     },
   };
 
