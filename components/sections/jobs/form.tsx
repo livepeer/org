@@ -171,17 +171,19 @@ const JobApplicationForm = ({
     }
   }, []);
 
+  const dropzoneOptions: any = {
+    accept: "application/pdf",
+    maxFiles: 1,
+    onDrop,
+  };
+
   const {
     getRootProps,
     getInputProps,
     isDragActive,
     isDragAccept,
     isDragReject,
-  } = useDropzone({
-    accept: "application/pdf",
-    maxFiles: 1,
-    onDrop,
-  });
+  } = useDropzone(dropzoneOptions);
 
   const onChangeAnswer = (questionId, value) => {
     const updatedA = answers.map((answer) => {
