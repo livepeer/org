@@ -108,7 +108,7 @@ const listItems: ListItemProps[] = [
           href="https://docs.livepeer.org/video-developers/overview"
           variant="accent"
           data-dark>
-          developer docs
+          developer docs{" "}
         </A>
         or hosted gateway service <br /> at{" "}
         <A
