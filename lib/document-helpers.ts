@@ -39,7 +39,7 @@ const nFormatter = (num, digits) => {
 
 const getProtocolStatistics = async () => {
   const graphqlResponse = await fetch(
-    "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
+    "https://api.thegraph.com/subgraphs/name/livepeer/arbitrum-one",
     {
       method: "POST",
       headers: {
@@ -74,7 +74,7 @@ const getTotalActiveNodes = async () => {
     }
   }`;
   let response = await request(
-    "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
+    "https://api.thegraph.com/subgraphs/name/livepeer/arbitrum-one",
     query,
     {
       where: {
