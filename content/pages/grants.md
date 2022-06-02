@@ -17,7 +17,7 @@ incorrect, please edit this page!
 These programs support the broad Livepeer ecosystem by offering grants to a wide
 scope of projects. These include solutions for community building, core protocol research and development, integrations, and more.&#x20;
 
-*   [Livepeer Grants](https://livepeergrants.org) - Funding open source projects
+*   [Livepeer Grants](https://github.com/livepeer/Grant-Program/ "") - Funding open source projects
     that benefit Livepeer, with particular focus on universal tools,
     infrastructure, research, and public goods
 *   [Titan Node Start Up Grant](https://docs.google.com/forms/d/e/1FAIpQLSeZqkMsBEpgoMkQMjfMoMOOcsVq98plLNEk5hybzWfA4E\_vSg/viewform) -
