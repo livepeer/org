@@ -86,12 +86,11 @@ const WhoIsBuildingSection = ({
     </Slider>
     <Heading variant="heading.5">
       Interested in Joining Livepeer, Inc.?{" "}
-      <Link href="https://livepeer.com/jobs" passHref>
+      <Link href="/jobs" passHref>
         <A
-          target="_blank"
           variant="accent"
           sx={{ variant: "layout.flexCenter", display: "inline-flex" }}>
-          View its open positions <FiArrowUpRight />
+          View its open positions
         </A>
       </Link>
     </Heading>

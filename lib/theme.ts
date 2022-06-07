@@ -434,6 +434,20 @@ const theme = {
         outline: "none",
       },
     },
+    textarea: {
+      bg: "background",
+      variant: "text.small",
+      border: "none",
+      px: 3,
+      height: 12,
+      "&::placeholder": {
+        color: "gray",
+      },
+      "&:focus": {
+        boxShadow: "0 0 0 4px rgba(19, 20, 24, .5)",
+        outline: "none",
+      },
+    },
   },
   srOnly: {
     position: "absolute",

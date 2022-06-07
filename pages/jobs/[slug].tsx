@@ -1,15 +1,19 @@
 import PageLayout from "components/layouts/page";
-import { Box, Container, Grid, Heading, Text, Link as A } from "theme-ui";
-import { GraphQLClient, request } from "graphql-request";
-import { print } from "graphql/language/printer";
-import ReactMarkdown from "react-markdown";
-import allJobs from "../../queries/allJobs.gql";
-import Code from "components/primitives/code";
-import { HeadProps } from "components/primitives/head";
+import { Box, Container, Grid, Heading } from "theme-ui";
+import JobApplicationForm from "components/sections/jobs/form";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Markdown from "components/primitives/markdown";
+import { HeadProps } from "components/primitives/head";
 
-const Page = ({ title, slug, body }) => {
+const Page = ({
+  title,
+  slug,
+  body,
+  questions,
+  name,
+  resume,
+  coverLetter,
+  phone,
+}) => {
   const headProps: HeadProps = {
     meta: {
       title: `${title}`,
@@ -28,108 +32,152 @@ const Page = ({ title, slug, body }) => {
       pushContentSx={{ overflow: "initial" }}>
       <Container
         sx={{
-          pb: 5,
-          ul: { mb: 4 },
-          p: { mb: 4 },
+          pb: 4,
+          ul: { marginBottom: 4 },
+          p: { marginBottom: 4 },
         }}>
         <Heading
           variant="heading.1"
           sx={{
             textAlign: "left",
             lineHeight: ["42px", "72px"],
-            my: 5,
+            marginTop: 5,
+            marginBottom: 4,
             fontSize: ["32px", "56px"],
           }}>
           {title}
         </Heading>
-        <Grid columns={[1, 1, 2]} sx={{ maxWidth: 1200, margin: "0 auto" }}>
-          <Markdown>
-            <ReactMarkdown children={body} renderers={{ code: Code }} />
-          </Markdown>
-
+        <Grid
+          sx={{
+            maxWidth: 1200,
+            marginX: "auto",
+            gridTemplateColumns: "repeat(1,1fr)",
+            ["@media (min-width: 768px)"]: {
+              gridTemplateColumns: "repeat(2,1fr)",
+            },
+          }}>
+          <Box
+            sx={{
+              "p, div, ul, li": {
+                lineHeight: 1.8,
+              },
+              ul: {
+                listStyle: "initial",
+                paddingLeft: 40,
+              },
+              "h1, h2, h3, h4, h5, h6": {
+                lineHeight: 1.5,
+              },
+              figure: {
+                m: 0,
+              },
+              img: {
+                width: "100%",
+              },
+              a: {
+                color: "secondary",
+              },
+              h2: {
+                fontSize: 5,
+                fontWeight: 500,
+                marginBottom: 3,
+              },
+              h3: {
+                fontSize: 4,
+                fontWeight: 500,
+                marginBottom: 3,
+              },
+            }}>
+            <div dangerouslySetInnerHTML={{ __html: body }} />
+          </Box>
           <Box
             sx={{
               position: "sticky",
               top: "100px",
               display: "block",
               alignSelf: "start",
-              width: ["100%", null, "380px"],
-              ml: "auto",
-              p: 4,
-              textDecoration: "none",
-              color: "initial",
-              marginRight: "auto",
-              borderRadius: 24,
-              border: "1px solid",
-              borderColor: "#F0F0F0",
-              backgroundColor: "#FFF",
-              overflow: "hidden",
-              transition: "box-shadow .2s",
-              ":hover": {
-                textDecoration: "none",
-                boxShadow:
-                  "0px 2px 1px rgba(0, 0, 0, 0.04), 0px 16px 40px rgba(0, 0, 0, 0.04)",
+              mx: "auto",
+              mt: "100px",
+              "@bp2": {
+                mr: "0",
               },
             }}>
-            <Text sx={{ fontSize: 20, mb: 4, fontWeight: 600 }}>
-              How to Apply
-            </Text>
-            <Text sx={{ color: "gray", mb: 4 }}>
-              If you are interested in applying for this position, please send
-              an email containing your Github profile and/or LinkedIn.
-            </Text>
-            <A
-              variant="buttons.primary"
-              sx={{ display: "flex", width: "100%" }}
-              href="mailto:work@livepeer.org">
-              Send email
-            </A>
+            <JobApplicationForm
+              id={slug}
+              name={name}
+              questions={questions}
+              resume={resume}
+              coverLetter={coverLetter}
+              phone={phone}
+            />
           </Box>
         </Grid>
       </Container>
     </PageLayout>
   );
 };
-
-export async function getStaticPaths({ locales }) {
-  const { allJob } = await request(
-    "https://dp4k3mpw.api.sanity.io/v1/graphql/production/default",
-    print(allJobs),
-    {
-      where: {},
-    }
-  );
+export async function getStaticPaths() {
+  const jobsRes = await fetch(`https://livepeer.org/api/teamtailor/jobs`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((response) => response.json());
 
   let paths = [];
-  for (const page of allJob) {
-    for (const locale of locales) {
-      paths.push({ locale, params: { slug: page.slug.current } });
-    }
-  }
-
+  jobsRes.data.map((page) => paths.push({ params: { slug: page.id } }));
   return {
     fallback: true,
     paths,
   };
 }
 
-export async function getStaticProps({ locale, params, preview = false }) {
+export async function getStaticProps({ params, locale, preview = false }) {
   const { slug } = params;
-  const graphQLClient = new GraphQLClient(
-    "https://dp4k3mpw.api.sanity.io/v1/graphql/production/default"
-  );
 
-  let data: any = await graphQLClient.request(print(allJobs), {
-    where: {
-      slug: { current: { eq: slug } },
-    },
-  });
+  const jobRes = await fetch(
+    `https://livepeer.org/api/teamtailor/jobs/${slug}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((response) => response.json());
 
-  let job = data.allJob.find((j) => j.slug.current === slug);
+  const questionIdsRes = await fetch(
+    `https://livepeer.org/api/teamtailor/questionids/${slug}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((response) => response.json());
+
+  const qIdsData = questionIdsRes["data"];
+  const questions = [];
+  if (qIdsData)
+    for (const questionId of qIdsData) {
+      const questionRes = await fetch(
+        `https://livepeer.org/api/teamtailor/questions/${questionId.id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      ).then((response) => response.json());
+
+      questions.push({
+        ...questionRes.data,
+      });
+    }
 
   return {
     props: {
-      ...job,
+      ...jobRes.data,
+      questions,
       slug,
       preview,
       ...(await serverSideTranslations(locale, ["common"])),
