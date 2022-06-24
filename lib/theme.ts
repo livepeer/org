@@ -317,12 +317,12 @@ const theme = {
         outline: "none",
       },
     },
-    com: {
+    studio: {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
       borderRadius: "default",
-      bg: "#6e56cf",
+      bg: "#0a5cd8",
       color: "white",
       py: 2,
       px: 4,
@@ -331,10 +331,10 @@ const theme = {
       fontWeight: 600,
       transition: "background .15s",
       "&:hover": {
-        bg: "#6e56cf",
+        bg: "#0a5cd8",
       },
       "&:focus": {
-        boxShadow: "0 0 0 4px #6e56cf",
+        boxShadow: "0 0 0 4px #0a5cd8",
         outline: "none",
       },
     },

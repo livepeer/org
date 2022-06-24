@@ -29,12 +29,8 @@ const Developers = () => {
       />
       <HugeCardSection
         card={{
-          label: <Box>Build with Livepeer Video Services</Box>,
-          title: (
-            <Box>
-              Gateway<Box>API</Box>
-            </Box>
-          ),
+          label: <Box>Build with</Box>,
+          title: <Box>Livepeer Studio</Box>,
           list: [
             {
               title: "Accessible",

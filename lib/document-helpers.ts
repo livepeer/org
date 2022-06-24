@@ -159,7 +159,7 @@ export const getLivepeerComUsageData = async (
   params?: LivepeerComUsageParams
 ) => {
   try {
-    const endpoint = `https://livepeer.com/api/usage${
+    const endpoint = `https://livepeer.studio/api/usage${
       params ? `?fromTime=${params.fromTime}&toTime=${params.toTime}` : ""
     }`;
 
@@ -182,7 +182,7 @@ export const getLivepeerComUsageData = async (
 const pixelsPerMinute = 2995488000;
 
 // Date to price mapping used to calculate estimated usage
-// based on the Livepeer.com broadcaster's max price
+// based on the Livepeer Studio broadcaster's max price
 const pricePerPixel = [
   {
     startDate: 1577836800,
@@ -253,7 +253,7 @@ const getTotalFeeDerivedMinutes = async () => {
   const dayData = await res.json();
 
   dayData.data.days.map((item) => {
-    // if Livepeer.com's broadcaster changed max price, use updated price
+    // if Livepeer Studio's broadcaster changed max price, use updated price
     if (
       pricePerPixelIndex &&
       item.date < pricePerPixel[pricePerPixelIndex].startDate

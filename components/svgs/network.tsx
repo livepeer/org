@@ -117,7 +117,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
       <path
         className="path--inner"
         d="M304 232c0 39.765-32.235 72-72 72s-72-32.235-72-72 32.235-72 72-72 72 32.235 72 72z"
-        sx={{ stroke: "#6e56cf" }}
+        sx={{ stroke: "#0a5cd8" }}
       />
       <path
         className="path--outer"
@@ -128,7 +128,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
       <path
         className="path--green"
         d="M120 232C120 170.144 170.144 120 232 120"
-        sx={{ stroke: "#6e56cf" }}
+        sx={{ stroke: "#0a5cd8" }}
       />
       <path
         className="path--circle"
@@ -155,14 +155,14 @@ const NetworkSvg = ({ pushSx }: Props) => {
       <path
         className="dot--inner"
         d="M124,130a6,6 0 1,0 12,0a6,6 0 1,0 -12,0"
-        sx={{ fill: "#6e56cf" }}
+        sx={{ fill: "#0a5cd8" }}
       />
       <circle
         className="dot--outer"
         cx="232"
         cy="120"
         r="6"
-        sx={{ fill: "#6e56cf" }}
+        sx={{ fill: "#0a5cd8" }}
       />
       <rect
         x="200"
@@ -170,7 +170,7 @@ const NetworkSvg = ({ pushSx }: Props) => {
         width="64"
         height="64"
         rx="32"
-        sx={{ fill: "#6e56cf" }}
+        sx={{ fill: "#0a5cd8" }}
       />
       <path
         d="M232 245.333C239.364 245.333 245.333 239.364 245.333 232C245.333 224.636 239.364 218.667 232 218.667C224.636 218.667 218.667 224.636 218.667 232C218.667 239.364 224.636 245.333 232 245.333Z"

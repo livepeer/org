@@ -54,10 +54,10 @@ const HugeCardSection = ({ card }) => {
               <Text sx={{ mb: 4 }}>By Livepeer, Inc.</Text>
               <A
                 sx={{ mb: 4 }}
-                variant="buttons.com"
-                href="https://livepeer.com"
+                variant="buttons.studio"
+                href="https://livepeer.studio"
                 target="_blank">
-                Livepeer Video Services
+                Livepeer Studio
                 <i sx={{ ml: 2, fontSize: 4 }}>
                   <FiArrowUpRight />
                 </i>
@@ -67,7 +67,7 @@ const HugeCardSection = ({ card }) => {
               <Box>
                 {card.list.map((item, i) => (
                   <Flex key={i} sx={{ "&:not(:last-of-type)": { mb: 4 } }}>
-                    <i sx={{ color: "#6e56cf", fontSize: 5, mr: 3 }}>
+                    <i sx={{ color: "#0a5cd8", fontSize: 5, mr: 3 }}>
                       <FiCheckCircle />
                     </i>
                     <Text variant="normal">

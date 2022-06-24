@@ -102,22 +102,14 @@ const listItems: ListItemProps[] = [
     icon: <FiPlay />,
     children: (
       <>
-        Looking to build a video application using Livepeer? Check out the open{" "}
+        Looking to build a video application using Livepeer? Check out{" "}
         <A
-          target="_blank"
-          href="https://docs.livepeer.org/video-developers/overview"
-          variant="accent"
-          data-dark>
-          developer docs{" "}
-        </A>
-        or hosted gateway service <br /> at{" "}
-        <A
-          href="https://livepeer.com"
+          href="https://livepeer.studio"
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
           data-dark>
-          Livepeer Video Services
+          Livepeer Studio
         </A>
         .
       </>

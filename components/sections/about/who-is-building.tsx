@@ -59,7 +59,7 @@ const WhoIsBuildingSection = ({
       py: ["80px", "160px"],
     }}>
     <A
-      href="https://livepeer.com/team"
+      href="https://livepeer.studio/team"
       target="_blank"
       rel="noopener noreferrer"
       variant="buttons.primary"
