@@ -49,8 +49,8 @@ const Footer = ({
       title: t("nav-developers"),
       items: [
         {
-          label: t("nav-documentation"),
-          href: "https://docs.livepeer.org",
+          label: "Livepeer Studio",
+          href: "https://livepeer.studio",
           isExternal: true,
         },
         { label: t("nav-open-source-software"), href: "/oss" },
