@@ -15,7 +15,7 @@ const Page = ({
   resume,
   coverLetter,
   phone,
-  status,
+  humanStatus,
 }) => {
   const headProps: HeadProps = {
     meta: {
@@ -30,8 +30,7 @@ const Page = ({
 
   const router = useRouter();
   useEffect(() => {
-    console.log(status);
-    if (status !== "open") {
+    if (humanStatus !== "published") {
       router.push("/jobs");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
