@@ -46,7 +46,7 @@ const fetchService = async (url, opts: RequestInit = {}) => {
 };
 
 export const getJobs = async (all = true) => {
-  const q = all ? "?page[size]=30" : "";
+  const q = all ? "?page[size]=30&filter[status]=published" : "";
   const [res, body] = await fetchService(`/jobs${q}`, {
     method: "GET",
   });
