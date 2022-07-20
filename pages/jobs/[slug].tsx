@@ -33,7 +33,6 @@ const Page = ({
     if (humanStatus !== "published") {
       router.push("/jobs");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
