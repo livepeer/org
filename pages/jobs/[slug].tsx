@@ -3,6 +3,8 @@ import { Box, Container, Grid, Heading } from "theme-ui";
 import JobApplicationForm from "components/sections/jobs/form";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { HeadProps } from "components/primitives/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Page = ({
   title,
@@ -13,6 +15,7 @@ const Page = ({
   resume,
   coverLetter,
   phone,
+  status,
 }) => {
   const headProps: HeadProps = {
     meta: {
@@ -24,6 +27,15 @@ const Page = ({
       twitterUsername: "@Livepeer",
     },
   };
+
+  const router = useRouter();
+  useEffect(() => {
+    if (status !== "published") {
+      router.push("/jobs");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <PageLayout
       headProps={headProps}

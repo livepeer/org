@@ -50,7 +50,7 @@ const JobApplicationForm = ({
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   const initSetAnswers = () => {
-    const data = questions.map((q) => ({
+    const data = questions?.map((q) => ({
       questionId: q.id,
       title: q.title,
       questionType: q.questionType.toLowerCase(),

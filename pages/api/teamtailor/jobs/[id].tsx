@@ -6,6 +6,7 @@ type ResponseFallbackMessage = "this service is unsupported";
 
 interface Job {
   id: string;
+  status: string;
   title: string;
   body: string;
   name: string;
@@ -40,6 +41,7 @@ export default async (
       message: "success",
       data: {
         id: job.id,
+        status: job.attributes.status,
         title: job.attributes.title,
         body: job.attributes.body,
         name: job.attributes["name-requirement"],

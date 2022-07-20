@@ -16,7 +16,10 @@
           "type": "string",
           "label": "Title",
           "name": "title",
-          "namespace": ["posts", "title"]
+          "namespace": [
+            "posts",
+            "title"
+          ]
         },
         {
           "type": "string",
@@ -26,10 +29,15 @@
           "ui": {
             "component": "textarea"
           },
-          "namespace": ["posts", "body"]
+          "namespace": [
+            "posts",
+            "body"
+          ]
         }
       ],
-      "namespace": ["posts"]
+      "namespace": [
+        "posts"
+      ]
     },
     {
       "label": "Pages",
@@ -40,26 +48,37 @@
           "type": "string",
           "label": "Title",
           "name": "title",
-          "namespace": ["pages", "title"]
+          "namespace": [
+            "pages",
+            "title"
+          ]
         },
         {
           "type": "datetime",
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Fri Jun 24 2022"
+            "defaultValue": "Wed Jul 20 2022"
           },
-          "namespace": ["pages", "updatedAt"]
+          "namespace": [
+            "pages",
+            "updatedAt"
+          ]
         },
         {
           "type": "rich-text",
           "label": "Body",
           "name": "body",
           "isBody": true,
-          "namespace": ["pages", "body"]
+          "namespace": [
+            "pages",
+            "body"
+          ]
         }
       ],
-      "namespace": ["pages"]
+      "namespace": [
+        "pages"
+      ]
     }
   ]
 }
