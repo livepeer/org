@@ -30,7 +30,8 @@ const Page = ({
 
   const router = useRouter();
   useEffect(() => {
-    if (status !== "published") {
+    console.log(status);
+    if (status !== "open") {
       router.push("/jobs");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
