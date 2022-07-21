@@ -57,11 +57,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title: "The Livepeer Roadmap — March 2022 to June 2022",
+    title:
+      "Introducing Livepeer Studio – the new video toolkit for web3 app developers",
     link: {
       label: t("read-post"),
-      href:
-        "https://medium.com/livepeer-blog/livepeer-network-product-roadmap-march-2022-to-june-2022-2b3270de0aaf",
+      href: "https://livepeer.studio/blog/welcome-livepeer-studio",
       isExternal: true,
     },
   };
