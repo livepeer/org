@@ -43,12 +43,12 @@ const listItems: ListItemProps[] = [
         </A>{" "}
         (Javascript),{" "}
         <A
-          href="https://github.com/livepeer/lpms"
+          href="https://github.com/livepeer/catalyst"
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
           data-dark>
-          LPMS
+          Catalyst
         </A>{" "}
         (video development in C or Go), or{" "}
         <A
