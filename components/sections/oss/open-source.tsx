@@ -15,7 +15,7 @@ const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
       description: cards[0].description,
       linkProps: {
         link: {
-          label: "/go-livepeer",
+          label: "go-livepeer",
           href: "https://github.com/livepeer/go-livepeer",
           isExternal: true,
         },
@@ -28,7 +28,7 @@ const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
       description: cards[1].description,
       linkProps: {
         link: {
-          label: "/protocol",
+          label: "protocol",
           href: "https://github.com/livepeer/protocol",
           isExternal: true,
         },
@@ -41,7 +41,7 @@ const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
       description: cards[2].description,
       linkProps: {
         link: {
-          label: "/lpms",
+          label: "livepeer.js",
           href: "https://github.com/livepeer/livepeer.js",
           isExternal: true,
         },
