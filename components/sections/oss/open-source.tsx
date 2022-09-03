@@ -42,10 +42,10 @@ const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
       linkProps: {
         link: {
           label: "/lpms",
-          href: "https://github.com/livepeer/lpms",
+          href: "https://github.com/livepeer/livepeer.js",
           isExternal: true,
         },
-        status: "Go",
+        status: "Typescript",
       },
       isClickable: true,
     },
