@@ -5,6 +5,7 @@ import PrimerBanner from "components/sections/home/primer-banner";
 import CommunitySection from "components/sections/home/community";
 import PageLayout from "components/layouts/page";
 import { useEffect } from "react";
+import { staticRequest, gql } from "tinacms";
 import HaveACallSection from "components/sections/home/have-a-call";
 import { getProtocolStatistics } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
@@ -12,10 +13,40 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 
-const HomePage = ({ youtubeVideos, totalActiveStake }) => {
+function AppSection({ apps }) {
+  return (
+    <div>
+      hello
+      {apps.map((app) => (
+        <div key={app.node.data.title}>
+          <div>{app.node.data.title}</div>
+          <img src={app.node.data.image} alt={app.node.data.title} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const HomePage = ({
+  youtubeVideos,
+  totalActiveStake,
+  apps,
+  web3,
+  videos,
+  communities,
+  exchanges,
+  stackings,
+}) => {
   const router = useRouter();
   const { t } = useTranslation(["home"]);
-
+  console.log(
+    "props tina data: ",
+    web3,
+    videos,
+    communities,
+    exchanges,
+    stackings
+  );
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
@@ -85,6 +116,7 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
         ctaText={t("page-home-call-cta")}
         youtubeVideos={youtubeVideos}
       />
+      {apps && <AppSection apps={apps} />}
     </PageLayout>
   );
 };
@@ -103,8 +135,156 @@ export async function getStaticProps({ locale }) {
 
   const { totalActiveStake } = await getProtocolStatistics();
 
+  const appsData: any = await staticRequest({
+    query: gql`
+      query GetAppsList {
+        getAppsList {
+          edges {
+            node {
+              sys {
+                filename
+              }
+              data {
+                image
+                title
+                richtext
+                website
+                twitter
+                discord
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+  const videosData: any = await staticRequest({
+    query: gql`
+      query GetVideosList {
+        getVideosList {
+          edges {
+            node {
+              sys {
+                filename
+              }
+              data {
+                image
+                title
+                richtext
+                website
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+  const web3Data: any = await staticRequest({
+    query: gql`
+      query GetWeb3List {
+        getWeb3List {
+          edges {
+            node {
+              sys {
+                filename
+              }
+              data {
+                image
+                title
+                richtext
+                website
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+  const stackingsData: any = await staticRequest({
+    query: gql`
+      query GetStakingList {
+        getStakingList {
+          edges {
+            node {
+              sys {
+                filename
+              }
+              data {
+                image
+                title
+                richtext
+                website
+                twitter
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+  const exchangeData: any = await staticRequest({
+    query: gql`
+      query GetExchangeList {
+        getExchangeList {
+          edges {
+            node {
+              sys {
+                filename
+              }
+              data {
+                image
+                title
+                richtext
+                website
+                twitter
+                telegram
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+  const communityRes: any = await staticRequest({
+    query: gql`
+      query GetComunityList {
+        getComunityList {
+          edges {
+            node {
+              sys {
+                filename
+              }
+              data {
+                image
+                title
+                richtext
+                website
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  const communities = communityRes?.getComunityList?.edges;
+  const videos = videosData?.getVideosList?.edges;
+  const exchanges = exchangeData?.getExchangeList?.edges;
+  const stackings = stackingsData?.getStakingList?.edges;
+  const web3 = web3Data?.getWeb3List?.edges;
+  const apps = appsData?.getAppsList?.edges;
+
+  console.log("postListData", appsData);
+  console.log({ apps });
+
   return {
     props: {
+      apps,
+      web3,
+      videos,
+      communities,
+      exchanges,
+      stackings,
       youtubeVideos: youtubeVideos.filter(
         (v) => v.snippet.title !== "Deleted video"
       ),

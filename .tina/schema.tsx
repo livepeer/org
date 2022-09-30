@@ -24,6 +24,199 @@ export default defineSchema({
       ],
     },
     {
+      name: "apps",
+      label: "Apps",
+      path: "content/apps",
+      format: "json",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "string",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+        {
+          name: "twitter",
+          label: "Twitter",
+          type: "string",
+        },
+        {
+          name: "discord",
+          label: "Discord",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "videos",
+      label: "Videos",
+      path: "content/videos",
+      format: "json",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "string",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "web3",
+      label: "Web3",
+      path: "content/web3",
+      format: "json",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "string",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "staking",
+      label: "Staking",
+      path: "content/staking",
+      format: "json",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "string",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+        {
+          name: "twitter",
+          label: "Twitter",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "exchange",
+      label: "Exchange",
+      path: "content/exchange",
+      format: "json",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "string",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+        {
+          name: "twitter",
+          label: "Twitter",
+          type: "string",
+        },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "comunity",
+      label: "Community",
+      path: "content/community",
+      format: "json",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "string",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+      ],
+    },
+    {
       label: "Pages",
       name: "pages",
       path: "content/pages",
