@@ -197,7 +197,7 @@ export default defineSchema({
         {
           name: "image",
           label: "Image",
-          type: "string",
+          type: "image",
         },
         {
           name: "title",
@@ -260,6 +260,10 @@ const apiURL =
 
 export const tinaConfig = defineConfig({
   apiURL,
+  mediaStore: async () => {
+    const pack = await import("next-tinacms-cloudinary");
+    return pack.TinaCloudCloudinaryMediaStore;
+  },
   formifyCallback: ({ formConfig, createForm, skip }) => {
     if (formConfig.id === "getPagesDocument") {
       const onSubmit = (values, form, callback) => {
