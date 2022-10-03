@@ -27,7 +27,7 @@ export default defineSchema({
       name: "apps",
       label: "Apps",
       path: "content/apps",
-      format: "json",
+      format: "md",
       fields: [
         {
           name: "image",
@@ -63,9 +63,9 @@ export default defineSchema({
     },
     {
       name: "videos",
-      label: "Videos",
+      label: "Video Tools",
       path: "content/videos",
-      format: "json",
+      format: "md",
       fields: [
         {
           name: "image",
@@ -93,7 +93,7 @@ export default defineSchema({
       name: "web3",
       label: "Web3",
       path: "content/web3",
-      format: "json",
+      format: "md",
       fields: [
         {
           name: "image",
@@ -119,9 +119,9 @@ export default defineSchema({
     },
     {
       name: "staking",
-      label: "Staking",
+      label: "Staking Platform",
       path: "content/staking",
-      format: "json",
+      format: "md",
       fields: [
         {
           name: "image",
@@ -154,7 +154,7 @@ export default defineSchema({
       name: "exchange",
       label: "Exchange",
       path: "content/exchange",
-      format: "json",
+      format: "md",
       fields: [
         {
           name: "image",
@@ -192,7 +192,7 @@ export default defineSchema({
       name: "comunity",
       label: "Community",
       path: "content/community",
-      format: "json",
+      format: "md",
       fields: [
         {
           name: "image",

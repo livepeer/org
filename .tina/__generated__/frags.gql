@@ -3,6 +3,53 @@ fragment PostsParts on Posts {
   body
 }
 
+fragment AppsParts on Apps {
+  image
+  title
+  richtext
+  website
+  twitter
+  discord
+}
+
+fragment VideosParts on Videos {
+  image
+  title
+  richtext
+  website
+}
+
+fragment Web3Parts on Web3 {
+  image
+  title
+  richtext
+  website
+}
+
+fragment StakingParts on Staking {
+  image
+  title
+  richtext
+  website
+  twitter
+}
+
+fragment ExchangeParts on Exchange {
+  image
+  title
+  richtext
+  website
+  twitter
+  telegram
+}
+
+fragment ComunityParts on Comunity {
+  image
+  title
+  richtext
+  website
+}
+
 fragment PagesParts on Pages {
   title
   updatedAt
