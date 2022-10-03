@@ -12,18 +12,23 @@ import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import { Box, Heading } from "theme-ui";
 
 function AppSection({ apps }) {
   return (
-    <div>
-      hello
-      {apps.map((app) => (
-        <div key={app.node.data.title}>
-          <div>{app.node.data.title}</div>
-          <img src={app.node.data.image} alt={app.node.data.title} />
-        </div>
-      ))}
-    </div>
+    <Box sx={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+      {apps.map((app) => {
+        const { title, image } = app.node.data || {};
+        return (
+          <Box key={title} sx={{ padding: "40px" }}>
+            <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
+              {title}
+            </Heading>
+            <img src={image} alt={title} />
+          </Box>
+        );
+      })}
+    </Box>
   );
 }
 
