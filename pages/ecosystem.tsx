@@ -4,110 +4,156 @@ import { staticRequest, gql } from "tinacms";
 import { HeadProps } from "components/primitives/head";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { Box, Heading } from "theme-ui";
+import { Box, Heading, Text } from "theme-ui";
+import { DefaultCard } from "components/sections/ecosystem/default-card";
 
 function AppSection({ apps }) {
   return (
-    <Box sx={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
-      {apps.map((app) => {
-        const { title, image } = app.node.data || {};
-        return (
-          <Box key={title} sx={{ padding: "40px" }}>
-            <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-              {title}
-            </Heading>
-            <img src={image} alt={title} />
-          </Box>
-        );
-      })}
+    <Box>
+      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
+        Apps
+      </Heading>
+      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
+        Applications built using Livepeer video infrastructure.
+      </Heading>
+      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+        {apps.map((app, i) => {
+          const { title, image, richtext } = app.node.data || {};
+          return (
+            <DefaultCard key={title + i} title={title} richtext={richtext} />
+          );
+        })}
+      </Box>
     </Box>
   );
 }
 
 function VideoToolSection({ videos }) {
   return (
-    <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-      {videos.map((video) => {
-        const { title, image } = video.node.data || {};
-        return (
-          <Box key={title} sx={{ padding: "40px" }}>
-            <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-              {title}
-            </Heading>
-            <img src={image} alt={title} />
-          </Box>
-        );
-      })}
+    <Box>
+      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
+        Video Tools
+      </Heading>
+      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
+        Tools to integrate with the Livepeer network. Hosted Gateway for the
+        most seamless integration, or Self-Hosted for total customization.
+      </Heading>
+      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
+        {videos.map((video) => {
+          const { title, image } = video.node.data || {};
+          return (
+            <Box key={title} sx={{ padding: "40px" }}>
+              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
+                {title}
+              </Heading>
+              <img src={image} alt={title} />
+            </Box>
+          );
+        })}
+      </Box>
     </Box>
   );
 }
 
 function Web3Section({ web3 }) {
   return (
-    <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-      {web3.map((web) => {
-        const { title, image } = web.node.data || {};
-        return (
-          <Box key={title} sx={{ padding: "40px" }}>
-            <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-              {title}
-            </Heading>
-            <img src={image} alt={title} />
-          </Box>
-        );
-      })}
+    <Box>
+      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
+        Web3 Tech Stack
+      </Heading>
+      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
+        Livepeer partners and key protocols in the emerging web3 tech stack.
+      </Heading>
+      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
+        {web3.map((web) => {
+          const { title, image } = web.node.data || {};
+          return (
+            <Box key={title} sx={{ padding: "40px" }}>
+              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
+                {title}
+              </Heading>
+              <img src={image} alt={title} />
+            </Box>
+          );
+        })}
+      </Box>
     </Box>
   );
 }
 function StackingPlatformSection({ stackings }) {
   return (
-    <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-      {stackings.map((stacking) => {
-        const { title, image } = stacking.node.data || {};
-        return (
-          <Box key={title} sx={{ padding: "40px" }}>
-            <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-              {title}
-            </Heading>
-            <img src={image} alt={title} />
-          </Box>
-        );
-      })}
+    <Box>
+      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
+        Staking Partners
+      </Heading>
+      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
+        Specialized staking services for Livepeer delegators.
+      </Heading>
+      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
+        {stackings.map((stacking) => {
+          const { title, image } = stacking.node.data || {};
+          return (
+            <Box key={title} sx={{ padding: "40px" }}>
+              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
+                {title}
+              </Heading>
+              <img src={image} alt={title} />
+            </Box>
+          );
+        })}
+      </Box>
     </Box>
   );
 }
 function ExchangeSection({ exchanges }) {
   return (
-    <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-      {exchanges.map((exchange) => {
-        const { title, image } = exchange.node.data || {};
-        return (
-          <Box key={title} sx={{ padding: "40px" }}>
-            <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-              {title}
-            </Heading>
-            <img src={image} alt={title} />
-          </Box>
-        );
-      })}
+    <Box>
+      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
+        Exchanges
+      </Heading>
+      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
+        Platforms listing Livepeer Token (LPT).
+      </Heading>
+      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
+        {exchanges.map((exchange) => {
+          const { title, image } = exchange.node.data || {};
+          return (
+            <Box key={title} sx={{ padding: "40px" }}>
+              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
+                {title}
+              </Heading>
+              <img src={image} alt={title} />
+            </Box>
+          );
+        })}
+      </Box>
     </Box>
   );
 }
 
 function CommunitySection({ communities }) {
   return (
-    <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-      {communities.map((communitie) => {
-        const { title, image } = communitie.node.data || {};
-        return (
-          <Box key={title} sx={{ padding: "40px" }}>
-            <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-              {title}
-            </Heading>
-            <img src={image} alt={title} />
-          </Box>
-        );
-      })}
+    <Box>
+      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
+        Community Tools
+      </Heading>
+      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
+        blandit tellus luctus amet felis sit ullamcorper.
+      </Heading>
+      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
+        {communities.map((communitie) => {
+          const { title, image } = communitie.node.data || {};
+          return (
+            <Box key={title} sx={{ padding: "40px" }}>
+              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
+                {title}
+              </Heading>
+              <img src={image} alt={title} />
+            </Box>
+          );
+        })}
+      </Box>
     </Box>
   );
 }
@@ -145,7 +191,7 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, stackings }) {
     <PageLayout
       headProps={headProps}
       navProps={{ isInmersive: true }}
-      pushContentSx={{ marginTop: "-72px" }}>
+      pushContentSx={{ marginTop: "32px" }}>
       {apps && <AppSection apps={apps} />}
       {videos && <VideoToolSection videos={videos} />}
       {web3 && <Web3Section web3={web3} />}
