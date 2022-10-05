@@ -6,6 +6,8 @@ import { useTranslation } from "next-i18next";
 import { Box } from "theme-ui";
 import { DefaultList } from "components/sections/ecosystem/default-list";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Header } from "components/sections/ecosystem/header";
+import { Subnav } from "components/sections/ecosystem/subnav";
 
 function AppSection({ apps }) {
   return (
@@ -101,14 +103,6 @@ function CommunitySection({ communities }) {
 
 function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
   const { t } = useTranslation(["home"]);
-  console.log(
-    "props tina data: ",
-    web3,
-    { videos },
-    communities,
-    exchanges,
-    staking
-  );
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
@@ -129,6 +123,15 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
 
   return (
     <PageLayout headProps={headProps} navProps={{ isInmersive: true }}>
+      <Header />
+      <Subnav />
+      <Box
+        sx={{
+          background: "linear-gradient(#FFFFFF, #FAFAFA)",
+          width: "100%",
+          height: "80px",
+        }}
+      />
       {apps && <AppSection apps={apps} />}
       {videos && <VideoToolSection videos={videos} />}
       {web3 && <Web3Section web3={web3} />}
@@ -278,9 +281,6 @@ export async function getStaticProps({ locale }) {
   const staking = stakingData?.getStakingList?.edges;
   const web3 = web3Data?.getWeb3List?.edges;
   const apps = appsData?.getAppsList?.edges;
-
-  console.log("postListData", appsData);
-  console.log({ apps });
 
   return {
     props: {
