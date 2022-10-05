@@ -292,6 +292,7 @@ export type Apps = {
   website?: Maybe<Scalars["String"]>;
   twitter?: Maybe<Scalars["String"]>;
   discord?: Maybe<Scalars["String"]>;
+  linkedin?: Maybe<Scalars["String"]>;
 };
 
 export type AppsDocument = Node &
@@ -656,6 +657,7 @@ export type AppsMutation = {
   website?: InputMaybe<Scalars["String"]>;
   twitter?: InputMaybe<Scalars["String"]>;
   discord?: InputMaybe<Scalars["String"]>;
+  linkedin?: InputMaybe<Scalars["String"]>;
 };
 
 export type VideosMutation = {
@@ -716,6 +718,7 @@ export type AppsPartsFragment = {
   website?: string | null;
   twitter?: string | null;
   discord?: string | null;
+  linkedin?: string | null;
 };
 
 export type VideosPartsFragment = {
@@ -847,6 +850,7 @@ export type GetAppsDocumentQuery = {
       website?: string | null;
       twitter?: string | null;
       discord?: string | null;
+      linkedin?: string | null;
     };
   };
 };
@@ -880,6 +884,7 @@ export type GetAppsListQuery = {
           website?: string | null;
           twitter?: string | null;
           discord?: string | null;
+          linkedin?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1270,6 +1275,7 @@ export const AppsPartsFragmentDoc = gql`
     website
     twitter
     discord
+    linkedin
   }
 `;
 export const VideosPartsFragmentDoc = gql`

@@ -1,7 +1,7 @@
 import { FaGlobe, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
 import { Card, Grid, Heading, Image } from "theme-ui";
 
-export const ExchangeCard = ({ title, richtext }) => {
+export const ExchangeCard = ({ title, richtext, linkedin }) => {
   return (
     <Card
       sx={{

@@ -59,6 +59,11 @@ export default defineSchema({
           label: "Discord",
           type: "string",
         },
+        {
+          name: "linkedin",
+          label: "LinkedIn",
+          type: "string",
+        },
       ],
     },
     {

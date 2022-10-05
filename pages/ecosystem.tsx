@@ -149,6 +149,7 @@ export async function getStaticProps({ locale }) {
                 website
                 twitter
                 discord
+                linkedin
               }
             }
           }

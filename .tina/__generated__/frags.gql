@@ -10,6 +10,7 @@ fragment AppsParts on Apps {
   website
   twitter
   discord
+  linkedin
 }
 
 fragment VideosParts on Videos {

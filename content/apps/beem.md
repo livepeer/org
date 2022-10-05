@@ -2,7 +2,8 @@
 title: Beem
 richtext: |
   REPLACE WITH COPY
-website: "https://example.org"
-twitter: "https://example.org"
-discord: "https://discord.com/invite/EYqfS32jYc"
+website: "https://www.beem.xyz"
+twitter: "https://twitter.com/beemxyz"
+discord: "https://discord.com/invite/UxBzveVKhq"
+linkedin: "https://www.linkedin.com/company/beemxyz/"
 ---

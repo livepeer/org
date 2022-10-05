@@ -45,11 +45,20 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
           paddingY: 4,
         }}>
         {apps.map((app, i) => {
-          const { title, richtext } = app.node.data || {};
+          const { title, richtext, website, twitter, discord, linkedin } =
+            app.node.data || {};
           switch (cardType) {
             case "app":
               return (
-                <AppCard key={title + i} title={title} richtext={richtext} />
+                <AppCard
+                  key={title + i}
+                  title={title}
+                  richtext={richtext}
+                  website={website}
+                  twitter={twitter}
+                  discord={discord}
+                  linkedin={linkedin}
+                />
               );
             case "video":
               return (
@@ -73,6 +82,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   key={title + i}
                   title={title}
                   richtext={richtext}
+                  linkedin={linkedin}
                 />
               );
             case "community":

@@ -72,6 +72,12 @@
           "label": "Discord",
           "type": "string",
           "namespace": ["apps", "discord"]
+        },
+        {
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "string",
+          "namespace": ["apps", "linkedin"]
         }
       ],
       "namespace": ["apps"]

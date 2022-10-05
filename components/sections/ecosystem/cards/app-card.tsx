@@ -1,8 +1,15 @@
-import { FaGlobe, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
+import { FaDiscord, FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Box, Card, Grid, Heading, Image } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export const AppCard = ({ title, richtext }) => {
+export const AppCard = ({
+  title,
+  richtext,
+  website,
+  twitter,
+  discord,
+  linkedin,
+}) => {
   return (
     <Card
       backgroundColor="transparent"
@@ -38,10 +45,26 @@ export const AppCard = ({ title, richtext }) => {
           gap: "1rem",
           gridAutoFlow: "column",
         }}>
-        <FaGlobe />
-        <FaTwitter />
-        <FaTelegram />
-        <FaLinkedin />
+        {website && (
+          <a href={website}>
+            <FaGlobe />
+          </a>
+        )}
+        {twitter && (
+          <a href={twitter}>
+            <FaTwitter />
+          </a>
+        )}
+        {discord && (
+          <a href={discord}>
+            <FaDiscord />
+          </a>
+        )}
+        {linkedin && (
+          <a href={linkedin}>
+            <FaLinkedin />
+          </a>
+        )}
       </Grid>
     </Card>
   );
