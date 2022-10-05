@@ -183,6 +183,18 @@
           "label": "Twitter",
           "type": "string",
           "namespace": ["staking", "twitter"]
+        },
+        {
+          "name": "discord",
+          "label": "Discord",
+          "type": "string",
+          "namespace": ["staking", "discord"]
+        },
+        {
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "string",
+          "namespace": ["staking", "linkedin"]
         }
       ],
       "namespace": ["staking"]
@@ -224,10 +236,16 @@
           "namespace": ["exchange", "twitter"]
         },
         {
-          "name": "telegram",
-          "label": "Telegram",
+          "name": "discord",
+          "label": "Discord",
           "type": "string",
-          "namespace": ["exchange", "telegram"]
+          "namespace": ["exchange", "discord"]
+        },
+        {
+          "name": "linkedin",
+          "label": "LinkedIn",
+          "type": "string",
+          "namespace": ["exchange", "linkedin"]
         }
       ],
       "namespace": ["exchange"]

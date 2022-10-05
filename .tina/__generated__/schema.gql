@@ -285,6 +285,8 @@ type Staking {
   richtext: JSON
   website: String
   twitter: String
+  discord: String
+  linkedin: String
 }
 
 type StakingDocument implements Node & Document {
@@ -313,7 +315,8 @@ type Exchange {
   richtext: JSON
   website: String
   twitter: String
-  telegram: String
+  discord: String
+  linkedin: String
 }
 
 type ExchangeDocument implements Node & Document {
@@ -517,6 +520,8 @@ input StakingMutation {
   richtext: JSON
   website: String
   twitter: String
+  discord: String
+  linkedin: String
 }
 
 input ExchangeMutation {
@@ -525,7 +530,8 @@ input ExchangeMutation {
   richtext: JSON
   website: String
   twitter: String
-  telegram: String
+  discord: String
+  linkedin: String
 }
 
 input ComunityMutation {

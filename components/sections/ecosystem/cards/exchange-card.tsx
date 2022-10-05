@@ -1,7 +1,13 @@
-import { FaGlobe, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
+import { FaGlobe, FaLinkedin, FaTwitter, FaDiscord } from "react-icons/fa";
 import { Card, Grid, Heading, Image } from "theme-ui";
 
-export const ExchangeCard = ({ title, richtext, linkedin }) => {
+export const ExchangeCard = ({
+  title,
+  website,
+  twitter,
+  discord,
+  linkedin,
+}) => {
   return (
     <Card
       sx={{
@@ -30,16 +36,37 @@ export const ExchangeCard = ({ title, richtext, linkedin }) => {
       </Heading>
 
       <Grid
-        color="#D2D2D2"
         sx={{
           marginTop: "auto",
           gap: "1rem",
           gridAutoFlow: "column",
+          svg: {
+            color: "#D2D2D2",
+            ":hover": {
+              color: "#999",
+            },
+          },
         }}>
-        <FaGlobe />
-        <FaTwitter />
-        <FaTelegram />
-        <FaLinkedin />
+        {website && (
+          <a href={website}>
+            <FaGlobe />
+          </a>
+        )}
+        {twitter && (
+          <a href={twitter}>
+            <FaTwitter />
+          </a>
+        )}
+        {discord && (
+          <a href={discord}>
+            <FaDiscord />
+          </a>
+        )}
+        {linkedin && (
+          <a href={linkedin}>
+            <FaLinkedin />
+          </a>
+        )}
       </Grid>
     </Card>
   );

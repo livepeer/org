@@ -1,7 +1,7 @@
-import { Box, Button, Card, Heading, Image } from "theme-ui";
+import { Box, Button, Card, Heading, Image, Link } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-export const VideoCard = ({ title, richtext }) => {
+export const VideoCard = ({ title, richtext, website }) => {
   return (
     <Card
       backgroundColor="transparent"
@@ -32,7 +32,11 @@ export const VideoCard = ({ title, richtext }) => {
       <Box sx={{ textAlign: "center", marginBottom: "32px" }}>
         <TinaMarkdown content={richtext} />
       </Box>
-      <Button sx={{ marginTop: "auto" }}>Visit Website</Button>
+      {website && (
+        <Link sx={{ marginTop: "auto" }} href={website}>
+          <Button sx={{ marginTop: "auto" }}>Visit Website</Button>
+        </Link>
+      )}
     </Card>
   );
 };

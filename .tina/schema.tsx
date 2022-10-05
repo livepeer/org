@@ -153,6 +153,16 @@ export default defineSchema({
           label: "Twitter",
           type: "string",
         },
+        {
+          name: "discord",
+          label: "Discord",
+          type: "string",
+        },
+        {
+          name: "linkedin",
+          label: "LinkedIn",
+          type: "string",
+        },
       ],
     },
     {
@@ -187,8 +197,13 @@ export default defineSchema({
           type: "string",
         },
         {
-          name: "telegram",
-          label: "Telegram",
+          name: "discord",
+          label: "Discord",
+          type: "string",
+        },
+        {
+          name: "linkedin",
+          label: "LinkedIn",
           type: "string",
         },
       ],

@@ -390,6 +390,8 @@ export type Staking = {
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
   twitter?: Maybe<Scalars["String"]>;
+  discord?: Maybe<Scalars["String"]>;
+  linkedin?: Maybe<Scalars["String"]>;
 };
 
 export type StakingDocument = Node &
@@ -423,7 +425,8 @@ export type Exchange = {
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
   twitter?: Maybe<Scalars["String"]>;
-  telegram?: Maybe<Scalars["String"]>;
+  discord?: Maybe<Scalars["String"]>;
+  linkedin?: Maybe<Scalars["String"]>;
 };
 
 export type ExchangeDocument = Node &
@@ -680,6 +683,8 @@ export type StakingMutation = {
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
   twitter?: InputMaybe<Scalars["String"]>;
+  discord?: InputMaybe<Scalars["String"]>;
+  linkedin?: InputMaybe<Scalars["String"]>;
 };
 
 export type ExchangeMutation = {
@@ -688,7 +693,8 @@ export type ExchangeMutation = {
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
   twitter?: InputMaybe<Scalars["String"]>;
-  telegram?: InputMaybe<Scalars["String"]>;
+  discord?: InputMaybe<Scalars["String"]>;
+  linkedin?: InputMaybe<Scalars["String"]>;
 };
 
 export type ComunityMutation = {
@@ -744,6 +750,8 @@ export type StakingPartsFragment = {
   richtext?: any | null;
   website?: string | null;
   twitter?: string | null;
+  discord?: string | null;
+  linkedin?: string | null;
 };
 
 export type ExchangePartsFragment = {
@@ -753,7 +761,8 @@ export type ExchangePartsFragment = {
   richtext?: any | null;
   website?: string | null;
   twitter?: string | null;
-  telegram?: string | null;
+  discord?: string | null;
+  linkedin?: string | null;
 };
 
 export type ComunityPartsFragment = {
@@ -1038,6 +1047,8 @@ export type GetStakingDocumentQuery = {
       richtext?: any | null;
       website?: string | null;
       twitter?: string | null;
+      discord?: string | null;
+      linkedin?: string | null;
     };
   };
 };
@@ -1070,6 +1081,8 @@ export type GetStakingListQuery = {
           richtext?: any | null;
           website?: string | null;
           twitter?: string | null;
+          discord?: string | null;
+          linkedin?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1101,7 +1114,8 @@ export type GetExchangeDocumentQuery = {
       richtext?: any | null;
       website?: string | null;
       twitter?: string | null;
-      telegram?: string | null;
+      discord?: string | null;
+      linkedin?: string | null;
     };
   };
 };
@@ -1134,7 +1148,8 @@ export type GetExchangeListQuery = {
           richtext?: any | null;
           website?: string | null;
           twitter?: string | null;
-          telegram?: string | null;
+          discord?: string | null;
+          linkedin?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1301,6 +1316,8 @@ export const StakingPartsFragmentDoc = gql`
     richtext
     website
     twitter
+    discord
+    linkedin
   }
 `;
 export const ExchangePartsFragmentDoc = gql`
@@ -1310,7 +1327,8 @@ export const ExchangePartsFragmentDoc = gql`
     richtext
     website
     twitter
-    telegram
+    discord
+    linkedin
   }
 `;
 export const ComunityPartsFragmentDoc = gql`

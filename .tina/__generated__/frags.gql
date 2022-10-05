@@ -33,6 +33,8 @@ fragment StakingParts on Staking {
   richtext
   website
   twitter
+  discord
+  linkedin
 }
 
 fragment ExchangeParts on Exchange {
@@ -41,7 +43,8 @@ fragment ExchangeParts on Exchange {
   richtext
   website
   twitter
-  telegram
+  discord
+  linkedin
 }
 
 fragment ComunityParts on Comunity {

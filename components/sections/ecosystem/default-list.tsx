@@ -62,11 +62,21 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
               );
             case "video":
               return (
-                <VideoCard key={title + i} title={title} richtext={richtext} />
+                <VideoCard
+                  key={title + i}
+                  title={title}
+                  richtext={richtext}
+                  website={website}
+                />
               );
             case "web3":
               return (
-                <Web3Card key={title + i} title={title} richtext={richtext} />
+                <Web3Card
+                  key={title + i}
+                  title={title}
+                  richtext={richtext}
+                  website={website}
+                />
               );
             case "staking":
               return (
@@ -74,6 +84,10 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   key={title + i}
                   title={title}
                   richtext={richtext}
+                  website={website}
+                  twitter={twitter}
+                  discord={discord}
+                  linkedin={linkedin}
                 />
               );
             case "exchange":
@@ -81,7 +95,9 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                 <ExchangeCard
                   key={title + i}
                   title={title}
-                  richtext={richtext}
+                  website={website}
+                  twitter={twitter}
+                  discord={discord}
                   linkedin={linkedin}
                 />
               );

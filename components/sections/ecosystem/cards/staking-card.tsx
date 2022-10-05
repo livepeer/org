@@ -1,8 +1,21 @@
 import { Card, Heading, Image, Box, Grid } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { FaGlobe, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaGlobe,
+  FaLinkedin,
+  FaTelegram,
+  FaTwitter,
+} from "react-icons/fa";
 
-export const StakingCard = ({ title, richtext }) => {
+export const StakingCard = ({
+  title,
+  richtext,
+  website,
+  twitter,
+  discord,
+  linkedin,
+}) => {
   return (
     <Card
       backgroundColor="transparent"
@@ -28,18 +41,41 @@ export const StakingCard = ({ title, richtext }) => {
           <Box sx={{ marginBottom: "8px" }}>
             <TinaMarkdown content={richtext} />
           </Box>
-          <Grid
-            color="#D2D2D2"
-            sx={{
-              gap: "1rem",
-              marginRight: "auto",
-              gridAutoFlow: "column",
-            }}>
-            <FaGlobe />
-            <FaTwitter />
-            <FaTelegram />
-            <FaLinkedin />
-          </Grid>
+          <Box>
+            <Grid
+              sx={{
+                gap: "1rem",
+                gridAutoFlow: "column",
+                gridAutoColumns: "16px",
+                svg: {
+                  color: "#D2D2D2",
+                  ":hover": {
+                    color: "#999",
+                  },
+                },
+              }}>
+              {website && (
+                <a href={website}>
+                  <FaGlobe />
+                </a>
+              )}
+              {twitter && (
+                <a href={twitter}>
+                  <FaTwitter />
+                </a>
+              )}
+              {discord && (
+                <a href={discord}>
+                  <FaDiscord />
+                </a>
+              )}
+              {linkedin && (
+                <a href={linkedin}>
+                  <FaLinkedin />
+                </a>
+              )}
+            </Grid>
+          </Box>
         </Box>
       </Grid>
     </Card>

@@ -5,5 +5,5 @@ title: MistServer
 richtext: >
   Full-featured, next-generation streaming media toolkit. Self-hosted solution
   designed for developers and system integrators.
-website: "https://website.is1"
+website: "https://example.org"
 ---

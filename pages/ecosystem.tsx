@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { staticRequest, gql } from "tinacms";
 import { HeadProps } from "components/primitives/head";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import { Box, Heading } from "theme-ui";
+import { Box } from "theme-ui";
 import { DefaultList } from "components/sections/ecosystem/default-list";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -52,20 +51,29 @@ function Web3Section({ web3 }) {
 }
 function StakingPlatformSection({ staking }) {
   return (
-    <Box sx={{ px: 3, py: "80px" }}>
-      <DefaultList
-        inverted={false}
-        apps={staking}
-        title="Staking Partners"
-        subtitle="Specialized staking services for Livepeer delegators."
-        cardType="staking"
+    <>
+      <Box
+        sx={{
+          background: "linear-gradient(#FAFAFA, #FFFFFF)",
+          width: "100%",
+          height: "80px",
+        }}
       />
-    </Box>
+      <Box sx={{ px: 3, py: "80px" }}>
+        <DefaultList
+          inverted={false}
+          apps={staking}
+          title="Staking Partners"
+          subtitle="Specialized staking services for Livepeer delegators."
+          cardType="staking"
+        />
+      </Box>
+    </>
   );
 }
 function ExchangeSection({ exchanges }) {
   return (
-    <Box sx={{ bg: "muted", px: 3, py: "80px" }}>
+    <Box sx={{ bg: "#FAFAFA", px: 3, py: "80px" }}>
       <DefaultList
         inverted={false}
         apps={exchanges}
@@ -92,7 +100,6 @@ function CommunitySection({ communities }) {
 }
 
 function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
-  const router = useRouter();
   const { t } = useTranslation(["home"]);
   console.log(
     "props tina data: ",
@@ -236,7 +243,6 @@ export async function getStaticProps({ locale }) {
                 richtext
                 website
                 twitter
-                telegram
               }
             }
           }

@@ -39,11 +39,16 @@ export const AppCard = ({
         <TinaMarkdown content={richtext} />
       </Box>
       <Grid
-        color="#D2D2D2"
         sx={{
           marginTop: "auto",
           gap: "1rem",
           gridAutoFlow: "column",
+          svg: {
+            color: "#D2D2D2",
+            ":hover": {
+              color: "#999",
+            },
+          },
         }}>
         {website && (
           <a href={website}>
