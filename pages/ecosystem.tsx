@@ -4,161 +4,94 @@ import { staticRequest, gql } from "tinacms";
 import { HeadProps } from "components/primitives/head";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { Box, Heading, Text } from "theme-ui";
-import { DefaultCard } from "components/sections/ecosystem/default-card";
+import { Box, Heading } from "theme-ui";
+import { DefaultList } from "components/sections/ecosystem/default-list";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function AppSection({ apps }) {
   return (
-    <Box>
-      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
-        Apps
-      </Heading>
-      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
-        Applications built using Livepeer video infrastructure.
-      </Heading>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
-        {apps.map((app, i) => {
-          const { title, image, richtext } = app.node.data || {};
-          return (
-            <DefaultCard key={title + i} title={title} richtext={richtext} />
-          );
-        })}
-      </Box>
+    <Box sx={{ bg: "muted", px: 3, py: "80px" }}>
+      <DefaultList
+        inverted={false}
+        apps={apps}
+        title="Apps"
+        subtitle="Applications built using Livepeer video infrastructure."
+        cardType="app"
+      />
     </Box>
   );
 }
 
 function VideoToolSection({ videos }) {
   return (
-    <Box>
-      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
-        Video Tools
-      </Heading>
-      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
-        Tools to integrate with the Livepeer network. Hosted Gateway for the
-        most seamless integration, or Self-Hosted for total customization.
-      </Heading>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-        {videos.map((video) => {
-          const { title, image } = video.node.data || {};
-          return (
-            <Box key={title} sx={{ padding: "40px" }}>
-              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-                {title}
-              </Heading>
-              <img src={image} alt={title} />
-            </Box>
-          );
-        })}
-      </Box>
+    <Box sx={{ bg: "text", px: 3, py: "80px" }}>
+      <DefaultList
+        inverted={true}
+        apps={videos}
+        title="Video Tools"
+        subtitle="Tools to integrate with the Livepeer network. Hosted Gateway for the
+    most seamless integration, or Self-Hosted for total customization."
+        cardType="video"
+      />
     </Box>
   );
 }
 
 function Web3Section({ web3 }) {
   return (
-    <Box>
-      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
-        Web3 Tech Stack
-      </Heading>
-      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
-        Livepeer partners and key protocols in the emerging web3 tech stack.
-      </Heading>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-        {web3.map((web) => {
-          const { title, image } = web.node.data || {};
-          return (
-            <Box key={title} sx={{ padding: "40px" }}>
-              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-                {title}
-              </Heading>
-              <img src={image} alt={title} />
-            </Box>
-          );
-        })}
-      </Box>
+    <Box sx={{ px: 3, py: "80px" }}>
+      <DefaultList
+        inverted={false}
+        apps={web3}
+        title="Web3 Tech Stack"
+        subtitle="Livepeer partners and key protocols in the emerging web3 tech stack."
+        cardType="web3"
+      />
     </Box>
   );
 }
-function StackingPlatformSection({ stackings }) {
+function StakingPlatformSection({ staking }) {
   return (
-    <Box>
-      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
-        Staking Partners
-      </Heading>
-      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
-        Specialized staking services for Livepeer delegators.
-      </Heading>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-        {stackings.map((stacking) => {
-          const { title, image } = stacking.node.data || {};
-          return (
-            <Box key={title} sx={{ padding: "40px" }}>
-              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-                {title}
-              </Heading>
-              <img src={image} alt={title} />
-            </Box>
-          );
-        })}
-      </Box>
+    <Box sx={{ px: 3, py: "80px" }}>
+      <DefaultList
+        inverted={false}
+        apps={staking}
+        title="Staking Partners"
+        subtitle="Specialized staking services for Livepeer delegators."
+        cardType="staking"
+      />
     </Box>
   );
 }
 function ExchangeSection({ exchanges }) {
   return (
-    <Box>
-      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
-        Exchanges
-      </Heading>
-      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
-        Platforms listing Livepeer Token (LPT).
-      </Heading>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-        {exchanges.map((exchange) => {
-          const { title, image } = exchange.node.data || {};
-          return (
-            <Box key={title} sx={{ padding: "40px" }}>
-              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-                {title}
-              </Heading>
-              <img src={image} alt={title} />
-            </Box>
-          );
-        })}
-      </Box>
+    <Box sx={{ bg: "muted", px: 3, py: "80px" }}>
+      <DefaultList
+        inverted={false}
+        apps={exchanges}
+        title="Exchanges"
+        subtitle="Platforms listing Livepeer Token (LPT)."
+        cardType="exchange"
+      />
     </Box>
   );
 }
 
 function CommunitySection({ communities }) {
   return (
-    <Box>
-      <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
-        Community Tools
-      </Heading>
-      <Heading variant="section.subtitle" sx={{ maxWidth: 700 }} mt={3}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-        blandit tellus luctus amet felis sit ullamcorper.
-      </Heading>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
-        {communities.map((communitie) => {
-          const { title, image } = communitie.node.data || {};
-          return (
-            <Box key={title} sx={{ padding: "40px" }}>
-              <Heading sx={{ variant: ["text.heading.4", "text.heading.4"] }}>
-                {title}
-              </Heading>
-              <img src={image} alt={title} />
-            </Box>
-          );
-        })}
-      </Box>
+    <Box sx={{ px: 3, py: "80px" }}>
+      <DefaultList
+        inverted={false}
+        apps={communities}
+        title="Community Tools"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat blandit tellus luctus amet felis sit ullamcorper."
+        cardType="community"
+      />
     </Box>
   );
 }
 
-function Ecosystem({ apps, web3, videos, communities, exchanges, stackings }) {
+function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
   const router = useRouter();
   const { t } = useTranslation(["home"]);
   console.log(
@@ -167,7 +100,7 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, stackings }) {
     { videos },
     communities,
     exchanges,
-    stackings
+    staking
   );
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
@@ -188,14 +121,11 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, stackings }) {
   };
 
   return (
-    <PageLayout
-      headProps={headProps}
-      navProps={{ isInmersive: true }}
-      pushContentSx={{ marginTop: "32px" }}>
+    <PageLayout headProps={headProps} navProps={{ isInmersive: true }}>
       {apps && <AppSection apps={apps} />}
       {videos && <VideoToolSection videos={videos} />}
       {web3 && <Web3Section web3={web3} />}
-      {stackings && <StackingPlatformSection stackings={stackings} />}
+      {staking && <StakingPlatformSection staking={staking} />}
       {exchanges && <ExchangeSection exchanges={exchanges} />}
       {communities && <CommunitySection communities={communities} />}
     </PageLayout>
@@ -268,7 +198,7 @@ export async function getStaticProps({ locale }) {
       }
     `,
   });
-  const stackingsData: any = await staticRequest({
+  const stakingData: any = await staticRequest({
     query: gql`
       query GetStakingList {
         getStakingList {
@@ -338,7 +268,7 @@ export async function getStaticProps({ locale }) {
   const communities = communityRes?.getComunityList?.edges;
   const videos = videosData?.getVideosList?.edges;
   const exchanges = exchangeData?.getExchangeList?.edges;
-  const stackings = stackingsData?.getStakingList?.edges;
+  const staking = stakingData?.getStakingList?.edges;
   const web3 = web3Data?.getWeb3List?.edges;
   const apps = appsData?.getAppsList?.edges;
 
@@ -352,7 +282,8 @@ export async function getStaticProps({ locale }) {
       videos,
       communities,
       exchanges,
-      stackings,
+      staking,
+      ...(await serverSideTranslations(locale, ["common", "home"])),
     },
     revalidate: 1,
   };
