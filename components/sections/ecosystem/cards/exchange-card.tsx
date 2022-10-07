@@ -11,6 +11,7 @@ export const ExchangeCard = ({
   return (
     <Card
       sx={{
+        maxWidth: "unset",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

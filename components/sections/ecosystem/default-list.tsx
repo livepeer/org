@@ -12,9 +12,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
     <Container
       variant="section"
       sx={{
-        pt: [4, 5],
-        px: [4, null, null, "96px"],
-        pb: [7, null, null, 5],
+        py: 0,
         position: "relative",
         overflow: "hidden",
       }}>
@@ -39,11 +37,18 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
       </Heading>
       <Box
         sx={{
+          width: "100%",
           display: "grid",
-          gridTemplateColumns: ["1fr", "repeat(3,1fr)"],
+          gridTemplateColumns: [
+            "1fr",
+            "repeat(2,1fr)",
+            "repeat(2,1fr)",
+            "repeat(3,1fr)",
+          ],
           gap: 4,
           paddingY: 4,
         }}>
+        {/* eslint-disable-next-line array-callback-return */}
         {apps.map((app, i) => {
           const { title, richtext, website, twitter, discord, linkedin } =
             app.node.data || {};

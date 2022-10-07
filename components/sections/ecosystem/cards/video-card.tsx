@@ -7,6 +7,7 @@ export const VideoCard = ({ title, richtext, website }) => {
       backgroundColor="transparent"
       color="white"
       sx={{
+        maxWidth: "unset",
         borderColor: "#373737",
         display: "flex",
         flexDirection: "column",

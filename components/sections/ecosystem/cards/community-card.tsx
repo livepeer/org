@@ -6,6 +6,7 @@ export const CommunityCard = ({ title, richtext }) => {
     <Card
       backgroundColor="transparent"
       sx={{
+        maxWidth: "unset",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

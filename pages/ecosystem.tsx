@@ -11,7 +11,7 @@ import { Subnav } from "components/sections/ecosystem/subnav";
 
 function AppSection({ apps }) {
   return (
-    <Box sx={{ bg: "muted", px: 3, py: "80px" }}>
+    <Box sx={{ bg: "muted", px: 3, py: "40px" }}>
       <DefaultList
         inverted={false}
         apps={apps}
@@ -25,7 +25,7 @@ function AppSection({ apps }) {
 
 function VideoToolSection({ videos }) {
   return (
-    <Box sx={{ bg: "text", px: 3, py: "80px" }}>
+    <Box sx={{ bg: "text", px: 3, py: "40px" }}>
       <DefaultList
         inverted={true}
         apps={videos}
@@ -40,7 +40,7 @@ function VideoToolSection({ videos }) {
 
 function Web3Section({ web3 }) {
   return (
-    <Box sx={{ px: 3, py: "80px" }}>
+    <Box sx={{ px: 3, py: "40px" }}>
       <DefaultList
         inverted={false}
         apps={web3}
@@ -61,7 +61,7 @@ function StakingPlatformSection({ staking }) {
           height: "80px",
         }}
       />
-      <Box sx={{ px: 3, py: "80px" }}>
+      <Box sx={{ px: 3, py: "40px" }}>
         <DefaultList
           inverted={false}
           apps={staking}
@@ -75,7 +75,7 @@ function StakingPlatformSection({ staking }) {
 }
 function ExchangeSection({ exchanges }) {
   return (
-    <Box sx={{ bg: "#FAFAFA", px: 3, py: "80px" }}>
+    <Box sx={{ bg: "#FAFAFA", px: 3, py: "40px" }}>
       <DefaultList
         inverted={false}
         apps={exchanges}
@@ -89,7 +89,7 @@ function ExchangeSection({ exchanges }) {
 
 function CommunitySection({ communities }) {
   return (
-    <Box sx={{ px: 3, py: "80px" }}>
+    <Box sx={{ px: 3, py: "40px" }}>
       <DefaultList
         inverted={false}
         apps={communities}

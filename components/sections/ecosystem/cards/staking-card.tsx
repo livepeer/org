@@ -1,12 +1,6 @@
 import { Card, Heading, Image, Box, Grid } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import {
-  FaDiscord,
-  FaGlobe,
-  FaLinkedin,
-  FaTelegram,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaDiscord, FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export const StakingCard = ({
   title,
@@ -19,7 +13,7 @@ export const StakingCard = ({
   return (
     <Card
       backgroundColor="transparent"
-      sx={{ paddingX: "24px", paddingY: "24px" }}>
+      sx={{ maxWidth: "unset", paddingX: "24px", paddingY: "24px" }}>
       <Grid
         sx={{
           gridTemplateColumns: "64px 1fr",

@@ -30,7 +30,7 @@ export const Subnav = () => {
         backdropFilter: hasScrolled ? "saturate(180%) blur(5px)" : "none",
         top: "72px",
         position: "sticky",
-        display: "grid",
+        display: ["none", "grid"],
         placeItems: "center",
         gap: "32px",
       }}>

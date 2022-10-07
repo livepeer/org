@@ -6,6 +6,7 @@ export const Web3Card = ({ title, richtext, website }) => {
     <Card
       backgroundColor="transparent"
       sx={{
+        maxWidth: "unset",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

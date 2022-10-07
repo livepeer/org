@@ -14,6 +14,7 @@ export const AppCard = ({
     <Card
       backgroundColor="transparent"
       sx={{
+        maxWidth: "unset",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
