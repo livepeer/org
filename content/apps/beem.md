@@ -1,4 +1,5 @@
 ---
+image: "https://res.cloudinary.com/duquzk7m6/image/upload/v1664555448/cld-sample-4.jpg"
 title: Beem
 richtext: |
   REPLACE WITH COPY

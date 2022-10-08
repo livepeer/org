@@ -50,14 +50,23 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
         }}>
         {/* eslint-disable-next-line array-callback-return */}
         {apps.map((app, i) => {
-          const { title, richtext, website, twitter, discord, linkedin } =
-            app.node.data || {};
+          console.log("kk", app);
+          const {
+            title,
+            richtext,
+            website,
+            twitter,
+            discord,
+            image,
+            linkedin,
+          } = app.node.data || {};
           switch (cardType) {
             case "app":
               return (
                 <AppCard
                   key={title + i}
                   title={title}
+                  image={image}
                   richtext={richtext}
                   website={website}
                   twitter={twitter}

@@ -40,7 +40,7 @@
         {
           "name": "image",
           "label": "Image",
-          "type": "string",
+          "type": "image",
           "namespace": ["apps", "image"]
         },
         {
@@ -299,7 +299,7 @@
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Wed Oct 05 2022"
+            "defaultValue": "Sat Oct 08 2022"
           },
           "namespace": ["pages", "updatedAt"]
         },

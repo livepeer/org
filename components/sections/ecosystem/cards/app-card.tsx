@@ -5,6 +5,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export const AppCard = ({
   title,
   richtext,
+  image,
   website,
   twitter,
   discord,
@@ -20,7 +21,7 @@ export const AppCard = ({
         alignItems: "center",
       }}>
       <Image
-        src="/temp/binance.png"
+        src={image}
         width="90px"
         height="90px"
         mb={2}
