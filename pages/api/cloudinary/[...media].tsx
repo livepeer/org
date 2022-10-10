@@ -17,12 +17,12 @@ export default createMediaHandler({
     try {
       if (process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT) return true;
 
-      // return true;
+      return true;
+      // req has no client id or a token to auth with the cms.
+      // const user = await isAuthorized(req);
+      // console.log("user", { user });
 
-      const user = await isAuthorized(req);
-      console.log("user", { user });
-
-      return user && user.verified;
+      // return user && user.verified;
     } catch (e) {
       console.error(e);
       return false;
