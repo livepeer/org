@@ -8,6 +8,7 @@ import { DefaultList } from "components/sections/ecosystem/default-list";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Header } from "components/sections/ecosystem/header";
 import { Subnav } from "components/sections/ecosystem/subnav";
+import NextHead from "next/head";
 
 function AppSection({ apps }) {
   return (
@@ -124,6 +125,9 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
 
   return (
     <PageLayout headProps={headProps} navProps={{ isInmersive: true }}>
+      <NextHead>
+        <meta name="robots" content="noindex" />
+      </NextHead>
       <Header />
       <Subnav />
       <Box
