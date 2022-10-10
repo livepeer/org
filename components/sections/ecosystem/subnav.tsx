@@ -47,6 +47,7 @@ export const Subnav = () => {
         <Link href="#web3TechStack">Web3 Tech Stack</Link>
         <Link href="#stakingPartners">Staking Partners</Link>
         <Link href="#exchanges">Exchanges</Link>
+        <Link href="#communityTools">Community Tools</Link>
       </Grid>
     </Box>
   );

@@ -75,7 +75,7 @@ export default defineSchema({
         {
           name: "image",
           label: "Image",
-          type: "string",
+          type: "image",
         },
         {
           name: "title",
@@ -103,7 +103,7 @@ export default defineSchema({
         {
           name: "image",
           label: "Image",
-          type: "string",
+          type: "image",
         },
         {
           name: "title",
@@ -131,7 +131,7 @@ export default defineSchema({
         {
           name: "image",
           label: "Image",
-          type: "string",
+          type: "image",
         },
         {
           name: "title",
@@ -174,7 +174,7 @@ export default defineSchema({
         {
           name: "image",
           label: "Image",
-          type: "string",
+          type: "image",
         },
         {
           name: "title",

@@ -1,7 +1,8 @@
-import { Box, Button, Card, Heading, Image, Link } from "theme-ui";
+import { Box, Button, Card, Heading, Link } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import Image from "next/image";
 
-export const Web3Card = ({ title, richtext, website }) => {
+export const Web3Card = ({ image, title, richtext, website }) => {
   return (
     <Card
       backgroundColor="transparent"
@@ -11,13 +12,17 @@ export const Web3Card = ({ title, richtext, website }) => {
         flexDirection: "column",
         alignItems: "center",
       }}>
-      <Image
-        src="/temp/binance.png"
-        width="90px"
-        height="90px"
-        mb={2}
-        sx={{ objectFit: "cover", marginBottom: "16px" }}
-      />
+      {image && (
+        <Box mb="1rem">
+          <Image
+            src={image}
+            width="160px"
+            height="100px"
+            alt={title}
+            objectFit="contain"
+          />
+        </Box>
+      )}
       <Heading
         sx={{
           fontFamily: "Inter",

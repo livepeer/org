@@ -11,7 +11,7 @@ import { Subnav } from "components/sections/ecosystem/subnav";
 
 function AppSection({ apps }) {
   return (
-    <Box sx={{ bg: "muted", px: 3, py: "40px" }}>
+    <Box sx={{ bg: "muted", px: 3, py: "40px" }} id="apps">
       <DefaultList
         inverted={false}
         apps={apps}
@@ -25,7 +25,7 @@ function AppSection({ apps }) {
 
 function VideoToolSection({ videos }) {
   return (
-    <Box sx={{ bg: "text", px: 3, py: "40px" }}>
+    <Box sx={{ bg: "text", px: 3, py: "40px" }} id="videoTools">
       <DefaultList
         inverted={true}
         apps={videos}
@@ -40,7 +40,7 @@ function VideoToolSection({ videos }) {
 
 function Web3Section({ web3 }) {
   return (
-    <Box sx={{ px: 3, py: "40px" }}>
+    <Box sx={{ px: 3, py: "40px" }} id="web3TechStack">
       <DefaultList
         inverted={false}
         apps={web3}
@@ -60,6 +60,7 @@ function StakingPlatformSection({ staking }) {
           width: "100%",
           height: "80px",
         }}
+        id="stakingPartners"
       />
       <Box sx={{ px: 3, py: "40px" }}>
         <DefaultList
@@ -75,7 +76,7 @@ function StakingPlatformSection({ staking }) {
 }
 function ExchangeSection({ exchanges }) {
   return (
-    <Box sx={{ bg: "#FAFAFA", px: 3, py: "40px" }}>
+    <Box sx={{ bg: "#FAFAFA", px: 3, py: "40px" }} id="exchanges">
       <DefaultList
         inverted={false}
         apps={exchanges}
@@ -89,7 +90,7 @@ function ExchangeSection({ exchanges }) {
 
 function CommunitySection({ communities }) {
   return (
-    <Box sx={{ px: 3, py: "40px" }}>
+    <Box sx={{ px: 3, py: "40px" }} id="communityTools">
       <DefaultList
         inverted={false}
         apps={communities}
@@ -112,8 +113,8 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
 
   const headProps: HeadProps = {
     meta: {
-      title: t("page-home-meta-title"),
-      description: t("page-home-meta-description"),
+      title: "Ecosystem",
+      description: "Ecosystem",
       url: "https://livepeer.org",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",

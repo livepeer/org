@@ -1,5 +1,6 @@
 import { FaDiscord, FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Box, Card, Grid, Heading, Image } from "theme-ui";
+import { Box, Card, Grid, Heading } from "theme-ui";
+import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const AppCard = ({
@@ -20,13 +21,15 @@ export const AppCard = ({
         flexDirection: "column",
         alignItems: "center",
       }}>
-      <Image
-        src={image}
-        width="90px"
-        height="90px"
-        mb={2}
-        sx={{ objectFit: "cover", marginBottom: "16px" }}
-      />
+      <Box mb="1rem">
+        <Image
+          src={image}
+          width="160px"
+          height="100px"
+          alt={title}
+          objectFit="contain"
+        />
+      </Box>
       <Heading
         sx={{
           fontFamily: "Inter",

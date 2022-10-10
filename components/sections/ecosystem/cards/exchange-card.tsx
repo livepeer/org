@@ -1,7 +1,9 @@
 import { FaGlobe, FaLinkedin, FaTwitter, FaDiscord } from "react-icons/fa";
-import { Card, Grid, Heading, Image } from "theme-ui";
+import { Box, Card, Grid, Heading } from "theme-ui";
+import Image from "next/image";
 
 export const ExchangeCard = ({
+  image,
   title,
   website,
   twitter,
@@ -18,13 +20,17 @@ export const ExchangeCard = ({
         boxShadow: "magical",
         borderWidth: "0",
       }}>
-      <Image
-        src="/temp/binance.png"
-        width="90px"
-        height="90px"
-        mb={2}
-        sx={{ objectFit: "cover", marginBottom: "16px" }}
-      />
+      {image && (
+        <Box mb="1rem">
+          <Image
+            src={image}
+            width="160px"
+            height="100px"
+            alt={title}
+            objectFit="contain"
+          />
+        </Box>
+      )}
       <Heading
         sx={{
           fontFamily: "Inter",

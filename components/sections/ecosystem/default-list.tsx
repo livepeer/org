@@ -65,8 +65,8 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
               return (
                 <AppCard
                   key={title + i}
-                  title={title}
                   image={image}
+                  title={title}
                   richtext={richtext}
                   website={website}
                   twitter={twitter}
@@ -78,6 +78,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
               return (
                 <VideoCard
                   key={title + i}
+                  image={image}
                   title={title}
                   richtext={richtext}
                   website={website}
@@ -87,6 +88,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
               return (
                 <Web3Card
                   key={title + i}
+                  image={image}
                   title={title}
                   richtext={richtext}
                   website={website}
@@ -96,6 +98,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
               return (
                 <StakingCard
                   key={title + i}
+                  image={image}
                   title={title}
                   richtext={richtext}
                   website={website}
@@ -108,6 +111,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
               return (
                 <ExchangeCard
                   key={title + i}
+                  image={image}
                   title={title}
                   website={website}
                   twitter={twitter}
@@ -119,6 +123,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
               return (
                 <CommunityCard
                   key={title + i}
+                  image={image}
                   title={title}
                   richtext={richtext}
                 />

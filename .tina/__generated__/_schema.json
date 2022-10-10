@@ -91,7 +91,7 @@
         {
           "name": "image",
           "label": "Image",
-          "type": "string",
+          "type": "image",
           "namespace": ["videos", "image"]
         },
         {
@@ -124,7 +124,7 @@
         {
           "name": "image",
           "label": "Image",
-          "type": "string",
+          "type": "image",
           "namespace": ["web3", "image"]
         },
         {
@@ -157,7 +157,7 @@
         {
           "name": "image",
           "label": "Image",
-          "type": "string",
+          "type": "image",
           "namespace": ["staking", "image"]
         },
         {
@@ -208,7 +208,7 @@
         {
           "name": "image",
           "label": "Image",
-          "type": "string",
+          "type": "image",
           "namespace": ["exchange", "image"]
         },
         {
@@ -299,7 +299,7 @@
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Sat Oct 08 2022"
+            "defaultValue": "Mon Oct 10 2022"
           },
           "namespace": ["pages", "updatedAt"]
         },

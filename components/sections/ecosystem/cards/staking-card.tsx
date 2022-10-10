@@ -1,8 +1,10 @@
-import { Card, Heading, Image, Box, Grid } from "theme-ui";
+import { Card, Heading, Box, Grid } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { FaDiscord, FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
 
 export const StakingCard = ({
+  image,
   title,
   richtext,
   website,
@@ -20,7 +22,17 @@ export const StakingCard = ({
           alignItems: "center",
           height: "100%",
         }}>
-        <Image src="/temp/binance.png" width="64px" height="64px" mb={2} />
+        {image && (
+          <Box mb="1rem">
+            <Image
+              src={image}
+              width="80px"
+              height="80px"
+              alt={title}
+              objectFit="contain"
+            />
+          </Box>
+        )}
         <Box>
           <Heading
             sx={{

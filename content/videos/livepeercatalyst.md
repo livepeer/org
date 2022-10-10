@@ -1,6 +1,6 @@
 ---
 image: >-
-  https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fnft-background&psig=AOvVaw3aimv-UG5-zeaLIp2kaIsH&ust=1664641719324000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOCYp-T3vPoCFQAAAAAdAAAAABAE
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1665428300/livepeer-catalyst_yiujks.png
 title: Livepeeer Catalyst
 richtext: >
   Self-Hosted toolkit built by the Livepeer core team. The complete suite of

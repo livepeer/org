@@ -1,7 +1,8 @@
-import { Box, Button, Card, Heading, Image } from "theme-ui";
+import { Box, Button, Card, Heading } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import Image from "next/image";
 
-export const CommunityCard = ({ title, richtext }) => {
+export const CommunityCard = ({ title, image, richtext }) => {
   return (
     <Card
       backgroundColor="transparent"
@@ -11,13 +12,17 @@ export const CommunityCard = ({ title, richtext }) => {
         flexDirection: "column",
         alignItems: "center",
       }}>
-      <Image
-        src="/temp/binance.png"
-        width="90px"
-        height="90px"
-        mb={2}
-        sx={{ objectFit: "cover", marginBottom: "16px" }}
-      />
+      {image && (
+        <Box mb="1rem">
+          <Image
+            src={image}
+            width="160px"
+            height="100px"
+            alt={title}
+            objectFit="contain"
+          />
+        </Box>
+      )}
       <Heading
         sx={{
           fontFamily: "Inter",
