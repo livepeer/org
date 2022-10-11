@@ -38,7 +38,7 @@ const Page = (props) => {
     },
   };
 
-  console.log(data);
+  // console.log(data);
   return (
     <PageLayout headProps={headProps}>
       <Container className="markdown-body" sx={{ mt: 24 }}>

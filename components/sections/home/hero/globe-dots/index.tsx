@@ -3,6 +3,7 @@ import { jsx } from "theme-ui";
 import { useEffect, useRef } from "react";
 import gsap, { Linear } from "gsap";
 
+// @ts-ignore
 import styles from "./globe-dots.module.css";
 
 const GlobeDots = ({ top, left, image, pulsating }) => {

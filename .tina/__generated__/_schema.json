@@ -299,7 +299,7 @@
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Mon Oct 10 2022"
+            "defaultValue": "Tue Oct 11 2022"
           },
           "namespace": ["pages", "updatedAt"]
         },
