@@ -31,6 +31,7 @@ export const CommunityCard = ({ title, image, richtext }) => {
           fontSize: "20px",
           marginBottom: "24px",
           textAlign: "center",
+          lineHeight: "140%",
         }}>
         {title}
       </Heading>
@@ -40,6 +41,7 @@ export const CommunityCard = ({ title, image, richtext }) => {
       <Button
         sx={{
           background: "transparent",
+          marginTop: "auto",
           color: "#00D97D",
           ":hover": { background: "transparent" },
         }}>
