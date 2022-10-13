@@ -24,6 +24,219 @@ export default defineSchema({
       ],
     },
     {
+      name: "apps",
+      label: "Apps",
+      path: "content/apps",
+      format: "md",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "image",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+        {
+          name: "twitter",
+          label: "Twitter",
+          type: "string",
+        },
+        {
+          name: "discord",
+          label: "Discord",
+          type: "string",
+        },
+        {
+          name: "linkedin",
+          label: "LinkedIn",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "videos",
+      label: "Video Tools",
+      path: "content/videos",
+      format: "md",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "image",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "web3",
+      label: "Web3",
+      path: "content/web3",
+      format: "md",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "image",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "staking",
+      label: "Staking Platform",
+      path: "content/staking",
+      format: "md",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "image",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+        {
+          name: "twitter",
+          label: "Twitter",
+          type: "string",
+        },
+        {
+          name: "discord",
+          label: "Discord",
+          type: "string",
+        },
+        {
+          name: "linkedin",
+          label: "LinkedIn",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "exchange",
+      label: "Exchange",
+      path: "content/exchange",
+      format: "md",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "image",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+        {
+          name: "twitter",
+          label: "Twitter",
+          type: "string",
+        },
+        {
+          name: "discord",
+          label: "Discord",
+          type: "string",
+        },
+        {
+          name: "linkedin",
+          label: "LinkedIn",
+          type: "string",
+        },
+      ],
+    },
+    {
+      name: "comunity",
+      label: "Community",
+      path: "content/community",
+      format: "md",
+      fields: [
+        {
+          name: "image",
+          label: "Image",
+          type: "image",
+        },
+        {
+          name: "title",
+          label: "Title",
+          type: "string",
+        },
+        {
+          name: "richtext",
+          label: "Rich Text",
+          type: "rich-text",
+        },
+        {
+          name: "website",
+          label: "Website",
+          type: "string",
+        },
+      ],
+    },
+    {
       label: "Pages",
       name: "pages",
       path: "content/pages",
@@ -67,6 +280,10 @@ const apiURL =
 
 export const tinaConfig = defineConfig({
   apiURL,
+  mediaStore: async () => {
+    const pack = await import("next-tinacms-cloudinary");
+    return pack.TinaCloudCloudinaryMediaStore;
+  },
   formifyCallback: ({ formConfig, createForm, skip }) => {
     if (formConfig.id === "getPagesDocument") {
       const onSubmit = (values, form, callback) => {

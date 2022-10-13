@@ -25,9 +25,7 @@ const PageLayout: FC<Props> = ({
     <Nav
       {...(navProps ? navProps : { background: isDark ? "black" : "white" })}
     />
-    <Box
-      as="main"
-      sx={{ position: "relative", overflow: "hidden", ...pushContentSx }}>
+    <Box as="main" sx={{ ...pushContentSx }}>
       {children}
     </Box>
     <Footer {...footerProps} isDark={isDark} />

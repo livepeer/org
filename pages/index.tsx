@@ -15,7 +15,6 @@ import { useRouter } from "next/router";
 const HomePage = ({ youtubeVideos, totalActiveStake }) => {
   const router = useRouter();
   const { t } = useTranslation(["home"]);
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
