@@ -299,7 +299,7 @@
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Wed Oct 12 2022"
+            "defaultValue": "Fri Oct 14 2022"
           },
           "namespace": ["pages", "updatedAt"]
         },
@@ -312,6 +312,38 @@
         }
       ],
       "namespace": ["pages"]
+    },
+    {
+      "label": "Ecosystem",
+      "name": "ecosystem",
+      "path": "content/ecosystem",
+      "fields": [
+        {
+          "type": "string",
+          "label": "Hero Title (dark left side)",
+          "name": "hero_title_dark",
+          "namespace": ["ecosystem", "hero_title_dark"]
+        },
+        {
+          "type": "string",
+          "label": "Hero Title (green right side)",
+          "name": "hero_title_green",
+          "namespace": ["ecosystem", "hero_title_green"]
+        },
+        {
+          "type": "string",
+          "label": "Hero Description",
+          "name": "hero_description",
+          "namespace": ["ecosystem", "hero_description"]
+        },
+        {
+          "type": "string",
+          "label": "Hero Eyebrow",
+          "name": "hero_eyebrow",
+          "namespace": ["ecosystem", "hero_eyebrow"]
+        }
+      ],
+      "namespace": ["ecosystem"]
     }
   ]
 }

@@ -87,6 +87,8 @@ export type Query = {
   getComunityList: ComunityConnection;
   getPagesDocument: PagesDocument;
   getPagesList: PagesConnection;
+  getEcosystemDocument: EcosystemDocument;
+  getEcosystemList: EcosystemConnection;
 };
 
 export type QueryGetOptimizedQueryArgs = {
@@ -210,6 +212,18 @@ export type QueryGetPagesListArgs = {
   sort?: InputMaybe<Scalars["String"]>;
 };
 
+export type QueryGetEcosystemDocumentArgs = {
+  relativePath?: InputMaybe<Scalars["String"]>;
+};
+
+export type QueryGetEcosystemListArgs = {
+  before?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars["String"]>;
+  first?: InputMaybe<Scalars["Float"]>;
+  last?: InputMaybe<Scalars["Float"]>;
+  sort?: InputMaybe<Scalars["String"]>;
+};
+
 export type DocumentConnectionEdges = {
   __typename?: "DocumentConnectionEdges";
   cursor?: Maybe<Scalars["String"]>;
@@ -252,7 +266,8 @@ export type DocumentNode =
   | StakingDocument
   | ExchangeDocument
   | ComunityDocument
-  | PagesDocument;
+  | PagesDocument
+  | EcosystemDocument;
 
 export type Posts = {
   __typename?: "Posts";
@@ -516,6 +531,38 @@ export type PagesConnection = Connection & {
   edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
 };
 
+export type Ecosystem = {
+  __typename?: "Ecosystem";
+  hero_title_dark?: Maybe<Scalars["String"]>;
+  hero_title_green?: Maybe<Scalars["String"]>;
+  hero_description?: Maybe<Scalars["String"]>;
+  hero_eyebrow?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemDocument = Node &
+  Document & {
+    __typename?: "EcosystemDocument";
+    id: Scalars["ID"];
+    sys: SystemInfo;
+    data: Ecosystem;
+    form: Scalars["JSON"];
+    values: Scalars["JSON"];
+    dataJSON: Scalars["JSON"];
+  };
+
+export type EcosystemConnectionEdges = {
+  __typename?: "EcosystemConnectionEdges";
+  cursor?: Maybe<Scalars["String"]>;
+  node?: Maybe<EcosystemDocument>;
+};
+
+export type EcosystemConnection = Connection & {
+  __typename?: "EcosystemConnection";
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars["Float"];
+  edges?: Maybe<Array<Maybe<EcosystemConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: "Mutation";
   addPendingDocument: DocumentNode;
@@ -537,6 +584,8 @@ export type Mutation = {
   createComunityDocument: ComunityDocument;
   updatePagesDocument: PagesDocument;
   createPagesDocument: PagesDocument;
+  updateEcosystemDocument: EcosystemDocument;
+  createEcosystemDocument: EcosystemDocument;
 };
 
 export type MutationAddPendingDocumentArgs = {
@@ -637,6 +686,16 @@ export type MutationCreatePagesDocumentArgs = {
   params: PagesMutation;
 };
 
+export type MutationUpdateEcosystemDocumentArgs = {
+  relativePath: Scalars["String"];
+  params: EcosystemMutation;
+};
+
+export type MutationCreateEcosystemDocumentArgs = {
+  relativePath: Scalars["String"];
+  params: EcosystemMutation;
+};
+
 export type DocumentMutation = {
   posts?: InputMaybe<PostsMutation>;
   apps?: InputMaybe<AppsMutation>;
@@ -646,6 +705,7 @@ export type DocumentMutation = {
   exchange?: InputMaybe<ExchangeMutation>;
   comunity?: InputMaybe<ComunityMutation>;
   pages?: InputMaybe<PagesMutation>;
+  ecosystem?: InputMaybe<EcosystemMutation>;
 };
 
 export type PostsMutation = {
@@ -708,6 +768,13 @@ export type PagesMutation = {
   title?: InputMaybe<Scalars["String"]>;
   updatedAt?: InputMaybe<Scalars["String"]>;
   body?: InputMaybe<Scalars["JSON"]>;
+};
+
+export type EcosystemMutation = {
+  hero_title_dark?: InputMaybe<Scalars["String"]>;
+  hero_title_green?: InputMaybe<Scalars["String"]>;
+  hero_description?: InputMaybe<Scalars["String"]>;
+  hero_eyebrow?: InputMaybe<Scalars["String"]>;
 };
 
 export type PostsPartsFragment = {
@@ -778,6 +845,14 @@ export type PagesPartsFragment = {
   title?: string | null;
   updatedAt?: string | null;
   body?: any | null;
+};
+
+export type EcosystemPartsFragment = {
+  __typename?: "Ecosystem";
+  hero_title_dark?: string | null;
+  hero_title_green?: string | null;
+  hero_description?: string | null;
+  hero_eyebrow?: string | null;
 };
 
 export type GetPostsDocumentQueryVariables = Exact<{
@@ -1276,6 +1351,67 @@ export type GetPagesListQuery = {
   };
 };
 
+export type GetEcosystemDocumentQueryVariables = Exact<{
+  relativePath: Scalars["String"];
+}>;
+
+export type GetEcosystemDocumentQuery = {
+  __typename?: "Query";
+  getEcosystemDocument: {
+    __typename?: "EcosystemDocument";
+    id: string;
+    sys: {
+      __typename?: "SystemInfo";
+      filename: string;
+      basename: string;
+      breadcrumbs: Array<string>;
+      path: string;
+      relativePath: string;
+      extension: string;
+    };
+    data: {
+      __typename?: "Ecosystem";
+      hero_title_dark?: string | null;
+      hero_title_green?: string | null;
+      hero_description?: string | null;
+      hero_eyebrow?: string | null;
+    };
+  };
+};
+
+export type GetEcosystemListQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetEcosystemListQuery = {
+  __typename?: "Query";
+  getEcosystemList: {
+    __typename?: "EcosystemConnection";
+    totalCount: number;
+    edges?: Array<{
+      __typename?: "EcosystemConnectionEdges";
+      node?: {
+        __typename?: "EcosystemDocument";
+        id: string;
+        sys: {
+          __typename?: "SystemInfo";
+          filename: string;
+          basename: string;
+          breadcrumbs: Array<string>;
+          path: string;
+          relativePath: string;
+          extension: string;
+        };
+        data: {
+          __typename?: "Ecosystem";
+          hero_title_dark?: string | null;
+          hero_title_green?: string | null;
+          hero_description?: string | null;
+          hero_eyebrow?: string | null;
+        };
+      } | null;
+    } | null> | null;
+  };
+};
+
 export const PostsPartsFragmentDoc = gql`
   fragment PostsParts on Posts {
     title
@@ -1344,6 +1480,14 @@ export const PagesPartsFragmentDoc = gql`
     title
     updatedAt
     body
+  }
+`;
+export const EcosystemPartsFragmentDoc = gql`
+  fragment EcosystemParts on Ecosystem {
+    hero_title_dark
+    hero_title_green
+    hero_description
+    hero_eyebrow
   }
 `;
 export const GetPostsDocumentDocument = gql`
@@ -1690,6 +1834,49 @@ export const GetPagesListDocument = gql`
   }
   ${PagesPartsFragmentDoc}
 `;
+export const GetEcosystemDocumentDocument = gql`
+  query getEcosystemDocument($relativePath: String!) {
+    getEcosystemDocument(relativePath: $relativePath) {
+      sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+      data {
+        ...EcosystemParts
+      }
+    }
+  }
+  ${EcosystemPartsFragmentDoc}
+`;
+export const GetEcosystemListDocument = gql`
+  query getEcosystemList {
+    getEcosystemList {
+      totalCount
+      edges {
+        node {
+          id
+          sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          data {
+            ...EcosystemParts
+          }
+        }
+      }
+    }
+  }
+  ${EcosystemPartsFragmentDoc}
+`;
 export type Requester<C = {}> = <R, V>(
   doc: DocumentNode,
   vars?: V,
@@ -1968,6 +2155,40 @@ export function getSdk<C>(requester: Requester<C>) {
         },
         GetPagesListQueryVariables
       >(GetPagesListDocument, variables, options);
+    },
+    getEcosystemDocument(
+      variables: GetEcosystemDocumentQueryVariables,
+      options?: C
+    ): Promise<{
+      data: GetEcosystemDocumentQuery;
+      variables: GetEcosystemDocumentQueryVariables;
+      query: string;
+    }> {
+      return requester<
+        {
+          data: GetEcosystemDocumentQuery;
+          variables: GetEcosystemDocumentQueryVariables;
+          query: string;
+        },
+        GetEcosystemDocumentQueryVariables
+      >(GetEcosystemDocumentDocument, variables, options);
+    },
+    getEcosystemList(
+      variables?: GetEcosystemListQueryVariables,
+      options?: C
+    ): Promise<{
+      data: GetEcosystemListQuery;
+      variables: GetEcosystemListQueryVariables;
+      query: string;
+    }> {
+      return requester<
+        {
+          data: GetEcosystemListQuery;
+          variables: GetEcosystemListQueryVariables;
+          query: string;
+        },
+        GetEcosystemListQueryVariables
+      >(GetEcosystemListDocument, variables, options);
     },
   };
 }

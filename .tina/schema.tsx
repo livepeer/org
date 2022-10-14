@@ -265,6 +265,33 @@ export default defineSchema({
         },
       ],
     },
+    {
+      label: "Ecosystem",
+      name: "ecosystem",
+      path: "content/ecosystem",
+      fields: [
+        {
+          type: "string",
+          label: "Hero Title (dark left side)",
+          name: "hero_title_dark",
+        },
+        {
+          type: "string",
+          label: "Hero Title (green right side)",
+          name: "hero_title_green",
+        },
+        {
+          type: "string",
+          label: "Hero Description",
+          name: "hero_description",
+        },
+        {
+          type: "string",
+          label: "Hero Eyebrow",
+          name: "hero_eyebrow",
+        },
+      ],
+    },
   ],
 });
 

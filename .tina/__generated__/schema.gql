@@ -129,6 +129,14 @@ type Query {
     last: Float
     sort: String
   ): PagesConnection!
+  getEcosystemDocument(relativePath: String): EcosystemDocument!
+  getEcosystemList(
+    before: String
+    after: String
+    first: Float
+    last: Float
+    sort: String
+  ): EcosystemConnection!
 }
 
 type DocumentConnectionEdges {
@@ -169,6 +177,7 @@ union DocumentNode =
   | ExchangeDocument
   | ComunityDocument
   | PagesDocument
+  | EcosystemDocument
 
 type Posts {
   title: String
@@ -392,6 +401,33 @@ type PagesConnection implements Connection {
   edges: [PagesConnectionEdges]
 }
 
+type Ecosystem {
+  hero_title_dark: String
+  hero_title_green: String
+  hero_description: String
+  hero_eyebrow: String
+}
+
+type EcosystemDocument implements Node & Document {
+  id: ID!
+  sys: SystemInfo!
+  data: Ecosystem!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type EcosystemConnectionEdges {
+  cursor: String
+  node: EcosystemDocument
+}
+
+type EcosystemConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Float!
+  edges: [EcosystemConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(
     collection: String!
@@ -472,6 +508,14 @@ type Mutation {
     relativePath: String!
     params: PagesMutation!
   ): PagesDocument!
+  updateEcosystemDocument(
+    relativePath: String!
+    params: EcosystemMutation!
+  ): EcosystemDocument!
+  createEcosystemDocument(
+    relativePath: String!
+    params: EcosystemMutation!
+  ): EcosystemDocument!
 }
 
 input DocumentMutation {
@@ -483,6 +527,7 @@ input DocumentMutation {
   exchange: ExchangeMutation
   comunity: ComunityMutation
   pages: PagesMutation
+  ecosystem: EcosystemMutation
 }
 
 input PostsMutation {
@@ -545,6 +590,13 @@ input PagesMutation {
   title: String
   updatedAt: String
   body: JSON
+}
+
+input EcosystemMutation {
+  hero_title_dark: String
+  hero_title_green: String
+  hero_description: String
+  hero_eyebrow: String
 }
 
 schema {
