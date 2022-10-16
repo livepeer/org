@@ -5,7 +5,8 @@ title: Inflow Music
 richtext: >
   Web3 music platform offering live music concerts and events to award-winning
   artists and their fans.
-website: "https://example.org"
-twitter: "https://example.org"
-discord: "https://discord.com/invite/EYqfS32jYc"
+website: 'https://www.inflow.app/'
+twitter: 'https://twitter.com/INFLOW_music'
+discord: 'https://discord.com/invite/2U9JYd2y79'
 ---
+
