@@ -4,6 +4,7 @@ image: >-
 title: Blockdaemon
 richtext: |
   Institutional grade blockchain infrastructure
-website: "https://example.org"
-twitter: "https://example.org"
+website: 'https://blockdaemon.com/'
+twitter: 'https://twitter.com/BlockdaemonHQ'
 ---
+
