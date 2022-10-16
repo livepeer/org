@@ -5,7 +5,7 @@ title: SubbSpace
 richtext: |
   SubbSpace is a community and promotion platform optimized for DJs.
 website: 'https://www.subb.space/'
-twitter: 'https://twitter.com/subbspace?lang=en'
+twitter: 'https://twitter.com/subbspace'
 discord: ''
 ---
 
