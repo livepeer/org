@@ -4,6 +4,7 @@ image: >-
 title: Binance US Staking
 richtext: |
   Simplified staking process.
-website: "https://example.org"
-twitter: "https://example.org"
+website: 'https://www.binance.us/en/staking'
+twitter: 'https://twitter.com/binanceus'
 ---
+
