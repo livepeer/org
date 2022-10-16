@@ -4,7 +4,7 @@ image: >-
 title: Arweave
 richtext: >
   Global, permanent hard drive built on the blockweave and proof of access.
-  Integrated with Livepeer.
+  Integrates with Livepeer.
 website: 'https://www.arweave.org/'
 ---
 
