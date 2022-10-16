@@ -5,5 +5,6 @@ title: Solana
 richtext: >
   Blockchain built to enable scalable, user-friendly apps for the world.
   Integrated with Livepeer.
-website: "https://ethereum.org/en/"
+website: 'https://solana.com/'
 ---
+
