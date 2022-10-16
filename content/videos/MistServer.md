@@ -4,7 +4,7 @@ image: >-
 title: MistServer
 richtext: >
   Full-featured, next-generation streaming media toolkit. Self-hosted solution
-  designed for developers and system integrators.
+  designed for system integrators.
 website: 'https://mistserver.org/'
 ---
 
