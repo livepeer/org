@@ -1,6 +1,6 @@
 ---
 image: >-
-  https://res.cloudinary.com/duquzk7m6/image/upload/v1665428269/mist-server_jdsjlg.svg
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1665949207/MIstServer_Logo_v2_agz645.svg
 title: MistServer
 richtext: >
   Full-featured, next-generation streaming media toolkit. Self-hosted solution
