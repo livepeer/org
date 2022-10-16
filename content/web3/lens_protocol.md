@@ -4,6 +4,7 @@ image: >-
 title: Lens Protocol
 richtext: >
   Composable and decentralized social graph, for scaling decentralized social
-  networks. Integrated with Livepeer.
-website: "https://ethereum.org/en/"
+  networks. Integrates with Livepeer.
+website: 'https://ethereum.org/en/'
 ---
+
