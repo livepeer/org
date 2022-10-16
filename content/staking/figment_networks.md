@@ -4,6 +4,7 @@ image: >-
 title: Figment Networks
 richtext: |
   Staking and blockchain infrastructure provider.
-website: "https://example.org"
-twitter: "https://example.org"
+website: 'https://www.figment.io/'
+twitter: 'https://mobile.twitter.com/figment_io'
 ---
+
