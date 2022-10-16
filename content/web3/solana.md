@@ -4,7 +4,7 @@ image: >-
 title: Solana
 richtext: >
   Blockchain built to enable scalable, user-friendly apps for the world.
-  Integrated with Livepeer.
+  Integrates with Livepeer.
 website: 'https://solana.com/'
 ---
 
