@@ -4,5 +4,6 @@ image: >-
 title: Arbitrum
 richtext: |
   Ethereum L2 blockchain, used to scale the Livepeer network.
-website: "https://ethereum.org/en/"
+website: 'https://arbitrum.io/'
 ---
+
