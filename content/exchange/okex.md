@@ -1,8 +1,8 @@
 ---
-image: "https://res.cloudinary.com/duquzk7m6/image/upload/v1665428966/okex_jfp2ww.png"
+image: 'https://res.cloudinary.com/duquzk7m6/image/upload/v1665428966/okex_jfp2ww.png'
 title: Okex
-richtext: |
-  REPLACE WITH COPY
-website: "https://example.org"
-twitter: "https://example.org"
+richtext: ''
+website: 'https://www.okx.com/'
+twitter: 'https://twitter.com/okx'
 ---
+
