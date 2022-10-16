@@ -4,6 +4,7 @@ image: >-
 title: Staking Rewards
 richtext: |
   Crypto staking explorer.
-website: "https://example.org"
-twitter: "https://example.org"
+website: 'https://www.stakingrewards.com/'
+twitter: 'https://twitter.com/stakingrewards'
 ---
+
