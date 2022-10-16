@@ -4,5 +4,6 @@ image: >-
 title: Ethereum
 richtext: |
   L1 blockchain used to secure the Livepeer network.
-website: "https://ethereum.org/en/"
+website: 'https://ethereum.org/'
 ---
+
