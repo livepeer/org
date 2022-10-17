@@ -531,12 +531,60 @@ export type PagesConnection = Connection & {
   edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
 };
 
-export type Ecosystem = {
-  __typename?: "Ecosystem";
+export type EcosystemHero = {
+  __typename?: "EcosystemHero";
   hero_title_dark?: Maybe<Scalars["String"]>;
   hero_title_green?: Maybe<Scalars["String"]>;
   hero_description?: Maybe<Scalars["String"]>;
   hero_eyebrow?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemApps_Section = {
+  __typename?: "EcosystemApps_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemVideo_Section = {
+  __typename?: "EcosystemVideo_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemWeb3_Section = {
+  __typename?: "EcosystemWeb3_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemStacking_Section = {
+  __typename?: "EcosystemStacking_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemExchanges_Section = {
+  __typename?: "EcosystemExchanges_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemCommunity_Section = {
+  __typename?: "EcosystemCommunity_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type Ecosystem = {
+  __typename?: "Ecosystem";
+  hero?: Maybe<EcosystemHero>;
+  apps_section?: Maybe<EcosystemApps_Section>;
+  video_section?: Maybe<EcosystemVideo_Section>;
+  web3_section?: Maybe<EcosystemWeb3_Section>;
+  stacking_section?: Maybe<EcosystemStacking_Section>;
+  exchanges_section?: Maybe<EcosystemExchanges_Section>;
+  community_section?: Maybe<EcosystemCommunity_Section>;
+  footer_cta_description?: Maybe<Scalars["String"]>;
 };
 
 export type EcosystemDocument = Node &
@@ -770,11 +818,52 @@ export type PagesMutation = {
   body?: InputMaybe<Scalars["JSON"]>;
 };
 
-export type EcosystemMutation = {
+export type EcosystemHeroMutation = {
   hero_title_dark?: InputMaybe<Scalars["String"]>;
   hero_title_green?: InputMaybe<Scalars["String"]>;
   hero_description?: InputMaybe<Scalars["String"]>;
   hero_eyebrow?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemApps_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemVideo_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemWeb3_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemStacking_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemExchanges_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemCommunity_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemMutation = {
+  hero?: InputMaybe<EcosystemHeroMutation>;
+  apps_section?: InputMaybe<EcosystemApps_SectionMutation>;
+  video_section?: InputMaybe<EcosystemVideo_SectionMutation>;
+  web3_section?: InputMaybe<EcosystemWeb3_SectionMutation>;
+  stacking_section?: InputMaybe<EcosystemStacking_SectionMutation>;
+  exchanges_section?: InputMaybe<EcosystemExchanges_SectionMutation>;
+  community_section?: InputMaybe<EcosystemCommunity_SectionMutation>;
+  footer_cta_description?: InputMaybe<Scalars["String"]>;
 };
 
 export type PostsPartsFragment = {
@@ -849,10 +938,44 @@ export type PagesPartsFragment = {
 
 export type EcosystemPartsFragment = {
   __typename?: "Ecosystem";
-  hero_title_dark?: string | null;
-  hero_title_green?: string | null;
-  hero_description?: string | null;
-  hero_eyebrow?: string | null;
+  footer_cta_description?: string | null;
+  hero?: {
+    __typename: "EcosystemHero";
+    hero_title_dark?: string | null;
+    hero_title_green?: string | null;
+    hero_description?: string | null;
+    hero_eyebrow?: string | null;
+  } | null;
+  apps_section?: {
+    __typename: "EcosystemApps_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  video_section?: {
+    __typename: "EcosystemVideo_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  web3_section?: {
+    __typename: "EcosystemWeb3_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  stacking_section?: {
+    __typename: "EcosystemStacking_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  exchanges_section?: {
+    __typename: "EcosystemExchanges_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  community_section?: {
+    __typename: "EcosystemCommunity_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
 };
 
 export type GetPostsDocumentQueryVariables = Exact<{
@@ -1371,10 +1494,44 @@ export type GetEcosystemDocumentQuery = {
     };
     data: {
       __typename?: "Ecosystem";
-      hero_title_dark?: string | null;
-      hero_title_green?: string | null;
-      hero_description?: string | null;
-      hero_eyebrow?: string | null;
+      footer_cta_description?: string | null;
+      hero?: {
+        __typename: "EcosystemHero";
+        hero_title_dark?: string | null;
+        hero_title_green?: string | null;
+        hero_description?: string | null;
+        hero_eyebrow?: string | null;
+      } | null;
+      apps_section?: {
+        __typename: "EcosystemApps_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      video_section?: {
+        __typename: "EcosystemVideo_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      web3_section?: {
+        __typename: "EcosystemWeb3_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      stacking_section?: {
+        __typename: "EcosystemStacking_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      exchanges_section?: {
+        __typename: "EcosystemExchanges_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      community_section?: {
+        __typename: "EcosystemCommunity_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
     };
   };
 };
@@ -1402,10 +1559,44 @@ export type GetEcosystemListQuery = {
         };
         data: {
           __typename?: "Ecosystem";
-          hero_title_dark?: string | null;
-          hero_title_green?: string | null;
-          hero_description?: string | null;
-          hero_eyebrow?: string | null;
+          footer_cta_description?: string | null;
+          hero?: {
+            __typename: "EcosystemHero";
+            hero_title_dark?: string | null;
+            hero_title_green?: string | null;
+            hero_description?: string | null;
+            hero_eyebrow?: string | null;
+          } | null;
+          apps_section?: {
+            __typename: "EcosystemApps_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          video_section?: {
+            __typename: "EcosystemVideo_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          web3_section?: {
+            __typename: "EcosystemWeb3_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          stacking_section?: {
+            __typename: "EcosystemStacking_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          exchanges_section?: {
+            __typename: "EcosystemExchanges_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          community_section?: {
+            __typename: "EcosystemCommunity_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
         };
       } | null;
     } | null> | null;
@@ -1484,10 +1675,44 @@ export const PagesPartsFragmentDoc = gql`
 `;
 export const EcosystemPartsFragmentDoc = gql`
   fragment EcosystemParts on Ecosystem {
-    hero_title_dark
-    hero_title_green
-    hero_description
-    hero_eyebrow
+    hero {
+      __typename
+      hero_title_dark
+      hero_title_green
+      hero_description
+      hero_eyebrow
+    }
+    apps_section {
+      __typename
+      title
+      description
+    }
+    video_section {
+      __typename
+      title
+      description
+    }
+    web3_section {
+      __typename
+      title
+      description
+    }
+    stacking_section {
+      __typename
+      title
+      description
+    }
+    exchanges_section {
+      __typename
+      title
+      description
+    }
+    community_section {
+      __typename
+      title
+      description
+    }
+    footer_cta_description
   }
 `;
 export const GetPostsDocumentDocument = gql`

@@ -299,7 +299,7 @@
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Fri Oct 14 2022"
+            "defaultValue": "Mon Oct 17 2022"
           },
           "namespace": ["pages", "updatedAt"]
         },
@@ -319,28 +319,162 @@
       "path": "content/ecosystem",
       "fields": [
         {
-          "type": "string",
-          "label": "Hero Title (dark left side)",
-          "name": "hero_title_dark",
-          "namespace": ["ecosystem", "hero_title_dark"]
+          "name": "hero",
+          "label": "Hero",
+          "type": "object",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Hero Title (dark left side)",
+              "name": "hero_title_dark",
+              "namespace": ["ecosystem", "hero", "hero_title_dark"]
+            },
+            {
+              "type": "string",
+              "label": "Hero Title (green right side)",
+              "name": "hero_title_green",
+              "namespace": ["ecosystem", "hero", "hero_title_green"]
+            },
+            {
+              "type": "string",
+              "label": "Hero Description",
+              "name": "hero_description",
+              "namespace": ["ecosystem", "hero", "hero_description"]
+            },
+            {
+              "type": "string",
+              "label": "Hero Eyebrow",
+              "name": "hero_eyebrow",
+              "namespace": ["ecosystem", "hero", "hero_eyebrow"]
+            }
+          ],
+          "namespace": ["ecosystem", "hero"]
         },
         {
-          "type": "string",
-          "label": "Hero Title (green right side)",
-          "name": "hero_title_green",
-          "namespace": ["ecosystem", "hero_title_green"]
+          "name": "apps_section",
+          "label": "Apps Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Apps Title",
+              "type": "string",
+              "namespace": ["ecosystem", "apps_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Apps Description",
+              "type": "string",
+              "namespace": ["ecosystem", "apps_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "apps_section"]
         },
         {
-          "type": "string",
-          "label": "Hero Description",
-          "name": "hero_description",
-          "namespace": ["ecosystem", "hero_description"]
+          "name": "video_section",
+          "label": "Video Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Video Title",
+              "type": "string",
+              "namespace": ["ecosystem", "video_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Video Description",
+              "type": "string",
+              "namespace": ["ecosystem", "video_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "video_section"]
         },
         {
+          "name": "web3_section",
+          "label": "Web3 Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Web3 Title",
+              "type": "string",
+              "namespace": ["ecosystem", "web3_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Web3 Description",
+              "type": "string",
+              "namespace": ["ecosystem", "web3_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "web3_section"]
+        },
+        {
+          "name": "stacking_section",
+          "label": "Stacking Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Stacking Title",
+              "type": "string",
+              "namespace": ["ecosystem", "stacking_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Stacking Description",
+              "type": "string",
+              "namespace": ["ecosystem", "stacking_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "stacking_section"]
+        },
+        {
+          "name": "exchanges_section",
+          "label": "Exchanges Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Exchanges Title",
+              "type": "string",
+              "namespace": ["ecosystem", "exchanges_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Exchanges Description",
+              "type": "string",
+              "namespace": ["ecosystem", "exchanges_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "exchanges_section"]
+        },
+        {
+          "name": "community_section",
+          "label": "Community Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Community Title",
+              "type": "string",
+              "namespace": ["ecosystem", "community_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Community Description",
+              "type": "string",
+              "namespace": ["ecosystem", "community_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "community_section"]
+        },
+        {
+          "name": "footer_cta_description",
+          "label": "Footer CTA Description",
           "type": "string",
-          "label": "Hero Eyebrow",
-          "name": "hero_eyebrow",
-          "namespace": ["ecosystem", "hero_eyebrow"]
+          "namespace": ["ecosystem", "footer_cta_description"]
         }
       ],
       "namespace": ["ecosystem"]

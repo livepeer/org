@@ -401,11 +401,52 @@ type PagesConnection implements Connection {
   edges: [PagesConnectionEdges]
 }
 
-type Ecosystem {
+type EcosystemHero {
   hero_title_dark: String
   hero_title_green: String
   hero_description: String
   hero_eyebrow: String
+}
+
+type EcosystemApps_section {
+  title: String
+  description: String
+}
+
+type EcosystemVideo_section {
+  title: String
+  description: String
+}
+
+type EcosystemWeb3_section {
+  title: String
+  description: String
+}
+
+type EcosystemStacking_section {
+  title: String
+  description: String
+}
+
+type EcosystemExchanges_section {
+  title: String
+  description: String
+}
+
+type EcosystemCommunity_section {
+  title: String
+  description: String
+}
+
+type Ecosystem {
+  hero: EcosystemHero
+  apps_section: EcosystemApps_section
+  video_section: EcosystemVideo_section
+  web3_section: EcosystemWeb3_section
+  stacking_section: EcosystemStacking_section
+  exchanges_section: EcosystemExchanges_section
+  community_section: EcosystemCommunity_section
+  footer_cta_description: String
 }
 
 type EcosystemDocument implements Node & Document {
@@ -592,11 +633,52 @@ input PagesMutation {
   body: JSON
 }
 
-input EcosystemMutation {
+input EcosystemHeroMutation {
   hero_title_dark: String
   hero_title_green: String
   hero_description: String
   hero_eyebrow: String
+}
+
+input EcosystemApps_sectionMutation {
+  title: String
+  description: String
+}
+
+input EcosystemVideo_sectionMutation {
+  title: String
+  description: String
+}
+
+input EcosystemWeb3_sectionMutation {
+  title: String
+  description: String
+}
+
+input EcosystemStacking_sectionMutation {
+  title: String
+  description: String
+}
+
+input EcosystemExchanges_sectionMutation {
+  title: String
+  description: String
+}
+
+input EcosystemCommunity_sectionMutation {
+  title: String
+  description: String
+}
+
+input EcosystemMutation {
+  hero: EcosystemHeroMutation
+  apps_section: EcosystemApps_sectionMutation
+  video_section: EcosystemVideo_sectionMutation
+  web3_section: EcosystemWeb3_sectionMutation
+  stacking_section: EcosystemStacking_sectionMutation
+  exchanges_section: EcosystemExchanges_sectionMutation
+  community_section: EcosystemCommunity_sectionMutation
+  footer_cta_description: String
 }
 
 schema {

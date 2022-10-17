@@ -271,24 +271,138 @@ export default defineSchema({
       path: "content/ecosystem",
       fields: [
         {
-          type: "string",
-          label: "Hero Title (dark left side)",
-          name: "hero_title_dark",
+          name: "hero",
+          label: "Hero",
+          type: "object",
+          fields: [
+            {
+              type: "string",
+              label: "Hero Title (dark left side)",
+              name: "hero_title_dark",
+            },
+            {
+              type: "string",
+              label: "Hero Title (green right side)",
+              name: "hero_title_green",
+            },
+            {
+              type: "string",
+              label: "Hero Description",
+              name: "hero_description",
+            },
+            {
+              type: "string",
+              label: "Hero Eyebrow",
+              name: "hero_eyebrow",
+            },
+          ],
         },
         {
-          type: "string",
-          label: "Hero Title (green right side)",
-          name: "hero_title_green",
+          name: "apps_section",
+          label: "Apps Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Apps Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Apps Description",
+              type: "string",
+            },
+          ],
         },
         {
-          type: "string",
-          label: "Hero Description",
-          name: "hero_description",
+          name: "video_section",
+          label: "Video Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Video Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Video Description",
+              type: "string",
+            },
+          ],
         },
         {
+          name: "web3_section",
+          label: "Web3 Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Web3 Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Web3 Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "stacking_section",
+          label: "Stacking Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Stacking Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Stacking Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "exchanges_section",
+          label: "Exchanges Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Exchanges Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Exchanges Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "community_section",
+          label: "Community Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Community Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Community Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "footer_cta_description",
+          label: "Footer CTA Description",
           type: "string",
-          label: "Hero Eyebrow",
-          name: "hero_eyebrow",
         },
       ],
     },

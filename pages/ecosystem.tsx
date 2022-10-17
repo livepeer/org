@@ -1,58 +1,120 @@
 import PageLayout from "components/layouts/page";
 import { useEffect } from "react";
+import { BsChevronCompactDown } from "react-icons/bs";
 import { staticRequest, gql } from "tinacms";
 import { HeadProps } from "components/primitives/head";
 import { useTranslation } from "next-i18next";
-import { Box } from "theme-ui";
+import { Box, Flex } from "theme-ui";
 import { DefaultList } from "components/sections/ecosystem/default-list";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Header } from "components/sections/ecosystem/header";
 import { Subnav } from "components/sections/ecosystem/subnav";
 import NextHead from "next/head";
+import { useTina } from "tinacms/dist/edit-state";
 
-function AppSection({ apps }) {
+const query = gql`
+  query EcosystemQuery($relativePath: String!) {
+    getEcosystemDocument(relativePath: $relativePath) {
+      data {
+        hero {
+          hero_title_dark
+          hero_title_green
+          hero_description
+          hero_eyebrow
+        }
+        apps_section {
+          title
+          description
+        }
+        video_section {
+          title
+          description
+        }
+        web3_section {
+          title
+          description
+        }
+        stacking_section {
+          title
+          description
+        }
+        exchanges_section {
+          title
+          description
+        }
+        community_section {
+          title
+          description
+        }
+        footer_cta_description
+      }
+    }
+  }
+`;
+
+function AppSection({ apps, header }) {
   return (
     <Box sx={{ bg: "muted", px: 3, py: "40px" }} id="apps">
       <DefaultList
         inverted={false}
         apps={apps}
-        title="Apps"
-        subtitle="Applications built using Livepeer video infrastructure."
+        title={header.title}
+        subtitle={header.description}
         cardType="app"
       />
+
+      <Flex
+        onClick={() => {
+          console.log("expand");
+        }}
+        sx={{
+          ":hover": {
+            cursor: "pointer",
+          },
+          fontFamily: "Inter",
+          fontStyle: "normal",
+          fontWeight: "400",
+          fontSize: "20px",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}>
+        Expand
+        <BsChevronCompactDown size={"3rem"} />
+      </Flex>
     </Box>
   );
 }
 
-function VideoToolSection({ videos }) {
+function VideoToolSection({ videos, header }) {
   return (
     <Box sx={{ bg: "text", px: 3, py: "40px" }} id="videoTools">
       <DefaultList
         inverted={true}
         apps={videos}
-        title="Video Tools"
-        subtitle="Tools to integrate with the Livepeer network. Hosted Gateway for the
-    most seamless integration, or Self-Hosted for total customization."
+        title={header.title}
+        subtitle={header.description}
         cardType="video"
       />
     </Box>
   );
 }
 
-function Web3Section({ web3 }) {
+function Web3Section({ web3, header }) {
   return (
     <Box sx={{ px: 3, py: "40px" }} id="web3TechStack">
       <DefaultList
         inverted={false}
         apps={web3}
-        title="Web3 Tech Stack"
-        subtitle="Livepeer partners and key protocols in the emerging web3 tech stack."
+        title={header.title}
+        subtitle={header.description}
         cardType="web3"
       />
     </Box>
   );
 }
-function StakingPlatformSection({ staking }) {
+function StakingPlatformSection({ staking, header }) {
   return (
     <>
       <Box
@@ -67,51 +129,72 @@ function StakingPlatformSection({ staking }) {
         <DefaultList
           inverted={false}
           apps={staking}
-          title="Staking Partners"
-          subtitle="Specialized staking services for Livepeer delegators."
+          title={header.title}
+          subtitle={header.description}
           cardType="staking"
         />
       </Box>
     </>
   );
 }
-function ExchangeSection({ exchanges }) {
+function ExchangeSection({ exchanges, header }) {
   return (
     <Box sx={{ bg: "#FAFAFA", px: 3, py: "40px" }} id="exchanges">
       <DefaultList
         inverted={false}
         apps={exchanges}
-        title="Exchanges"
-        subtitle="Platforms listing Livepeer Token (LPT)."
+        title={header.title}
+        subtitle={header.description}
         cardType="exchange"
       />
     </Box>
   );
 }
 
-function CommunitySection({ communities }) {
+function CommunitySection({ communities, header }) {
   return (
     <Box sx={{ px: 3, py: "40px" }} id="communityTools">
       <DefaultList
         inverted={false}
         apps={communities}
-        title="Community Tools"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat blandit tellus luctus amet felis sit ullamcorper."
+        title={header.title}
+        subtitle={header.description}
         cardType="community"
       />
     </Box>
   );
 }
 
-function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
+function extractData(tinaData) {
+  return tinaData?.getEcosystemDocument?.data;
+}
+
+function Ecosystem({
+  apps,
+  web3,
+  videos,
+  communities,
+  exchanges,
+  staking,
+  data,
+  variables,
+}) {
   const { t } = useTranslation(["home"]);
+  // console.log("data", data, variables);
+  const { data: tinaData } = useTina({
+    query,
+    variables,
+    data,
+  });
+  const pageData = extractData(tinaData);
+  console.log("tina Data", pageData);
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
       document.documentElement.style.scrollBehavior = "initial";
     };
   }, []);
-
+  // console.log({ pageDetails });
   const headProps: HeadProps = {
     meta: {
       title: "Ecosystem",
@@ -128,7 +211,7 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
       <NextHead>
         <meta name="robots" content="noindex" />
       </NextHead>
-      <Header />
+      <Header hero={pageData.hero} />
       <Subnav />
       <Box
         sx={{
@@ -137,12 +220,29 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
           height: "80px",
         }}
       />
-      {apps && <AppSection apps={apps} />}
-      {videos && <VideoToolSection videos={videos} />}
-      {web3 && <Web3Section web3={web3} />}
-      {staking && <StakingPlatformSection staking={staking} />}
-      {exchanges && <ExchangeSection exchanges={exchanges} />}
-      {communities && <CommunitySection communities={communities} />}
+      {apps && <AppSection apps={apps} header={pageData.apps_section} />}
+      {videos && (
+        <VideoToolSection videos={videos} header={pageData.video_section} />
+      )}
+      {web3 && <Web3Section web3={web3} header={pageData.web3_section} />}
+      {staking && (
+        <StakingPlatformSection
+          staking={staking}
+          header={pageData.stacking_section}
+        />
+      )}
+      {exchanges && (
+        <ExchangeSection
+          exchanges={exchanges}
+          header={pageData.exchanges_section}
+        />
+      )}
+      {communities && (
+        <CommunitySection
+          communities={communities}
+          header={pageData.community_section}
+        />
+      )}
     </PageLayout>
   );
 }
@@ -258,6 +358,7 @@ export async function getStaticProps({ locale }) {
       }
     `,
   });
+
   const communityRes: any = await staticRequest({
     query: gql`
       query GetComunityList {
@@ -280,6 +381,13 @@ export async function getStaticProps({ locale }) {
     `,
   });
 
+  const variables = { relativePath: `index.md` };
+
+  const data = await staticRequest({
+    query,
+    variables,
+  });
+
   const communities = communityRes?.getComunityList?.edges;
   const videos = videosData?.getVideosList?.edges;
   const exchanges = exchangeData?.getExchangeList?.edges;
@@ -295,6 +403,9 @@ export async function getStaticProps({ locale }) {
       communities,
       exchanges,
       staking,
+      // pageDetails,
+      data,
+      variables,
       ...(await serverSideTranslations(locale, ["common", "home"])),
     },
     revalidate: 1,
