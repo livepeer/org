@@ -65,7 +65,7 @@ function AppSection({ apps, header }) {
 
       <Flex
         onClick={() => {
-          console.log("expand");
+          // console.log("expand");
         }}
         sx={{
           ":hover": {
