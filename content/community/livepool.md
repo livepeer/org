@@ -4,7 +4,7 @@ image: >-
 title: Livepool
 richtext: >
   Community transcoding pool for Livepool. Anyone can connect their video cards
-  to Livepool to transcode video and earn fees and rewards for doing so.
+  to Livepool to transcode video and earn fees and rewards.
 website: 'https://www.livepool.io/'
 ---
 
