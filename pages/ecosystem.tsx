@@ -63,9 +63,6 @@ function AppSection({ apps, header }) {
     } else {
       setAppsList(apps.slice(0, 6));
     }
-    return () => {
-      setExpandApps(false);
-    };
   }, [expandApps]);
 
   return (
