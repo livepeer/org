@@ -1,6 +1,6 @@
 import PageLayout from "components/layouts/page";
 import { useEffect, useState } from "react";
-import { BsChevronCompactDown } from "react-icons/bs";
+import { BsChevronCompactDown, BsChevronCompactUp } from "react-icons/bs";
 import { staticRequest, gql } from "tinacms";
 import { HeadProps } from "components/primitives/head";
 import { useTranslation } from "next-i18next";
@@ -92,8 +92,12 @@ function AppSection({ apps, header }) {
           alignItems: "center",
           flexDirection: "column",
         }}>
-        Expand
-        <BsChevronCompactDown size={"3rem"} />
+        {expandApps ? "Collapse" : "Expand"}
+        {expandApps ? (
+          <BsChevronCompactUp size={"3rem"} />
+        ) : (
+          <BsChevronCompactDown size={"3rem"} />
+        )}
       </Flex>
     </Box>
   );
@@ -222,7 +226,6 @@ function Ecosystem({
         <meta name="robots" content="noindex" />
       </NextHead>
       <Header hero={pageData.hero} />
-      <CtaBanner title={pageData.footer_cta_description} divider={true} />
       <Subnav />
       <Box
         sx={{
