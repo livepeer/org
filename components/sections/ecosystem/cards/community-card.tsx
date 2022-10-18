@@ -1,8 +1,8 @@
-import { Box, Button, Card, Heading } from "theme-ui";
+import { Box, Button, Card, Heading, Link } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Image from "next/image";
 
-export const CommunityCard = ({ title, image, richtext }) => {
+export const CommunityCard = ({ title, image, richtext, website }) => {
   return (
     <Card
       backgroundColor="transparent"
@@ -38,15 +38,19 @@ export const CommunityCard = ({ title, image, richtext }) => {
       <Box sx={{ textAlign: "center", marginBottom: "32px" }}>
         <TinaMarkdown content={richtext} />
       </Box>
-      <Button
-        sx={{
-          background: "transparent",
-          marginTop: "auto",
-          color: "#00D97D",
-          ":hover": { background: "transparent" },
-        }}>
-        Visit website
-      </Button>
+      {website && (
+        <Link sx={{ marginTop: "auto" }} href={website}>
+          <Button
+            sx={{
+              background: "transparent",
+              marginTop: "auto",
+              color: "#00D97D",
+              ":hover": { background: "transparent" },
+            }}>
+            Visit website
+          </Button>
+        </Link>
+      )}
     </Card>
   );
 };

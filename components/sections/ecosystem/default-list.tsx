@@ -129,6 +129,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   key={title + i}
                   image={image}
                   title={title}
+                  website={website}
                   richtext={richtext}
                 />
               );
