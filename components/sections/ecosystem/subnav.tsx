@@ -6,7 +6,7 @@ export const Subnav = () => {
 
   const handleScroll = useCallback(() => {
     const { scrollTop } = document.documentElement;
-    if (scrollTop > 540) setHasScrolled(true);
+    if (scrollTop > 632) setHasScrolled(true);
     else setHasScrolled(false);
   }, []);
 

@@ -9,6 +9,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Header } from "components/sections/ecosystem/header";
 import { Subnav } from "components/sections/ecosystem/subnav";
 import NextHead from "next/head";
+import { CtaBanner } from "components/sections/ecosystem/cta-banner";
 
 function AppSection({ apps }) {
   return (
@@ -129,6 +130,10 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
         <meta name="robots" content="noindex" />
       </NextHead>
       <Header />
+      <CtaBanner
+        title="Submit a project to be included in Livepeer Ecosystem"
+        divider={true}
+      />
       <Subnav />
       <Box
         sx={{
@@ -143,6 +148,10 @@ function Ecosystem({ apps, web3, videos, communities, exchanges, staking }) {
       {staking && <StakingPlatformSection staking={staking} />}
       {exchanges && <ExchangeSection exchanges={exchanges} />}
       {communities && <CommunitySection communities={communities} />}
+      <CtaBanner
+        title="Submit a project to be included in Livepeer Ecosystem"
+        divider={true}
+      />
     </PageLayout>
   );
 }
