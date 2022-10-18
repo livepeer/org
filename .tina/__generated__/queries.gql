@@ -309,3 +309,42 @@ query getPagesList {
     }
   }
 }
+
+query getEcosystemDocument($relativePath: String!) {
+  getEcosystemDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...EcosystemParts
+    }
+  }
+}
+
+query getEcosystemList {
+  getEcosystemList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...EcosystemParts
+        }
+      }
+    }
+  }
+}

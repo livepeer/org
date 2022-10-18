@@ -1,6 +1,12 @@
 import { Card, Heading, Box, Grid } from "theme-ui";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { FaDiscord, FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaGlobe,
+  FaLinkedin,
+  FaTelegram,
+  FaTwitter,
+} from "react-icons/fa";
 import Image from "next/image";
 
 export const StakingCard = ({
@@ -11,6 +17,7 @@ export const StakingCard = ({
   twitter,
   discord,
   linkedin,
+  telegram,
 }) => {
   return (
     <Card
@@ -78,6 +85,11 @@ export const StakingCard = ({
               {linkedin && (
                 <a href={linkedin}>
                   <FaLinkedin />
+                </a>
+              )}
+              {telegram && (
+                <a href={telegram}>
+                  <FaTelegram />
                 </a>
               )}
             </Grid>

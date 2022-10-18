@@ -1,4 +1,10 @@
-import { FaDiscord, FaGlobe, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaGlobe,
+  FaLinkedin,
+  FaTelegram,
+  FaTwitter,
+} from "react-icons/fa";
 import { Box, Card, Grid, Heading } from "theme-ui";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -11,6 +17,7 @@ export const AppCard = ({
   twitter,
   discord,
   linkedin,
+  telegram,
 }) => {
   return (
     <Card
@@ -73,6 +80,11 @@ export const AppCard = ({
         {linkedin && (
           <a href={linkedin}>
             <FaLinkedin />
+          </a>
+        )}
+        {telegram && (
+          <a href={telegram}>
+            <FaTelegram />
           </a>
         )}
       </Grid>

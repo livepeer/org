@@ -1,4 +1,5 @@
 ---
+publish: true
 image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1665428339/livepeer-studio_ojqw7s.svg
 title: Livepeer Studio
@@ -7,4 +8,5 @@ richtext: >
   to build web3 video apps with livestreaming, video on demand, and video NFT
   minting.
 website: "https://example.org"
+createdAt: "2022-10-05T18:30:00.000Z"
 ---

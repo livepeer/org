@@ -38,6 +38,15 @@
       "format": "md",
       "fields": [
         {
+          "name": "publish",
+          "label": "Publish",
+          "type": "boolean",
+          "ui": {
+            "defaultValue": true
+          },
+          "namespace": ["apps", "publish"]
+        },
+        {
           "name": "image",
           "label": "Image",
           "type": "image",
@@ -78,6 +87,21 @@
           "label": "LinkedIn",
           "type": "string",
           "namespace": ["apps", "linkedin"]
+        },
+        {
+          "name": "telegram",
+          "label": "Telegram",
+          "type": "string",
+          "namespace": ["apps", "telegram"]
+        },
+        {
+          "name": "createdAt",
+          "type": "datetime",
+          "label": "CreatedAt",
+          "ui": {
+            "defaultValue": "Tue Oct 18 2022"
+          },
+          "namespace": ["apps", "createdAt"]
         }
       ],
       "namespace": ["apps"]
@@ -88,6 +112,15 @@
       "path": "content/videos",
       "format": "md",
       "fields": [
+        {
+          "name": "publish",
+          "label": "Publish",
+          "type": "boolean",
+          "ui": {
+            "defaultValue": true
+          },
+          "namespace": ["videos", "publish"]
+        },
         {
           "name": "image",
           "label": "Image",
@@ -111,6 +144,15 @@
           "label": "Website",
           "type": "string",
           "namespace": ["videos", "website"]
+        },
+        {
+          "name": "createdAt",
+          "type": "datetime",
+          "label": "CreatedAt",
+          "ui": {
+            "defaultValue": "Tue Oct 18 2022"
+          },
+          "namespace": ["videos", "createdAt"]
         }
       ],
       "namespace": ["videos"]
@@ -121,6 +163,15 @@
       "path": "content/web3",
       "format": "md",
       "fields": [
+        {
+          "name": "publish",
+          "label": "Publish",
+          "type": "boolean",
+          "ui": {
+            "defaultValue": true
+          },
+          "namespace": ["web3", "publish"]
+        },
         {
           "name": "image",
           "label": "Image",
@@ -144,6 +195,15 @@
           "label": "Website",
           "type": "string",
           "namespace": ["web3", "website"]
+        },
+        {
+          "name": "createdAt",
+          "type": "datetime",
+          "label": "CreatedAt",
+          "ui": {
+            "defaultValue": "Tue Oct 18 2022"
+          },
+          "namespace": ["web3", "createdAt"]
         }
       ],
       "namespace": ["web3"]
@@ -154,6 +214,15 @@
       "path": "content/staking",
       "format": "md",
       "fields": [
+        {
+          "name": "publish",
+          "label": "Publish",
+          "type": "boolean",
+          "ui": {
+            "defaultValue": true
+          },
+          "namespace": ["staking", "publish"]
+        },
         {
           "name": "image",
           "label": "Image",
@@ -195,6 +264,21 @@
           "label": "LinkedIn",
           "type": "string",
           "namespace": ["staking", "linkedin"]
+        },
+        {
+          "name": "telegram",
+          "label": "Telegram",
+          "type": "string",
+          "namespace": ["staking", "telegram"]
+        },
+        {
+          "name": "createdAt",
+          "type": "datetime",
+          "label": "CreatedAt",
+          "ui": {
+            "defaultValue": "Tue Oct 18 2022"
+          },
+          "namespace": ["staking", "createdAt"]
         }
       ],
       "namespace": ["staking"]
@@ -205,6 +289,15 @@
       "path": "content/exchange",
       "format": "md",
       "fields": [
+        {
+          "name": "publish",
+          "label": "Publish",
+          "type": "boolean",
+          "ui": {
+            "defaultValue": true
+          },
+          "namespace": ["exchange", "publish"]
+        },
         {
           "name": "image",
           "label": "Image",
@@ -246,6 +339,21 @@
           "label": "LinkedIn",
           "type": "string",
           "namespace": ["exchange", "linkedin"]
+        },
+        {
+          "name": "telegram",
+          "label": "Telegram",
+          "type": "string",
+          "namespace": ["exchange", "telegram"]
+        },
+        {
+          "name": "createdAt",
+          "type": "datetime",
+          "label": "CreatedAt",
+          "ui": {
+            "defaultValue": "Tue Oct 18 2022"
+          },
+          "namespace": ["exchange", "createdAt"]
         }
       ],
       "namespace": ["exchange"]
@@ -256,6 +364,15 @@
       "path": "content/community",
       "format": "md",
       "fields": [
+        {
+          "name": "publish",
+          "label": "Publish",
+          "type": "boolean",
+          "ui": {
+            "defaultValue": true
+          },
+          "namespace": ["comunity", "publish"]
+        },
         {
           "name": "image",
           "label": "Image",
@@ -279,6 +396,15 @@
           "label": "Website",
           "type": "string",
           "namespace": ["comunity", "website"]
+        },
+        {
+          "name": "createdAt",
+          "type": "datetime",
+          "label": "CreatedAt",
+          "ui": {
+            "defaultValue": "Tue Oct 18 2022"
+          },
+          "namespace": ["comunity", "createdAt"]
         }
       ],
       "namespace": ["comunity"]
@@ -312,6 +438,172 @@
         }
       ],
       "namespace": ["pages"]
+    },
+    {
+      "label": "Ecosystem",
+      "name": "ecosystem",
+      "path": "content/ecosystem",
+      "fields": [
+        {
+          "name": "hero",
+          "label": "Hero",
+          "type": "object",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Hero Title (dark left side)",
+              "name": "hero_title_dark",
+              "namespace": ["ecosystem", "hero", "hero_title_dark"]
+            },
+            {
+              "type": "string",
+              "label": "Hero Title (green right side)",
+              "name": "hero_title_green",
+              "namespace": ["ecosystem", "hero", "hero_title_green"]
+            },
+            {
+              "type": "string",
+              "label": "Hero Description",
+              "name": "hero_description",
+              "namespace": ["ecosystem", "hero", "hero_description"]
+            },
+            {
+              "type": "string",
+              "label": "Hero Eyebrow",
+              "name": "hero_eyebrow",
+              "namespace": ["ecosystem", "hero", "hero_eyebrow"]
+            }
+          ],
+          "namespace": ["ecosystem", "hero"]
+        },
+        {
+          "name": "apps_section",
+          "label": "Apps Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Apps Title",
+              "type": "string",
+              "namespace": ["ecosystem", "apps_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Apps Description",
+              "type": "string",
+              "namespace": ["ecosystem", "apps_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "apps_section"]
+        },
+        {
+          "name": "video_section",
+          "label": "Video Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Video Title",
+              "type": "string",
+              "namespace": ["ecosystem", "video_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Video Description",
+              "type": "string",
+              "namespace": ["ecosystem", "video_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "video_section"]
+        },
+        {
+          "name": "web3_section",
+          "label": "Web3 Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Web3 Title",
+              "type": "string",
+              "namespace": ["ecosystem", "web3_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Web3 Description",
+              "type": "string",
+              "namespace": ["ecosystem", "web3_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "web3_section"]
+        },
+        {
+          "name": "stacking_section",
+          "label": "Stacking Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Stacking Title",
+              "type": "string",
+              "namespace": ["ecosystem", "stacking_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Stacking Description",
+              "type": "string",
+              "namespace": ["ecosystem", "stacking_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "stacking_section"]
+        },
+        {
+          "name": "exchanges_section",
+          "label": "Exchanges Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Exchanges Title",
+              "type": "string",
+              "namespace": ["ecosystem", "exchanges_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Exchanges Description",
+              "type": "string",
+              "namespace": ["ecosystem", "exchanges_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "exchanges_section"]
+        },
+        {
+          "name": "community_section",
+          "label": "Community Section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Community Title",
+              "type": "string",
+              "namespace": ["ecosystem", "community_section", "title"]
+            },
+            {
+              "name": "description",
+              "label": "Community Description",
+              "type": "string",
+              "namespace": ["ecosystem", "community_section", "description"]
+            }
+          ],
+          "namespace": ["ecosystem", "community_section"]
+        },
+        {
+          "name": "footer_cta_description",
+          "label": "Footer CTA Description",
+          "type": "string",
+          "namespace": ["ecosystem", "footer_cta_description"]
+        }
+      ],
+      "namespace": ["ecosystem"]
     }
   ]
 }

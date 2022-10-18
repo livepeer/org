@@ -4,6 +4,7 @@ fragment PostsParts on Posts {
 }
 
 fragment AppsParts on Apps {
+  publish
   image
   title
   richtext
@@ -11,23 +12,30 @@ fragment AppsParts on Apps {
   twitter
   discord
   linkedin
+  telegram
+  createdAt
 }
 
 fragment VideosParts on Videos {
+  publish
   image
   title
   richtext
   website
+  createdAt
 }
 
 fragment Web3Parts on Web3 {
+  publish
   image
   title
   richtext
   website
+  createdAt
 }
 
 fragment StakingParts on Staking {
+  publish
   image
   title
   richtext
@@ -35,9 +43,12 @@ fragment StakingParts on Staking {
   twitter
   discord
   linkedin
+  telegram
+  createdAt
 }
 
 fragment ExchangeParts on Exchange {
+  publish
   image
   title
   richtext
@@ -45,17 +56,62 @@ fragment ExchangeParts on Exchange {
   twitter
   discord
   linkedin
+  telegram
+  createdAt
 }
 
 fragment ComunityParts on Comunity {
+  publish
   image
   title
   richtext
   website
+  createdAt
 }
 
 fragment PagesParts on Pages {
   title
   updatedAt
   body
+}
+
+fragment EcosystemParts on Ecosystem {
+  hero {
+    __typename
+    hero_title_dark
+    hero_title_green
+    hero_description
+    hero_eyebrow
+  }
+  apps_section {
+    __typename
+    title
+    description
+  }
+  video_section {
+    __typename
+    title
+    description
+  }
+  web3_section {
+    __typename
+    title
+    description
+  }
+  stacking_section {
+    __typename
+    title
+    description
+  }
+  exchanges_section {
+    __typename
+    title
+    description
+  }
+  community_section {
+    __typename
+    title
+    description
+  }
+  footer_cta_description
 }

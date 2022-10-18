@@ -30,6 +30,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -63,6 +71,22 @@ export default defineSchema({
           name: "linkedin",
           label: "LinkedIn",
           type: "string",
+        },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -73,6 +97,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -91,6 +123,17 @@ export default defineSchema({
           name: "website",
           label: "Website",
           type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -101,6 +144,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -119,6 +170,17 @@ export default defineSchema({
           name: "website",
           label: "Website",
           type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -129,6 +191,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -162,6 +232,22 @@ export default defineSchema({
           name: "linkedin",
           label: "LinkedIn",
           type: "string",
+        },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -172,6 +258,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -206,6 +300,22 @@ export default defineSchema({
           label: "LinkedIn",
           type: "string",
         },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
+        },
       ],
     },
     {
@@ -214,6 +324,14 @@ export default defineSchema({
       path: "content/community",
       format: "md",
       fields: [
+        {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
         {
           name: "image",
           label: "Image",
@@ -233,6 +351,17 @@ export default defineSchema({
           name: "website",
           label: "Website",
           type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -265,6 +394,147 @@ export default defineSchema({
         },
       ],
     },
+    {
+      label: "Ecosystem",
+      name: "ecosystem",
+      path: "content/ecosystem",
+      fields: [
+        {
+          name: "hero",
+          label: "Hero",
+          type: "object",
+          fields: [
+            {
+              type: "string",
+              label: "Hero Title (dark left side)",
+              name: "hero_title_dark",
+            },
+            {
+              type: "string",
+              label: "Hero Title (green right side)",
+              name: "hero_title_green",
+            },
+            {
+              type: "string",
+              label: "Hero Description",
+              name: "hero_description",
+            },
+            {
+              type: "string",
+              label: "Hero Eyebrow",
+              name: "hero_eyebrow",
+            },
+          ],
+        },
+        {
+          name: "apps_section",
+          label: "Apps Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Apps Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Apps Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "video_section",
+          label: "Video Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Video Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Video Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "web3_section",
+          label: "Web3 Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Web3 Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Web3 Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "stacking_section",
+          label: "Stacking Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Stacking Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Stacking Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "exchanges_section",
+          label: "Exchanges Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Exchanges Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Exchanges Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "community_section",
+          label: "Community Section",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              label: "Community Title",
+              type: "string",
+            },
+            {
+              name: "description",
+              label: "Community Description",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "footer_cta_description",
+          label: "Footer CTA Description",
+          type: "string",
+        },
+      ],
+    },
   ],
 });
 
@@ -280,10 +550,6 @@ const apiURL =
 
 export const tinaConfig = defineConfig({
   apiURL,
-  mediaStore: async () => {
-    const pack = await import("next-tinacms-cloudinary");
-    return pack.TinaCloudCloudinaryMediaStore;
-  },
   formifyCallback: ({ formConfig, createForm, skip }) => {
     if (formConfig.id === "getPagesDocument") {
       const onSubmit = (values, form, callback) => {

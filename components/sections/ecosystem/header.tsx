@@ -1,6 +1,12 @@
 import { Box, Container, Heading, Text } from "theme-ui";
 
-export const Header = () => {
+export const Header = ({ hero }) => {
+  const {
+    hero_description,
+    hero_eyebrow,
+    hero_title_dark,
+    hero_title_green,
+  } = hero;
   return (
     <Box sx={{ px: 3, py: ["40px", null, null, "80px"] }}>
       <Container
@@ -26,7 +32,7 @@ export const Header = () => {
               overflowWrap: "normal",
               display: ["block", null, null, null],
             }}>
-            Livepeer&nbsp;
+            {hero_title_dark}&nbsp;
             <Text
               as="span"
               sx={{
@@ -36,7 +42,7 @@ export const Header = () => {
                   `linear-gradient(90deg, #00A55F 0%, ${colors.gradient.mid} 100%)`,
                 variant: "text.gradientBase",
               }}>
-              Ecosystem
+              {hero_title_green}
             </Text>
           </Heading>
           <Heading
@@ -46,8 +52,16 @@ export const Header = () => {
               color: "section.subtitle",
             }}
             mt={3}>
-            Explore the apps and services of the Livepeer ecosystem, and
-            discover the next generation of decentralized video.
+            {hero_description}
+          </Heading>
+          <Heading
+            variant="section.subtitle"
+            sx={{
+              maxWidth: 700,
+              color: "section.subtitle",
+            }}
+            mt={3}>
+            {hero_eyebrow}
           </Heading>
         </Box>
       </Container>

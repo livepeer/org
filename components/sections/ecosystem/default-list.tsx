@@ -59,6 +59,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
             discord,
             image,
             linkedin,
+            telegram,
           } = app.node.data || {};
           switch (cardType) {
             case "app":
@@ -72,6 +73,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   twitter={twitter}
                   discord={discord}
                   linkedin={linkedin}
+                  telegram={telegram}
                 />
               );
             case "video":
@@ -105,6 +107,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   twitter={twitter}
                   discord={discord}
                   linkedin={linkedin}
+                  telegram={telegram}
                 />
               );
             case "exchange":
@@ -117,6 +120,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   twitter={twitter}
                   discord={discord}
                   linkedin={linkedin}
+                  telegram={telegram}
                 />
               );
             case "community":
