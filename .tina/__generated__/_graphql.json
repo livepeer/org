@@ -2538,6 +2538,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "arguments": [],
@@ -2629,6 +2644,36 @@
           "name": {
             "kind": "Name",
             "value": "linkedin"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "telegram"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "arguments": [],
           "type": {
@@ -2899,6 +2944,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "arguments": [],
@@ -2945,6 +3005,21 @@
           "name": {
             "kind": "Name",
             "value": "website"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "arguments": [],
           "type": {
@@ -3215,6 +3290,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "arguments": [],
@@ -3261,6 +3351,21 @@
           "name": {
             "kind": "Name",
             "value": "website"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "arguments": [],
           "type": {
@@ -3531,6 +3636,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "arguments": [],
@@ -3622,6 +3742,36 @@
           "name": {
             "kind": "Name",
             "value": "linkedin"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "telegram"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "arguments": [],
           "type": {
@@ -3892,6 +4042,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "arguments": [],
@@ -3983,6 +4148,36 @@
           "name": {
             "kind": "Name",
             "value": "linkedin"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "telegram"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "arguments": [],
           "type": {
@@ -4253,6 +4448,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "arguments": [],
@@ -4299,6 +4509,21 @@
           "name": {
             "kind": "Name",
             "value": "website"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "arguments": [],
           "type": {
@@ -6899,6 +7124,20 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "type": {
@@ -6984,6 +7223,34 @@
           "name": {
             "kind": "Name",
             "value": "linkedin"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "telegram"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "type": {
             "kind": "NamedType",
@@ -7006,6 +7273,20 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "type": {
@@ -7049,6 +7330,20 @@
           "name": {
             "kind": "Name",
             "value": "website"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "type": {
             "kind": "NamedType",
@@ -7071,6 +7366,20 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "type": {
@@ -7114,6 +7423,20 @@
           "name": {
             "kind": "Name",
             "value": "website"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "type": {
             "kind": "NamedType",
@@ -7136,6 +7459,20 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "type": {
@@ -7221,6 +7558,34 @@
           "name": {
             "kind": "Name",
             "value": "linkedin"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "telegram"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "type": {
             "kind": "NamedType",
@@ -7243,6 +7608,20 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
+            "value": "publish"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
             "value": "image"
           },
           "type": {
@@ -7336,6 +7715,34 @@
               "value": "String"
             }
           }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "telegram"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
         }
       ]
     },
@@ -7346,6 +7753,20 @@
         "value": "ComunityMutation"
       },
       "fields": [
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "publish"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "Boolean"
+            }
+          }
+        },
         {
           "kind": "InputValueDefinition",
           "name": {
@@ -7393,6 +7814,20 @@
           "name": {
             "kind": "Name",
             "value": "website"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createdAt"
           },
           "type": {
             "kind": "NamedType",

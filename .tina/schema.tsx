@@ -30,6 +30,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -63,6 +71,22 @@ export default defineSchema({
           name: "linkedin",
           label: "LinkedIn",
           type: "string",
+        },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -73,6 +97,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -91,6 +123,17 @@ export default defineSchema({
           name: "website",
           label: "Website",
           type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -101,6 +144,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -119,6 +170,17 @@ export default defineSchema({
           name: "website",
           label: "Website",
           type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -129,6 +191,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -162,6 +232,22 @@ export default defineSchema({
           name: "linkedin",
           label: "LinkedIn",
           type: "string",
+        },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },
@@ -172,6 +258,14 @@ export default defineSchema({
       format: "md",
       fields: [
         {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
+        {
           name: "image",
           label: "Image",
           type: "image",
@@ -206,6 +300,22 @@ export default defineSchema({
           label: "LinkedIn",
           type: "string",
         },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
+        },
       ],
     },
     {
@@ -214,6 +324,14 @@ export default defineSchema({
       path: "content/community",
       format: "md",
       fields: [
+        {
+          name: "publish",
+          label: "Publish",
+          type: "boolean",
+          ui: {
+            defaultValue: true,
+          },
+        },
         {
           name: "image",
           label: "Image",
@@ -233,6 +351,17 @@ export default defineSchema({
           name: "website",
           label: "Website",
           type: "string",
+        },
+        {
+          name: "createdAt",
+          type: "datetime",
+          label: "CreatedAt",
+          ui: {
+            defaultValue: new Date().toDateString(),
+            component: () => {
+              return <div></div>;
+            },
+          },
         },
       ],
     },

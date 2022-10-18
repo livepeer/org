@@ -1,5 +1,5 @@
 import PageLayout from "components/layouts/page";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BsChevronCompactDown } from "react-icons/bs";
 import { staticRequest, gql } from "tinacms";
 import { HeadProps } from "components/primitives/head";
@@ -53,11 +53,25 @@ const query = gql`
 `;
 
 function AppSection({ apps, header }) {
+  const [expandApps, setExpandApps] = useState(false);
+  const [appsList, setAppsList] = useState(apps.slice(0, 6));
+  console.log("apps", apps);
+  useEffect(() => {
+    if (expandApps) {
+      setAppsList(apps);
+    } else {
+      setAppsList(apps.slice(0, 6));
+    }
+    return () => {
+      setExpandApps(false);
+    };
+  }, [expandApps]);
+
   return (
     <Box sx={{ bg: "muted", px: 3, py: "40px" }} id="apps">
       <DefaultList
         inverted={false}
-        apps={apps}
+        apps={appsList}
         title={header.title}
         subtitle={header.description}
         cardType="app"
@@ -65,7 +79,7 @@ function AppSection({ apps, header }) {
 
       <Flex
         onClick={() => {
-          // console.log("expand");
+          setExpandApps(!expandApps);
         }}
         sx={{
           ":hover": {
@@ -89,7 +103,7 @@ function AppSection({ apps, header }) {
 
 function VideoToolSection({ videos, header }) {
   return (
-    <Box sx={{ bg: "text", px: 3, py: "40px" }} id="videoTools">
+    <Box sx={{ bg: "text", px: 3, py: "40px" }} id="videotools">
       <DefaultList
         inverted={true}
         apps={videos}
@@ -103,7 +117,7 @@ function VideoToolSection({ videos, header }) {
 
 function Web3Section({ web3, header }) {
   return (
-    <Box sx={{ px: 3, py: "40px" }} id="web3TechStack">
+    <Box sx={{ px: 3, py: "40px" }} id="web3techstack">
       <DefaultList
         inverted={false}
         apps={web3}
@@ -123,7 +137,7 @@ function StakingPlatformSection({ staking, header }) {
           width: "100%",
           height: "80px",
         }}
-        id="stakingPartners"
+        id="stakingpartners"
       />
       <Box sx={{ px: 3, py: "40px" }}>
         <DefaultList
@@ -153,7 +167,7 @@ function ExchangeSection({ exchanges, header }) {
 
 function CommunitySection({ communities, header }) {
   return (
-    <Box sx={{ px: 3, py: "40px" }} id="communityTools">
+    <Box sx={{ px: 3, py: "40px" }} id="communitytools">
       <DefaultList
         inverted={false}
         apps={communities}
@@ -180,7 +194,6 @@ function Ecosystem({
   variables,
 }) {
   const { t } = useTranslation(["home"]);
-  // console.log("data", data, variables);
   const { data: tinaData } = useTina({
     query,
     variables,
@@ -194,7 +207,6 @@ function Ecosystem({
       document.documentElement.style.scrollBehavior = "initial";
     };
   }, []);
-  // console.log({ pageDetails });
   const headProps: HeadProps = {
     meta: {
       title: "Ecosystem",
@@ -243,8 +255,20 @@ function Ecosystem({
           header={pageData.community_section}
         />
       )}
+      <div>{pageData.footer_cta_description}</div>
     </PageLayout>
   );
+}
+
+function sortData(data) {
+  const temp = data.filter((b) => b.node.data.publish);
+  const finalData = temp.sort(
+    (a, b) =>
+      new Date(b.node.data.createdAt).getTime() -
+      new Date(a.node.data.createdAt).getTime()
+  );
+
+  return finalData;
 }
 
 export async function getStaticProps({ locale }) {
@@ -258,6 +282,7 @@ export async function getStaticProps({ locale }) {
                 filename
               }
               data {
+                publish
                 image
                 title
                 richtext
@@ -265,6 +290,8 @@ export async function getStaticProps({ locale }) {
                 twitter
                 discord
                 linkedin
+                telegram
+                createdAt
               }
             }
           }
@@ -282,10 +309,12 @@ export async function getStaticProps({ locale }) {
                 filename
               }
               data {
+                publish
                 image
                 title
                 richtext
                 website
+                createdAt
               }
             }
           }
@@ -303,10 +332,12 @@ export async function getStaticProps({ locale }) {
                 filename
               }
               data {
+                publish
                 image
                 title
                 richtext
                 website
+                createdAt
               }
             }
           }
@@ -324,11 +355,16 @@ export async function getStaticProps({ locale }) {
                 filename
               }
               data {
+                publish
                 image
                 title
                 richtext
                 website
                 twitter
+                discord
+                linkedin
+                telegram
+                createdAt
               }
             }
           }
@@ -346,11 +382,16 @@ export async function getStaticProps({ locale }) {
                 filename
               }
               data {
+                publish
                 image
                 title
                 richtext
                 website
                 twitter
+                discord
+                linkedin
+                telegram
+                createdAt
               }
             }
           }
@@ -369,10 +410,12 @@ export async function getStaticProps({ locale }) {
                 filename
               }
               data {
+                publish
                 image
                 title
                 richtext
                 website
+                createdAt
               }
             }
           }
@@ -388,12 +431,12 @@ export async function getStaticProps({ locale }) {
     variables,
   });
 
-  const communities = communityRes?.getComunityList?.edges;
-  const videos = videosData?.getVideosList?.edges;
-  const exchanges = exchangeData?.getExchangeList?.edges;
-  const staking = stakingData?.getStakingList?.edges;
-  const web3 = web3Data?.getWeb3List?.edges;
-  const apps = appsData?.getAppsList?.edges;
+  const communities = sortData(communityRes?.getComunityList?.edges);
+  const videos = sortData(videosData?.getVideosList?.edges);
+  const exchanges = sortData(exchangeData?.getExchangeList?.edges);
+  const staking = sortData(stakingData?.getStakingList?.edges);
+  const web3 = sortData(web3Data?.getWeb3List?.edges);
+  const apps = sortData(appsData?.getAppsList?.edges);
 
   return {
     props: {
@@ -403,7 +446,6 @@ export async function getStaticProps({ locale }) {
       communities,
       exchanges,
       staking,
-      // pageDetails,
       data,
       variables,
       ...(await serverSideTranslations(locale, ["common", "home"])),

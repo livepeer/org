@@ -301,6 +301,7 @@ export type PostsConnection = Connection & {
 
 export type Apps = {
   __typename?: "Apps";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
@@ -308,6 +309,8 @@ export type Apps = {
   twitter?: Maybe<Scalars["String"]>;
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
+  telegram?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type AppsDocument = Node &
@@ -336,10 +339,12 @@ export type AppsConnection = Connection & {
 
 export type Videos = {
   __typename?: "Videos";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type VideosDocument = Node &
@@ -368,10 +373,12 @@ export type VideosConnection = Connection & {
 
 export type Web3 = {
   __typename?: "Web3";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type Web3Document = Node &
@@ -400,6 +407,7 @@ export type Web3Connection = Connection & {
 
 export type Staking = {
   __typename?: "Staking";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
@@ -407,6 +415,8 @@ export type Staking = {
   twitter?: Maybe<Scalars["String"]>;
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
+  telegram?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type StakingDocument = Node &
@@ -435,6 +445,7 @@ export type StakingConnection = Connection & {
 
 export type Exchange = {
   __typename?: "Exchange";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
@@ -442,6 +453,8 @@ export type Exchange = {
   twitter?: Maybe<Scalars["String"]>;
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
+  telegram?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type ExchangeDocument = Node &
@@ -470,10 +483,12 @@ export type ExchangeConnection = Connection & {
 
 export type Comunity = {
   __typename?: "Comunity";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type ComunityDocument = Node &
@@ -762,6 +777,7 @@ export type PostsMutation = {
 };
 
 export type AppsMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
@@ -769,23 +785,30 @@ export type AppsMutation = {
   twitter?: InputMaybe<Scalars["String"]>;
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
+  telegram?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type VideosMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type Web3Mutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type StakingMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
@@ -793,9 +816,12 @@ export type StakingMutation = {
   twitter?: InputMaybe<Scalars["String"]>;
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
+  telegram?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type ExchangeMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
@@ -803,13 +829,17 @@ export type ExchangeMutation = {
   twitter?: InputMaybe<Scalars["String"]>;
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
+  telegram?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type ComunityMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type PagesMutation = {
@@ -874,6 +904,7 @@ export type PostsPartsFragment = {
 
 export type AppsPartsFragment = {
   __typename?: "Apps";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
@@ -881,26 +912,33 @@ export type AppsPartsFragment = {
   twitter?: string | null;
   discord?: string | null;
   linkedin?: string | null;
+  telegram?: string | null;
+  createdAt?: string | null;
 };
 
 export type VideosPartsFragment = {
   __typename?: "Videos";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
   website?: string | null;
+  createdAt?: string | null;
 };
 
 export type Web3PartsFragment = {
   __typename?: "Web3";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
   website?: string | null;
+  createdAt?: string | null;
 };
 
 export type StakingPartsFragment = {
   __typename?: "Staking";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
@@ -908,10 +946,13 @@ export type StakingPartsFragment = {
   twitter?: string | null;
   discord?: string | null;
   linkedin?: string | null;
+  telegram?: string | null;
+  createdAt?: string | null;
 };
 
 export type ExchangePartsFragment = {
   __typename?: "Exchange";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
@@ -919,14 +960,18 @@ export type ExchangePartsFragment = {
   twitter?: string | null;
   discord?: string | null;
   linkedin?: string | null;
+  telegram?: string | null;
+  createdAt?: string | null;
 };
 
 export type ComunityPartsFragment = {
   __typename?: "Comunity";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
   website?: string | null;
+  createdAt?: string | null;
 };
 
 export type PagesPartsFragment = {
@@ -1051,6 +1096,7 @@ export type GetAppsDocumentQuery = {
     };
     data: {
       __typename?: "Apps";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
@@ -1058,6 +1104,8 @@ export type GetAppsDocumentQuery = {
       twitter?: string | null;
       discord?: string | null;
       linkedin?: string | null;
+      telegram?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1085,6 +1133,7 @@ export type GetAppsListQuery = {
         };
         data: {
           __typename?: "Apps";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
@@ -1092,6 +1141,8 @@ export type GetAppsListQuery = {
           twitter?: string | null;
           discord?: string | null;
           linkedin?: string | null;
+          telegram?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1118,10 +1169,12 @@ export type GetVideosDocumentQuery = {
     };
     data: {
       __typename?: "Videos";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
       website?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1149,10 +1202,12 @@ export type GetVideosListQuery = {
         };
         data: {
           __typename?: "Videos";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
           website?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1179,10 +1234,12 @@ export type GetWeb3DocumentQuery = {
     };
     data: {
       __typename?: "Web3";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
       website?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1210,10 +1267,12 @@ export type GetWeb3ListQuery = {
         };
         data: {
           __typename?: "Web3";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
           website?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1240,6 +1299,7 @@ export type GetStakingDocumentQuery = {
     };
     data: {
       __typename?: "Staking";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
@@ -1247,6 +1307,8 @@ export type GetStakingDocumentQuery = {
       twitter?: string | null;
       discord?: string | null;
       linkedin?: string | null;
+      telegram?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1274,6 +1336,7 @@ export type GetStakingListQuery = {
         };
         data: {
           __typename?: "Staking";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
@@ -1281,6 +1344,8 @@ export type GetStakingListQuery = {
           twitter?: string | null;
           discord?: string | null;
           linkedin?: string | null;
+          telegram?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1307,6 +1372,7 @@ export type GetExchangeDocumentQuery = {
     };
     data: {
       __typename?: "Exchange";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
@@ -1314,6 +1380,8 @@ export type GetExchangeDocumentQuery = {
       twitter?: string | null;
       discord?: string | null;
       linkedin?: string | null;
+      telegram?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1341,6 +1409,7 @@ export type GetExchangeListQuery = {
         };
         data: {
           __typename?: "Exchange";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
@@ -1348,6 +1417,8 @@ export type GetExchangeListQuery = {
           twitter?: string | null;
           discord?: string | null;
           linkedin?: string | null;
+          telegram?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1374,10 +1445,12 @@ export type GetComunityDocumentQuery = {
     };
     data: {
       __typename?: "Comunity";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
       website?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1405,10 +1478,12 @@ export type GetComunityListQuery = {
         };
         data: {
           __typename?: "Comunity";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
           website?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1611,6 +1686,7 @@ export const PostsPartsFragmentDoc = gql`
 `;
 export const AppsPartsFragmentDoc = gql`
   fragment AppsParts on Apps {
+    publish
     image
     title
     richtext
@@ -1618,26 +1694,33 @@ export const AppsPartsFragmentDoc = gql`
     twitter
     discord
     linkedin
+    telegram
+    createdAt
   }
 `;
 export const VideosPartsFragmentDoc = gql`
   fragment VideosParts on Videos {
+    publish
     image
     title
     richtext
     website
+    createdAt
   }
 `;
 export const Web3PartsFragmentDoc = gql`
   fragment Web3Parts on Web3 {
+    publish
     image
     title
     richtext
     website
+    createdAt
   }
 `;
 export const StakingPartsFragmentDoc = gql`
   fragment StakingParts on Staking {
+    publish
     image
     title
     richtext
@@ -1645,10 +1728,13 @@ export const StakingPartsFragmentDoc = gql`
     twitter
     discord
     linkedin
+    telegram
+    createdAt
   }
 `;
 export const ExchangePartsFragmentDoc = gql`
   fragment ExchangeParts on Exchange {
+    publish
     image
     title
     richtext
@@ -1656,14 +1742,18 @@ export const ExchangePartsFragmentDoc = gql`
     twitter
     discord
     linkedin
+    telegram
+    createdAt
   }
 `;
 export const ComunityPartsFragmentDoc = gql`
   fragment ComunityParts on Comunity {
+    publish
     image
     title
     richtext
     website
+    createdAt
   }
 `;
 export const PagesPartsFragmentDoc = gql`

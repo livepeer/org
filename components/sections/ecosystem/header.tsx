@@ -54,6 +54,15 @@ export const Header = ({ hero }) => {
             mt={3}>
             {hero_description}
           </Heading>
+          <Heading
+            variant="section.subtitle"
+            sx={{
+              maxWidth: 700,
+              color: "section.subtitle",
+            }}
+            mt={3}>
+            {hero_eyebrow}
+          </Heading>
         </Box>
       </Container>
     </Box>

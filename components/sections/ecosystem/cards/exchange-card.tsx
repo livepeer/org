@@ -1,4 +1,10 @@
-import { FaGlobe, FaLinkedin, FaTwitter, FaDiscord } from "react-icons/fa";
+import {
+  FaGlobe,
+  FaLinkedin,
+  FaTwitter,
+  FaDiscord,
+  FaTelegram,
+} from "react-icons/fa";
 import { Box, Card, Grid, Heading } from "theme-ui";
 import Image from "next/image";
 
@@ -9,6 +15,7 @@ export const ExchangeCard = ({
   twitter,
   discord,
   linkedin,
+  telegram,
 }) => {
   return (
     <Card
@@ -72,6 +79,11 @@ export const ExchangeCard = ({
         {linkedin && (
           <a href={linkedin}>
             <FaLinkedin />
+          </a>
+        )}
+        {telegram && (
+          <a href={telegram}>
+            <FaTelegram />
           </a>
         )}
       </Grid>

@@ -205,6 +205,7 @@ type PostsConnection implements Connection {
 }
 
 type Apps {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
@@ -212,6 +213,8 @@ type Apps {
   twitter: String
   discord: String
   linkedin: String
+  telegram: String
+  createdAt: String
 }
 
 type AppsDocument implements Node & Document {
@@ -235,10 +238,12 @@ type AppsConnection implements Connection {
 }
 
 type Videos {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
   website: String
+  createdAt: String
 }
 
 type VideosDocument implements Node & Document {
@@ -262,10 +267,12 @@ type VideosConnection implements Connection {
 }
 
 type Web3 {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
   website: String
+  createdAt: String
 }
 
 type Web3Document implements Node & Document {
@@ -289,6 +296,7 @@ type Web3Connection implements Connection {
 }
 
 type Staking {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
@@ -296,6 +304,8 @@ type Staking {
   twitter: String
   discord: String
   linkedin: String
+  telegram: String
+  createdAt: String
 }
 
 type StakingDocument implements Node & Document {
@@ -319,6 +329,7 @@ type StakingConnection implements Connection {
 }
 
 type Exchange {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
@@ -326,6 +337,8 @@ type Exchange {
   twitter: String
   discord: String
   linkedin: String
+  telegram: String
+  createdAt: String
 }
 
 type ExchangeDocument implements Node & Document {
@@ -349,10 +362,12 @@ type ExchangeConnection implements Connection {
 }
 
 type Comunity {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
   website: String
+  createdAt: String
 }
 
 type ComunityDocument implements Node & Document {
@@ -577,6 +592,7 @@ input PostsMutation {
 }
 
 input AppsMutation {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
@@ -584,23 +600,30 @@ input AppsMutation {
   twitter: String
   discord: String
   linkedin: String
+  telegram: String
+  createdAt: String
 }
 
 input VideosMutation {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
   website: String
+  createdAt: String
 }
 
 input Web3Mutation {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
   website: String
+  createdAt: String
 }
 
 input StakingMutation {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
@@ -608,9 +631,12 @@ input StakingMutation {
   twitter: String
   discord: String
   linkedin: String
+  telegram: String
+  createdAt: String
 }
 
 input ExchangeMutation {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
@@ -618,13 +644,17 @@ input ExchangeMutation {
   twitter: String
   discord: String
   linkedin: String
+  telegram: String
+  createdAt: String
 }
 
 input ComunityMutation {
+  publish: Boolean
   image: String
   title: String
   richtext: JSON
   website: String
+  createdAt: String
 }
 
 input PagesMutation {
