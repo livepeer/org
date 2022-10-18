@@ -56,7 +56,7 @@ const query = gql`
 function AppSection({ apps, header }) {
   const [expandApps, setExpandApps] = useState(false);
   const [appsList, setAppsList] = useState(apps.slice(0, 6));
-  // console.log("apps", apps);
+  console.log("apps", apps);
   useEffect(() => {
     if (expandApps) {
       setAppsList(apps);
@@ -201,7 +201,7 @@ function Ecosystem({
     data,
   });
   const pageData = extractData(tinaData);
-  // console.log("tina Data", pageData);
+  console.log("tina Data", pageData);
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
