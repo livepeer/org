@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Box, Button, Container, Heading } from "theme-ui";
+import { Box, Button, Container, Heading, Link } from "theme-ui";
 
 export const CtaBanner = ({ divider, title }) => {
   return (
@@ -24,7 +23,7 @@ export const CtaBanner = ({ divider, title }) => {
           <Heading sx={{ textAlign: "center", fontSize: "1.2rem" }}>
             {title}
           </Heading>
-          <Link href={"/contact"}>
+          <Link href="https://lvpr.link/3SbVOLR">
             <Box
               sx={{ display: "grid", placeItems: "center", marginTop: "32px" }}>
               <Button>Submit a Project</Button>
