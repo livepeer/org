@@ -6,8 +6,8 @@ title: Korkuma
 richtext: >
   Live shopping platform. The next top sales channel for forward-looking
   ecommerce brands.
-website: "https://example.org"
-twitter: "https://example.org"
-discord: "https://discord.com/invite/EYqfS32jYc"
+website: "https://www.korkuma.com/"
+twitter: "https://twitter.com/KorkumaOfficial"
+discord: ""
 createdAt: "2022-10-06T18:30:00.000Z"
 ---

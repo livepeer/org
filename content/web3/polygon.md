@@ -5,7 +5,7 @@ image: >-
 title: Polygon
 richtext: >
   Ethereum scaling platform that enables developers to build scalable
-  user-friendly dApps. Integrated with Livepeer.
-website: "https://ethereum.org/en/"
-createdAt: "2022-10-13T18:30:00.000Z"
+  user-friendly dApps. Integrates with Livepeer.
+website: "https://polygon.technology/"
+createdAt: "2022-10-05T18:30:00.000Z"
 ---

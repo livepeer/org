@@ -5,7 +5,7 @@ image: >-
 title: Staking Rewards
 richtext: |
   Crypto staking explorer.
-website: "https://example.org"
-twitter: "https://example.org"
-createdAt: "2022-10-16T18:30:00.000Z"
+website: "https://www.stakingrewards.com/"
+twitter: "https://twitter.com/stakingrewards"
+createdAt: "2022-10-05T18:30:00.000Z"
 ---

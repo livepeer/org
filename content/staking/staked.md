@@ -5,7 +5,7 @@ image: >-
 title: Staked
 richtext: |
   Staking and lending provider.
-website: "https://example.org"
-twitter: "https://example.org"
+website: "https://staked.us/"
+twitter: "https://twitter.com/staked_us/"
 createdAt: "2022-10-05T18:30:00.000Z"
 ---
