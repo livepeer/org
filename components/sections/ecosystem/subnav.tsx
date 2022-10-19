@@ -6,7 +6,7 @@ export const Subnav = () => {
 
   const handleScroll = useCallback(() => {
     const { scrollTop } = document.documentElement;
-    if (scrollTop > 540) setHasScrolled(true);
+    if (scrollTop > 632) setHasScrolled(true);
     else setHasScrolled(false);
   }, []);
 
@@ -43,11 +43,11 @@ export const Subnav = () => {
           fontWeight: "600",
         }}>
         <Link href="#apps">Apps</Link>
-        <Link href="#videoTools">Video Tools</Link>
-        <Link href="#web3TechStack">Web3 Tech Stack</Link>
-        <Link href="#stakingPartners">Staking Partners</Link>
+        <Link href="#videotools">Video Tools</Link>
+        <Link href="#web3techstack">Web3 Tech Stack</Link>
+        <Link href="#stakingpartners">Staking Partners</Link>
         <Link href="#exchanges">Exchanges</Link>
-        <Link href="#communityTools">Community Tools</Link>
+        <Link href="#communitytools">Community Tools</Link>
       </Grid>
     </Box>
   );

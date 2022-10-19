@@ -10,7 +10,8 @@
       "staking",
       "exchange",
       "comunity",
-      "pages"
+      "pages",
+      "ecosystem"
     ]
   },
   "Node": {
@@ -118,5 +119,17 @@
     "type": "PagesConnection",
     "resolveType": "collectionDocumentList",
     "collection": "pages"
+  },
+  "EcosystemDocument": {
+    "type": "EcosystemDocument",
+    "resolveType": "collectionDocument",
+    "collection": "ecosystem",
+    "createEcosystemDocument": "create",
+    "updateEcosystemDocument": "update"
+  },
+  "EcosystemConnection": {
+    "type": "EcosystemConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "ecosystem"
   }
 }

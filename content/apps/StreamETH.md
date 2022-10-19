@@ -5,7 +5,6 @@ title: StreamETH
 richtext: >
   Enables event organizers, communities, and content creators to livestream and
   share video in a decentralized way.
-website: 'https://streameth.tv/'
-twitter: 'https://mobile.twitter.com/streameth'
+website: "https://streameth.tv/"
+twitter: "https://mobile.twitter.com/streameth"
 ---
-

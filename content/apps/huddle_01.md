@@ -1,12 +1,13 @@
 ---
+publish: true
 image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1665427060/huddle_01_tidipc.svg
 title: Huddle01
 richtext: |
   The world's first web3 native video meeting solution.
-website: 'https://huddle01.com/'
-twitter: 'https://twitter.com/huddle01com'
-discord: 'https://discord.com/invite/EYqfS32jYc'
-linkedin: 'https://example.org'
+website: "https://huddle01.com/"
+twitter: "https://twitter.com/huddle01com"
+discord: "https://discord.com/invite/EYqfS32jYc"
+linkedin: "https://example.org"
+createdAt: "2022-09-25T18:30:00.000Z"
 ---
-

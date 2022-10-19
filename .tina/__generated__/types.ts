@@ -87,6 +87,8 @@ export type Query = {
   getComunityList: ComunityConnection;
   getPagesDocument: PagesDocument;
   getPagesList: PagesConnection;
+  getEcosystemDocument: EcosystemDocument;
+  getEcosystemList: EcosystemConnection;
 };
 
 export type QueryGetOptimizedQueryArgs = {
@@ -210,6 +212,18 @@ export type QueryGetPagesListArgs = {
   sort?: InputMaybe<Scalars["String"]>;
 };
 
+export type QueryGetEcosystemDocumentArgs = {
+  relativePath?: InputMaybe<Scalars["String"]>;
+};
+
+export type QueryGetEcosystemListArgs = {
+  before?: InputMaybe<Scalars["String"]>;
+  after?: InputMaybe<Scalars["String"]>;
+  first?: InputMaybe<Scalars["Float"]>;
+  last?: InputMaybe<Scalars["Float"]>;
+  sort?: InputMaybe<Scalars["String"]>;
+};
+
 export type DocumentConnectionEdges = {
   __typename?: "DocumentConnectionEdges";
   cursor?: Maybe<Scalars["String"]>;
@@ -252,7 +266,8 @@ export type DocumentNode =
   | StakingDocument
   | ExchangeDocument
   | ComunityDocument
-  | PagesDocument;
+  | PagesDocument
+  | EcosystemDocument;
 
 export type Posts = {
   __typename?: "Posts";
@@ -286,6 +301,7 @@ export type PostsConnection = Connection & {
 
 export type Apps = {
   __typename?: "Apps";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
@@ -293,6 +309,8 @@ export type Apps = {
   twitter?: Maybe<Scalars["String"]>;
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
+  telegram?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type AppsDocument = Node &
@@ -321,10 +339,12 @@ export type AppsConnection = Connection & {
 
 export type Videos = {
   __typename?: "Videos";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type VideosDocument = Node &
@@ -353,10 +373,12 @@ export type VideosConnection = Connection & {
 
 export type Web3 = {
   __typename?: "Web3";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type Web3Document = Node &
@@ -385,6 +407,7 @@ export type Web3Connection = Connection & {
 
 export type Staking = {
   __typename?: "Staking";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
@@ -392,6 +415,8 @@ export type Staking = {
   twitter?: Maybe<Scalars["String"]>;
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
+  telegram?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type StakingDocument = Node &
@@ -420,6 +445,7 @@ export type StakingConnection = Connection & {
 
 export type Exchange = {
   __typename?: "Exchange";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
@@ -427,6 +453,8 @@ export type Exchange = {
   twitter?: Maybe<Scalars["String"]>;
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
+  telegram?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type ExchangeDocument = Node &
@@ -455,10 +483,12 @@ export type ExchangeConnection = Connection & {
 
 export type Comunity = {
   __typename?: "Comunity";
+  publish?: Maybe<Scalars["Boolean"]>;
   image?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["String"]>;
 };
 
 export type ComunityDocument = Node &
@@ -516,6 +546,86 @@ export type PagesConnection = Connection & {
   edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
 };
 
+export type EcosystemHero = {
+  __typename?: "EcosystemHero";
+  hero_title_dark?: Maybe<Scalars["String"]>;
+  hero_title_green?: Maybe<Scalars["String"]>;
+  hero_description?: Maybe<Scalars["String"]>;
+  hero_eyebrow?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemApps_Section = {
+  __typename?: "EcosystemApps_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemVideo_Section = {
+  __typename?: "EcosystemVideo_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemWeb3_Section = {
+  __typename?: "EcosystemWeb3_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemStacking_Section = {
+  __typename?: "EcosystemStacking_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemExchanges_Section = {
+  __typename?: "EcosystemExchanges_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemCommunity_Section = {
+  __typename?: "EcosystemCommunity_section";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+};
+
+export type Ecosystem = {
+  __typename?: "Ecosystem";
+  hero?: Maybe<EcosystemHero>;
+  apps_section?: Maybe<EcosystemApps_Section>;
+  video_section?: Maybe<EcosystemVideo_Section>;
+  web3_section?: Maybe<EcosystemWeb3_Section>;
+  stacking_section?: Maybe<EcosystemStacking_Section>;
+  exchanges_section?: Maybe<EcosystemExchanges_Section>;
+  community_section?: Maybe<EcosystemCommunity_Section>;
+  footer_cta_description?: Maybe<Scalars["String"]>;
+};
+
+export type EcosystemDocument = Node &
+  Document & {
+    __typename?: "EcosystemDocument";
+    id: Scalars["ID"];
+    sys: SystemInfo;
+    data: Ecosystem;
+    form: Scalars["JSON"];
+    values: Scalars["JSON"];
+    dataJSON: Scalars["JSON"];
+  };
+
+export type EcosystemConnectionEdges = {
+  __typename?: "EcosystemConnectionEdges";
+  cursor?: Maybe<Scalars["String"]>;
+  node?: Maybe<EcosystemDocument>;
+};
+
+export type EcosystemConnection = Connection & {
+  __typename?: "EcosystemConnection";
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars["Float"];
+  edges?: Maybe<Array<Maybe<EcosystemConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: "Mutation";
   addPendingDocument: DocumentNode;
@@ -537,6 +647,8 @@ export type Mutation = {
   createComunityDocument: ComunityDocument;
   updatePagesDocument: PagesDocument;
   createPagesDocument: PagesDocument;
+  updateEcosystemDocument: EcosystemDocument;
+  createEcosystemDocument: EcosystemDocument;
 };
 
 export type MutationAddPendingDocumentArgs = {
@@ -637,6 +749,16 @@ export type MutationCreatePagesDocumentArgs = {
   params: PagesMutation;
 };
 
+export type MutationUpdateEcosystemDocumentArgs = {
+  relativePath: Scalars["String"];
+  params: EcosystemMutation;
+};
+
+export type MutationCreateEcosystemDocumentArgs = {
+  relativePath: Scalars["String"];
+  params: EcosystemMutation;
+};
+
 export type DocumentMutation = {
   posts?: InputMaybe<PostsMutation>;
   apps?: InputMaybe<AppsMutation>;
@@ -646,6 +768,7 @@ export type DocumentMutation = {
   exchange?: InputMaybe<ExchangeMutation>;
   comunity?: InputMaybe<ComunityMutation>;
   pages?: InputMaybe<PagesMutation>;
+  ecosystem?: InputMaybe<EcosystemMutation>;
 };
 
 export type PostsMutation = {
@@ -654,6 +777,7 @@ export type PostsMutation = {
 };
 
 export type AppsMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
@@ -661,23 +785,30 @@ export type AppsMutation = {
   twitter?: InputMaybe<Scalars["String"]>;
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
+  telegram?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type VideosMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type Web3Mutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type StakingMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
@@ -685,9 +816,12 @@ export type StakingMutation = {
   twitter?: InputMaybe<Scalars["String"]>;
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
+  telegram?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type ExchangeMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
@@ -695,19 +829,71 @@ export type ExchangeMutation = {
   twitter?: InputMaybe<Scalars["String"]>;
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
+  telegram?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type ComunityMutation = {
+  publish?: InputMaybe<Scalars["Boolean"]>;
   image?: InputMaybe<Scalars["String"]>;
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
+  createdAt?: InputMaybe<Scalars["String"]>;
 };
 
 export type PagesMutation = {
   title?: InputMaybe<Scalars["String"]>;
   updatedAt?: InputMaybe<Scalars["String"]>;
   body?: InputMaybe<Scalars["JSON"]>;
+};
+
+export type EcosystemHeroMutation = {
+  hero_title_dark?: InputMaybe<Scalars["String"]>;
+  hero_title_green?: InputMaybe<Scalars["String"]>;
+  hero_description?: InputMaybe<Scalars["String"]>;
+  hero_eyebrow?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemApps_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemVideo_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemWeb3_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemStacking_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemExchanges_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemCommunity_SectionMutation = {
+  title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
+};
+
+export type EcosystemMutation = {
+  hero?: InputMaybe<EcosystemHeroMutation>;
+  apps_section?: InputMaybe<EcosystemApps_SectionMutation>;
+  video_section?: InputMaybe<EcosystemVideo_SectionMutation>;
+  web3_section?: InputMaybe<EcosystemWeb3_SectionMutation>;
+  stacking_section?: InputMaybe<EcosystemStacking_SectionMutation>;
+  exchanges_section?: InputMaybe<EcosystemExchanges_SectionMutation>;
+  community_section?: InputMaybe<EcosystemCommunity_SectionMutation>;
+  footer_cta_description?: InputMaybe<Scalars["String"]>;
 };
 
 export type PostsPartsFragment = {
@@ -718,6 +904,7 @@ export type PostsPartsFragment = {
 
 export type AppsPartsFragment = {
   __typename?: "Apps";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
@@ -725,26 +912,33 @@ export type AppsPartsFragment = {
   twitter?: string | null;
   discord?: string | null;
   linkedin?: string | null;
+  telegram?: string | null;
+  createdAt?: string | null;
 };
 
 export type VideosPartsFragment = {
   __typename?: "Videos";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
   website?: string | null;
+  createdAt?: string | null;
 };
 
 export type Web3PartsFragment = {
   __typename?: "Web3";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
   website?: string | null;
+  createdAt?: string | null;
 };
 
 export type StakingPartsFragment = {
   __typename?: "Staking";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
@@ -752,10 +946,13 @@ export type StakingPartsFragment = {
   twitter?: string | null;
   discord?: string | null;
   linkedin?: string | null;
+  telegram?: string | null;
+  createdAt?: string | null;
 };
 
 export type ExchangePartsFragment = {
   __typename?: "Exchange";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
@@ -763,14 +960,18 @@ export type ExchangePartsFragment = {
   twitter?: string | null;
   discord?: string | null;
   linkedin?: string | null;
+  telegram?: string | null;
+  createdAt?: string | null;
 };
 
 export type ComunityPartsFragment = {
   __typename?: "Comunity";
+  publish?: boolean | null;
   image?: string | null;
   title?: string | null;
   richtext?: any | null;
   website?: string | null;
+  createdAt?: string | null;
 };
 
 export type PagesPartsFragment = {
@@ -778,6 +979,48 @@ export type PagesPartsFragment = {
   title?: string | null;
   updatedAt?: string | null;
   body?: any | null;
+};
+
+export type EcosystemPartsFragment = {
+  __typename?: "Ecosystem";
+  footer_cta_description?: string | null;
+  hero?: {
+    __typename: "EcosystemHero";
+    hero_title_dark?: string | null;
+    hero_title_green?: string | null;
+    hero_description?: string | null;
+    hero_eyebrow?: string | null;
+  } | null;
+  apps_section?: {
+    __typename: "EcosystemApps_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  video_section?: {
+    __typename: "EcosystemVideo_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  web3_section?: {
+    __typename: "EcosystemWeb3_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  stacking_section?: {
+    __typename: "EcosystemStacking_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  exchanges_section?: {
+    __typename: "EcosystemExchanges_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
+  community_section?: {
+    __typename: "EcosystemCommunity_section";
+    title?: string | null;
+    description?: string | null;
+  } | null;
 };
 
 export type GetPostsDocumentQueryVariables = Exact<{
@@ -853,6 +1096,7 @@ export type GetAppsDocumentQuery = {
     };
     data: {
       __typename?: "Apps";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
@@ -860,6 +1104,8 @@ export type GetAppsDocumentQuery = {
       twitter?: string | null;
       discord?: string | null;
       linkedin?: string | null;
+      telegram?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -887,6 +1133,7 @@ export type GetAppsListQuery = {
         };
         data: {
           __typename?: "Apps";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
@@ -894,6 +1141,8 @@ export type GetAppsListQuery = {
           twitter?: string | null;
           discord?: string | null;
           linkedin?: string | null;
+          telegram?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -920,10 +1169,12 @@ export type GetVideosDocumentQuery = {
     };
     data: {
       __typename?: "Videos";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
       website?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -951,10 +1202,12 @@ export type GetVideosListQuery = {
         };
         data: {
           __typename?: "Videos";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
           website?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -981,10 +1234,12 @@ export type GetWeb3DocumentQuery = {
     };
     data: {
       __typename?: "Web3";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
       website?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1012,10 +1267,12 @@ export type GetWeb3ListQuery = {
         };
         data: {
           __typename?: "Web3";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
           website?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1042,6 +1299,7 @@ export type GetStakingDocumentQuery = {
     };
     data: {
       __typename?: "Staking";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
@@ -1049,6 +1307,8 @@ export type GetStakingDocumentQuery = {
       twitter?: string | null;
       discord?: string | null;
       linkedin?: string | null;
+      telegram?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1076,6 +1336,7 @@ export type GetStakingListQuery = {
         };
         data: {
           __typename?: "Staking";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
@@ -1083,6 +1344,8 @@ export type GetStakingListQuery = {
           twitter?: string | null;
           discord?: string | null;
           linkedin?: string | null;
+          telegram?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1109,6 +1372,7 @@ export type GetExchangeDocumentQuery = {
     };
     data: {
       __typename?: "Exchange";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
@@ -1116,6 +1380,8 @@ export type GetExchangeDocumentQuery = {
       twitter?: string | null;
       discord?: string | null;
       linkedin?: string | null;
+      telegram?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1143,6 +1409,7 @@ export type GetExchangeListQuery = {
         };
         data: {
           __typename?: "Exchange";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
@@ -1150,6 +1417,8 @@ export type GetExchangeListQuery = {
           twitter?: string | null;
           discord?: string | null;
           linkedin?: string | null;
+          telegram?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1176,10 +1445,12 @@ export type GetComunityDocumentQuery = {
     };
     data: {
       __typename?: "Comunity";
+      publish?: boolean | null;
       image?: string | null;
       title?: string | null;
       richtext?: any | null;
       website?: string | null;
+      createdAt?: string | null;
     };
   };
 };
@@ -1207,10 +1478,12 @@ export type GetComunityListQuery = {
         };
         data: {
           __typename?: "Comunity";
+          publish?: boolean | null;
           image?: string | null;
           title?: string | null;
           richtext?: any | null;
           website?: string | null;
+          createdAt?: string | null;
         };
       } | null;
     } | null> | null;
@@ -1276,6 +1549,135 @@ export type GetPagesListQuery = {
   };
 };
 
+export type GetEcosystemDocumentQueryVariables = Exact<{
+  relativePath: Scalars["String"];
+}>;
+
+export type GetEcosystemDocumentQuery = {
+  __typename?: "Query";
+  getEcosystemDocument: {
+    __typename?: "EcosystemDocument";
+    id: string;
+    sys: {
+      __typename?: "SystemInfo";
+      filename: string;
+      basename: string;
+      breadcrumbs: Array<string>;
+      path: string;
+      relativePath: string;
+      extension: string;
+    };
+    data: {
+      __typename?: "Ecosystem";
+      footer_cta_description?: string | null;
+      hero?: {
+        __typename: "EcosystemHero";
+        hero_title_dark?: string | null;
+        hero_title_green?: string | null;
+        hero_description?: string | null;
+        hero_eyebrow?: string | null;
+      } | null;
+      apps_section?: {
+        __typename: "EcosystemApps_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      video_section?: {
+        __typename: "EcosystemVideo_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      web3_section?: {
+        __typename: "EcosystemWeb3_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      stacking_section?: {
+        __typename: "EcosystemStacking_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      exchanges_section?: {
+        __typename: "EcosystemExchanges_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+      community_section?: {
+        __typename: "EcosystemCommunity_section";
+        title?: string | null;
+        description?: string | null;
+      } | null;
+    };
+  };
+};
+
+export type GetEcosystemListQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetEcosystemListQuery = {
+  __typename?: "Query";
+  getEcosystemList: {
+    __typename?: "EcosystemConnection";
+    totalCount: number;
+    edges?: Array<{
+      __typename?: "EcosystemConnectionEdges";
+      node?: {
+        __typename?: "EcosystemDocument";
+        id: string;
+        sys: {
+          __typename?: "SystemInfo";
+          filename: string;
+          basename: string;
+          breadcrumbs: Array<string>;
+          path: string;
+          relativePath: string;
+          extension: string;
+        };
+        data: {
+          __typename?: "Ecosystem";
+          footer_cta_description?: string | null;
+          hero?: {
+            __typename: "EcosystemHero";
+            hero_title_dark?: string | null;
+            hero_title_green?: string | null;
+            hero_description?: string | null;
+            hero_eyebrow?: string | null;
+          } | null;
+          apps_section?: {
+            __typename: "EcosystemApps_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          video_section?: {
+            __typename: "EcosystemVideo_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          web3_section?: {
+            __typename: "EcosystemWeb3_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          stacking_section?: {
+            __typename: "EcosystemStacking_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          exchanges_section?: {
+            __typename: "EcosystemExchanges_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+          community_section?: {
+            __typename: "EcosystemCommunity_section";
+            title?: string | null;
+            description?: string | null;
+          } | null;
+        };
+      } | null;
+    } | null> | null;
+  };
+};
+
 export const PostsPartsFragmentDoc = gql`
   fragment PostsParts on Posts {
     title
@@ -1284,6 +1686,7 @@ export const PostsPartsFragmentDoc = gql`
 `;
 export const AppsPartsFragmentDoc = gql`
   fragment AppsParts on Apps {
+    publish
     image
     title
     richtext
@@ -1291,26 +1694,33 @@ export const AppsPartsFragmentDoc = gql`
     twitter
     discord
     linkedin
+    telegram
+    createdAt
   }
 `;
 export const VideosPartsFragmentDoc = gql`
   fragment VideosParts on Videos {
+    publish
     image
     title
     richtext
     website
+    createdAt
   }
 `;
 export const Web3PartsFragmentDoc = gql`
   fragment Web3Parts on Web3 {
+    publish
     image
     title
     richtext
     website
+    createdAt
   }
 `;
 export const StakingPartsFragmentDoc = gql`
   fragment StakingParts on Staking {
+    publish
     image
     title
     richtext
@@ -1318,10 +1728,13 @@ export const StakingPartsFragmentDoc = gql`
     twitter
     discord
     linkedin
+    telegram
+    createdAt
   }
 `;
 export const ExchangePartsFragmentDoc = gql`
   fragment ExchangeParts on Exchange {
+    publish
     image
     title
     richtext
@@ -1329,14 +1742,18 @@ export const ExchangePartsFragmentDoc = gql`
     twitter
     discord
     linkedin
+    telegram
+    createdAt
   }
 `;
 export const ComunityPartsFragmentDoc = gql`
   fragment ComunityParts on Comunity {
+    publish
     image
     title
     richtext
     website
+    createdAt
   }
 `;
 export const PagesPartsFragmentDoc = gql`
@@ -1344,6 +1761,48 @@ export const PagesPartsFragmentDoc = gql`
     title
     updatedAt
     body
+  }
+`;
+export const EcosystemPartsFragmentDoc = gql`
+  fragment EcosystemParts on Ecosystem {
+    hero {
+      __typename
+      hero_title_dark
+      hero_title_green
+      hero_description
+      hero_eyebrow
+    }
+    apps_section {
+      __typename
+      title
+      description
+    }
+    video_section {
+      __typename
+      title
+      description
+    }
+    web3_section {
+      __typename
+      title
+      description
+    }
+    stacking_section {
+      __typename
+      title
+      description
+    }
+    exchanges_section {
+      __typename
+      title
+      description
+    }
+    community_section {
+      __typename
+      title
+      description
+    }
+    footer_cta_description
   }
 `;
 export const GetPostsDocumentDocument = gql`
@@ -1690,6 +2149,49 @@ export const GetPagesListDocument = gql`
   }
   ${PagesPartsFragmentDoc}
 `;
+export const GetEcosystemDocumentDocument = gql`
+  query getEcosystemDocument($relativePath: String!) {
+    getEcosystemDocument(relativePath: $relativePath) {
+      sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+      data {
+        ...EcosystemParts
+      }
+    }
+  }
+  ${EcosystemPartsFragmentDoc}
+`;
+export const GetEcosystemListDocument = gql`
+  query getEcosystemList {
+    getEcosystemList {
+      totalCount
+      edges {
+        node {
+          id
+          sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          data {
+            ...EcosystemParts
+          }
+        }
+      }
+    }
+  }
+  ${EcosystemPartsFragmentDoc}
+`;
 export type Requester<C = {}> = <R, V>(
   doc: DocumentNode,
   vars?: V,
@@ -1968,6 +2470,40 @@ export function getSdk<C>(requester: Requester<C>) {
         },
         GetPagesListQueryVariables
       >(GetPagesListDocument, variables, options);
+    },
+    getEcosystemDocument(
+      variables: GetEcosystemDocumentQueryVariables,
+      options?: C
+    ): Promise<{
+      data: GetEcosystemDocumentQuery;
+      variables: GetEcosystemDocumentQueryVariables;
+      query: string;
+    }> {
+      return requester<
+        {
+          data: GetEcosystemDocumentQuery;
+          variables: GetEcosystemDocumentQueryVariables;
+          query: string;
+        },
+        GetEcosystemDocumentQueryVariables
+      >(GetEcosystemDocumentDocument, variables, options);
+    },
+    getEcosystemList(
+      variables?: GetEcosystemListQueryVariables,
+      options?: C
+    ): Promise<{
+      data: GetEcosystemListQuery;
+      variables: GetEcosystemListQueryVariables;
+      query: string;
+    }> {
+      return requester<
+        {
+          data: GetEcosystemListQuery;
+          variables: GetEcosystemListQueryVariables;
+          query: string;
+        },
+        GetEcosystemListQueryVariables
+      >(GetEcosystemListDocument, variables, options);
     },
   };
 }
