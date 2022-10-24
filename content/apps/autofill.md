@@ -2,7 +2,7 @@
 publish: false
 image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1665427611/subbspace_aqx5kr.svg
-title: TEST
+title: TEST-autofill
 richtext: |
   REPLACE WITH COPY
 website: 'https://example.org'
