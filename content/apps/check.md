@@ -1,12 +1,13 @@
 ---
-publish: true
+publish: false
 image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1665427611/subbspace_aqx5kr.svg
-title: SubbSpace1
+title: TEST_SubbSpace1
 richtext: |
   REPLACE WITH COPY
-website: "https://example.org"
-twitter: "https://example.org"
-discord: "https://discord.com/invite/EYqfS32jYc"
-createdAt: "2022-10-13T18:30:00.000Z"
+website: 'https://example.org'
+twitter: 'https://example.org'
+discord: 'https://discord.com/invite/EYqfS32jYc'
+createdAt: '2022-10-13T18:30:00.000Z'
 ---
+
