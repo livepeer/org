@@ -5,6 +5,7 @@ image: >-
 title: Tenderize
 richtext: |
   Connecting web3 with DeFi through liquid staking.
-website: "https://www.tenderize.me/"
-createdAt: "2022-10-05T18:30:00.000Z"
+website: 'https://www.tenderize.me/'
+createdAt: '2022-10-05T18:30:00.000Z'
 ---
+
