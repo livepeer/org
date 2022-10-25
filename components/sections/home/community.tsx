@@ -36,7 +36,7 @@ const links: IconLinkProps[] = [
     icon: <FaTwitter />,
     label: (
       <>
-        twitter.com/<b>LivepeerOrg</b>
+        twitter.com/<b>livepeer</b>
       </>
     ),
     href: "https://twitter.com/Livepeer",
