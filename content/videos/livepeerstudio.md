@@ -7,6 +7,7 @@ richtext: >
   Hosted Gateway provider built by the Livepeer core team. All the tools needed
   to build web3 video apps with livestreaming, video on demand, and video NFT
   minting.
-website: "https://livepeer.studio/"
-createdAt: "2022-10-05T18:30:00.000Z"
+website: 'https://livepeer.studio/'
+createdAt: '2022-10-04T04:00:00.000Z'
 ---
+
