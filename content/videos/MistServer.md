@@ -6,6 +6,7 @@ title: MistServer
 richtext: >
   Full-featured, next-generation streaming media toolkit. Self-hosted solution
   designed for system integrators.
-website: "https://mistserver.org/"
-createdAt: "2022-10-05T18:30:00.000Z"
+website: 'https://mistserver.org/'
+createdAt: '2022-09-01T04:00:00.000Z'
 ---
+
