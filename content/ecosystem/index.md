@@ -16,8 +16,7 @@ video_section:
     most seamless integration, or Self-Hosted for total customization.
 web3_section:
   title: Web3 Tech Stack
-  description:
-    Livepeer partners and key protocols in the emerging web3 tech stack.
+  description: Livepeer partners and key protocols in the emerging web3 tech stack.
 stacking_section:
   title: Staking Partners
   description: Specialized staking services for Livepeer delegators.
@@ -27,7 +26,8 @@ exchanges_section:
 community_section:
   title: Community Tools
   description: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat blandit
-    tellus luctus amet felis sit ullamcorper.
+    Tools, apps, and public goods created by the Livepeer community to support
+    the Livepeer ecosystem.
 footer_cta_description: Submit a project to be included in livepeer Ecosystem
 ---
+
