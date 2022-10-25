@@ -83,9 +83,6 @@ export default defineSchema({
           label: "CreatedAt",
           ui: {
             defaultValue: new Date().toDateString(),
-            component: () => {
-              return <div></div>;
-            },
           },
         },
       ],
@@ -130,9 +127,6 @@ export default defineSchema({
           label: "CreatedAt",
           ui: {
             defaultValue: new Date().toDateString(),
-            component: () => {
-              return <div></div>;
-            },
           },
         },
       ],
@@ -177,9 +171,6 @@ export default defineSchema({
           label: "CreatedAt",
           ui: {
             defaultValue: new Date().toDateString(),
-            component: () => {
-              return <div></div>;
-            },
           },
         },
       ],
@@ -244,9 +235,6 @@ export default defineSchema({
           label: "CreatedAt",
           ui: {
             defaultValue: new Date().toDateString(),
-            component: () => {
-              return <div></div>;
-            },
           },
         },
       ],
@@ -311,9 +299,6 @@ export default defineSchema({
           label: "CreatedAt",
           ui: {
             defaultValue: new Date().toDateString(),
-            component: () => {
-              return <div></div>;
-            },
           },
         },
       ],
@@ -358,9 +343,6 @@ export default defineSchema({
           label: "CreatedAt",
           ui: {
             defaultValue: new Date().toDateString(),
-            component: () => {
-              return <div></div>;
-            },
           },
         },
       ],
@@ -381,9 +363,6 @@ export default defineSchema({
           name: "updatedAt",
           ui: {
             defaultValue: new Date().toDateString(),
-            component: () => {
-              return <div></div>;
-            },
           },
         },
         {
