@@ -8,6 +8,6 @@ richtext: >
   to build web3 video apps with livestreaming, video on demand, and video NFT
   minting.
 website: 'https://livepeer.studio/'
-createdAt: '2022-10-04T04:00:00.000Z'
+createdAt: '2022-10-05T04:00:00.000Z'
 ---
 
