@@ -16,7 +16,9 @@ video_section:
     most seamless integration, or Self-Hosted for total customization.
 web3_section:
   title: Web3 Tech Stack
-  description: Livepeer partners and key protocols in the emerging web3 tech stack.
+  description: >-
+    Key projects and protocols in the web3 tech stack that enable the Livepeer
+    network and power web3 video applications.
 stacking_section:
   title: Staking Partners
   description: Specialized staking services for Livepeer delegators.
