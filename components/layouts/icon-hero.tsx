@@ -55,7 +55,7 @@ const IconHero = forwardRef(
     }
 
     return (
-      <Box sx={{ bg, ...pushSx }}>
+      <Box sx={{ overflow: "hidden", bg, ...pushSx }}>
         <Container
           variant="section"
           className={cn(className, { hide__section: withAnimation })}

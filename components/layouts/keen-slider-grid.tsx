@@ -97,7 +97,7 @@ const KeenSliderGrid: React.FC<Props> = ({
   }, [breakpoints, handleScreenSizeChange]);
 
   return (
-    <>
+    <Box sx={{ overflow: "hidden" }}>
       <Box
         className="keen-slider"
         ref={sliderRef}
@@ -156,7 +156,7 @@ const KeenSliderGrid: React.FC<Props> = ({
           </IconButton>
         </Box>
       )}
-    </>
+    </Box>
   );
 };
 

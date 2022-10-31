@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import SectionLayout from "components/layouts/section";
-import { jsx, Link as A } from "theme-ui";
+import { jsx, Link as A, Box } from "theme-ui";
 import StatusCard, {
   StatusCardProps,
 } from "components/primitives/cards/status";
 import Divider from "components/primitives/divider";
-import KeenSliderGrid from "components/layouts/keen-slider-grid";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
@@ -76,12 +75,12 @@ const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
         </i>
       </A>
       <Divider isVertical isTransparent size={["56px", "72px"]} />
-      <KeenSliderGrid
-        breakpoints={[
-          { value: "320px", slidesPerView: 1 },
-          { value: "664px", slidesPerView: 2 },
-          { value: "1152px", slidesPerView: 3 },
-        ]}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: ["column", "column", "row"],
+          gap: 30,
+        }}>
         {cardItems.map((card) => (
           <StatusCard
             key={`card-${card.title}`}
@@ -90,7 +89,7 @@ const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
             {...card}
           />
         ))}
-      </KeenSliderGrid>
+      </Box>
     </SectionLayout>
   );
 };

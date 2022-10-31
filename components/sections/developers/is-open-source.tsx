@@ -58,7 +58,7 @@ const IsOpenSourceSection = ({
   ];
 
   return (
-    <Box sx={{ position: "relative", bg: "background" }}>
+    <Box sx={{ overflow: "hidden", position: "relative", bg: "background" }}>
       <CoverImage />
       <Container
         variant="section"

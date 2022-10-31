@@ -99,7 +99,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue Oct 25 2022"
+            "defaultValue": "Mon Oct 31 2022"
           },
           "namespace": ["apps", "createdAt"]
         }
@@ -150,7 +150,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue Oct 25 2022"
+            "defaultValue": "Mon Oct 31 2022"
           },
           "namespace": ["videos", "createdAt"]
         }
@@ -201,7 +201,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue Oct 25 2022"
+            "defaultValue": "Mon Oct 31 2022"
           },
           "namespace": ["web3", "createdAt"]
         }
@@ -276,7 +276,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue Oct 25 2022"
+            "defaultValue": "Mon Oct 31 2022"
           },
           "namespace": ["staking", "createdAt"]
         }
@@ -351,7 +351,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue Oct 25 2022"
+            "defaultValue": "Mon Oct 31 2022"
           },
           "namespace": ["exchange", "createdAt"]
         }
@@ -402,7 +402,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue Oct 25 2022"
+            "defaultValue": "Mon Oct 31 2022"
           },
           "namespace": ["comunity", "createdAt"]
         }
@@ -425,7 +425,7 @@
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Tue Oct 25 2022"
+            "defaultValue": "Mon Oct 31 2022"
           },
           "namespace": ["pages", "updatedAt"]
         },
