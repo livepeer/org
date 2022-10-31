@@ -10,7 +10,7 @@ apps_section:
   title: Apps
   description: Applications built using Livepeer video infrastructure.
 video_section:
-  title: Video Tools
+  title: Video Toolkits
   description: >-
     Tools to integrate with the Livepeer network. Hosted Gateway for the    
     most seamless integration, or Self-Hosted for total customization.
