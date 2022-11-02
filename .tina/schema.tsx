@@ -529,6 +529,10 @@ const apiURL =
 
 export const tinaConfig = defineConfig({
   apiURL,
+  mediaStore: async () => {
+    const pack = await import("next-tinacms-cloudinary");
+    return pack.TinaCloudCloudinaryMediaStore;
+  },
   formifyCallback: ({ formConfig, createForm, skip }) => {
     if (formConfig.id === "getPagesDocument") {
       const onSubmit = (values, form, callback) => {
