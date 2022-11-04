@@ -30,6 +30,6 @@ community_section:
   description: >-
     Tools, apps, and public goods created by the Livepeer community to support
     the Livepeer ecosystem.
-footer_cta_description: Submit a project to be included in livepeer Ecosystem
+footer_cta_description: Submit a project to be included in Livepeer Ecosystem
 ---
 
