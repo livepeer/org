@@ -1,7 +1,7 @@
 ---
 publish: true
 image: >-
-  https://res.cloudinary.com/duquzk7m6/image/upload/v1667573823/livespace_logo_mfijgp.jpg
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1667577254/livespace_logo-circle_qd63np.png
 title: LiveSpace
 richtext: |
   Next-gen livestreaming platform built by creators, for creators.
