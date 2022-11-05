@@ -52,42 +52,46 @@ const HugeCardSection = ({ card }) => {
                 {card.title}
               </Heading>
               <Text sx={{ mb: 4 }}>By Livepeer, Inc.</Text>
-              <A
-                sx={{ mb: 4 }}
-                variant="buttons.studio"
-                href="https://livepeer.studio"
-                target="_blank">
-                Livepeer Studio
-                <i sx={{ ml: 2, fontSize: 4 }}>
-                  <FiArrowUpRight />
-                </i>
-              </A>
             </Box>
-            <Box>
+            <Flex>
               <Box>
                 {card.list.map((item, i) => (
                   <Flex key={i} sx={{ "&:not(:last-of-type)": { mb: 4 } }}>
-                    <i sx={{ color: "#0a5cd8", fontSize: 5, mr: 3 }}>
-                      <FiCheckCircle />
-                    </i>
+                    {item.title && (
+                      <i sx={{ color: "#0a5cd8", fontSize: 5, mr: 3 }}>
+                        <FiCheckCircle />
+                      </i>
+                    )}
                     <Text variant="normal">
                       <Box>
-                        <Text
-                          sx={{
-                            textAlign: "left",
-                            lineHeight: 1,
-                            mb: 2,
-                            fontWeight: 600,
-                          }}>
-                          {item.title}
-                        </Text>
+                        {item.title && (
+                          <Text
+                            sx={{
+                              textAlign: "left",
+                              lineHeight: 1,
+                              mb: 2,
+                              fontWeight: 600,
+                            }}>
+                            {item.title}
+                          </Text>
+                        )}
                         <Text sx={{ fontSize: "16px" }}>{item.subtitle}</Text>
                       </Box>
                     </Text>
                   </Flex>
                 ))}
+                <A
+                  sx={{ mt: 4, mb: 4 }}
+                  variant="buttons.studio"
+                  href="https://livepeerjs.org"
+                  target="_blank">
+                  Livepeer.js
+                  <i sx={{ ml: 2, fontSize: 4 }}>
+                    <FiArrowUpRight />
+                  </i>
+                </A>
               </Box>
-            </Box>
+            </Flex>
           </Grid>
         </Box>
       </Card>

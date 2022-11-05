@@ -30,30 +30,20 @@ const Developers = () => {
       <HugeCardSection
         card={{
           label: <Box>Build with</Box>,
-          title: <Box>Livepeer Studio</Box>,
+          title: <Box>Livepeer.js</Box>,
           list: [
             {
-              title: "Accessible",
-              subtitle:
-                "Straightforward, no nonsense product and documentation designed for developers. Build your own streaming app in days, not months.",
-            },
-            {
-              title: "Affordable",
-              subtitle:
-                "Extraordinary cost savings up to 10x less expensive than centralized industry standards.",
-            },
-            {
-              title: "Scalable",
-              subtitle:
-                "Leverage the near-infinite scalability of the Livepeer Network, rivaling Amazon’s cloud compute.",
-            },
-            {
-              title: "Reliable",
-              subtitle:
-                "An always-on, incentivized network and intelligent distribution guarantees transcoding never stops.",
+              subtitle: (
+                <Box sx={{ fontSize: 18 }}>
+                  Livepeer.js makes building with Livepeer effortless. It
+                  provides a core vanilla JS library to easily connect to a
+                  Livepeer provider (e.g. Livepeer Studio), as well as
+                  React-specific hooks/components to provide memoization and DOM
+                  management.
+                </Box>
+              ),
             },
           ],
-          ctaText: t("page-developers-hosted-service-cta"),
         }}
       />
       <IsOpenSourceSection
