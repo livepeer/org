@@ -1,6 +1,7 @@
 ---
 publish: true
-image: ''
+image: >-
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1667846145/lenstube_l79lc1.png
 richtext: |
   Decentralized, open-source video-sharing social media platform.
 website: 'https://lenstube.xyz/'
