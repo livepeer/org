@@ -8,6 +8,6 @@ richtext: >
   America.
 website: 'https://www.senseinode.com/'
 twitter: 'https://twitter.com/senseinode'
-createdAt: '2022-11-04T00:00:00.000Z'
+createdAt: '2022-10-05T04:00:00.000Z'
 ---
 
