@@ -1,7 +1,7 @@
 ---
 publish: true
 image: >-
-  https://res.cloudinary.com/duquzk7m6/image/upload/v1667854711/Sensei_Node_ohq6jn.png
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1667861861/sensei_lmhrym.jpg
 title: Sensei Node
 richtext: >
   The first blockchain infrastructure independent service provider in Latin
