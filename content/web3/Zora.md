@@ -1,5 +1,5 @@
 ---
-publish: true
+publish: false
 image: 'https://res.cloudinary.com/duquzk7m6/image/upload/v1667855567/Zora_smxfrx.jpg'
 title: ZORA
 richtext: |
