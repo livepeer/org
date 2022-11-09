@@ -1,5 +1,5 @@
 ---
-publish: true
+publish: false
 image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1665428543/solana_zaqkc9.png
 title: Solana
