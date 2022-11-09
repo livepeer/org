@@ -10,10 +10,10 @@ apps_section:
   title: Apps
   description: Applications built using Livepeer video infrastructure.
 video_section:
-  title: Video Toolkits
+  title: Developer Tools
   description: >-
-    Tools to integrate with the Livepeer network. Hosted Gateway for the    
-    most seamless integration, or Self-Hosted for total customization.
+    Tools to integrate with the Livepeer network, built and maintained by the
+    Livepeer core team.
 web3_section:
   title: Web3 Tech Stack
   description: >-
