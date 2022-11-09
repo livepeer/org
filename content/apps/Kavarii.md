@@ -4,8 +4,8 @@ image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1668007706/Kavarii_Logo_Black_Symbol_swqngg.png
 title: Kavarii
 richtext: >
-  Web3 video streaming platform that solves the problems of censorship,
-  intrusive ads, creator monetization, and Big Tech ownership
+  Web3 video streaming platform that promotes freedom of expression and provides
+  more monetization options for creators.
 website: 'https://kavarii.com/'
 twitter: 'https://twitter.com/KavariiOfficial'
 discord: 'https://discord.com/invite/phdxNeKd9F'
