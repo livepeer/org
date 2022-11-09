@@ -6,6 +6,6 @@ title: Arbitrum
 richtext: |
   Ethereum L2 blockchain, used to scale the Livepeer network.
 website: 'https://arbitrum.io/'
-createdAt: '2022-10-02T04:00:00.000Z'
+createdAt: '2022-10-08T04:00:00.000Z'
 ---
 
