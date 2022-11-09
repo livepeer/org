@@ -1,10 +1,11 @@
 ---
 publish: true
 image: >-
-  https://res.cloudinary.com/duquzk7m6/image/upload/v1667853682/kavarii_ucx3vi.png
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1668007706/Kavarii_Logo_Black_Symbol_swqngg.png
 title: Kavarii
-richtext: |
-  The world's first fully distributed, on-chain video streaming network.
+richtext: >
+  Web3 video streaming platform that solves the problems of censorship,
+  intrusive ads, creator monetization, and Big Tech ownership
 website: 'https://kavarii.com/'
 twitter: 'https://twitter.com/KavariiOfficial'
 discord: 'https://discord.com/invite/phdxNeKd9F'
