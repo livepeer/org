@@ -12,8 +12,8 @@ apps_section:
 video_section:
   title: Developer Tools
   description: >-
-    Tools to integrate with the Livepeer network, built and maintained by the
-    Livepeer core team.
+    Tools for developers to build applications and platforms with video, built
+    and maintained by the Livepeer core team
 web3_section:
   title: Web3 Tech Stack
   description: >-
