@@ -17,8 +17,8 @@ video_section:
 web3_section:
   title: Web3 Tech Stack
   description: >-
-    Key projects and protocols in the web3 tech stack that enable the Livepeer
-    network and power web3 video applications.
+    Projects and protocols that enable the Livepeer network and power web3 video
+    applications.
 stacking_section:
   title: Staking Partners
   description: Specialized staking services for Livepeer delegators.
