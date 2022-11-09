@@ -7,6 +7,6 @@ richtext: >
   A Livepeer Javascript library for application developers. Video-enable your
   app in 10 mins.
 website: 'https://livepeerjs.org/'
-createdAt: '2022-11-04T00:00:00.000Z'
+createdAt: '2022-10-03T04:00:00.000Z'
 ---
 
