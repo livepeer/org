@@ -7,6 +7,7 @@ richtext: >
   Composable and decentralized social graph, for scaling decentralized social
   networks.
 website: 'https://www.lens.dev/'
+link: 'https://twitter.com/encodeclub/status/1589656425940148224'
 createdAt: '2022-10-05T18:30:00.000Z'
 ---
 
