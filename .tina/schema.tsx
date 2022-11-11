@@ -166,6 +166,26 @@ export default defineSchema({
           type: "string",
         },
         {
+          name: "twitter",
+          label: "Twitter",
+          type: "string",
+        },
+        {
+          name: "discord",
+          label: "Discord",
+          type: "string",
+        },
+        {
+          name: "linkedin",
+          label: "LinkedIn",
+          type: "string",
+        },
+        {
+          name: "telegram",
+          label: "Telegram",
+          type: "string",
+        },
+        {
           name: "createdAt",
           type: "datetime",
           label: "CreatedAt",

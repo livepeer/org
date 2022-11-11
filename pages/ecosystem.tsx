@@ -9,7 +9,6 @@ import { DefaultList } from "components/sections/ecosystem/default-list";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Header } from "components/sections/ecosystem/header";
 import { Subnav } from "components/sections/ecosystem/subnav";
-import NextHead from "next/head";
 import { CtaBanner } from "components/sections/ecosystem/cta-banner";
 import { useTina } from "tinacms/dist/edit-state";
 
@@ -220,13 +219,11 @@ function Ecosystem({
     },
   };
 
+  console.log(pageData.apps_section.title);
   return (
     <PageLayout headProps={headProps} navProps={{ isInmersive: true }}>
-      <NextHead>
-        <meta name="robots" content="noindex" />
-      </NextHead>
       <Header hero={pageData.hero} />
-      <Subnav />
+      <Subnav data={pageData} />
       <Box
         sx={{
           background: "linear-gradient(#FFFFFF, #FAFAFA)",

@@ -72,6 +72,10 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       href: "/about",
     },
     {
+      label: t("nav-ecosystem"),
+      href: "/ecosystem",
+    },
+    {
       label: t("nav-developers"),
       href: "/developers",
     },
@@ -165,8 +169,14 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               ".nav-link": {
                 fontSize: 16,
               },
-              ".nav-link:not(:last-child)": { mr: 56 },
-              display: [isPrimer ? "null" : "none", null, "flex"],
+              ".nav-link:not(:last-child)": { mr: 0 },
+              display: [isPrimer ? "null" : "none", null, "grid"],
+              gridAutoColumns: "auto",
+              gridAutoFlow: "column",
+              textAlign: "center",
+              width: "100%",
+              paddingRight: "0.5em",
+              paddingLeft: "0.5em",
             }}>
             {!isPrimer &&
               links.map((link) =>

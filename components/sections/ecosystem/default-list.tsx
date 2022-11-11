@@ -94,6 +94,10 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   title={title}
                   richtext={richtext}
                   website={website}
+                  twitter={twitter}
+                  discord={discord}
+                  linkedin={linkedin}
+                  telegram={telegram}
                 />
               );
             case "staking":

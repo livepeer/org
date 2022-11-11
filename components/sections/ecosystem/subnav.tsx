@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Box, Grid, Link } from "theme-ui";
 
-export const Subnav = () => {
+export const Subnav = (pageData) => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   const handleScroll = useCallback(() => {
@@ -18,6 +18,19 @@ export const Subnav = () => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
+
+  const {
+    apps_section,
+    video_section,
+    web3_section,
+    stacking_section,
+    exchanges_section,
+    community_section,
+  } = pageData.data || {};
+
+  console.log();
+
+  console.log(pageData);
   return (
     <Box
       sx={{
@@ -42,12 +55,12 @@ export const Subnav = () => {
           textAlign: "center",
           fontWeight: "600",
         }}>
-        <Link href="#apps">Apps</Link>
-        <Link href="#videotools">Video Tools</Link>
-        <Link href="#web3techstack">Web3 Tech Stack</Link>
-        <Link href="#stakingpartners">Staking Partners</Link>
-        <Link href="#exchanges">Exchanges</Link>
-        <Link href="#communitytools">Community Tools</Link>
+        <Link href="#apps">{apps_section.title}</Link>
+        <Link href="#videotools">{video_section.title}</Link>
+        <Link href="#web3techstack">{web3_section.title}</Link>
+        <Link href="#stakingpartners">{stacking_section.title}</Link>
+        <Link href="#exchanges">{exchanges_section.title}</Link>
+        <Link href="#communitytools">{community_section.title}</Link>
       </Grid>
     </Box>
   );
