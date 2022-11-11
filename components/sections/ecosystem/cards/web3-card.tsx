@@ -50,7 +50,7 @@ export const Web3Card = ({
         }}>
         {title}
       </Heading>
-      <Box sx={{ textAlign: "center", marginBottom: "32px" }}>
+      <Box sx={{ textAlign: "center", marginBottom: "24px" }}>
         <TinaMarkdown content={richtext} />
       </Box>
       <Box>

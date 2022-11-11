@@ -336,6 +336,10 @@ export async function getStaticProps({ locale }) {
                 title
                 richtext
                 website
+                twitter
+                discord
+                linkedin
+                telegram
                 createdAt
               }
             }
