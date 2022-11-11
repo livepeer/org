@@ -6,7 +6,7 @@ title: StreamETH
 richtext: |
   Open-source livestreaming platform for Ethereum conferences.
 website: 'https://streameth.tv/'
-twitter: 'https://mobile.twitter.com/streameth'
+twitter: 'https://twitter.com/streameth'
 createdAt: '2022-09-26T18:30:00.000Z'
 ---
 
