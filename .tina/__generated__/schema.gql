@@ -272,6 +272,10 @@ type Web3 {
   title: String
   richtext: JSON
   website: String
+  twitter: String
+  discord: String
+  linkedin: String
+  telegram: String
   createdAt: String
 }
 
@@ -619,6 +623,10 @@ input Web3Mutation {
   title: String
   richtext: JSON
   website: String
+  twitter: String
+  discord: String
+  linkedin: String
+  telegram: String
   createdAt: String
 }
 

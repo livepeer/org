@@ -31,6 +31,10 @@ fragment Web3Parts on Web3 {
   title
   richtext
   website
+  twitter
+  discord
+  linkedin
+  telegram
   createdAt
 }
 

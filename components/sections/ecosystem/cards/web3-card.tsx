@@ -1,8 +1,24 @@
-import { Box, Button, Card, Heading, Link } from "theme-ui";
+import { Box, Card, Grid, Heading } from "theme-ui";
+import {
+  FaDiscord,
+  FaGlobe,
+  FaLinkedin,
+  FaTelegram,
+  FaTwitter,
+} from "react-icons/fa";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Image from "next/image";
 
-export const Web3Card = ({ image, title, richtext, website }) => {
+export const Web3Card = ({
+  image,
+  title,
+  richtext,
+  website,
+  twitter,
+  discord,
+  linkedin,
+  telegram,
+}) => {
   return (
     <Card
       backgroundColor="transparent"
@@ -34,19 +50,49 @@ export const Web3Card = ({ image, title, richtext, website }) => {
         }}>
         {title}
       </Heading>
-      <Box sx={{ textAlign: "center", marginBottom: "32px" }}>
+      <Box sx={{ textAlign: "center", marginBottom: "24px" }}>
         <TinaMarkdown content={richtext} />
       </Box>
-      <Link sx={{ marginTop: "auto" }} href={website}>
-        <Button
+      <Box>
+        <Grid
           sx={{
-            background: "transparent",
-            color: "#00D97D",
-            ":hover": { background: "transparent" },
+            gap: "1rem",
+            gridAutoFlow: "column",
+            gridAutoColumns: "16px",
+            svg: {
+              color: "#D2D2D2",
+              ":hover": {
+                color: "#999",
+              },
+            },
           }}>
-          Visit website
-        </Button>
-      </Link>
+          {website && (
+            <a href={website}>
+              <FaGlobe />
+            </a>
+          )}
+          {twitter && (
+            <a href={twitter}>
+              <FaTwitter />
+            </a>
+          )}
+          {discord && (
+            <a href={discord}>
+              <FaDiscord />
+            </a>
+          )}
+          {linkedin && (
+            <a href={linkedin}>
+              <FaLinkedin />
+            </a>
+          )}
+          {telegram && (
+            <a href={telegram}>
+              <FaTelegram />
+            </a>
+          )}
+        </Grid>
+      </Box>
     </Card>
   );
 };

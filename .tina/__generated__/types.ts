@@ -378,6 +378,10 @@ export type Web3 = {
   title?: Maybe<Scalars["String"]>;
   richtext?: Maybe<Scalars["JSON"]>;
   website?: Maybe<Scalars["String"]>;
+  twitter?: Maybe<Scalars["String"]>;
+  discord?: Maybe<Scalars["String"]>;
+  linkedin?: Maybe<Scalars["String"]>;
+  telegram?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["String"]>;
 };
 
@@ -804,6 +808,10 @@ export type Web3Mutation = {
   title?: InputMaybe<Scalars["String"]>;
   richtext?: InputMaybe<Scalars["JSON"]>;
   website?: InputMaybe<Scalars["String"]>;
+  twitter?: InputMaybe<Scalars["String"]>;
+  discord?: InputMaybe<Scalars["String"]>;
+  linkedin?: InputMaybe<Scalars["String"]>;
+  telegram?: InputMaybe<Scalars["String"]>;
   createdAt?: InputMaybe<Scalars["String"]>;
 };
 
@@ -933,6 +941,10 @@ export type Web3PartsFragment = {
   title?: string | null;
   richtext?: any | null;
   website?: string | null;
+  twitter?: string | null;
+  discord?: string | null;
+  linkedin?: string | null;
+  telegram?: string | null;
   createdAt?: string | null;
 };
 
@@ -1239,6 +1251,10 @@ export type GetWeb3DocumentQuery = {
       title?: string | null;
       richtext?: any | null;
       website?: string | null;
+      twitter?: string | null;
+      discord?: string | null;
+      linkedin?: string | null;
+      telegram?: string | null;
       createdAt?: string | null;
     };
   };
@@ -1272,6 +1288,10 @@ export type GetWeb3ListQuery = {
           title?: string | null;
           richtext?: any | null;
           website?: string | null;
+          twitter?: string | null;
+          discord?: string | null;
+          linkedin?: string | null;
+          telegram?: string | null;
           createdAt?: string | null;
         };
       } | null;
@@ -1715,6 +1735,10 @@ export const Web3PartsFragmentDoc = gql`
     title
     richtext
     website
+    twitter
+    discord
+    linkedin
+    telegram
     createdAt
   }
 `;
