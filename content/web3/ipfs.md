@@ -5,6 +5,7 @@ title: IPFS
 richtext: |
   Decentralized storage network for humanity’s most important information.
 website: 'https://ipfs.tech/'
+link: 'https://livepeerjs.org/examples/react/dstorage-playback'
 createdAt: '2022-10-05T18:30:00.000Z'
 ---
 
