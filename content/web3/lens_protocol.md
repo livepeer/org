@@ -1,5 +1,5 @@
 ---
-publish: false
+publish: true
 image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1665428532/lens-protocol_bxaae6.png
 title: Lens Protocol
