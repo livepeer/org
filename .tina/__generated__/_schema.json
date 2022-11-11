@@ -95,6 +95,12 @@
           "namespace": ["apps", "telegram"]
         },
         {
+          "name": "link",
+          "label": "Link",
+          "type": "string",
+          "namespace": ["apps", "link"]
+        },
+        {
           "name": "createdAt",
           "type": "datetime",
           "label": "CreatedAt",
@@ -221,6 +227,12 @@
           "namespace": ["web3", "telegram"]
         },
         {
+          "name": "link",
+          "label": "Link",
+          "type": "string",
+          "namespace": ["web3", "link"]
+        },
+        {
           "name": "createdAt",
           "type": "datetime",
           "label": "CreatedAt",
@@ -296,6 +308,12 @@
           "namespace": ["staking", "telegram"]
         },
         {
+          "name": "link",
+          "label": "Link",
+          "type": "string",
+          "namespace": ["staking", "link"]
+        },
+        {
           "name": "createdAt",
           "type": "datetime",
           "label": "CreatedAt",
@@ -369,6 +387,12 @@
           "label": "Telegram",
           "type": "string",
           "namespace": ["exchange", "telegram"]
+        },
+        {
+          "name": "link",
+          "label": "Link",
+          "type": "string",
+          "namespace": ["exchange", "link"]
         },
         {
           "name": "createdAt",

@@ -3,6 +3,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import {
   FaDiscord,
   FaGlobe,
+  FaLink,
   FaLinkedin,
   FaTelegram,
   FaTwitter,
@@ -18,6 +19,7 @@ export const StakingCard = ({
   discord,
   linkedin,
   telegram,
+  link,
 }) => {
   return (
     <Card
@@ -90,6 +92,11 @@ export const StakingCard = ({
               {telegram && (
                 <a href={telegram}>
                   <FaTelegram />
+                </a>
+              )}
+              {link && (
+                <a href={link}>
+                  <FaLink />
                 </a>
               )}
             </Grid>

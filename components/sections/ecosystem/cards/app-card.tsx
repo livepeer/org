@@ -1,6 +1,7 @@
 import {
   FaDiscord,
   FaGlobe,
+  FaLink,
   FaLinkedin,
   FaTelegram,
   FaTwitter,
@@ -18,6 +19,7 @@ export const AppCard = ({
   discord,
   linkedin,
   telegram,
+  link,
 }) => {
   return (
     <Card
@@ -85,6 +87,11 @@ export const AppCard = ({
         {telegram && (
           <a href={telegram}>
             <FaTelegram />
+          </a>
+        )}
+        {link && (
+          <a href={link}>
+            <FaLink />
           </a>
         )}
       </Grid>

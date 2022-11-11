@@ -60,6 +60,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
             image,
             linkedin,
             telegram,
+            link,
           } = app.node.data || {};
           switch (cardType) {
             case "app":
@@ -74,6 +75,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   discord={discord}
                   linkedin={linkedin}
                   telegram={telegram}
+                  link={link}
                 />
               );
             case "video":
@@ -98,6 +100,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   discord={discord}
                   linkedin={linkedin}
                   telegram={telegram}
+                  link={link}
                 />
               );
             case "staking":
@@ -112,6 +115,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   discord={discord}
                   linkedin={linkedin}
                   telegram={telegram}
+                  link={link}
                 />
               );
             case "exchange":
@@ -125,6 +129,7 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
                   discord={discord}
                   linkedin={linkedin}
                   telegram={telegram}
+                  link={link}
                 />
               );
             case "community":

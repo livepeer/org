@@ -78,6 +78,11 @@ export default defineSchema({
           type: "string",
         },
         {
+          name: "link",
+          label: "Link",
+          type: "string",
+        },
+        {
           name: "createdAt",
           type: "datetime",
           label: "CreatedAt",
@@ -186,6 +191,11 @@ export default defineSchema({
           type: "string",
         },
         {
+          name: "link",
+          label: "Link",
+          type: "string",
+        },
+        {
           name: "createdAt",
           type: "datetime",
           label: "CreatedAt",
@@ -250,6 +260,11 @@ export default defineSchema({
           type: "string",
         },
         {
+          name: "link",
+          label: "Link",
+          type: "string",
+        },
+        {
           name: "createdAt",
           type: "datetime",
           label: "CreatedAt",
@@ -311,6 +326,11 @@ export default defineSchema({
         {
           name: "telegram",
           label: "Telegram",
+          type: "string",
+        },
+        {
+          name: "link",
+          label: "Link",
           type: "string",
         },
         {

@@ -56,7 +56,7 @@ export const Subnav = (pageData) => {
           fontWeight: "600",
         }}>
         <Link href="#apps">{apps_section.title}</Link>
-        <Link href="#videotools">{video_section.title}</Link>
+        <Link href="#developertools">{video_section.title}</Link>
         <Link href="#web3techstack">{web3_section.title}</Link>
         <Link href="#stakingpartners">{stacking_section.title}</Link>
         <Link href="#exchanges">{exchanges_section.title}</Link>
