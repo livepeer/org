@@ -13,6 +13,7 @@ fragment AppsParts on Apps {
   discord
   linkedin
   telegram
+  link
   createdAt
 }
 
@@ -35,6 +36,7 @@ fragment Web3Parts on Web3 {
   discord
   linkedin
   telegram
+  link
   createdAt
 }
 
@@ -48,6 +50,7 @@ fragment StakingParts on Staking {
   discord
   linkedin
   telegram
+  link
   createdAt
 }
 
@@ -61,6 +64,7 @@ fragment ExchangeParts on Exchange {
   discord
   linkedin
   telegram
+  link
   createdAt
 }
 

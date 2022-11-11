@@ -2,6 +2,7 @@ import { Box, Card, Grid, Heading } from "theme-ui";
 import {
   FaDiscord,
   FaGlobe,
+  FaLink,
   FaLinkedin,
   FaTelegram,
   FaTwitter,
@@ -18,6 +19,7 @@ export const Web3Card = ({
   discord,
   linkedin,
   telegram,
+  link,
 }) => {
   return (
     <Card
@@ -89,6 +91,11 @@ export const Web3Card = ({
           {telegram && (
             <a href={telegram}>
               <FaTelegram />
+            </a>
+          )}
+          {link && (
+            <a href={link}>
+              <FaLink />
             </a>
           )}
         </Grid>

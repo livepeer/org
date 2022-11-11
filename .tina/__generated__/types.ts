@@ -310,6 +310,7 @@ export type Apps = {
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
   telegram?: Maybe<Scalars["String"]>;
+  link?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["String"]>;
 };
 
@@ -382,6 +383,7 @@ export type Web3 = {
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
   telegram?: Maybe<Scalars["String"]>;
+  link?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["String"]>;
 };
 
@@ -420,6 +422,7 @@ export type Staking = {
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
   telegram?: Maybe<Scalars["String"]>;
+  link?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["String"]>;
 };
 
@@ -458,6 +461,7 @@ export type Exchange = {
   discord?: Maybe<Scalars["String"]>;
   linkedin?: Maybe<Scalars["String"]>;
   telegram?: Maybe<Scalars["String"]>;
+  link?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["String"]>;
 };
 
@@ -790,6 +794,7 @@ export type AppsMutation = {
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
   telegram?: InputMaybe<Scalars["String"]>;
+  link?: InputMaybe<Scalars["String"]>;
   createdAt?: InputMaybe<Scalars["String"]>;
 };
 
@@ -812,6 +817,7 @@ export type Web3Mutation = {
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
   telegram?: InputMaybe<Scalars["String"]>;
+  link?: InputMaybe<Scalars["String"]>;
   createdAt?: InputMaybe<Scalars["String"]>;
 };
 
@@ -825,6 +831,7 @@ export type StakingMutation = {
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
   telegram?: InputMaybe<Scalars["String"]>;
+  link?: InputMaybe<Scalars["String"]>;
   createdAt?: InputMaybe<Scalars["String"]>;
 };
 
@@ -838,6 +845,7 @@ export type ExchangeMutation = {
   discord?: InputMaybe<Scalars["String"]>;
   linkedin?: InputMaybe<Scalars["String"]>;
   telegram?: InputMaybe<Scalars["String"]>;
+  link?: InputMaybe<Scalars["String"]>;
   createdAt?: InputMaybe<Scalars["String"]>;
 };
 
@@ -921,6 +929,7 @@ export type AppsPartsFragment = {
   discord?: string | null;
   linkedin?: string | null;
   telegram?: string | null;
+  link?: string | null;
   createdAt?: string | null;
 };
 
@@ -945,6 +954,7 @@ export type Web3PartsFragment = {
   discord?: string | null;
   linkedin?: string | null;
   telegram?: string | null;
+  link?: string | null;
   createdAt?: string | null;
 };
 
@@ -959,6 +969,7 @@ export type StakingPartsFragment = {
   discord?: string | null;
   linkedin?: string | null;
   telegram?: string | null;
+  link?: string | null;
   createdAt?: string | null;
 };
 
@@ -973,6 +984,7 @@ export type ExchangePartsFragment = {
   discord?: string | null;
   linkedin?: string | null;
   telegram?: string | null;
+  link?: string | null;
   createdAt?: string | null;
 };
 
@@ -1117,6 +1129,7 @@ export type GetAppsDocumentQuery = {
       discord?: string | null;
       linkedin?: string | null;
       telegram?: string | null;
+      link?: string | null;
       createdAt?: string | null;
     };
   };
@@ -1154,6 +1167,7 @@ export type GetAppsListQuery = {
           discord?: string | null;
           linkedin?: string | null;
           telegram?: string | null;
+          link?: string | null;
           createdAt?: string | null;
         };
       } | null;
@@ -1255,6 +1269,7 @@ export type GetWeb3DocumentQuery = {
       discord?: string | null;
       linkedin?: string | null;
       telegram?: string | null;
+      link?: string | null;
       createdAt?: string | null;
     };
   };
@@ -1292,6 +1307,7 @@ export type GetWeb3ListQuery = {
           discord?: string | null;
           linkedin?: string | null;
           telegram?: string | null;
+          link?: string | null;
           createdAt?: string | null;
         };
       } | null;
@@ -1328,6 +1344,7 @@ export type GetStakingDocumentQuery = {
       discord?: string | null;
       linkedin?: string | null;
       telegram?: string | null;
+      link?: string | null;
       createdAt?: string | null;
     };
   };
@@ -1365,6 +1382,7 @@ export type GetStakingListQuery = {
           discord?: string | null;
           linkedin?: string | null;
           telegram?: string | null;
+          link?: string | null;
           createdAt?: string | null;
         };
       } | null;
@@ -1401,6 +1419,7 @@ export type GetExchangeDocumentQuery = {
       discord?: string | null;
       linkedin?: string | null;
       telegram?: string | null;
+      link?: string | null;
       createdAt?: string | null;
     };
   };
@@ -1438,6 +1457,7 @@ export type GetExchangeListQuery = {
           discord?: string | null;
           linkedin?: string | null;
           telegram?: string | null;
+          link?: string | null;
           createdAt?: string | null;
         };
       } | null;
@@ -1715,6 +1735,7 @@ export const AppsPartsFragmentDoc = gql`
     discord
     linkedin
     telegram
+    link
     createdAt
   }
 `;
@@ -1739,6 +1760,7 @@ export const Web3PartsFragmentDoc = gql`
     discord
     linkedin
     telegram
+    link
     createdAt
   }
 `;
@@ -1753,6 +1775,7 @@ export const StakingPartsFragmentDoc = gql`
     discord
     linkedin
     telegram
+    link
     createdAt
   }
 `;
@@ -1767,6 +1790,7 @@ export const ExchangePartsFragmentDoc = gql`
     discord
     linkedin
     telegram
+    link
     createdAt
   }
 `;

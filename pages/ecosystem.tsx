@@ -104,7 +104,7 @@ function AppSection({ apps, header }) {
 
 function VideoToolSection({ videos, header }) {
   return (
-    <Box sx={{ bg: "text", px: 3, py: "40px" }} id="videotools">
+    <Box sx={{ bg: "text", px: 3, py: "40px" }} id="developertools">
       <DefaultList
         inverted={true}
         apps={videos}
@@ -289,6 +289,7 @@ export async function getStaticProps({ locale }) {
                 discord
                 linkedin
                 telegram
+                link
                 createdAt
               }
             }
@@ -339,6 +340,7 @@ export async function getStaticProps({ locale }) {
                 discord
                 linkedin
                 telegram
+                link
                 createdAt
               }
             }
@@ -366,6 +368,7 @@ export async function getStaticProps({ locale }) {
                 discord
                 linkedin
                 telegram
+                link
                 createdAt
               }
             }
@@ -393,6 +396,7 @@ export async function getStaticProps({ locale }) {
                 discord
                 linkedin
                 telegram
+                link
                 createdAt
               }
             }
