@@ -6,6 +6,7 @@ title: The Graph
 richtext: |
   Indexing protocol for querying networks like Ethereum.
 website: 'https://thegraph.com/'
+link: 'https://docs.livepeer.org/protocol/reference/api'
 createdAt: '2022-10-05T18:30:00.000Z'
 ---
 
