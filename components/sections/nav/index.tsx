@@ -57,8 +57,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title:
-      "Introducing Livepeer Studio – the new video toolkit for web3 app developers",
+    title: "Introducing Livepeer Studio - the video developer toolkit",
     link: {
       label: t("read-post"),
       href: "https://livepeer.studio/blog/welcome-livepeer-studio",
@@ -70,10 +69,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     {
       label: t("nav-about"),
       href: "/about",
-    },
-    {
-      label: t("nav-ecosystem"),
-      href: "/ecosystem",
     },
     {
       label: t("nav-developers"),
@@ -88,8 +83,8 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       href: "/video-miners",
     },
     {
-      label: t("nav-resources"),
-      href: "/resources",
+      label: t("nav-ecosystem"),
+      href: "/ecosystem",
     },
   ];
 
@@ -169,14 +164,8 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               ".nav-link": {
                 fontSize: 16,
               },
-              ".nav-link:not(:last-child)": { mr: 0 },
-              display: [isPrimer ? "null" : "none", null, "grid"],
-              gridAutoColumns: "auto",
-              gridAutoFlow: "column",
-              textAlign: "center",
-              width: "100%",
-              paddingRight: "0.5em",
-              paddingLeft: "0.5em",
+              ".nav-link:not(:last-child)": { mr: 56 },
+              display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer &&
               links.map((link) =>
