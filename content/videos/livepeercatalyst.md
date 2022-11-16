@@ -2,7 +2,7 @@
 publish: true
 image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1665428300/livepeer-catalyst_yiujks.png
-title: Livepeeer Catalyst
+title: Livepeer Catalyst
 richtext: >
   An infinitely scalable open-source media server for streaming directly onto
   the Livepeer network.
