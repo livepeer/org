@@ -13,7 +13,7 @@ video_section:
   title: Developer Tools
   description: >-
     Tools for developers to build applications and platforms with video, built
-    and maintained by the Livepeer core team
+    and maintained by the Livepeer core team.
 web3_section:
   title: Web3 Tech Stack
   description: >-
