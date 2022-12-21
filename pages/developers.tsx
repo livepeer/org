@@ -1,11 +1,9 @@
 import IsOpenSourceSection from "components/sections/developers/is-open-source";
 import PageLayout from "components/layouts/page";
 import DevelopersHero from "components/sections/developers/hero";
-import HugeCardSection from "components/sections/developers/huge-card";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { Box } from "theme-ui";
 
 const Developers = () => {
   const { t } = useTranslation(["developers"]);
@@ -27,25 +25,7 @@ const Developers = () => {
         title={t("page-developers-title")}
         subtitle={t("page-developers-intro")}
       />
-      <HugeCardSection
-        card={{
-          label: <Box>Build with</Box>,
-          title: <Box>Livepeer.js</Box>,
-          list: [
-            {
-              subtitle: (
-                <Box sx={{ fontSize: 18 }}>
-                  Livepeer.js makes building with Livepeer effortless. It
-                  provides a core vanilla JS library to easily connect to a
-                  Livepeer provider (e.g. Livepeer Studio), as well as
-                  React-specific hooks/components to provide memoization and DOM
-                  management.
-                </Box>
-              ),
-            },
-          ],
-        }}
-      />
+
       <IsOpenSourceSection
         title={t("page-developers-open-source")}
         subtitle={t("page-developers-open-source-text")}

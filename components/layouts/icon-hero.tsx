@@ -1,6 +1,14 @@
 /** @jsx jsx */
 import React, { forwardRef, useRef, useEffect } from "react";
-import { jsx, Box, Container, Heading, Grid, SxStyleProp } from "theme-ui";
+import {
+  jsx,
+  Box,
+  Container,
+  Heading,
+  Grid,
+  SxStyleProp,
+  Link as A,
+} from "theme-ui";
 import Divider from "components/primitives/divider";
 import heroEffect from "lib/animations/hero-effect";
 import cn from "classnames";
@@ -108,9 +116,17 @@ const IconHero = forwardRef(
                   color: subTitleColor,
                   zIndex: "general",
                   position: "relative",
+                  mb: 32,
+                  fontSize: "22px !important",
                 }}>
                 {subtitle}
               </Heading>
+              <A
+                variant="buttons.primary"
+                href="https://docs.livepeer.org"
+                target="__blank">
+                Documentation ↗
+              </A>
             </Box>
             <Box
               className={cn({ "c-animate": withAnimation })}

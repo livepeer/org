@@ -17,49 +17,23 @@ const listItems: ListItemProps[] = [
       <>
         Read the{" "}
         <A
-          href="https://github.com/livepeer/livepeerjs/blob/master/CONTRIBUTING.md"
+          href="https://github.com/livepeer/livepeer.js/blob/main/.github/CONTRIBUTING.md"
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
           data-dark>
           Livepeer.js
         </A>{" "}
-        contributor guidelines.
-      </>
-    ),
-  },
-  {
-    icon: <FiGithub />,
-    children: (
-      <>
-        Look for “good first issues” in{" "}
+        contributor guidelines and look for{" "}
         <A
-          href="https://github.com/livepeer/livepeerjs"
+          href="https://github.com/livepeer/livepeer.js/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22"
           target="_blank"
           rel="noopener noreferrer"
           variant="accent"
           data-dark>
-          Livepeer.js
-        </A>{" "}
-        (Javascript),{" "}
-        <A
-          href="https://github.com/livepeer/catalyst"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="accent"
-          data-dark>
-          Catalyst
-        </A>{" "}
-        (video development in C or Go), or{" "}
-        <A
-          href="https://github.com/livepeer/go-livepeer"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="accent"
-          data-dark>
-          Go-Livepeer
-        </A>{" "}
-        (go).
+          good first issues
+        </A>
+        .
       </>
     ),
   },
@@ -95,23 +69,6 @@ const listItems: ListItemProps[] = [
         </A>{" "}
         - we’re a welcoming bunch, so don’t be shy. Ask how you can get
         involved.
-      </>
-    ),
-  },
-  {
-    icon: <FiPlay />,
-    children: (
-      <>
-        Looking to build a video application using Livepeer? Check out{" "}
-        <A
-          href="https://livepeer.studio"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="accent"
-          data-dark>
-          Livepeer Studio
-        </A>
-        .
       </>
     ),
   },
