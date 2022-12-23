@@ -11,6 +11,7 @@ import { Header } from "components/sections/ecosystem/header";
 import { Subnav } from "components/sections/ecosystem/subnav";
 import { CtaBanner } from "components/sections/ecosystem/cta-banner";
 import { useTina } from "tinacms/dist/edit-state";
+import styled from "@emotion/styled";
 
 const query = gql`
   query EcosystemQuery($relativePath: String!) {
@@ -52,6 +53,15 @@ const query = gql`
   }
 `;
 
+const AnchorWrapper = styled.section`
+  :target::before {
+    content: "";
+    display: block;
+    height: 120px; /* fixed header height*/
+    margin: -120px 0 0; /* negative fixed header height */
+  }
+`;
+
 function AppSection({ apps, header }) {
   const [expandApps, setExpandApps] = useState(false);
   const [appsList, setAppsList] = useState(apps.slice(0, 6));
@@ -65,68 +75,74 @@ function AppSection({ apps, header }) {
   }, [expandApps]);
 
   return (
-    <Box sx={{ bg: "muted", px: 3, py: "40px" }} id="apps">
-      <DefaultList
-        inverted={false}
-        apps={appsList}
-        title={header.title}
-        subtitle={header.description}
-        cardType="app"
-      />
+    <AnchorWrapper id="apps">
+      <Box sx={{ bg: "muted", px: 3, py: "40px" }}>
+        <DefaultList
+          inverted={false}
+          apps={appsList}
+          title={header.title}
+          subtitle={header.description}
+          cardType="app"
+        />
 
-      <Flex
-        onClick={() => {
-          setExpandApps(!expandApps);
-        }}
-        sx={{
-          ":hover": {
-            cursor: "pointer",
-          },
-          fontFamily: "Inter",
-          fontStyle: "normal",
-          fontWeight: "400",
-          fontSize: "20px",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}>
-        {expandApps ? "Collapse" : "Expand"}
-        {expandApps ? (
-          <BsChevronCompactUp size={"3rem"} />
-        ) : (
-          <BsChevronCompactDown size={"3rem"} />
-        )}
-      </Flex>
-    </Box>
+        <Flex
+          onClick={() => {
+            setExpandApps(!expandApps);
+          }}
+          sx={{
+            ":hover": {
+              cursor: "pointer",
+            },
+            fontFamily: "Inter",
+            fontStyle: "normal",
+            fontWeight: "400",
+            fontSize: "20px",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}>
+          {expandApps ? "Collapse" : "Expand"}
+          {expandApps ? (
+            <BsChevronCompactUp size={"3rem"} />
+          ) : (
+            <BsChevronCompactDown size={"3rem"} />
+          )}
+        </Flex>
+      </Box>
+    </AnchorWrapper>
   );
 }
 
 function VideoToolSection({ videos, header }) {
   return (
-    <Box sx={{ bg: "text", px: 3, py: "40px" }} id="developertools">
-      <DefaultList
-        inverted={true}
-        apps={videos}
-        title={header.title}
-        subtitle={header.description}
-        cardType="video"
-      />
-    </Box>
+    <AnchorWrapper id="developertools">
+      <Box sx={{ bg: "text", px: 3, py: "40px" }}>
+        <DefaultList
+          inverted={true}
+          apps={videos}
+          title={header.title}
+          subtitle={header.description}
+          cardType="video"
+        />
+      </Box>
+    </AnchorWrapper>
   );
 }
 
 function Web3Section({ web3, header }) {
   return (
-    <Box sx={{ px: 3, py: "40px" }} id="web3techstack">
-      <DefaultList
-        inverted={false}
-        apps={web3}
-        title={header.title}
-        subtitle={header.description}
-        cardType="web3"
-      />
-    </Box>
+    <AnchorWrapper id="web3techstack">
+      <Box sx={{ px: 3, py: "40px" }}>
+        <DefaultList
+          inverted={false}
+          apps={web3}
+          title={header.title}
+          subtitle={header.description}
+          cardType="web3"
+        />
+      </Box>
+    </AnchorWrapper>
   );
 }
 function StakingPlatformSection({ staking, header }) {
@@ -138,45 +154,50 @@ function StakingPlatformSection({ staking, header }) {
           width: "100%",
           height: "80px",
         }}
-        id="stakingpartners"
       />
-      <Box sx={{ px: 3, py: "40px" }}>
-        <DefaultList
-          inverted={false}
-          apps={staking}
-          title={header.title}
-          subtitle={header.description}
-          cardType="staking"
-        />
-      </Box>
+      <AnchorWrapper id="stakingpartners">
+        <Box sx={{ px: 3, py: "40px" }}>
+          <DefaultList
+            inverted={false}
+            apps={staking}
+            title={header.title}
+            subtitle={header.description}
+            cardType="staking"
+          />
+        </Box>
+      </AnchorWrapper>
     </>
   );
 }
 function ExchangeSection({ exchanges, header }) {
   return (
-    <Box sx={{ bg: "#FAFAFA", px: 3, py: "40px" }} id="exchanges">
-      <DefaultList
-        inverted={false}
-        apps={exchanges}
-        title={header.title}
-        subtitle={header.description}
-        cardType="exchange"
-      />
-    </Box>
+    <AnchorWrapper id="exchanges">
+      <Box sx={{ bg: "#FAFAFA", px: 3, py: "40px" }}>
+        <DefaultList
+          inverted={false}
+          apps={exchanges}
+          title={header.title}
+          subtitle={header.description}
+          cardType="exchange"
+        />
+      </Box>
+    </AnchorWrapper>
   );
 }
 
 function CommunitySection({ communities, header }) {
   return (
-    <Box sx={{ px: 3, py: "40px" }} id="communitytools">
-      <DefaultList
-        inverted={false}
-        apps={communities}
-        title={header.title}
-        subtitle={header.description}
-        cardType="community"
-      />
-    </Box>
+    <AnchorWrapper id="communitytools">
+      <Box sx={{ px: 3, py: "40px" }}>
+        <DefaultList
+          inverted={false}
+          apps={communities}
+          title={header.title}
+          subtitle={header.description}
+          cardType="community"
+        />
+      </Box>
+    </AnchorWrapper>
   );
 }
 
