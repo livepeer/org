@@ -8,6 +8,6 @@ richtext: |
 website: 'https://monaverse.com/'
 link: >-
   https://docs.monaverse.com/use-mona/live-streaming-in-mona/livestream-using-obs-studio
-createdAt: '2022-10-06T04:00:00.000Z'
+createdAt: '2022-10-04T04:00:00.000Z'
 ---
 
