@@ -5,7 +5,7 @@ hero:
   hero_description: >-
     Explore the apps and services of the Livepeer ecosystem, and discover the
     next generation of decentralized video.
-  hero_eyebrow: Submit a project to be included in Livepeer Ecosystem
+  hero_eyebrow: Submit a project to be included in the Livepeer Ecosystem
 apps_section:
   title: Apps
   description: Applications built using Livepeer video infrastructure.
