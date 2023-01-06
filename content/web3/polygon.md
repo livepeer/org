@@ -8,6 +8,6 @@ richtext: >
   user-friendly dApps.
 website: 'https://polygon.technology/'
 link: 'https://docs.livepeer.studio/guides/mint-a-video-nft#mint-your-nft'
-createdAt: '2022-10-05T18:30:00.000Z'
+createdAt: '2022-10-03T04:00:00.000Z'
 ---
 
