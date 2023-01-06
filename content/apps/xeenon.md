@@ -9,6 +9,6 @@ richtext: >
 website: 'https://xeenon.xyz/'
 twitter: 'https://twitter.com/xeenon_xyz'
 discord: 'https://discord.com/invite/nfu'
-createdAt: '2023-01-06T00:00:00.000Z'
+createdAt: '2022-10-01T04:00:00.000Z'
 ---
 
