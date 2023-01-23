@@ -4,8 +4,8 @@ image: >-
   https://res.cloudinary.com/duquzk7m6/image/upload/v1674483951/4everland_white_tvjopt.png
 title: 4EVERLAND
 richtext: >
-  Web3 infrastructure platform that empowers projects with frontend hosting,
-  video and data storage, and gateway services.
+  Web3 infrastructure platform that empowers projects with front-end hosting,
+  video storage, and gateway services.
 website: 'https://www.4everland.org/'
 twitter: ''
 link: 'https://docs.4everland.org/gateways/dedicated-gateways/video-streaming'
