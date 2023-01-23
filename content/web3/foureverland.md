@@ -1,7 +1,7 @@
 ---
 publish: true
 image: >-
-  https://res.cloudinary.com/duquzk7m6/image/upload/v1674483357/4everland_ycrgiw.jpg
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1674483951/4everland_white_tvjopt.png
 title: 4EVERLAND
 richtext: >
   Web3 infrastructure platform that empowers projects with frontend hosting,
