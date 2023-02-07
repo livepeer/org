@@ -14,12 +14,15 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
   const headerRef = useRef<HTMLDivElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
 
-  const videos = [
-    "/hero-videos/1.mp4",
-    "/hero-videos/2.mp4",
-    "/hero-videos/3.mp4",
-    "/hero-videos/4.mp4",
+  const playbackIds = [
+    "82401hx25ekwnbcy",
+    "9cc5basqntozo7i8",
+    "22c7d81cqw3q6j4s",
+    "edc93flxfoyexna9",
   ];
+  const videos = playbackIds.map(
+    (pid) => `https://lp-playback.com/hls/${pid}/video`
+  );
 
   const onVideoChange = () => {
     if (globeDotIndex < 3) {
