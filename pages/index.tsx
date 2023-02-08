@@ -95,6 +95,9 @@ export async function getStaticProps({ locale }) {
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/playlistItems?maxResults=100&part=snippet&playlistId=PLkw6hm1fcjtEo9HydrGKP2R_NHhSu1Mpl&key=${process.env.YOUTUBE_API_KEY}`
     );
+    if (!response.ok) {
+      throw new Error("Failed to fetch youtube videos: " + response.statusText);
+    }
 
     const youtubeData = await response.json();
     youtubeVideos = youtubeData.items;

@@ -7,19 +7,22 @@ import VideoSwapper from "./video-swapper";
 import GlobeDot from "./globe-dots";
 import Divider from "components/primitives/divider";
 
+const playbackIds = [
+  "82401hx25ekwnbcy",
+  "9cc5basqntozo7i8",
+  "22c7d81cqw3q6j4s",
+  "edc93flxfoyexna9",
+];
+const videos = playbackIds.map(
+  (pid) => `https://lp-playback.com/hls/${pid}/video`
+);
+
 const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
   const [globeDotIndex, setGlobeDotIndex] = useState(0);
   const animationTimelineRef = useRef<gsap.core.Timeline>();
   const videoBoxRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
-
-  const videos = [
-    "/hero-videos/1.mp4",
-    "/hero-videos/2.mp4",
-    "/hero-videos/3.mp4",
-    "/hero-videos/4.mp4",
-  ];
 
   const onVideoChange = () => {
     if (globeDotIndex < 3) {
