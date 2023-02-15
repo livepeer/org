@@ -138,6 +138,16 @@ module.exports = withPlugins([
             destination: 'https://livepeer.org/jobs/1496214',
             permanent: false,
           },
+          {
+            source: '/changelog',
+            destination: 'https://livepeer.canny.io/changelog',
+            permanent: false,
+          },
+          {
+            source: '/feature-requests',
+            destination: 'https://livepeer.canny.io/feature-requests',
+            permanent: false,
+          },
         ];
       },
     },
