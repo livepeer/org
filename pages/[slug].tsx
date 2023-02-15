@@ -30,7 +30,7 @@ const Page = (props) => {
     meta: {
       title: "Grants",
       description:
-        "A listing of the grant programs throughout the Ethereum ecosystem.",
+        "A listing of the grant programs throughout the Livepeer ecosystem.",
       url: "https://livepeer.org/grants",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
