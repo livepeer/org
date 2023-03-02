@@ -1,12 +1,10 @@
 ---
 publish: true
 image: >-
-  https://uploads-ssl.webflow.com/636197fd1c5cb93e115b08b7/638cf36f0787c71328e95275__vm_logo_3_VM_Logo_4-07-07-07-07.svg
+  https://user-images.githubusercontent.com/16746274/222543634-6ffa38ad-d692-4dee-b800-1d969ad6dec7.png
 title: Video Miner
 richtext: >
-  Video Miner is a pool built on the Livepeer network that allows anyone to earn
-  passive income by processing video with an Nvidia GPU without the need to
-  setup an Orchestrator node.
+  Video Miner is a performance-focused pool run by a team of 8 globally distributed Orchestrators, allowing anyone to participate in the Livepeer network as a Transcoder and earn passive income. Our custom selection algorithm rewards top performers with more work and higher pay.
 website: "https://video-miner.com"
 twitter: "https://twitter.com/video_miner"
 discord: "https://discord.gg/bmtfrh9Vx6"
