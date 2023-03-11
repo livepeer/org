@@ -57,7 +57,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title: "Introducing Livepeer.js - the video developer toolkit",
+    title: "Introducing Livepeer.js - the Livepeer Development Kit",
     link: {
       label: "Build with Livepeer.js",
       href: "https://docs.livepeer.org/reference/livepeer-js",
