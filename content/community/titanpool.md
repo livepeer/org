@@ -5,6 +5,7 @@ image: >-
 title: Titan Node Pool
 richtext: |
   Earn LPT and ETH from joining the Titan Node Video Mining Pool.
+twitter: "https://twitter.com/Titan_Node"
 website: "https://titan-node.com"
 createdAt: "2023-03-01T23:50:00.000Z"
 ---
