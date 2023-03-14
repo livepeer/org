@@ -157,7 +157,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
           <A
             target="_blank"
             variant="buttons.transparent"
-            href="discord.gg/livepeer"
+            href="https://discord.gg/livepeer"
             sx={{
               zIndex: "general",
               position: "relative",
