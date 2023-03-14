@@ -359,6 +359,26 @@ const theme = {
         outline: "none",
       },
     },
+    transparent: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "default",
+      color: "text",
+      bg: "transparent",
+      py: 2,
+      px: 4,
+      height: 12,
+      variant: "text.default",
+      fontWeight: 600,
+      transition: "opacity .15s",
+      "&:hover": {
+        opacity: 0.82,
+      },
+      "&:focus": {
+        outline: "none",
+      },
+    },
     icon: {
       p: 2,
       borderRadius: "md",

@@ -19,6 +19,7 @@ const Item = ({ active = false, language, locale, flag, ...props }) => (
       fontWeight: active ? 600 : 400,
       backgroundColor: active ? "#f5f5ff" : "transparent",
       p: 3,
+
       "&:focus": {
         backgroundColor: "#f5f5ff",
         outline: "none",

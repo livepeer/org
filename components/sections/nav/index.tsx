@@ -161,10 +161,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
           />
           <Box
             sx={{
+              alignItems: "center",
               ".nav-link": {
-                fontSize: 16,
+                fontSize: 15,
               },
-              ".nav-link:not(:last-child)": { mr: 56 },
+              ".nav-link:not(:last-child)": { mr: 40 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer &&
