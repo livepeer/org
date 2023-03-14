@@ -15,7 +15,7 @@ module.exports = withPlugins([
   [
     {
       images: {
-        domains: ['assets.vercel.com', 'cdn.sanity.io', 'res.cloudinary.com'],
+        domains: ['assets.vercel.com', 'cdn.sanity.io', 'res.cloudinary.com', 'user-images.githubusercontent.com'],
       },
       pageExtensions: ['mdx', 'tsx'],
       webpack(config, _options) {
