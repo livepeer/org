@@ -39,8 +39,7 @@ module.exports = withPlugins([
           },
           {
             source: '/tv',
-            destination:
-              'https://media.livepeer.org/play?url=https%3A%2F%2Fcdn.livepeer.com%2Fhls%2F7062iaygm8eip421%2Findex.m3u8',
+            destination: 'https://lvpr.tv/?v=7062iaygm8eip421',
             permanent: false,
           },
           {
