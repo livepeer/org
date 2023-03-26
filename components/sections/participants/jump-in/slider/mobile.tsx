@@ -47,26 +47,26 @@ const MobileJumpInSlider = () => {
 
   const [cards, setCards] = useState<SliderCardProps[]>([
     {
-      title: "Tokenholders",
+      title: "Delegators",
       description:
         "Help improve and secure the Livepeer network by acquiring and staking LPT. Earn ETH and LPT rewards in exchange.",
       linkProps: {
         link: {
-          label: "/tokenholders",
-          href: "/tokenholders",
+          label: "/delegators",
+          href: "/delegators",
         },
         isDark: true,
       },
       isActive: true,
     },
     {
-      title: "Video Miners",
+      title: "Orchestrators",
       description:
-        "Transcode video on your infrastructure as a video miner in exchange for ETH and LPT rewards.",
+        "Process video as an orchestrator in exchange for ETH and LPT rewards.",
       linkProps: {
         link: {
-          label: "/video-miners",
-          href: "/video-miners",
+          label: "/orchestrators",
+          href: "/orchestrators",
         },
         isDark: true,
       },

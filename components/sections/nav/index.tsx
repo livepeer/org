@@ -75,12 +75,12 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       href: "/developers",
     },
     {
-      label: t("nav-tokenholders"),
-      href: "/tokenholders",
+      label: "Delegators",
+      href: "/delegators",
     },
     {
-      label: t("nav-video-miners"),
-      href: "/video-miners",
+      label: "Orchestrators",
+      href: "/orchestrators",
     },
     {
       label: t("nav-ecosystem"),

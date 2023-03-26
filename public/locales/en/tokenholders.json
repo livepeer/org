@@ -1,6 +1,6 @@
 {
-  "page-tokenholders-title": "Tokenholders",
-  "page-tokenholders-intro": "Every day thousands of tokenholders participate in Livepeer, the world’s first open source, peer-to-peer video transcoding platform.",
+  "page-tokenholders-title": "Delegators",
+  "page-tokenholders-intro": "Every day thousands of delegators participate in Livepeer, the world’s first open video infrastructure network.",
   "page-tokenholders-get-token": "Get token, then put it to work",
   "page-tokenholders-get": "Get",
   "page-tokenholders-get-title": "Livepeer Token",
@@ -14,7 +14,7 @@
   "page-tokenholders-stake-text-two": "Routes work through the network in proportion to the amount of staked and delegated token, serving as a coordination mechanism",
   "page-tokenholders-stake-text-three": "Secures the network against a number of attacks via slashing that occurs due to protocol violation",
   "page-tokenholders-stake-cta": "Open Livepeer Explorer",
-  "page-tokenholders-stats": "Tokenholder Stats",
+  "page-tokenholders-stats": "Delegator Stats",
   "page-tokenholders-stats-staked": "13.5 M",
   "page-tokenholders-stats-staked-text": "Total LPT Staked",
   "page-tokenholders-stats-fees": "28.5 ETH",
@@ -24,7 +24,7 @@
   "page-tokenholders-questions": "Questions?",
   "page-tokenholders-questions-intro": "Check out the FAQ.",
   "page-tokenholders-questions-text": "Discover the most frequently asked questions about Livepeer.",
-  "page-tokenholders-questions-button": "Tokenholder FAQ",
-  "page-tokenholders-meta-title": "Tokenholders",
-  "page-tokenholders-meta-description": "Every day thousands of tokenholders participate in Livepeer, the world’s first open source, peer-to-peer video transcoding platform."
+  "page-tokenholders-questions-button": "Delegator FAQ",
+  "page-tokenholders-meta-title": "Delegators",
+  "page-tokenholders-meta-description": "Every day thousands of delegators participate in Livepeer, the world’s first open source, peer-to-peer video transcoding platform."
 }
