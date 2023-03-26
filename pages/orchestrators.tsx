@@ -31,7 +31,7 @@ const VideoMinerPage = ({ totalVolumeUSD, totalActiveNodes, totalMinutes }) => {
   return (
     <PageLayout headProps={headProps} footerProps={{ prefooter: null }}>
       <VideoMinerHero
-        title={t("page-video-miners-title")}
+        title="Orchestrators"
         subtitle={t("page-video-miners-intro")}
         cta={{
           isExternal: true,

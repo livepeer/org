@@ -31,8 +31,8 @@ const Footer = ({
     {
       title: t("nav-participants"),
       items: [
-        { label: t("nav-tokenholders"), href: "/tokenholders" },
-        { label: t("nav-video-miners"), href: "/video-miners" },
+        { label: t("nav-tokenholders"), href: "/delegators" },
+        { label: t("nav-video-miners"), href: "/orchestrators" },
         {
           label: t("nav-protocol-explorer"),
           href: "https://explorer.livepeer.org/",
@@ -48,6 +48,11 @@ const Footer = ({
     {
       title: t("nav-developers"),
       items: [
+        {
+          label: "Documentation",
+          href: "https://docs.livepeer.org",
+          isExternal: true,
+        },
         {
           label: "Livepeer.js",
           href: "https://livepeerjs.org",
@@ -73,7 +78,6 @@ const Footer = ({
           href: "https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md",
           isExternal: true,
         },
-        { label: t("nav-faq"), href: "/faq" },
         {
           label: "Brand Assets",
           href: "/brand.zip",

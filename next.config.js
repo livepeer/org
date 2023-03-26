@@ -15,7 +15,12 @@ module.exports = withPlugins([
   [
     {
       images: {
-        domains: ['assets.vercel.com', 'cdn.sanity.io', 'res.cloudinary.com', 'user-images.githubusercontent.com'],
+        domains: [
+          'assets.vercel.com',
+          'cdn.sanity.io',
+          'res.cloudinary.com',
+          'user-images.githubusercontent.com',
+        ],
       },
       pageExtensions: ['mdx', 'tsx'],
       webpack(config, _options) {
@@ -146,6 +151,11 @@ module.exports = withPlugins([
           {
             source: '/feature-requests',
             destination: 'https://livepeer.canny.io/feature-requests',
+            permanent: false,
+          },
+          {
+            source: '/faq',
+            destination: 'https://docs.livepeer.org',
             permanent: false,
           },
         ];

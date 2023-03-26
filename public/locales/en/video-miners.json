@@ -1,8 +1,8 @@
 {
-  "page-video-miners-title": "Video Miners",
-  "page-video-miners-intro": "Increase profits by transcoding video on GPUs while mining.",
-  "page-video-miners-how": "How video mining works",
-  "page-video-miners-how-text-one": "Run a node on the Livepeer network that advertises the price it will charge for video transcoding. Continue your cryptocurrency mining with your GPUs.",
+  "page-video-miners-title": "Orchestrators",
+  "page-video-miners-intro": "Increase profits by processing video on GPUs while mining.",
+  "page-video-miners-how": "How orchestrating works",
+  "page-video-miners-how-text-one": "Run a node on the Livepeer network that advertises the price it will charge for video processing such as transcoding. Continue your cryptocurrency mining with your GPUs.",
   "page-video-miners-how-text-two": "When video encoding jobs come your way, the Livepeer node routes the tasks to your GPUs, and the encoding leverages a different part of the GPUs than the mining, so the mining can also continue with minimal hashrate loss. No opportunity cost!",
   "page-video-miners-numbers": "The Numbers",
   "page-video-miners-numbers-text": "The capacity on Livepeer's network represents access to 70,000+ GPUs, or enough to encode all the realtime video streaming through Twitch, Facebook, and Youtube combined.",
@@ -13,7 +13,7 @@
   "page-video-miners-numbers-cost": "Free",
   "page-video-miners-numbers-cost-text": "Total minutes of transcoded video",
   "page-video-miners-requirements": "Requirements",
-  "page-video-miners-requirements-intro": "To become a video miner you must have the following:",
+  "page-video-miners-requirements-intro": "To become an orchestrator you must have the following:",
   "page-video-miners-requirements-title-one": "GPUs with video encoding chips",
   "page-video-miners-requirements-text-one": "See our support matrix and community discussion",
   "page-video-miners-requirements-title-two": "Access to affordable bandwidth",
@@ -21,10 +21,10 @@
   "page-video-miners-requirements-title-three": "Ability to run a blockchain aware Livepeer node 24/7",
   "page-video-miners-requirements-text-three": "If not interested in this piece, look at partnering with an existing node operator",
   "page-video-miners-get-started": "How to get started",
-  "page-video-miners-get-started-intro": "Become a video miner in three steps.",
+  "page-video-miners-get-started-intro": "Become an orchestrator in three steps.",
   "page-video-miners-get-started-one": "Read the docs for transcoding on the livepeer network",
-  "page-video-miners-get-started-two": "Check out the video miner FAQ",
+  "page-video-miners-get-started-two": "Check out the orchestrator FAQ",
   "page-video-miners-get-started-three": "Reach out to the Livepeer team and community in the Discord chat room, #transcoding channel. Initial testing and setup can require some DevOps, so we are happy to help.",
-  "page-video-miners-meta-title": "Video miners",
-  "page-video-miners-meta-description": "Increase profits by transcoding video on GPUs while mining."
+  "page-video-miners-meta-title": "Orchestrators",
+  "page-video-miners-meta-description": "Increase profits by processing video on GPUs while mining."
 }

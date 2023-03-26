@@ -22,12 +22,12 @@ const categories: Category[] = [
     value: "developers",
   },
   {
-    label: "Tokenholders",
-    value: "tokenholders",
+    label: "Delegators",
+    value: "delegators",
   },
   {
-    label: "Video Miners",
-    value: "video-miners",
+    label: "Orchestrators",
+    value: "orchestrators",
   },
   {
     label: "Lexicon",
@@ -91,31 +91,17 @@ const questions: Question[] = [
     category: categories[0],
   },
   {
-    question: "What is the current implementation Livepeer team is working on?",
-    answer: (
-      <>
-        It is called “Streamflow” and you can read about it{" "}
-        <AnswerLink
-          label="here"
-          href="https://github.com/livepeer/wiki/blob/streamflow/STREAMFLOW.md"
-          isExternal
-        />
-        .
-      </>
-    ),
-    category: categories[0],
-  },
-  {
     question: "Where can I find the Livepeer whitepaper?",
     answer: (
       <>
-        You can find whitepaper{" "}
+        There are two. You can find the original whitepaper{" "}
         <AnswerLink
           label="here"
           href="https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md"
           isExternal
         />{" "}
-        and the Streamflow paper{" "}
+        and the followup paper that outlines its scaling proposal called
+        Streamflow{" "}
         <AnswerLink
           label="here"
           href="https://github.com/livepeer/wiki/blob/master/STREAMFLOW.md"
@@ -125,68 +111,6 @@ const questions: Question[] = [
       </>
     ),
     category: categories[0],
-  },
-  {
-    question:
-      "I’m a developer and want to contribute to Livepeer. Where can I find some tools/resources?",
-    answer: (
-      <>
-        <Text mb={3}>
-          The best way to get started is to join the discussion in{" "}
-          <AnswerLink
-            label="the Discord Developer Chat. "
-            href="https://discord.gg/uaPhtyrWsF"
-            isExternal
-          />
-          These links could be useful to you in terms of discovering development
-          opportunities.
-        </Text>
-        <ul>
-          <li>
-            <AnswerLink label="https://livepeer.org/oss" href="/oss" />
-          </li>
-          <li>
-            <AnswerLink
-              href="https://github.com/livepeer/Grant-Program"
-              label="https://github.com/livepeer/Grant-Program"
-              isExternal
-            />
-          </li>
-          <li>
-            <AnswerLink
-              href="https://github.com/livepeer"
-              label="https://github.com/livepeer"
-              isExternal
-            />
-          </li>
-        </ul>
-      </>
-    ),
-    category: categories[1],
-  },
-  {
-    question:
-      "I’d like to use Livepeer for my video application. Should I use the Livepeer network or Livepeer Studio?",
-    answer: (
-      <>
-        <p sx={{ mb: 3 }}>
-          Setting up your own broadcaster connected directly to the Livepeer
-          network and using the Livepeer Studio both allow you to transcode on
-          the same scalable, reliable, affordable Livepeer network. Initial
-          setup for a Broadcaster node can involve some DevOps and requires that
-          you pay in a cryptocurrency (ETH). But, there is large, global
-          Livepeer community ready to help. The Livepeer Discord server is very
-          active.
-        </p>
-        <p>
-          Livepeer Studio is great for getting started quickly and growing a
-          video platform fast with the complexities of running your own
-          broadcaster node. It offers a scalable end-to-end video infrastructure
-          solution, from ingest to CDN playback for live and recorded streams.
-        </p>
-      </>
-    ),
-    category: categories[1],
   },
   {
     question: "How was Livepeer token distributed? Was there an ICO?",
@@ -207,21 +131,6 @@ const questions: Question[] = [
     category: categories[2],
   },
   {
-    question: "How do I stake my LPT?",
-    answer: (
-      <>
-        Follow the staking guide in the{" "}
-        <AnswerLink
-          label="Livepeer Protocol Explorer"
-          href="https://explorer.livepeer.org/"
-          isExternal
-        />
-        .
-      </>
-    ),
-    category: categories[2],
-  },
-  {
     question:
       "What is the contract address for adding LPT to Metamask or MyCrypto?",
     answer: "0x58b6a8a3302369daec383334672404ee733ab239",
@@ -231,17 +140,18 @@ const questions: Question[] = [
     question:
       "How do I evaluate which orchestrator I should stake my LPT towards?",
     answer:
-      "It's your job as a tokenholder to research orchestrators based upon their past performance, statistics, rates they are charging, and any social campaigns that they’ve posted indicating why they believe they will do a good job for the network.",
+      "It's your job as a delegator to research orchestrators based upon their past performance, statistics, rates they are charging, and any social campaigns that they’ve posted indicating why they believe they will do a good job for the network.",
     category: categories[2],
   },
   {
-    question: "How long do I need to wait for unstaking/withdrawing my tokens?",
+    question:
+      "How long do I need to wait to undelegate and withdraw my tokens?",
     answer:
-      "Once you click on Unstake, it takes seven days for your LPT to unstake at which point your tokens will be ready for you to withdraw into your own wallet.",
+      "Once you click on Undelegate, it takes seven days for your LPT to undelegate at which point your tokens will be ready for you to withdraw into your own wallet.",
     category: categories[2],
   },
   {
-    question: "Can I stake to multiple orchestrators?",
+    question: "Can I delegate with multiple orchestrators?",
     answer: "Yes, but not from the same ETH account.",
     category: categories[2],
   },
@@ -252,7 +162,7 @@ const questions: Question[] = [
         Follow{" "}
         <AnswerLink
           label="this"
-          href="https://docs.livepeer.org/video-miners/getting-started/overview"
+          href="https://docs.livepeer.org/guides/orchestrating/get-started"
         />{" "}
         guide.
       </>
@@ -275,8 +185,8 @@ const questions: Question[] = [
             <ul sx={{ listStyle: "inside", paddingInlineStart: "24px" }}>
               <li>
                 <AnswerLink
-                  href="https://docs.livepeer.org/video-miners/how-to-guides/troubleshooting"
-                  label="Check the video miner troubleshooting docs"
+                  href="https://docs.livepeer.org/guides/orchestrating/troubleshoot"
+                  label="Check the orchestrator troubleshooting docs"
                 />{" "}
                 to test your own transcoding setup. Turn on logging to a more
                 verbose level to debug this (-v 10).
@@ -422,9 +332,9 @@ const questions: Question[] = [
     question: "Delegator",
     answer: (
       <>
-        A Livepeer tokenholder that stakes with an orchestrator on the network,
-        in effect delegating the role of performing transcoding video in
-        exchange for a cut of its rewards and fees.
+        A Livepeer tokenholder that delegates its tokens with an orchestrator on
+        the network in exchange for a cut of the orchestrator's rewards and
+        fees.
       </>
     ),
     category: categories[4],
@@ -433,7 +343,7 @@ const questions: Question[] = [
     question: "Broadcaster",
     answer: (
       <>
-        A Livepeer actor sending video streams into the network for transcoding.
+        A Livepeer node sending video streams into the network for processing.
       </>
     ),
     category: categories[4],

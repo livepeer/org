@@ -76,7 +76,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Docs",
     description:
-      "Comprehensive documentation for both video developers and video miners.",
+      "Comprehensive documentation for both video developers and orchestrators.",
     subtitle: "By Livepeer, Inc.",
     link: { href: "https://docs.livepeer.org", isExternal: true },
     category: categories[0],
@@ -88,7 +88,7 @@ const posts: Post[] = [
   {
     title: "The Livepeer Explorer",
     description:
-      "View orchestrator campaigns, protocol statistics and manage your stake.",
+      "View orchestrator campaigns, protocol statistics and manage your delegated stake.",
     subtitle: "By Livepeer, Inc.",
     link: { href: "https://explorer.livepeer.org", isExternal: true },
     category: categories[1],
@@ -124,7 +124,7 @@ const posts: Post[] = [
   {
     title: "Hubble",
     subtitle: "By Figment Networks",
-    description: "Rewards reporting and alerts for stakers",
+    description: "Rewards reporting and alerts for delegators",
     link: {
       href: "https://hubble.figment.network/livepeer/chains/mainnet",
       isExternal: true,

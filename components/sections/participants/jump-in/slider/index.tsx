@@ -46,22 +46,22 @@ const JumpInSlider = () => {
 
   const [cards, setCards] = useState<SliderCardProps[]>([
     {
-      title: "Tokenholders",
+      title: "Delegators",
       description:
         "Help improve and secure the Livepeer network by acquiring and staking LPT. Earn ETH and LPT rewards in exchange.",
       linkProps: {
         link: {
-          label: "/tokenholders",
-          href: "/tokenholders",
+          label: "/delegators",
+          href: "/delegators",
         },
         isDark: true,
       },
       isActive: true,
     },
     {
-      title: "Video Miners",
+      title: "Orchestrators",
       description:
-        "Run a livepeer node to transcode video on your GPUs in exchange for ETH and LPT rewards.",
+        "Run a livepeer node to process video on your GPUs in exchange for ETH and LPT rewards.",
       linkProps: {
         link: {
           label: "/video-miners",

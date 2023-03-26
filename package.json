@@ -13,11 +13,9 @@
     "lint:fix": "eslint . --fix --rule 'react-hooks/exhaustive-deps: off' && prettier --write '**/*.{js,ts,tsx,json}'",
     "lint:staged": "lint-staged --quiet",
     "prettier": "prettier --write '**/*.{ts,js,css,html,md,tsx,mdx,yaml,yml,gql,graphql,json}'",
-    "type-check": "tsc --pretty --noEmit",
-    "docs-positions": "node ./generate-docs-positions.js"
+    "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@docsearch/react": "^1.0.0-alpha.14",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@livepeer/design-system": "^0.0.0-beta.5",
