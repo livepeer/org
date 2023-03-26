@@ -49,6 +49,11 @@ const Footer = ({
       title: t("nav-developers"),
       items: [
         {
+          label: "Documentation",
+          href: "https://docs.livepeer.org",
+          isExternal: true,
+        },
+        {
           label: "Livepeer.js",
           href: "https://livepeerjs.org",
           isExternal: true,
@@ -73,7 +78,6 @@ const Footer = ({
           href: "https://github.com/livepeer/wiki/blob/master/WHITEPAPER.md",
           isExternal: true,
         },
-        { label: t("nav-faq"), href: "/faq" },
         {
           label: "Brand Assets",
           href: "/brand.zip",

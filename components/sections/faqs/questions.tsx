@@ -162,7 +162,7 @@ const questions: Question[] = [
         Follow{" "}
         <AnswerLink
           label="this"
-          href="https://docs.livepeer.org/video-miners/getting-started/overview"
+          href="https://docs.livepeer.org/guides/orchestrating/get-started"
         />{" "}
         guide.
       </>
@@ -185,7 +185,7 @@ const questions: Question[] = [
             <ul sx={{ listStyle: "inside", paddingInlineStart: "24px" }}>
               <li>
                 <AnswerLink
-                  href="https://docs.livepeer.org/video-miners/how-to-guides/troubleshooting"
+                  href="https://docs.livepeer.org/guides/orchestrating/troubleshoot"
                   label="Check the orchestrator troubleshooting docs"
                 />{" "}
                 to test your own transcoding setup. Turn on logging to a more
