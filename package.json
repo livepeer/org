@@ -30,6 +30,7 @@
     "@sindresorhus/slugify": "^1.1.0",
     "@tinacms/auth": "^0.50.2",
     "@tinacms/cli": "^0.60.11",
+    "@vercel/og": "^0.5.0",
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "formidable-serverless": "^1.1.1",
