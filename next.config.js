@@ -158,6 +158,16 @@ module.exports = withPlugins([
             destination: 'https://docs.livepeer.org',
             permanent: false,
           },
+          {
+            source: '/video-miners',
+            destination: 'https://livepeer.org/orchestrators',
+            permanent: false,
+          },
+          {
+            source: '/tokenholders',
+            destination: 'https://livepeer.org/delegators',
+            permanent: false,
+          },
         ];
       },
     },
