@@ -23,7 +23,7 @@ const TokenholdersPage = ({
     meta: {
       title: t("page-tokenholders-meta-title"),
       description: t("page-tokenholders-meta-description"),
-      url: "https://livepeer.org/tokenholders",
+      url: "https://livepeer.org/delegators",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
       twitterUsername: "@Livepeer",

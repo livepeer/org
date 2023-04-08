@@ -89,7 +89,7 @@ const Chapter9 = ({ onChange, data }) => {
             </Header>
             <Heading>{t("page-primer-contents-involved-miner")}</Heading>
             <p>{t("page-primer-contents-involved-miner-text")}</p>
-            <Link href="/video-miners" passHref>
+            <Link href="/orchestrators" passHref>
               <Button>{t("page-primer-contents-involved-miner-cta")}</Button>
             </Link>
           </Item>

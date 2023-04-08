@@ -47,7 +47,7 @@ const HowToGetStartedSection = ({ title, subtitle, ctaText }) => (
         <A
           target="_blank"
           rel="noopener noreferrer"
-          href="https://docs.livepeer.org/video-miners"
+          href="https://docs.livepeer.org/orchestrators"
           variant="buttons.primary">
           {ctaText}
         </A>

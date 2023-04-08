@@ -25,14 +25,14 @@ const LetLivepeerDoSection = ({
       icon: <TokenSvg style={{ width: 24, height: 24 }} />,
       title: tokenholders.title,
       description: tokenholders.description,
-      linkProps: { link: { label: "/tokenholders", href: "/tokenholders" } },
+      linkProps: { link: { label: "/delegators", href: "/delegators" } },
       isClickable: true,
     },
     {
       icon: <GpuSvg style={{ width: 28, height: 28 }} />,
       title: videoMiners.title,
       description: videoMiners.description,
-      linkProps: { link: { label: "/video-miners", href: "/video-miners" } },
+      linkProps: { link: { label: "/orchestrators", href: "/orchestrators" } },
       isClickable: true,
     },
   ];

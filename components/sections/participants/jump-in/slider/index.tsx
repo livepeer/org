@@ -64,8 +64,8 @@ const JumpInSlider = () => {
         "Run a livepeer node to process video on your GPUs in exchange for ETH and LPT rewards.",
       linkProps: {
         link: {
-          label: "/video-miners",
-          href: "/video-miners",
+          label: "/orchestrators",
+          href: "/orchestrators",
         },
         isDark: true,
       },

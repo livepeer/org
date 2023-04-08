@@ -21,7 +21,7 @@ const VideoMinerPage = ({ totalVolumeUSD, totalActiveNodes, totalMinutes }) => {
     meta: {
       title: t("page-video-miners-meta-title"),
       description: t("page-video-miners-meta-description"),
-      url: "https://livepeer.org/video-miners",
+      url: "https://livepeer.org/orchestrators",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
       twitterUsername: "@Livepeer",
