@@ -154,6 +154,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             alignItems: "center",
             justifyContent: "space-between",
             height: navHeight,
+            maxWidth: 1350,
           }}>
           <LivepeerLogo
             isDark={isDark}
@@ -165,7 +166,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               ".nav-link": {
                 fontSize: 15,
               },
-              ".nav-link:not(:last-child)": { mr: 40 },
+              ".nav-link:not(:last-child)": { mr: 36 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer &&
@@ -196,6 +197,31 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <LanguageDropdown />
               </NavLink>
             )}
+            <NavLink className="nav-link" as={Box} data-dark={isDark}>
+              <A
+                variant="button"
+                sx={{
+                  display: "block",
+                  background: "#299764",
+                  padding: "8px 14px",
+                  height: "auto",
+                  color: "#fff",
+                  borderRadius: "4px",
+                  "&:hover": {
+                    background: "#18794e",
+                    color: "#fff",
+                  },
+                  "&:focus": {
+                    background: "#18794e",
+                    boxShadow: "0 0 0 4px #5bb98c",
+                    outline: "none",
+                  },
+                }}
+                href="https://livepeer.studio"
+                target="_blank">
+                Launch Studio
+              </A>
+            </NavLink>
             {isPrimer && (
               <Box
                 sx={{

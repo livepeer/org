@@ -34,11 +34,12 @@ const theme = {
     background: "#fff",
     transparent: "transparent",
     muted: "#fafafa",
-    primary: "#00EB88",
+    primary: "#4cc38a",
     secondary: "#3F3FE2",
     gray: "#666666",
     lightGray: "#A5A5A5",
     ultraLightGray: "#E5E5E5",
+    brightGreen: "#4cc38a",
     gradient: { from: "#00A55F", mid: "#28CD88", to: "#4CF1AC" },
     docs: {
       text: "#131418",
@@ -279,21 +280,24 @@ const theme = {
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: "default",
-      bg: "primary",
-      color: "text",
-      py: 2,
-      px: 4,
-      height: 12,
+      borderRadius: "4px",
+      backgroundColor: "#30a46c",
+      padding: "10px 26px",
+      height: "auto",
+      color: "#fff",
       variant: "text.default",
       fontWeight: 600,
       transition: "background .15s",
-      "&:hover": {
-        bg: "gradient.to",
+      '&[data-dark="true"]': {
+        backgroundColor: "#4cc38a",
       },
       "&:focus": {
-        boxShadow: "0 0 0 4px rgba(0, 235, 136, .5)",
+        background: "#18794e",
+        boxShadow: "0 0 0 4px #5bb98c",
         outline: "none",
+      },
+      "&:hover": {
+        background: "#18794e",
       },
     },
     secondary: {
@@ -431,7 +435,7 @@ const theme = {
         color: "secondary",
       },
       '&[data-dark="true"]': {
-        color: "primary",
+        color: "#4cc38a",
         ":hover": {
           opacity: 0.8,
           color: "primary",

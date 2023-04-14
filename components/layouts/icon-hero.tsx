@@ -14,7 +14,7 @@ import heroEffect from "lib/animations/hero-effect";
 import cn from "classnames";
 
 type Props = {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   title: React.ReactNode;
   subtitle: React.ReactNode;
   illustration: React.ReactNode;
@@ -76,22 +76,26 @@ const IconHero = forwardRef(
           }}>
           <Grid variant="layout.section" gap={5} columns={[1, null, null, 2]}>
             <Box>
-              <i
-                className={cn({ "h-animate": withAnimation })}
-                sx={{
-                  width: 16,
-                  height: 16,
-                  borderRadius: "full",
-                  bg: "primary",
-                  color: "text",
-                  fontSize: 6,
-                  mb: 4,
-                  variant: "layout.flexCenter",
-                  zIndex: "general",
-                  position: "relative",
-                }}>
-                {icon}
-              </i>
+              {icon ? (
+                <i
+                  className={cn({ "h-animate": withAnimation })}
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    borderRadius: "full",
+                    bg: "primary",
+                    color: "text",
+                    fontSize: 6,
+                    mb: 4,
+                    variant: "layout.flexCenter",
+                    zIndex: "general",
+                    position: "relative",
+                  }}>
+                  {icon}
+                </i>
+              ) : (
+                <Box sx={{ width: 16, height: 16 }} />
+              )}
               <Heading
                 className={cn({ "h-animate": withAnimation })}
                 sx={{
