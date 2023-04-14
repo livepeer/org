@@ -12,15 +12,14 @@ apps_section:
 video_section:
   title: Developer Tools
   description: >-
-    Tools for developers to build applications and platforms with video, built
-    and maintained by the Livepeer core team.
+    Developer tools for building video applications with Livepeer.
 web3_section:
   title: Web3 Tech Stack
   description: >-
     Projects and protocols that enable the Livepeer network and power web3 video
     applications.
 stacking_section:
-  title: Staking Partners
+  title: Staking services
   description: Specialized staking services for Livepeer delegators.
 exchanges_section:
   title: Exchanges
@@ -32,4 +31,3 @@ community_section:
     the Livepeer ecosystem.
 footer_cta_description: Submit a project to be included in Livepeer Ecosystem
 ---
-

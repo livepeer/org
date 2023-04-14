@@ -255,7 +255,6 @@ function Ecosystem({
       {videos && (
         <VideoToolSection videos={videos} header={pageData.video_section} />
       )}
-      {web3 && <Web3Section web3={web3} header={pageData.web3_section} />}
       {staking && (
         <StakingPlatformSection
           staking={staking}

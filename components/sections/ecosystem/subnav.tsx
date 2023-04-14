@@ -22,7 +22,6 @@ export const Subnav = (pageData) => {
   const {
     apps_section,
     video_section,
-    web3_section,
     stacking_section,
     exchanges_section,
     community_section,
@@ -57,7 +56,6 @@ export const Subnav = (pageData) => {
         }}>
         <Link href="#apps">{apps_section.title}</Link>
         <Link href="#developertools">{video_section.title}</Link>
-        <Link href="#web3techstack">{web3_section.title}</Link>
         <Link href="#stakingpartners">{stacking_section.title}</Link>
         <Link href="#exchanges">{exchanges_section.title}</Link>
         <Link href="#communitytools">{community_section.title}</Link>
