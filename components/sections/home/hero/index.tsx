@@ -140,19 +140,19 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               )}
             </Heading>
             <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
-            <Heading variant="section.subtitle" sx={{ maxWidth: 700 }}>
-              {subtitle}
+            <Heading variant="section.subtitle" sx={{ maxWidth: 880 }}>
+              <Box sx={{ fontSize: "22px" }}> {subtitle}</Box>
             </Heading>
           </Box>
 
           <A
-            variant="buttons.primary"
+            variant="buttons.neutral"
             href={`#get-started`}
             sx={{
               zIndex: "general",
               position: "relative",
             }}>
-            {cta}
+            Start Building
           </A>
           <A
             target="_blank"
@@ -163,7 +163,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               position: "relative",
             }}>
             Join Discord
-            <i sx={{ ml: 2, fontSize: 4 }}>
+            <i sx={{ ml: 1, fontSize: 4 }}>
               <FiArrowUpRight />
             </i>
           </A>
