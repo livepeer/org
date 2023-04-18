@@ -140,7 +140,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               )}
             </Heading>
             <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
-            <Heading variant="section.subtitle" sx={{ maxWidth: 780 }}>
+            <Heading variant="section.subtitle" sx={{ maxWidth: 840 }}>
               <Box
                 sx={{
                   fontSize: "21px",
