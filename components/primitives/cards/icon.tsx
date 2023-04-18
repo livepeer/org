@@ -37,7 +37,6 @@ const IconCard = ({
   icon,
   title,
   description,
-  titleLabel = "For",
   linkProps,
   className,
   isClickable,
@@ -48,6 +47,8 @@ const IconCard = ({
       sx={{
         height: "526px",
         display: "flex",
+        width: "100%",
+        maxWidth: "100%",
         flexDirection: "column",
         justifyContent: "space-between",
         ...(isClickable ? hoverSx : {}),

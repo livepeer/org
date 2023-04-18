@@ -5,6 +5,8 @@ import PrimerBanner from "components/sections/home/primer-banner";
 import CommunitySection from "components/sections/home/community";
 import PageLayout from "components/layouts/page";
 import { useEffect } from "react";
+import StartBuilding from "components/sections/home/start-building";
+import Ecosystem from "components/sections/home/ecosystem";
 import HaveACallSection from "components/sections/home/have-a-call";
 import { getProtocolStatistics } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
@@ -44,6 +46,50 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
         cta={t("page-home-get-started")}
         videoLabel={t("page-home-live")}
       />
+      <StartBuilding />
+      <Ecosystem
+        label="The Livepeer Ecosystem"
+        title="A growing network of open video apps"
+        subtitle="By combining Livepeer’s open video API with onchain primitives and open social protocols, developers are disrupting the way creators own and monetize their video content, creating new and novel video experiences across music, live entertainment, shopping, gaming and more."
+        items={[
+          {
+            title: "Lenstube",
+            description:
+              "A social platform for video sharing built with Livepeer and Lens.",
+            imageUrl:
+              "https://user-images.githubusercontent.com/555740/232839442-6368d099-27f6-4bbd-80e2-dc577305c3d0.png",
+            label: "trybonfire.xyz",
+            url: "https://trybonfire.xyz",
+          },
+          {
+            title: "Beem",
+            description:
+              "Build your custom video streaming site and mobile app with no code.",
+            imageUrl:
+              "https://user-images.githubusercontent.com/555740/232841881-789ef394-35d1-48b5-95c7-aaef589b1d64.png",
+            label: "beem.xyz",
+            url: "https://beem.xyz",
+          },
+          {
+            title: "Orb",
+            description:
+              "A decentralized social media client built with Lens and Livepeer.",
+            imageUrl:
+              "https://user-images.githubusercontent.com/555740/232842347-b8a05451-4b24-4027-8a2e-a2dd6246482d.png",
+            label: "orb.ac",
+            url: "https://orb.ac",
+          },
+          {
+            title: "Xeenon",
+            description:
+              "Get paid to stream with an open video streaming platform.",
+            imageUrl:
+              "https://user-images.githubusercontent.com/555740/232843817-3fb0054e-7b70-452a-b3f3-f2382be9f9dc.png",
+            label: "xeenon.xyz",
+            url: "https://xeenon.xyz",
+          },
+        ]}
+      />
       <LetLivepeerDoSection
         label={t("page-home-get-started")}
         title={t("page-home-what-role")}
@@ -51,10 +97,6 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
         tokenholders={{
           title: t("page-home-tokenholders"),
           description: t("page-home-tokenholders-text"),
-        }}
-        developers={{
-          title: t("page-home-developers"),
-          description: t("page-home-developers-text"),
         }}
         videoMiners={{
           title: t("page-home-video-miners"),

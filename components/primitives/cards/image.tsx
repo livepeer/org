@@ -75,7 +75,8 @@ const ImageCard = ({
           sx={{
             width: "100%",
             height: "182px",
-            objectFit: "cover",
+            objectFit: "contain",
+            backgroundColor: "black",
             filter: gradientEffect ? "grayscale(100%)" : "none",
           }}
         />
@@ -102,7 +103,6 @@ const ImageCard = ({
                 color: title ? "gray" : "text",
                 display: "-webkit-box",
                 maxWidth: "100%",
-                margin: "0 auto",
                 overflow: "hidden",
               }}>
               {description}

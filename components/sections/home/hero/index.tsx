@@ -140,14 +140,22 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               )}
             </Heading>
             <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
-            <Heading variant="section.subtitle" sx={{ maxWidth: 880 }}>
-              <Box sx={{ fontSize: "22px" }}> {subtitle}</Box>
+            <Heading variant="section.subtitle" sx={{ maxWidth: 800 }}>
+              <Box
+                sx={{
+                  fontSize: "22px",
+                  lineHeight: "36px",
+                  letterSpacing: "-.5px",
+                }}>
+                {" "}
+                {subtitle}
+              </Box>
             </Heading>
           </Box>
 
           <A
             variant="buttons.neutral"
-            href={`#get-started`}
+            href={`#start-building`}
             sx={{
               zIndex: "general",
               position: "relative",

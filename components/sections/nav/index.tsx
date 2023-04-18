@@ -75,12 +75,12 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       href: "/developers",
     },
     {
-      label: "Delegators",
-      href: "/delegators",
-    },
-    {
       label: "Orchestrators",
       href: "/orchestrators",
+    },
+    {
+      label: "Delegators",
+      href: "/delegators",
     },
     {
       label: t("nav-ecosystem"),
@@ -197,17 +197,17 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <LanguageDropdown />
               </NavLink>
             )}
-            {/* <NavLink className="nav-link" as={Box} data-dark={isDark}>
+            <NavLink className="nav-link" as={Box} data-dark={isDark}>
               <A
-                variant="buttons.primary"
+                variant="buttons.neutral"
                 href="https://livepeer.studio"
                 target="_blank">
-                Launch Studio
+                Open Studio
                 <i sx={{ ml: 1, fontSize: 4 }}>
                   <FiArrowUpRight />
                 </i>
               </A>
-            </NavLink> */}
+            </NavLink>
             {isPrimer && (
               <Box
                 sx={{
