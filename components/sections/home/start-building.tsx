@@ -127,7 +127,7 @@ export const StartBuilding = () => (
           Superpowers for video developers
         </Heading>
         <Heading variant="section.subtitle" sx={{ mb: 4 }}>
-          Get started building with the open video API that gives creators
+          Get started building with an open video API that gives creators
           independence from platforms and developers the freedom to build.
           Explore guides, API documentation, a Typescript SDK, and fully open
           source code.

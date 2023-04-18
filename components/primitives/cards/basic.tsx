@@ -82,9 +82,7 @@ const BasicCard = ({
                 variant="clamp.3"
                 sx={{
                   color: title ? "gray" : "text",
-                  display: "-webkit-box",
                   maxWidth: "100%",
-                  overflow: "hidden",
                 }}>
                 {description}
               </Text>
