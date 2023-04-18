@@ -126,11 +126,10 @@ export const StartBuilding = () => (
           sx={{ lineHeight: 1, position: "relative" }}>
           Superpowers for video developers
         </Heading>
-        <Heading variant="section.subtitle" sx={{ mb: 4 }}>
-          Get started building with an open video API that gives creators
-          independence from platforms and developers the freedom to build.
-          Explore guides, API documentation, a Typescript SDK, and fully open
-          source code.
+        <Heading variant="section.subtitle" sx={{ mb: 4, maxWidth: 800 }}>
+          Build with an open video API that gives creators independence from
+          platforms and developers the freedom to build. Explore guides, API
+          documentation, a Typescript SDK, and fully open source code.
         </Heading>
         <A
           variant="buttons.neutral"
@@ -152,8 +151,9 @@ export const StartBuilding = () => (
           fontWeight: 600,
           textAlign: "center",
           mb: 4,
+          letterSpacing: "-1px",
         }}>
-        A fully integrated suite of open source products and tools.
+        Explore a fully integrated suite of open source products and tools.
       </Text>
       <Grid
         columns={["1fr", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]}
@@ -179,6 +179,7 @@ export const StartBuilding = () => (
           fontWeight: 600,
           textAlign: "center",
           mb: 4,
+          letterSpacing: "-1px",
         }}>
         Learn where to start and how to build with our Livepeer developer
         guides.
