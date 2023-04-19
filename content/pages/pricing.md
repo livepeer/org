@@ -11,13 +11,13 @@ providers who run hosted infrastructure behind the scenes for you so you can
 focus on building video experiences in your application instead.
 
 Broadcasting providers typically provide an API key which you can use to publish
-live and on-demand video streams to the Livepeer network, which providers pay on
-your behalf at a market rate determined by the network's supply side. It's up to
-them to set and advertise their own pricing structures.
+video streams to the network, and they pay the network on your behalf at a
+market rate determined by the network's supply side. It's up to providers to set
+and advertise their own pricing structures.
 
 Today, Livepeer Inc, the initial team behind the Livepeer protocol, runs the
-most popular hosted gateway service. We've included their pricing structure
-below.
+most popular hosted gateway service. They've included information about their
+pricing structure below.
 
 ## How much does it cost to start using Livepeer Inc's hosted gateway service?
 
