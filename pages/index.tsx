@@ -1,5 +1,4 @@
 import HomeHero from "components/sections/home/hero";
-import ByTheNumbersSection from "components/sections/home/by-the-numbers";
 import LetLivepeerDoSection from "components/sections/home/let-livepeer-do";
 import PrimerBanner from "components/sections/home/primer-banner";
 import CommunitySection from "components/sections/home/community";
@@ -8,15 +7,26 @@ import { useEffect } from "react";
 import StartBuilding from "components/sections/home/start-building";
 import Ecosystem from "components/sections/home/ecosystem";
 import HaveACallSection from "components/sections/home/have-a-call";
-import { getProtocolStatistics } from "lib/document-helpers";
+import {
+  getProtocolStatistics,
+  getTotalActiveNodes,
+  getTotalMinutes,
+} from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
 
-const HomePage = ({ youtubeVideos, totalActiveStake }) => {
+const HomePage = ({
+  youtubeVideos,
+  totalVolumeUSD,
+  totalActiveNodes,
+  totalMinutes,
+}) => {
   const router = useRouter();
   const { t } = useTranslation(["home"]);
+
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
@@ -118,11 +128,15 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
         subtitle={t("page-home-primer-text")}
         ctaText={t("page-home-primer-cta")}
       />
-      <ByTheNumbersSection
-        title={t("page-home-stats-title")}
-        subtitle={t("page-home-stats-text")}
-        label={t("page-home-stats")}
-        totalActiveStake={totalActiveStake}
+      <LetTheNumbersTalkSection
+        title={t("video-miners:page-video-miners-numbers")}
+        subtitle={t("video-miners:page-video-miners-numbers-text")}
+        label1={t("video-miners:page-video-miners-numbers-nodes-text")}
+        label2={t("video-miners:page-video-miners-numbers-fees-text")}
+        label3={t("video-miners:page-video-miners-numbers-cost-text")}
+        totalActiveNodes={totalActiveNodes}
+        totalMinutes={totalMinutes}
+        totalVolume={totalVolumeUSD}
       />
       <CommunitySection
         title={t("page-home-communities-title")}
@@ -139,6 +153,13 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
 };
 
 export async function getStaticProps({ locale }) {
+  let totalMinutes = 0;
+  const { totalVolumeUSD } = await getProtocolStatistics();
+  const totalActiveNodes = await getTotalActiveNodes();
+  if (process.env.LIVEPEER_COM_API_ADMIN_TOKEN) {
+    totalMinutes = await getTotalMinutes();
+  }
+
   let youtubeVideos = [];
 
   if (process.env.YOUTUBE_API_KEY) {
@@ -157,11 +178,18 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
+      totalVolumeUSD,
+      totalActiveNodes,
+      totalMinutes,
+      totalActiveStake,
       youtubeVideos: youtubeVideos.filter(
         (v) => v.snippet.title !== "Deleted video"
       ),
-      totalActiveStake,
-      ...(await serverSideTranslations(locale, ["common", "home"])),
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "home",
+        "video-miners",
+      ])),
     },
     revalidate: 1,
   };
