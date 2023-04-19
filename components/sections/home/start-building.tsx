@@ -82,7 +82,7 @@ const guides: BasicCardProps[] = [
   {
     title: "▶️  Playback VOD",
     description:
-      "Process, cache, and playback raw video from storage networks Filecoin and Arweave with Livepeer.js to ensure smooth playback.",
+      "Process, cache, and playback raw video from storage protocols IPFS and Arweave to ensure smooth playback with Livepeer.js.",
     linkProps: {
       link: {
         label: "/dstorage-playback",
@@ -104,7 +104,7 @@ const guides: BasicCardProps[] = [
     },
   },
   {
-    title: "⛓️ Mint a video",
+    title: "⛓️ Mint a video NFT",
     description: "Learn how to take videos onchain with Livepeer.js.",
     linkProps: {
       link: {
