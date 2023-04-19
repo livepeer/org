@@ -28,6 +28,7 @@ const BasicCard = ({
   return (
     <Link href={linkProps.link.href} as={linkProps.link.asPath} passHref>
       <a
+        target={linkProps.link.isExternal && "_blank"}
         className={className}
         sx={{
           overflow: "visible",
