@@ -12,6 +12,7 @@ const query = gql`
     getPagesDocument(relativePath: $relativePath) {
       data {
         title
+        description
         body
         updatedAt
       }
@@ -27,20 +28,18 @@ const Page = (props) => {
     data: props.data,
   });
 
+  const { title, description, updatedAt, body } = data.getPagesDocument.data;
+
   const headProps: HeadProps = {
     meta: {
-      title: "Grants",
-      description:
-        "A listing of the grant programs throughout the Livepeer ecosystem.",
-      url: "https://livepeer.org/grants",
+      title,
+      description,
+      url: `https://livepeer.org/${props.slug}`,
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
       twitterUsername: "@Livepeer",
     },
   };
-
-  const { title, updatedAt, body } = data.getPagesDocument.data;
-
   return (
     <PageLayout headProps={headProps}>
       <Container className="markdown-body" sx={{ maxWidth: 960, mt: 24 }}>
@@ -78,6 +77,7 @@ export const getStaticProps = async ({ params, locale }) => {
 
   return {
     props: {
+      slug: params.slug,
       ...(await serverSideTranslations(locale, ["common"])),
       variables,
       data,

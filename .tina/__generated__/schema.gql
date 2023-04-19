@@ -400,6 +400,7 @@ type ComunityConnection implements Connection {
 
 type Pages {
   title: String
+  description: String
   updatedAt: String
   body: JSON
 }
@@ -675,6 +676,7 @@ input ComunityMutation {
 
 input PagesMutation {
   title: String
+  description: String
   updatedAt: String
   body: JSON
 }

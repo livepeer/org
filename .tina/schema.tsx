@@ -398,6 +398,11 @@ export default defineSchema({
           name: "title",
         },
         {
+          type: "string",
+          label: "Description",
+          name: "description",
+        },
+        {
           type: "datetime",
           label: "Updated at",
           name: "updatedAt",

@@ -469,6 +469,12 @@
           "namespace": ["pages", "title"]
         },
         {
+          "type": "string",
+          "label": "Description",
+          "name": "description",
+          "namespace": ["pages", "description"]
+        },
+        {
           "type": "datetime",
           "label": "Updated at",
           "name": "updatedAt",

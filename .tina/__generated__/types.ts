@@ -526,6 +526,7 @@ export type ComunityConnection = Connection & {
 export type Pages = {
   __typename?: "Pages";
   title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
   updatedAt?: Maybe<Scalars["String"]>;
   body?: Maybe<Scalars["JSON"]>;
 };
@@ -860,6 +861,7 @@ export type ComunityMutation = {
 
 export type PagesMutation = {
   title?: InputMaybe<Scalars["String"]>;
+  description?: InputMaybe<Scalars["String"]>;
   updatedAt?: InputMaybe<Scalars["String"]>;
   body?: InputMaybe<Scalars["JSON"]>;
 };
@@ -1001,6 +1003,7 @@ export type ComunityPartsFragment = {
 export type PagesPartsFragment = {
   __typename?: "Pages";
   title?: string | null;
+  description?: string | null;
   updatedAt?: string | null;
   body?: any | null;
 };
@@ -1551,6 +1554,7 @@ export type GetPagesDocumentQuery = {
     data: {
       __typename?: "Pages";
       title?: string | null;
+      description?: string | null;
       updatedAt?: string | null;
       body?: any | null;
     };
@@ -1581,6 +1585,7 @@ export type GetPagesListQuery = {
         data: {
           __typename?: "Pages";
           title?: string | null;
+          description?: string | null;
           updatedAt?: string | null;
           body?: any | null;
         };
@@ -1807,6 +1812,7 @@ export const ComunityPartsFragmentDoc = gql`
 export const PagesPartsFragmentDoc = gql`
   fragment PagesParts on Pages {
     title
+    description
     updatedAt
     body
   }
