@@ -70,6 +70,6 @@ A credit card is not required to create an account.
 
 ## What currencies does Livepeer Inc accept?
 
-USD is the only currency accepted right now through the dashboard. Crypto-native
+USD is the only currency accepted right now via Livepeer Studio. Crypto-native
 payments are coming later this year. If you prefer to pay with cryptocurrency
 now, contact us directly.
