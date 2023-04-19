@@ -322,9 +322,9 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 sx={{ mb: 3 }}
                 onClick={() => {
                   setMobileMenuIsOpen(false);
-                  router.push("/#get-started");
+                  router.push("/#start-building");
                 }}>
-                {t("nav-get-started")}
+                {t("nav-start-building")}
               </Button>
               <Text sx={{ fontSize: "14px", textAlign: "center" }}>
                 © Livepeer, Inc. {new Date().getFullYear()}
