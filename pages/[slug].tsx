@@ -4,7 +4,8 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import PageLayout from "components/layouts/page";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Container, Flex, Box } from "@theme-ui/components";
+import { Container, Flex, Box, Link as A } from "@theme-ui/components";
+import Link from "next/link";
 
 const query = gql`
   query PageQuery($relativePath: String!) {
@@ -38,24 +39,26 @@ const Page = (props) => {
     },
   };
 
-  // console.log(data);
+  const { title, updatedAt, body } = data.getPagesDocument.data;
+
   return (
     <PageLayout headProps={headProps}>
-      <Container className="markdown-body" sx={{ mt: 24 }}>
+      <Container className="markdown-body" sx={{ maxWidth: 960, mt: 24 }}>
         <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
           <Flex sx={{ alignItems: "center" }}>
-            <Box sx={{ color: "gray" }}>Home</Box>
+            <Box sx={{ color: "gray", fontWeight: 500 }}>
+              <Link href="/" passHref>
+                <A sx={{ color: "gray !important" }}>Home</A>
+              </Link>
+            </Box>
             <Box sx={{ mx: 2 }}>/</Box>
-            <Box sx={{ fontWeight: "bold" }}>Grants</Box>
+            <Box sx={{ fontWeight: "bold" }}>{title}</Box>
           </Flex>
           <Box sx={{ mt: 3, color: "gray" }}>
-            Page last updated:{" "}
-            {new Date(
-              data.getPagesDocument.data.updatedAt
-            ).toLocaleDateString()}
+            Page last updated: {new Date(updatedAt).toLocaleDateString()}
           </Box>
         </Flex>
-        <TinaMarkdown content={data.getPagesDocument.data.body} />
+        <TinaMarkdown content={body} />
       </Container>
     </PageLayout>
   );
