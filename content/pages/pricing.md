@@ -52,7 +52,7 @@ USD/GB)
 **Storage** - the cost of storing content reliably via Livepeer storage on
 decentralized or cloud storage providers (pricing coming soon)
 
-## How much does Livepeer cost versus compared to traditional video development platforms?
+## How much does Livepeer cost compared to traditional video development platforms?
 
 Livepeer aims to provide video processing at a 5-10x cost saving compared to
 traditional video development platforms.
