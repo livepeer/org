@@ -117,11 +117,11 @@ const PrefooterBanner = () => {
               name="EMAIL"
               type="email"
               placeholder={t("cta-enter-email")}
-              sx={{ mx: 1, flex: "1 1 60%", mb: 2 }}
+              sx={{ mx: 1, flex: "1 1 60%", mb: [2, 0] }}
               required
             />
             <Button
-              variant="neutral"
+              variant="buttons.neutral"
               type="submit"
               sx={{
                 minWidth: "fit-content",
