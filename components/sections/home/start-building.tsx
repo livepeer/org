@@ -153,7 +153,7 @@ export const StartBuilding = () => (
           mb: 4,
           letterSpacing: "-1px",
         }}>
-        Explore a fully integrated suite of open source products and tools.
+        Explore the fully integrated suite of open source products and tools.
       </Text>
       <Grid
         columns={["1fr", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)"]}
