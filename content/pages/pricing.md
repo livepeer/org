@@ -10,9 +10,9 @@ started or while scaling fast. Livepeer broadcasting providers run hosted
 infrastructure behind the scenes for you so you can focus on building video
 experiences in your application instead.
 
-These providers typically provide an API key that you can use to publish video
-streams on the Livepeer network. Providers pay the network on your behalf at a
-rate determined by the network's supply side market, so it's up to them to set
+Broadcasting providers typically provide an API key that you can use to publish
+video streams on the Livepeer network. They pay the network on your behalf at a
+market rate determined by the network's supply side, so it's up to them to set
 and advertise their own pricing.
 
 Today, Livepeer Inc, the initial team behind the Livepeer protocol, runs the
