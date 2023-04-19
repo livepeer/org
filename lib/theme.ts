@@ -258,6 +258,7 @@ const theme = {
         textAlign: "center",
         mb: [2, 3],
         maxWidth: "960px",
+        letterSpacing: "-0.5px",
         mx: "auto",
       },
       title: {
@@ -267,6 +268,17 @@ const theme = {
         mb: [3, 4],
         maxWidth: "960px",
         mx: "auto",
+      },
+      titleFade: {
+        variant: "text.heading.2",
+        fontSize: ["48px", "72px"],
+        fontFamily: "body",
+        mb: [3, 4],
+        maxWidth: "960px",
+        mx: "auto",
+        background: "linear-gradient(137.59deg, #4a524e 20%, #131418 75%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
       },
       subtitle: {
         variant: "text.heading.5",

@@ -122,8 +122,11 @@ export const StartBuilding = () => (
       <Box sx={{ textAlign: "center" }}>
         <Text variant="section.titleLabel">Start Building</Text>
         <Heading
-          variant="section.title"
-          sx={{ lineHeight: 1, position: "relative" }}>
+          variant="section.titleFade"
+          sx={{
+            lineHeight: 1,
+            position: "relative",
+          }}>
           Superpowers for video developers
         </Heading>
         <Heading variant="section.subtitle" sx={{ mb: 4, maxWidth: 800 }}>
