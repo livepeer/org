@@ -215,7 +215,7 @@ const theme = {
         fontSize: ["48px", "72px"],
         fontWeight: 800,
         letterSpacing: "-3px",
-        lineHeight: [1.2, "heading"],
+        lineHeight: [1.1, "heading"],
         textAlign: "center",
       },
       3: {

@@ -58,8 +58,8 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
               "A social platform for video sharing built with Livepeer and Lens.",
             imageUrl:
               "https://user-images.githubusercontent.com/555740/232839442-6368d099-27f6-4bbd-80e2-dc577305c3d0.png",
-            label: "trybonfire.xyz",
-            url: "https://trybonfire.xyz",
+            label: "lenstube.xyz",
+            url: "https://lenstube.xyz/",
           },
           {
             title: "Beem",
@@ -69,6 +69,15 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
               "https://user-images.githubusercontent.com/555740/232841881-789ef394-35d1-48b5-95c7-aaef589b1d64.png",
             label: "beem.xyz",
             url: "https://beem.xyz",
+          },
+          {
+            title: "Bonfire",
+            description:
+              "Bonfire gives you the tools to start, grow, and manage communities.",
+            imageUrl:
+              "https://user-images.githubusercontent.com/555740/232839442-6368d099-27f6-4bbd-80e2-dc577305c3d0.png",
+            label: "bonfire.xyz",
+            url: "https://www.bonfire.xyz",
           },
           {
             title: "Orb",

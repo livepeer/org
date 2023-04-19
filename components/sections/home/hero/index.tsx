@@ -92,7 +92,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
           justifyContent: "center",
           height: "calc(100vh - 40px)",
           overflow: "visible",
-          pt: ["100px", "150px"],
+          pt: [20, 150],
           pb: 0,
           maxWidth: "100%",
         }}>
@@ -182,6 +182,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
             width: "100vw",
             height: "100%",
             overflow: "hidden",
+            display: ["none", "block"],
           }}>
           <Globe />
 
