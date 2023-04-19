@@ -80,9 +80,9 @@ const guides: BasicCardProps[] = [
     },
   },
   {
-    title: "▶️  Playback VOD",
+    title: "▶️  Playback On Demand Video",
     description:
-      "Process, cache, and playback raw video from storage protocols IPFS and Arweave to ensure smooth playback with Livepeer.js.",
+      "Learn how to playback videos off of storage protocols IPFS and Arweave instantly with zero buffering using Livepeer.js.",
     linkProps: {
       link: {
         label: "/dstorage-playback",
@@ -94,7 +94,7 @@ const guides: BasicCardProps[] = [
   {
     title: "🔐 ️ Add access control",
     description:
-      "Learn how to create and playback on-demand video with gated access using Livepeer.js.",
+      "Learn how to gate on-demand video assets with wallet or NFT based access controls using Livepeer.js.",
     linkProps: {
       link: {
         label: "/access-control-vod",
