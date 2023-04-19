@@ -79,6 +79,7 @@ fragment ComunityParts on Comunity {
 
 fragment PagesParts on Pages {
   title
+  description
   updatedAt
   body
 }

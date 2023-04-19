@@ -92,7 +92,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
           justifyContent: "center",
           height: "calc(100vh - 40px)",
           overflow: "visible",
-          pt: ["100px", "150px"],
+          pt: [20, 150],
           pb: 0,
           maxWidth: "100%",
         }}>
@@ -140,19 +140,26 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               )}
             </Heading>
             <Divider isTransparent isVertical size={["12px", "16px", "24px"]} />
-            <Heading variant="section.subtitle" sx={{ maxWidth: 700 }}>
-              {subtitle}
+            <Heading variant="section.subtitle" sx={{ maxWidth: 845 }}>
+              <Box
+                sx={{
+                  fontSize: "21px",
+                  lineHeight: "36px",
+                }}>
+                {" "}
+                {subtitle}
+              </Box>
             </Heading>
           </Box>
 
           <A
-            variant="buttons.primary"
-            href={`#get-started`}
+            variant="buttons.neutral"
+            href={`#start-building`}
             sx={{
               zIndex: "general",
               position: "relative",
             }}>
-            {cta}
+            Start Building
           </A>
           <A
             target="_blank"
@@ -163,7 +170,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               position: "relative",
             }}>
             Join Discord
-            <i sx={{ ml: 2, fontSize: 4 }}>
+            <i sx={{ ml: 1, fontSize: 4 }}>
               <FiArrowUpRight />
             </i>
           </A>
@@ -175,6 +182,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
             width: "100vw",
             height: "100%",
             overflow: "hidden",
+            display: ["none", "block"],
           }}>
           <Globe />
 

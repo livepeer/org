@@ -12,7 +12,7 @@ import {
 } from "theme-ui";
 import LivepeerLogo from "components/svgs/livepeer-logo";
 import { useEffect, useCallback, useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
 import TopNotification, { TopNotificationProps } from "./top-notification";
 import Menu from "components/sections/primer/Menu";
@@ -75,12 +75,12 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       href: "/developers",
     },
     {
-      label: "Delegators",
-      href: "/delegators",
-    },
-    {
       label: "Orchestrators",
       href: "/orchestrators",
+    },
+    {
+      label: "Delegators",
+      href: "/delegators",
     },
     {
       label: t("nav-ecosystem"),
@@ -154,6 +154,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             alignItems: "center",
             justifyContent: "space-between",
             height: navHeight,
+            maxWidth: 1350,
           }}>
           <LivepeerLogo
             isDark={isDark}
@@ -165,7 +166,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               ".nav-link": {
                 fontSize: 15,
               },
-              ".nav-link:not(:last-child)": { mr: 40 },
+              ".nav-link:not(:last-child)": { mr: 36 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer &&
@@ -196,6 +197,17 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <LanguageDropdown />
               </NavLink>
             )}
+            <NavLink className="nav-link" as={Box} data-dark={isDark}>
+              <A
+                variant="buttons.neutral"
+                href="https://livepeer.studio"
+                target="_blank">
+                Open Studio
+                <i sx={{ ml: 1, fontSize: 4 }}>
+                  <FiArrowUpRight />
+                </i>
+              </A>
+            </NavLink>
             {isPrimer && (
               <Box
                 sx={{

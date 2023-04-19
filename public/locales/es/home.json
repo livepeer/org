@@ -1,6 +1,6 @@
 {
   "page-home-title": "La infraestructura global de video abierto",
-  "page-home-intro": "Livepeer es una red de transcodificación de video descentralizada basada en la blockchain de Ethereum.",
+  "page-home-intro": "Livepeer es una red de infraestructura de video descentralizada y una API de video abierta para desarrolladores que trabajan en la intersección de video, plataformas onchain y protocolos sociales.",
   "page-home-get-started": "Inicio",
   "page-home-live": "En vivo",
   "page-home-what-role": "¿Cuál será su rol en la red Livepeer?",
@@ -38,8 +38,7 @@
   "page-home-communities-telegram": "Contáctenos en Telegram",
   "page-home-communities-medium": "medium.com/livepeer-blog",
   "page-home-call": "Únase a nuestra llamada",
-  "page-home-call-text": "Cada mes, nuestra comunidad se pone al día con los demás virtualmente. El equipo principal nos habla de las últimas novedades y nos muestra en lo que han estado trabajando. Las llamadas tienen lugar el segundo jueves de cada mes a las 12 pm EST.",
-  "page-home-call-cta": "Mírelo en directo en livepeer.org/tv.",
+  "page-home-call-text": "Cada mes, nuestra comunidad se pone al día con los demás virtualmente. El equipo principal nos habla de las últimas novedades y nos muestra en lo que han estado trabajando. Las llamadas tienen lugar el segundo jueves de cada mes a las 12 pm EST. Mírelo en directo en livepeer.org/tv.",
   "page-home-lip-call": "Llamada LIP",
   "page-home-call-community": "Llamada de la comunidad",
   "page-home-call-transcoder": "Llamada semestral de transcodificadores",

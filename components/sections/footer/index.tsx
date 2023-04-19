@@ -54,6 +54,10 @@ const Footer = ({
           isExternal: true,
         },
         {
+          label: "Pricing",
+          href: "/pricing",
+        },
+        {
           label: "Livepeer.js",
           href: "https://livepeerjs.org",
           isExternal: true,

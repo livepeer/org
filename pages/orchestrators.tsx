@@ -8,7 +8,6 @@ import {
   getTotalActiveNodes,
   getTotalMinutes,
   getProtocolStatistics,
-  getLivepeerComUsageData,
 } from "lib/document-helpers";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

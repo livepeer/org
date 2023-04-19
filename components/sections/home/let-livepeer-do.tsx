@@ -1,12 +1,10 @@
 import SectionLayout from "components/layouts/section";
 import { Grid } from "theme-ui";
 import IconCard, { IconCardProps } from "components/primitives/cards/icon";
-import { FiCode } from "react-icons/fi";
 import TokenSvg from "components/svgs/token";
 import GpuSvg from "components/svgs/gpu";
 
 const LetLivepeerDoSection = ({
-  developers,
   tokenholders,
   videoMiners,
   label,
@@ -15,10 +13,10 @@ const LetLivepeerDoSection = ({
 }) => {
   const cards: IconCardProps[] = [
     {
-      icon: <FiCode />,
-      title: developers.title,
-      description: developers.description,
-      linkProps: { link: { label: "/developers", href: "/developers" } },
+      icon: <GpuSvg style={{ width: 28, height: 28 }} />,
+      title: videoMiners.title,
+      description: videoMiners.description,
+      linkProps: { link: { label: "/orchestrators", href: "/orchestrators" } },
       isClickable: true,
     },
     {
@@ -26,13 +24,6 @@ const LetLivepeerDoSection = ({
       title: tokenholders.title,
       description: tokenholders.description,
       linkProps: { link: { label: "/delegators", href: "/delegators" } },
-      isClickable: true,
-    },
-    {
-      icon: <GpuSvg style={{ width: 28, height: 28 }} />,
-      title: videoMiners.title,
-      description: videoMiners.description,
-      linkProps: { link: { label: "/orchestrators", href: "/orchestrators" } },
       isClickable: true,
     },
   ];
@@ -51,7 +42,7 @@ const LetLivepeerDoSection = ({
             null,
             null,
             null,
-            ({ sizes: { sm } }) => `repeat(3, ${sm})`,
+            ({ sizes: { md } }) => `repeat(2, ${md})`,
           ],
           mx: "auto",
           justifyContent: "center",

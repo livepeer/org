@@ -40,7 +40,7 @@ const ByTheNumbersSection = ({
       title={title}
       subtitle={subtitle}
       titleLabel={label}
-      pushSx={{ pb: ["80px", null, null, "160px"] }}>
+      pushSx={{ pb: 0 }}>
       <StatsGrid stats={stats} />
     </SectionLayout>
   );
