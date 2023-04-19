@@ -133,7 +133,7 @@ export const StartBuilding = () => (
         </Heading>
         <A
           variant="buttons.neutral"
-          href="https://livepeer.studio"
+          href="https://docs.livepeer.org"
           target="_blank"
           sx={{ mb: 6 }}>
           Read the docs
