@@ -3,16 +3,8 @@ import { Link as A, Box } from "theme-ui";
 import ImageCard from "components/primitives/cards/image";
 import KeenSliderGrid from "components/layouts/keen-slider-grid";
 
-const HaveACallSection = ({ title, subtitle, ctaText, youtubeVideos }) => (
-  <SectionLayout
-    title={title}
-    subtitle={
-      <>
-        {subtitle}
-        <br />
-        {ctaText}
-      </>
-    }>
+const HaveACallSection = ({ title, subtitle, youtubeVideos }) => (
+  <SectionLayout title={title} subtitle={<>{subtitle}</>}>
     <KeenSliderGrid withArrowControls>
       {youtubeVideos.map((v: any) => (
         <ImageCard

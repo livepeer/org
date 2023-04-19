@@ -123,7 +123,6 @@ const HomePage = ({ youtubeVideos, totalActiveStake }) => {
       <HaveACallSection
         title={t("page-home-call")}
         subtitle={t("page-home-call-text")}
-        ctaText={t("page-home-call-cta")}
         youtubeVideos={youtubeVideos}
       />
     </PageLayout>
