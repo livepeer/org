@@ -89,7 +89,9 @@ const SectionLayout = forwardRef(
             )}
             {title && (
               <Heading
-                variant="section.titleFade"
+                variant={
+                  background === "dark" ? "section.title" : "section.titleFade"
+                }
                 sx={{ color: titleColor, position: "relative" }}>
                 <span sx={{ position: "absolute", top: "-164px" }} id={id} />
                 {title}
