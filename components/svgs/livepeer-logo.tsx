@@ -53,7 +53,7 @@ const LivepeerLogo = ({
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover1 : disableHover ? "#131418" : "#00A55F",
+        "stop-color": hover ? hexHover1 : isDark ? "#ffffff" : "#131418",
       },
     });
 
@@ -61,13 +61,13 @@ const LivepeerLogo = ({
       duration: DURATION,
       ease: "sine.inOut",
       attr: {
-        "stop-color": hover ? hexHover2 : disableHover ? "#131418" : "#4CF1AC",
+        "stop-color": hover ? hexHover2 : isDark ? "#ffffff" : "#131418",
       },
     });
 
     gsap.to(words, {
       duration: DURATION,
-      fill: hover ? (disableHover ? "#131418" : "#00EB88") : hexDark,
+      fill: hover ? (disableHover ? "#131418" : "#3CB179") : hexDark,
       stagger: {
         each: 0.03,
         from: "end",
@@ -150,12 +150,12 @@ const LivepeerLogo = ({
             gradientUnits="userSpaceOnUse">
             <stop
               className="w-color-1"
-              stopColor={disableHover ? "#131418" : "#00A55F"}
+              stopColor={isDark ? "background" : "text"}
             />
             <stop
               className="w-color-2"
               offset="1"
-              stopColor={disableHover ? "#131418" : "#4CF1AC"}
+              stopColor={isDark ? "background" : "text"}
             />
           </linearGradient>
         </defs>

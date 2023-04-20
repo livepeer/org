@@ -197,17 +197,19 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <LanguageDropdown />
               </NavLink>
             )}
-            <NavLink className="nav-link" as={Box} data-dark={isDark}>
-              <A
-                variant="buttons.neutral"
-                href="https://livepeer.studio"
-                target="_blank">
-                Open Studio
-                <i sx={{ ml: 1, fontSize: 4 }}>
-                  <FiArrowUpRight />
-                </i>
-              </A>
-            </NavLink>
+            {!isPrimer && (
+              <NavLink className="nav-link" as={Box} data-dark={isDark}>
+                <A
+                  variant="buttons.neutral"
+                  href="https://livepeer.studio"
+                  target="_blank">
+                  Open Studio
+                  <i sx={{ ml: 1, fontSize: 4 }}>
+                    <FiArrowUpRight />
+                  </i>
+                </A>
+              </NavLink>
+            )}
             {isPrimer && (
               <Box
                 sx={{
