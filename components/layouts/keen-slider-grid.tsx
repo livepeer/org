@@ -28,8 +28,6 @@ const keenSliderGridDefaultBreakpoints: Breakpoint[] = [
   { value: "320px", slidesPerView: 1 },
   { value: "664px", slidesPerView: 2 },
   { value: "1152px", slidesPerView: 3 },
-  { value: "1552px", slidesPerView: 4 },
-  { value: "1852px", slidesPerView: 5 },
 ];
 
 const getMedia = (value: string) => `(min-width: ${value})`;
