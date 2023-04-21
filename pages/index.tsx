@@ -85,7 +85,7 @@ const HomePage = ({
             description:
               "Bonfire gives you the tools to start, grow, and manage communities.",
             imageUrl:
-              "https://user-images.githubusercontent.com/555740/232839442-6368d099-27f6-4bbd-80e2-dc577305c3d0.png",
+              "https://res.cloudinary.com/duquzk7m6/image/upload/v1667850687/Bonfire_enwrkq.png",
             label: "bonfire.xyz",
             url: "https://www.bonfire.xyz",
           },
