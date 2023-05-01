@@ -19,7 +19,7 @@ const links: IconLinkProps[] = [
         Join our&nbsp;<b>Discord Server</b>
       </>
     ),
-    href: "https://discord.gg/uaPhtyrWsF",
+    href: "https://discord.gg/livepeer",
     isExternal: true,
   },
   {
