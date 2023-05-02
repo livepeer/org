@@ -5,21 +5,21 @@ updatedAt: "2023-04-19T04:00:00.000Z"
 
 # Livepeer Pricing
 
-Running your own Livepeer broadcasting infrastructure can be challenging,
-especially when getting started or while scaling fast. There exists Livepeer
-broadcasting providers who run hosted infrastructure behind the scenes for you
-so you can focus on building video experiences in your application instead.
+Running your own Livepeer node infrastructure can be challenging, especially
+when getting started or scaling fast. Gateway services exist that run optimized
+Livepeer node infrastructure for you, so you can focus on building your video
+applications or product instead.
 
-Livepeer broadcasting providers typically provide an API key which you can use
-to publish video streams into the network, and they pay the network on your
-behalf at market rates determined by the open network. It's up to providers to
-set and advertise their own pricing structures.
+These services typically provide an API key that you can use to broadcast video
+streams into the network, paying on your behalf at a market rate determined by
+the open Livepeer network. It's up to gateways to set and advertise their own
+pricing structures on top of this market rate.
 
 Today, Livepeer Inc, the initial team behind the Livepeer protocol, runs the
-most popular hosted gateway service. They've included information about their
-pricing structure below.
+most popular gateway service. Information about its pricing structure can be
+found below.
 
-## How much does it cost to start using Livepeer Inc's hosted gateway service?
+## How much does it cost to start using Livepeer Inc's gateway service?
 
 It’s free to start! Easily create an account with 1,000 minutes/month of video
 processing (transcoding and uploading videos), 100 viewers, and 3 multistreaming
