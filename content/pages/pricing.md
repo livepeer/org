@@ -7,12 +7,12 @@ updatedAt: "2023-04-19T04:00:00.000Z"
 
 Running your own Livepeer node infrastructure can be challenging, especially
 when getting started or scaling fast. Gateway services exist that run optimized
-Livepeer node infrastructure for you, so you can focus on building your video
+node infrastructure for you, so you can focus on building your video
 applications or product instead.
 
 These services typically provide an API key that you can use to broadcast video
 streams into the network, paying on your behalf at a market rate determined by
-the open Livepeer network. It's up to gateways to set and advertise their own
+the open Livepeer network. It's up to them to set and advertise additional
 pricing structures on top of this market rate.
 
 Today, Livepeer Inc, the initial team behind the Livepeer protocol, runs the
