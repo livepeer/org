@@ -1,7 +1,7 @@
 ---
 publish: true
 image: >-
-  https://res.cloudinary.com/duquzk7m6/image/upload/v1667846145/lenstube_l79lc1.png
+  https://res.cloudinary.com/duquzk7m6/image/upload/v1683206353/lenstube_wjm5bg.svg
 title: Lenstube
 richtext: |
   Decentralized, open-source video-sharing social media platform.
