@@ -6,7 +6,7 @@ import MobileJumpInSlider from "./slider/mobile";
 
 const JumpInSection = () => (
   <SectionLayout
-    background="dark"
+    background="black"
     pushSx={{ py: "160px" }}
     subtitle="Get started by choosing the option that best describes your role in the network"
     title="Jump in"

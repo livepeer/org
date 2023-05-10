@@ -64,6 +64,11 @@ const DevelopersHero = ({ title, subtitle }) => (
     icon={<FiPlay />}
     title={title}
     subtitle={subtitle}
+    cta={{
+      isExternal: true,
+      href: "https://docs.livepeer.org",
+      label: "Documentation ↗",
+    }}
     illustration={
       <IllustratedBackgroundBox
         pushSx={{

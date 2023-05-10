@@ -22,6 +22,7 @@ type Props = {
   pushSx?: SxStyleProp;
   className?: string;
   withAnimation?: boolean;
+  cta?: { label: string; href: string; isExternal: boolean };
 };
 
 const IconHero = forwardRef(
@@ -35,6 +36,7 @@ const IconHero = forwardRef(
       background,
       pushSx,
       withAnimation,
+      cta = null,
     }: Props,
     ref: React.RefObject<HTMLDivElement>
   ) => {
@@ -125,12 +127,14 @@ const IconHero = forwardRef(
                 }}>
                 {subtitle}
               </Heading>
-              <A
-                variant="buttons.primary"
-                href="https://docs.livepeer.org"
-                target="__blank">
-                Documentation ↗
-              </A>
+              {cta && (
+                <A
+                  variant="buttons.primary"
+                  href={cta.href}
+                  target={cta.isExternal && "__blank"}>
+                  {cta.label}
+                </A>
+              )}
             </Box>
             <Box
               className={cn({ "c-animate": withAnimation })}
