@@ -48,7 +48,7 @@ const items = [
 
 const LanguageDropdown = () => {
   const router = useRouter();
-  const { pathname, asPath } = router;
+  const { asPath } = router;
   const [isOpen, setIsOpen] = useState(false);
 
   return (

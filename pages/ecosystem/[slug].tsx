@@ -1,5 +1,5 @@
 import Layout from "components/layouts/page";
-import { Container, Button } from "@theme-ui/components";
+import { Container, Button, Link as A } from "@theme-ui/components";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -8,6 +8,7 @@ import path from "path";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const components = {
+  A,
   Button,
   FiArrowUpRight,
 };
