@@ -39,9 +39,8 @@ const Footer = ({
           isExternal: true,
         },
         {
-          label: t("nav-the-grant-program"),
-          href: "https://github.com/livepeer/Grant-Program",
-          isExternal: true,
+          label: "Get funded",
+          href: "/ecosystem/get-funded",
         },
       ],
     },
@@ -61,6 +60,10 @@ const Footer = ({
           label: "Livepeer.js",
           href: "https://livepeerjs.org",
           isExternal: true,
+        },
+        {
+          label: "Showcase",
+          href: "/ecosystem/showcase",
         },
         { label: t("nav-open-source-software"), href: "/oss" },
         {

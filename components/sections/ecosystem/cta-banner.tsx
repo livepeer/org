@@ -1,4 +1,4 @@
-import { Box, Button, Container, Heading, Link } from "theme-ui";
+import { Box, Container, Link } from "theme-ui";
 
 export const CtaBanner = ({ divider, title }) => {
   return (
@@ -9,10 +9,11 @@ export const CtaBanner = ({ divider, title }) => {
             background: "linear-gradient(#FFFFFF, #FAFAFA)",
             width: "100%",
             height: "80px",
+            position: "absolute",
           }}
         />
       )}
-      <Box sx={{ bg: "muted", px: 3, py: "40px" }} id="apps">
+      <Box sx={{ bg: "muted", px: 3 }} id="apps">
         <Container
           variant="section"
           sx={{
@@ -20,15 +21,17 @@ export const CtaBanner = ({ divider, title }) => {
             position: "relative",
             overflow: "hidden",
           }}>
-          <Heading sx={{ textAlign: "center", fontSize: "1.2rem" }}>
-            {title}
-          </Heading>
-          <Link href="https://lvpr.link/3SbVOLR">
-            <Box
-              sx={{ display: "grid", placeItems: "center", marginTop: "32px" }}>
-              <Button>Submit a Project</Button>
-            </Box>
-          </Link>
+          <Box
+            sx={{ display: "grid", placeItems: "center", marginTop: "32px" }}>
+            Building something cool with Livepeer?{" "}
+            <Link
+              href="https://lvpr.link/3SbVOLR"
+              target="_blank"
+              sx={{ textDecoration: "underline" }}>
+              Submit your project
+            </Link>
+            .
+          </Box>
         </Container>
       </Box>
     </>

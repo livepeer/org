@@ -19,6 +19,7 @@ import Menu from "components/sections/primer/Menu";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import LanguageDropdown from "components/primitives/language-dropdown";
+import EcosystemDropdown from "components/primitives/ecosystem-dropdown";
 
 type LinkType = {
   label: string;
@@ -81,10 +82,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     {
       label: "Delegators",
       href: "/delegators",
-    },
-    {
-      label: t("nav-ecosystem"),
-      href: "/ecosystem",
     },
   ];
 
@@ -192,6 +189,9 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                   </Link>
                 )
               )}
+            <NavLink className="nav-link" as={Box} data-dark={isDark}>
+              <EcosystemDropdown />
+            </NavLink>
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <LanguageDropdown />
