@@ -189,11 +189,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <NetworkDropdown />
               </NavLink>
             )}
-            {/* {!isPrimer && (
+            {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <EcosystemDropdown />
               </NavLink>
-            )} */}
+            )}
             <Link
               key={`desktop-nav-link-ecosyste`}
               href="/ecosystem"

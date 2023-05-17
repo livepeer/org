@@ -37,18 +37,18 @@ const Item = ({ active = false, text, ...props }) => (
 
 const items = [
   {
-    link: "/ecosystem/get-funded",
-    text: "Get Funded",
-  },
-  {
     link: "/ecosystem/showcase",
     text: "Showcase",
+  },
+  {
+    link: "/ecosystem/get-funded",
+    text: "Get Funded",
   },
 ];
 
 const LanguageDropdown = () => {
   const router = useRouter();
-  const { asPath } = router;
+  const { pathname, asPath } = router;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
