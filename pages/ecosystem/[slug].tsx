@@ -5,9 +5,11 @@ import hydrate from "next-mdx-remote/hydrate";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import fs from "fs/promises";
 import path from "path";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const components = {
   Button,
+  FiArrowUpRight,
 };
 
 export default function Page({ source }) {
@@ -23,7 +25,7 @@ export default function Page({ source }) {
 }
 
 export async function getStaticPaths() {
-  const mdxDirectory = path.join(process.cwd(), "mdx"); // Path to your MDX files directory
+  const mdxDirectory = path.join(process.cwd(), "markdown"); // Path to your MDX files directory
   const filenames = await fs.readdir(mdxDirectory);
 
   const paths = filenames.map((filename) => ({
@@ -35,7 +37,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ locale, params }) {
   const slug = params.slug;
-  const mdxFilePath = path.join(process.cwd(), `mdx/${slug}.mdx`); // Path to the specific MDX file
+  const mdxFilePath = path.join(process.cwd(), `markdown/${slug}.mdx`); // Path to the specific MDX file
   const source = await fs.readFile(mdxFilePath, "utf8");
   const mdxSource = await renderToString(source, { components });
 
