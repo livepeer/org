@@ -131,9 +131,16 @@ const questions: Question[] = [
     category: categories[2],
   },
   {
-    question:
-      "What is the contract address for adding LPT to Metamask or MyCrypto?",
-    answer: "0x58b6a8a3302369daec383334672404ee733ab239",
+    question: "Where can I find the deployed Livepeer contract addresses?",
+    answer: (
+      <>
+        The deployed contract addresses can be found in the{" "}
+        <AnswerLink
+          label="Livepeer docs."
+          href="https://docs.livepeer.org/reference/deployed-contract-addresses"
+        />
+      </>
+    ),
     category: categories[2],
   },
   {

@@ -263,26 +263,12 @@ const posts: Post[] = [
     subtitle: "Non-custodial exchange",
     link: {
       href:
-        "https://uniswap.exchange/swap/0x58b6a8a3302369daec383334672404ee733ab239",
+        "https://app.uniswap.org/#/swap?outputCurrency=0x289ba1701C2F088cf0faf8B3705246331cB8A839",
       isExternal: true,
     },
     category: categories[2],
     image: {
       src: "/images/posts/post-cover-3.png",
-      alt: "Resource cover image",
-    },
-  },
-  {
-    title: "Balancer",
-    subtitle: "Non-custodial exchange",
-    link: {
-      href:
-        "https://balancer.exchange/#/swap/0x58b6a8a3302369daec383334672404ee733ab239",
-      isExternal: true,
-    },
-    category: categories[2],
-    image: {
-      src: "/images/posts/post-cover-4.png",
       alt: "Resource cover image",
     },
   },

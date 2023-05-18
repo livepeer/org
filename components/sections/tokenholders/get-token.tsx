@@ -17,7 +17,7 @@ const GetTokenSection = ({ title, card1, card2 }) => {
         isLink: true,
         isExternal: true,
         href:
-          "https://app.uniswap.org/#/swap?outputCurrency=0x58b6a8a3302369daec383334672404ee733ab239",
+          "https://app.uniswap.org/#/swap?outputCurrency=0x289ba1701C2F088cf0faf8B3705246331cB8A839",
       },
       accent: "primary",
       headerIllustration: <StakeTokenSvg />,
