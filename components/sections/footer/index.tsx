@@ -29,7 +29,7 @@ const Footer = ({
 
   const lists: FooterListProps[] = [
     {
-      title: t("nav-participants"),
+      title: t("nav-ecosystem"),
       items: [
         { label: t("nav-tokenholders"), href: "/delegators" },
         { label: t("nav-video-miners"), href: "/orchestrators" },
@@ -60,10 +60,6 @@ const Footer = ({
           label: "Livepeer.js",
           href: "https://livepeerjs.org",
           isExternal: true,
-        },
-        {
-          label: "Showcase",
-          href: "/ecosystem/showcase",
         },
         { label: t("nav-open-source-software"), href: "/oss" },
         {

@@ -3,8 +3,8 @@ hero:
   hero_title_dark: Livepeer
   hero_title_green: Showcase
   hero_description: >-
-    Explore the apps and services of the Livepeer ecosystem, and discover the
-    next generation of decentralized video.
+    Explore the Livepeer ecosystem apps and services, and discover the next
+    generation of video.
   hero_eyebrow: Submit a project to be included in the showcase
 apps_section:
   title: Apps
