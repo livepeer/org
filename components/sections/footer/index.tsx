@@ -31,8 +31,6 @@ const Footer = ({
     {
       title: t("nav-ecosystem"),
       items: [
-        { label: t("nav-tokenholders"), href: "/delegators" },
-        { label: t("nav-video-miners"), href: "/orchestrators" },
         {
           label: t("nav-protocol-explorer"),
           href: "https://explorer.livepeer.org/",
@@ -41,6 +39,10 @@ const Footer = ({
         {
           label: "Get funded",
           href: "/ecosystem/get-funded",
+        },
+        {
+          label: "Showcase",
+          href: "/ecosystem/showcase",
         },
       ],
     },
