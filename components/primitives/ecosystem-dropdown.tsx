@@ -37,12 +37,12 @@ const Item = ({ active = false, text, ...props }) => (
 
 const items = [
   {
-    link: "/ecosystem/showcase",
-    text: "Showcase",
-  },
-  {
     link: "/ecosystem/get-funded",
     text: "Get Funded",
+  },
+  {
+    link: "/ecosystem/showcase",
+    text: "Showcase",
   },
 ];
 
