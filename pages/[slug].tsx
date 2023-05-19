@@ -15,13 +15,16 @@ const components = {
   FiArrowUpRight,
 };
 
-export default function Page({ source, frontMatter }) {
+export default function Page({ slug, source, frontMatter }) {
   const content = hydrate(source, { components });
-
   const headProps: HeadProps = {
     meta: {
-      title: frontMatter?.title ? frontMatter?.title : null,
-      description: frontMatter?.description ? frontMatter?.description : null,
+      title: frontMatter?.title
+        ? frontMatter.title
+        : slug.charAt(0).toUpperCase() + slug.slice(1),
+      description: frontMatter?.description
+        ? frontMatter.description
+        : "Livepeer is a video infrastructure protocol designed to power the new creator economy. Add live and on-demand video experiences to onchain apps, open social, and everything in between.",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
       twitterUsername: "@Livepeer",
@@ -57,6 +60,7 @@ export async function getStaticProps({ locale, params }) {
 
   return {
     props: {
+      slug,
       source: mdxSource,
       frontMatter: data,
       ...(await serverSideTranslations(locale, ["common"])),
