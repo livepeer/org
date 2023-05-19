@@ -189,9 +189,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                   </Link>
                 )
               )}
-            <NavLink className="nav-link" as={Box} data-dark={isDark}>
-              <EcosystemDropdown />
-            </NavLink>
+            {!isPrimer && (
+              <NavLink className="nav-link" as={Box} data-dark={isDark}>
+                <EcosystemDropdown />
+              </NavLink>
+            )}
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <LanguageDropdown />
