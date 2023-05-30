@@ -1,6 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { InitializeColorMode } from "theme-ui";
 import { GA_TRACKING_ID } from "../lib/gtag";
+import { getCssText } from "@livepeer/design-system";
+
 export default class MyDocument extends Document {
   render() {
     return (
@@ -11,6 +13,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
