@@ -44,9 +44,9 @@ const PricingPage = ({ markdownContent }) => {
               building your video applications or product instead.
               <br />
               <br />
-              Today, Livepeer Inc, the initial team behind the Livepeer
-              protocol, operates the most popular hosted gateway service.
-              Information about its pricing structure can be found below.
+              Livepeer Inc, the initial team behind the Livepeer protocol,
+              operates the most popular hosted gateway service. Information
+              about its pricing structure can be found below.
             </Text>
           </Box>
         </Container>
