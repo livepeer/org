@@ -57,6 +57,7 @@ const PricingPage = ({ markdownContent }) => {
           css={{
             maxWidth: "1245px",
             pb: 100,
+            mx: "auto",
           }}>
           <ReactMarkdown children={markdownContent} />
         </Container>
