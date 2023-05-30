@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "livepeer-website",
+  "name": "livepeer-org",
   "version": "0.4.0-rc.0",
   "main": "index.js",
   "license": "MIT",
