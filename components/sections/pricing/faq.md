@@ -1,4 +1,4 @@
-## Pricing FAQ
+## FAQs
 
 ### **How much does the Livepeer hosted gateway cost compared to traditional video development platforms?**
 

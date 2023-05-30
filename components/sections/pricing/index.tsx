@@ -1,5 +1,13 @@
 import PricingCard, { PricingCardContent } from "./pricingCard";
-import { Box, Grid, Flex, Text, Badge, Tooltip } from "@livepeer/design-system";
+import {
+  Box,
+  Grid,
+  Flex,
+  Text,
+  Badge,
+  Tooltip,
+  Banner,
+} from "@livepeer/design-system";
 
 const PricingCardsContainer = () => {
   return (
@@ -1256,8 +1264,17 @@ const PricingCardsContainer = () => {
           </Box>
         </PricingCard>
       </Grid>
-
-      <Flex gap={3} justify="center" css={{ mt: "$6", fontSize: "$2" }}>
+      <Box
+        css={{
+          mt: "$6",
+          textAlign: "center",
+          fontSize: "$3",
+          fontStyle: "italic",
+        }}>
+        The Pay-as-you-go plan applies to minutes that go over the Hacker,
+        Growth, and Scale plans.
+      </Box>
+      <Flex gap={3} justify="center" css={{ mt: "$5", fontSize: "$2" }}>
         <Box>*Open Beta</Box>
         <Box> **Closed Beta</Box>
       </Flex>
