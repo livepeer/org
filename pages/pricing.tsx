@@ -52,14 +52,15 @@ const PricingPage = ({ markdownContent }) => {
         </Container>
         <Pricing />
         <Container
-          className="markdown-body"
           size="4"
           css={{
             maxWidth: "1245px",
             pb: 100,
             mx: "auto",
           }}>
-          <ReactMarkdown children={markdownContent} />
+          <Box className="markdown-body">
+            <ReactMarkdown children={markdownContent} />
+          </Box>
         </Container>
       </Box>
     </PageLayout>
