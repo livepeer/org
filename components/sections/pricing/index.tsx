@@ -129,7 +129,7 @@ const PricingCardsContainer = () => {
                 fontWeight: 500,
                 mb: "$1",
               }}>
-              Low Latency Livestreaming*
+              Low latency Livestreaming*
             </Text>
           </PricingCardContent>
           <PricingCardContent>
@@ -139,7 +139,7 @@ const PricingCardsContainer = () => {
                 fontWeight: 500,
                 mb: "$1",
               }}>
-              Multiparticipant Livestreaming**
+              Multiparticipant livestreaming**
             </Text>
           </PricingCardContent>
           <PricingCardContent>
@@ -149,7 +149,7 @@ const PricingCardsContainer = () => {
                 fontWeight: 500,
                 mb: "$1",
               }}>
-              Viewership
+              Engagement analytics
             </Text>
           </PricingCardContent>
           <PricingCardContent>
@@ -159,17 +159,7 @@ const PricingCardsContainer = () => {
                 fontWeight: 500,
                 mb: "$1",
               }}>
-              Transcoding API
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Live / VOD Token Gating
+              Playback policies
             </Text>
           </PricingCardContent>
           <PricingCardContent>
@@ -180,16 +170,6 @@ const PricingCardsContainer = () => {
                 mb: "$1",
               }}>
               WebRTC
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Video NFT Minting
             </Text>
           </PricingCardContent>
         </Box>
@@ -326,7 +306,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Low Latency Livestreaming
+                Low latency Livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -340,7 +320,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Multiparticipant Livestreaming
+                Multiparticipant livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -354,10 +334,11 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Viewership
+                Engagement analytics
               </Badge>
               ✓
             </PricingCardContent>
+
             <PricingCardContent>
               <Badge
                 size="2"
@@ -368,21 +349,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Transcoding API
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Live / VOD Token Gating
+                Playback policies
               </Badge>
               ✓
             </PricingCardContent>
@@ -397,20 +364,6 @@ const PricingCardsContainer = () => {
                   },
                 }}>
                 WebRTC
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Video NFT Minting
               </Badge>
               ✓
             </PricingCardContent>
@@ -548,7 +501,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Low Latency Livestreaming
+                Low latency Livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -562,7 +515,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Multiparticipant Livestreaming
+                Multiparticipant livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -576,10 +529,11 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Viewership
+                Engagement analytics
               </Badge>
               ✓
             </PricingCardContent>
+
             <PricingCardContent>
               <Badge
                 size="2"
@@ -590,21 +544,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Transcoding API
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Livepeer / VOD Token Gating
+                Playback policies
               </Badge>
               ✓
             </PricingCardContent>
@@ -619,20 +559,6 @@ const PricingCardsContainer = () => {
                   },
                 }}>
                 WebRTC
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Video NFT Minting
               </Badge>
               ✓
             </PricingCardContent>
@@ -770,7 +696,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Low Latency Livestreaming
+                Low latency Livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -784,7 +710,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Multiparticipant Livestreaming
+                Multiparticipant livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -798,10 +724,11 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Viewership
+                Engagement analytics
               </Badge>
               ✓
             </PricingCardContent>
+
             <PricingCardContent>
               <Badge
                 size="2"
@@ -812,21 +739,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Transcoding API
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Livepeer / VOD Token Gating
+                Playback policies
               </Badge>
               ✓
             </PricingCardContent>
@@ -841,20 +754,6 @@ const PricingCardsContainer = () => {
                   },
                 }}>
                 WebRTC
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Video NFT Minting
               </Badge>
               ✓
             </PricingCardContent>
@@ -971,7 +870,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Low Latency Livestreaming
+                Low latency Livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -985,7 +884,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Multiparticipant Livestreaming
+                Multiparticipant livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -999,10 +898,11 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Viewership
+                Engagement analytics
               </Badge>
               ✓
             </PricingCardContent>
+
             <PricingCardContent>
               <Badge
                 size="2"
@@ -1013,21 +913,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Transcoding API
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Livepeer / VOD Token Gating
+                Playback policies
               </Badge>
               ✓
             </PricingCardContent>
@@ -1042,20 +928,6 @@ const PricingCardsContainer = () => {
                   },
                 }}>
                 WebRTC
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Video NFT Minting
               </Badge>
               ✓
             </PricingCardContent>
@@ -1173,7 +1045,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Low Latency Livestreaming
+                Low latency Livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -1187,7 +1059,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Multiparticipant Livestreaming
+                Multiparticipant livestreaming
               </Badge>
               ✓
             </PricingCardContent>
@@ -1201,7 +1073,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Viewership
+                Engagement analytics
               </Badge>
               ✓
             </PricingCardContent>
@@ -1215,21 +1087,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Transcoding API
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Livepeer / VOD Token Gating
+                Playback policies
               </Badge>
               ✓
             </PricingCardContent>
@@ -1244,20 +1102,6 @@ const PricingCardsContainer = () => {
                   },
                 }}>
                 WebRTC
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Video NFT Minting
               </Badge>
               ✓
             </PricingCardContent>
