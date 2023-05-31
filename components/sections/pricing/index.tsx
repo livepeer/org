@@ -21,7 +21,7 @@ const PricingCardsContainer = () => {
         pb: "$8",
         "@bp2": {
           overflow: "scroll",
-          px: "12px",
+          px: 0,
         },
       }}>
       <Grid
