@@ -20,6 +20,7 @@ const PricingCardsContainer = () => {
         width: "100%",
         pb: "$8",
         "@bp2": {
+          overflow: "scroll",
           px: "12px",
         },
       }}>
@@ -30,8 +31,6 @@ const PricingCardsContainer = () => {
           grid: "1fr/repeat(1,1fr)",
           "@bp2": {
             position: "relative",
-            overflowX: "scroll",
-            overflowY: "hidden",
             "-webkit-overflow-scrolling": "touch",
             maxWidth: 1245,
             minWidth: 1245,
