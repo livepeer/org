@@ -38,13 +38,13 @@ const PricingPage = ({ markdownContent }) => {
               Livepeer Pricing
             </Heading>
             <Text size={5}>
-              The Livepeer network is open and permissionless, which means you
-              can run your own Livepeer node and pay the network directly, with
-              no middleman. However, running and scaling your own node
-              infrastructure can be challenging, especially when getting started
-              or scaling rapidly. Gateway service providers host optimized node
-              infrastructure for you, allowing you to focus on building your
-              video applications instead.
+              The Livepeer network is open and permissionless, which means
+              anyone can run their own Livepeer node and pay the network
+              directly, with no middleman. However, running and scaling your own
+              node infrastructure can be challenging, especially when getting
+              started or scaling rapidly. Gateway service providers host
+              optimized node infrastructure for you, allowing you to focus on
+              building your video applications instead.
               <br />
               <br />
               Livepeer Inc, the initial team behind the Livepeer protocol,
