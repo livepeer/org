@@ -37,7 +37,7 @@ const PricingPage = ({ markdownContent }) => {
             <Heading as="h1" size="4" css={{ fontWeight: 600, mb: "$6" }}>
               Livepeer Pricing
             </Heading>
-            <Text size={5}>
+            <Text size={5} css={{ lineHeight: 1.7 }}>
               The Livepeer network is open and permissionless, which means
               anyone can run their own Livepeer node and pay the network
               directly, with no middleman. However, running and scaling your own
@@ -55,9 +55,8 @@ const PricingPage = ({ markdownContent }) => {
         </Container>
         <Pricing />
         <Container
-          size="4"
           css={{
-            maxWidth: "1245px",
+            maxWidth: "960px",
             pb: 100,
             mx: "auto",
           }}>

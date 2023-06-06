@@ -10,7 +10,7 @@ const PricingCardsContainer = () => {
         maxWidth: "1245px",
         margin: "0 auto",
         width: "100%",
-        pb: "$8",
+        pb: "$9",
         "@bp2": {
           overflow: "scroll",
           px: 0,
@@ -100,7 +100,7 @@ const PricingCardsContainer = () => {
         <PricingCard
           pricingTitle="Hacker"
           pricingDescription="Free"
-          cardBg="$green3"
+          bc="$green3"
           titleColor="black"
           btn={{
             display: "Sign up",
@@ -188,7 +188,7 @@ const PricingCardsContainer = () => {
         <PricingCard
           pricingTitle="Growth"
           pricingDescription="$100 per month*"
-          cardBg="$green5"
+          bc="$green5"
           btn={{
             display: "Sign up",
             href: "https://livepeer.studio/register",
@@ -315,7 +315,15 @@ const PricingCardsContainer = () => {
                   </Flex>
                 </Tooltip>
               </Flex>
-              <Box css={{ fontSize: 11, mt: "$7", fontStyle: "italic" }}>
+              <Box
+                css={{
+                  position: "absolute",
+                  fontSize: 11,
+                  bottom: -20,
+                  fontStyle: "italic",
+                  textAlign: "center",
+                  width: "100%",
+                }}>
                 *Pay as you go past alloted minutes
               </Box>
             </PricingCardContent>
@@ -326,7 +334,7 @@ const PricingCardsContainer = () => {
         <PricingCard
           pricingTitle="Scale"
           pricingDescription="$500 per month*"
-          cardBg="$green6"
+          bc="$green6"
           btn={{
             display: "Sign up",
             href: "https://livepeer.studio/register",
@@ -453,7 +461,15 @@ const PricingCardsContainer = () => {
                   </Flex>
                 </Tooltip>
               </Flex>
-              <Box css={{ fontSize: 11, mt: "$7", fontStyle: "italic" }}>
+              <Box
+                css={{
+                  position: "absolute",
+                  fontSize: 11,
+                  bottom: -20,
+                  fontStyle: "italic",
+                  textAlign: "center",
+                  width: "100%",
+                }}>
                 *Pay as you go past alloted minutes
               </Box>
             </PricingCardContent>
@@ -464,7 +480,7 @@ const PricingCardsContainer = () => {
         <PricingCard
           pricingTitle="Enterprise"
           pricingDescription="Custom pricing"
-          cardBg="$green7"
+          bc="$green7"
           btn={{
             display: "Contact us",
             href: "mailto:help@livepeer.org?subject=Enterprise Pricing Inquiry",
