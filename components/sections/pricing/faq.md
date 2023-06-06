@@ -7,9 +7,9 @@ compared to traditional video development platforms.
 
 ### **I am building with Livepeer Inc's hosted gateway at a hackathon. Is there a cost to stream?**
 
-In the hundreds of hackathon projects that were built with Livepeer Inc's hosted
-gateway, none have ever exceeded the 1,000 min/month provided in the free plan.
-If this is a concern, email Livepeer Inc at
+In the hundreds of hackathon projects that were built using Livepeer Inc's
+hosted gateway, none have ever exceeded the alloted free minutes provided in the
+Hacker plan. If this is a concern, email Livepeer Inc at
 [help@livepeer.org](mailto:help@livepeer.org) or reach out
 on [Discord](https://discord.gg/livepeer).
 
