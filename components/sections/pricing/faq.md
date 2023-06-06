@@ -21,4 +21,4 @@ A credit card is not required to create an account.
 USD is the only currency accepted right now via the Livepeer Studio dashboard.
 Crypto-native payments are coming later this year. If you prefer to pay with
 cryptocurrency now, contact us directly
-at [help@livepeer.studio](mailto:help@livepeer.studio)
+at [help@livepeer.org](mailto:help@livepeer.org)
