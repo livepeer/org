@@ -6,8 +6,8 @@ export type PricingCardProps = {
   pricingTitle: string;
   titleColor?: string;
   cardBg: string;
-  pricingDescription: string;
-  btn: { href: string; display: string; bg?: string; color?: string };
+  pricingDescription: ReactNode | string;
+  btn: { href: string; display: string; bc?: string; color?: string };
   children: ReactNode;
   className?: string;
   color?: string;
@@ -79,14 +79,14 @@ const PricingCard = ({
         width: "100%",
         flexDirection: "column",
         px: "16px",
-        paddingTop: "25px",
+        pt: "$5",
         borderRadius: "16px",
         background: cardBg,
         textAlign: "center",
       }}>
       <Flex direction="column">
         <Text
-          size="6"
+          size="7"
           css={{
             fontWeight: 600,
             color,
@@ -98,6 +98,7 @@ const PricingCard = ({
           css={{
             mb: "$4",
             color,
+            fontSize: "$3",
           }}>
           {pricingDescription}
         </Text>
@@ -108,13 +109,13 @@ const PricingCard = ({
             target="_blank"
             arrow
             css={{
-              background: btn.bg,
+              background: btn.bc,
               color: btn.color,
               fontSize: "$3",
               fontWeight: 500,
               "&:hover": {
                 boxShadow: "none",
-                background: btn.bg,
+                background: btn.bc,
                 color: btn.color,
               },
             }}>

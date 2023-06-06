@@ -37,11 +37,14 @@ const PricingPage = ({ markdownContent }) => {
             <Heading as="h1" size="4" css={{ fontWeight: 600, mb: "$6" }}>
               Livepeer Pricing
             </Heading>
-            <Text size={6}>
-              Running your own Livepeer node infrastructure can be challenging,
-              especially when getting started or scaling fast. Service providers
-              run optimized node infrastructure for you, so you can focus on
-              building your video applications or product instead.
+            <Text size={5}>
+              The Livepeer network is open and permissionless, which means you
+              can run your own Livepeer node and pay the network directly, with
+              no middleman. However, running and scaling your own node
+              infrastructure can be challenging, especially when getting started
+              or scaling rapidly. Gateway service providers host optimized node
+              infrastructure for you, allowing you to focus on building your
+              video applications instead.
               <br />
               <br />
               Livepeer Inc, the initial team behind the Livepeer protocol,

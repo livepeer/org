@@ -105,7 +105,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue May 30 2023"
+            "defaultValue": "Mon Jun 05 2023"
           },
           "namespace": ["apps", "createdAt"]
         }
@@ -156,7 +156,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue May 30 2023"
+            "defaultValue": "Mon Jun 05 2023"
           },
           "namespace": ["videos", "createdAt"]
         }
@@ -237,7 +237,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue May 30 2023"
+            "defaultValue": "Mon Jun 05 2023"
           },
           "namespace": ["web3", "createdAt"]
         }
@@ -318,7 +318,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue May 30 2023"
+            "defaultValue": "Mon Jun 05 2023"
           },
           "namespace": ["staking", "createdAt"]
         }
@@ -399,7 +399,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue May 30 2023"
+            "defaultValue": "Mon Jun 05 2023"
           },
           "namespace": ["exchange", "createdAt"]
         }
@@ -450,7 +450,7 @@
           "type": "datetime",
           "label": "CreatedAt",
           "ui": {
-            "defaultValue": "Tue May 30 2023"
+            "defaultValue": "Mon Jun 05 2023"
           },
           "namespace": ["comunity", "createdAt"]
         }
@@ -479,7 +479,7 @@
           "label": "Updated at",
           "name": "updatedAt",
           "ui": {
-            "defaultValue": "Tue May 30 2023"
+            "defaultValue": "Mon Jun 05 2023"
           },
           "namespace": ["pages", "updatedAt"]
         },

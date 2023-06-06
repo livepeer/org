@@ -1,13 +1,5 @@
 import PricingCard, { PricingCardContent } from "./pricingCard";
-import {
-  Box,
-  Grid,
-  Flex,
-  Text,
-  Badge,
-  Tooltip,
-  Banner,
-} from "@livepeer/design-system";
+import { Box, Grid, Flex, Text, Tooltip } from "@livepeer/design-system";
 
 const PricingCardsContainer = () => {
   return (
@@ -30,11 +22,12 @@ const PricingCardsContainer = () => {
           gap: "8px",
           grid: "1fr/repeat(1,1fr)",
           "@bp2": {
+            justifyContent: "center",
             position: "relative",
             "-webkit-overflow-scrolling": "touch",
             maxWidth: 1245,
             minWidth: 1245,
-            gridTemplateColumns: "16% 16% 16% 16% 16% 16%",
+            gridTemplateColumns: "12% 19% 19% 19% 19%",
           },
         }}>
         <Box
@@ -44,10 +37,10 @@ const PricingCardsContainer = () => {
             display: "none",
             "@bp2": {
               display: "block",
-              pt: 100,
+              pt: 110,
             },
           }}>
-          <Box css={{ fontWeight: 600, fontSize: "20px", mb: 24 }}>
+          <Box css={{ fontWeight: 600, fontSize: "$5", mb: "$5" }}>
             Features
           </Box>
           <PricingCardContent>
@@ -80,7 +73,7 @@ const PricingCardsContainer = () => {
                   textDecoration: "underline dotted rgb(67, 76, 88)",
                   cursor: "default",
                 }}>
-                Streaming
+                Delivery
               </Text>
             </Tooltip>
           </PricingCardContent>
@@ -101,76 +94,6 @@ const PricingCardsContainer = () => {
               </Text>
             </Tooltip>
           </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Recording
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Multistreaming
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Low latency Livestreaming*
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Multiparticipant livestreaming**
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Engagement analytics
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              Playback policies
-            </Text>
-          </PricingCardContent>
-          <PricingCardContent>
-            <Text
-              size="3"
-              css={{
-                fontWeight: 500,
-                mb: "$1",
-              }}>
-              WebRTC
-            </Text>
-          </PricingCardContent>
         </Box>
 
         {/* Hacker */}
@@ -183,188 +106,80 @@ const PricingCardsContainer = () => {
             display: "Sign up",
             href: "https://livepeer.studio/register",
             color: "$loContrast",
-            bg: "$hiContrast",
+            bc: "$sage12",
           }}>
           <Box css={{ mt: "20px" }}>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
                 Transcoding
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                1,000
               </Box>
-              <Box
+              <Flex
                 css={{
                   fontSize: "14px",
                   lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                minutes/month
-              </Box>
+                1,000 minutes{" "}
+              </Flex>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
-                Streaming
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                10,000
+                Delivery
               </Box>
-              <Box
+              <Flex
                 css={{
                   fontSize: "14px",
                   lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                minutes/month
-              </Box>
+                10,000 minutes{" "}
+              </Flex>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
                 Storage
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                10,000
               </Box>
-              <Box
+              <Flex
                 css={{
                   fontSize: "14px",
                   lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                minutes/month
-              </Box>
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Recording
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multistreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Low latency Livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multiparticipant livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Engagement analytics
-              </Badge>
-              ✓
-            </PricingCardContent>
-
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Playback policies
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                WebRTC
-              </Badge>
-              ✓
+                1,000 minutes{" "}
+              </Flex>
             </PricingCardContent>
           </Box>
         </PricingCard>
@@ -372,194 +187,137 @@ const PricingCardsContainer = () => {
         {/* Growth */}
         <PricingCard
           pricingTitle="Growth"
-          pricingDescription="$100/month"
-          cardBg="$green4"
+          pricingDescription="$100 per month*"
+          cardBg="$green5"
           btn={{
             display: "Sign up",
             href: "https://livepeer.studio/register",
             color: "$loContrast",
-            bg: "$hiContrast",
+            bc: "$sage12",
           }}>
           <Box css={{ mt: "20px" }}>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
                 Transcoding
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                3,000
               </Box>
-              <Box
+              <Flex
                 css={{
                   fontSize: "14px",
                   lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                minutes/month
-              </Box>
+                3,000 minutes{" "}
+                <Tooltip multiline content="Then $5 per extra 1,000 minutes">
+                  <Flex
+                    css={{
+                      borderRadius: 1000,
+                      bc: "$sage12",
+                      color: "white",
+                      width: 18,
+                      height: 18,
+                      fontSize: "$1",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "default",
+                    }}>
+                    $
+                  </Flex>
+                </Tooltip>
+              </Flex>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
-                Streaming
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                100,000
+                Delivery
               </Box>
-              <Box
+              <Flex
                 css={{
                   fontSize: "14px",
                   lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                minutes/month
-              </Box>
+                100,000 minutes{" "}
+                <Tooltip multiline content="Then $0.40 per extra 1,000 minutes">
+                  <Flex
+                    css={{
+                      borderRadius: 1000,
+                      bc: "$sage12",
+                      color: "white",
+                      width: 18,
+                      height: 18,
+                      fontSize: "$1",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "default",
+                    }}>
+                    $
+                  </Flex>
+                </Tooltip>
+              </Flex>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
-                Streaming
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                10,000
+                Delivery
               </Box>
-              <Box
+              <Flex
                 css={{
                   fontSize: "14px",
                   lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                minutes/month
+                10,000 minutes{" "}
+                <Tooltip multiline content="Then $3 per extra 1,000 minutes">
+                  <Flex
+                    css={{
+                      borderRadius: 1000,
+                      bc: "$sage12",
+                      color: "white",
+                      width: 18,
+                      height: 18,
+                      fontSize: "$1",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "default",
+                    }}>
+                    $
+                  </Flex>
+                </Tooltip>
+              </Flex>
+              <Box css={{ fontSize: 11, mt: "$7", fontStyle: "italic" }}>
+                *Pay as you go past alloted minutes
               </Box>
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Recording
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multistreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Low latency Livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multiparticipant livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Engagement analytics
-              </Badge>
-              ✓
-            </PricingCardContent>
-
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Playback policies
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                WebRTC
-              </Badge>
-              ✓
             </PricingCardContent>
           </Box>
         </PricingCard>
@@ -567,368 +325,137 @@ const PricingCardsContainer = () => {
         {/* Scale */}
         <PricingCard
           pricingTitle="Scale"
-          pricingDescription="$500/month"
-          cardBg="$green5"
-          btn={{
-            display: "Sign up",
-            href: "https://livepeer.studio/register",
-            color: "$loContrast",
-            bg: "$hiContrast",
-          }}>
-          <Box css={{ mt: "20px" }}>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Transcoding
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                20,000
-              </Box>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  lineHeight: "24px",
-                }}>
-                minutes/month
-              </Box>
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Streaming
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                500,000
-              </Box>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  lineHeight: "24px",
-                }}>
-                minutes/month
-              </Box>
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Storage
-              </Badge>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                }}>
-                50,000
-              </Box>
-              <Box
-                css={{
-                  fontSize: "14px",
-                  lineHeight: "24px",
-                }}>
-                minutes/month
-              </Box>
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Recording
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multistreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Low latency Livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multiparticipant livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Engagement analytics
-              </Badge>
-              ✓
-            </PricingCardContent>
-
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Playback policies
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                WebRTC
-              </Badge>
-              ✓
-            </PricingCardContent>
-          </Box>
-        </PricingCard>
-
-        {/* Pay as you go */}
-        <PricingCard
-          pricingTitle="Pay-as-you-go"
-          pricingDescription="Pay for what you use"
+          pricingDescription="$500 per month*"
           cardBg="$green6"
           btn={{
             display: "Sign up",
             href: "https://livepeer.studio/register",
             color: "$loContrast",
-            bg: "$hiContrast",
+            bc: "$sage12",
           }}>
           <Box css={{ mt: "20px" }}>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
                 Transcoding
-              </Badge>
-              <Box
+              </Box>
+              <Flex
                 css={{
                   fontSize: "14px",
-                  fontWeight: 600,
+                  lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                $5 / 1,000 minutes
-              </Box>
+                20,000 minutes{" "}
+                <Tooltip multiline content="Then $5 per extra 1,000 minutes">
+                  <Flex
+                    css={{
+                      borderRadius: 1000,
+                      bc: "$sage12",
+                      color: "white",
+                      width: 18,
+                      height: 18,
+                      fontSize: "$1",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "default",
+                    }}>
+                    $
+                  </Flex>
+                </Tooltip>
+              </Flex>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
-                Streaming
-              </Badge>
-              <Box
+                Delivery
+              </Box>
+              <Flex
                 css={{
                   fontSize: "14px",
-                  fontWeight: 600,
+                  lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                $0.40 / 1,000 minutes
-              </Box>
+                500,000 minutes{" "}
+                <Tooltip multiline content="Then $0.40 per extra 1,000 minutes">
+                  <Flex
+                    css={{
+                      borderRadius: 1000,
+                      bc: "$sage12",
+                      color: "white",
+                      width: 18,
+                      height: 18,
+                      fontSize: "$1",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "default",
+                    }}>
+                    $
+                  </Flex>
+                </Tooltip>
+              </Flex>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
                 Storage
-              </Badge>
-              <Box
+              </Box>
+              <Flex
                 css={{
                   fontSize: "14px",
-                  fontWeight: 600,
+                  lineHeight: "24px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "$2",
                 }}>
-                $3 / 1,000 minutes
+                50,000 minutes{" "}
+                <Tooltip multiline content="Then $3 per extra 1,000 minutes">
+                  <Flex
+                    css={{
+                      borderRadius: 1000,
+                      bc: "$sage12",
+                      color: "white",
+                      width: 18,
+                      height: 18,
+                      fontSize: "$1",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "default",
+                    }}>
+                    $
+                  </Flex>
+                </Tooltip>
+              </Flex>
+              <Box css={{ fontSize: 11, mt: "$7", fontStyle: "italic" }}>
+                *Pay as you go past alloted minutes
               </Box>
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Recording
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multistreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Low latency Livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multiparticipant livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Engagement analytics
-              </Badge>
-              ✓
-            </PricingCardContent>
-
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Playback policies
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                WebRTC
-              </Badge>
-              ✓
             </PricingCardContent>
           </Box>
         </PricingCard>
@@ -943,184 +470,72 @@ const PricingCardsContainer = () => {
             href:
               "https://livepeer.studio/contact?utm_source=livepeer.studio&utm_medium=internal_page&utm_campaign=enterprise_plan",
             color: "$loContrast",
-            bg: "$hiContrast",
+            bc: "$sage12",
           }}>
           <Box css={{ mt: "20px" }}>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
                 Transcoding
-              </Badge>
+              </Box>
               <Box
                 css={{
                   fontSize: "$3",
-                  fontWeight: 600,
                 }}>
                 Custom pricing
               </Box>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
-                Streaming
-              </Badge>
+                Delivery
+              </Box>
               <Box
                 css={{
                   fontSize: "$3",
-                  fontWeight: 600,
                 }}>
                 Custom pricing
               </Box>
             </PricingCardContent>
             <PricingCardContent>
-              <Badge
-                size="2"
+              <Box
                 css={{
                   alignSelf: "center",
                   mb: "$2",
+                  fontWeight: 600,
+                  fontSize: "$3",
                   "@bp3": {
                     display: "none",
                   },
                 }}>
                 Storage
-              </Badge>
+              </Box>
               <Box
                 css={{
                   fontSize: "$3",
-                  fontWeight: 600,
                 }}>
                 Custom pricing
               </Box>
             </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Recording
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multistreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Low latency Livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Multiparticipant livestreaming
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Engagement analytics
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                Playback policies
-              </Badge>
-              ✓
-            </PricingCardContent>
-            <PricingCardContent>
-              <Badge
-                size="2"
-                css={{
-                  alignSelf: "center",
-                  mb: "$2",
-                  "@bp3": {
-                    display: "none",
-                  },
-                }}>
-                WebRTC
-              </Badge>
-              ✓
-            </PricingCardContent>
           </Box>
         </PricingCard>
       </Grid>
-      <Box
-        css={{
-          mt: "$6",
-          textAlign: "center",
-          fontSize: "$3",
-          fontStyle: "italic",
-        }}>
-        The Pay-as-you-go plan applies to minutes that go over the Hacker,
-        Growth, and Scale plans.
-      </Box>
-      <Flex gap={3} justify="center" css={{ mt: "$5", fontSize: "$2" }}>
-        <Box>*Open Beta</Box>
-        <Box> **Closed Beta</Box>
-      </Flex>
     </Flex>
   );
 };
