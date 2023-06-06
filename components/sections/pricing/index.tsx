@@ -467,8 +467,7 @@ const PricingCardsContainer = () => {
           cardBg="$green7"
           btn={{
             display: "Contact us",
-            href:
-              "https://livepeer.studio/contact?utm_source=livepeer.studio&utm_medium=internal_page&utm_campaign=enterprise_plan",
+            href: "mailto:help@livepeer.org?subject=Enterprise Pricing Inquiry",
             color: "$loContrast",
             bc: "$sage12",
           }}>
