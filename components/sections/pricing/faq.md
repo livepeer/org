@@ -9,7 +9,8 @@ compared to traditional video development platforms.
 
 In the hundreds of hackathon projects that were built with Livepeer Inc's hosted
 gateway, none have ever exceeded the 1,000 min/month provided in the free plan.
-If this is a concern, email Livepeer Inc at help@livepeer.org or reach out
+If this is a concern, email Livepeer Inc at
+[help@livepeer.org](mailto:help@livepeer.org) or reach out
 on [Discord](https://discord.gg/livepeer).
 
 ### **Do I need to provide a credit card number to create an account?**
