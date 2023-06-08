@@ -35,21 +35,21 @@ const PricingPage = ({ markdownContent }) => {
           }}>
           <Box css={{ textAlign: "center", maxWidth: 960, m: "0 auto" }}>
             <Heading as="h1" size="4" css={{ fontWeight: 600, mb: "$6" }}>
-              Livepeer Pricing
+              Pricing
             </Heading>
             <Text size={5} css={{ lineHeight: 1.7 }}>
               The Livepeer network is open and permissionless, which means
               anyone can run their own Livepeer node and pay the network
               directly, with no middleman. However, running and scaling your own
               node infrastructure can be challenging, especially when getting
-              started or scaling rapidly. Enter gateway service providers.
+              started or scaling rapidly. Enter Livepeer gateway providers.
               <br />
               <br />
-              Gateway service providers host optimized node infrastructure for
+              Gateway providers host optimized Livepeer node infrastructure for
               you, allowing you to focus on building your video applications
               instead. Livepeer Inc, the initial team behind the Livepeer
-              protocol, operates the most popular hosted gateway service.
-              Information about its pricing structure can be found below.
+              protocol, operates the most popular hosted gateway. Information
+              about its pricing structure can be found below.
             </Text>
           </Box>
         </Container>

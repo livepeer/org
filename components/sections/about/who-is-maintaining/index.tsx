@@ -17,7 +17,7 @@ const WhoIsMaintainingSection = ({
   const livepeerMaintainers: MaintainerProps[] = [
     {
       name: "Adam Soffer",
-      position: role1,
+      position: "Lead Engineer",
       avatar: {
         src:
           "https://avatars3.githubusercontent.com/u/555740?s=460&u=af1ec022281bf42faadde807895f47230583c0d8&v=4",

@@ -20,6 +20,8 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import LanguageDropdown from "components/primitives/language-dropdown";
 import EcosystemDropdown from "components/primitives/ecosystem-dropdown";
+import NetworkDropdown from "components/primitives/network-dropdown";
+import DeveloperDropdown from "components/primitives/developer-dropdown";
 
 type LinkType = {
   label: string;
@@ -70,18 +72,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     {
       label: t("nav-about"),
       href: "/about",
-    },
-    {
-      label: t("nav-developers"),
-      href: "/developers",
-    },
-    {
-      label: "Orchestrators",
-      href: "/orchestrators",
-    },
-    {
-      label: "Delegators",
-      href: "/delegators",
     },
   ];
 
@@ -189,6 +179,16 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                   </Link>
                 )
               )}
+            {!isPrimer && (
+              <NavLink className="nav-link" as={Box} data-dark={isDark}>
+                <DeveloperDropdown />
+              </NavLink>
+            )}
+            {!isPrimer && (
+              <NavLink className="nav-link" as={Box} data-dark={isDark}>
+                <NetworkDropdown />
+              </NavLink>
+            )}
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <EcosystemDropdown />
