@@ -189,11 +189,20 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <NetworkDropdown />
               </NavLink>
             )}
-            {!isPrimer && (
+            {/* {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <EcosystemDropdown />
               </NavLink>
-            )}
+            )} */}
+            <Link
+              key={`desktop-nav-link-ecosyste`}
+              href="/ecosystem"
+              as="/ecosystem"
+              passHref>
+              <NavLink className="nav-link" data-dark={isDark}>
+                Ecosystem
+              </NavLink>
+            </Link>
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <LanguageDropdown />
@@ -288,37 +297,50 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               height: `calc(100vh - ${navHeight})`,
             }}>
             <Flex sx={{ flexDirection: "column" }}>
-              {links.map((link) =>
-                link.isExternal ? (
-                  <A
-                    key={`link-${link.label}-${link.href}`}
-                    href={link.href}
-                    target="_blank"
-                    sx={{
-                      color,
-                      textAlign: "center",
-                      fontSize: 7,
-                      fontWeight: 600,
-                    }}>
-                    {link.label}
-                  </A>
-                ) : (
-                  <Link
-                    key={`link-${link.label}-${link.href}`}
-                    href={link.href}
-                    passHref>
-                    <A
-                      sx={{
-                        color,
-                        textAlign: "center",
-                        fontSize: 7,
-                        fontWeight: 600,
-                      }}>
-                      {link.label}
-                    </A>
-                  </Link>
-                )
-              )}
+              <Link href="/about" passHref>
+                <A
+                  sx={{
+                    color,
+                    textAlign: "center",
+                    fontSize: 6,
+                    fontWeight: 600,
+                  }}>
+                  About
+                </A>
+              </Link>
+              <Link href="/about" passHref>
+                <A
+                  sx={{
+                    color,
+                    textAlign: "center",
+                    fontSize: 6,
+                    fontWeight: 600,
+                  }}>
+                  Developers
+                </A>
+              </Link>
+              <Link href="/orchestrators" passHref>
+                <A
+                  sx={{
+                    color,
+                    textAlign: "center",
+                    fontSize: 6,
+                    fontWeight: 600,
+                  }}>
+                  Orchestrators
+                </A>
+              </Link>
+              <Link href="/delegators" passHref>
+                <A
+                  sx={{
+                    color,
+                    textAlign: "center",
+                    fontSize: 6,
+                    fontWeight: 600,
+                  }}>
+                  Delegators
+                </A>
+              </Link>
             </Flex>
 
             <Flex sx={{ flexDirection: "column" }}>

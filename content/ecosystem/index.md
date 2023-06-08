@@ -1,6 +1,6 @@
 ---
 hero:
-  hero_title_dark: Livepeer
+  hero_title_dark: Ecosystem
   hero_title_green: Showcase
   hero_description: >-
     Explore the Livepeer ecosystem apps and services, and discover the next
