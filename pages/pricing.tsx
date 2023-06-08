@@ -42,14 +42,14 @@ const PricingPage = ({ markdownContent }) => {
               anyone can run their own Livepeer node and pay the network
               directly, with no middleman. However, running and scaling your own
               node infrastructure can be challenging, especially when getting
-              started or scaling rapidly. Gateway service providers host
-              optimized node infrastructure for you, allowing you to focus on
-              building your video applications instead.
+              started or scaling rapidly. Enter gateway service providers.
               <br />
               <br />
-              Livepeer Inc, the initial team behind the Livepeer protocol,
-              operates the most popular hosted gateway service. Information
-              about its pricing structure can be found below.
+              Gateway service providers host optimized node infrastructure for
+              you, allowing you to focus on building your video applications
+              instead. Livepeer Inc, the initial team behind the Livepeer
+              protocol, operates the most popular hosted gateway service.
+              Information about its pricing structure can be found below.
             </Text>
           </Box>
         </Container>

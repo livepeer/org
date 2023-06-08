@@ -52,7 +52,7 @@ const PricingCard = ({
         flexDirection: "column",
         px: "16px",
         pt: "$5",
-        pb: "$6",
+        pb: "$7",
         borderRadius: "16px",
         bc: bc,
         textAlign: "center",

@@ -27,7 +27,7 @@ const PricingCardsContainer = () => {
             "-webkit-overflow-scrolling": "touch",
             maxWidth: 1245,
             minWidth: 1245,
-            gridTemplateColumns: "12% 19% 19% 19% 19%",
+            gridTemplateColumns: "10% 21.5% 21.5% 21.5% 21.5%",
           },
         }}>
         <Box
@@ -319,7 +319,7 @@ const PricingCardsContainer = () => {
                 css={{
                   position: "absolute",
                   fontSize: 11,
-                  bottom: -20,
+                  bottom: -26,
                   fontStyle: "italic",
                   textAlign: "center",
                   width: "100%",
@@ -465,7 +465,7 @@ const PricingCardsContainer = () => {
                 css={{
                   position: "absolute",
                   fontSize: 11,
-                  bottom: -20,
+                  bottom: -26,
                   fontStyle: "italic",
                   textAlign: "center",
                   width: "100%",
