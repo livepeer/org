@@ -38,7 +38,7 @@ const Item = ({ active = false, text, ...props }) => (
 const items = [
   {
     link: "/developers",
-    text: "Overview",
+    text: "Developer Home",
   },
   {
     link: "https://docs.livepeer.org",
