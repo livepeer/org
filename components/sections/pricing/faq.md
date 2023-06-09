@@ -21,5 +21,15 @@ A credit card is not required to create an account.
 
 USD is the only currency accepted right now via the Livepeer Studio dashboard.
 Crypto-native payments are coming later this year. If you prefer to pay with
-cryptocurrency now, contact us directly
+cryptocurrency now, you may reach out
 at [help@livepeer.org](mailto:help@livepeer.org)
+
+### **How are transcoding, storage, and delivery minutes derived?**
+
+For transcode and storage, Livepeer Inc uses the duration of the source asset,
+and for delivery, it uses 70 minutes viewed per 1 GB delivered; These
+assumptions are based on usage characteristics of the median builder.
+
+If you have further questions about these calculations or feel that they do not
+accurately reflect the characteristics of your project's usage, you may reach
+out at [help@livepeer.org](mailto:help@livepeer.org)
