@@ -194,15 +194,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <EcosystemDropdown />
               </NavLink>
             )}
-            <Link
-              key={`desktop-nav-link-ecosyste`}
-              href="/ecosystem"
-              as="/ecosystem"
-              passHref>
-              <NavLink className="nav-link" data-dark={isDark}>
-                Ecosystem
-              </NavLink>
-            </Link>
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <LanguageDropdown />
