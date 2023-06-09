@@ -1,9 +1,10 @@
 import { Flex, Avatar, Text, Box, Link as A } from "theme-ui";
 import { FaGithub } from "react-icons/fa";
+import { ReactNode } from "react";
 
 export type MaintainerProps = {
   name: string;
-  position: string;
+  position: string | ReactNode;
   avatar: { src: string; alt?: string };
   githubHref: string;
 };

@@ -46,14 +46,14 @@
   display: none !important;
 }
 
-.markdown-body a {
+.markdown-body a:not(.button) {
   background-color: transparent;
   color: #0969da;
   text-decoration: none;
 }
 
-.markdown-body a:active,
-.markdown-body a:hover {
+.markdown-body a:not(.button):active,
+.markdown-body a:not(.button):hover {
   outline-width: 0;
 }
 
@@ -194,7 +194,7 @@
   font: inherit;
 }
 
-.markdown-body a:hover {
+.markdown-body a:not(.button):hover {
   text-decoration: underline;
 }
 

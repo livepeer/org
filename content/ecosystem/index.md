@@ -1,11 +1,11 @@
 ---
 hero:
-  hero_title_dark: Livepeer
-  hero_title_green: Ecosystem
+  hero_title_dark: Ecosystem
+  hero_title_green: Showcase
   hero_description: >-
-    Explore the apps and services of the Livepeer ecosystem, and discover the
-    next generation of decentralized video.
-  hero_eyebrow: Submit a project to be included in the Livepeer Ecosystem
+    Explore the Livepeer ecosystem apps and services, and discover the next
+    generation of video.
+  hero_eyebrow: Submit a project to be included in the showcase
 apps_section:
   title: Apps
   description: Applications built using Livepeer video infrastructure.
@@ -29,5 +29,5 @@ community_section:
   description: >-
     Tools, apps, and public goods created by the Livepeer community to support
     the Livepeer ecosystem.
-footer_cta_description: Submit a project to be included in Livepeer Ecosystem
+footer_cta_description: Submit a project to be included in showcase
 ---

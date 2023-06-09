@@ -44,8 +44,7 @@ module.exports = withPlugins([
           },
           {
             source: '/tv',
-            destination:
-              'https://lvpr.tv/?v=7062iaygm8eip421',
+            destination: 'https://lvpr.tv/?v=7062iaygm8eip421',
             permanent: false,
           },
           {
@@ -167,7 +166,7 @@ module.exports = withPlugins([
             source: '/tokenholders',
             destination: 'https://livepeer.org/delegators',
             permanent: false,
-          }
+          },
         ];
       },
     },

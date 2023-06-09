@@ -9,6 +9,10 @@ import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
 import { IdProvider } from "@radix-ui/react-id";
 import TinaProvider from "../.tina/components/TinaDynamicProvider";
+import {
+  SnackbarProvider,
+  DesignSystemProvider,
+} from "@livepeer/design-system";
 
 initGsap();
 
@@ -24,13 +28,17 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <TinaProvider>
-      <IdProvider>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </IdProvider>
-    </TinaProvider>
+    <DesignSystemProvider>
+      <SnackbarProvider>
+        <TinaProvider>
+          <IdProvider>
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </IdProvider>
+        </TinaProvider>
+      </SnackbarProvider>
+    </DesignSystemProvider>
   );
 };
 

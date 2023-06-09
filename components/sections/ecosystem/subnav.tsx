@@ -27,9 +27,6 @@ export const Subnav = (pageData) => {
     community_section,
   } = pageData.data || {};
 
-  console.log();
-
-  console.log(pageData);
   return (
     <Box
       sx={{
