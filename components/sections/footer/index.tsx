@@ -101,7 +101,7 @@ const Footer = ({
         },
         {
           label: "Discord Chat",
-          href: "https://discord.gg/uaPhtyrWsF",
+          href: "https://discord.gg/livepeer",
           isExternal: true,
         },
         {
