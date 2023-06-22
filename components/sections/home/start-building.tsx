@@ -1,6 +1,5 @@
-import { Container, Grid, Box, Heading, Text, Link as A } from "theme-ui";
+import { Container, Grid, Box, Heading, Text } from "theme-ui";
 import BasicCard, { BasicCardProps } from "components/primitives/cards/basic";
-import { FiArrowUpRight } from "react-icons/fi";
 
 const tools: BasicCardProps[] = [
   {

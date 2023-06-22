@@ -32,7 +32,7 @@ const Value = ({ title, description, icon }: Props) => (
       <Flex
         sx={{
           borderRadius: 1000,
-          bg: "black",
+          bg: "text",
           width: "64px",
           height: "64px",
           alignItems: "center",
