@@ -38,7 +38,7 @@ const workflows = [
   {
     title: "On-demand",
     description:
-      "Deliver instant, dependable, and high-quality on-demand video to users worldwide.",
+      "Deliver instant, dependable, and high-quality on-demand video to viewers worldwide.",
     list: [
       {
         heading: "Upload any common video format",
