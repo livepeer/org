@@ -4,9 +4,11 @@ import PrimerBanner from "components/sections/home/primer-banner";
 import CommunitySection from "components/sections/home/community";
 import PageLayout from "components/layouts/page";
 import { useEffect } from "react";
+import OneAPI from "components/sections/home/one-api";
 import StartBuilding from "components/sections/home/start-building";
 import Ecosystem from "components/sections/home/ecosystem";
 import HaveACallSection from "components/sections/home/have-a-call";
+import WhyLivepeerSection from "components/sections/home/why-livepeer";
 import {
   getProtocolStatistics,
   getTotalActiveNodes,
@@ -16,7 +18,6 @@ import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
 
 const HomePage = ({
   youtubeVideos,
@@ -56,11 +57,23 @@ const HomePage = ({
         cta={t("page-home-get-started")}
         videoLabel={t("page-home-live")}
       />
+      <OneAPI />
       <StartBuilding />
+      <WhyLivepeerSection
+        label="Why Livepeer"
+        title="A globally distributed, open infrastructure network"
+        subtitle="What makes Livepeer so scalable, reliable, and affordable? Enter the Livepeer Network, an open and permissionless peer-to-peer network of independent operators intelligently routing and processing video."
+      />
+      <PrimerBanner
+        label={t("page-home-primer")}
+        title={t("page-home-primer-title")}
+        subtitle={t("page-home-primer-text")}
+        ctaText={t("page-home-primer-cta")}
+      />
       <Ecosystem
         label="The Livepeer Ecosystem"
         title="A growing network of open video apps"
-        subtitle="By combining Livepeer’s open video API with onchain primitives and open social protocols, developers are disrupting the way creators own and monetize their video content, creating new and novel video experiences across music, live entertainment, shopping, gaming and more."
+        subtitle="By combining Livepeer’s open video API with other emerging open protocols in social and onchain finance, developers are disrupting the way creators own and monetize their video content, enabling novel experiences in music, entertainment, shopping, gaming, and beyond."
         items={[
           {
             title: "Lenstube",
@@ -109,7 +122,7 @@ const HomePage = ({
           },
         ]}
       />
-      <LetLivepeerDoSection
+      {/* <LetLivepeerDoSection
         label={t("page-home-get-started")}
         title={t("page-home-what-role")}
         subtitle={t("page-home-jump-in")}
@@ -121,33 +134,18 @@ const HomePage = ({
           title: t("page-home-video-miners"),
           description: t("page-home-video-miners-text"),
         }}
-      />
-      <PrimerBanner
-        label={t("page-home-primer")}
-        title={t("page-home-primer-title")}
-        subtitle={t("page-home-primer-text")}
-        ctaText={t("page-home-primer-cta")}
-      />
-      <LetTheNumbersTalkSection
-        title={t("video-miners:page-video-miners-numbers")}
-        subtitle={t("video-miners:page-video-miners-numbers-text")}
-        label1={t("video-miners:page-video-miners-numbers-nodes-text")}
-        label2={t("video-miners:page-video-miners-numbers-fees-text")}
-        label3={t("video-miners:page-video-miners-numbers-cost-text")}
-        totalActiveNodes={totalActiveNodes}
-        totalMinutes={totalMinutes}
-        totalVolume={totalVolumeUSD}
-      />
+      /> */}
+
       <CommunitySection
         title={t("page-home-communities-title")}
         subtitle={t("page-home-communities-text")}
         label={t("page-home-communities")}
       />
-      <HaveACallSection
+      {/* <HaveACallSection
         title={t("page-home-call")}
         subtitle={t("page-home-call-text")}
         youtubeVideos={youtubeVideos}
-      />
+      /> */}
     </PageLayout>
   );
 };
