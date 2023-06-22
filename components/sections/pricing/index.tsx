@@ -324,7 +324,7 @@ const PricingCardsContainer = () => {
                   textAlign: "center",
                   width: "100%",
                 }}>
-                *Pay as you go past alloted minutes
+                *Pay as you go past allotted minutes
               </Box>
             </PricingCardContent>
           </Box>
@@ -470,7 +470,7 @@ const PricingCardsContainer = () => {
                   textAlign: "center",
                   width: "100%",
                 }}>
-                *Pay as you go past alloted minutes
+                *Pay as you go past allotted minutes
               </Box>
             </PricingCardContent>
           </Box>
