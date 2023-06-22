@@ -6,7 +6,7 @@ const tools: BasicCardProps[] = [
   {
     title: "🎙️ Livepeer Studio",
     description:
-      "Livepeer Studio is your dashboard for building onchain and open social video experiences with the Livepeer API.",
+      "Your all-in-one dashboard for building, broadcasting, and publishing video on the open internet with Livepeer Protocol.",
     linkProps: {
       link: {
         label: "livepeer.studio",

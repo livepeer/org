@@ -9,7 +9,6 @@ import {
   MdAnchor,
   MdAllInclusive,
   MdAutoFixHigh,
-  MdTaskAlt,
 } from "react-icons/md";
 
 type Props = {
@@ -57,6 +56,7 @@ const Value = ({ title, description, icon }: Props) => (
         sx={{
           textAlign: "center",
           color: "text",
+          lineHeight: 1.7,
         }}>
         {description}
       </Text>
