@@ -27,7 +27,7 @@ const workflows = [
       {
         heading: "Build low-latency livestreaming experiences",
         subheading:
-          "A livestreaming latency as low as 2 seconds enables a natural interactive exchange between audiences and content creators.",
+          "Latency as low as two seconds enables natural interactive experiences between audiences and content creators.",
       },
       {
         heading: "Get real-time viewership and performance health",
@@ -86,12 +86,21 @@ const TT = ({ title, description, value }) => (
     css={{
       px: "$4",
       py: "$5",
-      maxWidth: 375,
       border: 0,
       display: "block",
       height: "auto",
       borderRadius: "$4 !important",
-      cursor: "pointer",
+      mb: "$3",
+      width: "100%",
+      boxShadow:
+        "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)",
+      "@bp2": {
+        maxWidth: 375,
+        cursor: "pointer",
+        boxShadow: "none",
+        bc: "transparent",
+        color: "$hiContrast",
+      },
     }}
     value={value}>
     <Box
@@ -125,26 +134,26 @@ export const StartBuilding = () => (
           experiences with one open and easy-to-use API — reliably, affordably,
           at scale, and with zero vendor lock-in.
         </Heading>
-        {/* <A
-          variant="buttons.neutral"
-          href="https://docs.livepeer.org"
-          target="_blank"
-          sx={{ mb: 6 }}>
-          Read the docs
-          <i sx={{ ml: 1, fontSize: 4 }}>
-            <FiArrowUpRight />
-          </i>
-        </A> */}
       </Box>
       <Tabs
         defaultValue="tab-0"
         orientation="vertical"
-        css={{ maxWidth: 1060, mx: "auto" }}>
+        css={{
+          maxWidth: 1060,
+          mx: "auto",
+          justifyContent: "center",
+        }}>
         <TabsList
           css={{
+            width: "100%",
+            "@bp2": {
+              width: "auto",
+            },
             '[data-orientation="vertical"][data-state="active"]': {
-              bc: "black",
-              color: "white",
+              "@bp2": {
+                bc: "black",
+                color: "white",
+              },
             },
           }}>
           {workflows.map(({ title, description }, i) => (
@@ -159,7 +168,15 @@ export const StartBuilding = () => (
         {workflows.map(({ list }, i) => {
           return (
             <TabsContent
-              css={{ mt: "$4", ml: "$9", maxWidth: 620 }}
+              css={{
+                mt: "$4",
+                ml: "$9",
+                maxWidth: 620,
+                display: "none",
+                "@bp2": {
+                  display: "block",
+                },
+              }}
               value={`tab-${i}`}>
               {list?.map(({ heading, subheading }, i) => {
                 return (

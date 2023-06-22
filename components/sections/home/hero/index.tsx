@@ -154,7 +154,8 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
 
           <A
             variant="buttons.neutral"
-            href={`#start-building`}
+            href="https://livepeer.studio"
+            target="_blank"
             sx={{
               zIndex: "general",
               position: "relative",
@@ -164,12 +165,12 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
           <A
             target="_blank"
             variant="buttons.transparent"
-            href="https://discord.gg/livepeer"
+            href="https://docs.livepeer.org"
             sx={{
               zIndex: "general",
               position: "relative",
             }}>
-            Join Discord
+            Read the docs
             <i sx={{ ml: 1, fontSize: 4 }}>
               <FiArrowUpRight />
             </i>

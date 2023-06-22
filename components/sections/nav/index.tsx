@@ -189,6 +189,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <NetworkDropdown />
               </NavLink>
             )}
+
             {/* {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <EcosystemDropdown />
@@ -205,11 +206,28 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 </NavLink>
               </Link>
             )}
+
+            {!isPrimer && (
+              <NavLink
+                sx={{
+                  display: ["none", "none", "none", "flex"],
+                  alignItems: "center",
+                  marginRight: "26px !important",
+                }}
+                className="nav-link"
+                href="https://discord.gg/livepeer"
+                data-dark={isDark}
+                target="_blank">
+                Discord
+              </NavLink>
+            )}
+
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <LanguageDropdown />
               </NavLink>
             )}
+
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <A
@@ -217,12 +235,10 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                   href="https://livepeer.studio"
                   target="_blank">
                   Open Studio
-                  <i sx={{ ml: 1, fontSize: 4 }}>
-                    <FiArrowUpRight />
-                  </i>
                 </A>
               </NavLink>
             )}
+
             {isPrimer && (
               <Box
                 sx={{

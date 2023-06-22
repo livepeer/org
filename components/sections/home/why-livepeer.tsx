@@ -46,6 +46,7 @@ const Value = ({ title, description, icon }: Props) => (
       <Heading
         variant="heading.5"
         sx={{
+          color: "text",
           fontWeight: "bold",
           whiteSpace: "nowrap",
           marginBottom: 3,
@@ -81,7 +82,7 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
     {
       title: "Performant",
       description:
-        "The Livepeer Network delivers outstanding performance by leveraging independent, peer-to-peer infrastructure providers transmitting high-quality video at astonishing speeds.",
+        "Deliver outstanding performance by leveraging the network's highly competitive infrastructure providers transmitting high-quality video at astonishing speeds.",
       icon: <MdElectricBolt />,
     },
     {
@@ -99,7 +100,7 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
     {
       title: "Easy-to-use",
       description:
-        "Livepeer Protocol untangles the intricate web of video infrastructure workflows, offering developers one unified and intuitive API that can fulfill all video application requirements.",
+        "The Livepeer API untangles the intricate web of video infrastructure workflows, offering developers one unified and intuitive API that can fulfill all video application requirements.",
       icon: <MdAutoFixHigh />,
     },
   ];
@@ -110,7 +111,13 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
       titleLabel={label}
       pushSx={{ pb: 100 }}>
       <Grid
-        columns={"repeat(3, fit-content(260px))"}
+        columns={[
+          null,
+          null,
+          "repeat(2, fit-content(260px))",
+          "repeat(2, fit-content(260px))",
+          "repeat(3, fit-content(260px))",
+        ]}
         gap={["100px", null, null, "60px"]}
         sx={{
           mx: "auto",
