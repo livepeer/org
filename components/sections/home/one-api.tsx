@@ -120,7 +120,7 @@ export const StartBuilding = () => (
   <Box sx={{ backgroundColor: "muted" }} id="start-building">
     <Container variant="section" sx={{ pt: 100 }}>
       <Box sx={{ textAlign: "center" }}>
-        <Text variant="section.titleLabel">Built for you workflow</Text>
+        <Text variant="section.titleLabel">Built for your workflow</Text>
         <Heading
           variant="section.titleFade"
           sx={{

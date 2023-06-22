@@ -18,6 +18,7 @@ import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
 
 const HomePage = ({
   youtubeVideos,
@@ -56,6 +57,16 @@ const HomePage = ({
         subtitle={t("page-home-intro")}
         cta={t("page-home-get-started")}
         videoLabel={t("page-home-live")}
+      />
+      <LetTheNumbersTalkSection
+        title={t("video-miners:page-video-miners-numbers")}
+        subtitle={t("video-miners:page-video-miners-numbers-text")}
+        label1={t("video-miners:page-video-miners-numbers-nodes-text")}
+        label2={t("video-miners:page-video-miners-numbers-fees-text")}
+        label3={t("video-miners:page-video-miners-numbers-cost-text")}
+        totalActiveNodes={totalActiveNodes}
+        totalMinutes={totalMinutes}
+        totalVolume={totalVolumeUSD}
       />
       <OneAPI />
       <StartBuilding />
