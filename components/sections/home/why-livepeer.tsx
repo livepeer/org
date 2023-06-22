@@ -6,9 +6,9 @@ import {
   MdPublic,
   MdAttachMoney,
   MdElectricBolt,
-  MdAnchor,
   MdAllInclusive,
-  MdAutoFixHigh,
+  MdSentimentSatisfied,
+  MdOutlineVerifiedUser,
 } from "react-icons/md";
 
 type Props = {
@@ -89,7 +89,7 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
       title: "Reliable",
       description:
         "Keep your application’s video streams flowing 24/7 with the world’s most resilient and decentralized video infrastructure network.",
-      icon: <MdAnchor />,
+      icon: <MdOutlineVerifiedUser />,
     },
     {
       title: "Scalable",
@@ -101,7 +101,7 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
       title: "Easy-to-use",
       description:
         "The Livepeer API untangles the intricate web of video infrastructure workflows, offering developers one unified and intuitive API that can fulfill all video application requirements.",
-      icon: <MdAutoFixHigh />,
+      icon: <MdSentimentSatisfied />,
     },
   ];
   return (
