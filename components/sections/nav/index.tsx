@@ -212,7 +212,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 sx={{
                   display: ["none", "none", "none", "flex"],
                   alignItems: "center",
-                  marginRight: "26px !important",
                 }}
                 className="nav-link"
                 href="https://discord.gg/livepeer"
