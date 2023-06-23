@@ -54,7 +54,7 @@ export const StartBuilding = () => (
           A fully integrated suite of open-source developer tools
         </Heading>
         <Heading variant="section.subtitle" sx={{ mb: 5, maxWidth: 800 }}>
-          Livepeer protocol contributors are continuously solving the most
+          Livepeer Protocol contributors are continuously solving the most
           challenging problems in video streaming and wrapping it all up in a
           thoughtfully designed, fully-integrated suite of developer tools and
           dashboards.
