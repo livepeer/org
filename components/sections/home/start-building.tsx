@@ -9,7 +9,7 @@ const tools: BasicCardProps[] = [
     linkProps: {
       link: {
         label: "livepeer.studio",
-        href: "https://livepeer.studio",
+        href: "https://docs.livepeer.org/guides/developing/quickstart",
         isExternal: true,
       },
     },
