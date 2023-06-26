@@ -132,7 +132,7 @@ export const StartBuilding = () => (
         <Heading variant="section.subtitle" sx={{ mb: 100, maxWidth: 800 }}>
           Instantly upload, process, store, and deliver live and on-demand video
           experiences with one open and easy-to-use API — reliably, affordably,
-          at scale, and with zero vendor lock-in.
+          at scale, and with no vendor lock-in.
         </Heading>
       </Box>
       <Tabs
