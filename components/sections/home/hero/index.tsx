@@ -160,7 +160,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               zIndex: "general",
               position: "relative",
             }}>
-            Get started
+            Start building
           </A>
           <A
             target="_blank"
