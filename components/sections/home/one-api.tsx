@@ -58,7 +58,7 @@ const workflows = [
           "Leveraging real-time engagement metrics such as view counts and watch time.",
       },
       {
-        heading: "Optimizing the viewer experience",
+        heading: "Optimize the viewer experience",
         subheading:
           "Monitor and optimize the viewer experience with performance metrics such as error rate, time to first frame, and more.",
       },
