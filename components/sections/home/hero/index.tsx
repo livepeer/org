@@ -160,7 +160,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               zIndex: "general",
               position: "relative",
             }}>
-            Launch Studio
+            Get started
           </A>
           <A
             target="_blank"

@@ -271,10 +271,11 @@ const theme = {
       },
       titleFade: {
         variant: "text.heading.2",
-        fontSize: ["48px", "60px"],
+        fontSize: ["36px", "60px"],
         fontFamily: "body",
         mb: [3, 4],
         maxWidth: "780px",
+        letterSpacing: ["-1px", "-1px", "-2px"],
         mx: "auto",
         background: "linear-gradient(137.59deg, #4a524e 20%, #131418 75%)",
         WebkitBackgroundClip: "text",

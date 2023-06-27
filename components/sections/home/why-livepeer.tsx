@@ -122,7 +122,6 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
         sx={{
           mx: "auto",
           width: "100%",
-          left: [-3, null, null, 0],
           px: [4, null, null, 0],
           position: "relative",
           justifyContent: "center",

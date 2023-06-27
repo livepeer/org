@@ -98,8 +98,7 @@ const TT = ({ title, value }) => (
       fontSize: "$4",
       fontWeight: 600,
       color: "#71717a",
-      py: "$4",
-      px: "$4",
+      p: "$5",
       cursor: "pointer",
       minWidth: 130,
     }}
@@ -113,8 +112,11 @@ export const StartBuilding = () => (
     <Container variant="section" sx={{ pt: 100 }}>
       <Box sx={{ textAlign: "center" }}>
         <Heading
-          variant="section.subtitle"
-          sx={{ marginBottom: 20, fontWeight: 600 }}>
+          variant="section.titleFade"
+          sx={{
+            marginBottom: 20,
+            maxWidth: 600,
+          }}>
           One API for all your video workflows
         </Heading>
       </Box>
@@ -132,6 +134,9 @@ export const StartBuilding = () => (
             padding: "$1",
             bc: "#f4f4f5",
             borderRadius: 8,
+            '[role="separator"]': {
+              display: "none",
+            },
             '[data-state="active"]': {
               borderRadius: 6,
               bc: "white",
@@ -148,16 +153,28 @@ export const StartBuilding = () => (
           return (
             <TabsContent value={`tab-${i}`}>
               <Heading
-                variant="section.titleFade"
                 sx={{
-                  maxWidth: 720,
+                  textAlign: "center",
+                  maxWidth: 500,
+                  letterSpacing: "-1px",
                   mx: "auto",
                   marginTop: [5, 5, 5, 5],
                   marginBottom: [5, 5, 5, 80],
                   position: "relative",
+                  fontSize: "32px",
+                  lineHeight: 1.3,
+                  fontWeight: 450,
                 }}>
                 {workflows[i].description}
               </Heading>
+              <Box
+                sx={{
+                  height: "1px",
+                  width: "100%",
+                  background:
+                    "linear-gradient(var(--direction),transparent,rgba(0,0,0,0.1) 50%,transparent)",
+                }}
+              />
               <Grid
                 columns={[
                   `repeat(1, fit-content(100%))`,
