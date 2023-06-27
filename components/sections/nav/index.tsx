@@ -30,7 +30,7 @@ type LinkType = {
   asPath?: string;
 };
 
-const navHeight = "72px";
+const navHeight = "0";
 
 export type NavProps = {
   isInmersive?: boolean;
