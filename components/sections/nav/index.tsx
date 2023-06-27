@@ -12,7 +12,7 @@ import {
 } from "theme-ui";
 import LivepeerLogo from "components/svgs/livepeer-logo";
 import { useEffect, useCallback, useState } from "react";
-import { FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
+import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import TopNotification, { TopNotificationProps } from "./top-notification";
 import Menu from "components/sections/primer/Menu";
@@ -68,13 +68,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     },
   };
 
-  const links: LinkType[] = [
-    {
-      label: t("nav-about"),
-      href: "/about",
-    },
-  ];
-
   const isDark = background === "black" || background === "dark";
   let bg: string;
   let color: string;
@@ -121,7 +114,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
 
   return (
     <>
-      {topNotification && <TopNotification {...topNotification} />}
+      {/* {topNotification && <TopNotification {...topNotification} />} */}
       <Box
         sx={{
           bg,
@@ -156,29 +149,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               ".nav-link:not(:last-child)": { mr: 36 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
-            {!isPrimer &&
-              links.map((link) =>
-                link.isExternal ? (
-                  <NavLink
-                    className="nav-link"
-                    key={`desktop-nav-link-${link.label}`}
-                    href={link.href}
-                    data-dark={isDark}
-                    target="_blank">
-                    {link.label}
-                  </NavLink>
-                ) : (
-                  <Link
-                    key={`desktop-nav-link-${link.label}`}
-                    href={link.href}
-                    as={link.asPath}
-                    passHref>
-                    <NavLink className="nav-link" data-dark={isDark}>
-                      {link.label}
-                    </NavLink>
-                  </Link>
-                )
-              )}
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <DeveloperDropdown />
@@ -189,6 +159,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <NetworkDropdown />
               </NavLink>
             )}
+
             {/* {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <EcosystemDropdown />
@@ -205,24 +176,38 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 </NavLink>
               </Link>
             )}
+
+            {!isPrimer && (
+              <NavLink
+                sx={{
+                  display: ["none", "none", "none", "flex"],
+                  alignItems: "center",
+                }}
+                className="nav-link"
+                href="https://discord.gg/livepeer"
+                data-dark={isDark}
+                target="_blank">
+                Discord
+              </NavLink>
+            )}
+
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <LanguageDropdown />
               </NavLink>
             )}
+
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <A
                   variant="buttons.neutral"
                   href="https://livepeer.studio"
                   target="_blank">
-                  Open Studio
-                  <i sx={{ ml: 1, fontSize: 4 }}>
-                    <FiArrowUpRight />
-                  </i>
+                  Go to dashboard
                 </A>
               </NavLink>
             )}
+
             {isPrimer && (
               <Box
                 sx={{
@@ -299,18 +284,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               height: `calc(100vh - ${navHeight})`,
             }}>
             <Flex sx={{ flexDirection: "column" }}>
-              <Link href="/about" passHref>
-                <A
-                  sx={{
-                    color,
-                    textAlign: "center",
-                    fontSize: 6,
-                    fontWeight: 600,
-                  }}>
-                  About
-                </A>
-              </Link>
-              <Link href="/about" passHref>
+              <Link href="/developers" passHref>
                 <A
                   sx={{
                     color,
@@ -350,7 +324,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 sx={{ mb: 3 }}
                 onClick={() => {
                   setMobileMenuIsOpen(false);
-                  router.push("/#start-building");
+                  router.push("https://livepeer.studio");
                 }}>
                 {t("nav-start-building")}
               </Button>

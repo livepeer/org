@@ -4,8 +4,8 @@ import StatsGrid from "components/layouts/stats-grid";
 import { nFormatter } from "lib/document-helpers";
 
 const LetTheNumbersTalkSection = ({
-  title,
-  subtitle,
+  title = null,
+  subtitle = null,
   totalActiveNodes,
   totalVolume,
   totalMinutes,
@@ -32,8 +32,8 @@ const LetTheNumbersTalkSection = ({
 
   return (
     <SectionLayout
-      title={title}
-      subtitle={subtitle}
+      title={title ? title : null}
+      subtitle={title ? title : null}
       pushSx={{ py: ["80px", null, null, "160px"] }}>
       <StatsGrid stats={stats} />
     </SectionLayout>

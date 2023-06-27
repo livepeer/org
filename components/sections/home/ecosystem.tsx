@@ -4,7 +4,12 @@ import ImageCard from "components/primitives/cards/image";
 import KeenSliderGrid from "components/layouts/keen-slider-grid";
 
 const EcosystemSection = ({ title, subtitle, label, items }) => (
-  <SectionLayout titleLabel={label} title={title} subtitle={subtitle}>
+  <SectionLayout
+    background="muted"
+    titleLabel={label}
+    title={title}
+    subtitle={subtitle}
+    pushSx={{ pt: 100 }}>
     <KeenSliderGrid withArrowControls>
       {items.map((item, i) => (
         <ImageCard

@@ -4,7 +4,7 @@ import PrimerSvg from "components/svgs/primer";
 import Link from "next/link";
 
 const PrimerBanner = ({ label, title, subtitle, ctaText }) => (
-  <Box sx={{ bg: "muted", px: 3, py: "80px" }}>
+  <Box sx={{ px: 3, pt: 20, pb: 100 }}>
     <Container
       variant="section"
       sx={{
