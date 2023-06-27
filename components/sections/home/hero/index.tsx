@@ -6,7 +6,7 @@ import Globe from "./globe";
 import VideoSwapper from "./video-swapper";
 import GlobeDot from "./globe-dots";
 import Divider from "components/primitives/divider";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 const playbackIds = [
   "82401hx25ekwnbcy",
@@ -171,9 +171,6 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               position: "relative",
             }}>
             Read the docs
-            <i sx={{ ml: 1, fontSize: 4 }}>
-              <FiArrowUpRight />
-            </i>
           </A>
         </span>
 

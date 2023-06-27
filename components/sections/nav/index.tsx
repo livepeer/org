@@ -12,7 +12,7 @@ import {
 } from "theme-ui";
 import LivepeerLogo from "components/svgs/livepeer-logo";
 import { useEffect, useCallback, useState } from "react";
-import { FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
+import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import TopNotification, { TopNotificationProps } from "./top-notification";
 import Menu from "components/sections/primer/Menu";
@@ -203,7 +203,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                   variant="buttons.neutral"
                   href="https://livepeer.studio"
                   target="_blank">
-                  Launch Studio
+                  Go to dashboard
                 </A>
               </NavLink>
             )}
@@ -324,7 +324,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 sx={{ mb: 3 }}
                 onClick={() => {
                   setMobileMenuIsOpen(false);
-                  router.push("/#start-building");
+                  router.push("https://livepeer.studio");
                 }}>
                 {t("nav-start-building")}
               </Button>
