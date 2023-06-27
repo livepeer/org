@@ -42,8 +42,8 @@ const workflows = [
   {
     title: "On-demand",
     description: (
-      <Box sx={{ maxWidth: 370, mx: "auto" }}>
-        Deliver on-demand video to viewers worldwide.
+      <Box sx={{ maxWidth: 480, mx: "auto" }}>
+        Deliver high-quality on-demand video experiences to viewers worldwide.
       </Box>
     ),
     list: [
