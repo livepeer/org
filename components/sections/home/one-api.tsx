@@ -12,8 +12,9 @@ const workflows = [
     selected: true,
     title: "Live",
     description: (
-      <Box sx={{ maxWidth: 600, mx: "auto" }}>
-        Go live with just few lines of code.
+      <Box sx={{ maxWidth: 520, mx: "auto" }}>
+        Build live video experiences with just few lines of code — affordably,
+        at scale, and with no vendor lock-in.
       </Box>
     ),
     list: [
@@ -40,7 +41,11 @@ const workflows = [
   },
   {
     title: "On-demand",
-    description: "Deliver on-demand video experiences to viewers worldwide.",
+    description: (
+      <Box sx={{ maxWidth: 370, mx: "auto" }}>
+        Deliver on-demand video to viewers worldwide.
+      </Box>
+    ),
     list: [
       {
         heading: "Upload any common video format",
@@ -66,8 +71,11 @@ const workflows = [
   },
   {
     title: "Transcode",
-    description:
-      "Tap into a global network of always-on transcoding providers.",
+    description: (
+      <Box sx={{ maxWidth: 500, mx: "auto" }}>
+        Tap into a global network of always-on transcoding providers.
+      </Box>
+    ),
     list: [
       {
         heading: "Write results to any S3-compatible storage provider",
@@ -155,7 +163,6 @@ export const StartBuilding = () => (
               <Heading
                 sx={{
                   textAlign: "center",
-                  maxWidth: 500,
                   letterSpacing: "-1px",
                   mx: "auto",
                   marginTop: [5, 5, 5, 5],
