@@ -279,6 +279,7 @@ const theme = {
         background: "linear-gradient(137.59deg, #4a524e 20%, #131418 75%)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
+        paddingBottom: "10px",
       },
       subtitle: {
         variant: "text.heading.5",

@@ -1,4 +1,4 @@
-import { Container, Box, Heading, Text, Flex } from "theme-ui";
+import { Container, Box, Heading, Text, Flex, Grid } from "theme-ui";
 import {
   Tabs,
   TabsList,
@@ -11,8 +11,11 @@ const workflows = [
   {
     selected: true,
     title: "Live",
-    description:
-      "Implement the entire video workflow required for livestreaming with just few lines of code.",
+    description: (
+      <Box sx={{ maxWidth: 600, mx: "auto" }}>
+        Go live with just few lines of code.
+      </Box>
+    ),
     list: [
       {
         heading: "Go live effortlessly from any source",
@@ -37,8 +40,7 @@ const workflows = [
   },
   {
     title: "On-demand",
-    description:
-      "Deliver instant, dependable, and high-quality on-demand video to viewers worldwide.",
+    description: "Deliver on-demand video experiences to viewers worldwide.",
     list: [
       {
         heading: "Upload any common video format",
@@ -51,16 +53,21 @@ const workflows = [
           "Livepeer generates multiple video resolutions ensuring an optimized streaming experience based on the user's device and available bandwidth.",
       },
       {
-        heading: "Understand your audience with video engagement analytics",
+        heading: "Understand your audience",
         subheading:
-          "Leveraging real-time engagement metrics such as view counts and watch time, as well as performance metrics such as error rate, time to first frame, and more.",
+          "Leveraging real-time engagement metrics such as view counts and watch time.",
+      },
+      {
+        heading: "Optimizing the viewer experience",
+        subheading:
+          "Monitor and optimize the viewer experience with performance metrics such as error rate, time to first frame, and more.",
       },
     ],
   },
   {
     title: "Transcode",
     description:
-      "Tap into Livepeer’s global network of always-on transcoding providers.",
+      "Tap into a global network of always-on transcoding providers.",
     list: [
       {
         heading: "Write results to any S3-compatible storage provider",
@@ -81,38 +88,23 @@ const workflows = [
   },
 ];
 
-const TT = ({ title, description, value }) => (
+const TT = ({ title, value }) => (
   <TabsTrigger
     css={{
-      px: "$4",
-      py: "$5",
+      transitionProperty: "all",
+      transitionTimingFunction: "cubic-bezier(.4,0,.2,1)",
+      transitionDuration: ".15s",
       border: 0,
-      display: "block",
-      height: "auto",
-      borderRadius: "$4 !important",
-      mb: "$3",
-      width: "100%",
-      boxShadow:
-        "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)",
-      "@bp2": {
-        maxWidth: 375,
-        cursor: "pointer",
-        boxShadow: "none",
-        bc: "transparent",
-        color: "$hiContrast",
-      },
+      fontSize: "$4",
+      fontWeight: 600,
+      color: "#71717a",
+      py: "$4",
+      px: "$4",
+      cursor: "pointer",
+      minWidth: 130,
     }}
     value={value}>
-    <Box
-      sx={{
-        letterSpacing: "-1.5px",
-        fontSize: 40,
-        fontWeight: 800,
-        marginBottom: 3,
-      }}>
-      {title}
-    </Box>
-    <Text sx={{ fontSize: 15, lineHeight: 1.5 }}>{description}</Text>
+    <Box>{title}</Box>
   </TabsTrigger>
 );
 
@@ -120,24 +112,14 @@ export const StartBuilding = () => (
   <Box sx={{ backgroundColor: "muted" }} id="start-building">
     <Container variant="section" sx={{ pt: 100 }}>
       <Box sx={{ textAlign: "center" }}>
-        <Text variant="section.titleLabel">Built for your workflow</Text>
         <Heading
-          variant="section.titleFade"
-          sx={{
-            lineHeight: 1,
-            position: "relative",
-          }}>
-          One open API for all your video workflows
-        </Heading>
-        <Heading variant="section.subtitle" sx={{ mb: 100, maxWidth: 800 }}>
-          Instantly upload, process, store, and deliver live and on-demand video
-          experiences with one open and easy-to-use API — reliably, affordably,
-          at scale, and with no vendor lock-in.
+          variant="section.subtitle"
+          sx={{ marginBottom: 20, fontWeight: 600 }}>
+          One API for all your video workflows
         </Heading>
       </Box>
       <Tabs
         defaultValue="tab-0"
-        orientation="vertical"
         css={{
           maxWidth: 1060,
           mx: "auto",
@@ -145,66 +127,73 @@ export const StartBuilding = () => (
         }}>
         <TabsList
           css={{
-            width: "100%",
-            "@bp2": {
-              width: "auto",
-            },
-            '[data-orientation="vertical"][data-state="active"]': {
-              "@bp2": {
-                bc: "black",
-                color: "white",
-              },
+            alignSelf: "center",
+            width: "auto",
+            padding: "$1",
+            bc: "#f4f4f5",
+            borderRadius: 8,
+            '[data-state="active"]': {
+              borderRadius: 6,
+              bc: "white",
+              color: "$hiContrast",
+              boxShadow:
+                "0px 30px 30px rgba(0, 0, 0, 0.02), 0px 0px 8px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.05)",
             },
           }}>
-          {workflows.map(({ title, description }, i) => (
-            <TT
-              key={`tab-${i}`}
-              value={`tab-${i}`}
-              title={title}
-              description={description}
-            />
+          {workflows.map(({ title }, i) => (
+            <TT key={`tab-${i}`} value={`tab-${i}`} title={title} />
           ))}
         </TabsList>
         {workflows.map(({ list }, i) => {
           return (
-            <TabsContent
-              css={{
-                mt: "$4",
-                ml: "$9",
-                maxWidth: 620,
-                display: "none",
-                "@bp2": {
-                  display: "block",
-                },
-              }}
-              value={`tab-${i}`}>
-              {list?.map(({ heading, subheading }, i) => {
-                return (
-                  <Box sx={{ marginBottom: 4 }}>
-                    <Flex>
-                      <Box
-                        sx={{
-                          fontSize: "22px",
-                          marginRight: 24,
-                          marginTop: "3px",
-                        }}>
-                        <MdTaskAlt />
-                      </Box>
-                      <Box>
-                        <Text
+            <TabsContent value={`tab-${i}`}>
+              <Heading
+                variant="section.titleFade"
+                sx={{
+                  maxWidth: 720,
+                  mx: "auto",
+                  marginTop: [5, 5, 5, 5],
+                  marginBottom: [5, 5, 5, 80],
+                  position: "relative",
+                }}>
+                {workflows[i].description}
+              </Heading>
+              <Grid
+                columns={[
+                  `repeat(1, fit-content(100%))`,
+                  `repeat(1, fit-content(100%))`,
+                  `repeat(2, fit-content(100%))`,
+                ]}
+                gap={[40]}>
+                {list?.map(({ heading, subheading }, i) => {
+                  return (
+                    <Box>
+                      <Flex>
+                        <Box
                           sx={{
-                            fontWeight: 600,
-                            marginBottom: 1,
-                            fontSize: 18,
+                            fontSize: "22px",
+                            marginRight: 24,
+                            marginTop: "3px",
+                            marginBottom: 40,
                           }}>
-                          {heading}
-                        </Text>
-                        <Text sx={{ fontSize: 18 }}>{subheading}</Text>
-                      </Box>
-                    </Flex>
-                  </Box>
-                );
-              })}
+                          <MdTaskAlt />
+                        </Box>
+                        <Box>
+                          <Text
+                            sx={{
+                              fontWeight: 600,
+                              marginBottom: 1,
+                              fontSize: 18,
+                            }}>
+                            {heading}
+                          </Text>
+                          <Text sx={{ fontSize: 18 }}>{subheading}</Text>
+                        </Box>
+                      </Flex>
+                    </Box>
+                  );
+                })}
+              </Grid>
             </TabsContent>
           );
         })}

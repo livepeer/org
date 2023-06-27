@@ -68,13 +68,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     },
   };
 
-  const links: LinkType[] = [
-    {
-      label: t("nav-about"),
-      href: "/about",
-    },
-  ];
-
   const isDark = background === "black" || background === "dark";
   let bg: string;
   let color: string;
@@ -156,29 +149,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               ".nav-link:not(:last-child)": { mr: 36 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
-            {!isPrimer &&
-              links.map((link) =>
-                link.isExternal ? (
-                  <NavLink
-                    className="nav-link"
-                    key={`desktop-nav-link-${link.label}`}
-                    href={link.href}
-                    data-dark={isDark}
-                    target="_blank">
-                    {link.label}
-                  </NavLink>
-                ) : (
-                  <Link
-                    key={`desktop-nav-link-${link.label}`}
-                    href={link.href}
-                    as={link.asPath}
-                    passHref>
-                    <NavLink className="nav-link" data-dark={isDark}>
-                      {link.label}
-                    </NavLink>
-                  </Link>
-                )
-              )}
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <DeveloperDropdown />
@@ -233,7 +203,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                   variant="buttons.neutral"
                   href="https://livepeer.studio"
                   target="_blank">
-                  Open Studio
+                  Launch Studio
                 </A>
               </NavLink>
             )}
@@ -314,18 +284,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               height: `calc(100vh - ${navHeight})`,
             }}>
             <Flex sx={{ flexDirection: "column" }}>
-              <Link href="/about" passHref>
-                <A
-                  sx={{
-                    color,
-                    textAlign: "center",
-                    fontSize: 6,
-                    fontWeight: 600,
-                  }}>
-                  About
-                </A>
-              </Link>
-              <Link href="/about" passHref>
+              <Link href="/developers" passHref>
                 <A
                   sx={{
                     color,
