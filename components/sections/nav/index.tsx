@@ -114,7 +114,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
 
   return (
     <>
-      {topNotification && <TopNotification {...topNotification} />}
+      {/* {topNotification && <TopNotification {...topNotification} />} */}
       <Box
         sx={{
           bg,
