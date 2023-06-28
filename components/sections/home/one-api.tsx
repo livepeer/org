@@ -116,7 +116,7 @@ const TT = ({ title, value }) => (
 );
 
 export const StartBuilding = () => (
-  <Box sx={{ backgroundColor: "muted" }} id="start-building">
+  <Box id="start-building">
     <Container variant="section" sx={{ pt: 100 }}>
       <Box sx={{ textAlign: "center" }}>
         <Heading

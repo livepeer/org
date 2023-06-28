@@ -41,7 +41,7 @@ const tools: BasicCardProps[] = [
 ];
 
 export const StartBuilding = () => (
-  <Box id="start-building">
+  <Box sx={{ backgroundColor: "muted" }} id="start-building">
     <Container variant="section" sx={{ pt: 100, pb: 60 }}>
       <Box sx={{ textAlign: "center" }}>
         <Text variant="section.titleLabel">Designed for developers</Text>
