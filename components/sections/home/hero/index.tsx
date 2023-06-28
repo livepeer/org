@@ -90,9 +90,9 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "calc(100vh - 40px)",
+          height: "calc(100vh - 72px)",
           overflow: "visible",
-          pt: [20, 150],
+          pt: [20, 80],
           pb: 0,
           maxWidth: "100%",
         }}>
@@ -109,7 +109,11 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
               zIndex: "general",
               position: "relative",
             }}>
-            <Heading sx={{ variant: ["text.heading.2", "text.heading.1"] }}>
+            <Heading
+              sx={{
+                variant: ["text.heading.1", "text.heading.1", "text.heading.1"],
+                paddingBottom: [4, 0],
+              }}>
               {title ? (
                 title
               ) : (
@@ -143,7 +147,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
             <Heading variant="section.subtitle" sx={{ maxWidth: 845 }}>
               <Box
                 sx={{
-                  fontSize: "21px",
+                  fontSize: "20px",
                   lineHeight: "36px",
                 }}>
                 {" "}

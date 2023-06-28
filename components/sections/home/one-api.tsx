@@ -106,7 +106,7 @@ const TT = ({ title, value }) => (
       fontSize: "$4",
       fontWeight: 600,
       color: "#71717a",
-      p: "$5",
+      p: "$4",
       cursor: "pointer",
       minWidth: 130,
     }}
@@ -168,7 +168,7 @@ export const StartBuilding = () => (
                   marginTop: [5, 5, 5, 5],
                   marginBottom: [5, 5, 5, 80],
                   position: "relative",
-                  fontSize: "32px",
+                  fontSize: ["26px", "32px"],
                   lineHeight: 1.3,
                   fontWeight: 450,
                 }}>

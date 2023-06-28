@@ -19,6 +19,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
+import { Box } from "theme-ui";
 
 const HomePage = ({
   youtubeVideos,
@@ -48,16 +49,14 @@ const HomePage = ({
   };
 
   return (
-    <PageLayout
-      headProps={headProps}
-      navProps={{ isInmersive: true }}
-      pushContentSx={{ marginTop: "-72px" }}>
+    <PageLayout headProps={headProps} navProps={{ isInmersive: true }}>
       <HomeHero
         title={router.locale !== "en" && t("page-home-title")}
         subtitle={t("page-home-intro")}
         cta={t("page-home-get-started")}
         videoLabel={t("page-home-live")}
       />
+
       {/* <LetTheNumbersTalkSection
        
         label1={t("video-miners:page-video-miners-numbers-nodes-text")}

@@ -30,7 +30,7 @@ type LinkType = {
   asPath?: string;
 };
 
-const navHeight = "0";
+const navHeight = "72px";
 
 export type NavProps = {
   isInmersive?: boolean;
@@ -281,7 +281,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              height: `calc(100vh - ${navHeight})`,
+              height: `calc(100vh - 0)`,
             }}>
             <Flex sx={{ flexDirection: "column" }}>
               <Link href="/developers" passHref>
