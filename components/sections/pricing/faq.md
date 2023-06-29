@@ -17,6 +17,10 @@ on [Discord](https://discord.gg/livepeer).
 
 A credit card is not required to create an account.
 
+### **What happens if I exceed the allotted minutes for the Hacker plan?**
+
+If you exceed the allotted minutes for storage, transcode, or delivery usage on a Hacker account, you will be responsible for paying the overage according to our pay-as-you go unit pricing. At the end of the billing cycle when you exceed the Hacker plan limits, you will receive an email indicating that you must enter payment information within 3 days. If your invoice is not paid and we have not heard from you by the end of that period, your account will be suspended and you can reach out to support@livepeer.org to start the reactivation process.
+
 ### **What currencies does Livepeer Inc accept?**
 
 USD is the only currency accepted right now via the Livepeer Studio dashboard.
