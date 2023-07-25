@@ -107,10 +107,7 @@ export async function getStaticProps({ locale }) {
     participationRate,
   } = await getProtocolStatistics();
 
-  let ethGasStationResponse = await fetch(
-    "https://ethgasstation.info/json/ethgasAPI.json"
-  );
-  let { block_time } = await ethGasStationResponse.json();
+  const avgBlockTime = 14;
 
   return {
     props: {
@@ -143,10 +140,10 @@ export async function getStaticProps({ locale }) {
         }).format((inflation / 1000000000) * totalSupply),
         hoursPerRound: Intl.NumberFormat(locale, {
           maximumFractionDigits: 2,
-        }).format((block_time * 5760) / 60 / 60),
+        }).format((avgBlockTime * 5760) / 60 / 60),
         blockTime: Intl.NumberFormat(locale, {
           maximumFractionDigits: 2,
-        }).format(block_time),
+        }).format(avgBlockTime),
       },
     },
     revalidate: 1,
