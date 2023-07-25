@@ -57,7 +57,7 @@ const CardGrid = ({ bc = "white", title, heading, description, items }) => {
                     flexDirection: "column",
                     mb: "$4",
                   }}>
-                  <Box css={{ height: 140 }}>
+                  <Box css={{ height: 100 }}>
                     <Text
                       size={5}
                       css={{
