@@ -1,0 +1,111 @@
+{
+  "hero": {
+    "heading": "Super charge your social app with video",
+    "description": "Livepeer brings together everything you need to create, deliver, and scale live, on-demand, and realtime video without worrying about surprise costs or vendor lock-in. Organizations like Lens, Minds, and Orb use Livepeer to build custom video solutions.",
+    "image": {
+      "url": "https://i.imgur.com/KxKACw3.png",
+      "alt": "",
+      "width": 1052,
+      "height": 1328
+    },
+    "ctas": [
+      {
+        "title": "Start building",
+        "href": "https://livepeer.studio",
+        "isExternal": true,
+        "variant": "green"
+      },
+      {
+        "title": "Read the docs",
+        "href": "https://docs.livepeer.org",
+        "isExternal": true,
+        "variant": "default"
+      }
+    ]
+  },
+  "logos": [
+    {
+      "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735688-16a8c22b-adc5-49ee-8f97-bf16de5afcf2.svg",
+      "alt": "Lens"
+    },
+    {
+      "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735695-1277c885-4335-40e6-a495-73ab0d8a1838.svg",
+      "alt": "Orb"
+    },
+    {
+      "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735690-3e6d7091-84b5-4eeb-8fb9-b7b624131e48.svg",
+      "alt": "Minds"
+    }
+  ],
+  "features": {
+    "title": "Features",
+    "heading": "A complete video solution for the future of social",
+    "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
+    "reasons": [
+      {
+        "title": "🌐 Global performance",
+        "description": [
+          "0% median rebuffer rate",
+          "0.2s median TTFF",
+          "0% error rate on Livepeer player",
+          "0.09% error rate across all Players",
+          "29 Ingest POPs",
+          "102 edge locations (inc. CDN)"
+        ]
+      },
+      {
+        "title": "🔐 Access control",
+        "description": "Your content, your choice: choose the precise conditions under which a viewer is allowed to access content. Pick subscription conditions, add a token-gating solution like Lit or Unlock Protocol, or roll your own custom logic."
+      },
+      {
+        "title": "📊 Cross-Platform Analytics",
+        "description": "From watch time, to view counts, to viewer behavior and geography, creators are always looking for ways to gather insights and grow their reach. Using the Livepeer analytics API, creators can deeply understand their audience and you can understand your creators with just a few lines of code."
+      }
+    ]
+  },
+  "values": {
+    "title": "Designed for developers",
+    "heading": "Ship quickly with powerful, affordable, reliable, and easy-to-use APIs and developer tooling",
+    "items": [
+      {
+        "title": "🏁 Easy-to-use",
+        "description": "On average, developers can get Livepeer up and running in their social application in under a day.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "🧩 Modular",
+        "description": "Build with an API and a fully integrated suite of developer tools that compose seamlessly with modern video workflows.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "💸 Affordable",
+        "description": "Save 50 - 90% on your video infrastructure costs by switching to Livepeer and taking advantage of its competitive marketplace of infrastructure providers with access to over 70k GPUs.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "🚀 Scalable",
+        "description": "Deliver video globally, rapidly, and at scale with a decentralized network of always on infrastructure providers.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      }
+    ]
+  },
+  "caseStudy": {
+    "heading": "Rad Radio, in partnership with Lens, use Livepeer to build live music streaming social app",
+    "about": "Rad Radio is a live music streaming app where listeners can seamlessly tune in and share their listening experiences on Lens, a decentralized social protocol.",
+    "image": null,
+    "problem": "Rad Radio wanted a way to leverage the power of open video and open social to help musicians engage their global audiences unable to attend in person.",
+    "solution": "By leveraging Livepeer, Rad Radio was able build a platform where musicians could broadcast events globally and drive significantly more engagement.",
+    "testimonial": {
+      "name": "Christina Beltramini",
+      "company": "Aave Companies",
+      "quote": "Livepeer's decentralized video infrastructure provides powerful and reliable livestreaming technology for social applications looking to build live or on-demand video experiences.",
+      "role": "Head of Growth",
+      "image": null
+    },
+    "cta": {
+      "title": "Read the case study",
+      "external": true,
+      "href": "https://mirror.xyz/livepeer.eth/v1hT30NPogzB6ri4x8KWEvkAUpiEqCmoHU9dmyOtTe8"
+    }
+  }
+}

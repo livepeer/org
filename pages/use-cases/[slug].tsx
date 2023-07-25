@@ -1,17 +1,17 @@
 import Layout from "components/layouts/page";
 import Hero from "components/sections/hero";
 import Logos from "components/sections/logos";
-import CardGrid from "components/sections/card-grid";
-import Why from "components/sections/why";
+import Values from "components/sections/values";
+import Features from "components/sections/features";
 import CaseStudy from "components/sections/case-study";
 import Prefooter from "components/sections/prefooter";
 import { useRouter } from "next/router";
 import { Box } from "@livepeer/design-system";
 import { HeadProps } from "components/primitives/head";
-import data from "./data.json";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import fs from "fs";
 
-const UseCase = ({ hero, logos, why, cardGrid, caseStudy }) => {
+const UseCase = ({ hero, logos, features, values, caseStudy }) => {
   const { isFallback, asPath } = useRouter();
 
   const headProps: HeadProps = {
@@ -51,18 +51,18 @@ const UseCase = ({ hero, logos, why, cardGrid, caseStudy }) => {
       />
       <Logos logos={logos} />
       <Box css={{ mt: 80, bc: "$sage2" }}>
-        <Why
-          title={why.title}
-          heading={why.heading}
-          description={why.description}
-          reasons={why.reasons}
+        <Features
+          title={features.title}
+          heading={features.heading}
+          description={features.description}
+          reasons={features.reasons}
         />
       </Box>
-      <CardGrid
-        title={cardGrid.title}
-        heading={cardGrid.heading}
-        description={cardGrid.description}
-        items={cardGrid.items}
+      <Values
+        title={values.title}
+        heading={values.heading}
+        description={values.description}
+        items={values.items}
       />
       {caseStudy?.heading && (
         <Box css={{ bc: "$sage2" }}>
@@ -83,11 +83,12 @@ const UseCase = ({ hero, logos, why, cardGrid, caseStudy }) => {
 };
 
 export async function getStaticPaths() {
-  let paths = [];
+  const folder = "./pages/use-cases/content/";
+  const paths = [];
 
-  for (let i = 0; i < data.length; i++) {
-    paths.push({ params: { slug: data[i].slug.current } });
-  }
+  fs.readdirSync(folder).forEach((file) => {
+    paths.push({ params: { slug: file.slice(0, -5) } });
+  });
 
   return {
     fallback: true,
@@ -97,12 +98,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, locale }) {
   const { slug } = params;
-  const useCase = data.filter((obj) => {
-    return obj.slug.current === slug;
-  })[0];
+  const data = require(`./content/${slug}.json`);
+
   return {
     props: {
-      ...useCase,
+      ...data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
     revalidate: 1,

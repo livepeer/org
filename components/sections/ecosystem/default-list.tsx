@@ -50,7 +50,6 @@ export const DefaultList = ({ apps, title, subtitle, inverted, cardType }) => {
         }}>
         {/* eslint-disable-next-line array-callback-return */}
         {apps.map((app, i) => {
-          // console.log("kk", app);
           const {
             title,
             richtext,
