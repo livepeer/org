@@ -16,7 +16,7 @@ const CaseStudy = ({
   testimonial,
   problem,
   solution,
-  internalLink,
+  cta,
 }) => {
   return (
     <Box css={{ position: "relative" }}>
@@ -139,9 +139,13 @@ const CaseStudy = ({
                   <Text variant="gray" css={{ lineHeight: 1.6, mb: "$3" }}>
                     {solution}
                   </Text>
-                  {internalLink && (
-                    <Link href={`/blog/${internalLink.slug.current}`} passHref>
-                      <A css={{ fontSize: "$3" }}>Read the full story</A>
+                  {cta && (
+                    <Link href={cta.href} passHref>
+                      <A
+                        target={cta.external ? "_blank" : null}
+                        css={{ fontSize: "$3" }}>
+                        {cta.title}
+                      </A>
                     </Link>
                   )}
                 </Box>
@@ -198,7 +202,9 @@ const CaseStudy = ({
                 </Text>
                 <Flex css={{ ai: "center" }}>
                   <Text css={{ fontWeight: 600 }}>{testimonial.name}</Text>
-                  <Text>, {testimonial.role}</Text>
+                  <Text>
+                    , {testimonial.role} @ {testimonial.company}
+                  </Text>
                 </Flex>
               </Flex>
             </Box>

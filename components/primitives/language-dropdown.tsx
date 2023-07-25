@@ -27,7 +27,7 @@ const Item = ({ active = false, language, locale, flag, ...props }) => (
     }}
     {...props}>
     <>
-      <Flex sx={{ alignItems: "center" }}>
+      <Flex sx={{ alignItems: "center", fontSize: 14 }}>
         <Box sx={{ mr: 12 }}>{flag}</Box>
         {language}
       </Flex>

@@ -12,9 +12,9 @@ import {
 } from "theme-ui";
 import LivepeerLogo from "components/svgs/livepeer-logo";
 import { useEffect, useCallback, useState } from "react";
-import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
-import TopNotification, { TopNotificationProps } from "./top-notification";
+import { TopNotificationProps } from "./top-notification";
 import Menu from "components/sections/primer/Menu";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -22,6 +22,7 @@ import LanguageDropdown from "components/primitives/language-dropdown";
 import EcosystemDropdown from "components/primitives/ecosystem-dropdown";
 import NetworkDropdown from "components/primitives/network-dropdown";
 import DeveloperDropdown from "components/primitives/developer-dropdown";
+import UseCasesDropdown from "components/primitives/use-cases-dropdown";
 
 type LinkType = {
   label: string;
@@ -144,9 +145,9 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             sx={{
               alignItems: "center",
               ".nav-link": {
-                fontSize: 15,
+                fontSize: 14,
               },
-              ".nav-link:not(:last-child)": { mr: 36 },
+              ".nav-link:not(:last-child)": { mr: 32 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
             {!isPrimer && (
@@ -160,14 +161,15 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               </NavLink>
             )}
 
-            {/* {!isPrimer && (
+            {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
-                <EcosystemDropdown />
+                <UseCasesDropdown />
               </NavLink>
-            )} */}
+            )}
+
             {!isPrimer && (
               <Link
-                key={`desktop-nav-link-ecosyste`}
+                key={`desktop-nav-link-ecosystem`}
                 href="/ecosystem"
                 as="/ecosystem"
                 passHref>

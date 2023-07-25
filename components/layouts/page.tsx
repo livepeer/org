@@ -20,16 +20,19 @@ const PageLayout: FC<Props> = ({
   pushContentSx,
   footerProps,
 }) => (
-  <>
-    <Head {...headProps} />
-    <Nav
-      {...(navProps ? navProps : { background: isDark ? "black" : "white" })}
-    />
-    <Box as="main" sx={{ ...pushContentSx }}>
-      {children}
-    </Box>
-    <Footer {...footerProps} isDark={isDark} />
-  </>
+  console.log(footerProps),
+  (
+    <>
+      <Head {...headProps} />
+      <Nav
+        {...(navProps ? navProps : { background: isDark ? "black" : "white" })}
+      />
+      <Box as="main" sx={{ ...pushContentSx }}>
+        {children}
+      </Box>
+      <Footer {...footerProps} isDark={isDark} />
+    </>
+  )
 );
 
 export default PageLayout;

@@ -20,6 +20,8 @@ module.exports = withPlugins([
           'cdn.sanity.io',
           'res.cloudinary.com',
           'user-images.githubusercontent.com',
+          'i.imgur.com',
+          'placehold.co',
         ],
       },
       pageExtensions: ['mdx', 'tsx'],

@@ -27,7 +27,9 @@ const Item = ({ active = false, text, ...props }) => (
     }}
     {...props}>
     <>
-      <Flex sx={{ alignItems: "center", fontWeight: 600 }}>{text}</Flex>
+      <Flex sx={{ alignItems: "center", fontWeight: 600, fontSize: 14 }}>
+        {text}
+      </Flex>
       <DropdownMenu.ItemIndicator>
         <CheckIcon sx={{ width: 6, height: 6 }} />
       </DropdownMenu.ItemIndicator>

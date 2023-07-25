@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Hero = ({
+  bc = "white",
   heading,
   tagline,
   description,
@@ -12,7 +13,7 @@ const Hero = ({
   ctas = [],
 }) => {
   return (
-    <Box>
+    <Box css={{ bc: bc }}>
       <Box css={{ position: "relative" }}>
         <Container
           size="3"
@@ -29,7 +30,7 @@ const Hero = ({
             justify={centered ? "center" : "between"}
             css={{
               textAlign: centered ? "center" : "left",
-              mb: skinny ? 0 : 100,
+              mb: skinny ? 0 : 120,
               width: "100%",
               pt: 50,
               "@bp2": {
@@ -94,10 +95,17 @@ const Hero = ({
                 <Box
                   css={{
                     position: "absolute",
-                    transform: "translate(-50%)",
+                    transform: "translate(-50%, -50%)",
                     left: "50%",
+                    top: "50%",
+                    width: "100%",
+                    pt: 40,
                   }}>
-                  <Image src={image} width={542 / 2} height={1096 / 2} />
+                  <Image
+                    src="https://i.imgur.com/KxKACw3.png"
+                    width={1052}
+                    height={1328}
+                  />
                 </Box>
                 <Box
                   css={{
@@ -107,7 +115,7 @@ const Hero = ({
                     minHeight: 545,
                     borderRadius: 1000,
                     background:
-                      "linear-gradient(90deg, rgba(107, 87, 214, 0.1) 0%, rgba(183, 167, 245, 0.1) 100%)",
+                      "linear-gradient(90deg, rgba(24, 121, 78, 0.1) 0%, rgba(221, 243, 91, 0.1) 100%)",
                   }}
                 />
               </Box>

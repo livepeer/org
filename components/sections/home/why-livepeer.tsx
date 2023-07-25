@@ -1,6 +1,5 @@
 import React from "react";
 import SectionLayout from "components/layouts/section";
-import { useTranslation } from "next-i18next";
 import { Grid, Box, Flex, Heading, Text } from "theme-ui";
 import {
   MdPublic,

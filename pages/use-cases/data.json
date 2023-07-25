@@ -8,9 +8,10 @@
       "description": "Livepeer brings together everything you need to create, deliver, and scale live, on-demand, and realtime video without worrying about surprise costs or vendor lock-in. Organizations like Lens, Minds, and Orb use Livepeer to build custom video solutions in their social apps.",
       "tagline": null,
       "image": {
-        "asset": {
-          "source": null
-        }
+        "url": "https://i.imgur.com/KxKACw3.png",
+        "alt": "",
+        "width": 1052,
+        "height": 1328
       },
       "ctas": [
         {
@@ -21,22 +22,33 @@
         },
         {
           "title": "Read the docs",
-          "href": "https://docslivepeer.org",
+          "href": "https://docs.livepeer.org",
           "isExternal": true,
           "variant": "default"
         }
       ]
     },
+    "logos": [
+      {
+        "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735688-16a8c22b-adc5-49ee-8f97-bf16de5afcf2.svg",
+        "alt": "Lens"
+      },
+      {
+        "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735695-1277c885-4335-40e6-a495-73ab0d8a1838.svg",
+        "alt": "Orb"
+      },
+      {
+        "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735690-3e6d7091-84b5-4eeb-8fb9-b7b624131e48.svg",
+        "alt": "Minds"
+      }
+    ],
     "why": {
       "title": "Features",
       "heading": "A complete video solution for the future of social",
-      "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to “just work”, even with new features to enable creator control and autonomy. With Livepeer, integrating fast, performant video has never been easier.",
+      "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
       "reasons": [
         {
-          "icon": {
-            "name": "HiCode"
-          },
-          "title": "Global performance",
+          "title": "🌐 Global performance",
           "description": [
             "0% median rebuffer rate",
             "0.2s median TTFF",
@@ -47,18 +59,38 @@
           ]
         },
         {
-          "icon": {
-            "name": "FaPhotoVideo"
-          },
-          "title": "Access control",
-          "description": "Your content, your choice: choose the precise conditions under which a viewer is allowed to access content with Livepeer's Playback Policies. Pick subscription conditions, add a token-gating solution like Lit Protocol or Unlock, or roll some custom logic to make sure content is delivered to the right viewers - and ONLY the right viewers."
+          "title": "🔐 Access control",
+          "description": "Your content, your choice: choose the precise conditions under which a viewer is allowed to access content. Pick subscription conditions, add a token-gating solution like Lit or Unlock Protocol, or roll your own custom logic."
         },
         {
-          "icon": {
-            "name": "MdMoneyOff"
-          },
-          "title": "Cross-Platform Analytics",
-          "description": "From watch time, to view counts, to viewer behavior and geography, creators are always looking for ways to gather insights and grow their reach. With Livepeer's Engagement Analytics, creators can deeply understand their audience and you can deeply understand your creators with just a few lines of code."
+          "title": "📊 Cross-Platform Analytics",
+          "description": "From watch time, to view counts, to viewer behavior and geography, creators are always looking for ways to gather insights and grow their reach. Using the Livepeer analytics API, creators can deeply understand their audience and you can understand your creators with just a few lines of code."
+        }
+      ]
+    },
+    "cardGrid": {
+      "title": "Designed for developers",
+      "heading": "Ship quickly with powerful, affordable, reliable, and easy-to-use APIs and developer tooling",
+      "items": [
+        {
+          "title": "🏁 Easy-to-use",
+          "description": "On average, developers can get Livepeer up and running in their social application in under a day.",
+          "image": { "url": "https://placehold.co/600x400", "alt": "" }
+        },
+        {
+          "title": "🧩 Modular",
+          "description": "Build with a fully integrated suite of open source developer tool and an API that composes seamlessly with modern video workflows.",
+          "image": { "url": "https://placehold.co/600x400", "alt": "" }
+        },
+        {
+          "title": "💸 Affordable",
+          "description": "Save 50 - 90% on your video infrastructure costs by switching to Livepeer and taking advantage of its competitive marketplace of infrastructure providers with access to over 70k GPUs.",
+          "image": { "url": "https://placehold.co/600x400", "alt": "" }
+        },
+        {
+          "title": "🚀 Scalable",
+          "description": "Deliver video globally, rapidly, and at scale with a decentralized network of always on infrastructure providers.",
+          "image": { "url": "https://placehold.co/600x400", "alt": "" }
         }
       ]
     },
@@ -71,9 +103,14 @@
       "testimonial": {
         "name": "Christina Beltramini",
         "company": "Aave Companies",
-        "quote": "Livepeer's decentralized video infrastructure provides powerful and reliable livestreaming technology for social applications looking to build live music experiences.",
+        "quote": "Livepeer's decentralized video infrastructure provides powerful and reliable livestreaming technology for social applications looking to build live or on-demand video experiences.",
         "role": "Head of Growth",
         "image": null
+      },
+      "cta": {
+        "title": "Read the case study",
+        "external": true,
+        "href": "https://mirror.xyz/livepeer.eth/v1hT30NPogzB6ri4x8KWEvkAUpiEqCmoHU9dmyOtTe8"
       }
     }
   },
@@ -86,9 +123,8 @@
       "description": "E-commerce products like Korkuma use Livepeer to create live video shopping experiences, providing customers in-store shopping wherever they are.",
       "tagline": null,
       "image": {
-        "asset": {
-          "source": null
-        }
+        "url": "https://i.imgur.com/KxKACw3.png",
+        "alt": ""
       },
       "ctas": null
     },
@@ -129,11 +165,7 @@
     "caseStudy": {
       "heading": "Livepeer helps Korkuma bring immersive commerce to the masses",
       "about": "Korkuma provides tools and resources for organizing, running and analysing shared shopping experiences.",
-      "image": {
-        "asset": {
-          "source": null
-        }
-      },
+      "image": null,
       "problem": "After interviewing small businesses considering using live commerce to sell their products it became clear industry standard solutions like AWS were either far too costly, too time-consuming, or too complex for Korkuma to integrate.",
       "solution": "Korkuma integrated Livepeer for its video transcoding over the industry-standard AWS, leveraging the Livepeer network's decentralized infrastructure for significant cost savings - enough to pass on to customers in the form of a less expensive product.",
       "testimonial": {
@@ -142,6 +174,11 @@
         "quote": "If we didn't have Livepeer, we'd have to strongly consider repositioning ourselves in the market. We'd probably have to go after enterprise players instead.",
         "role": "Founder",
         "image": null
+      },
+      "cta": {
+        "title": "Read the case study",
+        "external": true,
+        "href": "https://mirror.xyz/livepeer.eth/v1hT30NPogzB6ri4x8KWEvkAUpiEqCmoHU9dmyOtTe8"
       }
     }
   },
@@ -154,9 +191,8 @@
       "description": "Our reliable and low cost API helps your gamers reach a larger audience by streaming the best video quality to viewers on mobile or desktop.",
       "tagline": null,
       "image": {
-        "asset": {
-          "source": null
-        }
+        "url": "https://i.imgur.com/KxKACw3.png",
+        "alt": ""
       },
       "ctas": null
     },
@@ -197,11 +233,7 @@
     "caseStudy": {
       "heading": "Vimm.tv use Livepeer to save on transcoding costs",
       "about": "Vimm.tv is a Web3-enabled streaming platform for gamers and independent creators powered by the Hive blockchain.",
-      "image": {
-        "asset": {
-          "source": null
-        }
-      },
+      "image": null,
       "problem": "In order to handle the amount of concurrent streams their app would require, the Vimm team needed a transcoding provider that was both powerful and cost-efficient. Vimm struggled trying to find reasonably priced and stable ingest servers. Traditional cloud providers such as AWS were all too expensive.",
       "solution": "Vimm was able to use the Livepeer Network's cost disruptive transcoding service and easy-to-use developer API to offer its gamers the highest quality streams.",
       "testimonial": {
@@ -209,11 +241,12 @@
         "company": "Vimm.tv",
         "quote": "Offering transcoding, CDN, and a network of ingest servers, all bundled under one package, was a strong selling point for Livepeer. When we played with the pricing calculator we realized this is way lower than anything we can get anywhere else.",
         "role": "Chief Operating Officer",
-        "image": {
-          "asset": {
-            "source": null
-          }
-        }
+        "image": null
+      },
+      "cta": {
+        "title": "Read the case study",
+        "external": true,
+        "href": "https://mirror.xyz/livepeer.eth/v1hT30NPogzB6ri4x8KWEvkAUpiEqCmoHU9dmyOtTe8"
       }
     }
   },
@@ -226,9 +259,8 @@
       "description": "Add live streaming to your creator platform with Livepeer's easy-to-use API, so your creators can engage with their communities using the highest engagement format: live video streaming.",
       "tagline": null,
       "image": {
-        "asset": {
-          "source": null
-        }
+        "url": "https://i.imgur.com/KxKACw3.png",
+        "alt": ""
       },
       "ctas": null
     },
@@ -278,6 +310,11 @@
         "quote": null,
         "role": null,
         "image": null
+      },
+      "cta": {
+        "title": "Read the case study",
+        "external": true,
+        "href": "https://mirror.xyz/livepeer.eth/v1hT30NPogzB6ri4x8KWEvkAUpiEqCmoHU9dmyOtTe8"
       }
     }
   },
@@ -290,9 +327,8 @@
       "description": "Around the clock live streaming can run up the bill quickly. Livepeer's reliable infrastructure can help you grow the number of channels while keeping your costs down.",
       "tagline": null,
       "image": {
-        "asset": {
-          "source": null
-        }
+        "url": "https://i.imgur.com/KxKACw3.png",
+        "alt": ""
       },
       "ctas": []
     },
@@ -342,6 +378,11 @@
         "quote": null,
         "role": null,
         "image": null
+      },
+      "cta": {
+        "title": "Read the case study",
+        "external": true,
+        "href": "https://mirror.xyz/livepeer.eth/v1hT30NPogzB6ri4x8KWEvkAUpiEqCmoHU9dmyOtTe8"
       }
     }
   }

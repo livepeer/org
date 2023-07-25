@@ -19,7 +19,6 @@ const Item = ({ active = false, text, ...props }) => (
       fontWeight: active ? 600 : 400,
       backgroundColor: active ? "#f5f5ff" : "transparent",
       p: 3,
-
       "&:focus": {
         backgroundColor: "#f5f5ff",
         outline: "none",
@@ -39,21 +38,16 @@ const Item = ({ active = false, text, ...props }) => (
 
 const items = [
   {
-    link: "/developers",
-    text: "Developer Home",
+    link: "/use-cases/social-media",
+    text: "Social",
   },
   {
-    link: "https://docs.livepeer.org",
-    text: "Documentation",
-    isExternal: true,
-  },
-  {
-    link: "/pricing",
-    text: "Pricing",
+    link: "/use-cases/social-media",
+    text: "Creator Economy",
   },
 ];
 
-const DeveloperDropdown = () => {
+const UseCasesDropdown = () => {
   const router = useRouter();
   const { asPath } = router;
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +63,7 @@ const DeveloperDropdown = () => {
             outline: "none",
           },
         }}>
-        <Box>Developers</Box>
+        <Box>Use Cases</Box>
         <ChevronDownIcon
           sx={{
             transition: ".2s transform",
@@ -91,11 +85,7 @@ const DeveloperDropdown = () => {
         {items.map((item, i) => (
           <Item
             key={i}
-            onSelect={() =>
-              item.isExternal
-                ? window.open(item.link, "_blank").focus()
-                : router.push(item.link)
-            }
+            onSelect={() => router.push(item.link)}
             text={item.text}
             active={asPath === item.text ? true : false}
           />
@@ -105,4 +95,4 @@ const DeveloperDropdown = () => {
   );
 };
 
-export default DeveloperDropdown;
+export default UseCasesDropdown;

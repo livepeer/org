@@ -1,5 +1,7 @@
 import Layout from "components/layouts/page";
 import Hero from "components/sections/hero";
+import Logos from "components/sections/logos";
+import CardGrid from "components/sections/card-grid";
 import Why from "components/sections/why";
 import CaseStudy from "components/sections/case-study";
 import Prefooter from "components/sections/prefooter";
@@ -7,8 +9,9 @@ import { useRouter } from "next/router";
 import { Box } from "@livepeer/design-system";
 import { HeadProps } from "components/primitives/head";
 import data from "./data.json";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const UseCase = ({ hero, why, caseStudy }) => {
+const UseCase = ({ hero, logos, why, cardGrid, caseStudy }) => {
   const { isFallback, asPath } = useRouter();
 
   const headProps: HeadProps = {
@@ -24,7 +27,7 @@ const UseCase = ({ hero, why, caseStudy }) => {
 
   if (isFallback) {
     return (
-      <Layout footerProps={{ prefooter: null }}>
+      <Layout footerProps={{ prefooter: { type: null } }}>
         <Box
           sx={{
             py: 5,
@@ -37,32 +40,42 @@ const UseCase = ({ hero, why, caseStudy }) => {
       </Layout>
     );
   }
-
   return (
-    <Layout headProps={headProps}>
+    <Layout headProps={headProps} footerProps={{ prefooter: { type: null } }}>
       <Hero
         tagline="Use cases"
         heading={hero.heading}
         description={hero.description}
-        image={hero.image.asset.url}
+        image={hero.image.url}
         ctas={hero.ctas}
       />
-      <Why
-        title={why.title}
-        heading={why.heading}
-        description={why.description}
-        reasons={why.reasons}
+      <Logos logos={logos} />
+      <Box css={{ mt: 80, bc: "$sage2" }}>
+        <Why
+          title={why.title}
+          heading={why.heading}
+          description={why.description}
+          reasons={why.reasons}
+        />
+      </Box>
+      <CardGrid
+        title={cardGrid.title}
+        heading={cardGrid.heading}
+        description={cardGrid.description}
+        items={cardGrid.items}
       />
       {caseStudy?.heading && (
-        <CaseStudy
-          heading={caseStudy.heading}
-          about={caseStudy.about}
-          problem={caseStudy.problem}
-          solution={caseStudy.solution}
-          image={caseStudy.image?.asset.url}
-          testimonial={caseStudy?.testimonial}
-          internalLink={caseStudy.internalLink}
-        />
+        <Box css={{ bc: "$sage2" }}>
+          <CaseStudy
+            heading={caseStudy.heading}
+            about={caseStudy.about}
+            problem={caseStudy.problem}
+            solution={caseStudy.solution}
+            image={caseStudy.image?.url}
+            testimonial={caseStudy?.testimonial}
+            cta={caseStudy.cta}
+          />
+        </Box>
       )}
       <Prefooter />
     </Layout>
@@ -82,7 +95,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, locale }) {
   const { slug } = params;
   const useCase = data.filter((obj) => {
     return obj.slug.current === slug;
@@ -90,6 +103,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       ...useCase,
+      ...(await serverSideTranslations(locale, ["common"])),
     },
     revalidate: 1,
   };

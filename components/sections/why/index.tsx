@@ -1,31 +1,4 @@
-import {
-  Container,
-  Box,
-  Flex,
-  Text,
-  Heading,
-  Button,
-} from "@livepeer/design-system";
-import Link from "next/link";
-import * as Hi from "react-icons/hi";
-import * as Fa from "react-icons/fa";
-import * as Fi from "react-icons/fi";
-import * as Md from "react-icons/md";
-
-const getIconProvider = (provider) => {
-  if (provider === "hi") {
-    return Hi;
-  }
-  if (provider === "fa") {
-    return Fa;
-  }
-  if (provider === "fi") {
-    return Fi;
-  }
-  if (provider === "mdi") {
-    return Md;
-  }
-};
+import { Container, Box, Flex, Text, Heading } from "@livepeer/design-system";
 
 const Why = ({ title, heading, description, reasons }) => {
   return (
@@ -35,7 +8,7 @@ const Why = ({ title, heading, description, reasons }) => {
           position: "relative",
           py: 60,
           "@bp2": {
-            py: 120,
+            py: 100,
           },
         }}>
         <Container size="3">
@@ -51,14 +24,14 @@ const Why = ({ title, heading, description, reasons }) => {
                 flexDirection: "row",
               },
             }}>
-            <Flex direction="column" css={{ maxWidth: 960 }}>
+            <Flex direction="column" css={{ maxWidth: 760 }}>
               <Text size="5" css={{ fontWeight: 600, mb: "$4" }}>
                 {title}
               </Text>
               <Heading
                 size="3"
                 css={{
-                  maxWidth: 520,
+                  maxWidth: 420,
                   lineHeight: 1.4,
                   fontWeight: 700,
                   mb: "$4",
@@ -67,7 +40,7 @@ const Why = ({ title, heading, description, reasons }) => {
                 }}>
                 {heading}
               </Heading>
-              <Text variant="gray" size="4" css={{ mb: "$8" }}>
+              <Text variant="gray" size="5" css={{ lineHeight: 1.7, mb: "$8" }}>
                 {description}
               </Text>
             </Flex>
@@ -114,49 +87,26 @@ const Why = ({ title, heading, description, reasons }) => {
                     },
                   },
                 }}>
-                {reason?.icon?.provider && (
-                  <Box
-                    css={{
-                      mb: "$3",
-                      width: 44,
-                      height: 44,
-                      minWidth: 44,
-                      minHeight: 44,
-                      borderRadius: 1000,
-                      display: "flex",
-                      ai: "center",
-                      color: "$hiContrast",
-                      jc: "center",
-                      background:
-                        "linear-gradient(90deg, rgba(107, 87, 214, 0.1) 0%, rgba(183, 167, 245, 0.1) 100%)",
-                    }}>
-                    {getIconProvider(reason.icon.provider)[reason.icon.name]()}
-                  </Box>
-                )}
                 <Text
+                  size={4}
                   css={{
                     position: "relative",
                     fontWeight: 500,
                     mb: "$5",
-                    "&:before": {
-                      position: "absolute",
-                      top: "4px",
-                      left: "-$space$3",
-                      width: "1px",
-                      height: "$3",
-                      backgroundColor: "$green9",
-                      content: '""',
-                    },
                   }}>
                   {reason.title}
                 </Text>
                 <Text
                   variant="gray"
                   as={Array.isArray(reason.description) ? "ul" : "div"}
-                  css={{ lineHeight: 1.6, listStyle: "initial" }}>
+                  css={{
+                    lineHeight: 1.6,
+                    listStyle: "initial",
+                    paddingLeft: Array.isArray(reason.description) ? 15 : 0,
+                  }}>
                   {Array.isArray(reason.description)
                     ? reason.description.map((li) => (
-                        <Box as="li" css={{ mb: "$2" }}>
+                        <Box as="li" css={{ mb: "$2", pl: 10 }}>
                           {li}
                         </Box>
                       ))
