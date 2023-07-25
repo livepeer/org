@@ -65,9 +65,9 @@ const Hero = ({
                 {description}
               </Text>
               <Flex align="center">
-                {ctas.map((cta) => {
+                {ctas.map((cta, i) => {
                   return (
-                    <Link href={cta.href} passHref>
+                    <Link key={i} href={cta.href} passHref>
                       <Button
                         target={cta.isExternal ? "_blank" : null}
                         size={4}

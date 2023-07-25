@@ -97,6 +97,7 @@ const Why = ({ title, heading, description, reasons }) => {
                   {reason.title}
                 </Text>
                 <Text
+                  size={4}
                   variant="gray"
                   as={Array.isArray(reason.description) ? "ul" : "div"}
                   css={{
@@ -105,8 +106,8 @@ const Why = ({ title, heading, description, reasons }) => {
                     paddingLeft: Array.isArray(reason.description) ? 15 : 0,
                   }}>
                   {Array.isArray(reason.description)
-                    ? reason.description.map((li) => (
-                        <Box as="li" css={{ mb: "$2", pl: 10 }}>
+                    ? reason.description.map((li, i) => (
+                        <Box key={i} as="li" css={{ mb: "$2", pl: 10 }}>
                           {li}
                         </Box>
                       ))
