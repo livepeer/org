@@ -179,7 +179,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               </Link>
             )}
 
-            {!isPrimer && (
+            {/* {!isPrimer && (
               <NavLink
                 sx={{
                   display: ["none", "none", "none", "flex"],
@@ -191,7 +191,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 target="_blank">
                 Discord
               </NavLink>
-            )}
+            )} */}
 
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
