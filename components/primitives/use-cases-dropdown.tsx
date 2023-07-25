@@ -39,7 +39,7 @@ const Item = ({ active = false, text, ...props }) => (
 const items = [
   {
     link: "/use-cases/social-media",
-    text: "Social",
+    text: "Social Apps",
   },
   {
     link: "/use-cases/social-media",
