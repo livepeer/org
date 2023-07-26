@@ -51,21 +51,23 @@ const UseCase = ({ hero, logos, features, values, caseStudy }) => {
       />
       <Logos logos={logos} />
       <Box css={{ mt: 80, bc: "$sage2" }}>
+        <Values
+          title={values.title}
+          heading={values.heading}
+          description={values.description}
+          items={values.items}
+        />
+      </Box>
+      {features && (
         <Features
           title={features.title}
           heading={features.heading}
           description={features.description}
           reasons={features.reasons}
         />
-      </Box>
-      <Values
-        title={values.title}
-        heading={values.heading}
-        description={values.description}
-        items={values.items}
-      />
+      )}
       {caseStudy?.heading && (
-        <Box css={{ bc: "$sage2" }}>
+        <Box css={{ bc: features ? "$sage2" : "initial" }}>
           <CaseStudy
             heading={caseStudy.heading}
             about={caseStudy.about}

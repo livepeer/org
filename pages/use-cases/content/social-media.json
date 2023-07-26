@@ -1,12 +1,10 @@
 {
   "hero": {
-    "heading": "Super charge your social app with video",
-    "description": "Livepeer brings together everything you need to create, deliver, and scale live, on-demand, and realtime video without worrying about surprise costs or vendor lock-in. Organizations like Lens, Minds, and Orb use Livepeer to build custom video solutions.",
+    "heading": "Supercharge your social app with video",
+    "description": "Livepeer brings together everything you need to create, deliver, and scale live, on-demand, and realtime video without worrying about surprise costs or vendor lock-in. Organizations like Lens, Picarto, and Orb use Livepeer to build custom video solutions.",
     "image": {
       "url": "https://i.imgur.com/KxKACw3.png",
-      "alt": "",
-      "width": 1052,
-      "height": 1328
+      "alt": "Livepeer for social apps"
     },
     "ctas": [
       {
@@ -43,33 +41,31 @@
     "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
     "reasons": [
       {
-        "title": "🌐 Global performance",
+        "title": "🌐 Deliver to global audiences",
         "description": [
-          "0% median rebuffer rate",
           "0.2s median TTFF",
-          "0% error rate on Livepeer player",
           "0.09% error rate across all Players",
           "29 Ingest POPs",
           "102 edge locations (inc. CDN)"
         ]
       },
       {
-        "title": "🔐 Access control",
+        "title": "🔐 Control Access",
         "description": "Your content, your choice: choose the precise conditions under which a viewer is allowed to access content. Pick subscription conditions, add a token-gating solution like Lit or Unlock Protocol, or roll your own custom logic."
       },
       {
-        "title": "📊 Cross-Platform Analytics",
+        "title": "📊 ​Understand your audience​",
         "description": "From watch time, to view counts, to viewer behavior and geography, creators are always looking for ways to gather insights and grow their reach. Using the Livepeer analytics API, creators can deeply understand their audience and you can understand your creators with just a few lines of code."
       }
     ]
   },
   "values": {
-    "title": "Designed for developers",
-    "heading": "Ship quickly with powerful, affordable, reliable, and easy-to-use APIs and developer tooling",
+    "title": "Why Livepeer",
+    "heading": "Ship quickly with powerful, affordable, reliable, and easy-to-use API.",
     "items": [
       {
         "title": "🏁 Easy-to-use",
-        "description": "On average, developers can get Livepeer up and running in their social application in under a day.",
+        "description": "Accelerate your video feature launch from months to just days.",
         "image": { "url": "https://placehold.co/600x400", "alt": "" }
       },
       {

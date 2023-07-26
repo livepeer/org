@@ -8,9 +8,9 @@ import {
 } from "@livepeer/design-system";
 import Image from "next/image";
 
-const CardGrid = ({ bc = "white", title, heading, description, items }) => {
+const CardGrid = ({ title, heading, description, items }) => {
   return (
-    <Box css={{ bc, position: "relative" }}>
+    <Box css={{ position: "relative" }}>
       <Box
         css={{
           position: "relative",
@@ -57,7 +57,7 @@ const CardGrid = ({ bc = "white", title, heading, description, items }) => {
                     flexDirection: "column",
                     mb: "$4",
                   }}>
-                  <Box css={{ height: 100 }}>
+                  <Box>
                     <Text
                       size={5}
                       css={{

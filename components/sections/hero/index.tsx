@@ -12,6 +12,7 @@ const Hero = ({
   image,
   ctas = [],
 }) => {
+  console.log(image);
   return (
     <Box css={{ bc: bc }}>
       <Box css={{ position: "relative" }}>
@@ -102,9 +103,11 @@ const Hero = ({
                     pt: 40,
                   }}>
                   <Image
-                    src="https://i.imgur.com/KxKACw3.png"
-                    width={1052}
-                    height={1328}
+                    src={image}
+                    alt={image.alt}
+                    width={1000}
+                    height={1000}
+                    objectFit="contain"
                   />
                 </Box>
                 <Box
@@ -115,7 +118,7 @@ const Hero = ({
                     minHeight: 545,
                     borderRadius: 1000,
                     background:
-                      "linear-gradient(90deg, rgba(24, 121, 78, 0.1) 0%, rgba(221, 243, 91, 0.1) 100%)",
+                      "linear-gradient(90deg, rgba(24, 121, 78, 0.4) 0%, rgba(221, 243, 91, 0.1) 100%)",
                   }}
                 />
               </Box>
