@@ -42,7 +42,7 @@ const items = [
     text: "Social Apps",
   },
   {
-    link: "/use-cases/social-media",
+    link: "/use-cases/creator-economy",
     text: "Creator Economy",
   },
 ];
