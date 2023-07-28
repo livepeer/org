@@ -218,7 +218,7 @@ const PricingCardsContainer = () => {
                   gap: "$2",
                 }}>
                 3,000 minutes{" "}
-                <Tooltip multiline content="Then $5 per extra 1,000 minutes">
+                <Tooltip multiline content="Then $5.50 per extra 1,000 minutes">
                   <Flex
                     css={{
                       borderRadius: 1000,
@@ -258,7 +258,7 @@ const PricingCardsContainer = () => {
                   gap: "$2",
                 }}>
                 100,000 minutes{" "}
-                <Tooltip multiline content="Then $0.40 per extra 1,000 minutes">
+                <Tooltip multiline content="Then $0.50 per extra 1,000 minutes">
                   <Flex
                     css={{
                       borderRadius: 1000,
@@ -287,7 +287,7 @@ const PricingCardsContainer = () => {
                     display: "none",
                   },
                 }}>
-                Delivery
+                Storage
               </Box>
               <Flex
                 css={{
@@ -298,7 +298,7 @@ const PricingCardsContainer = () => {
                   gap: "$2",
                 }}>
                 10,000 minutes{" "}
-                <Tooltip multiline content="Then $3 per extra 1,000 minutes">
+                <Tooltip multiline content="Then $3.50 per extra 1,000 minutes">
                   <Flex
                     css={{
                       borderRadius: 1000,
@@ -364,7 +364,7 @@ const PricingCardsContainer = () => {
                   gap: "$2",
                 }}>
                 20,000 minutes{" "}
-                <Tooltip multiline content="Then $5 per extra 1,000 minutes">
+                <Tooltip multiline content="Then $5.50 per extra 1,000 minutes">
                   <Flex
                     css={{
                       borderRadius: 1000,
@@ -404,7 +404,7 @@ const PricingCardsContainer = () => {
                   gap: "$2",
                 }}>
                 500,000 minutes{" "}
-                <Tooltip multiline content="Then $0.40 per extra 1,000 minutes">
+                <Tooltip multiline content="Then $0.50 per extra 1,000 minutes">
                   <Flex
                     css={{
                       borderRadius: 1000,
@@ -444,7 +444,7 @@ const PricingCardsContainer = () => {
                   gap: "$2",
                 }}>
                 50,000 minutes{" "}
-                <Tooltip multiline content="Then $3 per extra 1,000 minutes">
+                <Tooltip multiline content="Then $3.50 per extra 1,000 minutes">
                   <Flex
                     css={{
                       borderRadius: 1000,
