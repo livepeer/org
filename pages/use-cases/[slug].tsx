@@ -11,13 +11,21 @@ import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import fs from "fs";
 
-const UseCase = ({ hero, logos, features, values, caseStudy }) => {
+const UseCase = ({
+  hero,
+  logos,
+  features,
+  values,
+  caseStudy,
+  title,
+  description,
+}) => {
   const { isFallback, asPath } = useRouter();
 
   const headProps: HeadProps = {
     meta: {
-      title: "Livepeer Case Study",
-      description: "",
+      title,
+      description,
       url: asPath,
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
