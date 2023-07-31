@@ -116,7 +116,7 @@ const Why = ({ title, heading, description, items, columns }) => {
                   key={i}
                   css={{
                     width: "100%",
-                    mb: "$8",
+                    mb: "$4",
                     "@bp1": {
                       pl: 0,
                       "&:nth-child(odd)": {
