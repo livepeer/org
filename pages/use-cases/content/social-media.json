@@ -88,7 +88,7 @@
       },
       {
         "title": "🤙 Realtime",
-        "description": "Seamless integrate real-time video chat into your social app with just a few lines of code."
+        "description": "Seamlessly integrate real-time video chat into your social app with just a few lines of code."
       },
       {
         "title": "🔐 Access control",
@@ -100,7 +100,7 @@
       },
       {
         "title": "🩺 Health metrics",
-        "description": "Social creators expect their apps to be available 24/7/365. The Livepeer API offers real-time performance and health metrics to help your team monitor and quickly assess the performance of live and on-demand streams across your social app."
+        "description": "The Livepeer API offers real-time performance and health metrics to help your team monitor and quickly assess the performance of live and on-demand streams across your social app."
       }
     ]
   },

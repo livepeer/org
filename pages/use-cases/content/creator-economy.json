@@ -58,7 +58,7 @@
       },
       {
         "title": "✅ Reliable",
-        "description": "Creators expect their apps to be available 24/7/365. Keep your application’s video streams flowing with the world’s most resilient and decentralized video infrastructure network.",
+        "description": "Creators expect their apps to be available 24/7. Keep your application’s video streams flowing with the world’s most resilient and decentralized video infrastructure network.",
         "image": { "url": "https://placehold.co/600x400", "alt": "" }
       },
       {
@@ -75,8 +75,8 @@
   },
   "features": {
     "title": "Features",
-    "heading": "A complete video solution for the creator economy",
-    "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
+    "heading": "A complete video solution for creator platforms",
+    "description": "Whether going live, publishing video, or hosting video calls with fans, creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
     "items": [
       {
         "title": "🔴 Live",
@@ -88,7 +88,7 @@
       },
       {
         "title": "🤙 Realtime",
-        "description": "Seamless integrate real-time video chat into your social app with just a few lines of code."
+        "description": "Seamlessly integrate real-time video chat into your creator platform with just a few lines of code."
       },
       {
         "title": "🔐 Access control",
@@ -100,7 +100,7 @@
       },
       {
         "title": "🩺 Health metrics",
-        "description": "Social creators expect their apps to be available 24/7/365. The Livepeer API offers real-time performance and health metrics to help your team monitor and quickly assess the performance of live and on-demand streams across your social app."
+        "description": "The Livepeer API offers real-time performance and health metrics to help your team monitor and quickly assess the performance of live and on-demand streams across your social app."
       }
     ]
   },
