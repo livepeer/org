@@ -39,7 +39,7 @@
   ],
   "values": {
     "title": "Why Livepeer",
-    "heading": "Meet the needs of today's creator platforms with livestreaming, video on demand, and multi-participant video/audio chat",
+    "heading": "Meet the needs of today's creator platforms with livestreaming, video on demand, and multi-participant video chat",
     "items": [
       {
         "title": "🧩 Fully integated",
@@ -53,7 +53,7 @@
       },
       {
         "title": "🔑 Self-sovereign",
-        "description": "Creators want full control and ownership over their video content, and not be locked into a single platform. Livepeer's integration with decentralized storage protocols such as IPFS and Arweave allow creators publish video content without fear of vendor lock-in.",
+        "description": "Creators want full control and ownership over their video content. Livepeer's integration with decentralized storage protocols such as IPFS and Arweave allow creators publish video content without fear of vendor lock-in.",
         "image": { "url": "https://placehold.co/600x400", "alt": "" }
       },
       {
@@ -75,7 +75,7 @@
   },
   "features": {
     "title": "Features",
-    "heading": "A complete video solution for the future of social",
+    "heading": "A complete solution for the creator economy",
     "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
     "items": [
       {

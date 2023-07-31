@@ -57,7 +57,15 @@ const UseCase = ({
         image={hero.image.url}
         ctas={hero.ctas}
       />
-      <Logos logos={logos} />
+      <Box
+        css={{
+          display: "none",
+          "@bp1": {
+            display: "block",
+          },
+        }}>
+        <Logos logos={logos} />
+      </Box>
       <Box css={{ mt: 80, bc: "$sage2" }}>
         <Features
           title={values.title}

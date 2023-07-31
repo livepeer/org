@@ -12,7 +12,6 @@ const Hero = ({
   image,
   ctas = [],
 }) => {
-  console.log(image);
   return (
     <Box css={{ bc: bc }}>
       <Box css={{ position: "relative" }}>
@@ -20,7 +19,9 @@ const Hero = ({
           size="3"
           css={{
             px: "$4",
-            mx: "$4",
+            "@bp2": {
+              mx: "$4",
+            },
             "@bp3": {
               px: "$4",
               mx: "auto",

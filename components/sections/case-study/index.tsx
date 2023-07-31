@@ -25,6 +25,7 @@ const CaseStudy = ({
           <Box
             css={{
               mx: "$4",
+              mb: "$5",
               "@bp3": {
                 mx: "auto",
               },
