@@ -1,6 +1,7 @@
 import { Box, Flex, Container, Text, Button } from "@livepeer/design-system";
 import Image from "next/image";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Hero = ({
   bc = "white",
@@ -74,9 +75,10 @@ const Hero = ({
                         target={cta.isExternal ? "_blank" : null}
                         size={4}
                         as="a"
-                        css={{ mr: "$2" }}
+                        css={{ mr: "$2", display: "flex", gap: "$2" }}
                         variant={cta.variant}>
                         {cta.title}
+                        {cta.isExternal && <FiArrowUpRight />}
                       </Button>
                     </Link>
                   );

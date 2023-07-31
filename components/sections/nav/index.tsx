@@ -204,7 +204,8 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 <A
                   variant="buttons.neutral"
                   href="https://livepeer.studio"
-                  target="_blank">
+                  target="_blank"
+                  css={{ borderRadius: 12 }}>
                   Go to dashboard
                 </A>
               </NavLink>
