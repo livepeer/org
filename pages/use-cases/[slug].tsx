@@ -51,11 +51,12 @@ const UseCase = ({ hero, logos, features, values, caseStudy }) => {
       />
       <Logos logos={logos} />
       <Box css={{ mt: 80, bc: "$sage2" }}>
-        <Values
+        <Features
           title={values.title}
           heading={values.heading}
           description={values.description}
           items={values.items}
+          columns={3}
         />
       </Box>
       {features && (
@@ -63,7 +64,8 @@ const UseCase = ({ hero, logos, features, values, caseStudy }) => {
           title={features.title}
           heading={features.heading}
           description={features.description}
-          reasons={features.reasons}
+          items={features.items}
+          columns={3}
         />
       )}
       {caseStudy?.heading && (

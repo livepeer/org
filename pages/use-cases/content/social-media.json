@@ -35,42 +35,28 @@
       "alt": "Minds"
     }
   ],
-  "features": {
-    "title": "Features",
-    "heading": "A complete video solution for the future of social",
-    "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
-    "reasons": [
-      {
-        "title": "🌐 Deliver to global audiences",
-        "description": [
-          "0.2s median TTFF",
-          "0.09% error rate across all Players",
-          "29 Ingest POPs",
-          "102 edge locations (inc. CDN)"
-        ]
-      },
-      {
-        "title": "🔐 Control Access",
-        "description": "Your content, your choice: choose the precise conditions under which a viewer is allowed to access content. Pick subscription conditions, add a token-gating solution like Lit or Unlock Protocol, or roll your own custom logic."
-      },
-      {
-        "title": "📊 ​Understand your audience​",
-        "description": "From watch time, to view counts, to viewer behavior and geography, creators are always looking for ways to gather insights and grow their reach. Using the Livepeer analytics API, creators can deeply understand their audience and you can understand your creators with just a few lines of code."
-      }
-    ]
-  },
   "values": {
     "title": "Why Livepeer",
-    "heading": "Ship quickly with powerful, affordable, reliable, and easy-to-use API",
+    "heading": "Ship quickly with powerful, affordable, reliable, and fully-integrated video API",
     "items": [
       {
-        "title": "🏁 Easy-to-use",
-        "description": "Accelerate your video feature launch from months to just days.",
+        "title": "🧩 Fully integated",
+        "description": "The Livepeer API simplifies complex video infrastructure workflows and provides developers with a unified, intuitive solution to meet all video application needs. Accelerate your social app's feature launch from months to just days.",
         "image": { "url": "https://placehold.co/600x400", "alt": "" }
       },
       {
-        "title": "🧩 Modular",
-        "description": "Build with an API and a fully integrated suite of developer tools that compose seamlessly with modern video workflows.",
+        "title": "🏁 Easy-to-use",
+        "description": "Experience peak productivity with the Livepeer SDK. Designed for ease of use with the Livepeer API, it makes adding live, on-demand, and real-time video to social apps a breeze.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "🔑 Self-sovereign",
+        "description": "Social media creators want full control and ownership over their video content. Livepeer's integration with decentralized storage protocols such as IPFS and Arweave allow creators publish video content without fear of vendor lock-in.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "✅ Reliable",
+        "description": "Social media creators expect their apps to be available 24/7/365. Keep your application’s video streams flowing 24/7 with the world’s most resilient and decentralized video infrastructure network.",
         "image": { "url": "https://placehold.co/600x400", "alt": "" }
       },
       {
@@ -82,6 +68,37 @@
         "title": "🚀 Scalable",
         "description": "Deliver video globally, rapidly, and at scale with a decentralized network of always on infrastructure providers.",
         "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      }
+    ]
+  },
+  "features": {
+    "title": "Features",
+    "heading": "A complete video solution for the future of social",
+    "description": "Whether going live, sharing a duet, or hosting a video call with friends, social creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
+    "items": [
+      {
+        "title": "🔴 Live",
+        "description": "Add live video experiences to your social app with just few lines of code — affordably, at scale, and with no vendor lock-in."
+      },
+      {
+        "title": "⏯️ On-demand",
+        "description": "Enhance your social app with on-demand video capabilities, thoughtfully designed for both long and short-form video experiences."
+      },
+      {
+        "title": "🤙 Realtime",
+        "description": "Seamless integrate real-time video chat into your social app with just a few lines of code."
+      },
+      {
+        "title": "🔐 Access control",
+        "description": "Your content, your choice: choose the precise conditions under which a viewer is allowed to access content. Pick subscription conditions, add a token-gating solution like Lit or Unlock Protocol, or roll your own custom logic."
+      },
+      {
+        "title": "📊 Engagement analytics​",
+        "description": "From watch time, to view counts, to viewer behavior and geography, creators are always looking for ways to gather insights and grow their reach. Using the Livepeer analytics API, creators can deeply understand their audience and you can understand your creators with just a few lines of code."
+      },
+      {
+        "title": "🩺 Health metrics",
+        "description": "Social creators expect their apps to be available 24/7/365. The Livepeer API offers real-time performance and health metrics to help your team monitor and quickly assess the performance of live and on-demand streams across your social app."
       }
     ]
   },
