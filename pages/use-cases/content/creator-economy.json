@@ -1,0 +1,126 @@
+{
+  "title": "For the Creator Economy",
+  "description": "Build video-enabled creator platforms with Livepeer",
+  "hero": {
+    "heading": "Build video-enabled creator platforms",
+    "description": "Livepeer helps you quickly and affordably add video to your creator platform. Whether building a music, fitness, education, eSports, or lifestyle app, Livepeer helps your creators engage audiences and grow revenue through cost-effective video solutions.",
+    "image": {
+      "url": "https://i.imgur.com/MsffEG3.png",
+      "alt": "Livepeer for the creator economy"
+    },
+    "ctas": [
+      {
+        "title": "Start building",
+        "href": "https://livepeer.studio",
+        "isExternal": true,
+        "variant": "green"
+      },
+      {
+        "title": "Read the docs",
+        "href": "https://docs.livepeer.org",
+        "isExternal": true,
+        "variant": "default"
+      }
+    ]
+  },
+  "logos": [
+    {
+      "url": "https://i.imgur.com/1YNslGz.png",
+      "alt": "Bonfire"
+    },
+    {
+      "url": "https://res.cloudinary.com/duquzk7m6/image/upload/v1665427311/beem_ui0zuv.svg",
+      "alt": "Beem"
+    },
+    {
+      "url": "https://res.cloudinary.com/duquzk7m6/image/upload/v1667577254/livespace_logo-circle_qd63np.png",
+      "alt": "LiveSpace"
+    }
+  ],
+  "values": {
+    "title": "Why Livepeer",
+    "heading": "Meet the needs of today's creator platforms with livestreaming, video on demand, and multi-participant video chat",
+    "items": [
+      {
+        "title": "🧩 Fully integated",
+        "description": "The Livepeer API simplifies complex video infrastructure workflows and provides developers with a unified, intuitive solution to meet all video application needs. Accelerate your creator platform's feature launch from months to just days.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "🏁 Easy-to-use",
+        "description": "Experience peak productivity with the Livepeer SDK. Designed for ease of use with the Livepeer API, it makes adding live, on-demand, and real-time video to creator platforms a breeze.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "🔑 Self-sovereign",
+        "description": "Creators want full control and ownership over their video content. Livepeer's integration with decentralized storage protocols such as IPFS and Arweave allow creators publish video content without fear of vendor lock-in.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "✅ Reliable",
+        "description": "Creators expect their apps to be available 24/7. Keep your application’s video streams flowing with the world’s most resilient and decentralized video infrastructure network.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "💸 Affordable",
+        "description": "Creators need reasonable, non-extractive business models that allow them to maximize earnings. The Livepeer Network’s competitive marketplace of infrastructure providers allow creator economy applications to save 50 - 90% on video infrastructure costs.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      },
+      {
+        "title": "🚀 Scalable",
+        "description": "Deliver video globally, rapidly, and at scale with a decentralized network of always on infrastructure providers.",
+        "image": { "url": "https://placehold.co/600x400", "alt": "" }
+      }
+    ]
+  },
+  "features": {
+    "title": "Features",
+    "heading": "A complete video solution for creator platforms",
+    "description": "Whether going live, publishing video, or hosting video calls with fans, creators expect video to \"just work\". With Livepeer, integrating fast, performant video has never been easier.",
+    "items": [
+      {
+        "title": "🔴 Live",
+        "description": "Add live video experiences to your creator platform with just few lines of code — affordably, at scale, and with no vendor lock-in."
+      },
+      {
+        "title": "⏯️ On-demand",
+        "description": "Enhance your creator platform with on-demand video capabilities, thoughtfully designed for both long and short-form video experiences."
+      },
+      {
+        "title": "🤙 Realtime",
+        "description": "Seamlessly integrate real-time video chat into your creator platform with just a few lines of code."
+      },
+      {
+        "title": "🔐 Access control",
+        "description": "Your content, your choice: choose the precise conditions under which a viewer is allowed to access content. Pick subscription conditions, add a token-gating solution like Lit or Unlock Protocol, or roll your own custom logic."
+      },
+      {
+        "title": "📊 Engagement analytics​",
+        "description": "From watch time, to view counts, to viewer behavior and geography, creators are always looking for ways to gather insights and grow their reach. Using the Livepeer analytics API, creators can deeply understand their audience and you can understand your creators with just a few lines of code."
+      },
+      {
+        "title": "🩺 Health metrics",
+        "description": "The Livepeer API offers real-time performance and health metrics to help your team monitor and quickly assess the performance of live and on-demand streams across your social app."
+      }
+    ]
+  },
+  "caseStudy": {
+    "heading": "Growing Onchain Communities with Bonfire and Livepeer",
+    "about": "Bonfire lets creators design unique digital spaces to share exclusive content, host drops, and engage directly with their biggest fans.",
+    "image": null,
+    "problem": "A lack of control created by hosting third-party video content posed a serious issue. The Bonfire team needed to upgrade its platform so it could host content natively.",
+    "solution": "By leveraging Livepeer's comprehensive open video API Bonfire was able to seamlessly offer native and custom video streaming experiences to its creators.",
+    "testimonial": {
+      "name": "Matt Alston",
+      "company": "Bonfire",
+      "quote": "Livepeer is a critical piece of infrastructure in enabling our vision for the future, enabling us to offer critical content features like token-gated video and livestreams, while staying focused on our mission of empowering creators to build strong and enduring brands & communities on their own independent platform.",
+      "role": "Co-founder",
+      "image": null
+    },
+    "cta": {
+      "title": "Read the case study",
+      "external": true,
+      "href": "https://medium.com/livepeer-blog/how-beem-built-its-video-streaming-platform-with-livepeer-39693523c51"
+    }
+  }
+}
