@@ -10,7 +10,7 @@ import { MdTaskAlt } from "react-icons/md";
 const workflows = [
   {
     selected: true,
-    title: "Live",
+    title: "🔴 Live",
     description: (
       <Box sx={{ maxWidth: 520, mx: "auto" }}>
         Build live video experiences with just few lines of code — affordably,
@@ -40,7 +40,7 @@ const workflows = [
     ],
   },
   {
-    title: "On-demand",
+    title: "⏯ On-demand",
     description: (
       <Box sx={{ maxWidth: 480, mx: "auto" }}>
         Deliver high-quality on-demand video experiences to viewers worldwide.
@@ -70,7 +70,7 @@ const workflows = [
     ],
   },
   {
-    title: "Transcode",
+    title: "🔄 Transcode",
     description: (
       <Box sx={{ maxWidth: 500, mx: "auto" }}>
         Tap into a global network of always-on transcoding providers.
