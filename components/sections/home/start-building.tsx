@@ -20,20 +20,20 @@ const tools: BasicCardProps[] = [
       "Livepeer.js is a typescript SDK that provides a collection of React hooks and video components for easy interaction with the Livepeer API.",
     linkProps: {
       link: {
-        label: "/reference/livepeer-js",
+        label: "/livepeer-js",
         href: "https://livepeerjs.org",
         isExternal: true,
       },
     },
   },
   {
-    title: "🌐  Livepeer API",
+    title: "⏯️ Livepeer Player",
     description:
-      "Checkout the Livepeer API reference docs and explore all the endpoints exposed on the open API.",
+      "Livepeer Player is a developer-friendly open source solution for building custom video players.",
     linkProps: {
       link: {
-        label: "/reference/api",
-        href: "https://docs.livepeer.org/reference/api",
+        label: "/player",
+        href: "https://docs.livepeer.org/reference/livepeer-js/Player",
         isExternal: true,
       },
     },
