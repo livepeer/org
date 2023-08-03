@@ -1,5 +1,5 @@
 import PageLayout from "components/layouts/page";
-import { Container, Heading, Box } from "theme-ui";
+import { Container, Heading, Box, Text } from "theme-ui";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import JobsSection from "components/sections/jobs";
@@ -38,18 +38,21 @@ const Page = ({ allJobs }) => {
     );
   }
   return (
-    <PageLayout
-      headProps={headProps}
-      navProps={{ background: "muted" }}
-      footerProps={{ prefooter: { type: "faqs" } }}>
+    <PageLayout headProps={headProps} navProps={{ background: "muted" }}>
       <Container variant="hero">
         <Heading
           sx={{ variant: ["text.heading.hero", "text.heading.hero"], mb: 4 }}>
-          Join Livepeer, Inc.
+          Livepeer Jobs Board
         </Heading>
       </Container>
       <Container sx={{ maxWidth: 960, margin: "0 auto" }}>
-        <JobsSection jobs={allJobs} />
+        {!allJobs.length ? (
+          <Text sx={{ fontSize: 4, textAlign: "center" }}>
+            There are no job openings right now.
+          </Text>
+        ) : (
+          <JobsSection jobs={allJobs} />
+        )}
       </Container>
     </PageLayout>
   );
