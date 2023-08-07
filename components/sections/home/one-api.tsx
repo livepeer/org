@@ -103,12 +103,17 @@ const TT = ({ title, value }) => (
       transitionTimingFunction: "cubic-bezier(.4,0,.2,1)",
       transitionDuration: ".15s",
       border: 0,
-      fontSize: "$4",
+      fontSize: "$2",
       fontWeight: 600,
       color: "#71717a",
-      p: "$4",
+      p: "$2",
       cursor: "pointer",
-      minWidth: 130,
+      minWidth: 110,
+      "@bp1": {
+        fontSize: "$4",
+        p: "$4",
+        minWidth: 130,
+      },
     }}
     value={value}>
     <Box>{title}</Box>
