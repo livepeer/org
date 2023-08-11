@@ -1,5 +1,4 @@
 import HomeHero from "components/sections/home/hero";
-import LetLivepeerDoSection from "components/sections/home/let-livepeer-do";
 import PrimerBanner from "components/sections/home/primer-banner";
 import CommunitySection from "components/sections/home/community";
 import PageLayout from "components/layouts/page";
@@ -7,7 +6,6 @@ import { useEffect } from "react";
 import OneAPI from "components/sections/home/one-api";
 import StartBuilding from "components/sections/home/start-building";
 import Ecosystem from "components/sections/home/ecosystem";
-import HaveACallSection from "components/sections/home/have-a-call";
 import WhyLivepeerSection from "components/sections/home/why-livepeer";
 import {
   getProtocolStatistics,
@@ -18,15 +16,8 @@ import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
-import { Box } from "theme-ui";
 
-const HomePage = ({
-  youtubeVideos,
-  totalVolumeUSD,
-  totalActiveNodes,
-  totalMinutes,
-}) => {
+const HomePage = () => {
   const router = useRouter();
   const { t } = useTranslation(["home"]);
 
@@ -131,30 +122,11 @@ const HomePage = ({
           },
         ]}
       />
-      {/* <LetLivepeerDoSection
-        label={t("page-home-get-started")}
-        title={t("page-home-what-role")}
-        subtitle={t("page-home-jump-in")}
-        tokenholders={{
-          title: t("page-home-tokenholders"),
-          description: t("page-home-tokenholders-text"),
-        }}
-        videoMiners={{
-          title: t("page-home-video-miners"),
-          description: t("page-home-video-miners-text"),
-        }}
-      /> */}
-
       <CommunitySection
         title={t("page-home-communities-title")}
         subtitle={t("page-home-communities-text")}
         label={t("page-home-communities")}
       />
-      {/* <HaveACallSection
-        title={t("page-home-call")}
-        subtitle={t("page-home-call-text")}
-        youtubeVideos={youtubeVideos}
-      /> */}
     </PageLayout>
   );
 };
@@ -167,20 +139,6 @@ export async function getStaticProps({ locale }) {
     totalMinutes = await getTotalMinutes();
   }
 
-  let youtubeVideos = [];
-
-  if (process.env.YOUTUBE_API_KEY) {
-    const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/playlistItems?maxResults=100&part=snippet&playlistId=PLkw6hm1fcjtEo9HydrGKP2R_NHhSu1Mpl&key=${process.env.YOUTUBE_API_KEY}`
-    );
-    if (!response.ok) {
-      throw new Error("Failed to fetch youtube videos: " + response.statusText);
-    }
-
-    const youtubeData = await response.json();
-    youtubeVideos = youtubeData.items;
-  }
-
   const { totalActiveStake } = await getProtocolStatistics();
 
   return {
@@ -189,9 +147,6 @@ export async function getStaticProps({ locale }) {
       totalActiveNodes,
       totalMinutes,
       totalActiveStake,
-      youtubeVideos: youtubeVideos.filter(
-        (v) => v.snippet.title !== "Deleted video"
-      ),
       ...(await serverSideTranslations(locale, [
         "common",
         "home",
