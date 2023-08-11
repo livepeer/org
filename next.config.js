@@ -8,6 +8,7 @@ const withTM = require('next-transpile-modules')([
   'gsap/ScrollTrigger',
   'gsap/SplitText',
   'react-use-mailchimp',
+  'react-syntax-highlighter',
 ]);
 
 module.exports = withPlugins([
