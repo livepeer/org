@@ -1,6 +1,7 @@
 @import "./reset.css";
 @import "./fonts.css";
 @import "./markdown.css";
+@import "react-typist/dist/Typist.css";
 
 /* Global Styles
    ========================================================================== */

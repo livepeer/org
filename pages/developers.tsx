@@ -1,6 +1,9 @@
 import IsOpenSourceSection from "components/sections/developers/is-open-source";
 import PageLayout from "components/layouts/page";
 import DevelopersHero from "components/sections/developers/hero";
+import Build from "components/sections/developers/build";
+import Grow from "components/sections/developers/grow";
+import Resources from "components/sections/developers/resources";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -10,8 +13,9 @@ const Developers = () => {
 
   const headProps: HeadProps = {
     meta: {
-      title: t("page-developers-meta-title"),
-      description: t("page-developers-meta-description"),
+      title: "Developers",
+      description:
+        "Guides, tutorials, and resources to help you get started building live and on-demand video experiences with Livepeer.",
       url: "https://livepeer.org/developers",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
@@ -20,20 +24,15 @@ const Developers = () => {
   };
 
   return (
-    <PageLayout headProps={headProps} pushContentSx={{ bg: "text" }}>
+    <PageLayout headProps={headProps} pushContentSx={{ bg: "text" }} isDark>
       <DevelopersHero
         title={t("page-developers-title")}
         subtitle={t("page-developers-intro")}
+        background="dark"
       />
-
-      <IsOpenSourceSection
-        title={t("page-developers-open-source")}
-        subtitle={t("page-developers-open-source-text")}
-        ctaText={t("page-developers-open-source-cta")}
-        label1={t("page-developers-stats-contributors-text")}
-        label2={t("page-developers-stats-stargazers-text")}
-        label3={t("page-developers-stats-languages-text")}
-      />
+      <Build />
+      <Grow />
+      <Resources />
     </PageLayout>
   );
 };

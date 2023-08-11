@@ -4,6 +4,7 @@ import IllustratedBackgroundBox from "components/layouts/illustrated-background-
 import CodeStoryAnimation from "components/primitives/code-story-animation";
 import { AnimatedLineProps } from "components/primitives/code-story-animation/line";
 import CodeEditorBox from "components/layouts/code-editor-box";
+import Typist from "react-typist";
 
 const lines: AnimatedLineProps[] = [
   {
@@ -58,39 +59,62 @@ const lines: AnimatedLineProps[] = [
   },
 ];
 
-const DevelopersHero = ({ title, subtitle }) => (
-  <IconHero
-    withAnimation
-    icon={<FiPlay />}
-    title={title}
-    subtitle={subtitle}
-    cta={{
-      isExternal: true,
-      href: "https://docs.livepeer.org",
-      label: "Documentation ↗",
-    }}
-    illustration={
-      <IllustratedBackgroundBox
-        pushSx={{
-          height: ["360px", "282px"],
-          mt: "48px",
-          width: "100%",
-          maxWidth: "700px",
-        }}
-        pushContentSx={{
-          p: 0,
-          height: ["376px", "298px"],
-          boxShadow: "magical",
-          mt: "-48px",
-        }}>
-        <CodeEditorBox
-          tabs={[{ label: "bash", isSelected: true }]}
-          sx={{ height: "100%" }}>
-          <CodeStoryAnimation lines={lines} />
-        </CodeEditorBox>
-      </IllustratedBackgroundBox>
-    }
-  />
-);
+const CodeTyper = () => {
+  return (
+    <Typist
+      cursor={{ show: true, blink: true, element: "|" }}
+      avgTypingDelay={20}>
+      {`import { Broadcast } from '@livepeer/react'`}
+      <br />
+      <br />
+      {`function BroadcastComponent() {`}
+      <br />
+      {`  return (`}
+      <br />
+      {`    <Broadcast streamKey="abcd-dcba-1234-4321" />`}
+      <br />
+      {`  );`}
+      <br />
+      {`}`};
+    </Typist>
+  );
+};
+
+const DevelopersHero = ({ title, subtitle, background }) => {
+  return (
+    <IconHero
+      withAnimation
+      title={title}
+      subtitle={subtitle}
+      background={background}
+      cta={{
+        isExternal: true,
+        href: "https://docs.livepeer.org",
+        label: "Documentation ↗",
+      }}
+      illustration={
+        <IllustratedBackgroundBox
+          pushSx={{
+            height: ["360px", "282px"],
+            mt: "48px",
+            width: "100%",
+            maxWidth: "700px",
+          }}
+          pushContentSx={{
+            p: 0,
+            height: ["376px", "298px"],
+            boxShadow: "magical",
+            mt: "-48px",
+          }}>
+          <CodeEditorBox
+            tabs={[{ label: "index.tsx", isSelected: true }]}
+            sx={{ height: "100%" }}>
+            <CodeTyper />
+          </CodeEditorBox>
+        </IllustratedBackgroundBox>
+      }
+    />
+  );
+};
 
 export default DevelopersHero;

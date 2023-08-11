@@ -39,12 +39,13 @@ const Item = ({ active = false, text, ...props }) => (
 
 const items = [
   {
-    link: "/ecosystem/get-funded",
-    text: "Get Funded",
-  },
-  {
     link: "/ecosystem/showcase",
     text: "Showcase",
+  },
+  {
+    link: "https://github.com/livepeer/grants",
+    text: "Grants",
+    isExternal: true,
   },
 ];
 
@@ -86,7 +87,11 @@ const LanguageDropdown = () => {
         {items.map((item, i) => (
           <Item
             key={i}
-            onSelect={() => router.push(item.link)}
+            onSelect={() =>
+              item?.isExternal
+                ? window.open(item.link, "_blank")
+                : router.push(item.link)
+            }
             text={item.text}
             active={asPath === item.text ? true : false}
           />
