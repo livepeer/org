@@ -42,7 +42,7 @@ const tools: BasicCardProps[] = [
 
 export const Build = () => (
   <Box sx={{ backgroundColor: "muted" }}>
-    <Container variant="section" sx={{ pt: 100, pb: 60 }}>
+    <Container variant="section" sx={{ py: 60 }}>
       <Box sx={{ textAlign: "left" }}>
         <Heading
           sx={{

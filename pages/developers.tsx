@@ -1,4 +1,3 @@
-import IsOpenSourceSection from "components/sections/developers/is-open-source";
 import PageLayout from "components/layouts/page";
 import DevelopersHero from "components/sections/developers/hero";
 import Build from "components/sections/developers/build";

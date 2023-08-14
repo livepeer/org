@@ -77,7 +77,11 @@ const IconHero = forwardRef(
             pt: 0,
             px: 0,
           }}>
-          <Grid variant="layout.section" gap={5} columns={[1, null, null, 2]}>
+          <Grid
+            sx={{ pb: 0 }}
+            variant="layout.section"
+            gap={5}
+            columns={[1, null, null, 2]}>
             <Box>
               {icon ? (
                 <i

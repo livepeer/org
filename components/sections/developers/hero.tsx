@@ -29,11 +29,7 @@ const DevelopersHero = ({ title, subtitle, background }) => {
       title={title}
       subtitle={subtitle}
       background={background}
-      cta={{
-        isExternal: true,
-        href: "https://docs.livepeer.org",
-        label: "Read the docs ↗",
-      }}
+      pushSx={{ py: 0 }}
       illustration={
         <IllustratedBackgroundBox
           pushSx={{
@@ -43,7 +39,6 @@ const DevelopersHero = ({ title, subtitle, background }) => {
             maxWidth: "700px",
           }}
           pushContentSx={{
-            p: 0,
             height: ["376px", "298px"],
             boxShadow: "magical",
             mt: "-48px",
