@@ -17,11 +17,11 @@ const tools: BasicCardProps[] = [
   {
     title: "💳 Livepeer Streaming Credits Program",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus.",
+      "Join the Livepeer Streaming Credits Program to help bring your idea to market, with up to $3000 in credits to offset your video infrastructure bill with Livepeer.",
     linkProps: {
       link: {
         label: "Apply",
-        href: "https://livepeer.org",
+        href: "https://livepeer.typeform.com/to/McJZ2nMI",
         isExternal: true,
       },
     },
@@ -44,10 +44,10 @@ export const Build = () => (
           Grow
         </Heading>
         <Text sx={{ mb: 40, fontSize: 4 }}>
-          Livepeer is a fully decentralized ecosystem. There are numerous
-          dedicated organizations – ranging from non-profits, to DAOs and
-          ventures studios that have grant and investment opportunities
-          available for those building with and contributing to Livepeer.
+          Livepeer is a decentralized ecosystem that consists of many
+          participants like non-profits, DAOs, and venture studios with grant
+          and investment opportunities available for those building with and
+          contributing to Livepeer.
           <br />
           <br />
           Thinking of building a project on Livepeer? Start building, reach out,
