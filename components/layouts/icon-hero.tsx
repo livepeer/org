@@ -75,8 +75,13 @@ const IconHero = forwardRef(
             flexDirection: "column",
             alignItems: "center",
             pt: 0,
+            px: 0,
           }}>
-          <Grid variant="layout.section" gap={5} columns={[1, null, null, 2]}>
+          <Grid
+            sx={{ pb: 0 }}
+            variant="layout.section"
+            gap={5}
+            columns={[1, null, null, 2]}>
             <Box>
               {icon ? (
                 <i
@@ -101,7 +106,7 @@ const IconHero = forwardRef(
               <Heading
                 className={cn({ "h-animate": withAnimation })}
                 sx={{
-                  variant: ["text.heading.2", "text.heading.1"],
+                  variant: ["text.heading.2", "text.heading.2"],
                   textAlign: ["left", "left"],
                   color: titleColor,
                   zIndex: "general",
@@ -123,7 +128,7 @@ const IconHero = forwardRef(
                   zIndex: "general",
                   position: "relative",
                   mb: 32,
-                  fontSize: "22px !important",
+                  fontSize: "20px !important",
                 }}>
                 {subtitle}
               </Heading>
@@ -138,7 +143,8 @@ const IconHero = forwardRef(
             </Box>
             <Box
               className={cn({ "c-animate": withAnimation })}
-              variant="layout.flexCenter">
+              variant="layout.flexCenter"
+              sx={{ display: ["none", "block"] }}>
               {illustration}
             </Box>
           </Grid>

@@ -1,0 +1,350 @@
+query getPostsDocument($relativePath: String!) {
+  getPostsDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...PostsParts
+    }
+  }
+}
+
+query getPostsList {
+  getPostsList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...PostsParts
+        }
+      }
+    }
+  }
+}
+
+query getAppsDocument($relativePath: String!) {
+  getAppsDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...AppsParts
+    }
+  }
+}
+
+query getAppsList {
+  getAppsList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...AppsParts
+        }
+      }
+    }
+  }
+}
+
+query getVideosDocument($relativePath: String!) {
+  getVideosDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...VideosParts
+    }
+  }
+}
+
+query getVideosList {
+  getVideosList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...VideosParts
+        }
+      }
+    }
+  }
+}
+
+query getWeb3Document($relativePath: String!) {
+  getWeb3Document(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...Web3Parts
+    }
+  }
+}
+
+query getWeb3List {
+  getWeb3List {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...Web3Parts
+        }
+      }
+    }
+  }
+}
+
+query getStakingDocument($relativePath: String!) {
+  getStakingDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...StakingParts
+    }
+  }
+}
+
+query getStakingList {
+  getStakingList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...StakingParts
+        }
+      }
+    }
+  }
+}
+
+query getExchangeDocument($relativePath: String!) {
+  getExchangeDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...ExchangeParts
+    }
+  }
+}
+
+query getExchangeList {
+  getExchangeList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...ExchangeParts
+        }
+      }
+    }
+  }
+}
+
+query getComunityDocument($relativePath: String!) {
+  getComunityDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...ComunityParts
+    }
+  }
+}
+
+query getComunityList {
+  getComunityList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...ComunityParts
+        }
+      }
+    }
+  }
+}
+
+query getPagesDocument($relativePath: String!) {
+  getPagesDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...PagesParts
+    }
+  }
+}
+
+query getPagesList {
+  getPagesList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...PagesParts
+        }
+      }
+    }
+  }
+}
+
+query getEcosystemDocument($relativePath: String!) {
+  getEcosystemDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    data {
+      ...EcosystemParts
+    }
+  }
+}
+
+query getEcosystemList {
+  getEcosystemList {
+    totalCount
+    edges {
+      node {
+        id
+        sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        data {
+          ...EcosystemParts
+        }
+      }
+    }
+  }
+}
