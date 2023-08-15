@@ -26,15 +26,18 @@
   "logos": [
     {
       "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735688-16a8c22b-adc5-49ee-8f97-bf16de5afcf2.svg",
-      "alt": "Lens"
+      "alt": "Lens",
+      "href": "https://lens.xyz"
     },
     {
       "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735695-1277c885-4335-40e6-a495-73ab0d8a1838.svg",
-      "alt": "Orb"
+      "alt": "Orb",
+      "href": "https://www.orb.ac/"
     },
     {
       "url": "https://github-production-user-asset-6210df.s3.amazonaws.com/555740/255735690-3e6d7091-84b5-4eeb-8fb9-b7b624131e48.svg",
-      "alt": "Minds"
+      "alt": "Minds",
+      "href": "https://www.minds.com/"
     }
   ],
   "values": {

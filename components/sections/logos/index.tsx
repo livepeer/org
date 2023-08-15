@@ -1,4 +1,4 @@
-import { Container, Box } from "@livepeer/design-system";
+import { Container, Box, Link as A } from "@livepeer/design-system";
 
 const CardGrid = ({ bc = "white", logos }) => {
   return (
@@ -22,7 +22,9 @@ const CardGrid = ({ bc = "white", logos }) => {
             }}>
             {logos.map((logo, i) => {
               return (
-                <Box
+                <A
+                  href={logo.href}
+                  target="_blank"
                   key={i}
                   css={{
                     display: "flex",
@@ -33,10 +35,10 @@ const CardGrid = ({ bc = "white", logos }) => {
                     key={i}
                     src={logo.url}
                     alt={logo.alt}
-                    width="90"
-                    height="90"
+                    width="70"
+                    height="70"
                   />
-                </Box>
+                </A>
               );
             })}
           </Box>

@@ -1,7 +1,6 @@
 import Layout from "components/layouts/page";
 import Hero from "components/sections/hero";
 import Logos from "components/sections/logos";
-import Values from "components/sections/values";
 import Features from "components/sections/features";
 import CaseStudy from "components/sections/case-study";
 import Prefooter from "components/sections/prefooter";

@@ -26,15 +26,18 @@
   "logos": [
     {
       "url": "https://i.imgur.com/1YNslGz.png",
-      "alt": "Bonfire"
+      "alt": "Bonfire",
+      "href": "https://www.bonfire.xyz/"
     },
     {
       "url": "https://res.cloudinary.com/duquzk7m6/image/upload/v1665427311/beem_ui0zuv.svg",
-      "alt": "Beem"
+      "alt": "Beem",
+      "href": "https://beem.xyz/"
     },
     {
       "url": "https://res.cloudinary.com/duquzk7m6/image/upload/v1667577254/livespace_logo-circle_qd63np.png",
-      "alt": "LiveSpace"
+      "alt": "LiveSpace",
+      "href": "https://live.space/"
     }
   ],
   "values": {
