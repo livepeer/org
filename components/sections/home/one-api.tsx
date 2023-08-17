@@ -164,7 +164,7 @@ export const StartBuilding = () => (
         </TabsList>
         {workflows.map(({ list }, i) => {
           return (
-            <TabsContent value={`tab-${i}`}>
+            <TabsContent key={`tab-${i}`} value={`tab-${i}`}>
               <Heading
                 sx={{
                   textAlign: "center",
@@ -196,7 +196,7 @@ export const StartBuilding = () => (
                 gap={[40]}>
                 {list?.map(({ heading, subheading }, i) => {
                   return (
-                    <Box>
+                    <Box key={`workflow-list-${i}`}>
                       <Flex>
                         <Box
                           sx={{
