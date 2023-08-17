@@ -170,6 +170,11 @@ module.exports = withPlugins([
             destination: 'https://livepeer.org/delegators',
             permanent: false,
           },
+          {
+            source: '/ecosystem',
+            destination: 'https://livepeer.org/ecosystem/showcase',
+            permanent: false,
+          },
         ];
       },
     },
