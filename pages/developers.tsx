@@ -6,6 +6,7 @@ import Resources from "components/sections/developers/resources";
 import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { Box } from "theme-ui";
 
 const Developers = () => {
   const { t } = useTranslation(["developers"]);
@@ -30,7 +31,9 @@ const Developers = () => {
         background="dark"
       />
       <Build />
-      <Grow />
+      <Box id="grow" sx={{ scrollPaddingTop: 100 }}>
+        <Grow />
+      </Box>
       <Resources />
     </PageLayout>
   );
