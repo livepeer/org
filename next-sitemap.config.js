@@ -5,6 +5,7 @@ module.exports = {
   exclude: [
     '/ecosystem',
     '/admin',
+    '/blog/test',
     '/en',
     '/es',
     '/ko',
