@@ -4,7 +4,10 @@ module.exports = {
   generateRobotsTxt: true,
   exclude: [
     '/ecosystem',
+    '/ecosystem/get-funded',
+    '/get-funded',
     '/admin',
+    '/blog/*',
     '/en',
     '/es',
     '/ko',
