@@ -13,7 +13,8 @@
     "lint:fix": "eslint . --fix --rule 'react-hooks/exhaustive-deps: off' && prettier --write '**/*.{js,ts,tsx,json}'",
     "lint:staged": "lint-staged --quiet",
     "prettier": "prettier --write '**/*.{ts,js,css,html,md,tsx,mdx,yaml,yml,gql,graphql,json}'",
-    "type-check": "tsc --pretty --noEmit"
+    "type-check": "tsc --pretty --noEmit",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -35,7 +36,7 @@
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "formidable-serverless": "^1.1.1",
-    "globby": "^11.0.2",
+    "globby": "^13.2.2",
     "graphql-request": "^3.4.0",
     "graphql-tag": "^2.11.0",
     "gray-matter": "^4.0.2",
@@ -48,6 +49,7 @@
     "next-connect": "^0.11.0",
     "next-i18next": "^8.1.0",
     "next-mdx-remote": "^2.1.3",
+    "next-sitemap": "^4.2.2",
     "next-svgr": "^0.0.2",
     "next-tinacms-cloudinary": "^3.5.25",
     "next-transpile-modules": "^6.3.0",
