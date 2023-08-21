@@ -93,42 +93,6 @@ const CompareTable = () => {
             </Table.Cell>
           </Table.Row>
         </Table.Body>
-        {/* Fundamentals */}
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeaderCell>
-              <Box css={{ fontSize: "$4" }}>Fundamentals</Box>
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.RowHeaderCell>
-              <Text css={{ maxWidth: 220 }}>
-                Decentralized physical infrastructure network
-              </Text>
-            </Table.RowHeaderCell>
-            <Table.Cell>
-              <Check />
-            </Table.Cell>
-            <Table.Cell>—</Table.Cell>
-            <Table.Cell>—</Table.Cell>
-          </Table.Row>
-
-          <Table.Row>
-            <Table.RowHeaderCell>
-              <Text>Open source with self-host option</Text>
-            </Table.RowHeaderCell>
-            <Table.Cell>
-              <Check />
-            </Table.Cell>
-            <Table.Cell>—</Table.Cell>
-            <Table.Cell>—</Table.Cell>
-          </Table.Row>
-        </Table.Body>
         {/* Performance */}
         <Table.Header>
           <Table.Row>
@@ -201,6 +165,29 @@ const CompareTable = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
+          <Table.Row>
+            <Table.RowHeaderCell>
+              <Text css={{ maxWidth: 220 }}>
+                Decentralized physical infrastructure network
+              </Text>
+            </Table.RowHeaderCell>
+            <Table.Cell>
+              <Check />
+            </Table.Cell>
+            <Table.Cell>—</Table.Cell>
+            <Table.Cell>—</Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.RowHeaderCell>
+              <Text>Open source with self-host option</Text>
+            </Table.RowHeaderCell>
+            <Table.Cell>
+              <Check />
+            </Table.Cell>
+            <Table.Cell>—</Table.Cell>
+            <Table.Cell>—</Table.Cell>
+          </Table.Row>
           <Table.Row>
             <Table.RowHeaderCell>
               <Text>Embeddable player</Text>
