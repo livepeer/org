@@ -162,7 +162,7 @@ const CompareTable = () => {
           </Table.Row>
           <Table.Row>
             <Table.RowHeaderCell>
-              <Text>Video Startup Time (TTFF)*</Text>
+              <Text>Video Startup Time (TTFF)</Text>
             </Table.RowHeaderCell>
             <Table.Cell>
               <Text>0.2s</Text>
