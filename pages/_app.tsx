@@ -13,6 +13,8 @@ import {
   SnackbarProvider,
   DesignSystemProvider,
 } from "@livepeer/design-system";
+import "@radix-ui/themes/styles.css";
+import { Theme } from "@radix-ui/themes";
 
 initGsap();
 
@@ -29,15 +31,15 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <DesignSystemProvider>
-      <SnackbarProvider>
-        <TinaProvider>
-          <IdProvider>
+      <Theme appearance="light">
+        <SnackbarProvider>
+          <TinaProvider>
             <ThemeProvider theme={theme}>
               <Component {...pageProps} />
             </ThemeProvider>
-          </IdProvider>
-        </TinaProvider>
-      </SnackbarProvider>
+          </TinaProvider>
+        </SnackbarProvider>
+      </Theme>
     </DesignSystemProvider>
   );
 };

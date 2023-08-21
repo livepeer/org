@@ -8,6 +8,7 @@ import {
   Button,
 } from "@livepeer/design-system";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Prefooter = ({ backgroundColor = "$loContrast" }) => (
   <Box css={{ position: "relative" }}>
@@ -50,15 +51,15 @@ const Prefooter = ({ backgroundColor = "$loContrast" }) => (
           Ready to get started?
         </Heading>
         <Text
-          variant="gray"
-          size="5"
+          variant="white"
+          size="6"
           css={{
-            color: "white",
             mb: "$7",
             maxWidth: "700px",
             mx: "auto",
           }}>
-          Create a free account and begin streaming instantly.
+          Experience the world's open video infrastructure. Stream your first
+          video in just a few clicks.
         </Text>
         <Flex
           css={{
@@ -69,22 +70,40 @@ const Prefooter = ({ backgroundColor = "$loContrast" }) => (
               flexDirection: "row",
             },
           }}>
-          <Link href="https://livepeer.studio" passHref>
-            <Button
-              target="_blank"
-              size="4"
-              as="a"
-              variant="green"
-              css={{
-                mr: "$4",
-                mb: "$3",
-                "@bp2": {
-                  mb: 0,
-                },
-              }}>
-              Get started
-            </Button>
-          </Link>
+          <Flex
+            align="center"
+            gap={1}
+            css={{
+              flexDirection: "column",
+              "@bp2": {
+                flexDirection: "row",
+              },
+            }}>
+            <Link href="https://livepeer.studio" passHref>
+              <Button
+                target="_blank"
+                size={4}
+                as="a"
+                css={{ mr: "$2", display: "flex", gap: "$2" }}
+                variant="green">
+                Start building
+                <FiArrowUpRight />
+              </Button>
+            </Link>
+
+            <Link
+              href="https://livepeer.typeform.com/to/HTuUHdDR#lead_source=Website%20-%20Contact%20an%20Expert&contact_owner=xxxxx"
+              passHref>
+              <Button
+                target="_blank"
+                size={4}
+                as="a"
+                css={{ mr: "$2", display: "flex", gap: "$2" }}>
+                Talk to a Livepeer expert
+                <FiArrowUpRight />
+              </Button>
+            </Link>
+          </Flex>
         </Flex>
       </Box>
     </Container>

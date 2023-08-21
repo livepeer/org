@@ -9,6 +9,7 @@ const withTM = require('next-transpile-modules')([
   'gsap/SplitText',
   'react-use-mailchimp',
   'react-syntax-highlighter',
+  '@radix-ui/themes',
 ]);
 
 module.exports = withPlugins([
@@ -27,6 +28,11 @@ module.exports = withPlugins([
       },
       pageExtensions: ['mdx', 'tsx'],
       webpack(config, _options) {
+        config.module.rules.push({
+          test: /\.mjs/,
+          include: /node_modules/,
+          type: 'javascript/auto',
+        });
         config.module.rules.push({
           test: /\.(graphql|gql)$/,
           exclude: /node_modules/,
