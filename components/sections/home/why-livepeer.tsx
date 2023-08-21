@@ -14,10 +14,11 @@ type Props = {
   title: string;
   description: string;
   icon?: React.ReactNode;
+  width?: number | string;
 };
 
-const Value = ({ title, description, icon }: Props) => (
-  <Box sx={{ width: "374px" }}>
+const Value = ({ title, description, icon, width = 374 }: Props) => (
+  <Box sx={{ width: width }}>
     <Flex
       sx={{
         height: "auto",
@@ -64,18 +65,18 @@ const Value = ({ title, description, icon }: Props) => (
   </Box>
 );
 
-const WhyLivepeer = ({ title, subtitle, label }) => {
+const WhyLivepeer = ({ title, subtitle, label, width = 374 }) => {
   const values = [
     {
       title: "Open",
       description:
-        "The Livepeer Network is open. Build with a hosted gateway service or self-host. There is no vendor lock-in. ",
+        "Livepeer is open source software. Customize Livepeer to your needs and benefit from global innovation.",
       icon: <MdPublic />,
     },
     {
       title: "Affordable",
       description:
-        "Cut down on costs by tapping into the network’s competitive marketplace of infrastructure providers representing access to 70k+ GPUs.",
+        "Cut down on costs by tapping into Livepeer's competitive marketplace of infrastructure providers representing access to 70k+ GPUs.",
       icon: <MdAttachMoney />,
     },
     {
@@ -93,7 +94,7 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
     {
       title: "Scalable",
       description:
-        "Livepeer Protocol harnesses the power of cryptoeconomic incentives, drawing a worldwide network of independent providers to process and deliver video, enabling near-infinite scalability.",
+        "Livepeer harnesses the power of cryptoeconomic incentives, drawing a worldwide network of independent providers to process and deliver video, enabling near-infinite scalability.",
       icon: <MdAllInclusive />,
     },
     {
@@ -108,7 +109,7 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
       title={title}
       subtitle={subtitle}
       titleLabel={label}
-      pushSx={{ pb: 100 }}>
+      pushSx={{ pb: 80 }}>
       <Grid
         columns={[
           null,
@@ -131,6 +132,7 @@ const WhyLivepeer = ({ title, subtitle, label }) => {
             title={value.title}
             description={value.description}
             icon={value.icon}
+            width={width}
           />
         ))}
       </Grid>

@@ -10,6 +10,7 @@ import Link from "next/link";
 import Prefooter from "components/sections/prefooter";
 import { Callout } from "@radix-ui/themes";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
+import WhyLivepeer from "components/sections/home/why-livepeer";
 
 const Compare = () => {
   const { t } = useTranslation(["developers"]);
@@ -70,6 +71,8 @@ const Compare = () => {
           pt: "$8",
           bc: "$gray1",
           borderTop: "1px solid $gray4",
+          borderBottom: "1px solid $gray4",
+          py: "$7",
         }}>
         <Container size={3}>
           <CompareTable />
@@ -84,6 +87,16 @@ const Compare = () => {
               </Callout.Text>
             </Callout.Root>
           </Box>
+        </Container>
+      </Box>
+      <Box css={{ mt: "$4" }}>
+        <Container size={3} css={{ pb: 0 }}>
+          <WhyLivepeer
+            label="Why Livepeer Protocol"
+            title="A globally distributed, open infrastructure network"
+            subtitle="What makes Livepeer Protocol so scalable, reliable, and affordable? Enter the Livepeer Network, an open and permissionless peer-to-peer network of independent operators intelligently routing and processing video."
+            width="325px"
+          />
         </Container>
       </Box>
       <Prefooter />
