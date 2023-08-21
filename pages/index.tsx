@@ -62,7 +62,7 @@ const HomePage = () => {
       <WhyLivepeerSection
         label="Why Livepeer"
         title="A globally distributed, open infrastructure network"
-        subtitle="What makes Livepeer so scalable, reliable, and affordable? Enter the open Livepeer Network, an open and permissionless peer-to-peer network of independent operators intelligently routing and processing video."
+        subtitle="What makes Livepeer so scalable, reliable, and affordable? Enter the Livepeer Network, an open and permissionless peer-to-peer network of independent operators intelligently routing and processing video."
       />
       <PrimerBanner
         label={t("page-home-primer")}
