@@ -1,0 +1,126 @@
+fragment PostsParts on Posts {
+  title
+  body
+}
+
+fragment AppsParts on Apps {
+  publish
+  image
+  title
+  richtext
+  website
+  twitter
+  discord
+  linkedin
+  telegram
+  link
+  createdAt
+}
+
+fragment VideosParts on Videos {
+  publish
+  image
+  title
+  richtext
+  website
+  createdAt
+}
+
+fragment Web3Parts on Web3 {
+  publish
+  image
+  title
+  richtext
+  website
+  twitter
+  discord
+  linkedin
+  telegram
+  link
+  createdAt
+}
+
+fragment StakingParts on Staking {
+  publish
+  image
+  title
+  richtext
+  website
+  twitter
+  discord
+  linkedin
+  telegram
+  link
+  createdAt
+}
+
+fragment ExchangeParts on Exchange {
+  publish
+  image
+  title
+  richtext
+  website
+  twitter
+  discord
+  linkedin
+  telegram
+  link
+  createdAt
+}
+
+fragment ComunityParts on Comunity {
+  publish
+  image
+  title
+  richtext
+  website
+  createdAt
+}
+
+fragment PagesParts on Pages {
+  title
+  description
+  updatedAt
+  body
+}
+
+fragment EcosystemParts on Ecosystem {
+  hero {
+    __typename
+    hero_title_dark
+    hero_title_green
+    hero_description
+    hero_eyebrow
+  }
+  apps_section {
+    __typename
+    title
+    description
+  }
+  video_section {
+    __typename
+    title
+    description
+  }
+  web3_section {
+    __typename
+    title
+    description
+  }
+  stacking_section {
+    __typename
+    title
+    description
+  }
+  exchanges_section {
+    __typename
+    title
+    description
+  }
+  community_section {
+    __typename
+    title
+    description
+  }
+  footer_cta_description
+}
