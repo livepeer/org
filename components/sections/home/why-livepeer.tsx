@@ -104,7 +104,7 @@ const WhyLivepeer = ({
           <Link href="/pricing" passHref>
             <A variant="secondary">streamlined pricing</A>
           </Link>{" "}
-          that takes advantage of Livepeer's marketplace of infrastructure
+          that takes advantage of Livepeer's open marketplace of infrastructure
           providers representing access to 70k+ GPUs.
         </Box>
       ),
