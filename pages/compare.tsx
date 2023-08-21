@@ -92,6 +92,7 @@ const Compare = () => {
       <Box css={{ mt: "$4" }}>
         <Container size={3} css={{ pb: 0 }}>
           <WhyLivepeer
+            pushSx={{ pb: 0 }}
             label="Why Livepeer Protocol"
             title="A globally distributed, open infrastructure network"
             subtitle="What makes Livepeer Protocol so scalable, reliable, and affordable? Enter the Livepeer Network, an open and permissionless peer-to-peer network of independent operators intelligently routing and processing video."

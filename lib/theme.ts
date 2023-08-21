@@ -438,6 +438,9 @@ const theme = {
         },
       },
     },
+    secondary: {
+      color: "#3F3FE2",
+    },
     accent: {
       color: "secondary",
       fontWeight: 600,

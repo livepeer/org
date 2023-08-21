@@ -1,6 +1,14 @@
 import React from "react";
 import SectionLayout from "components/layouts/section";
-import { Grid, Box, Flex, Heading, Text } from "theme-ui";
+import {
+  Grid,
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Link as A,
+  SxStyleProp,
+} from "theme-ui";
 import {
   MdPublic,
   MdAttachMoney,
@@ -9,15 +17,16 @@ import {
   MdSentimentSatisfied,
   MdOutlineVerifiedUser,
 } from "react-icons/md";
+import Link from "next/link";
 
-type Props = {
+type ValueProps = {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   icon?: React.ReactNode;
   width?: number | string;
 };
 
-const Value = ({ title, description, icon, width = 374 }: Props) => (
+const Value = ({ title, description, icon, width = 374 }: ValueProps) => (
   <Box sx={{ width: width }}>
     <Flex
       sx={{
@@ -65,7 +74,21 @@ const Value = ({ title, description, icon, width = 374 }: Props) => (
   </Box>
 );
 
-const WhyLivepeer = ({ title, subtitle, label, width = 374 }) => {
+type Props = {
+  title: string;
+  subtitle: string | React.ReactNode;
+  label: string;
+  width?: number | string;
+  pushSx?: SxStyleProp;
+};
+
+const WhyLivepeer = ({
+  title,
+  subtitle,
+  label,
+  width = 374,
+  pushSx,
+}: Props) => {
   const values = [
     {
       title: "Open",
@@ -75,8 +98,16 @@ const WhyLivepeer = ({ title, subtitle, label, width = 374 }) => {
     },
     {
       title: "Affordable",
-      description:
-        "Cut down on costs by tapping into Livepeer's competitive marketplace of infrastructure providers representing access to 70k+ GPUs.",
+      description: (
+        <Box>
+          Save up to 90% on costs with{" "}
+          <Link href="/pricing" passHref>
+            <A variant="secondary">streamlined pricing</A>
+          </Link>{" "}
+          that takes advantage of Livepeer's marketplace of infrastructure
+          providers representing access to 70k+ GPUs.
+        </Box>
+      ),
       icon: <MdAttachMoney />,
     },
     {
@@ -109,7 +140,7 @@ const WhyLivepeer = ({ title, subtitle, label, width = 374 }) => {
       title={title}
       subtitle={subtitle}
       titleLabel={label}
-      pushSx={{ pb: 80 }}>
+      pushSx={{ pb: 80, ...pushSx }}>
       <Grid
         columns={[
           null,
