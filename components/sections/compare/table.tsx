@@ -174,6 +174,20 @@ const CompareTable = () => {
               <Text>0.2s</Text>
             </Table.Cell>
           </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>
+              <Text>Uptime SLA</Text>
+            </Table.RowHeaderCell>
+            <Table.Cell>
+              <Check />
+            </Table.Cell>
+            <Table.Cell>
+              <Check />
+            </Table.Cell>
+            <Table.Cell>
+              <Check />
+            </Table.Cell>
+          </Table.Row>
         </Table.Body>
         {/* Key features */}
         <Table.Header>
@@ -356,34 +370,6 @@ const CompareTable = () => {
             </Table.Cell>
             <Table.Cell>—</Table.Cell>
             <Table.Cell>—</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-
-        {/* Support */}
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeaderCell>
-              <Box css={{ fontSize: "$4" }}>Support</Box>
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.RowHeaderCell>
-              <Text>Uptime SLA</Text>
-            </Table.RowHeaderCell>
-            <Table.Cell>
-              <Check />
-            </Table.Cell>
-            <Table.Cell>
-              <Check />
-            </Table.Cell>
-            <Table.Cell>
-              <Check />
-            </Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table.Root>
