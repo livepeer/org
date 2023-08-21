@@ -76,8 +76,8 @@ const Value = ({ title, description, icon, width = 374 }: ValueProps) => (
 
 type Props = {
   title: string;
-  subtitle: string | React.ReactNode;
-  label: string;
+  subtitle?: string | React.ReactNode;
+  label?: string;
   width?: number | string;
   pushSx?: SxStyleProp;
 };
