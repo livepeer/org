@@ -14,7 +14,7 @@ import LivepeerLogo from "components/svgs/livepeer-logo";
 import { useEffect, useCallback, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
-import { TopNotificationProps } from "./top-notification";
+import TopNotification, { TopNotificationProps } from "./top-notification";
 import Menu from "components/sections/primer/Menu";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -61,10 +61,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title: "Introducing Livepeer.js - the Livepeer Development Kit",
+    title:
+      "Switch to Livepeer by October 13th for up to six months free, courtesy of Livepeer Inc",
     link: {
-      label: "Build with Livepeer.js",
-      href: "https://docs.livepeer.org/reference/livepeer-js",
+      label: "Learn more",
+      href: "https://typeform.com",
       isExternal: true,
     },
   };
@@ -115,7 +116,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
 
   return (
     <>
-      {/* {topNotification && <TopNotification {...topNotification} />} */}
+      {topNotification && <TopNotification {...topNotification} />}
       <Box
         sx={{
           bg,
