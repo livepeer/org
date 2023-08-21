@@ -24,13 +24,6 @@ import NetworkDropdown from "components/primitives/network-dropdown";
 import DeveloperDropdown from "components/primitives/developer-dropdown";
 import UseCasesDropdown from "components/primitives/use-cases-dropdown";
 
-type LinkType = {
-  label: string;
-  href: string;
-  isExternal?: boolean;
-  asPath?: string;
-};
-
 const navHeight = "72px";
 
 export type NavProps = {

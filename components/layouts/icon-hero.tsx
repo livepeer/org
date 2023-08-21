@@ -78,12 +78,12 @@ const IconHero = forwardRef(
             px: 0,
           }}>
           <Grid
-            sx={{ pb: 0 }}
+            sx={{ pb: 0, alignItems: "center" }}
             variant="layout.section"
             gap={5}
             columns={[1, null, null, 2]}>
             <Box>
-              {icon ? (
+              {icon && (
                 <i
                   className={cn({ "h-animate": withAnimation })}
                   sx={{
@@ -100,8 +100,6 @@ const IconHero = forwardRef(
                   }}>
                   {icon}
                 </i>
-              ) : (
-                <Box sx={{ width: 16, height: 16 }} />
               )}
               <Heading
                 className={cn({ "h-animate": withAnimation })}
@@ -132,14 +130,7 @@ const IconHero = forwardRef(
                 }}>
                 {subtitle}
               </Heading>
-              {cta && (
-                <A
-                  variant="buttons.primary"
-                  href={cta.href}
-                  target={cta.isExternal && "__blank"}>
-                  {cta.label}
-                </A>
-              )}
+              {cta && cta}
             </Box>
             <Box
               className={cn({ "c-animate": withAnimation })}
