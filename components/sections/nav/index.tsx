@@ -57,8 +57,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     title: (
       <Box>
         💰 Switch to Livepeer by October 13th for{" "}
-        <span sx={{ fontWeight: "bold" }}>up to six months free</span>, courtesy
-        of Livepeer Inc 💰
+        <span sx={{ fontWeight: "bold" }}>up to six months free</span> 💰
       </Box>
     ),
     link: {
