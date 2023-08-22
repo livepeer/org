@@ -16,6 +16,7 @@ import { HeadProps } from "components/primitives/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import { Box } from "@livepeer/design-system";
 
 const HomePage = () => {
   const router = useRouter();
@@ -43,7 +44,15 @@ const HomePage = () => {
     <PageLayout headProps={headProps} navProps={{ isInmersive: true }}>
       <HomeHero
         title={router.locale !== "en" && t("page-home-title")}
-        subtitle={t("page-home-intro")}
+        subtitle={
+          <Box>
+            Livepeer is a video infrastructure protocol for live and on-demand
+            video streaming, offering up to <strong>90% cost savings</strong>{" "}
+            compared to traditional cloud providers. Designed to give developers
+            the freedom to innovate, creators autonomy from platforms, and
+            viewers a choice in their experience.
+          </Box>
+        }
         cta={t("page-home-get-started")}
         videoLabel={t("page-home-live")}
       />

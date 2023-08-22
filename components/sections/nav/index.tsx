@@ -61,11 +61,17 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
   }, [handleScroll]);
 
   const topNotification: TopNotificationProps = {
-    title:
-      "Switch to Livepeer by October 13th for up to six months free, courtesy of Livepeer Inc",
+    title: (
+      <Box>
+        💰 Switch to Livepeer by October 13th for{" "}
+        <span sx={{ fontWeight: "bold" }}>up to six months free</span>, courtesy
+        of Livepeer Inc 💰
+      </Box>
+    ),
     link: {
       label: "Learn more",
-      href: "https://typeform.com",
+      href:
+        "https://livepeer.typeform.com/to/shoMCvCl#lead_source=xxxxx&contact_owner=xxxxx",
       isExternal: true,
     },
   };

@@ -1,10 +1,10 @@
 import { Box, Text, Link as A } from "theme-ui";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import Link from "next/link";
-import { forwardRef, RefObject } from "react";
+import { forwardRef, ReactNode, RefObject } from "react";
 
 export type TopNotificationProps = {
-  title?: string;
+  title?: string | ReactNode;
   description?: string;
   link: {
     label: string;
@@ -19,7 +19,9 @@ const TopNotification = forwardRef(
     <Box
       ref={ref}
       sx={{
+        display: "flex",
         bg: "black",
+        justifyContent: "center",
         color: "background",
         textAlign: "center",
         p: 2,
