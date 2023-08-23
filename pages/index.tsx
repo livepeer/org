@@ -46,11 +46,12 @@ const HomePage = () => {
         title={router.locale !== "en" && t("page-home-title")}
         subtitle={
           <Box>
-            Livepeer is a video infrastructure protocol for live and on-demand
-            video streaming, offering up to <strong>90% cost savings</strong>{" "}
-            compared to traditional cloud providers. Designed to give developers
-            the freedom to innovate, creators autonomy from platforms, and
-            viewers a choice in their experience.
+            Livepeer is a high-performance video infrastructure protocol for
+            live and on-demand streaming, delivering up to{" "}
+            <strong>90% cost savings</strong> compared to traditional cloud
+            providers. Designed to give developers the freedom to innovate,
+            creators autonomy from platforms, and viewers a choice in their
+            experience.
           </Box>
         }
         cta={t("page-home-get-started")}
