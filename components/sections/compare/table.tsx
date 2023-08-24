@@ -36,7 +36,7 @@ const CompareTable = () => {
             <Table.ColumnHeaderCell>
               <Flex align="center" gap={2} css={{ fontSize: "$5" }}>
                 <Status variant="green" />
-                Livepeer (Hosted)
+                Livepeer
               </Flex>
             </Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>
