@@ -86,13 +86,13 @@ const HomePage = () => {
         subtitle="By combining Livepeer’s open video API with other emerging open protocols in social and onchain finance, developers are disrupting the way creators own and monetize their video content, enabling novel experiences in music, entertainment, shopping, gaming, and beyond."
         items={[
           {
-            title: "Lenstube",
+            title: "Bonfire",
             description:
-              "A social platform for video sharing built with Livepeer and Lens.",
+              "Bonfire gives you the tools to start, grow, and manage communities.",
             imageUrl:
-              "https://user-images.githubusercontent.com/555740/232839442-6368d099-27f6-4bbd-80e2-dc577305c3d0.png",
-            label: "lenstube.xyz",
-            url: "https://lenstube.xyz/",
+              "https://res.cloudinary.com/duquzk7m6/image/upload/v1667850687/Bonfire_enwrkq.png",
+            label: "bonfire.xyz",
+            url: "https://www.bonfire.xyz",
           },
           {
             title: "Beem",
@@ -104,13 +104,22 @@ const HomePage = () => {
             url: "https://beem.xyz",
           },
           {
-            title: "Bonfire",
+            title: "StreamETH",
             description:
-              "Bonfire gives you the tools to start, grow, and manage communities.",
+              "StreamETH is an open video CMS for organizing virtual or hybrid events.",
             imageUrl:
-              "https://res.cloudinary.com/duquzk7m6/image/upload/v1667850687/Bonfire_enwrkq.png",
-            label: "bonfire.xyz",
-            url: "https://www.bonfire.xyz",
+              "https://github.com/livepeer/org/assets/555740/cc43c5c3-f359-4c1f-91a3-e95a3f00eb72",
+            label: "streameth.org",
+            url: "https://streameth.org",
+          },
+          {
+            title: "Lenstube",
+            description:
+              "A social platform for video sharing built with Livepeer and Lens.",
+            imageUrl:
+              "https://user-images.githubusercontent.com/555740/232839442-6368d099-27f6-4bbd-80e2-dc577305c3d0.png",
+            label: "lenstube.xyz",
+            url: "https://lenstube.xyz/",
           },
           {
             title: "Orb",
