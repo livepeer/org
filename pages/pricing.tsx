@@ -40,10 +40,9 @@ const PricingPage = ({ markdownContent }) => {
               Pricing
             </Heading>
             <Text size={5} css={{ lineHeight: 1.7 }}>
-              The Livepeer hosted service provides optimized Livepeer node
-              infrastructure for you, allowing you to focus on building your
-              video applications. Information about its pricing structure can be
-              found below.
+              Livepeer Studio provides hosted Livepeer node infrastructure for
+              you, allowing you to focus on building your video applications.
+              Information about its pricing structure can be found below.
             </Text>
           </Box>
         </Container>
