@@ -6,6 +6,8 @@ import Pricing from "components/sections/pricing";
 import ReactMarkdown from "react-markdown";
 import { promises as fs } from "fs";
 import path from "path";
+import { Callout } from "@radix-ui/themes";
+import { InfoCircledIcon } from "@radix-ui/react-icons";
 
 const PricingPage = ({ markdownContent }) => {
   const headProps: HeadProps = {
@@ -38,22 +40,41 @@ const PricingPage = ({ markdownContent }) => {
               Pricing
             </Heading>
             <Text size={5} css={{ lineHeight: 1.7 }}>
-              The Livepeer network is open and permissionless, which means
-              anyone can run their own Livepeer node and pay the network
-              directly, with no middleman. However, running and scaling your own
-              node infrastructure can be challenging, especially when getting
-              started or scaling rapidly. Enter Livepeer gateway providers.
-              <br />
-              <br />
-              Gateway providers host optimized Livepeer node infrastructure for
-              you, allowing you to focus on building your video applications
-              instead. Livepeer Inc, the initial team behind the Livepeer
-              protocol, operates the most popular hosted gateway. Information
-              about its pricing structure can be found below.
+              The Livepeer hosted service provides optimized Livepeer node
+              infrastructure for you, allowing you to focus on building your
+              video applications. Information about its pricing structure can be
+              found below.
             </Text>
           </Box>
         </Container>
         <Pricing />
+        {/* <Container
+          size="4"
+          css={{
+            maxWidth: "1245px",
+            mb: "$8",
+          }}>
+          <Box>
+            <Callout.Root>
+              <Callout.Icon>
+                <InfoCircledIcon />
+              </Callout.Icon>
+              <Callout.Text>
+                The Livepeer network is open and permissionless, which means
+                anyone can run their own Livepeer node and pay the network
+                directly, with no middleman. However, running and scaling your
+                own node infrastructure can be challenging, especially when
+                getting started or scaling rapidly. Enter Livepeer gateway
+                providers. Gateway providers host optimized Livepeer node
+                infrastructure for you, allowing you to focus on building your
+                video applications instead. Livepeer Inc, the initial team
+                behind the Livepeer protocol, operates the most popular hosted
+                gateway. Information about its pricing structure can be found
+                below.
+              </Callout.Text>
+            </Callout.Root>
+          </Box>
+        </Container> */}
         <Container
           css={{
             maxWidth: "960px",
