@@ -47,10 +47,6 @@ const items = [
     text: "Documentation",
     isExternal: true,
   },
-  {
-    link: "/pricing",
-    text: "Pricing",
-  },
 ];
 
 const DeveloperDropdown = () => {

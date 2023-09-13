@@ -74,7 +74,9 @@ const IconCard = ({
           className="title_label">
           {titleLabel}
         </Text> */}
-        <Heading variant="heading.4" sx={{ textAlign: "left", mb: "24px" }}>
+        <Heading
+          variant="heading.4"
+          sx={{ letterSpacing: "-2px", textAlign: "left", mb: "24px" }}>
           {title}
         </Heading>
         <Text variant="normal">{description}</Text>

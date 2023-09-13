@@ -3,15 +3,24 @@ import { Grid } from "theme-ui";
 import IconCard, { IconCardProps } from "components/primitives/cards/icon";
 import TokenSvg from "components/svgs/token";
 import GpuSvg from "components/svgs/gpu";
+import { FiCode } from "react-icons/fi";
 
 const LetLivepeerDoSection = ({
   tokenholders,
   videoMiners,
+  developers,
   label,
   title,
   subtitle,
 }) => {
   const cards: IconCardProps[] = [
+    {
+      icon: <FiCode />,
+      title: developers.title,
+      description: developers.description,
+      linkProps: { link: { label: "/developers", href: "/developers" } },
+      isClickable: true,
+    },
     {
       icon: <GpuSvg style={{ width: 28, height: 28 }} />,
       title: videoMiners.title,
@@ -42,7 +51,7 @@ const LetLivepeerDoSection = ({
             null,
             null,
             null,
-            ({ sizes: { md } }) => `repeat(2, ${md})`,
+            ({ sizes: { sm } }) => `repeat(3, ${sm})`,
           ],
           mx: "auto",
           justifyContent: "center",

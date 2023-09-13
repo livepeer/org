@@ -1,12 +1,12 @@
 import HomeHero from "components/sections/home/hero";
 import PrimerBanner from "components/sections/home/primer-banner";
+import LetLivepeerDoSection from "components/sections/home/let-livepeer-do";
 import CommunitySection from "components/sections/home/community";
 import PageLayout from "components/layouts/page";
 import { useEffect } from "react";
-import OneAPI from "components/sections/home/one-api";
-import StartBuilding from "components/sections/home/start-building";
 import Ecosystem from "components/sections/home/ecosystem";
-import WhyLivepeerSection from "components/sections/home/why-livepeer";
+import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
+
 import {
   getProtocolStatistics,
   getTotalActiveNodes,
@@ -18,7 +18,7 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { Box } from "@livepeer/design-system";
 
-const HomePage = () => {
+const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
   const router = useRouter();
   const { t } = useTranslation(["home"]);
 
@@ -57,22 +57,22 @@ const HomePage = () => {
         cta={t("page-home-get-started")}
         videoLabel={t("page-home-live")}
       />
-
-      {/* <LetTheNumbersTalkSection
-       
-        label1={t("video-miners:page-video-miners-numbers-nodes-text")}
-        label2={t("video-miners:page-video-miners-numbers-fees-text")}
-        label3={t("video-miners:page-video-miners-numbers-cost-text")}
-        totalActiveNodes={totalActiveNodes}
-        totalMinutes={totalMinutes}
-        totalVolume={totalVolumeUSD}
-      /> */}
-      <OneAPI />
-      <StartBuilding />
-      <WhyLivepeerSection
-        label="Why Livepeer"
-        title="A globally distributed, open infrastructure network"
-        subtitle="What makes Livepeer so scalable, reliable, and affordable? Enter the Livepeer Network, an open and permissionless peer-to-peer network of independent operators intelligently routing and processing video."
+      <LetLivepeerDoSection
+        label={t("page-home-get-started")}
+        title={t("page-home-what-role")}
+        subtitle={t("page-home-jump-in")}
+        tokenholders={{
+          title: t("page-home-tokenholders"),
+          description: t("page-home-tokenholders-text"),
+        }}
+        developers={{
+          title: t("page-home-developers"),
+          description: t("page-home-developers-text"),
+        }}
+        videoMiners={{
+          title: t("page-home-video-miners"),
+          description: t("page-home-video-miners-text"),
+        }}
       />
       <PrimerBanner
         label={t("page-home-primer")}
@@ -80,6 +80,14 @@ const HomePage = () => {
         subtitle={t("page-home-primer-text")}
         ctaText={t("page-home-primer-cta")}
       />
+      {/* <LetTheNumbersTalkSection
+        label1={t("video-miners:page-video-miners-numbers-nodes-text")}
+        label2={t("video-miners:page-video-miners-numbers-fees-text")}
+        label3={t("video-miners:page-video-miners-numbers-cost-text")}
+        totalActiveNodes={totalActiveNodes}
+        totalMinutes={totalMinutes}
+        totalVolume={totalVolumeUSD}
+      /> */}
       <Ecosystem
         label="The Livepeer Ecosystem"
         title="A growing network of open video apps"

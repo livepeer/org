@@ -56,10 +56,6 @@ const Footer = ({
           isExternal: true,
         },
         {
-          label: "Pricing",
-          href: "/pricing",
-        },
-        {
           label: "Livepeer.js",
           href: "https://livepeerjs.org",
           isExternal: true,
@@ -158,7 +154,7 @@ const Footer = ({
               flexDirection: "column",
               mb: 5,
             }}
-            pushLogoSx={{ mr: 0, mb: 3 }}
+            pushLogoSx={{ mb: 3 }}
             id="footer-logo-mobile"
           />
           <Grid

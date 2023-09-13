@@ -5,7 +5,6 @@ import KeenSliderGrid from "components/layouts/keen-slider-grid";
 
 const EcosystemSection = ({ title, subtitle, label, items }) => (
   <SectionLayout
-    background="muted"
     titleLabel={label}
     title={title}
     subtitle={subtitle}
