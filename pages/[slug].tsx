@@ -24,7 +24,7 @@ export default function Page({ slug, source, frontMatter }) {
         : slug.charAt(0).toUpperCase() + slug.slice(1),
       description: frontMatter?.description
         ? frontMatter.description
-        : "Livepeer is a video infrastructure protocol for live and on-demand streaming. Designed to give developers the freedom to innovate, creators autonomy from platforms, and viewers a choice in their experience.",
+        : "Livepeer is a video infrastructure network for live and on-demand streaming. Designed to give developers the freedom to innovate, creators autonomy from platforms, and viewers a choice in their experience.",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
       twitterUsername: "@Livepeer",
