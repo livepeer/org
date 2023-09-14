@@ -46,7 +46,7 @@ const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
         title={router.locale !== "en" && t("page-home-title")}
         subtitle={
           <Box>
-            Livepeer is a video infrastructure protocol for live and on-demand
+            Livepeer is a video infrastructure network for live and on-demand
             streaming. Designed to give developers the freedom to innovate,
             creators autonomy from platforms, and viewers a choice in their
             experience.
