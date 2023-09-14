@@ -13,7 +13,7 @@ export type MetaType = {
 const defaultMeta: MetaType = {
   title: "Livepeer",
   description:
-    "Livepeer is a video infrastructure protocol designed to power the new creator economy. Add live and on-demand video experiences to onchain apps, open social, and everything in between.",
+    "Livepeer is a video infrastructure protocol for live and on-demand streaming. Designed to give developers the freedom to innovate, creators autonomy from platforms, and viewers a choice in their experience.",
   url: "https://livepeer.org",
   siteName: "Livepeer",
   image: "https://livepeer.org/OG.png",
