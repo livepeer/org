@@ -14,8 +14,8 @@ const OpenSourceSection = ({ title, subtitle, ctaText, cards }) => {
       description: cards[0].description,
       linkProps: {
         link: {
-          label: "go-livepeer",
-          href: "https://github.com/livepeer/go-livepeer",
+          label: "catalyst",
+          href: "https://github.com/livepeer/catalyst",
           isExternal: true,
         },
         status: "Go",

@@ -1,12 +1,12 @@
 import HomeHero from "components/sections/home/hero";
 import PrimerBanner from "components/sections/home/primer-banner";
+import LetLivepeerDoSection from "components/sections/home/let-livepeer-do";
 import CommunitySection from "components/sections/home/community";
 import PageLayout from "components/layouts/page";
 import { useEffect } from "react";
-import OneAPI from "components/sections/home/one-api";
-import StartBuilding from "components/sections/home/start-building";
 import Ecosystem from "components/sections/home/ecosystem";
-import WhyLivepeerSection from "components/sections/home/why-livepeer";
+import LetTheNumbersTalkSection from "components/sections/video-miners/let-the-numbers-talk";
+
 import {
   getProtocolStatistics,
   getTotalActiveNodes,
@@ -18,7 +18,7 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { Box } from "@livepeer/design-system";
 
-const HomePage = () => {
+const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
   const router = useRouter();
   const { t } = useTranslation(["home"]);
 
@@ -46,10 +46,8 @@ const HomePage = () => {
         title={router.locale !== "en" && t("page-home-title")}
         subtitle={
           <Box>
-            Livepeer is a high-performance video infrastructure protocol for
-            live and on-demand streaming, delivering up to{" "}
-            <strong>90% cost savings</strong> compared to traditional cloud
-            providers. Designed to give developers the freedom to innovate,
+            Livepeer is a video infrastructure network for live and on-demand
+            streaming. Designed to give developers the freedom to innovate,
             creators autonomy from platforms, and viewers a choice in their
             experience.
           </Box>
@@ -57,22 +55,22 @@ const HomePage = () => {
         cta={t("page-home-get-started")}
         videoLabel={t("page-home-live")}
       />
-
-      {/* <LetTheNumbersTalkSection
-       
-        label1={t("video-miners:page-video-miners-numbers-nodes-text")}
-        label2={t("video-miners:page-video-miners-numbers-fees-text")}
-        label3={t("video-miners:page-video-miners-numbers-cost-text")}
-        totalActiveNodes={totalActiveNodes}
-        totalMinutes={totalMinutes}
-        totalVolume={totalVolumeUSD}
-      /> */}
-      <OneAPI />
-      <StartBuilding />
-      <WhyLivepeerSection
-        label="Why Livepeer"
-        title="A globally distributed, open infrastructure network"
-        subtitle="What makes Livepeer so scalable, reliable, and affordable? Enter the Livepeer Network, an open and permissionless peer-to-peer network of independent operators intelligently routing and processing video."
+      <LetLivepeerDoSection
+        label={t("page-home-get-started")}
+        title={t("page-home-what-role")}
+        subtitle={t("page-home-jump-in")}
+        tokenholders={{
+          title: t("page-home-tokenholders"),
+          description: t("page-home-tokenholders-text"),
+        }}
+        developers={{
+          title: t("page-home-developers"),
+          description: t("page-home-developers-text"),
+        }}
+        videoMiners={{
+          title: t("page-home-video-miners"),
+          description: t("page-home-video-miners-text"),
+        }}
       />
       <PrimerBanner
         label={t("page-home-primer")}
@@ -80,6 +78,14 @@ const HomePage = () => {
         subtitle={t("page-home-primer-text")}
         ctaText={t("page-home-primer-cta")}
       />
+      {/* <LetTheNumbersTalkSection
+        label1={t("video-miners:page-video-miners-numbers-nodes-text")}
+        label2={t("video-miners:page-video-miners-numbers-fees-text")}
+        label3={t("video-miners:page-video-miners-numbers-cost-text")}
+        totalActiveNodes={totalActiveNodes}
+        totalMinutes={totalMinutes}
+        totalVolume={totalVolumeUSD}
+      /> */}
       <Ecosystem
         label="The Livepeer Ecosystem"
         title="A growing network of open video apps"
@@ -129,15 +135,6 @@ const HomePage = () => {
               "https://user-images.githubusercontent.com/555740/232842347-b8a05451-4b24-4027-8a2e-a2dd6246482d.png",
             label: "orb.ac",
             url: "https://orb.ac",
-          },
-          {
-            title: "Xeenon",
-            description:
-              "Get paid to stream with an open video streaming platform.",
-            imageUrl:
-              "https://user-images.githubusercontent.com/555740/232843817-3fb0054e-7b70-452a-b3f3-f2382be9f9dc.png",
-            label: "xeenon.xyz",
-            url: "https://xeenon.xyz",
           },
         ]}
       />

@@ -49,6 +49,7 @@ const links: IconLinkProps[] = [
 
 const CommunitySection = ({ title, subtitle, label }) => (
   <SectionLayout
+    background="muted"
     title={title}
     titleLabel={label}
     subtitle={subtitle}

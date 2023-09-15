@@ -114,7 +114,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
 
   return (
     <>
-      {topNotification && <TopNotification {...topNotification} />}
+      {/* {topNotification && <TopNotification {...topNotification} />} */}
       <Box
         sx={{
           bg,
@@ -136,10 +136,16 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             height: navHeight,
             maxWidth: 1350,
           }}>
-          <LivepeerLogo
-            isDark={isDark}
-            disableHover={isPrimer ? true : false}
-          />
+          <Box
+            sx={{
+              width: 140,
+              color: "black",
+            }}>
+            <LivepeerLogo
+              isDark={isDark}
+              disableHover={isPrimer ? true : false}
+            />
+          </Box>
           <Box
             sx={{
               alignItems: "center",
@@ -160,11 +166,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               </NavLink>
             )}
 
-            {!isPrimer && (
+            {/* {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <UseCasesDropdown />
               </NavLink>
-            )}
+            )} */}
 
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
@@ -199,7 +205,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                   href="https://livepeer.studio"
                   target="_blank"
                   css={{ borderRadius: 12 }}>
-                  Go to dashboard
+                  Launch Studio
                 </A>
               </NavLink>
             )}

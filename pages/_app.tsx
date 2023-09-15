@@ -7,7 +7,6 @@ import * as gtag from "../lib/gtag";
 import { useEffect } from "react";
 import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
-import { IdProvider } from "@radix-ui/react-id";
 import TinaProvider from "../.tina/components/TinaDynamicProvider";
 import {
   SnackbarProvider,

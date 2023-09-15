@@ -78,8 +78,9 @@ const CodePage = () => {
         ctaText={t("page-oss-featured-cta")}
         cards={[
           {
-            title: t("page-oss-featured-go"),
-            description: t("page-oss-featured-go-text"),
+            title: "Catalyst",
+            description:
+              "The entire bundle needed for booting up a Livepeer media server",
           },
           {
             title: t("page-oss-featured-protocol"),
