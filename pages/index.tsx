@@ -136,15 +136,6 @@ const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
             label: "orb.ac",
             url: "https://orb.ac",
           },
-          {
-            title: "Xeenon",
-            description:
-              "Get paid to stream with an open video streaming platform.",
-            imageUrl:
-              "https://user-images.githubusercontent.com/555740/232843817-3fb0054e-7b70-452a-b3f3-f2382be9f9dc.png",
-            label: "xeenon.xyz",
-            url: "https://xeenon.xyz",
-          },
         ]}
       />
       <CommunitySection
