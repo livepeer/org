@@ -7,7 +7,6 @@ import {
   Link as A,
   IconButton,
   Flex,
-  Button,
   Text,
 } from "theme-ui";
 import LivepeerLogo from "components/svgs/livepeer-logo";
@@ -22,7 +21,7 @@ import LanguageDropdown from "components/primitives/language-dropdown";
 import EcosystemDropdown from "components/primitives/ecosystem-dropdown";
 import NetworkDropdown from "components/primitives/network-dropdown";
 import DeveloperDropdown from "components/primitives/developer-dropdown";
-import UseCasesDropdown from "components/primitives/use-cases-dropdown";
+import { Button } from "@livepeer/design-system";
 
 const navHeight = "72px";
 
@@ -200,13 +199,14 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
 
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
-                <A
-                  variant="buttons.neutral"
+                <Button
+                  variant="green"
+                  size={3}
+                  as="a"
                   href="https://livepeer.studio"
-                  target="_blank"
-                  css={{ borderRadius: 12 }}>
+                  target="_blank">
                   Launch Studio
-                </A>
+                </Button>
               </NavLink>
             )}
 

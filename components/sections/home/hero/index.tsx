@@ -6,7 +6,8 @@ import Globe from "./globe";
 import VideoSwapper from "./video-swapper";
 import GlobeDot from "./globe-dots";
 import Divider from "components/primitives/divider";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
+import { Button } from "@livepeer/design-system";
 
 const playbackIds = [
   "82401hx25ekwnbcy",
@@ -156,26 +157,33 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
             </Heading>
           </Box>
 
-          <A
-            variant="buttons.neutral"
+          <Button
+            size={4}
+            as="a"
+            variant="green"
             href="https://docs.livepeer.org"
             target="_blank"
-            sx={{
+            css={{
               zIndex: "general",
               position: "relative",
+              width: 180,
             }}>
             Documentation
-          </A>
-          <A
-            target="_blank"
-            variant="buttons.transparent"
+          </Button>
+          <Button
+            size={4}
+            as="a"
+            ghost
+            variant="neutral"
             href="https://discord.gg/livepeer"
-            sx={{
+            target="_blank"
+            css={{
               zIndex: "general",
               position: "relative",
             }}>
-            Join Discord
-          </A>
+            <Box sx={{ mr: 1 }}>Join Discord</Box>
+            <FiArrowUpRight />
+          </Button>
         </span>
 
         <Box
