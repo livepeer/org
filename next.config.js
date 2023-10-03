@@ -60,11 +60,6 @@ module.exports = withPlugins([
             permanent: false,
           },
           {
-            source: "/tv",
-            destination: "https://lvpr.tv/?v=7062iaygm8eip421",
-            permanent: false,
-          },
-          {
             source: "/jobs/technical-writer",
             destination: "https://livepeer.org/jobs/1496366",
             permanent: false,
