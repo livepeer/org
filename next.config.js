@@ -48,12 +48,12 @@ module.exports = withPlugins([
         return [
           {
             source: "/tv",
-            destination: "https://livepeer-tv.vercel.app",
+            destination: "https://livepeer-tv.vercel.app/tv",
           },
           {
-            source: '/tv/:path*',
-            destination: `https://livepeer-tv.vercel.app/:path*`
-          }
+            source: "/tv/:path*",
+            destination: `https://livepeer-tv.vercel.app/tv/:path*`,
+          },
         ];
       },
       async redirects() {
