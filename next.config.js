@@ -50,6 +50,10 @@ module.exports = withPlugins([
             source: "/tv",
             destination: "https://livepeer-tv.vercel.app",
           },
+          {
+            source: '/tv/:path*',
+            destination: `https://livepeer-tv.vercel.app/:path*`
+          }
         ];
       },
       async redirects() {
