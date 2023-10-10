@@ -30,6 +30,7 @@ export type HugeCardProps = {
   cta?: ButtonCta | LinkCta;
   headerIllustration: React.ReactNode;
   listItems: React.ReactNode[];
+  children: React.ReactNode;
 };
 
 const HugeCard = ({
@@ -39,6 +40,7 @@ const HugeCard = ({
   accent,
   cta,
   headerIllustration,
+  children,
 }: HugeCardProps) => {
   const ctaSx: SxStyleProp = useMemo(
     () => ({
@@ -87,6 +89,7 @@ const HugeCard = ({
           {title}
         </Heading>
         <Box sx={{ mt: "48px", mb: "40px" }}>
+          {children}
           {listItems.map((item, i) => (
             <Flex key={i} sx={{ "&:not(:last-of-type)": { mb: 4 } }}>
               <i sx={{ color: accent, fontSize: 5, mr: 3 }}>
