@@ -92,7 +92,7 @@ export default function Demuxed() {
               />
             </h1>
 
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontSize: "1.33em", whiteSpace: "nowrap" }}>
               Hi Video Devs 👋&nbsp;&nbsp;
               <wbr />
               We can’t wait to meet you!
