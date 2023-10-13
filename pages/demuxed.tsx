@@ -1,20 +1,22 @@
-import CommunitySection from "components/sections/home/community";
-import PrimerBanner from "components/sections/home/primer-banner";
 import { useEffect } from "react";
-
-import LivepeerLogo from "components/svgs/livepeer-logo";
 import { useTranslation } from "next-i18next";
 
+import { Box, Button, Container, Grid, Heading } from "theme-ui";
+import { FiArrowUpRight } from "react-icons/fi";
+
 import Head, { HeadProps } from "components/primitives/head";
-import Footer from "components/sections/footer";
-import Nav from "components/sections/nav";
-import { Button, Box, Container, Grid, Heading } from "theme-ui";
+import HugeCard from "components/primitives/cards/huge";
+import ListItem from "components/primitives/list-item";
 
 import SectionLayout from "components/layouts/section";
-import HugeCard from "components/primitives/cards/huge";
+
+import Nav from "components/sections/nav";
+import Footer from "components/sections/footer";
+import CommunitySection from "components/sections/home/community";
+import PrimerBanner from "components/sections/home/primer-banner";
 import GetInvolvedSection from "components/sections/oss/get-involved";
-import ListItem from "components/primitives/list-item";
-import { FiArrowUpRight } from "react-icons/fi";
+
+import LivepeerLogo from "components/svgs/livepeer-logo";
 
 export default function Demuxed() {
   const { t } = useTranslation(["home", "oss"]);
@@ -90,7 +92,7 @@ export default function Demuxed() {
               />
             </h1>
 
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontSize: "1.33em", whiteSpace: "nowrap" }}>
               Hi Video Devs 👋&nbsp;&nbsp;
               <wbr />
               We can’t wait to meet you!
