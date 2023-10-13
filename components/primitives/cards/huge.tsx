@@ -30,7 +30,7 @@ export type HugeCardProps = {
   cta?: ButtonCta | LinkCta;
   headerIllustration: React.ReactNode;
   listItems: React.ReactNode[];
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const HugeCard = ({
