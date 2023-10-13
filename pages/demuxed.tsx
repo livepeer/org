@@ -47,7 +47,7 @@ export default function Demuxed() {
         <section
           style={{
             background:
-              "url(/images/demuxed/ribbon.svg) left top no-repeat, url(/images/demuxed/orchestrator.svg) right bottom no-repeat, #111C18",
+              "url(/images/demuxed/transcoder.svg) left top no-repeat, url(/images/demuxed/orchestrator.svg) right bottom no-repeat, #111C18",
             color: "#fff",
             padding: "9rem 2rem",
             display: "grid",
@@ -76,7 +76,7 @@ export default function Demuxed() {
               }}>
               <LivepeerLogo
                 isDark
-                pushSx={{ width: "auto", height: "1.25em" }}
+                pushSx={{ width: "auto", height: "1.4em" }}
               />
 
               <span>×</span>
@@ -120,20 +120,11 @@ export default function Demuxed() {
                   <FiArrowUpRight />
                 </Button>
               </a>
-              <a
-                href="https://discord.gg/livepeer"
-                target="_blank"
-                rel="noreferrer">
-                <Button variant="secondary">
-                  Join Discord
-                  <FiArrowUpRight />
-                </Button>
-              </a>
             </div>
           </div>
         </section>
 
-        <SectionLayout background="muted" pushSx={{ py: ["80px", "160px"] }}>
+        <SectionLayout background="muted" pushSx={{ py: ["80px", "40px"] }}>
           <Grid
             columns={[
               "minmax(auto, 632px)",
@@ -150,7 +141,7 @@ export default function Demuxed() {
                   label: "Register",
                   isLink: true,
                   isExternal: true,
-                  href: "",
+                  href: "https://lu.ma/ed8bfogc",
                 },
                 accent: "primary",
                 headerIllustration: <img src={"/images/primer/video.svg"} />,
@@ -191,10 +182,10 @@ export default function Demuxed() {
                 title: "Livepeer talk with Eric Tang",
                 listItems: [],
                 cta: {
-                  label: "Register",
+                  label: "Demuxed Schedule",
                   isLink: true,
                   isExternal: true,
-                  href: "",
+                  href: "https://2023.demuxed.com/#schedule",
                 },
                 accent: "primary",
                 headerIllustration: (
