@@ -65,6 +65,7 @@ export default function Demuxed() {
               gap: "2Rem",
               background: "rgb(17, 28, 24, 0.7)",
               backdropFilter: "blur(8px)",
+              borderRadius: "4px",
             }}>
             <h1
               style={{
