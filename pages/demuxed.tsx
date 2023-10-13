@@ -234,9 +234,19 @@ export default function Demuxed() {
         />
 
         <GetInvolvedSection
-          label={t("page-oss-collaborate", { ns: "oss" })}
-          title={t("page-oss-collaborate-title", { ns: "oss" })}
-          subtitle={t("page-oss-collaborate-intro", { ns: "oss" })}
+          label={t("page-oss-collaborate", {
+            ns: "oss",
+            defaultValue: "Collaborate",
+          })}
+          title={t("page-oss-collaborate-title", {
+            ns: "oss",
+            defaultValue: "Get involved",
+          })}
+          subtitle={t("page-oss-collaborate-intro", {
+            ns: "oss",
+            defaultValue:
+              "There are many opportunities to collaborate with others in the Livepeer ecosystem on code both on the video side, and on the blockchain side.",
+          })}
         />
 
         <Box sx={{ position: "relative", zIndex: "general" }}>
