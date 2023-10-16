@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "next-i18next";
+import styled from "styled-components";
 
 import { Box, Button, Container, Grid, Heading } from "theme-ui";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -17,6 +18,18 @@ import PrimerBanner from "components/sections/home/primer-banner";
 import GetInvolvedSection from "components/sections/oss/get-involved";
 
 import LivepeerLogo from "components/svgs/livepeer-logo";
+
+const HeroSection = styled.section`
+  @media (max-width: 94rem) {
+    /* background-image: none !important; */
+    background-size: auto 22rem, auto 24rem !important;
+  }
+
+  @media (max-width: 72rem) {
+    /* background-image: none !important; */
+    background-size: auto 11rem, auto 14rem !important;
+  }
+`;
 
 export default function Demuxed() {
   const { t } = useTranslation(["home", "oss"]);
@@ -44,7 +57,7 @@ export default function Demuxed() {
       <Head {...headProps} />
       <Nav background="dark" />
       <Box as="main">
-        <section
+        <HeroSection
           style={{
             background:
               "url(/images/demuxed/transcoder.svg) left top no-repeat, url(/images/demuxed/orchestrator.svg) right bottom no-repeat, #111C18",
@@ -54,6 +67,7 @@ export default function Demuxed() {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
+            transition: "0.3s",
           }}>
           <div
             style={{
@@ -63,8 +77,8 @@ export default function Demuxed() {
               margin: "auto",
               display: "grid",
               gap: "2Rem",
-              background: "rgb(17, 28, 24, 0.7)",
-              backdropFilter: "blur(8px)",
+              // background: "rgb(17, 28, 24, 0.7)",
+              // backdropFilter: "blur(8px)",
               borderRadius: "4px",
             }}>
             <h1
@@ -123,7 +137,7 @@ export default function Demuxed() {
               </a>
             </div>
           </div>
-        </section>
+        </HeroSection>
 
         <SectionLayout background="muted" pushSx={{ py: ["80px", "40px"] }}>
           <Grid
