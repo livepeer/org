@@ -316,12 +316,6 @@ export default function Demuxed() {
           ctaText={t("page-home-primer-cta")}
         />
 
-        <GetInvolvedSection
-          label={t("page-oss-collaborate", { ns: "oss" })}
-          title={t("page-oss-collaborate-title", { ns: "oss" })}
-          subtitle={t("page-oss-collaborate-intro", { ns: "oss" })}
-        />
-
         <Box sx={{ position: "relative", zIndex: "general" }}>
           <Container
             variant="section"
