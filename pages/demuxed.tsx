@@ -15,9 +15,12 @@ import Nav from "components/sections/nav";
 import Footer from "components/sections/footer";
 import CommunitySection from "components/sections/home/community";
 import PrimerBanner from "components/sections/home/primer-banner";
-import GetInvolvedSection from "components/sections/oss/get-involved";
+import DemuxedBanner from "components/sections/home/demuxed-banner";
+import GrantsSection from "components/sections/grants/overview";
 
 import LivepeerLogo from "components/svgs/livepeer-logo";
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const HeroSection = styled.section`
   @media (max-width: 94rem) {
@@ -44,7 +47,8 @@ export default function Demuxed() {
   const headProps: HeadProps = {
     meta: {
       title: "Demuxed 2023",
-      description: t("page-home-meta-description"),
+      description:
+        "Visit the Livepeer sponsor booth (next to Mux) for some sweet merch and chat with our product and engineering teams about the latest developments in open video infrastructure.",
       url: "https://livepeer.org",
       siteName: "Livepeer.org",
       image: "https://livepeer.org/OG.png",
@@ -91,7 +95,7 @@ export default function Demuxed() {
               }}>
               <LivepeerLogo
                 isDark
-                pushSx={{ width: "auto", height: "1.4em" }}
+                pushSx={{ width: "auto", height: "1.8em" }}
               />
 
               <span>×</span>
@@ -101,45 +105,37 @@ export default function Demuxed() {
                 src="/images/demuxed/demuxed.svg"
                 style={{
                   width: "auto",
-                  height: "1.25em",
+                  height: "1.6em",
                   marginBottom: "0.075em",
                 }}
               />
             </h1>
 
-            <p style={{ fontSize: "1.33em", whiteSpace: "nowrap" }}>
-              Hi Video Devs 👋&nbsp;&nbsp;
+            <p
+              style={{
+                fontSize: "2.4em",
+                fontWeight: "bold",
+                whiteSpace: "nowrap",
+              }}>
+              Hello Video Devs 👋&nbsp;&nbsp;
               <wbr />
               We can’t wait to meet you!
             </p>
-
-            <p style={{ fontSize: "1.33em" }}>
-              Visit the Livepeer sponsor booth (next to Mux) for some sweet
-              merch and chat with our product and engineering teams about the
-              latest developments in open video infrastructure.
-            </p>
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "2em",
-              }}>
-              <a
-                href="https://livepeer.typeform.com/livepeerdemuxed"
-                target="_blank"
-                rel="noreferrer">
-                <Button variant="primary">
-                  Want Extra Special Swag?
-                  <FiArrowUpRight />
-                </Button>
-              </a>
-            </div>
           </div>
         </HeroSection>
 
-        <SectionLayout background="muted" pushSx={{ py: ["80px", "40px"] }}>
+        <DemuxedBanner
+          label={""}
+          title={"Swag for Video Innovators"}
+          subtitle={
+            "Visit the Livepeer booth (next to Mux) to chat with our product and engineering team, and complete this form to have a special piece of swag waiting for you."
+          }
+          ctaText={"Learn more"}
+        />
+
+        <SectionLayout
+          background="muted"
+          pushSx={{ mt: "-100px", pt: "0px", pb: "80px" }}>
           <Grid
             columns={[
               "minmax(auto, 632px)",
@@ -149,8 +145,8 @@ export default function Demuxed() {
             sx={{ justifyContent: "center" }}>
             <HugeCard
               {...{
-                titleLabel: "Video",
-                title: "Innovators Meetup",
+                titleLabel: "Join Our Side Event",
+                title: "Video Innovators Happy Hour",
                 listItems: [],
                 cta: {
                   label: "Register",
@@ -162,8 +158,12 @@ export default function Demuxed() {
                 headerIllustration: <img src={"/images/primer/video.svg"} />,
               }}>
               <p>
-                Join Livepeer for an evening of networking, just a short walk
-                from the main Demuxed venue.
+                Meet other leading video technology innovators and disruptors
+                for a relaxing evening after the main Demuxed programming.
+                Perfect for those interested in video tech from AI, content
+                authenticity and provenance to distributed infrastructure and
+                community engagement. Enjoy a taco bar and beverages at the
+                local BarVIA rooftop. Please register as space is limited.
               </p>
               <br />
               <p>
@@ -193,8 +193,8 @@ export default function Demuxed() {
             </HugeCard>
             <HugeCard
               {...{
-                titleLabel: "Demuxed",
-                title: "Livepeer talk with Eric Tang",
+                titleLabel: "Watch CTOs Talk",
+                title: "The CAI for Video Engineers",
                 listItems: [],
                 cta: {
                   label: "Demuxed Schedule",
@@ -207,9 +207,13 @@ export default function Demuxed() {
                   <img src={"/images/demuxed/eric.png"} width="85" />
                 ),
               }}>
+              <p>Don’t miss Livepeer’s Founder and CTO, Eric Tang.</p>
               <p>
-                Unmasking Digital Deception: The Content Authenticity Initiative
-                For Video Engineers.
+                With generative AI on the rise, it's time to arm ourselves with
+                the tools to authenticate digital content. We'll talk about the
+                latest tools available today and how you can integrate it
+                seamlessly into your video tech stack. Get ready to level up
+                your authenticity game.
               </p>
               <br />
               <p>
@@ -240,6 +244,72 @@ export default function Demuxed() {
           </Grid>
         </SectionLayout>
 
+        <GrantsSection
+          label={t("Livepeer Grants")}
+          title={t("Funding Video Innovation")}
+          subtitle={t(
+            "The Livepeer Grants program provides funding to individuals and teams building the next generation of video tools and applications, powered by Livepeer. If you’re building the future of video today, submit a grant application and let’s talk about how we might be able to fund your idea."
+          )}
+        />
+
+        <SectionLayout
+          background="muted"
+          pushSx={{ mt: "-100px", pt: "0px", pb: "20px" }}>
+          <Box sx={{ position: "relative", zIndex: "general" }}>
+            <Container
+              variant="section"
+              sx={{ py: ["80px", null, null, "160px"] }}>
+              <Grid
+                columns={[1, null, 2]}
+                gap={4}
+                sx={{ alignItems: "center" }}>
+                <Box>
+                  <Heading
+                    variant="heading.3"
+                    sx={{
+                      textAlign: "left",
+                      fontFamily: "body",
+                      mb: "24px",
+                    }}>
+                    Meet Livepeer Studio
+                  </Heading>
+                  <Heading
+                    variant="heading.5"
+                    sx={{
+                      textAlign: "left",
+                      mb: "24px",
+                    }}>
+                    Livepeer Studio performant and trustworthy video platform
+                    for developers, with up to <strong>80% cost savings</strong>
+                    .
+                  </Heading>
+                  <Heading variant="heading.5" sx={{ textAlign: "left" }}>
+                    Sign up to talk to Livepeer Studio if you are...
+                  </Heading>
+                  <br />
+                  <ListItem icon={"∙"}>Interested in video provenance</ListItem>
+                  <ListItem icon={"∙"}>
+                    Building an app that needs live streaming
+                  </ListItem>
+                  <ListItem icon={"∙"}>
+                    Building an app that needs video on demand
+                  </ListItem>
+                  <ListItem icon={"∙"}>
+                    Building an app that needs video transcoding
+                  </ListItem>
+                  <ListItem icon={"∙"}>Interested in AV1 support</ListItem>
+                  <br />
+                  <Button variant="primary">
+                    Schedule a Meeting
+                    <FiArrowUpRight />
+                  </Button>
+                </Box>
+                <img src="/images/demuxed/livepeer-studio.png" />
+              </Grid>
+            </Container>
+          </Box>
+        </SectionLayout>
+
         <PrimerBanner
           label={"Primer"}
           title={t("page-home-primer-title")}
@@ -247,76 +317,10 @@ export default function Demuxed() {
           ctaText={t("page-home-primer-cta")}
         />
 
-        <GetInvolvedSection
-          label={t("page-oss-collaborate", {
-            ns: "oss",
-            defaultValue: "Collaborate",
-          })}
-          title={t("page-oss-collaborate-title", {
-            ns: "oss",
-            defaultValue: "Get involved",
-          })}
-          subtitle={t("page-oss-collaborate-intro", {
-            ns: "oss",
-            defaultValue:
-              "There are many opportunities to collaborate with others in the Livepeer ecosystem on code both on the video side, and on the blockchain side.",
-          })}
-        />
-
-        <Box sx={{ position: "relative", zIndex: "general" }}>
-          <Container
-            variant="section"
-            sx={{ py: ["80px", null, null, "160px"] }}>
-            <Grid columns={[1, null, 2]} gap={4} sx={{ alignItems: "center" }}>
-              <Box>
-                <Heading
-                  variant="heading.3"
-                  sx={{
-                    textAlign: "left",
-                    fontFamily: "body",
-                    mb: "24px",
-                  }}>
-                  Livepeer Studio
-                </Heading>
-                <Heading
-                  variant="heading.5"
-                  sx={{
-                    textAlign: "left",
-                    mb: "24px",
-                  }}>
-                  Livepeer Studio is a high-performance video streaming platform
-                  for developers. It's scalable, reliable, and delivers up to{" "}
-                  <strong>90% cost savings</strong>.
-                </Heading>
-                <Heading variant="heading.5" sx={{ textAlign: "left" }}>
-                  Connect with us if you are...
-                </Heading>
-                <ListItem icon={"∙"}>Interested in video provenance</ListItem>
-                <ListItem icon={"∙"}>
-                  Building an app that needs live streaming
-                </ListItem>
-                <ListItem icon={"∙"}>
-                  Building an app that needs video on demand
-                </ListItem>
-                <ListItem icon={"∙"}>
-                  Building an app that needs video transcoding
-                </ListItem>
-                <ListItem icon={"∙"}>Interested in AV1 support</ListItem>
-                <br />
-                <Button variant="primary">
-                  Talk to a Livepeer Studio Expert
-                  <FiArrowUpRight />
-                </Button>
-              </Box>
-              <img src="/images/demuxed/livepeer-studio.png" />
-            </Grid>
-          </Container>
-        </Box>
-
         <CommunitySection
-          title={t("page-home-communities-title")}
+          title={t("Join Livepeer Video Builder Community")}
           subtitle={t("page-home-communities-text")}
-          label={t("page-home-communities")}
+          label={t("")}
         />
       </Box>
       <Footer isDark />
@@ -325,5 +329,10 @@ export default function Demuxed() {
 }
 
 export async function getStaticProps({ locale }) {
-  return { props: {} };
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "home", "oss"])),
+    },
+    revalidate: 1,
+  };
 }
