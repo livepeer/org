@@ -16,11 +16,11 @@ const GetTokenSection = ({ title, card1, card2 }) => {
         label: card1.ctaText,
         isLink: true,
         isExternal: true,
-        href:
-          "https://app.uniswap.org/#/swap?outputCurrency=0x289ba1701C2F088cf0faf8B3705246331cB8A839",
+        href: "https://app.uniswap.org/#/swap?outputCurrency=0x289ba1701C2F088cf0faf8B3705246331cB8A839",
       },
       accent: "primary",
       headerIllustration: <StakeTokenSvg />,
+      children: null,
     },
     {
       titleLabel: card2.label,
@@ -34,6 +34,7 @@ const GetTokenSection = ({ title, card1, card2 }) => {
       },
       accent: "secondary",
       headerIllustration: <GetTokenSvg />,
+      children: null,
     },
   ];
   return (
