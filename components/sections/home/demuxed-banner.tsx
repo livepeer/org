@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Text, Heading, Link as A } from "theme-ui";
-import SwagSvg from "components/svgs/swag";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
