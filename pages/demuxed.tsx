@@ -326,7 +326,7 @@ export default function Demuxed() {
         />
 
         <CommunitySection
-          title={t("Join Livepeer Video Builder Community")}
+          title={t("Join the Livepeer Video Builder")}
           subtitle={t("page-home-communities-text")}
           label={t("")}
         />
