@@ -69,6 +69,10 @@ const DemuxedBanner = ({ label, title, subtitle, ctaText }) => (
           bottom: [0, null, null, -60],
           right: ["100%", null, null, 30],
           width: [0, null, null, 440],
+          "@media (max-width: 768px)": {
+            right: "0%",
+            width: "14em",
+          },
         }}>
         <img alt="Livepeer Swag" src="/images/demuxed/swag.svg" />
       </Box>

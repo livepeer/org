@@ -77,6 +77,9 @@ const GrantsSection = ({ label, title, subtitle }) => (
           ".list-item:not(:last-of-type)": {
             mb: "40px",
           },
+          "@media (max-width: 768px)": {
+            mt: "0",
+          },
         }}>
         {listItems.map((item, i) => (
           <ListItem
