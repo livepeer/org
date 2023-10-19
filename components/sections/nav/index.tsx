@@ -28,7 +28,13 @@ const navHeight = "72px";
 export type NavProps = {
   isInmersive?: boolean;
   isPrimer?: boolean;
-  background?: "muted" | "dark" | "white" | "black" | "translucent";
+  background?:
+    | "muted"
+    | "dark"
+    | "white"
+    | "black"
+    | "translucent"
+    | "dark-green";
 };
 
 const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
@@ -67,7 +73,10 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     },
   };
 
-  const isDark = background === "black" || background === "dark";
+  const isDark =
+    background === "black" ||
+    background === "dark-green" ||
+    background === "dark";
   let bg: string;
   let color: string;
   switch (background) {
@@ -93,6 +102,13 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
           : "text";
+      color = "background";
+      break;
+    case "dark-green":
+      bg =
+        isInmersive && !hasScrolled && !mobileMenuIsOpen
+          ? "transparent"
+          : "rgb(17,28,24)";
       color = "background";
       break;
     case "black":

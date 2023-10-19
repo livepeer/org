@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useTranslation } from "next-i18next";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
-import { Box, Button, Container, Grid, Heading } from "theme-ui";
+import { Box, Button, Container, Grid, Heading, Link, Text } from "theme-ui";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import Head, { HeadProps } from "components/primitives/head";
@@ -21,18 +21,6 @@ import GrantsSection from "components/sections/grants/overview";
 import LivepeerLogo from "components/svgs/livepeer-logo";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-const HeroSection = styled.section`
-  @media (max-width: 94rem) {
-    /* background-image: none !important; */
-    background-size: auto 22rem, auto 24rem !important;
-  }
-
-  @media (max-width: 72rem) {
-    /* background-image: none !important; */
-    background-size: auto 11rem, auto 14rem !important;
-  }
-`;
 
 export default function Demuxed() {
   const { t } = useTranslation(["home", "oss"]);
@@ -56,73 +44,83 @@ export default function Demuxed() {
     },
   };
 
+  const HeroSectionStyled = styled.div({
+    background:
+      "url(/images/demuxed/transcoder.svg) left top no-repeat, url(/images/demuxed/orchestrator.svg) right bottom no-repeat, #111C18",
+    color: "#fff",
+    padding: "9rem 2rem",
+    display: "grid",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    transition: "0.3s",
+    ["@media (max-width: 1024px)"]: {
+      background: "#111C18",
+      padding: "5rem 2rem",
+    },
+  });
+
+  const InnerContainer = styled.div({
+    width: "800px",
+    padding: "2rem",
+    maxWidth: "100vw",
+    margin: "auto",
+    display: "grid",
+    gap: "2rem",
+    borderRadius: "4px",
+  });
+
+  const Header = styled.h1({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "end",
+    gap: ".66em",
+    fontSize: "min(6vw, 3rem)",
+    ["@media (max-width: 1024px)"]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  });
+
+  const Paragraph = styled.p({
+    fontSize: "2.4em",
+    fontWeight: "bold",
+    whiteSpace: "nowrap",
+
+    ["@media (max-width: 768px)"]: {
+      fontSize: "1.8em",
+      marginLeft: "-0.5em",
+    },
+  });
+
+  const Image = styled.img({
+    width: "auto",
+    height: "1.6em",
+    marginBottom: "0.075em",
+  });
+
   return (
     <>
       <Head {...headProps} />
-      <Nav background="dark" />
+      <Nav background="dark-green" />
       <Box as="main">
-        <HeroSection
-          style={{
-            background:
-              "url(/images/demuxed/transcoder.svg) left top no-repeat, url(/images/demuxed/orchestrator.svg) right bottom no-repeat, #111C18",
-            color: "#fff",
-            padding: "9rem 2rem",
-            display: "grid",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            transition: "0.3s",
-          }}>
-          <div
-            style={{
-              width: "800px",
-              padding: "2rem",
-              maxWidth: "100vw",
-              margin: "auto",
-              display: "grid",
-              gap: "2Rem",
-              // background: "rgb(17, 28, 24, 0.7)",
-              // backdropFilter: "blur(8px)",
-              borderRadius: "4px",
-            }}>
-            <h1
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "end",
-                gap: ".66em",
-                fontSize: "min(6vw, 3rem)",
-              }}>
+        <HeroSectionStyled>
+          <InnerContainer>
+            <Header>
               <LivepeerLogo
                 isDark
                 pushSx={{ width: "auto", height: "1.8em" }}
               />
-
               <span>×</span>
-
-              <img
-                alt="Demuxed"
-                src="/images/demuxed/demuxed.svg"
-                style={{
-                  width: "auto",
-                  height: "1.6em",
-                  marginBottom: "0.075em",
-                }}
-              />
-            </h1>
-            <p
-              style={{
-                fontSize: "2.4em",
-                fontWeight: "bold",
-                whiteSpace: "nowrap",
-              }}>
+              <Image alt="Demuxed" src="/images/demuxed/demuxed.svg" />
+            </Header>
+            <Paragraph>
               Hello Video Devs 👋&nbsp;&nbsp;
-              <wbr />
+              <br />
               We can’t wait to meet you!
-            </p>
-          </div>
-        </HeroSection>
-
+            </Paragraph>
+          </InnerContainer>
+        </HeroSectionStyled>
         <DemuxedBanner
           label={""}
           title={"Swag for Video Innovators"}
@@ -131,7 +129,6 @@ export default function Demuxed() {
           }
           ctaText={"Learn more"}
         />
-
         <SectionLayout
           background="muted"
           pushSx={{ mt: "-100px", pt: "0px", pb: "80px" }}>
@@ -156,43 +153,42 @@ export default function Demuxed() {
                 accent: "primary",
                 headerIllustration: <img src={"/images/primer/video.svg"} />,
               }}>
-              <p>
+              <Text>
                 Meet other leading video technology innovators and disruptors
                 for a relaxing evening after the main Demuxed programming.
                 Perfect for those interested in video tech from AI, content
                 authenticity and provenance to distributed infrastructure and
                 community engagement. Enjoy a taco bar and beverages at the
                 local BarVIA rooftop. Please register as space is limited.
-              </p>
-              <br />
-              <p>
-                <b>
-                  <time>
-                    06:00-09:00PM
-                    <br />
-                    Tuesday, 24 October, 2023.
-                  </time>
-                </b>
-              </p>
-              <br />
-              <p>
-                <b>
-                  <u>
-                    <a
-                      href="https://www.hotelviasf.com/the-hotel/bar"
-                      target="_blank"
-                      rel="noreferrer">
-                      BarVIA
-                    </a>
-                  </u>
-                  <br />
-                  138 King St. San Francisco, CA, 94107
-                </b>
-              </p>
+              </Text>
+              <Text
+                sx={{
+                  fontWeight: "bold",
+                  marginTop: 4,
+                }}>
+                06:00 - 09:00PM
+                <br />
+                Tuesday, 24 October, 2023.
+              </Text>
+              <Text
+                sx={{
+                  fontWeight: "bold",
+                  marginTop: 3,
+                }}>
+                <Link
+                  sx={{
+                    textDecoration: "underline",
+                  }}
+                  href="https://www.hotelviasf.com/the-hotel/bar">
+                  BarVIA
+                </Link>
+                <br />
+                138 King St. San Francisco, CA, 94107
+              </Text>
             </HugeCard>
             <HugeCard
               {...{
-                titleLabel: "Watch CTOs Talk",
+                titleLabel: "Talk by Eric Tang",
                 title: "The CAI for Video Engineers",
                 listItems: [],
                 cta: {
@@ -206,39 +202,45 @@ export default function Demuxed() {
                   <img src={"/images/demuxed/eric.png"} width="85" />
                 ),
               }}>
-              <p>Don’t miss Livepeer’s Founder and CTO, Eric Tang.</p>
-              <p>
+              <Text>
+                Don't miss Livepeer's Founder and CTO, Eric Tang give his talk
+                "Unmasking Digital Deception: The Content Authenticity
+                Initiative For Video Engineers".
+              </Text>
+              <Text
+                sx={{
+                  marginTop: 2,
+                }}>
                 With generative AI on the rise, it's time to arm ourselves with
                 the tools to authenticate digital content. We'll talk about the
                 latest tools available today and how you can integrate it
-                seamlessly into your video tech stack. Get ready to level up
-                your authenticity game.
-              </p>
-              <br />
-              <p>
-                <b>
-                  <time>
-                    12:25-12:40 PM
-                    <br />
-                    Wednesday, 25 October, 2023.
-                  </time>
-                </b>
-              </p>
-              <br />
-              <p>
-                <b>
-                  <u>
-                    <a
-                      href="https://terrasf.com/"
-                      target="_blank"
-                      rel="noreferrer">
-                      Terra Gallery & Event Venue
-                    </a>
-                  </u>
-                  <br />
-                  511 Harrison St, San Francisco, CA 94105
-                </b>
-              </p>
+                seamlessly into your video tech stack.
+              </Text>
+              <Text
+                sx={{
+                  fontWeight: "bold",
+                  marginTop: 4,
+                }}>
+                12:25-12:40 PM
+                <br />
+                Wednesday, 25 October, 2023.
+              </Text>
+
+              <Text
+                sx={{
+                  fontWeight: "bold",
+                  marginTop: 3,
+                }}>
+                <Link
+                  sx={{
+                    textDecoration: "underline",
+                  }}
+                  href="https://terrasf.com/">
+                  Terra Gallery & Event Venue
+                </Link>
+                <br />
+                511 Harrison St, San Francisco, CA 94105
+              </Text>
             </HugeCard>
           </Grid>
         </SectionLayout>
@@ -278,9 +280,9 @@ export default function Demuxed() {
                       textAlign: "left",
                       mb: "24px",
                     }}>
-                    Livepeer Studio performant and trustworthy video platform
-                    for developers, with up to <strong>80% cost savings</strong>
-                    .
+                    Livepeer Studio is a high performance and trustworthy video
+                    platform for developers, with up to{" "}
+                    <strong>80% cost savings</strong>.
                   </Heading>
                   <Heading variant="heading.5" sx={{ textAlign: "left" }}>
                     Sign up to talk to Livepeer Studio if you are...
@@ -298,12 +300,19 @@ export default function Demuxed() {
                   </ListItem>
                   <ListItem icon={"∙"}>Interested in AV1 support</ListItem>
                   <br />
-                  <Button variant="primary">
+                  <Button
+                    onClick={() => {
+                      window.open(
+                        "https://livepeer.typeform.com/to/HTuUHdDR",
+                        "_blank"
+                      );
+                    }}
+                    variant="primary">
                     Schedule a Meeting
                     <FiArrowUpRight />
                   </Button>
                 </Box>
-                <img src="/images/demuxed/livepeer-studio.png" />
+                <img src="/images/demuxed/livepeer-studio-mockup.png" />
               </Grid>
             </Container>
           </Box>
@@ -316,58 +325,8 @@ export default function Demuxed() {
           ctaText={t("page-home-primer-cta")}
         />
 
-        <Box sx={{ position: "relative", zIndex: "general" }}>
-          <Container
-            variant="section"
-            sx={{ py: ["80px", null, null, "160px"] }}>
-            <Grid columns={[1, null, 2]} gap={4} sx={{ alignItems: "center" }}>
-              <Box>
-                <Heading
-                  variant="heading.3"
-                  sx={{
-                    textAlign: "left",
-                    fontFamily: "body",
-                    mb: "24px",
-                  }}>
-                  Livepeer Studio
-                </Heading>
-                <Heading
-                  variant="heading.5"
-                  sx={{
-                    textAlign: "left",
-                    mb: "24px",
-                  }}>
-                  Livepeer Studio is a high-performance video streaming platform
-                  for developers. It's scalable, reliable, and delivers up to{" "}
-                  <strong>90% cost savings</strong>.
-                </Heading>
-                <Heading variant="heading.5" sx={{ textAlign: "left" }}>
-                  Connect with us if you are...
-                </Heading>
-                <ListItem icon={"∙"}>Interested in video provenance</ListItem>
-                <ListItem icon={"∙"}>
-                  Building an app that needs live streaming
-                </ListItem>
-                <ListItem icon={"∙"}>
-                  Building an app that needs video on demand
-                </ListItem>
-                <ListItem icon={"∙"}>
-                  Building an app that needs video transcoding
-                </ListItem>
-                <ListItem icon={"∙"}>Interested in AV1 support</ListItem>
-                <br />
-                <Button variant="primary">
-                  Talk to a Livepeer Studio Expert
-                  <FiArrowUpRight />
-                </Button>
-              </Box>
-              <img src="/images/demuxed/livepeer-studio.png" />
-            </Grid>
-          </Container>
-        </Box>
-
         <CommunitySection
-          title={t("Join Livepeer Video Builder Community")}
+          title={t("Join the Livepeer Video Builder")}
           subtitle={t("page-home-communities-text")}
           label={t("")}
         />
