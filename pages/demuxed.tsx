@@ -141,53 +141,6 @@ export default function Demuxed() {
             sx={{ justifyContent: "center" }}>
             <HugeCard
               {...{
-                titleLabel: "Join Our Side Event",
-                title: "Video Innovators Happy Hour",
-                listItems: [],
-                cta: {
-                  label: "Register",
-                  isLink: true,
-                  isExternal: true,
-                  href: "https://lu.ma/ed8bfogc",
-                },
-                accent: "primary",
-                headerIllustration: <img src={"/images/primer/video.svg"} />,
-              }}>
-              <Text>
-                Meet other leading video technology innovators and disruptors
-                for a relaxing evening after the main Demuxed programming.
-                Perfect for those interested in video tech from AI, content
-                authenticity and provenance to distributed infrastructure and
-                community engagement. Enjoy a taco bar and beverages at the
-                local BarVIA rooftop. Please register as space is limited.
-              </Text>
-              <Text
-                sx={{
-                  fontWeight: "bold",
-                  marginTop: 4,
-                }}>
-                06:00 - 09:00PM
-                <br />
-                Tuesday, 24 October, 2023.
-              </Text>
-              <Text
-                sx={{
-                  fontWeight: "bold",
-                  marginTop: 3,
-                }}>
-                <Link
-                  sx={{
-                    textDecoration: "underline",
-                  }}
-                  href="https://www.hotelviasf.com/the-hotel/bar">
-                  BarVIA
-                </Link>
-                <br />
-                138 King St. San Francisco, CA, 94107
-              </Text>
-            </HugeCard>
-            <HugeCard
-              {...{
                 titleLabel: "Talk by Eric Tang",
                 title: "The CAI for Video Engineers",
                 listItems: [],
