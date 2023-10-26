@@ -127,7 +127,7 @@ export default function Demuxed() {
           subtitle={
             "Visit the Livepeer booth (next to Mux) to chat with our product and engineering team, and complete this form to have a special piece of swag waiting for you."
           }
-          ctaText={"Learn more"}
+          ctaText={"Get Swag"}
         />
         <SectionLayout
           background="muted"
