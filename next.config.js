@@ -192,6 +192,11 @@ module.exports = withPlugins([
             destination: "https://livepeer.org/ecosystem/showcase",
             permanent: false,
           },
+          {
+            source: "/pricing",
+            destination: "https://livepeer.studio/pricing",
+            permanent: false,
+          },
         ];
       },
     },
