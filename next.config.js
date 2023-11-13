@@ -197,6 +197,11 @@ module.exports = withPlugins([
             destination: "https://livepeer.studio/pricing",
             permanent: false,
           },
+          {
+            source: "/discord",
+            destination: "https://discord.gg/VGSkNK8AA6",
+            permanent: false,
+          }
         ];
       },
     },
