@@ -156,10 +156,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               width: 140,
               color: "black",
             }}>
-            <LivepeerLogo
-              isDark={isDark}
-              disableHover={isPrimer ? true : false}
-            />
+            <LivepeerLogo isDark={isDark} />
           </Box>
           <Box
             sx={{
