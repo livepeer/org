@@ -51,6 +51,8 @@ const Head = ({ meta = {} }: HeadProps) => {
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:site" content={meta.twitterUsername} />
       <meta name="twitter:image" content={`${meta.image}`} />
+      <meta name="twitter:image:width" content="2400" />
+      <meta name="twitter:image:height" content="1256" />
       {meta?.canonical && <link rel="canonical" href={meta.canonical} />}
     </NextHead>
   );
