@@ -43,8 +43,8 @@ const Head = ({ meta = {} }: HeadProps) => {
       <meta property="og:url" content={meta.url} />
       <meta property="og:site_name" content={meta.siteName} />
       <meta property="og:image" content={`${meta.image}`} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="642" />
+      <meta property="og:image:width" content="2400" />
+      <meta property="og:image:height" content="1256" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:description" content={meta.description} />
