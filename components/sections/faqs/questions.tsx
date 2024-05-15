@@ -209,8 +209,8 @@ const questions: Question[] = [
     question: "How much should I charge per pixel?",
     answer: (
       <>
-        The price you should set should be based on the max price broadcasters
-        are willing to pay. For example, Livepeer Inc’s broadcasters have a max
+        The price you should set should be based on the max price gateways
+        are willing to pay. For example, Livepeer Inc’s gateways have a max
         price set at 3k wei per pixel which comes out to around 40 cents per
         hour per stream for its customers so if you want to win this work set
         your price at or below 3k wei per pixel.
@@ -267,7 +267,7 @@ const questions: Question[] = [
       <>
         The act of “locking” your Livepeer token within the Livepeer protocol
         smart contracts on the Ethereum blockchain in exchange for the right to
-        perform work on the network and earn inflationary token and broadcaster
+        perform work on the network and earn inflationary token and gateway
         fees in return. Similar to a{" "}
         <AnswerLink
           label="performance bond"
@@ -347,10 +347,10 @@ const questions: Question[] = [
     category: categories[4],
   },
   {
-    question: "Broadcaster",
+    question: "Gateway",
     answer: (
       <>
-        A Livepeer node sending video streams into the network for processing.
+        A Livepeer node sending video streams into the network for processing. Formerly referred to as Broadcaster.
       </>
     ),
     category: categories[4],
@@ -360,7 +360,7 @@ const questions: Question[] = [
     answer: (
       <>
         A smart, 24/7 connected, Livepeer aware actor (human + piece of
-        software), that negotiates with broadcasters, and represents that
+        software), that negotiates with gateways, and represents that
         they’re going to do the work correctly.
       </>
     ),
@@ -383,7 +383,7 @@ const questions: Question[] = [
       <>
         Livepeer client software. Currently there exists a single client
         implementation written in Go called go-livepeer which can be run in
-        broadcaster mode, transcoder mode, or orchestrator mode.
+        gateway mode, transcoder mode, or orchestrator mode.
       </>
     ),
     category: categories[4],
