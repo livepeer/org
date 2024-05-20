@@ -93,8 +93,7 @@ const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
         items={[
           {
             title: "The Lot Radio",
-            description:
-              "Independent, non-profit, online radio station live streaming 24/7 from a reclaimed shipping container on an empty lot in NYC",
+            description: "24/7 livestream of over 165 resident DJs",
             imageUrl:
               "https://github.com/livepeer/studio/assets/555740/5d32e32f-5ba7-465d-a173-45598b8a8af3",
             label: "thelotradio.com",
