@@ -48,15 +48,15 @@ module.exports = withPlugins([
         return [
           {
             source: "/tv",
-            destination: "https://livepeer-tv.vercel.app/tv",
+            destination: "https://streameth.org/livepeertv",
           },
           {
             source: "/tv/:path*",
-            destination: `https://livepeer-tv.vercel.app/tv/:path*`,
+            destination: `https://streameth.org/livepeertv/:path*`,
           },
           {
             source: '/tv/:path*',
-            destination: `https://livepeer-tv.vercel.app/:path*`
+            destination: `https://streameth.org/livepeertv/:path*`
           }
         ];
       },
