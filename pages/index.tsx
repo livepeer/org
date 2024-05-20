@@ -92,22 +92,21 @@ const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
         subtitle="By combining Livepeer’s open video API with other emerging open protocols in social and onchain finance, developers are disrupting the way creators own and monetize their video content, enabling novel experiences in music, entertainment, shopping, gaming, and beyond."
         items={[
           {
-            title: "Bonfire",
-            description:
-              "Bonfire gives you the tools to start, grow, and manage communities.",
+            title: "The Lot Radio",
+            description: "24/7 livestream of over 165 resident DJs",
             imageUrl:
-              "https://res.cloudinary.com/duquzk7m6/image/upload/v1667850687/Bonfire_enwrkq.png",
-            label: "bonfire.xyz",
-            url: "https://www.bonfire.xyz",
+              "https://github.com/livepeer/studio/assets/555740/5d32e32f-5ba7-465d-a173-45598b8a8af3",
+            label: "thelotradio.com",
+            url: "https://www.thelotradio.com/",
           },
           {
-            title: "Beem",
+            title: "Unlonely",
             description:
-              "Build your custom video streaming site and mobile app with no code.",
+              "Crypto-native livestreaming platform with fun, gamified features",
             imageUrl:
-              "https://user-images.githubusercontent.com/555740/232841881-789ef394-35d1-48b5-95c7-aaef589b1d64.png",
-            label: "beem.xyz",
-            url: "https://beem.xyz",
+              "https://github.com/livepeer/studio/assets/555740/f14a76c6-388d-4e95-a301-947837d3645f",
+            label: "unlonely.app",
+            url: "https://www.unlonely.app/",
           },
           {
             title: "StreamETH",
@@ -119,13 +118,13 @@ const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
             url: "https://streameth.org",
           },
           {
-            title: "Lenstube",
+            title: "Bonfire",
             description:
-              "A social platform for video sharing built with Livepeer and Lens.",
+              "Bonfire gives you the tools to start, grow, and manage communities.",
             imageUrl:
-              "https://user-images.githubusercontent.com/555740/232839442-6368d099-27f6-4bbd-80e2-dc577305c3d0.png",
-            label: "lenstube.xyz",
-            url: "https://lenstube.xyz/",
+              "https://res.cloudinary.com/duquzk7m6/image/upload/v1667850687/Bonfire_enwrkq.png",
+            label: "bonfire.xyz",
+            url: "https://www.bonfire.xyz",
           },
           {
             title: "Orb",

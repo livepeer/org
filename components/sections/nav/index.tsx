@@ -122,7 +122,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       bg =
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
-          : "rgba(255, 255, 255, .5)";
+          : "#141716";
       color = "text";
       break;
   }
@@ -207,19 +207,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
                 <LanguageDropdown />
-              </NavLink>
-            )}
-
-            {!isPrimer && (
-              <NavLink className="nav-link" as={Box} data-dark={isDark}>
-                <Button
-                  variant="green"
-                  size={3}
-                  as="a"
-                  href="https://livepeer.studio"
-                  target="_blank">
-                  Launch Studio
-                </Button>
               </NavLink>
             )}
 
@@ -335,14 +322,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             </Flex>
 
             <Flex sx={{ flexDirection: "column" }}>
-              <Button
-                sx={{ mb: 3 }}
-                onClick={() => {
-                  setMobileMenuIsOpen(false);
-                  router.push("https://livepeer.studio");
-                }}>
-                {t("nav-start-building")}
-              </Button>
               <Text sx={{ fontSize: "14px", textAlign: "center" }}>
                 © Livepeer, Inc. {new Date().getFullYear()}
               </Text>

@@ -130,21 +130,6 @@ function VideoToolSection({ videos, header }) {
   );
 }
 
-function Web3Section({ web3, header }) {
-  return (
-    <AnchorWrapper id="web3techstack">
-      <Box sx={{ px: 3, py: "40px" }}>
-        <DefaultList
-          inverted={false}
-          apps={web3}
-          title={header.title}
-          subtitle={header.description}
-          cardType="web3"
-        />
-      </Box>
-    </AnchorWrapper>
-  );
-}
 function StakingPlatformSection({ staking, header }) {
   return (
     <>

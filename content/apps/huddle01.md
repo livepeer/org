@@ -5,10 +5,9 @@ image: >-
 title: Huddle01
 richtext: |
   The world's first web3 native video meeting solution.
-website: 'https://huddle01.com/'
-twitter: 'https://twitter.com/huddle01com'
-discord: 'https://discord.com/invite/EYqfS32jYc'
-linkedin: ''
-createdAt: '2022-09-25T18:30:00.000Z'
+website: "https://huddle01.com/"
+twitter: "https://twitter.com/huddle01com"
+discord: "https://discord.com/invite/EYqfS32jYc"
+linkedin: ""
+createdAt: "2022-09-25T18:30:00.000Z"
 ---
-
