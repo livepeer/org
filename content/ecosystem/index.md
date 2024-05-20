@@ -8,7 +8,7 @@ hero:
   hero_eyebrow: Submit a project to be included in the showcase
 apps_section:
   title: Video Apps
-  description: Built with Livepeer Studio.
+  description: Built with Livepeer Studio
 video_section:
   title: Developer Tools
   description: >-
