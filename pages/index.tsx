@@ -96,7 +96,7 @@ const HomePage = ({ totalActiveNodes, totalMinutes, totalVolumeUSD }) => {
             description:
               "Independent, non-profit, online radio station live streaming 24/7 from a reclaimed shipping container on an empty lot in NYC",
             imageUrl:
-              "https://res.cloudinary.com/duquzk7m6/image/upload/v1667851537/The_Lot_Radio_eusgte.png",
+              "https://github.com/livepeer/studio/assets/555740/5d32e32f-5ba7-465d-a173-45598b8a8af3",
             label: "thelotradio.com",
             url: "https://www.thelotradio.com/",
           },
