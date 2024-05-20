@@ -7,8 +7,8 @@ hero:
     generation of video.
   hero_eyebrow: Submit a project to be included in the showcase
 apps_section:
-  title: Apps
-  description: Applications built using Livepeer video infrastructure.
+  title: Video Apps
+  description: Built with Livepeer Studio.
 video_section:
   title: Developer Tools
   description: >-
