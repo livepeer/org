@@ -1,7 +1,7 @@
 ---
 publish: true
 image: >-
-  https://github.com/livepeer/studio/assets/555740/f14a76c6-388d-4e95-a301-947837d3645f
+  https://i.imgur.com/aRRy0ZX.png
 title: Unlonely
 richtext: |
   Crypto-native livestreaming platform with fun, gamified features

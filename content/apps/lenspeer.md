@@ -1,7 +1,7 @@
 ---
 publish: true
 image: >-
-  https://pbs.twimg.com/profile_images/1707645524487057409/YHuvZ0R5_400x400.png
+  https://i.imgur.com/b7HHjBk.png
 title: Lenspeer
 richtext: |
   All-in-One decentralized social platform

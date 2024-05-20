@@ -1,6 +1,7 @@
 ---
 publish: true
-image: "https://hey.xyz/logo.png"
+image: >-
+  https://i.imgur.com/7iEGvbH.png
 title: Hey
 richtext: |
   A community-built decentralized, and permissionless social media app built on Lens Protocol
