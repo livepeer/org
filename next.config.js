@@ -56,7 +56,7 @@ module.exports = withPlugins([
           },
           {
             source: '/tv/:path*',
-            destination: `https://streameth.org/livepeertv/:path*`
+            destination: `https://streameth.org/:path*`
           }
         ];
       },
