@@ -48,11 +48,11 @@ module.exports = withPlugins([
         return [
           {
             source: "/tv",
-            destination: "https://streameth.org/livepeertv",
+            destination: "https://streameth.org/tv",
           },
           {
             source: "/tv/:path*",
-            destination: `https://streameth.org/livepeertv/:path*`,
+            destination: `https://streameth.org/tv/:path*`,
           },
           {
             source: '/tv/:path*',
