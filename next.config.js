@@ -48,7 +48,7 @@ module.exports = withPlugins([
         return [
           {
             source: "/tv",
-            destination: "https://streameth.org/tv",
+            destination: "livepeer-marketing-nc3q0ps1s-streameth.vercel.app/tv",
           },
           {
             source: "/tv/:path*",
