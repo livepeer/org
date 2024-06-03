@@ -57,6 +57,18 @@ module.exports = withPlugins([
           {
             source: '/tv/:path*',
             destination: `https://livepeer-marketing.vercel.app/:path*`
+          },
+          {
+            source: "/livepeer.tv",
+            destination: "https://livepeer-marketing.vercel.app/tv",
+          },
+          {
+            source: "/livepeer.tv/:path*",
+            destination: `https://livepeer-marketing.vercel.app/tv/:path*`,
+          },
+          {
+            source: '/livepeer.tv/:path*',
+            destination: `https://livepeer-marketing.vercel.app/:path*`
           }
         ];
       },
