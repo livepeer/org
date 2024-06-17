@@ -9,15 +9,14 @@ import Divider from "components/primitives/divider";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { Button } from "@livepeer/design-system";
 
-const playbackIds = [
-  "82401hx25ekwnbcy",
-  "9cc5basqntozo7i8",
-  "22c7d81cqw3q6j4s",
-  "edc93flxfoyexna9",
+const videoPaths = [
+  "/hero-videos/1.mp4",
+  "/hero-videos/2.mp4",
+  "/hero-videos/3.mp4",
+  "/hero-videos/4.mp4",
 ];
-const videos = playbackIds.map(
-  (pid) => `https://lp-playback.com/hls/${pid}/video`
-);
+
+const videos = videoPaths.map((video) => video);
 
 const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
   const [globeDotIndex, setGlobeDotIndex] = useState(0);
