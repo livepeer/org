@@ -11,10 +11,9 @@ type Props = {
   width?: number;
 };
 
-const LivepeerLogo = ({
+const LivepeerLogoLockup = ({
   width = 144,
-  pushSx,
-  isDark,
+  isDark = false,
   isLink = true,
 }: Props) => {
   const markup = useMemo(
@@ -83,7 +82,7 @@ const LivepeerLogo = ({
         />
       </svg>
     ),
-    [isDark]
+    [isDark, width]
   );
 
   if (!isLink) return markup;
@@ -94,4 +93,98 @@ const LivepeerLogo = ({
   );
 };
 
-export default LivepeerLogo;
+export const LivepeerLogotype = ({ width = 50, isDark = false }) => {
+  return (
+    <svg
+      width={width}
+      height="auto"
+      viewBox="0 0 397 481"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3.70533e-06 85L0 0H85L85 85H3.70533e-06Z"
+        fill={isDark ? "#fff" : "#181818"}
+      />
+      <path
+        d="M156 184L156 99H241L241 184H156Z"
+        fill={isDark ? "#fff" : "#181818"}
+      />
+      <path
+        d="M312 283L312 198H397L397 283H312Z"
+        fill={isDark ? "#fff" : "#181818"}
+      />
+      <path
+        d="M156 382L156 297H241L241 382H156Z"
+        fill={isDark ? "#fff" : "#181818"}
+      />
+      <path
+        d="M3.70533e-06 481L0 396H85L85 481H3.70533e-06Z"
+        fill={isDark ? "#fff" : "#181818"}
+      />
+      <path
+        d="M3.70533e-06 283L0 198H85L85 283H3.70533e-06Z"
+        fill={isDark ? "#fff" : "#181818"}
+      />
+    </svg>
+  );
+};
+
+export const LivepeerLogomark = ({
+  width = 144,
+  isDark = false,
+  isLink = true,
+}: Props) => {
+  const markup = useMemo(
+    () => (
+      <svg
+        width={width}
+        height="auto"
+        viewBox="0 0 290 43"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 43V0H8.3503V35.6234H32.8264V43H0Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+        <path
+          d="M37.7894 43V0H46.1397V43H37.7894Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+        <path
+          d="M84.7459 0H93.9131L77.6663 43H66.8351L50.2253 0H59.574L72.4322 34.304L84.7459 0Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+        <path
+          d="M98.1802 43V25.2743H106.531V17.719H98.1802V0H131.007V7.37657H106.531V17.719H127.285V25.2743H106.531V35.6234H131.642V43H98.1802Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+        <path
+          d="M137.906 43V0H157.42C165.861 0 171.368 4.24505 171.368 12.7191C171.368 20.2476 165.861 25.3194 157.42 25.3194H146.256V43H137.906ZM146.256 17.6746H156.482C160.718 17.6746 162.987 15.6435 162.987 12.6297C162.987 9.38552 160.718 7.37657 156.482 7.37657H146.256V17.6746Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+        <path
+          d="M177.087 43V25.2743H185.437V17.719H177.087V0H209.913V7.37657H185.437V17.719H206.192V25.2743H185.437V35.6234H210.549V43H177.087Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+        <path
+          d="M216.813 43V25.2743H225.163V17.719H216.813V0H249.639V7.37657H225.163V17.719H245.918V25.2743H225.163V35.6234H250.274V43H216.813Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+        <path
+          d="M256.538 43V0H276.688C284.323 0.00156195 290 3.70852 290 10.7112C290 16.0456 287.58 19.29 282.618 21.1191C287.126 21.1191 289.365 23.1582 289.365 27.2063V43H281.014V29.2753C281.014 26.1868 280.107 25.2872 276.99 25.2872H264.889V43H256.538ZM264.889 17.7029H274.207C279.078 17.7029 281.619 16.0905 281.619 12.5686C281.619 9.04677 279.169 7.37657 274.207 7.37657H264.889V17.7029Z"
+          fill={isDark ? "#fff" : "#181818"}
+        />
+      </svg>
+    ),
+    [isDark, width]
+  );
+
+  if (!isLink) return markup;
+  return (
+    <Link href="/" passHref>
+      <a aria-label="logo">{markup}</a>
+    </Link>
+  );
+};
+
+export default LivepeerLogoLockup;

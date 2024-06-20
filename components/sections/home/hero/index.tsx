@@ -169,6 +169,7 @@ const HomeHero = ({ title, subtitle, cta, videoLabel }) => {
             }}>
             Documentation
           </Button>
+
           <Button
             size={4}
             as="a"

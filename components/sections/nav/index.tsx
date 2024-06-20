@@ -115,7 +115,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
       bg =
         isInmersive && !hasScrolled && !mobileMenuIsOpen
           ? "transparent"
-          : "#141716";
+          : "#181818";
       color = "background";
       break;
     case "translucent":

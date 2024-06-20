@@ -89,12 +89,13 @@ const PrefooterBanner = () => {
           }}>
           <Heading
             variant="heading.3"
-            sx={{ textAlign: ["center", null, null, "left"] }}>
+            sx={{ color: "white", textAlign: ["center", null, null, "left"] }}>
             {t("cta-stay-informed")}
           </Heading>
           <Text
             variant="normal"
             sx={{
+              color: "white",
               mt: "18px",
               mb: "40px",
               textAlign: ["center", null, null, "left"],
