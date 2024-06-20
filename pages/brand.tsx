@@ -101,8 +101,8 @@ const BrandPage = () => {
       <Box sx={{ py: 80 }}>
         <Container sx={{ maxWidth: 960, mx: "auto" }}>
           <Row
-            heading="Logo Mark (Wordmark)"
-            description="The Livepeer logomark should be featured in all instances where
+            heading="Logotype (Wordmark)"
+            description="The Livepeer logotype should be featured in all instances where
               Livepeer is mentioned, provided there is sufficient space.
               Preferably, use the monochrome version with the designated brand
               colors shown below."
@@ -122,8 +122,8 @@ const BrandPage = () => {
             ]}
           />
           <Row
-            heading="Logo Type (Icon)"
-            description="In compact layouts or logo-only grids, the Livepeer logotype
+            heading="Logomark (Icon)"
+            description="In compact layouts or logo-only grids, the Livepeer logomark
               serves as a succinct representation of the brand."
             items={[
               {
@@ -161,9 +161,7 @@ const BrandPage = () => {
           <Row
             heading="Livepeer Colors"
             description={`Livepeer's primary brand color, "Circuit green", works well on
-              both light and dark backgrounds. For monochrome wordmark
-              applications, the following light and dark accents are
-              recommended, with the brand color generally used for backgrounds.`}
+              both light and dark backgrounds.`}
             items={[
               {
                 content: (

@@ -93,7 +93,7 @@ const LivepeerLogoLockup = ({
   );
 };
 
-export const LivepeerLogotype = ({ width = 50, isDark = false }) => {
+export const LivepeerLogomark = ({ width = 50, isDark = false }) => {
   return (
     <svg
       width={width}
@@ -129,7 +129,7 @@ export const LivepeerLogotype = ({ width = 50, isDark = false }) => {
   );
 };
 
-export const LivepeerLogomark = ({
+export const LivepeerLogotype = ({
   width = 144,
   isDark = false,
   isLink = true,
