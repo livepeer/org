@@ -321,7 +321,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               </Link>
             </Flex>
 
-            <Flex sx={{ flexDirection: "column" }}>
+            <Flex sx={{ mt: 4, flexDirection: "column" }}>
               <Text sx={{ fontSize: "14px", textAlign: "center" }}>
                 © Livepeer, Inc. {new Date().getFullYear()}
               </Text>

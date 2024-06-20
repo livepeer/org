@@ -21,10 +21,13 @@ const Row = ({ heading, description, items }) => {
         {description}
       </Text>
       <Box
-        css={{
+        sx={{
           display: "grid",
-          "grid-template-columns": "repeat(auto-fit, minmax(0, 1fr))",
-          "grid-gap": "24px",
+          gridTemplateColumns: [
+            "1fr",
+            "1fr",
+            "repeat(auto-fit, minmax(0, 1fr))",
+          ],
           gap: "24px",
         }}>
         {items.map((item) => {
