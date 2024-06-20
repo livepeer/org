@@ -108,15 +108,15 @@ const BrandPage = () => {
               colors shown below."
             items={[
               {
-                content: <LivepeerLogomark isDark={true} width={160} />,
+                content: <LivepeerLogotype isDark={true} width={160} />,
                 color: "primary",
               },
               {
-                content: <LivepeerLogomark isDark={true} width={160} />,
+                content: <LivepeerLogotype isDark={true} width={160} />,
                 color: "#181818",
               },
               {
-                content: <LivepeerLogomark width={160} />,
+                content: <LivepeerLogotype width={160} />,
                 color: "white",
               },
             ]}
@@ -127,15 +127,15 @@ const BrandPage = () => {
               serves as a succinct representation of the brand."
             items={[
               {
-                content: <LivepeerLogotype isDark={true} width={70} />,
+                content: <LivepeerLogomark isDark={true} width={70} />,
                 color: "primary",
               },
               {
-                content: <LivepeerLogotype isDark={true} width={70} />,
+                content: <LivepeerLogomark isDark={true} width={70} />,
                 color: "#181818",
               },
               {
-                content: <LivepeerLogotype width={70} />,
+                content: <LivepeerLogomark width={70} />,
                 color: "white",
               },
             ]}
