@@ -82,8 +82,7 @@ const Footer = ({
         },
         {
           label: "Brand Assets",
-          href: "/brand.zip",
-          download: true,
+          href: "/brand",
         },
       ],
     },
