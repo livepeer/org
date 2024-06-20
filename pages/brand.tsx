@@ -1,13 +1,5 @@
 /** @jsx jsx */
-import {
-  jsx,
-  Button,
-  Box,
-  Heading,
-  Text,
-  Container,
-  Link as A,
-} from "theme-ui";
+import { jsx, Box, Heading, Text, Container, Link as A } from "theme-ui";
 import PageLayout from "components/layouts/page";
 import IconHero from "components/layouts/icon-hero";
 import { FiBook } from "react-icons/fi";
@@ -132,9 +124,7 @@ const BrandPage = () => {
           <Row
             heading="Logo Type (Icon)"
             description="In compact layouts or logo-only grids, the Livepeer logotype
-              serves as a succinct representation of the brand. Use it
-              thoughtfully based on your audience, as the Livepeer combination mark is
-              more widely recognized."
+              serves as a succinct representation of the brand."
             items={[
               {
                 content: <LivepeerLogotype isDark={true} width={70} />,
