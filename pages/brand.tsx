@@ -163,8 +163,7 @@ const BrandPage = () => {
           />
           <Row
             heading="Livepeer Colors"
-            description={`Livepeer's primary brand color, "Circuit green", works well on
-              both light and dark backgrounds.`}
+            description={`Use Charcoal Black and Snow White to represent the overall Livepeer project, providing a neutral and professional backdrop for a cohesive visual identity. Circuit Green should represent the Livepeer Network and Livepeer Token, symbolizing connectivity, technological sophistication, growth, and value.`}
             items={[
               {
                 content: (
