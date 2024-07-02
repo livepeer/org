@@ -168,7 +168,8 @@ const posts: Post[] = [
     description:
       "Query indexed Livepeer protocol data over GraphQL using the Graph Protocol.",
     link: {
-      href: "https://thegraph.com/explorer/subgraph/livepeer/livepeer",
+      href:
+        "https://thegraph.com/explorer/subgraphs/FE63YgkzcpVocxdCEyEYbvjYqEf2kb1A6daMYRxmejYC?view=Query&chain=arbitrum-one",
       isExternal: true,
     },
     category: categories[1],

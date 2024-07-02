@@ -39,7 +39,7 @@ const nFormatter = (num, digits) => {
 
 const getProtocolStatistics = async () => {
   const graphqlResponse = await fetch(
-    "https://api.thegraph.com/subgraphs/name/livepeer/arbitrum-one",
+    `https://gateway-arbitrum.network.thegraph.com/api/${process.env.SUBGRAPH_API_KEY}/subgraphs/id/FE63YgkzcpVocxdCEyEYbvjYqEf2kb1A6daMYRxmejYC`,
     {
       method: "POST",
       headers: {
@@ -74,7 +74,7 @@ const getTotalActiveNodes = async () => {
     }
   }`;
   let response = await request(
-    "https://api.thegraph.com/subgraphs/name/livepeer/arbitrum-one",
+    `https://gateway-arbitrum.network.thegraph.com/api/${process.env.SUBGRAPH_API_KEY}/subgraphs/id/FE63YgkzcpVocxdCEyEYbvjYqEf2kb1A6daMYRxmejYC`,
     query,
     {
       where: {
@@ -85,61 +85,17 @@ const getTotalActiveNodes = async () => {
   return response.transcoders.length;
 };
 
-const getDelegators = async (id) => {
-  const PAGE_SIZE = 100;
-  const reqDelegators = async (skip) => {
-    const query = `query delegators ($skip: Int $where: Delegator_filter) {
-    delegators(skip: $skip where: $where) {
-      id
+const getTotalDelegators = async () => {
+  const query = `query {
+    protocol(id: 0) {
+      delegatorsCount
     }
   }`;
-    let response = await request(
-      `https://api.thegraph.com/subgraphs/name/livepeer/${id}`,
-      query,
-      {
-        first: PAGE_SIZE,
-        skip: skip,
-        where: {
-          bondedAmount_not: 0,
-        },
-      }
-    );
-    return response.delegators;
-  };
-
-  let delegators = [];
-  let keepGoing = true;
-  let skip = 0;
-  while (keepGoing) {
-    let response = await reqDelegators(skip);
-    await delegators.push.apply(delegators, response);
-    skip += PAGE_SIZE;
-    if (response.length < PAGE_SIZE) {
-      keepGoing = false;
-    }
-  }
-  return delegators;
-};
-
-function mergeObjectsInUnique<T>(array: T[], property: any): T[] {
-  const newArray = new Map();
-
-  array.forEach((item: T) => {
-    const propertyValue = item[property];
-    newArray.has(propertyValue)
-      ? newArray.set(propertyValue, { ...item, ...newArray.get(propertyValue) })
-      : newArray.set(propertyValue, item);
-  });
-
-  return Array.from(newArray.values());
-}
-
-const getTotalDelegators = async () => {
-  const delegatorsMainnet = await getDelegators("livepeer");
-  const delegatorsArbitrum = await getDelegators("arbitrum-one");
-  const arr = [...delegatorsMainnet, ...delegatorsArbitrum];
-  const delegators = mergeObjectsInUnique(arr, "id");
-  return delegators.length;
+  let response = await request(
+    `https://gateway-arbitrum.network.thegraph.com/api/${process.env.SUBGRAPH_API_KEY}/subgraphs/id/FE63YgkzcpVocxdCEyEYbvjYqEf2kb1A6daMYRxmejYC`,
+    query
+  );
+  return response.protocol.delegatorsCount;
 };
 
 export {
@@ -220,7 +176,7 @@ const getTotalFeeDerivedMinutes = async () => {
   let pricePerPixelIndex = pricePerPixel.length - 1;
 
   const res = await fetch(
-    "https://api.thegraph.com/subgraphs/name/livepeer/livepeer",
+    `https://gateway-arbitrum.network.thegraph.com/api/${process.env.SUBGRAPH_API_KEY}/subgraphs/id/FE63YgkzcpVocxdCEyEYbvjYqEf2kb1A6daMYRxmejYC`,
     {
       method: "POST",
       headers: {
