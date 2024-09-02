@@ -150,9 +150,16 @@ const JobApplicationForm = ({
       setLoadingPdf(true);
       setError(null);
       let form = new FormData();
+      if (acceptedFiles[0].size > 4 * 1024 * 1024) {
+        setError(
+          "Your CV file is too large. Please upload a file smaller than 4MB."
+        );
+        setLoadingPdf(false);
+        return;
+      }
       form.append("file", acceptedFiles[0]);
       form.append("file_name", acceptedFiles[0].name);
-      await fetch("https://livepeer.org/api/upload", {
+      await fetch("/api/upload", {
         method: "POST",
         body: form,
       })
@@ -432,7 +439,13 @@ const JobApplicationForm = ({
                 </Box>
               ))}
 
-            <Box>{error}</Box>
+            <Box
+              sx={{
+                color: "red",
+                marginTop: 3,
+              }}>
+              {error}
+            </Box>
             <Button
               sx={{ marginTop: 4, paddingX: 3, width: "100%" }}
               onClick={onClick}
