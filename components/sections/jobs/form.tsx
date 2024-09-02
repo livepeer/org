@@ -152,7 +152,7 @@ const JobApplicationForm = ({
       let form = new FormData();
       form.append("file", acceptedFiles[0]);
       form.append("file_name", acceptedFiles[0].name);
-      await fetch("https://livepeer.org/api/upload", {
+      await fetch("/api/upload", {
         method: "POST",
         body: form,
       })
