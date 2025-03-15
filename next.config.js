@@ -211,7 +211,7 @@ module.exports = withPlugins([
           },
           {
             source: "/discord",
-            destination: "https://discord.gg/VGSkNK8AA6",
+            destination: "https://discord.gg/livepeer",
             permanent: false,
           }
         ];
