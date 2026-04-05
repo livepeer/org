@@ -1,5 +1,9 @@
 # livepeer.org
 
+> [!WARNING]
+> **This repository is archived.** It has been replaced by
+> [livepeer/website](https://github.com/livepeer/website).
+
 Livepeer.org is a primary online resource for participants and users of the
 Livepeer network. It includes:
 
